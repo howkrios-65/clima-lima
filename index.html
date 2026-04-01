@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima en Lima - Mapa Interactivo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: rgba(255,255,255,0.95);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #27ae60;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: #27ae60;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .refresh-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .refresh-btn:hover {
+            transform: scale(1.05);
+        }
+
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+
+        .weather-panel {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+            z-index: 999;
+            min-width: 280px;
+            max-width: 320px;
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .panel-title {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .close-panel {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .weather-main {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .weather-icon-large {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+
+        .temp-large {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .weather-desc {
+            color: #666;
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        .weather-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .detail-box {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .detail-label {
+            color: #999;
+            font-size: 0.75rem;
+            margin-bottom: 3px;
+        }
+
+        .detail-value {
+            color: #333;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .districts-legend {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+            z-index: 999;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .legend-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 0;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .loading-spinner {
+            background: white;
+            padding: 30px 50px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .last-update {
+            font-size: 0.75rem;
+            color: #999;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌤️ Clima en Lima</h1>
+        <div class="header-actions">
+            <div class="live-indicator">
+                <span class="live-dot"></span>
+                Tiempo Real
+            </div>
+            <button class="refresh-btn" onclick="updateAllWeather()">🔄 Actualizar</button>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="weather-panel hidden" id="weather-panel">
+        <div class="panel-header">
+            <span class="panel-title" id="panel-district">Distrito</span>
+            <button class="close-panel" onclick="closePanel()">&times;</button>
+        </div>
+        <div class="weather-main" id="panel-content">
+            <div class="loading">Cargando...</div>
+        </div>
+        <p class="last-update" id="panel-update"></p>
+    </div>
+
+    <div class="districts-legend" id="legend">
+        <div class="legend-title">📍 Distritos de Lima</div>
+        <div id="legend-items"></div>
+    </div>
+
+    <div class="loading-overlay hidden" id="loading">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Actualizando datos del clima...</p>
+        </div>
+    </div>
+
+    <script>
+        // Distritos de Lima con coordenadas
+        const districts = {
+            'Lima Cercado': { lat: -12.0464, lng: -77.0428, zone: 'centro' },
+            'Miraflores': { lat: -12.1111, lng: -77.0369, zone: 'sur' },
+            'San Isidro': { lat: -12.0969, lng: -77.0347, zone: 'centro' },
+            'Surco': { lat: -12.1333, lng: -76.9833, zone: 'sur' },
+            'La Molina': { lat: -12.0778, lng: -76.9514, zone: 'este' },
+            'San Borja': { lat: -12.1067, lng: -76.9989, zone: 'centro' },
+            'Surquillo': { lat: -12.1256, lng: -77.0167, zone: 'centro' },
+            'Santiago de Surco': { lat: -12.1400, lng: -76.9700, zone: 'sur' },
+            'Barranco': { lat: -12.1444, lng: -77.0208, zone: 'sur' },
+            'Chorrillos': { lat: -12.1667, lng: -77.0167, zone: 'sur' },
+            'San Miguel': { lat: -12.0778, lng: -77.0833, zone: 'oeste' },
+            'Pueblo Libre': { lat: -12.0708, lng: -77.0639, zone: 'centro' },
+            'Magdalena': { lat: -12.0667, lng: -77.0833, zone: 'oeste' },
+            'La Victoria': { lat: -12.0667, lng: -77.0167, zone: 'centro' },
+            'Lince': { lat: -12.0833, lng: -77.0333, zone: 'centro' },
+            'Jesús María': { lat: -12.0708, lng: -77.0500, zone: 'centro' },
+            'Breña': { lat: -12.0583, lng: -77.0500, zone: 'centro' },
+            'San Martín de Porres': { lat: -11.9833, lng: -77.0833, zone: 'norte' },
+            'Los Olivos': { lat: -11.9833, lng: -77.0667, zone: 'norte' },
+            'Independencia': { lat: -11.9667, lng: -77.0500, zone: 'norte' },
+            'Rímac': { lat: -12.0333, lng: -77.0333, zone: 'centro' },
+            'San Juan de Lurigancho': { lat: -11.9833, lng: -76.9833, zone: 'este' },
+            'El Agustino': { lat: -12.0333, lng: -77.0000, zone: 'centro' },
+            'Ate': { lat: -12.0333, lng: -76.9167, zone: 'este' },
+            'Santa Anita': { lat: -12.0333, lng: -76.9500, zone: 'este' },
+            'La Molina': { lat: -12.0778, lng: -76.9514, zone: 'este' },
+            'Santiago de Surco': { lat: -12.1400, lng: -76.9700, zone: 'sur' },
+            'San Juan de Miraflores': { lat: -12.1667, lng: -76.9667, zone: 'sur' },
+            'Villa María del Triunfo': { lat: -12.2167, lng: -76.9333, zone: 'sur' },
+            'Villa El Salvador': { lat: -12.2167, lng: -76.9333, zone: 'sur' },
+            'Puente Piedra': { lat: -11.8667, lng: -77.0833, zone: 'norte' },
+            'Comas': { lat: -11.9333, lng: -77.0500, zone: 'norte' },
+            'Carabayllo': { lat: -11.9000, lng: -77.0333, zone: 'norte' },
+            'Ancón': { lat: -11.7833, lng: -77.1833, zone: 'norte' },
+            'Santa Rosa': { lat: -11.8667, lng: -77.2500, zone: 'norte' },
+            'Ventanilla': { lat: -11.8167, lng: -77.1833, zone: 'norte' },
+            'Callao': { lat: -12.0500, lng: -77.1167, zone: 'oeste' },
+            'La Punta': { lat: -12.0667, lng: -77.1667, zone: 'oeste' },
+            'Bellavista': { lat: -12.0667, lng: -77.1333, zone: 'oeste' },
+            'Carmen de la Legua': { lat: -12.0667, lng: -77.1167, zone: 'oeste' },
+            'La Perla': { lat: -12.0667, lng: -77.1500, zone: 'oeste' },
+            'Ventanilla': { lat: -11.8167, lng: -77.1833, zone: 'norte' }
+        };
+
+        // Colores por zona
+        const zoneColors = {
+            'norte': '#e74c3c',
+            'sur': '#3498db',
+            'este': '#2ecc71',
+            'oeste': '#f39c12',
+            'centro': '#9b59b6'
+        };
+
+        const weatherCodes = {
+            0: { desc: 'Cielo despejado', icon: '☀️' },
+            1: { desc: 'Mayormente despejado', icon: '🌤️' },
+            2: { desc: 'Parcialmente nublado', icon: '⛅' },
+            3: { desc: 'Nublado', icon: '☁️' },
+            45: { desc: 'Niebla', icon: '🌫️' },
+            48: { desc: 'Niebla con escarcha', icon: '🌫️' },
+            51: { desc: 'Llovizna ligera', icon: '🌦️' },
+            53: { desc: 'Llovizna moderada', icon: '🌦️' },
+            55: { desc: 'Llovizna densa', icon: '🌧️' },
+            61: { desc: 'Lluvia ligera', icon: '🌧️' },
+            63: { desc: 'Lluvia moderada', icon: '🌧️' },
+            65: { desc: 'Lluvia fuerte', icon: '🌧️' },
+            80: { desc: 'Chubascos ligeros', icon: '🌦️' },
+            81: { desc: 'Chubascos moderados', icon: '🌧️' },
+            82: { desc: 'Chubascos fuertes', icon: '⛈️' },
+        };
+
+        let map;
+        let markers = {};
+        let weatherData = {};
+
+        // Inicializar mapa
+        function initMap() {
+            map = L.map('map').setView([-12.0464, -77.0428], 11);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Agregar marcadores para cada distrito
+            const uniqueDistricts = [...new Set(Object.keys(districts).map(d => d))];
+
+            Object.entries(districts).forEach(([name, coords]) => {
+                const color = zoneColors[coords.zone];
+
+                const marker = L.circleMarker([coords.lat, coords.lng], {
+                    radius: 8,
+                    fillColor: color,
+                    color: '#fff',
+                    weight: 2,
+                    opacity: 1,
+                    fillOpacity: 0.7
+                }).addTo(map);
+
+                marker.bindTooltip(name, {
+                    permanent: false,
+                    direction: 'top'
+                });
+
+                marker.on('click', () => {
+                    showWeatherPanel(name, coords.lat, coords.lng);
+                });
+
+                markers[name] = marker;
+            });
+
+            // Generar leyenda
+            generateLegend();
+        }
+
+        function generateLegend() {
+            const legendItems = document.getElementById('legend-items');
+            const zones = {
+                'norte': 'Zona Norte',
+                'sur': 'Zona Sur',
+                'este': 'Zona Este',
+                'oeste': 'Zona Oeste',
+                'centro': 'Zona Centro'
+            };
+
+            let html = '';
+            Object.entries(zones).forEach(([zone, name]) => {
+                html += `
+                    <div class="legend-item" onclick="filterByZone('${zone}')">
+                        <span class="legend-dot" style="background: ${zoneColors[zone]}"></span>
+                        <span>${name}</span>
+                    </div>
+                `;
+            });
+            legendItems.innerHTML = html;
+        }
+
+        function filterByZone(zone) {
+            const zoneDistricts = Object.entries(districts)
+                .filter(([, data]) => data.zone === zone)
+                .map(([name]) => name);
+
+            Object.entries(markers).forEach(([name, marker]) => {
+                if (zoneDistricts.includes(name)) {
+                    marker.setOpacity(1);
+                } else {
+                    marker.setOpacity(0.2);
+                }
+            });
+        }
+
+        async function fetchWeather(lat, lng) {
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,weather_code,wind_speed_10m,precipitation&timezone=America%2FLima`;
+
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('Error al obtener datos');
+            return await response.json();
+        }
+
+        async function showWeatherPanel(districtName, lat, lng) {
+            const panel = document.getElementById('weather-panel');
+            const content = document.getElementById('panel-content');
+
+            document.getElementById('panel-district').textContent = districtName;
+            panel.classList.remove('hidden');
+            content.innerHTML = '<div class="loading">Cargando datos...</div>';
+
+            try {
+                const data = await fetchWeather(lat, lng);
+                const current = data.current;
+                const weather = weatherCodes[current.weather_code] || { desc: 'Desconocido', icon: '❓' };
+
+                content.innerHTML = `
+                    <div class="weather-icon-large">${weather.icon}</div>
+                    <div class="temp-large">${Math.round(current.temperature_2m)}°C</div>
+                    <div class="weather-desc">${weather.desc}</div>
+
+                    <div class="weather-details">
+                        <div class="detail-box">
+                            <div class="detail-label">Sensación</div>
+                            <div class="detail-value">${Math.round(current.apparent_temperature)}°C</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Humedad</div>
+                            <div class="detail-value">${current.relative_humidity_2m}%</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Viento</div>
+                            <div class="detail-value">${current.wind_speed_10m} km/h</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Lluvia</div>
+                            <div class="detail-value">${current.precipitation} mm</div>
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('panel-update').textContent =
+                    'Actualizado: ' + new Date().toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-digit' });
+
+                // Actualizar marcador
+                updateMarkerColor(districtName, current.temperature_2m);
+
+            } catch (error) {
+                content.innerHTML = `<p style="color: #e74c3c;">Error: ${error.message}</p>`;
+            }
+        }
+
+        function updateMarkerColor(district, temp) {
+            const marker = markers[district];
+            if (!marker) return;
+
+            // Color según temperatura
+            let color;
+            if (temp < 15) color = '#3498db'; // frío
+            else if (temp < 20) color = '#2ecc71'; // templado
+            else if (temp < 25) color = '#f1c40f'; // cálido
+            else color = '#e74c3c'; // caliente
+
+            marker.setStyle({ fillColor: color, fillOpacity: 0.9 });
+        }
+
+        async function updateAllWeather() {
+            const loading = document.getElementById('loading');
+            loading.classList.remove('hidden');
+
+            const uniqueDistricts = [...new Set(Object.keys(districts))];
+
+            for (const [name, coords] of Object.entries(districts)) {
+                try {
+                    const data = await fetchWeather(coords.lat, coords.lng);
+                    weatherData[name] = data.current.temperature_2m;
+                    updateMarkerColor(name, data.current.temperature_2m);
+                } catch (error) {
+                    console.error(`Error en ${name}:`, error);
+                }
+            }
+
+            loading.classList.add('hidden');
+            alert('✅ Clima actualizado en todos los distritos');
+        }
+
+        function closePanel() {
+            document.getElementById('weather-panel').classList.add('hidden');
+        }
+
+        // Inicializar
+        initMap();
+
+        // Actualización automática cada 5 minutos
+        setInterval(updateAllWeather, 300000);
+    </script>
+</body>
+</html>
