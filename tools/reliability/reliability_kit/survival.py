@@ -81,3 +81,22 @@ def logrank_test(times_a, event_a, times_b, event_b) -> dict:
         raise ValueError("varianza nula: datos insuficientes para el log-rank")
     chi2 = O_minus_E ** 2 / V
     return {"chi2": float(chi2), "p_value": float(stats.chi2.sf(chi2, 1)), "dof": 1}
+
+
+def km_failure_quantile(km: KMResult, p: float) -> dict:
+    """Tiempo al que ha fallado la fracción p (B_p no paramétrico) con IC invertido de la banda log-log.
+
+    estimate: primer t con S(t) <= 1-p. lower: primer t con la banda INFERIOR de S <= 1-p (cae antes).
+    upper: primer t con la banda SUPERIOR de S <= 1-p; nan si esa banda nunca baja de 1-p
+    (el IC es abierto por la derecha: dato insuficiente, no se inventa un valor).
+    """
+    if not 0.0 < p < 1.0:
+        raise ValueError("p debe estar en (0, 1)")
+    target = 1.0 - p
+
+    def first(arr):
+        idx = np.where(arr <= target)[0]
+        return float(km.time[idx[0]]) if idx.size else float("nan")
+
+    return {"p": p, "estimate": first(km.survival), "lower": first(km.lower), "upper": first(km.upper),
+            "conf": km.conf, "method": "Kaplan-Meier, banda log-log invertida"}

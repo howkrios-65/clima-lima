@@ -98,8 +98,15 @@ def fit_weibull_mle(times: Sequence[float], censored: Sequence[bool] | None = No
     warns = []
     if r < 10:
         warns.append(f"solo {r} fallas: resultado exploratorio, MLE de β sesgado al alza e IC amplio")
-    if r / t.size < 0.2:
-        warns.append("más del 80 % de los datos son suspensiones: el ajuste depende mucho del modelo")
+    elif r < 30:
+        warns.append(f"{r} fallas (<30): el MLE de β puede estar sesgado al alza; contraste con bias_correct_beta() "
+                     "y reporte el intervalo, no solo el punto")
+    cens_frac = 1.0 - r / t.size
+    if cens_frac > 0.5:
+        warns.append(f"{cens_frac:.0%} de los datos son suspensiones: β y η dependen del modelo y el sesgo de β "
+                     "crece con la censura; η/B50/MTTF suelen extrapolar más allá del mayor tiempo observado")
+    if t[d].max() < t.max() and cens_frac > 0.5:
+        warns.append("hay suspensiones posteriores a la última falla: no extrapolar fuera del rango observado")
     return WeibullFit(beta=float(beta), eta=float(eta), n=int(t.size), r=r, loglik=float(ll), warnings=warns)
 
 
@@ -246,7 +253,29 @@ def compare_models(times, censored=None) -> list[dict]:
     best = out[0]["aic"]
     for m in out:
         m["delta_aic"] = m["aic"] - best
+        m["support"] = aic_support(m["delta_aic"])
     return out
+
+
+def aic_support(delta_aic: float) -> str:
+    """Lectura convencional de ΔAIC (Burnham & Anderson): <2 equivale a empate."""
+    if delta_aic < 2:
+        return "mejor o empate (ΔAIC<2): no hay base para preferir"
+    if delta_aic <= 10:
+        return "menor respaldo (2≤ΔAIC≤10)"
+    return "sin respaldo (ΔAIC>10)"
+
+
+def compare_models_verdict(times, censored=None) -> dict:
+    """compare_models + frase de conclusión: dice explícitamente cuando hay empate."""
+    models = compare_models(times, censored)
+    tied = [m["model"] for m in models if m["delta_aic"] < 2]
+    if len(tied) > 1:
+        msg = ("Empate estadístico entre " + ", ".join(tied) + " (ΔAIC<2): los datos no permiten elegir; "
+               "no justifique una estrategia en la forma de la distribución.")
+    else:
+        msg = f"{tied[0]} es el único con respaldo sustancial (el resto ΔAIC≥2)."
+    return {"models": models, "tied": tied, "verdict": msg}
 
 
 def interpret_beta(beta: float, ci: tuple[float, float] | None = None) -> str:
@@ -264,3 +293,142 @@ def interpret_beta(beta: float, ci: tuple[float, float] | None = None) -> str:
         return f"β={beta:.2f} ≈ 1: patrón aleatorio; PM por edad poco justificado (sin IC no se puede afirmar más)."
     return (f"β={beta:.2f} > 1: desgaste; una tarea por edad puede ser técnicamente válida "
             "(verificar costos y consecuencias; ver economics.optimal_age_replacement).")
+
+
+# ---------- B-life: IC por razón de verosimilitud ----------
+
+def weibull_b_life_ci_lr(times, censored=None, p: float = 0.10, conf: float = 0.95) -> dict:
+    """IC de B_p por verosimilitud perfilada (reparametriza η = B / (-ln(1-p))^(1/β) y perfila β)."""
+    if not 0.0 < p < 1.0:
+        raise ValueError("p debe estar en (0, 1)")
+    t, d = _prepare(times, censored)
+    fit = fit_weibull_mle(t, ~d)
+    scale = t.max()
+    ts = t / scale
+    k = -log(1.0 - p)
+    b_hat = fit.b_life(p) / scale
+    ll_max = _loglik(fit.beta, fit.eta / scale, ts, d)
+    crit = stats.chi2.ppf(conf, 1)
+
+    def profile(B: float) -> float:
+        def neg(lb):
+            b = np.exp(lb)
+            return -_loglik(b, B / k ** (1.0 / b), ts, d)
+        res = optimize.minimize_scalar(neg, bounds=(log(0.05), log(100.0)), method="bounded",
+                                       options={"xatol": 1e-10})
+        return -res.fun
+
+    def g(B):
+        return 2.0 * (ll_max - profile(B)) - crit
+
+    lo = b_hat / 2.0
+    for _ in range(60):
+        if g(lo) > 0:
+            break
+        lo /= 2.0
+    hi = b_hat * 2.0
+    for _ in range(60):
+        if g(hi) > 0:
+            break
+        hi *= 2.0
+    if g(lo) <= 0 or g(hi) <= 0:
+        raise ValueError("no se pudo acotar el IC de B-life; datos insuficientes")
+    lower = optimize.brentq(g, lo, b_hat, xtol=1e-12)
+    upper = optimize.brentq(g, b_hat, hi, xtol=1e-12)
+    return {"estimate": float(b_hat * scale), "lower": float(lower * scale), "upper": float(upper * scale),
+            "p": p, "conf": conf, "method": "razón de verosimilitud perfilada"}
+
+
+# ---------- corrección de sesgo de β ----------
+
+def bias_correct_beta(times, censored=None, *, n_boot: int = 1000, seed: int = 0) -> dict:
+    """Corrección de sesgo de β por bootstrap paramétrico: β_bc = 2·β̂ − media(β*).
+
+    SUPUESTO declarado y devuelto: cada unidad suspendida conserva su tiempo de suspensión como
+    horizonte de censura; las unidades que fallaron tienen como horizonte el mayor tiempo observado.
+    Si el diseño real difiere (p. ej. censura aleatoria no relacionada), el resultado es indicativo.
+    """
+    t, d = _prepare(times, censored)
+    fit = fit_weibull_mle(t, ~d)
+    horizon = np.where(d, t.max(), t)
+    rng = np.random.default_rng(seed)
+    betas, failed = [], 0
+    for _ in range(n_boot):
+        life = fit.eta * rng.weibull(fit.beta, t.size)
+        obs = np.minimum(life, horizon)
+        cens = life > horizon
+        try:
+            betas.append(fit_weibull_mle(obs, cens).beta)
+        except ValueError:
+            failed += 1
+    if len(betas) < n_boot // 2:
+        raise ValueError("demasiadas simulaciones inválidas para corregir el sesgo")
+    bias = float(np.mean(betas) - fit.beta)
+    return {"beta_mle": fit.beta, "bias_estimate": bias, "beta_bc": float(fit.beta - bias),
+            "n_boot_ok": len(betas), "n_boot_failed": failed,
+            "assumption": "horizonte de censura = tiempo de suspensión (suspendidas) o máximo observado (falladas)"}
+
+
+# ---------- bondad de ajuste con censura ----------
+
+def _model_tools(model: str, t, d):
+    """(sf, sampler) del modelo ajustado a (t, d)."""
+    if model == "weibull":
+        f = fit_weibull_mle(t, ~d)
+        return (lambda x: np.exp(-(x / f.eta) ** f.beta)), (lambda rng, n: f.eta * rng.weibull(f.beta, n))
+    if model == "lognormal":
+        q = _fit_lognormal(t, d)["params"]
+        return ((lambda x: stats.norm.sf((np.log(x) - q["mu"]) / q["sigma"])),
+                (lambda rng, n: np.exp(q["mu"] + q["sigma"] * rng.standard_normal(n))))
+    if model == "exponential":
+        lam = d.sum() / t.sum()
+        return (lambda x: np.exp(-lam * x)), (lambda rng, n: rng.exponential(1.0 / lam, n))
+    raise ValueError("model debe ser 'weibull', 'lognormal' o 'exponential'")
+
+
+def _ks_vs_km(t, d, sf) -> float:
+    from .survival import kaplan_meier
+    km = kaplan_meier(t, d)  # event=True para fallas
+    model = sf(km.time)
+    prev = np.r_[1.0, km.survival[:-1]]
+    return float(np.max(np.maximum(np.abs(km.survival - model), np.abs(prev - model))))
+
+
+def gof_censored_bootstrap(times, censored=None, model: str = "weibull", *, n_boot: int = 500, seed: int = 0) -> dict:
+    """Bondad de ajuste con censura: distancia tipo Kolmogorov entre Kaplan-Meier y el modelo ajustado,
+    con p-valor por bootstrap paramétrico (censura remuestreada de la KM inversa).
+
+    APROXIMADA (no es una prueba estándar) y de BAJA POTENCIA con pocas fallas: p grande no demuestra
+    que el modelo sea correcto. Úsela para detectar desajustes groseros, no para validar.
+    """
+    from .survival import kaplan_meier
+    t, d = _prepare(times, censored)
+    sf, _ = _model_tools(model, t, d)
+    obs = _ks_vs_km(t, d, sf)
+    # distribución de censura (KM inversa); masa restante = sin censura
+    if (~d).any():
+        kc = kaplan_meier(t, ~d)
+        mass = -np.diff(np.r_[1.0, kc.survival])
+        c_vals = np.r_[kc.time, np.inf]
+        c_prob = np.r_[mass, kc.survival[-1]]
+    else:
+        c_vals, c_prob = np.array([np.inf]), np.array([1.0])
+    c_prob = c_prob / c_prob.sum()
+    rng = np.random.default_rng(seed)
+    exceed, ok = 0, 0
+    _, sampler = _model_tools(model, t, d)
+    for _ in range(n_boot):
+        life = sampler(rng, t.size)
+        c = rng.choice(c_vals, size=t.size, p=c_prob)
+        tt, dd = np.minimum(life, c), life <= c
+        try:
+            sf_b, _ = _model_tools(model, tt, dd)
+            stat = _ks_vs_km(tt, dd, sf_b)
+        except ValueError:
+            continue
+        ok += 1
+        exceed += stat >= obs
+    if ok < n_boot // 2:
+        raise ValueError("demasiadas simulaciones inválidas para la bondad de ajuste")
+    return {"model": model, "statistic": obs, "p_value": (exceed + 1) / (ok + 1), "n_boot_ok": ok,
+            "note": "aproximada y de baja potencia con pocas fallas; p alto no valida el modelo"}

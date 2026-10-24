@@ -9,7 +9,7 @@ este código y reporta n, método, intervalos y advertencias.
 ```bash
 cd tools/reliability
 pip install -r requirements.txt
-python -m pytest -q          # 64 pruebas
+python -m pytest -q          # 91 pruebas (~25 s)
 python examples/demo.py      # flujo completo con datos sintéticos (ILUSTRATIVOS)
 ```
 
@@ -17,17 +17,19 @@ python examples/demo.py      # flujo completo con datos sintéticos (ILUSTRATIVO
 
 | Módulo | Qué hace | Cuándo (árbol §5.1 del agente) |
 |---|---|---|
-| `weibull` | MLE 2P con censura por derecha, IC de β por razón de verosimilitud, IC bootstrap (β, η, B-life, MTTF), rangos de Johnson/Bernard + regresión RRX, comparación Weibull/lognormal/exponencial por AIC, `interpret_beta` que respeta el IC | Ítems **no reparables** (un modo de falla por ajuste) |
-| `nhpp` | Crow-AMSAA (β insesgado, IC exacto χ²; terminación por tiempo o por falla), prueba de Laplace, GOF Cramér-von Mises con p-valor Monte Carlo, MCF (Nelson) multiunidad con censura | Ítems **reparables** con posible tendencia |
-| `survival` | Kaplan-Meier (Greenwood, IC log-log), mediana, log-rank de 2 grupos | Comparar flotas/proveedores; sin supuesto paramétrico |
+| `weibull` | MLE 2P con censura por derecha; IC de β y de **B-life por razón de verosimilitud**; IC bootstrap; **corrección de sesgo de β** (`bias_correct_beta`); rangos de Johnson/Bernard + RRX; Weibull/lognormal/exponencial por AIC con **veredicto de empate** (`compare_models_verdict`); **bondad de ajuste con censura** (`gof_censored_bootstrap`, aproximada); `interpret_beta` que respeta el IC. Avisos de sesgo con r<30 y de censura >50 % | Ítems **no reparables** (un modo de falla por ajuste) |
+| `nhpp` | Crow-AMSAA de una unidad (β insesgado, IC exacto χ²) y **multi-unidad con T_k distintos** (`fit_crow_amsaa_multi`: modelo condicional o λ común), Laplace de una unidad y **agrupada**, **prueba de heterogeneidad entre unidades**, GOF Cramér-von Mises MC, **MCF con IC de Lawless-Nadeau** | Ítems **reparables** con posible tendencia |
+| `survival` | Kaplan-Meier (Greenwood, IC log-log), mediana, **cuantil de falla B_p con IC** (`km_failure_quantile`), log-rank de 2 grupos | Comparar flotas/proveedores; sin supuesto paramétrico |
 | `workorders` | Pareto (con *vital few*), bad actors cruzando frecuencia/costo/downtime, crónicos (mismo código repetido en ventana) | Priorización desde CMMS/SAP |
 | `data_quality` | Perfil de nulos, duplicados, fechas inválidas/invertidas, banderas de campos críticos | Siempre, **antes** de cualquier número |
 | `economics` | Costo por edad de reemplazo (Barlow-Proschan), edad óptima (se **niega** si β≤1 o c_f≤c_p), VPN, CAE/EAC, disponibilidad inherente | Decisiones; los costos son parámetros obligatorios |
 | `mlcheck` | Partición temporal y por activo, detector de fuga, AP/PR, recall@precisión, Brier/calibración, umbral por costo | Validación de modelos predictivos |
 | `plots` | Probabilidad Weibull, Pareto, Kaplan-Meier (matplotlib, acento + gris, n en el pie) | Entregables |
 
-CLI: `python -m reliability_kit weibull datos.csv --time t --censored c` ·
-`crow-amsaa datos.csv --time t --T 5000` · `pareto datos.csv --group activo [--value costo]`.
+CLI: `python -m reliability_kit weibull datos.csv --time t --censored c` (incluye IC de B10, corrección de
+sesgo si r<30 y veredicto de modelos) · `crow-amsaa datos.csv --time t --T 5000` (una unidad) ·
+`crow-amsaa datos.csv --time t --unit motor --end fin_obs` (varias unidades; sin `--unit`, la CLI **advierte**
+si el CSV tiene una columna que parece identificar unidades) · `pareto datos.csv --group activo [--value costo]`.
 
 ## Cómo están verificadas
 
@@ -39,6 +41,21 @@ Las pruebas no se limitan a "el código corre":
 ## Límites conocidos (declarados, no ocultos)
 
 - Weibull 2P solamente (sin γ de 3 parámetros ni mezclas); un modo de falla por ajuste.
-- MCF sin intervalos de confianza (falta el estimador de varianza de Lawless-Nadeau).
-- Cox PH y riesgos competitivos no incluidos (usar `lifelines`); AIC compara modelos pero no sustituye una prueba de bondad de ajuste formal.
-- El kit calcula; **los costos, la definición de falla y la separación de modos los aporta el usuario**. Sin ellos, el resultado correcto es un [VACÍO] declarado.
+- `gof_censored_bootstrap` es una prueba **aproximada** (distancia KM–modelo con censura remuestreada) y de
+  baja potencia con pocas fallas; un p alto no valida el modelo. `bias_correct_beta` asume un horizonte de
+  censura (se devuelve en `assumption`): es indicativa si el diseño real difiere.
+- La MCF multiunidad no es fiable en la cola con pocas unidades en riesgo (`n_at_risk` se devuelve para verlo).
+- `unit_heterogeneity_test` contrasta tasa común entre unidades (X² de conteos con p Monte Carlo); con β≠1 y
+  T_k desiguales puede rechazar por la tendencia y no por heterogeneidad real.
+- Cox PH y riesgos competitivos no incluidos (usar `lifelines`); AIC compara modelos pero no valida ninguno.
+- El kit calcula; **los costos, la definición de falla y la separación de modos los aporta el usuario**. Sin
+  ellos, el resultado correcto es un [VACÍO] declarado.
+
+## Historial de correcciones
+
+Prueba con datos reales (Meeker & Escobar vía R `survival`: `genfan`, `valveSeat`) → el agente tuvo que
+improvisar lo siguiente, ahora incluido y probado: Crow-AMSAA multi-unidad (+ CLI con `--unit/--end` y aviso),
+IC de la MCF, IC de B10 (LR y Kaplan-Meier), advertencia de sesgo/censura, corrección de sesgo, veredicto de
+ΔAIC<2 como empate y bondad de ajuste con censura. Cobertura de los nuevos IC y tamaño de las nuevas pruebas
+verificados por simulación en `tests/test_fixes.py`. Un error propio detectado por esas pruebas: las bandas del
+cuantil de Kaplan-Meier estaban invertidas (corregido).

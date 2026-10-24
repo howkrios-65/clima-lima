@@ -170,6 +170,12 @@ Entregable de la fase: tabla "Calidad de datos" (campo · % faltante · tratamie
        2) Sin tendencia (HPP): tasa λ constante, intervalos ~ exponencial; MTBF válido.
        3) Con tendencia: NHPP (Crow-AMSAA / power-law); reporta β_CA y su significado
           (β_CA<1 mejora, ≈1 estable, >1 deterioro) y ROCOF.
+VARIAS unidades reparables con fin de observación T_k distinto (flota)
+     → NO concatenes sus tiempos en una serie: analízalas como sistemas múltiples. MCF multiunidad
+       (con IC) + Crow-AMSAA condicional (tasa propia por unidad, β común; u=t/T_k) y Laplace agrupada;
+       contrasta con λ común solo si no hay heterogeneidad. Reporta unidades sin eventos, eventos duplicados
+       (varios en el mismo instante: conserva y haz sensibilidad) y la sensibilidad a la ventana final
+       (si la conclusión depende de la cola con pocas unidades en riesgo, es frágil: dilo).
 ¿Hay modos de falla mezclados? → SEPARA por modo (competing risks); un Weibull "mixto"
   con curva quebrada suele indicar poblaciones mezcladas, no un β intermedio.
 ```
@@ -341,7 +347,7 @@ Respeta el formato real que el usuario adjunte. Por defecto: Word (informe y FTA
 3. **Grafica** la comparación (tus cifras vs. las internacionales, misma unidad o conversión declarada; escala log si el rango lo amerita).
 4. **Analiza**: ¿por encima/dentro/debajo del rango?; ¿la comparabilidad es numérica directa o solo de patrón/magnitud?
 5. **Declara las limitaciones**: conteos no verificados usados como sensibilidad ilustrativa, citas secundarias, fuentes sin cifras accesibles, cifras de folklore (§0.2).
-Si el acceso web falla o no hay fuentes verificables, el resultado es un **[VACÍO] explícito**, nunca una cifra de memoria.
+Si el acceso web falla o no hay fuentes verificables, el resultado es un **[VACÍO] explícito**, nunca una cifra de memoria; **ese vacío explícito cumple el ítem 9 del checklist** (no se grafica una cifra que no se pudo verificar).
 
 ### 11.4 Comunicación a decisores
 Memo de una página: decisión recomendada primero, evidencia mínima suficiente, riesgo residual, alternativa descartada y por qué, costo/beneficio con incertidumbre, siguiente paso y dueño. Tono estratégico y humano, sin jerga innecesaria; las caveats clave **no se esconden en el anexo**.
@@ -384,7 +390,15 @@ Memo de una página: decisión recomendada primero, evidencia mínima suficiente
 
 ## 13 bis. KIT DE CÁLCULO REPRODUCIBLE (`tools/reliability/`)
 
-Si el repositorio contiene `tools/reliability/reliability_kit`, **calcula con él en lugar de reimplementar** (`cd tools/reliability && pip install -r requirements.txt && python -m pytest -q` antes de usarlo; si las pruebas fallan, repórtalo y no uses el kit). Mapa rápido: `weibull` (no reparables, censura, IC LR/bootstrap, AIC), `nhpp` (Crow-AMSAA, Laplace, MCF), `survival` (Kaplan-Meier, log-rank), `workorders` (Pareto, bad actors, crónicos), `data_quality.audit`, `economics` (edad óptima, VPN/CAE), `mlcheck` (particiones sin fuga, PR, calibración, umbral por costo), `plots`. Guarda el script que ejecutaste junto al resultado (§12.13). Límites del kit (sin Cox, sin Weibull 3P/mezclas, MCF sin IC) están en su README: fuera de ellos usa `lifelines`/R y declara la herramienta. Los datos de demostración del kit son sintéticos: **nunca** los cites como evidencia de un activo real.
+Si el repositorio contiene `tools/reliability/reliability_kit`, **calcula con él en lugar de reimplementar** (`cd tools/reliability && pip install -r requirements.txt && python -m pytest -q` antes de usarlo; si las pruebas fallan, repórtalo y no uses el kit). Usar el kit es compatible con skills que dicen "no ejecuta estadística": esa regla evita *sustituir software especializado a ciegas*, no prohíbe ejecutar código verificado; declara qué herramienta usaste.
+
+Mapa rápido:
+- `weibull`: no reparables con censura; IC de β y de B-life (LR/bootstrap); `bias_correct_beta` (úsala si r<30); `compare_models_verdict` (si dice **empate**, no justifiques una estrategia en la forma de la distribución); `gof_censored_bootstrap` (aproximada, baja potencia).
+- `nhpp`: **una unidad** → `fit_crow_amsaa`; **varias unidades con T_k distintos** → `fit_crow_amsaa_multi` (modelo `conditional` por defecto; `common` solo si `unit_heterogeneity_test` no rechaza) + `laplace_trend_test_multi` + `mean_cumulative_function` (con IC). Nunca mezcles los tiempos de varias unidades en una sola serie: enmascara la tendencia.
+- `survival`: Kaplan-Meier, `km_failure_quantile` (B_p con IC; nan = IC abierto, dato insuficiente), log-rank.
+- `workorders` (Pareto, bad actors, crónicos), `data_quality.audit`, `economics` (edad óptima, VPN/CAE), `mlcheck` (particiones sin fuga, PR, calibración, umbral por costo), `plots`.
+
+Guarda el script que ejecutaste junto al resultado (§12.13). Límites del kit (sin Cox, sin Weibull 3P/mezclas; MCF poco fiable en la cola) están en su README: fuera de ellos usa `lifelines`/R, valida contra una referencia independiente y declara la herramienta. Los datos de demostración del kit son sintéticos: **nunca** los cites como evidencia de un activo real.
 
 ---
 
