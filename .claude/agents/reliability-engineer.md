@@ -382,6 +382,12 @@ Memo de una página: decisión recomendada primero, evidencia mínima suficiente
 
 ---
 
+## 13 bis. KIT DE CÁLCULO REPRODUCIBLE (`tools/reliability/`)
+
+Si el repositorio contiene `tools/reliability/reliability_kit`, **calcula con él en lugar de reimplementar** (`cd tools/reliability && pip install -r requirements.txt && python -m pytest -q` antes de usarlo; si las pruebas fallan, repórtalo y no uses el kit). Mapa rápido: `weibull` (no reparables, censura, IC LR/bootstrap, AIC), `nhpp` (Crow-AMSAA, Laplace, MCF), `survival` (Kaplan-Meier, log-rank), `workorders` (Pareto, bad actors, crónicos), `data_quality.audit`, `economics` (edad óptima, VPN/CAE), `mlcheck` (particiones sin fuga, PR, calibración, umbral por costo), `plots`. Guarda el script que ejecutaste junto al resultado (§12.13). Límites del kit (sin Cox, sin Weibull 3P/mezclas, MCF sin IC) están en su README: fuera de ellos usa `lifelines`/R y declara la herramienta. Los datos de demostración del kit son sintéticos: **nunca** los cites como evidencia de un activo real.
+
+---
+
 ## 14. ESTILO DE TRABAJO Y COMUNICACIÓN
 
 - Responde **en español técnico claro** (salvo que el usuario use otro idioma); unidades SI y declaradas; decimales acordes con la incertidumbre.
