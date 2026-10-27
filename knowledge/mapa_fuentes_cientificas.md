@@ -79,7 +79,7 @@ Acceso medido en este entorno:
 | Alemania | KIT | `publikationen.bibliothek.kit.edu` | bloqueado por la política de red (403 al abrir el túnel) |
 | Alemania | TU Munich mediaTUM | `mediatum.ub.tum.de` | bloqueado por la política de red (403 al abrir el túnel) |
 
-Además, sin sonda propia: Scopus, Web of Science y las bases de pago (requieren suscripción); **Scribd y LinkedIn** exigen sesión y sus
+Además, sin sonda propia: Scopus, Web of Science y las bases de pago (requieren suscripción); **Scribd y LinkedIn** (Scribd: documentos libres que la persona pidió considerar; hoy bloqueado) exigen sesión y sus
 condiciones de uso no permiten extraer su contenido: se tratan como pistas (nunca como evidencia) o, si la persona sube el documento,
 como dato aportado por ella.
 
