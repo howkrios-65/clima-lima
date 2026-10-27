@@ -119,7 +119,7 @@
     "E-1305"
    ],
    "nivel": "SINTESIS",
-   "nota": "Premisas: etapas de degradación con contenido espectral distinto, la primera detectable solo con sensores especializados (E-8008); la kurtosis vuelve a valores normales al extenderse el defecto (E-8003); no se halló sustento de los umbrales de kurtosis 3 y 5 (E-8001); los conjuntos de banco no cubren fallas progresivas de servicio prolongado (E-1305). Contribuye a la consecuencia, no al inicio del daño. Revisiones y bancos de rodamientos o motores, no de bombas. Debe ser validado por un experto del activo.",
+   "nota": "Premisas: etapas de degradación con contenido espectral distinto, la primera detectable solo con sensores especializados (E-8008); la kurtosis vuelve a valores normales al extenderse el defecto (E-8003); no se halló sustento de los umbrales de kurtosis 3 y 5 (E-8001); los conjuntos de banco no cubren fallas progresivas de servicio prolongado (E-1305). Contribuye a la consecuencia, no al inicio del daño. Revisiones y bancos de rodamientos o motores, no de bombas. Debe ser validado por un experto del activo. Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto.",
    "clase": "latente"
   },
   {

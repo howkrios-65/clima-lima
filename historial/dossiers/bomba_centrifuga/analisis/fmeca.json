@@ -25,7 +25,7 @@
     "E-8008",
     "E-1305"
    ],
-   "nota": "SINTESIS: E-1205 dice literalmente que los rodamientos usados en bombas son susceptibles a desgaste y fatiga; el mecanismo de fatiga y la detección vienen de rodamientos generales y de banco (E-6002, E-8001, E-8003, E-8008), no de bombas. Razonamiento del equipo; debe ser validado por un experto del activo.",
+   "nota": "SINTESIS: E-1205 dice literalmente que los rodamientos usados en bombas son susceptibles a desgaste y fatiga; el mecanismo de fatiga y la detección vienen de rodamientos generales y de banco (E-6002, E-8001, E-8003, E-8008), no de bombas. Razonamiento del equipo; debe ser validado por un experto del activo. Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto. Que la fatiga de contacto sea la causa en condiciones convencionales (E-6002, ISO 281) no consta en el extracto.",
    "tarea_rcm": "En condición (on-condition) (consecuencia: A confirmar; si la falla es evidente y detiene el bombeo, operacional; seguridad o ambiente según el fluido (sin datos)). La literatura asocia la envolvente a detección temprana y describe etapas de degradación, por lo que una tarea en condición podría ser técnicamente factible; depende de accesibilidad del rodamiento y del tiempo de aviso, no disponible. No se propone reemplazo por edad: no hay Weibull ni β > 1 demostrado para este activo (E-6003 y E-1202 solo definen L10 de población). No se asigna intervalo: el P-F no tiene fuente leída (ver vacios)."
   },
   {
@@ -48,7 +48,7 @@
     "E-1205",
     "E-8003"
    ],
-   "nota": "SINTESIS: las fuentes nombran el desgaste en una lista de causas; ninguna describe su mecanismo ni su efecto en bombas. Razonamiento del equipo; debe ser validado por un experto del activo.",
+   "nota": "SINTESIS: las fuentes nombran el desgaste en una lista de causas; ninguna describe su mecanismo ni su efecto en bombas. Razonamiento del equipo; debe ser validado por un experto del activo. Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto.",
    "tarea_rcm": "En condición; restauración solo si hay edad identificable (consecuencia: A confirmar). El desgaste es el candidato clásico a restauración o reemplazo programado, pero eso exige edad de desgaste identificable (β > 1) que aquí no está demostrada. Mientras tanto se propone en condición. No se asigna intervalo: el P-F no tiene fuente leída (ver vacios)."
   },
   {
@@ -70,7 +70,7 @@
     "E-1201",
     "E-8003"
    ],
-   "nota": "EVIDENCIA solo para la causa: el extracto de E-6004 dice literalmente que la falla prematura de rodamientos de bolas de bombas se atribuye a corrosión causada por contaminación (solo resumen leído). Efectos, detección y tarea son SINTESIS del equipo; validar con experto del activo.",
+   "nota": "EVIDENCIA solo para la causa: el extracto de E-6004 dice literalmente que la falla prematura de rodamientos de bolas de bombas se atribuye a corrosión causada por contaminación (solo resumen leído). Efectos, detección y tarea son SINTESIS del equipo; validar con experto del activo. Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto.",
    "tarea_rcm": "Rediseño (protección del soporte) y en condición (consecuencia: A confirmar). Si la contaminación domina, atacar la causa suele ser más eficaz que detectar el daño; no hay datos del activo que digan si domina. Se complementa con inspección del lubricante. No se asigna intervalo: el P-F no tiene fuente leída (ver vacios)."
   },
   {
@@ -95,7 +95,7 @@
     "E-8003",
     "E-8008"
    ],
-   "nota": "EVIDENCIA solo para la causa: el extracto de E-6004 dice literalmente que la falla prematura de rodamientos de bolas de bombas se atribuye a falla de lubricante (solo resumen). Efectos, detección y tarea son SINTESIS del equipo; validar con experto del activo.",
+   "nota": "EVIDENCIA solo para la causa: el extracto de E-6004 dice literalmente que la falla prematura de rodamientos de bolas de bombas se atribuye a falla de lubricante (solo resumen). Efectos, detección y tarea son SINTESIS del equipo; validar con experto del activo. Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto.",
    "tarea_rcm": "En condición y, si se identifica el mecanismo, tarea programada de lubricación (consecuencia: A confirmar). La relubricación previene un mecanismo identificable, pero su contenido (cantidad, método) y periodicidad requieren fuente y datos del activo que no existen en la evidencia leída. Se complementa con inspección del estado del lubricante. No se asigna intervalo: el P-F no tiene fuente leída (ver vacios)."
   },
   {
@@ -118,7 +118,7 @@
     "E-1203",
     "E-8003"
    ],
-   "nota": "EVIDENCIA solo para la causa: el extracto de E-6004 dice literalmente sobrecalentamiento causado por ajustes inadecuados en alojamientos o ejes (solo resumen). Efectos, detección y tarea son SINTESIS del equipo; validar con experto del activo.",
+   "nota": "EVIDENCIA solo para la causa: el extracto de E-6004 dice literalmente sobrecalentamiento causado por ajustes inadecuados en alojamientos o ejes (solo resumen). Efectos, detección y tarea son SINTESIS del equipo; validar con experto del activo. Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto.",
    "tarea_rcm": "Rediseño o corrección del procedimiento de montaje; en condición por temperatura (consecuencia: A confirmar). La causa está en la instalación; el montaje controlado actúa sobre ella. Si el experto encuentra consecuencia de seguridad o ambiente, correr a la falla no sería aceptable. No se asigna intervalo: el P-F no tiene fuente leída (ver vacios)."
   },
   {
@@ -141,7 +141,7 @@
     "E-1204",
     "E-8003"
    ],
-   "nota": "SINTESIS: causa tomada de rodamientos en general y de un banco acelerado; la evidencia no examina cargas ni alineación de bombas. Razonamiento del equipo; debe ser validado por un experto del activo.",
+   "nota": "SINTESIS: causa tomada de rodamientos en general y de un banco acelerado; la evidencia no examina cargas ni alineación de bombas. Razonamiento del equipo; debe ser validado por un experto del activo. Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto. Que ISO/TS 16281 considere la desalineación (E-6003) no consta en el extracto.",
    "tarea_rcm": "Corrección de alineación o rediseño; en condición (consecuencia: A confirmar). Corregir la causa reduce la ocurrencia; la inspección en condición solo detecta efectos. No se asigna intervalo: el P-F no tiene fuente leída (ver vacios)."
   },
   {

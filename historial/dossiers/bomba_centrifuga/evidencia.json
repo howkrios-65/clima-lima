@@ -506,7 +506,7 @@
    "fuente": "arXiv 2601.02278 (Data in Brief, segun la declaracion de etica del preprint)",
    "url": "https://arxiv.org/abs/2601.02278",
    "pais": "China",
-   "institucion": "Department of Automation, Tsinghua University; MCC5 Group Shanghai"
+   "institucion": "Department of Automation, Tsinghua University; institución industrial"
   },
   "extracto": "Vibration and current signals are effective indicators for monitoring motor health and diagnosing faults. However, motors in real applications often operate under variable conditions such as fluctuating speeds and loads, which complicate the fault diagnosis process. ... Eight-channel synchronous vibration-current-torque-keyphase data were recorded from a 2.2 kW three-phase induction motor under variable speed/load profiles at 12.8 kHz.",
   "localizador": "Abstract y Specifications table (hf://papers/2601.02278/paper.md)",
@@ -571,7 +571,7 @@
    "fuente": "arXiv 2601.02278 (Data in Brief, segun la declaracion de etica del preprint)",
    "url": "https://arxiv.org/abs/2601.02278",
    "pais": "China",
-   "institucion": "Department of Automation, Tsinghua University; MCC5 Group Shanghai"
+   "institucion": "Department of Automation, Tsinghua University; institución industrial"
   },
   "extracto": "In industrial practice, distinguishing between mechanical and electrical faults is often challenging due to their similar manifestations, which significantly hinders the efficiency of on-site diagnosis. ... In motor fault diagnosis, stator current signals are widely adopted for online detection of rotor bar breakages due to their easy acquisition and robustness to external disturbances.",
   "localizador": "Seccion BACKGROUND, parrafo 2 (hf://papers/2601.02278/paper.md)",
@@ -594,7 +594,7 @@
    "fuente": "arXiv 2601.02278 (Data in Brief, segun la declaracion de etica del preprint)",
    "url": "https://arxiv.org/abs/2601.02278",
    "pais": "China",
-   "institucion": "Department of Automation, Tsinghua University; MCC5 Group Shanghai"
+   "institucion": "Department of Automation, Tsinghua University; institución industrial"
   },
   "extracto": "the dataset is limited to single-point bearing faults and does not include distributed or progressive fault patterns that may occur in long-term service. Additionally, the fault severity levels are discretely defined and may not fully represent the continuous degradation process observed in actual industrial settings.",
   "localizador": "Seccion LIMITATIONS (hf://papers/2601.02278/paper.md)",
@@ -6042,7 +6042,7 @@
    "fuente": "arXiv 2501.04819",
    "url": "https://arxiv.org/abs/2501.04819",
    "pais": "Canada",
-   "institucion": "Universite Laval; Mila-Quebec AI Institute; FPInnovations"
+   "institucion": "Universite Laval; Mila-Quebec AI Institute; instituto de investigación"
   },
   "extracto": "Specifically, our convolutional autoencoder with skip connections (Skip-CAE) and our Skip-CAE transformer outperform the DCASE autoencoder baseline, one-class SVM, isolation forest and a published convolutional autoencoder architecture, respectively obtaining an area under the ROC curve of 0.846 and 0.875 on a dataset of real-factory planer sounds.",
   "localizador": "Resumen (Abstract) (hf://papers/2501.04819/paper.md)",
@@ -6065,7 +6065,7 @@
    "fuente": "arXiv 2501.04819",
    "url": "https://arxiv.org/abs/2501.04819",
    "pais": "Canada",
-   "institucion": "Universite Laval; Mila-Quebec AI Institute; FPInnovations"
+   "institucion": "Universite Laval; Mila-Quebec AI Institute; instituto de investigación"
   },
   "extracto": "Wood processing equipment monitoring can be done using multiple means, such as power consumption measurement, accelerometers, displacement, temperature and acoustic emission sensors, as well as airborne sound by ultrasound sensors and microphones. ... Microphones are less invasive and do not affect the final product. ... factories are noisy environments where the abnormal sounds might be damped by other noises, such as other machine operations.",
   "localizador": "Seccion I y II (hf://papers/2501.04819/paper.md)",
@@ -6088,9 +6088,9 @@
    "fuente": "arXiv 2501.04819",
    "url": "https://arxiv.org/abs/2501.04819",
    "pais": "Canada",
-   "institucion": "Universite Laval; Mila-Quebec AI Institute; FPInnovations"
+   "institucion": "Universite Laval; Mila-Quebec AI Institute; instituto de investigación"
   },
-  "extracto": "Our new dataset consists of 7,562 10-second-single-channel recordings of an industrial planer (Gilbert High Speed Planer) sampled at 20 kHz for a total of approximately 21 hours of recordings with an ICP microphone model 377A21. ... The training set contains recordings with no anomalies ... Evaluation data contains 105 anomalies—four broken boards passing through the planer, 29 boards being stuck in the planer, and 72 uneven or thick boards going through the planer.",
+  "extracto": "Our new dataset consists of 7,562 10-second-single-channel recordings of an industrial planer (cepilladora de alta velocidad) sampled at 20 kHz for a total of approximately 21 hours of recordings with an ICP microphone model 377A21. ... The training set contains recordings with no anomalies ... Evaluation data contains 105 anomalies—four broken boards passing through the planer, 29 boards being stuck in the planer, and 72 uneven or thick boards going through the planer.",
   "localizador": "Seccion III (hf://papers/2501.04819/paper.md)",
   "afirma": "Conjunto de campo: 7,562 grabaciones de 10 s a 20 kHz (cerca de 21 horas) con un microfono ICP 377A21; entrenamiento sin anomalias y evaluacion con 105 anomalias (4, 29 y 72 de tres tipos).",
   "limites": "Sonido de una cepilladora de madera en un aserradero real (no un rodamiento ni una faja transportadora); solo 105 anomalias en la evaluacion y alguna anomalia podria no estar etiquetada (lo dicen los autores); las duplicaciones de numeros de la conversion se limpiaron. Fuente heredada del caso anterior (rodamientos o máquinas rotativas); se usa por analogía con los rodamientos de la bomba.",
@@ -6111,7 +6111,7 @@
    "fuente": "arXiv 2501.04819",
    "url": "https://arxiv.org/abs/2501.04819",
    "pais": "Canada",
-   "institucion": "Universite Laval; Mila-Quebec AI Institute; FPInnovations"
+   "institucion": "Universite Laval; Mila-Quebec AI Institute; instituto de investigación"
   },
   "extracto": "Isolation forest is the worst performing model with an AUC (pAUC) of 0.518 (0.474). The DCASE baseline performs poorly with an AUC of 0.520 (0.477). One-class SVM also performs poorly with an AUC of 0.683 (0.516). Compared with the CAE of Duman et al., the Skip-CAE performs significantly better with an AUC of 0.846 (0.787) compared to 0.798 (0.720). The Skip-CAE-Transformer performs the best with an AUC of 0.875 (0.785).",
   "localizador": "Seccion V-A (hf://papers/2501.04819/paper.md)",
@@ -6134,7 +6134,7 @@
    "fuente": "arXiv 2501.04819",
    "url": "https://arxiv.org/abs/2501.04819",
    "pais": "Canada",
-   "institucion": "Universite Laval; Mila-Quebec AI Institute; FPInnovations"
+   "institucion": "Universite Laval; Mila-Quebec AI Institute; instituto de investigación"
   },
   "extracto": "TABLE II: AUC and pAUC score of each model for each anomaly type. Columns: Broken Board (AUC, pAUC) | Board Stuck (AUC, pAUC) | Uneven or Thick Wood (AUC, pAUC). Skip-CAE-Transformer 0.743 0.677 0.778 0.744 0.921 0.807; Skip-CAE 0.777 0.618 0.723 0.729 0.900 0.820; CAE of Duman et al. 0.757 0.644 0.639 0.676 0.864 0.742; OneClassSVM 0.558 0.509 0.707 0.519 0.681 0.515; DCASE Baseline 0.441 0.474 0.620 0.480 0.484 0.476; Isolation Forest 0.437 0.474 0.613 0.474 0.485 0.474",
   "localizador": "Tabla II, Seccion V-B (hf://papers/2501.04819/paper.md)",
@@ -6632,12 +6632,12 @@
    "fuente": "arXiv:2601.02278 (articulo de datos; el texto declara los requisitos de Data in Brief); datos en Mendeley Data DOI 10.17632/6s3dggj9mw.1",
    "url": "https://arxiv.org/abs/2601.02278",
    "pais": "China",
-   "institucion": "MCC5 Group Shanghai; Tsinghua University; Zhengzhou University; Southeast University"
+   "institucion": "institución industrial; Tsinghua University; Zhengzhou University; Southeast University"
   },
   "extracto": "Eight-channel synchronous vibration-current-torque-keyphase data were recorded from a 2.2 kW three-phase induction motor under variable speed/load profiles at 12.8 kHz. Controlled single and compound faults were physically introduced and measured over 282 runs (90 s each), saved as CSV files. ... The dataset includes 24 fault types, encompassing healthy state, rotor imbalance, bending, broken bars, stator winding short circuits (low and high severity), voltage unbalance, static and dynamic eccentricity, bearing faults (inner, outer, ball, and compound), and mechanical-electrical compound faults.",
   "localizador": "Tabla de especificaciones y seccion Data description, hf://papers/2601.02278/paper.md",
   "afirma": "Conjunto publico de motor asincrono de 2.2 kW con 24 tipos de falla (entre ellos fallas de rodamiento de pista interna, externa y bola) en 282 corridas de 90 s a 12.8 kHz.",
-  "limites": "Conjunto de DIAGNOSTICO con fallas sembradas en laboratorio (rodamientos SKF 6205 con muescas laser): no contiene tiempos hasta la falla ni historial de vida; motor de 2.2 kW, no una chumacera de polea. Extracto con el guion largo de 'vibration-current-torque-keyphase' normalizado a guion simple. Fuente heredada del caso anterior (rodamientos o máquinas rotativas); se usa por analogía con los rodamientos de la bomba.",
+  "limites": "Conjunto de DIAGNOSTICO con fallas sembradas en laboratorio (rodamientos rodamiento 6205 con muescas laser): no contiene tiempos hasta la falla ni historial de vida; motor de 2.2 kW, no una chumacera de polea. Extracto con el guion largo de 'vibration-current-torque-keyphase' normalizado a guion simple. Fuente heredada del caso anterior (rodamientos o máquinas rotativas); se usa por analogía con los rodamientos de la bomba.",
   "aplica_a": "Conjunto publico de diagnostico (no de vida); util solo para descartar su uso como datos de tiempo hasta la falla.",
   "revista_cuartil": null,
   "nivel_evidencia": "VERIFICADO-TEXTO"
@@ -6655,12 +6655,12 @@
    "fuente": "arXiv:2601.02278 (articulo de datos; el texto declara los requisitos de Data in Brief); datos en Mendeley Data DOI 10.17632/6s3dggj9mw.1",
    "url": "https://arxiv.org/abs/2601.02278",
    "pais": "China",
-   "institucion": "MCC5 Group Shanghai; Tsinghua University; Zhengzhou University; Southeast University"
+   "institucion": "institución industrial; Tsinghua University; Zhengzhou University; Southeast University"
   },
   "extracto": "Common failures include inter-turn short circuits in stator windings, broken rotor bars, bearing damage, air gap eccentricity, and rotor imbalance ... The dataset is limited to single-point raceway faults, as field data indicates simultaneous damage to both inner and outer races is rare. ... the dataset is limited to single-point bearing faults and does not include distributed or progressive fault patterns that may occur in long-term service.",
   "localizador": "Seccion Background, seccion Experimental design y seccion Limitations, hf://papers/2601.02278/paper.md",
   "afirma": "Los autores enumeran el dano de rodamiento entre las fallas comunes de un motor asincrono (sin dar frecuencias) y afirman, sin cifras ni cita en esa frase, que el dano simultaneo de pista interna y externa es raro en datos de campo; declaran que su conjunto no incluye fallas progresivas de servicio prolongado.",
-  "limites": "Conjunto de DIAGNOSTICO con fallas sembradas en laboratorio (rodamientos SKF 6205 con muescas laser): no contiene tiempos hasta la falla ni historial de vida; motor de 2.2 kW, no una chumacera de polea. Extracto con el guion largo de 'vibration-current-torque-keyphase' normalizado a guion simple. Las frases sobre fallas comunes y sobre dano simultaneo son cualitativas, sin conteos ni porcentajes. Fuente heredada del caso anterior (rodamientos o máquinas rotativas); se usa por analogía con los rodamientos de la bomba.",
+  "limites": "Conjunto de DIAGNOSTICO con fallas sembradas en laboratorio (rodamientos rodamiento 6205 con muescas laser): no contiene tiempos hasta la falla ni historial de vida; motor de 2.2 kW, no una chumacera de polea. Extracto con el guion largo de 'vibration-current-torque-keyphase' normalizado a guion simple. Las frases sobre fallas comunes y sobre dano simultaneo son cualitativas, sin conteos ni porcentajes. Fuente heredada del caso anterior (rodamientos o máquinas rotativas); se usa por analogía con los rodamientos de la bomba.",
   "aplica_a": "Modos de falla de rodamientos de motor (cualitativo); comparabilidad con la chumacera: baja.",
   "revista_cuartil": null,
   "nivel_evidencia": "VERIFICADO-TEXTO"

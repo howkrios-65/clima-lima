@@ -15,7 +15,7 @@
     "E-1304",
     "E-1205"
    ],
-   "nota": "Agrupación del equipo: falla por la vía del rodamiento de la bomba, por el motor impulsor o por modos propios de la bomba. Sin caso real no hay datos para ponderar ramas. Debe ser validado por un experto del activo.",
+   "nota": "Agrupación del equipo: falla por la vía del rodamiento de la bomba, por el motor impulsor o por modos propios de la bomba (sin rama: SIN DATOS PARA ARMARLO). Sin caso real no hay datos para ponderar ramas. Debe ser validado por un experto del activo.",
    "clase": "fisica"
   },
   {
@@ -82,11 +82,11 @@
     "N11"
    ],
    "probabilidad": null,
-   "nivel": "EVIDENCIA",
+   "nivel": "SINTESIS",
    "evidencia": [
     "E-6002"
    ],
-   "nota": "El extracto de E-6002 clasifica los daños por cargas excesivas, desalineación, ajustes apretados, falla de lubricante, desgaste, corrosión y fretting. Rodamientos de bolas, no bombas.",
+   "nota": "El extracto de E-6002 clasifica los daños por cargas excesivas, desalineación, ajustes apretados, falla de lubricante, desgaste, corrosión y fretting. Rodamientos de bolas, no bombas. Los términos instalación, contaminación y la rotulación fuera de condiciones convencionales constan en el resumen, no en el extracto.",
    "clase": "fisica"
   },
   {
@@ -156,7 +156,7 @@
    "evidencia": [
     "E-6002"
    ],
-   "nota": "Listada por E-6002 como causa de daño de rodamientos. La desalineación propia de bombas no tiene fuente leída (ver N26).",
+   "nota": "Listada por E-6002 como causa de daño de rodamientos. La desalineación propia de bombas no tiene fuente leída (ver vacíos).",
    "clase": "fisica"
   },
   {
@@ -271,12 +271,12 @@
    "puerta": "BASE",
    "hijos": [],
    "probabilidad": null,
-   "nivel": "EVIDENCIA",
+   "nivel": "SINTESIS",
    "evidencia": [
     "E-8001",
     "E-1305"
    ],
-   "nota": "E-8001: los autores de la revisión no hallaron sustento teórico ni empírico de los umbrales de kurtosis 3 y 5. E-1305: el conjunto de motor no incluye fallas progresivas de servicio prolongado y define severidades discretas.",
+   "nota": "E-8001: los autores de la revisión no hallaron sustento teórico ni empírico de los umbrales de kurtosis 3 y 5. E-1305: el conjunto de motor no incluye fallas progresivas de servicio prolongado y define severidades discretas. El límite de los conjuntos de banco es una limitación del dato, no una causa demostrada.",
    "clase": "latente"
   },
   {
@@ -311,8 +311,8 @@
  ],
  "vacios": [
   "No existe caso real ni datos de planta: todas las probabilidades son null y ninguna rama puede darse por confirmada.",
-  "Puertas: N0, N2, N4, N12, N15 y N20 son OR. La puerta AND de N1 es lectura del equipo y no tiene fuente leída; si el líder o el experto no la acepta, el árbol se limita a OR.",
-  "N20 y sus hijos N21 a N26: SIN DATOS PARA ARMARLO; solo hay pistas sin leer.",
+  "Puertas: N0, N2, N4, N12, N15 y modos propios son OR. La puerta AND de N1 es lectura del equipo y no tiene fuente leída; si el líder o el experto no la acepta, el árbol se limita a OR.",
+  "Modos propios de la bomba (sello, cavitación, recirculación, anillos de desgaste, golpe de ariete, desbalance y desalineación de la bomba): SIN DATOS PARA ARMARLO; solo hay pistas sin leer.",
   "Fuentes de causas de rodamientos: bolas en fatiga de ciclos muy altos, aerogeneradores, un resumen de 1988 sobre bombas y bancos de laboratorio; comparabilidad baja o media con una bomba centrífuga de planta.",
   "Los nodos latentes N12 a N18 son SINTESIS o EVIDENCIA de banco pendientes de validación con un experto del activo.",
   "Nivel VACIO (valor propio de este árbol): nodo sin contenido respaldado.",

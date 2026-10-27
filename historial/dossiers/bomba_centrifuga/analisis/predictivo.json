@@ -3,13 +3,12 @@
   {
    "id": "P1",
    "texto": "Los conjuntos de bomba leídos son de audio. MIMII reúne sonidos de máquinas industriales, entre ellas bombas, en condición normal y con anomalías provocadas (contaminación, fuga, desbalance rotatorio, daño de riel). Un reempaquetado trae 12615 ejemplos (8830 de entrenamiento, 1893 de validación y 1892 de prueba) con campos path, label y snr; otro trae 2177 ejemplos con path, label y pos. Son clips etiquetados, no historiales de vida.",
-   "nivel": "EVIDENCIA",
+   "nivel": "SINTESIS",
    "evidencia": [
     "E-1700",
-    "E-1701",
-    "E-1702"
+    "E-1701"
    ],
-   "nota": "De E-1700 solo se leyó el resumen. Que no haya tiempos hasta la falla ni censura lo declaran los límites del registro, no el extracto. El vínculo de E-1701 con MIMII se infiere del nombre del repositorio, label no está definida, y E-1702 no tiene origen verificable. Comparabilidad con la bomba centrífuga: baja."
+   "nota": "De E-1700 solo se leyó el resumen. Que no haya tiempos hasta la falla ni censura lo declaran los límites del registro, no el extracto. El vínculo de E-1701 con MIMII se infiere del nombre del repositorio, label no está definida, y E-1702 no tiene origen verificable. Comparabilidad con la bomba centrífuga: baja. Los campos de los reempaquetados y la ausencia de tiempos hasta la falla se deducen de los límites del registro, no del extracto."
   },
   {
    "id": "P2",
@@ -181,12 +180,12 @@
   {
    "id": "P18",
    "texto": "Sobre modelos fundacionales de series: los autores de un preprint reportan que una cabeza ligera sobre embeddings congelados baja el error hasta 5 veces frente a modelos de referencia, en equipos de telecomunicaciones con registros de reparación. En otro trabajo de preentrenamiento multidominio el beneficio es mayor con pocas etiquetas, y con 100 % de etiquetas el modelo entrenado desde cero fue mejor (RMSE 0,0768 frente a 0,0841).",
-   "nivel": "EVIDENCIA",
+   "nivel": "SINTESIS",
    "evidencia": [
     "E-9481",
     "E-9525"
    ],
-   "nota": "Sin evidencia en bombas. Las tablas de errores de ambos preprints no se recuperaron (SIN DATOS PARA ARMARLAS) y el segundo caso es un motor turbofan. No se afirma que un modelo fundacional prediga RUL de la bomba sin entrenamiento propio."
+   "nota": "Sin evidencia en bombas. Las tablas de errores de ambos preprints no se recuperaron (SIN DATOS PARA ARMARLAS) y el segundo caso es un motor turbofan. No se afirma que un modelo fundacional prediga RUL de la bomba sin entrenamiento propio. Los equipos de telecomunicaciones constan en el resumen de E-9481 y el motor turbofan no consta en el extracto de E-9525."
   },
   {
    "id": "P19",
@@ -334,7 +333,7 @@
    ]
   },
   {
-   "riesgo": "Pocas fallas y dispersión de vidas: con cinco rodamientos por condición, las vidas de una misma condición varían en un factor de más de diez; un modelo por modo con pocas fallas queda exploratorio.",
+   "riesgo": "Pocas fallas y dispersión de vidas: con cinco rodamientos por condición, en las condiciones media y baja las vidas varían en un factor de más de diez; un modelo por modo con pocas fallas queda exploratorio.",
    "nivel": "EVIDENCIA",
    "evidencia": [
     "E-9403",
@@ -365,8 +364,7 @@
    "riesgo": "Comparar contra una referencia débil o contar un mejor caso: una ganancia de hasta 15,8 puntos se calculó contra los mejores resultados del método rival y no contra su promedio. El modelo debe superar umbral, tendencia, supervivencia clásica y bosque aleatorio, con promedio y dispersión.",
    "nivel": "EVIDENCIA",
    "evidencia": [
-    "E-9464",
-    "E-9515"
+    "E-9464"
    ]
   },
   {
@@ -382,8 +380,7 @@
    "nivel": "EVIDENCIA",
    "evidencia": [
     "E-9463",
-    "E-9517",
-    "E-9513"
+    "E-9517"
    ]
   },
   {

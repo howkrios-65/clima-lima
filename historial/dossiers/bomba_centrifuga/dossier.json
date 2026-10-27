@@ -9,7 +9,7 @@
      "evidencia": [
       "E-1301"
      ],
-     "limite": "Banco de motor de 2.2 kW sin bomba; solo respalda que existe este esquema de medicion y la afirmacion de los autores; no da umbrales para bombas."
+     "limite": "Banco de motor de 2.2 kW sin bomba; solo respalda que existe este esquema de medicion y la afirmacion de los autores; no da umbrales para bombas. Detalles como vibración triaxial, FFT, wavelet y entornos de fábrica constan en resúmenes, no en los extractos."
     },
     {
      "tipo": "afirmacion",
@@ -17,7 +17,7 @@
      "evidencia": [
       "E-1302"
      ],
-     "limite": "Solo resumen del autor; sin cifras ni umbrales."
+     "limite": "Solo resumen del autor; sin cifras ni umbrales. Detalles como vibración triaxial, FFT, wavelet y entornos de fábrica constan en resúmenes, no en los extractos."
     }
    ]
   },
@@ -87,10 +87,9 @@
      "titulo": "Datos acusticos de bombas etiquetados normal/anomalo (MIMII y reempaquetados)",
      "evidencia": [
       "E-1700",
-      "E-1701",
-      "E-1702"
+      "E-1701"
      ],
-     "limite": "Solo diagnostico/deteccion de anomalia por audio; sin tiempos hasta la falla, sin censura, sin vibracion/presion/caudal/corriente; licencia y definicion de etiquetas no leidas en los repos de Hugging Face."
+     "limite": "Solo diagnostico/deteccion de anomalia por audio; sin tiempos hasta la falla, sin censura, sin vibracion/presion/caudal/corriente; licencia y definicion de etiquetas no leidas en los repos de Hugging Face. Un reempaquetado (E-1702) no se usa como respaldo: su origen no está verificado."
     }
    ]
   },
@@ -125,13 +124,63 @@
       "E-1202",
       "E-1203",
       "E-1204",
+      "E-1205",
       "E-1301",
       "E-1302",
+      "E-1303",
       "E-1304",
+      "E-1305",
       "E-1700",
       "E-1701",
       "E-1702",
       "E-1703",
+      "E-6002",
+      "E-6003",
+      "E-6004",
+      "E-8001",
+      "E-8003",
+      "E-8008",
+      "E-9205",
+      "E-9401",
+      "E-9403",
+      "E-9404",
+      "E-9405",
+      "E-9426",
+      "E-9430",
+      "E-9431",
+      "E-9432",
+      "E-9433",
+      "E-9444",
+      "E-9455",
+      "E-9456",
+      "E-9457",
+      "E-9461",
+      "E-9463",
+      "E-9464",
+      "E-9466",
+      "E-9468",
+      "E-9469",
+      "E-9472",
+      "E-9473",
+      "E-9475",
+      "E-9476",
+      "E-9477",
+      "E-9479",
+      "E-9480",
+      "E-9481",
+      "E-9505",
+      "E-9506",
+      "E-9507",
+      "E-9511",
+      "E-9513",
+      "E-9514",
+      "E-9515",
+      "E-9517",
+      "E-9519",
+      "E-9522",
+      "E-9523",
+      "E-9524",
+      "E-9525",
       "E-9604"
      ],
      "limite": "no declarado"
