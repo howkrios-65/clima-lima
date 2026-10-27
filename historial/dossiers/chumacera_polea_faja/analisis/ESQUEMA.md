@@ -1,6 +1,6 @@
 # Esquema de entrega de los especialistas (modo de falla: chumacera de polea de faja transportadora)
 
-Base de evidencia (única que puedes citar): /home/user/clima-lima/historial/dossiers/chumacera_polea_faja/evidencia.json (63 entradas; cada una con id, nivel_evidencia, extracto, afirma y limites)
+Base de evidencia (única que puedes citar): /home/user/clima-lima/historial/dossiers/chumacera_polea_faja/evidencia.json (169 entradas; cada una con id, nivel_evidencia, extracto, afirma y limites)
 y el dossier ya validado: /home/user/clima-lima/historial/dossiers/chumacera_polea_faja/dossier.json. LEE ambos antes de escribir.
 
 ## Reglas (todas obligatorias)

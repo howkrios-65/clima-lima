@@ -221,6 +221,6 @@ await p.evaluate(()=>{window.__imp=0;window.print=()=>{window.__imp++}});await p
 console.log(JSON.stringify({tabs,pills,notas,a,c,links,bad,gr,imp,e}));await b.close()})()"""
     r = subprocess.run(["node", "-e", js, str(html)], capture_output=True, text=True, timeout=180)
     o = json.loads(r.stdout.strip().splitlines()[-1])
-    assert "Referencias" in o["tabs"] and o["pills"] >= 20 and o["notas"] == 2, o
+    assert "Referencias" in o["tabs"] and o["pills"] >= 20 and o["notas"] == 3, o
     assert o["a"] is True and o["c"] is False, o          # el panel se cierra al hacer clic afuera
     assert o["links"] > 20 and o["bad"] == 0 and o["gr"] >= 10 and o["imp"] == 1 and o["e"] == [], o

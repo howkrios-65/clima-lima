@@ -1,48 +1,481 @@
 {
  "hipotesis": [
-  {"id":"H1","texto":"Lubricación inadecuada o falla del lubricante en el rodamiento de la chumacera.","estado":"posible","prueba_para_confirmar":"Evidencia del activo: historial y registros de lubricación (tipo, cantidad, frecuencia), estado del lubricante retirado y de las superficies de rodadura tras desmontar, y vibración, aceite y termografía antes de la parada. Se descarta si el lubricante y las superficies no muestran signos de falla de lubricación.","evidencia":["E-6001","E-6002","E-6004"],"nivel":"SINTESIS","nota":"Las fuentes la nombran como causa en rodillos, rodamientos en general y bombas; ninguna es chumacera de polea. Se transfiere por analogía de mecanismo. Debe ser validado por un experto del activo."},
-  {"id":"H2","texto":"Contaminación (partículas, humedad) que ingresa a la chumacera y produce corrosión o daño de las pistas.","estado":"posible","prueba_para_confirmar":"Inspección del lubricante y las pistas retirados, estado de sellos y condiciones de polvo y humedad en el sitio. Se descarta si lubricante y sellos están íntegros y no hay rastros de corrosión.","evidencia":["E-6001","E-6004"],"nivel":"SINTESIS","nota":"E-6001 la cita en rodillos y E-6004 como origen de corrosión en bombas. Transferida por analogía. Debe ser validado por un experto del activo."},
-  {"id":"H3","texto":"Desalineación del rodamiento o del eje de la polea respecto del soporte.","estado":"posible","prueba_para_confirmar":"Medición de alineación y asentamiento del soporte en el activo, y patrón de desgaste de las pistas tras desmontar. Se descarta si la alineación está dentro de lo que fije el fabricante y el desgaste es simétrico.","evidencia":["E-6001","E-6002"],"nivel":"SINTESIS","nota":"Causa de daño en rodillos y en rodamientos. Falta fuente específica de poleas. Debe ser validado por un experto del activo."},
-  {"id":"H4","texto":"Carga excesiva sobre el rodamiento respecto de la prevista en el diseño (por ejemplo, tensiones de banda mayores que las supuestas).","estado":"posible","prueba_para_confirmar":"Comparar la carga real sobre la polea con la carga de diseño del rodamiento, con datos del activo. Se descarta si la carga real es menor que la de diseño.","evidencia":["E-6002","E-6003"],"nivel":"SINTESIS","nota":"E-6002 enumera la carga excesiva como causa de daño; E-6003 indica que la vida nominal supone condiciones convencionales. La conexión con tensiones de banda es razonamiento del equipo. Debe ser validado por un experto del activo."},
-  {"id":"H5","texto":"Ajuste inadecuado (apretado) del rodamiento en el eje o en el alojamiento, con sobrecalentamiento.","estado":"posible","prueba_para_confirmar":"Medir ajustes y tolerancias del eje y el alojamiento y buscar signos de sobrecalentamiento en el rodamiento retirado. Se descarta si los ajustes cumplen la especificación y no hay signos térmicos.","evidencia":["E-6002","E-6004"],"nivel":"EVIDENCIA","nota":"E-6002 cita los ajustes apretados y E-6004 el sobrecalentamiento por ajustes inadecuados. Fuentes de rodamientos y bombas, no de poleas."},
-  {"id":"H6","texto":"Mala manipulación o instalación del rodamiento antes y durante el montaje.","estado":"posible","prueba_para_confirmar":"Registros y procedimiento de montaje y marcas de manipulación en las pistas del rodamiento retirado. Se descarta si el procedimiento se cumplió y no hay marcas.","evidencia":["E-6004"],"nivel":"EVIDENCIA","nota":"E-6004 la cita como causa de falla prematura en bombas. Aplica por analogía. La pregunta de fondo es por qué el sistema lo permitió (procedimiento, capacitación, herramienta), no quién lo hizo."},
-  {"id":"H7","texto":"Fatiga de contacto por rodadura (descascarado subsuperficial) en condiciones convencionales: fin de vida esperado y no falla prematura.","estado":"posible","prueba_para_confirmar":"Edad o ciclos del rodamiento frente a su vida nominal y morfología del daño tras desmontar. Se descarta si falló muy por debajo de su vida nominal con signos de otras causas.","evidencia":["E-6002","E-6003"],"nivel":"EVIDENCIA","nota":"Según E-6002, en condiciones convencionales la causa de falla es la fatiga de contacto. Según E-6003, la vida nominal es la que alcanza o supera el 90 % de la población. La edición de la norma no está verificada."},
-  {"id":"H8","texto":"Detección tardía: el defecto avanza sin ser detectado por el indicador o el umbral de monitoreo en uso.","estado":"posible","prueba_para_confirmar":"Historial de mediciones previas: qué indicadores, con qué periodicidad y umbrales, y si había señales previas no atendidas. Se descarta si el defecto apareció entre dos mediciones sin señal previa detectable.","evidencia":["E-8001","E-8003","E-8008","E-8010"],"nivel":"SINTESIS","nota":"Premisas: el RMS es poco sensible a defectos incipientes (E-8001); la kurtosis vuelve a valores normales al extenderse el defecto (E-8003); el espectro de velocidad detecta solo etapas tardías (E-8001); los umbrales 3 y 5 no tienen sustento hallado (E-8001); la exactitud de los modelos depende de la partición (E-8010). Contribuye a la consecuencia, no al inicio del daño. Debe ser validado por un experto del activo."},
-  {"id":"H9","texto":"Mecanismos secundarios de daño: corrosión, fricción por micro-movimiento (fretting) y desgaste del rodamiento o su asiento.","estado":"posible","prueba_para_confirmar":"Examen de las superficies del rodamiento y de los asientos tras desmontar. Se descarta si no presentan estos signos.","evidencia":["E-6002","E-6004"],"nivel":"EVIDENCIA","nota":"E-6002 los lista como causas de daño. E-6004 vincula la corrosión con la contaminación (ver H2)."}
+  {
+   "id": "H1",
+   "texto": "Lubricación inadecuada o falla del lubricante en el rodamiento de la chumacera.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Evidencia del activo: historial y registros de lubricación (tipo, cantidad, frecuencia), estado del lubricante retirado y de las superficies de rodadura tras desmontar, y vibración, aceite y termografía antes de la parada. Se descarta si el lubricante y las superficies no muestran signos de falla de lubricación.",
+   "evidencia": [
+    "E-6001",
+    "E-6002",
+    "E-6004"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "Las fuentes la nombran como causa en rodillos, rodamientos en general y bombas; ninguna es chumacera de polea. Se transfiere por analogía de mecanismo. Debe ser validado por un experto del activo."
+  },
+  {
+   "id": "H2",
+   "texto": "Contaminación (partículas, humedad) que ingresa a la chumacera y produce corrosión o daño de las pistas.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Inspección del lubricante y las pistas retirados, estado de sellos y condiciones de polvo y humedad en el sitio. Se descarta si lubricante y sellos están íntegros y no hay rastros de corrosión.",
+   "evidencia": [
+    "E-6001",
+    "E-6004"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-6001 la cita en rodillos y E-6004 como origen de corrosión en bombas. Transferida por analogía. Debe ser validado por un experto del activo."
+  },
+  {
+   "id": "H3",
+   "texto": "Desalineación del rodamiento o del eje de la polea respecto del soporte.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Medición de alineación y asentamiento del soporte en el activo, y patrón de desgaste de las pistas tras desmontar. Se descarta si la alineación está dentro de lo que fije el fabricante y el desgaste es simétrico.",
+   "evidencia": [
+    "E-6001",
+    "E-6002"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "Causa de daño en rodillos y en rodamientos. Falta fuente específica de poleas. Debe ser validado por un experto del activo."
+  },
+  {
+   "id": "H4",
+   "texto": "Carga excesiva sobre el rodamiento respecto de la prevista en el diseño (por ejemplo, tensiones de banda mayores que las supuestas).",
+   "estado": "posible",
+   "prueba_para_confirmar": "Comparar la carga real sobre la polea con la carga de diseño del rodamiento, con datos del activo. Se descarta si la carga real es menor que la de diseño.",
+   "evidencia": [
+    "E-6002",
+    "E-6003"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-6002 enumera la carga excesiva como causa de daño; E-6003 indica que la vida nominal supone condiciones convencionales. La conexión con tensiones de banda es razonamiento del equipo. Debe ser validado por un experto del activo."
+  },
+  {
+   "id": "H5",
+   "texto": "Ajuste inadecuado (apretado) del rodamiento en el eje o en el alojamiento, con sobrecalentamiento.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Medir ajustes y tolerancias del eje y el alojamiento y buscar signos de sobrecalentamiento en el rodamiento retirado. Se descarta si los ajustes cumplen la especificación y no hay signos térmicos.",
+   "evidencia": [
+    "E-6002",
+    "E-6004"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-6002 cita los ajustes apretados y E-6004 el sobrecalentamiento por ajustes inadecuados. Fuentes de rodamientos y bombas, no de poleas. Respaldo de rodamientos generales y bombas; transferido por analogía a poleas (criterio del equipo)."
+  },
+  {
+   "id": "H6",
+   "texto": "Mala manipulación o instalación del rodamiento antes y durante el montaje.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Registros y procedimiento de montaje y marcas de manipulación en las pistas del rodamiento retirado. Se descarta si el procedimiento se cumplió y no hay marcas.",
+   "evidencia": [
+    "E-6004"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-6004 la cita como causa de falla prematura en bombas. Aplica por analogía. La pregunta de fondo es por qué el sistema lo permitió (procedimiento, capacitación, herramienta), no quién lo hizo. Respaldo de rodamientos generales y bombas; transferido por analogía a poleas (criterio del equipo)."
+  },
+  {
+   "id": "H7",
+   "texto": "Fatiga de contacto por rodadura (descascarado subsuperficial) en condiciones convencionales: fin de vida esperado y no falla prematura.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Edad o ciclos del rodamiento frente a su vida nominal y morfología del daño tras desmontar. Se descarta si falló muy por debajo de su vida nominal con signos de otras causas.",
+   "evidencia": [
+    "E-6002",
+    "E-6003"
+   ],
+   "nivel": "EVIDENCIA",
+   "nota": "Según E-6002, en condiciones convencionales la causa de falla es la fatiga de contacto. Según E-6003, la vida nominal es la que alcanza o supera el 90 % de la población. La edición de la norma no está verificada."
+  },
+  {
+   "id": "H8",
+   "texto": "Detección tardía: el defecto avanza sin ser detectado por el indicador o el umbral de monitoreo en uso.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Historial de mediciones previas: qué indicadores, con qué periodicidad y umbrales, y si había señales previas no atendidas. Se descarta si el defecto apareció entre dos mediciones sin señal previa detectable.",
+   "evidencia": [
+    "E-8001",
+    "E-8003",
+    "E-8008",
+    "E-8010"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "Premisas: el RMS es poco sensible a defectos incipientes (E-8001); la kurtosis vuelve a valores normales al extenderse el defecto (E-8003); el espectro de velocidad detecta solo etapas tardías (E-8001); los umbrales 3 y 5 no tienen sustento hallado (E-8001); la exactitud de los modelos depende de la partición (E-8010). Contribuye a la consecuencia, no al inicio del daño. Debe ser validado por un experto del activo. E-8010 es un preprint 2026 de identificador no contrastado."
+  },
+  {
+   "id": "H9",
+   "texto": "Mecanismos secundarios de daño: corrosión, fricción por micro-movimiento (fretting) y desgaste del rodamiento o su asiento.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Examen de las superficies del rodamiento y de los asientos tras desmontar. Se descarta si no presentan estos signos.",
+   "evidencia": [
+    "E-6002",
+    "E-6004"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-6002 los lista como causas de daño. E-6004 vincula la corrosión con la contaminación (ver H2). Respaldo de rodamientos generales y bombas; transferido por analogía a poleas (criterio del equipo)."
+  }
  ],
  "ishikawa": {
   "Máquina": [
-   {"texto":"Desalineación del rodamiento o del eje respecto del soporte.","evidencia":["E-6001","E-6002"],"nivel":"SINTESIS"},
-   {"texto":"Ajustes apretados en el eje o el alojamiento que llevan a sobrecalentamiento.","evidencia":["E-6002","E-6004"],"nivel":"EVIDENCIA"},
-   {"texto":"Carga excesiva sobre el rodamiento.","evidencia":["E-6002"],"nivel":"EVIDENCIA"}
+   {
+    "texto": "Carga radial real sobre la chumacera mayor que la de diseño (tensiones de banda mayores que las supuestas, arranques con carga). CONDICION A VERIFICAR.",
+    "mecanismo": "Una carga mayor eleva el esfuerzo de contacto y acorta la vida a fatiga; la vida nominal decrece con la relación carga dinámica / carga aplicada elevada a un exponente (E-6002).",
+    "verificar": "Recalcular la reacción en la chumacera con las tensiones reales de banda y compararla con la capacidad dinámica del rodamiento; registrar corriente del motor en arranque con carga y en régimen; revisar la huella de carga en la pista del rodamiento retirado.",
+    "evidencia": [
+     "E-6002",
+     "E-6003"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "E-6002 lista la carga excesiva como causa de daño; E-6003 dice que la vida nominal supone condiciones convencionales. La conexión con tensión de banda y arranques es razonamiento del equipo, sin fuente leída. Validar con un experto del activo."
+   },
+   {
+    "texto": "Desalineación del eje de la polea respecto del soporte o entre soportes.",
+    "mecanismo": "El rodamiento queda con carga localizada y desgaste asimétrico de pista; en vibración aparece como componente de la frecuencia del eje y no como defecto de pista (E-9305).",
+    "verificar": "Medir alineación de soportes y escuadra del eje con el método que fije el fabricante; revisar la huella de contacto asimétrica en las pistas; comparar el espectro de baja frecuencia con el de envolvente.",
+    "evidencia": [
+     "E-6001",
+     "E-6002",
+     "E-9305"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "La desalineación está nombrada como causa de daño en rodillos (E-6001) y rodamientos (E-6002). No hay fuente leída de poleas de faja. Solo es respaldo directo que la desalineación figura como causa de daño; carga localizada y desgaste asimétrico son razonamiento del equipo."
+   },
+   {
+    "texto": "Ajuste apretado o inadecuado entre rodamiento, eje y alojamiento.",
+    "mecanismo": "Un ajuste inadecuado causa sobrecalentamiento y daño del rodamiento (E-6004); los ajustes apretados figuran como causa de daño (E-6002).",
+    "verificar": "Medir diámetros de eje y alojamiento y compararlos con la tolerancia del fabricante; buscar coloración térmica en las pistas y marcas de giro del anillo en el asiento; termografía previa a la parada.",
+    "evidencia": [
+     "E-6002",
+     "E-6004"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Fuentes de rodamientos y bombas, no de poleas."
+   },
+   {
+    "texto": "Barrera de sellado de la chumacera insuficiente para el medio (sellos, laberintos, tapas, puertos de engrase). CONDICION A VERIFICAR: polvo y humedad del sitio.",
+    "mecanismo": "Ingreso de partículas y humedad al interior; la contaminación puede causar corrosión y daño de pistas (E-6004) y es causa de daño en rodillos (E-6001).",
+    "verificar": "Inspeccionar estado de sellos y retenes, holgura del laberinto y limpieza de puertos de engrase; examinar el lubricante retirado en busca de partículas o agua.",
+    "evidencia": [
+     "E-6001",
+     "E-6004",
+     "E-9304"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Premisas: contaminación como causa (E-6001, E-6004) y rodamientos en ambientes agresivos (E-9304). Que el sellado de esta chumacera sea la barrera débil es hipótesis del equipo. Validar con un experto del activo. Los términos del mecanismo van más allá del texto de la fuente; son razonamiento del equipo."
+   },
+   {
+    "texto": "Geometría de lubricación del soporte (cámara, canal, puerto, drenaje) que no permite renovar ni retener el lubricante de forma efectiva.",
+    "mecanismo": "Una película insuficiente deja contacto metal-metal y desgaste; la falla de lubricante figura como causa de daño (E-6002, E-6004).",
+    "verificar": "Revisar planos y estado del soporte: cantidad que admite la cámara, trayectoria del lubricante hasta la pista, rastros de lubricante agotado o desplazado al desmontar.",
+    "evidencia": [
+     "E-6002",
+     "E-6004"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Las fuentes nombran la falla de lubricante, no la geometría del soporte. Validar con un experto del activo. Los términos del mecanismo van más allá del texto de la fuente; son razonamiento del equipo."
+   },
+   {
+    "texto": "Daño secundario de asientos y superficies: fretting, corrosión y desgaste del asiento o del anillo.",
+    "mecanismo": "Micro-movimiento entre anillo y asiento, corrosión y desgaste son causas de daño de rodamientos (E-6002).",
+    "verificar": "Examen visual y con aumento de asientos del eje y alojamiento y de las superficies del anillo tras desmontar.",
+    "evidencia": [
+     "E-6002"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Fuente de rodamientos de bolas en fatiga de ciclos muy altos, no de poleas. Los términos del mecanismo van más allá del texto de la fuente; son razonamiento del equipo."
+   }
   ],
   "Método": [
-   {"texto":"Prácticas de lubricación inadecuadas (lubricante, cantidad, frecuencia) como causa de falla de lubricante.","evidencia":["E-6001","E-6004"],"nivel":"SINTESIS"},
-   {"texto":"Procedimientos de manipulación e instalación que permiten daño antes o durante el montaje.","evidencia":["E-6004"],"nivel":"EVIDENCIA"},
-   {"texto":"Selección por vida nominal, que solo predice fatiga de contacto y no otras causas.","evidencia":["E-6003","E-6002"],"nivel":"SINTESIS"}
+   {
+    "texto": "Práctica de relubricación (tipo, cantidad, intervalo) no ajustada a las condiciones reales de operación.",
+    "mecanismo": "Lubricante insuficiente, degradado o inadecuado produce falla de lubricación (E-6001, E-6002, E-6004); la vida del rodamiento depende de condición de operación, temperatura y nivel de mantenimiento (E-9302).",
+    "verificar": "Revisar el plan y los registros de engrase (producto, cantidad, frecuencia, quién y cuándo) y compararlos con la recomendación del fabricante del rodamiento.",
+    "evidencia": [
+     "E-6001",
+     "E-6002",
+     "E-6004",
+     "E-9302"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "La lubricación inadecuada es causa nombrada en las fuentes; que la práctica del activo esté desajustada es hipótesis sin registros. Validar con un experto del activo."
+   },
+   {
+    "texto": "Montaje e instalación del rodamiento sin control suficiente (manipulación previa, método de calado, verificación posterior).",
+    "mecanismo": "El mal manejo antes y durante la instalación figura como causa de falla prematura (E-6004); el montaje inadecuado induce defectos (E-9301).",
+    "verificar": "Revisar el procedimiento de montaje, las herramientas usadas y los registros; buscar marcas de impacto o carga indebida en las pistas del rodamiento retirado.",
+    "evidencia": [
+     "E-6004",
+     "E-9301"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Fuentes de bombas y de rodamientos en general. El enfoque es el sistema (procedimiento, herramienta, verificación), no quién montó. Términos del mecanismo: razonamiento del equipo."
+   },
+   {
+    "texto": "Selección del rodamiento solo por vida nominal, que cubre fatiga de contacto en condiciones convencionales y no las demás causas.",
+    "mecanismo": "E-6003 define la vida nominal para población de buena calidad y condiciones convencionales; E-6002 enumera causas fuera de ellas. La vida modificada incorpora viscosidad del lubricante y contaminación (E-6003).",
+    "verificar": "Revisar la memoria de selección: ¿se usó vida nominal básica o modificada?, ¿qué factores de lubricación y contaminación se supusieron?, ¿se compararon con las condiciones reales del sitio?",
+    "evidencia": [
+     "E-6002",
+     "E-6003"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Razonamiento del equipo a partir de ambas fuentes. Validar con un experto del activo. La vida modificada por viscosidad y contaminación consta en el resumen de E-6003, no en su extracto."
+   },
+   {
+    "texto": "Estrategia de vigilancia con una sola técnica o con indicadores que detectan tarde, sin seguimiento a señales tempranas.",
+    "mecanismo": "El RMS es poco sensible al defecto incipiente y el espectro de velocidad detecta solo en etapas tardías (E-8001); la confianza mejora al combinar vibración con aceite y termografía (E-8003).",
+    "verificar": "Revisar el historial de rutas de medición: qué indicadores, con qué periodicidad, qué señales previas existían y qué se hizo con ellas.",
+    "evidencia": [
+     "E-8001",
+     "E-8003"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Contribuye a que el daño llegue a la falla funcional, no a su inicio. Revisiones narrativas, no de fajas. Validar con un experto del activo."
+   }
   ],
   "Material": [
-   {"texto":"Lubricante degradado o inadecuado.","evidencia":["E-6002","E-6004"],"nivel":"SINTESIS"},
-   {"texto":"Corrosión y desgaste de superficies del rodamiento.","evidencia":["E-6002"],"nivel":"EVIDENCIA"}
+   {
+    "texto": "Lubricante degradado, inadecuado o incompatible con la aplicación.",
+    "mecanismo": "La falla de lubricante es causa de daño de rodamientos (E-6002, E-6004).",
+    "verificar": "Muestra del lubricante retirado: aspecto, olor, presencia de partículas o agua; análisis de aceite o de grasa. La confianza mejora combinando vibración con aceite y termografía (E-8003).",
+    "evidencia": [
+     "E-6002",
+     "E-6004",
+     "E-8003"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Fuentes de rodamientos y bombas."
+   },
+   {
+    "texto": "Corrosión y desgaste de las superficies del rodamiento.",
+    "mecanismo": "La corrosión por contaminación y el desgaste son causas de daño (E-6002, E-6004).",
+    "verificar": "Inspección visual y con aumento de pistas y elementos rodantes tras desmontar.",
+    "evidencia": [
+     "E-6002",
+     "E-6004"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Son mecanismos de daño; la causa de origen está en otras ramas (contaminación, lubricación)."
+   },
+   {
+    "texto": "Fatiga normal del material (descascarado subsuperficial): fin de vida esperado y no falla prematura.",
+    "mecanismo": "En condiciones convencionales la causa de falla es la fatiga de contacto por rodadura (E-6002); la vida nominal es la que alcanza o supera el 90 % de la población (E-6003).",
+    "verificar": "Comparar las horas de servicio con la vida nominal calculada con la carga real; morfología del descascarado en la pista.",
+    "evidencia": [
+     "E-6002",
+     "E-6003"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Edición de la norma de vida nominal no verificada. Se descarta si el rodamiento falló muy por debajo de su vida nominal con signos de otras causas. La relación de la vida con (C/F) elevado a un exponente y el descascarado subsuperficial están en el resumen de la fuente, no en el extracto; criterio del equipo."
+   },
+   {
+    "texto": "Rodamiento con daño previo o calidad no verificada (almacenamiento, manejo, trazabilidad).",
+    "mecanismo": "La vida nominal supone material de alta calidad y buena manufactura (E-6003); el mal manejo antes de la instalación causa falla prematura (E-6004).",
+    "verificar": "Trazabilidad del lote, inspección dimensional y de superficies de rodamientos nuevos de la misma partida; revisión de condiciones de almacenamiento.",
+    "evidencia": [
+     "E-6003",
+     "E-6004"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Que haya un problema de lote es hipótesis sin datos. Validar con un experto del activo."
+   }
   ],
   "Mano de obra": [
-   {"texto":"Manipulación o montaje fuera de buena práctica; la pregunta es qué del sistema lo permitió (procedimiento, capacitación, herramienta).","evidencia":["E-6004"],"nivel":"SINTESIS"}
+   {
+    "texto": "Competencia y herramientas para el montaje del rodamiento, vistas como capacidad del sistema.",
+    "mecanismo": "El mal manejo e instalación causa falla prematura (E-6004); el montaje inadecuado induce defectos (E-9301).",
+    "verificar": "Matriz de competencias, registro de formación en montaje de rodamientos y disponibilidad de herramientas de calado; entrevista no punitiva sobre obstáculos al procedimiento.",
+    "evidencia": [
+     "E-6004",
+     "E-9301"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "No se asigna culpa a personas; la pregunta es qué del sistema lo permitió. Sin datos del activo. Validar con un experto del activo."
+   },
+   {
+    "texto": "Competencia del analista de vibración para elegir la banda del filtro de envolvente e interpretar una kurtosis no monótona.",
+    "mecanismo": "Elegir la banda del filtro es un reto de la envolvente (E-8006, E-8001); la kurtosis vuelve a valores normales al extenderse el defecto (E-8003). Una lectura equivocada oculta el defecto.",
+    "verificar": "Revisar cómo se eligió la banda en el historial de análisis y si se registraron lecturas de kurtosis y envolvente en el tiempo.",
+    "evidencia": [
+     "E-8001",
+     "E-8003",
+     "E-8006"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Premisas verificadas de las revisiones; la aplicación al personal del activo es del equipo. Validar con un experto del activo."
+   },
+   {
+    "texto": "Nivel de mantenimiento e inspección rutinaria de la chumacera (limpieza, estado de sellos, engrase) como actividad con dueño y registro.",
+    "mecanismo": "La salud del rodamiento depende de condición de operación, temperatura y nivel de mantenimiento (E-9302).",
+    "verificar": "Revisar rutas de inspección, órdenes de trabajo y registros; comprobar si la chumacera tiene tarea, frecuencia y responsable definidos.",
+    "evidencia": [
+     "E-9302"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "E-9302 es cita secundaria genérica (referencia no leída). Validar con un experto del activo."
+   }
   ],
   "Medición": [
-   {"texto":"RMS poco sensible a defectos incipientes; la kurtosis no es monótona; el espectro de velocidad detecta solo en etapas tardías.","evidencia":["E-8001","E-8003"],"nivel":"EVIDENCIA"},
-   {"texto":"Umbrales de kurtosis 3 y 5 sin sustento hallado por los autores de la revisión.","evidencia":["E-8001"],"nivel":"EVIDENCIA"},
-   {"texto":"Modelos de diagnóstico probados en banco pueden no generalizar a campo.","evidencia":["E-8010","E-8011"],"nivel":"EVIDENCIA"}
+   {
+    "texto": "RMS y espectro de velocidad detectan tarde el defecto incipiente.",
+    "mecanismo": "El RMS es poco sensible a defectos incipientes y el espectro de velocidad detecta defectos solo en etapas tardías (E-8001).",
+    "verificar": "Revisar si el programa actual depende de RMS o velocidad global y qué aviso dio antes de la parada.",
+    "evidencia": [
+     "E-8001"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Revisión narrativa; no trata fajas ni da tiempos de aviso."
+   },
+   {
+    "texto": "Kurtosis usada como indicador único: no es monótona con el avance del daño.",
+    "mecanismo": "Es buen indicador de defecto incipiente pero vuelve a valores normales cuando el defecto se extiende (E-8003).",
+    "verificar": "Graficar kurtosis, RMS y envolvente en el tiempo para ver si la caída de kurtosis se leyó como mejora.",
+    "evidencia": [
+     "E-8003"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Revisión de 2008; no cuantifica tiempos de aviso. La frase sobre RMS y velocidad no figura en el extracto de E-8001; es razonamiento del equipo."
+   },
+   {
+    "texto": "Umbrales de kurtosis 3 y 5 sin sustento hallado; los umbrales fijos describen pocos tipos de falla.",
+    "mecanismo": "Los autores de una revisión no hallaron sustento teórico ni empírico de los umbrales de kurtosis 3 y 5 (E-8001); los umbrales fijos sobre bandas predeterminadas describen pocos tipos de falla (E-9306).",
+    "verificar": "Identificar el origen de los umbrales de alarma vigentes y si se calibraron con fallas de esta chumacera. Verificar si los umbrales del activo se calibraron con fallas propias.",
+    "evidencia": [
+     "E-8001",
+     "E-9306"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "E-9306 es opinión de introducción. Ningún umbral citado aplica a poleas lentas."
+   },
+   {
+    "texto": "Adquisición con ancho de banda o banda de filtro que no capta el defecto incipiente en una polea lenta.",
+    "mecanismo": "El defecto incipiente excita frecuencias propias típicamente desde 10 kHz hacia arriba (E-9307); elegir la banda del filtro es un reto (E-8006); el kurtograma sirve para localizarla (E-8005). Los bancos públicos listados operan a velocidades de 600 rpm o más (E-9204).",
+    "verificar": "Revisar rango de frecuencias del sensor y muestreo en uso, y si se aplicó envolvente en banda alta. Registrar la velocidad real de la polea.",
+    "evidencia": [
+     "E-9307",
+     "E-8006",
+     "E-8005",
+     "E-9204",
+     "E-9450",
+     "E-9451"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Las fuentes son de banco a mayor velocidad; el comportamiento a baja velocidad es inferencia del equipo. Validar con un experto del activo."
+   },
+   {
+    "texto": "Modelos y reglas de diagnóstico validados en banco, sin evidencia de que generalicen al campo.",
+    "mecanismo": "La exactitud depende de la partición y del conjunto (E-8010); muchas técnicas se prueban en condiciones controladas (E-8011); cargas similares entre entrenamiento y prueba producen resultados engañosos (E-9203).",
+    "verificar": "Si hay un detector automático, pedir cómo se validó (por activo, por condición o por segmento) y si se probó en esta flota.",
+    "evidencia": [
+     "E-8010",
+     "E-8011",
+     "E-9203"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Aplica solo si el activo usa algoritmos de diagnóstico; no se sabe."
+   },
+   {
+    "texto": "Vigilancia sin integrar aceite o grasa, temperatura y termografía, y sin línea base por activo.",
+    "mecanismo": "La confianza mejora al combinar vibración con aceite y termografía (E-8003); una referencia sin falla de la misma máquina es una idea de línea base por activo (E-9209).",
+    "verificar": "Revisar si existe línea base de la chumacera sana y si se cruzan vibración, temperatura y análisis de lubricante.",
+    "evidencia": [
+     "E-8003",
+     "E-9479"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "E-9209 es una idea de un preprint de aprendizaje automático. Validar con un experto del activo."
+   }
   ],
   "Medio ambiente": [
-   {"texto":"Contaminación (partículas, humedad) en el entorno de la chumacera.","evidencia":["E-6001","E-6004"],"nivel":"SINTESIS"}
+   {
+    "texto": "Polvo y partículas del entorno de la chumacera. CONDICION A VERIFICAR.",
+    "mecanismo": "La contaminación es causa de daño en rodillos (E-6001) y origen de corrosión (E-6004); el desgaste por contaminación induce defectos (E-9301); los rodamientos trabajan en ambientes agresivos (E-9304).",
+    "verificar": "Registrar acumulación de polvo y material sobre el soporte, estado de limpieza y partículas en el lubricante retirado.",
+    "evidencia": [
+     "E-6001",
+     "E-6004",
+     "E-9301",
+     "E-9304"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Las fuentes dicen contaminación en general. Que el polvo del sitio sea la fuente es condición a verificar. Validar con un experto del activo."
+   },
+   {
+    "texto": "Humedad, agua de lluvia o de lavado y condensación. CONDICION A VERIFICAR.",
+    "mecanismo": "La corrosión causada por contaminación es origen de falla prematura (E-6004).",
+    "verificar": "Revisar el lubricante en busca de emulsión o agua; marcas de óxido en pistas y asientos; práctica de lavado de la zona.",
+    "evidencia": [
+     "E-6004"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "E-6004 cita la corrosión por contaminación, no la humedad del sitio. Validar con un experto del activo."
+   },
+   {
+    "texto": "Temperatura de operación del soporte elevada por ambiente o por material acumulado que impide disipar calor. CONDICION A VERIFICAR.",
+    "mecanismo": "La salud del rodamiento depende de la temperatura de operación (E-9302); E-6004 liga el sobrecalentamiento a los ajustes; la falla de lubricante es otra causa de su lista.",
+    "verificar": "Termografía del soporte y comparación con soportes gemelos de la misma banda.",
+    "evidencia": [
+     "E-9302",
+     "E-6004"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "E-9302 es cita secundaria sin cuantificar el efecto de la temperatura. Validar con un experto del activo."
+   }
   ]
  },
  "ensayos": [
-  {"ensayo":"Análisis de envolvente de la vibración (filtrado en resonancia, demodulación, FFT) para identificar frecuencias características BPFO, BPFI, BSF y FTF. Su dificultad es elegir la banda del filtro.","para_hipotesis":["H7","H8","H1","H2","H3"],"evidencia":["E-8006","E-8008","E-8001"]},
-  {"ensayo":"Kurtosis y kurtograma (curtosis espectral) para detectar transitorios de defecto incipiente y localizar su banda. La kurtosis no es monótona con el avance del daño.","para_hipotesis":["H8","H7"],"evidencia":["E-8003","E-8005"]},
-  {"ensayo":"Indicador por deconvolución ciega y kurtosis para seguir la severidad del daño. Validado en un ensayo de banco hasta la falla; solo se leyó el resumen.","para_hipotesis":["H8"],"evidencia":["E-8004"]},
-  {"ensayo":"Vibración combinada con análisis de aceite y termografía para mejorar la confianza del diagnóstico.","para_hipotesis":["H1","H2","H5","H8"],"evidencia":["E-8003"]},
-  {"ensayo":"Espectro de velocidad y RMS como evaluación general: detectan defectos solo en etapas tardías o son poco sensibles a defectos incipientes.","para_hipotesis":["H8"],"evidencia":["E-8001"]}
+  {
+   "ensayo": "Análisis de envolvente de la vibración (filtrado en resonancia, demodulación, FFT) para identificar frecuencias características BPFO, BPFI, BSF y FTF. Su dificultad es elegir la banda del filtro.",
+   "para_hipotesis": [
+    "H7",
+    "H8",
+    "H1",
+    "H2",
+    "H3"
+   ],
+   "evidencia": [
+    "E-8006",
+    "E-8008",
+    "E-8001"
+   ]
+  },
+  {
+   "ensayo": "Kurtosis y kurtograma (curtosis espectral) para detectar transitorios de defecto incipiente y localizar su banda. La kurtosis no es monótona con el avance del daño.",
+   "para_hipotesis": [
+    "H8",
+    "H7"
+   ],
+   "evidencia": [
+    "E-8003",
+    "E-8005"
+   ]
+  },
+  {
+   "ensayo": "Indicador por deconvolución ciega y kurtosis para seguir la severidad del daño. Validado en un ensayo de banco hasta la falla; solo se leyó el resumen.",
+   "para_hipotesis": [
+    "H8"
+   ],
+   "evidencia": [
+    "E-8004"
+   ]
+  },
+  {
+   "ensayo": "Vibración combinada con análisis de aceite y termografía para mejorar la confianza del diagnóstico.",
+   "para_hipotesis": [
+    "H1",
+    "H2",
+    "H5",
+    "H8"
+   ],
+   "evidencia": [
+    "E-8003"
+   ]
+  },
+  {
+   "ensayo": "Espectro de velocidad y RMS como evaluación general: detectan defectos solo en etapas tardías o son poco sensibles a defectos incipientes.",
+   "para_hipotesis": [
+    "H8"
+   ],
+   "evidencia": [
+    "E-8001"
+   ]
+  }
  ],
  "vacios": [
   "No existe caso real ni datos de planta: ninguna hipótesis puede pasar de posible.",
@@ -53,5 +486,10 @@
   "Sin fuente leída sobre técnicas para verificar ajustes, carga real o alineación: quedan como verificaciones de campo a definir por un experto.",
   "Sin técnicas leídas de análisis post mortem del rodamiento (metalografía, microscopía): las pruebas propuestas son inspecciones generales, no ensayos citados.",
   "Tiempos de aviso por técnica y criterios de alarma de vibración para poleas lentas: sin fuente leída."
- ]
+ ],
+ "ishikawa_notas": {
+  "Mano de obra": "SIN DATOS PARA ARMARLO (parcial). Datos que faltan: rol de turnos y dotación, matriz de competencias y formación, procedimiento vigente de montaje y de engrase, registros de intervenciones y análisis humano previo. SIN DATOS PARA ARMARLO (sin fuente): Traspaso de información entre turnos sobre señales tempranas (ruido, temperatura, fugas de grasa). Queda como pregunta a verificar en terreno.",
+  "Medio ambiente": "SIN DATOS PARA ARMARLO (parcial). Datos que faltan: concentración de polvo y humedad, temperatura ambiente y del soporte, tipo de material transportado, frecuencia de lavado, clima local y estado de la estructura de apoyo. SIN DATOS PARA ARMARLO (sin fuente): Estructura de apoyo o base del soporte que se deforma o asienta, desalineando el conjunto. Queda como pregunta a verificar en terreno.",
+  "Método": "SIN DATOS PARA ARMARLO (sin fuente): Secuencia de arranque y parada con banda cargada. Queda como pregunta a verificar en terreno."
+ }
 }

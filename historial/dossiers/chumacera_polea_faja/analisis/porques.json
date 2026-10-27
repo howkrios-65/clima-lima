@@ -1,23 +1,143 @@
 [
-{"causa":"H1","titulo":"Lubricación inadecuada o falla del lubricante","cadena":[
- {"porque":"¿Por qué falló la chumacera? Porque el rodamiento acumuló daño en las superficies de rodadura hasta perder el giro.","evidencia":["E-6002","E-8008"],"nivel":"SINTESIS"},
- {"porque":"¿Por qué hubo daño? Porque la película de lubricante no separó las superficies (falla de lubricante), con desgaste y daño de pistas.","evidencia":["E-6002","E-6004"],"nivel":"EVIDENCIA"},
- {"porque":"¿Por qué el lubricante no cumplió? Porque tipo, cantidad o intervalo de relubricación no estaban ajustados a las condiciones reales (carga, temperatura, contaminación).","evidencia":["E-6001","E-6004","E-9302"],"nivel":"SINTESIS"},
- {"porque":"¿Por qué no estaban ajustados? Porque la práctica se definió con base en condiciones convencionales, sin verificar el resultado, mientras la vida modificada depende de la viscosidad del lubricante y de la contaminación.","evidencia":["E-6003","E-9302"],"nivel":"SINTESIS"},
- {"porque":"¿Por qué el sistema lo permitió? Porque la lubricación no se gestionó como un modo de falla con indicador y verificación, y el monitoreo con indicadores tardíos no la señaló a tiempo. Causa latente a confirmar con registros.","evidencia":["E-8001","E-8003","E-6003"],"nivel":"SINTESIS"}
-]},
-{"causa":"H2","titulo":"Contaminación de la chumacera","cadena":[
- {"porque":"¿Por qué falló la chumacera? Por corrosión y desgaste de pistas y elementos rodantes asociados a contaminación.","evidencia":["E-6004","E-9301"],"nivel":"EVIDENCIA"},
- {"porque":"¿Por qué entró contaminación? Porque la barrera de sellado no impidió el ingreso de partículas o humedad en un ambiente que puede ser agresivo (condición a verificar), o porque se introdujo durante la instalación o el engrase.","evidencia":["E-6001","E-6004","E-9304"],"nivel":"SINTESIS"},
- {"porque":"¿Por qué la barrera no fue suficiente? Porque el sellado se especificó y mantuvo para condiciones convencionales, o porque su deterioro no se detectó.","evidencia":["E-6003","E-6004"],"nivel":"SINTESIS"},
- {"porque":"¿Por qué no se detectó el deterioro? Porque las rutas de inspección no incluyen estado de sellos ni del lubricante, y la vibración detecta tarde con RMS y velocidad.","evidencia":["E-8001","E-8003"],"nivel":"SINTESIS"},
- {"porque":"¿Por qué el sistema lo permitió? Porque la selección y el plan de mantenimiento se apoyaron en una vida nominal que cubre fatiga en condiciones convencionales y no trataron la contaminación como modo de falla gestionado.","evidencia":["E-6002","E-6003"],"nivel":"SINTESIS"}
-]},
-{"causa":"H3","titulo":"Desalineación del eje y el soporte","cadena":[
- {"porque":"¿Por qué falló la chumacera? Porque la carga se concentró en parte de las pistas con desgaste y daño asimétrico, consecuencia de desalineación.","evidencia":["E-6001","E-6002"],"nivel":"EVIDENCIA"},
- {"porque":"¿Por qué hubo desalineación? Porque el eje y el soporte quedaron fuera de la posición de diseño (asiento del soporte, escuadra del eje, base).","evidencia":["E-6001","E-6002"],"nivel":"SINTESIS"},
- {"porque":"¿Por qué quedaron fuera de posición? Por falta de verificación de alineación al montar o tras intervenciones, o por pérdida de posición en servicio. Condición a verificar con mediciones.","evidencia":["E-6004","E-6002"],"nivel":"SINTESIS"},
- {"porque":"¿Por qué no se detectó antes? Porque la desalineación se ve como componente de la frecuencia del eje y no como defecto de pista, y el monitoreo se enfoca en defectos de rodamiento.","evidencia":["E-9305","E-8001"],"nivel":"SINTESIS"},
- {"porque":"¿Por qué el sistema lo permitió? Porque no hay requisito de verificar alineación en la puesta en servicio ni tras intervenciones, ni un indicador que la vigile. Causa latente a confirmar.","evidencia":["E-9305","E-8003"],"nivel":"SINTESIS"}
-]}
+ {
+  "causa": "H1",
+  "titulo": "Lubricación inadecuada o falla del lubricante",
+  "cadena": [
+   {
+    "porque": "¿Por qué podría fallar la chumacera? Si esta hipótesis se cumpliera, el rodamiento acumuló daño en las superficies de rodadura hasta perder el giro.",
+    "evidencia": [
+     "E-6002",
+     "E-8008"
+    ],
+    "nivel": "SINTESIS"
+   },
+   {
+    "porque": "Posible respuesta, a verificar con registros del activo (SIN DATOS PARA ARMARLO del caso): ¿Por qué hubo daño? Porque la película de lubricante no separó las superficies (falla de lubricante), con desgaste y daño de pistas.",
+    "evidencia": [
+     "E-6002",
+     "E-6004"
+    ],
+    "nivel": "SINTESIS"
+   },
+   {
+    "porque": "Posible respuesta, a verificar con registros del activo (SIN DATOS PARA ARMARLO del caso): ¿Por qué el lubricante no cumplió? Porque tipo, cantidad o intervalo de relubricación no estaban ajustados a las condiciones reales (carga, temperatura, contaminación).",
+    "evidencia": [
+     "E-6001",
+     "E-6004",
+     "E-9302"
+    ],
+    "nivel": "SINTESIS"
+   },
+   {
+    "porque": "Posible respuesta, a verificar con registros del activo (SIN DATOS PARA ARMARLO del caso): ¿Por qué no estaban ajustados? Porque la práctica se definió con base en condiciones convencionales, sin verificar el resultado, mientras la vida modificada depende de la viscosidad del lubricante y de la contaminación.",
+    "evidencia": [
+     "E-6003",
+     "E-9302"
+    ],
+    "nivel": "SINTESIS"
+   },
+   {
+    "porque": "Posible respuesta, a verificar con registros del activo (SIN DATOS PARA ARMARLO del caso): ¿Por qué el sistema lo permitió? Porque la lubricación no se gestionó como un modo de falla con indicador y verificación, y el monitoreo con indicadores tardíos no la señaló a tiempo. Causa latente a confirmar con registros.",
+    "evidencia": [
+     "E-8001",
+     "E-8003",
+     "E-6003"
+    ],
+    "nivel": "SINTESIS"
+   }
+  ]
+ },
+ {
+  "causa": "H2",
+  "titulo": "Contaminación de la chumacera",
+  "cadena": [
+   {
+    "porque": "¿Por qué falló la chumacera? Por corrosión y desgaste de pistas y elementos rodantes asociados a contaminación.",
+    "evidencia": [
+     "E-6004",
+     "E-9301"
+    ],
+    "nivel": "SINTESIS"
+   },
+   {
+    "porque": "Posible respuesta, a verificar con registros del activo (SIN DATOS PARA ARMARLO del caso): ¿Por qué entró contaminación? Porque la barrera de sellado no impidió el ingreso de partículas o humedad en un ambiente que puede ser agresivo (condición a verificar), o porque se introdujo durante la instalación o el engrase.",
+    "evidencia": [
+     "E-6001",
+     "E-6004",
+     "E-9304"
+    ],
+    "nivel": "SINTESIS"
+   },
+   {
+    "porque": "Posible respuesta, a verificar con registros del activo (SIN DATOS PARA ARMARLO del caso): ¿Por qué la barrera no fue suficiente? Porque el sellado se especificó y mantuvo para condiciones convencionales, o porque su deterioro no se detectó.",
+    "evidencia": [
+     "E-6003",
+     "E-6004"
+    ],
+    "nivel": "SINTESIS"
+   },
+   {
+    "porque": "Posible respuesta, a verificar con registros del activo (SIN DATOS PARA ARMARLO del caso): ¿Por qué no se detectó el deterioro? Porque las rutas de inspección no incluyen estado de sellos ni del lubricante, y la vibración detecta tarde con RMS y velocidad.",
+    "evidencia": [
+     "E-8001",
+     "E-8003"
+    ],
+    "nivel": "SINTESIS"
+   },
+   {
+    "porque": "Posible respuesta, a verificar con registros del activo (SIN DATOS PARA ARMARLO del caso): ¿Por qué el sistema lo permitió? Porque la selección y el plan de mantenimiento se apoyaron en una vida nominal que cubre fatiga en condiciones convencionales y no trataron la contaminación como modo de falla gestionado.",
+    "evidencia": [
+     "E-6002",
+     "E-6003"
+    ],
+    "nivel": "SINTESIS"
+   }
+  ]
+ },
+ {
+  "causa": "H3",
+  "titulo": "Desalineación del eje y el soporte",
+  "cadena": [
+   {
+    "porque": "¿Por qué podría fallar la chumacera? Si esta hipótesis se cumpliera, la carga se concentró en parte de las pistas con desgaste y daño asimétrico, consecuencia de desalineación.",
+    "evidencia": [
+     "E-6001",
+     "E-6002"
+    ],
+    "nivel": "SINTESIS"
+   },
+   {
+    "porque": "Posible respuesta, a verificar con registros del activo (SIN DATOS PARA ARMARLO del caso): ¿Por qué hubo desalineación? Porque el eje y el soporte quedaron fuera de la posición de diseño (asiento del soporte, escuadra del eje, base).",
+    "evidencia": [
+     "E-6001",
+     "E-6002"
+    ],
+    "nivel": "SINTESIS"
+   },
+   {
+    "porque": "Posible respuesta, a verificar con registros del activo (SIN DATOS PARA ARMARLO del caso): ¿Por qué quedaron fuera de posición? Por falta de verificación de alineación al montar o tras intervenciones, o por pérdida de posición en servicio. Condición a verificar con mediciones.",
+    "evidencia": [
+     "E-6004",
+     "E-6002"
+    ],
+    "nivel": "SINTESIS"
+   },
+   {
+    "porque": "Posible respuesta, a verificar con registros del activo (SIN DATOS PARA ARMARLO del caso): ¿Por qué no se detectó antes? Porque la desalineación se ve como componente de la frecuencia del eje y no como defecto de pista, y el monitoreo se enfoca en defectos de rodamiento.",
+    "evidencia": [
+     "E-9305",
+     "E-8001"
+    ],
+    "nivel": "SINTESIS"
+   },
+   {
+    "porque": "Posible respuesta, a verificar con registros del activo (SIN DATOS PARA ARMARLO del caso): ¿Por qué el sistema lo permitió? Porque no hay requisito de verificar alineación en la puesta en servicio ni tras intervenciones, ni un indicador que la vigile. Causa latente a confirmar.",
+    "evidencia": [
+     "E-9305",
+     "E-8003"
+    ],
+    "nivel": "SINTESIS"
+   }
+  ]
+ }
 ]

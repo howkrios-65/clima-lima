@@ -1076,12 +1076,12 @@
   "titulo": "Calibracion D y C (particiones calibradas de 5)",
   "tipo": "tabla",
   "unidad": "particiones de 5",
-  "condiciones": "XJTU-SY; calibrada si p > 0.05; C-Cal solo aplica a BNNSurv ('-' = no aplica)",
+  "condiciones": "XJTU-SY; C-Cal solo aplica a BNNSurv ('-' = no aplica)",
   "replica_de": "Tabla 9 de RULSurv",
   "evidencia": [
    "E-9426"
   ],
-  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto. El texto del artículo da 4 de 5 particiones en BNNSurv C1 con 25 % de censura y la tabla 3 de 5; se usa la tabla. El umbral de la prueba no consta en el extracto.",
   "columnas": [
    "Condicion",
    "Modelo",
@@ -1415,7 +1415,7 @@
   "evidencia": [
    "E-9438"
   ],
-  "limites": "Ensayo acelerado de banco (XJTU-SY/PRONOSTIA) con RUL normalizada; error adimensional, no minutos; no transferible a una chumacera de polea.",
+  "limites": "Ensayo acelerado de banco (XJTU-SY/PRONOSTIA) con RUL normalizada; error adimensional, no minutos; no transferible a una chumacera de polea. El Score de 35 Hz y 12 kN difiere entre las Tablas 1 y 4 con los mismos MSE y MAE; el artículo no lo explica.",
   "columnas": [
    "Modelo",
    "35Hz12kN MSE",
@@ -1489,7 +1489,7 @@
   "evidencia": [
    "E-9442"
   ],
-  "limites": "Ensayo acelerado de banco (XJTU-SY/PRONOSTIA) con RUL normalizada; error adimensional, no minutos; no transferible a una chumacera de polea.",
+  "limites": "Ensayo acelerado de banco (XJTU-SY/PRONOSTIA) con RUL normalizada; error adimensional, no minutos; no transferible a una chumacera de polea. El Score de 35 Hz y 12 kN difiere entre las Tablas 1 y 4 con los mismos MSE y MAE; el artículo no lo explica.",
   "columnas": [
    "Modelo",
    "35Hz12kN MSE",
@@ -1572,6 +1572,745 @@
    {
     "etiqueta": "Sin alinear",
     "valor": "0.2919"
+   }
+  ]
+ },
+ {
+  "id": "R-01",
+  "titulo": "Bancos públicos de rodamientos: muestreo, duración y velocidad",
+  "tipo": "tabla",
+  "unidad": "Hz; s; rpm",
+  "condiciones": "Cuatro bancos de laboratorio reunidos por los autores del marco VibNet; datos según el texto del paper",
+  "replica_de": "Sehri et al. (2025), Sección 2.1 y pies de las Figuras 9 a 12 (arXiv:2504.11581), https://arxiv.org/abs/2504.11581",
+  "evidencia": [
+   "E-9450",
+   "E-9451",
+   "E-9453",
+   "E-9454"
+  ],
+  "limites": "Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora. PADERBORN no declara duración de muestra en el texto leído. La Tabla 1 del paper da otras frecuencias para HUST (51.2 kHz) y PADERBORN (64 kHz).",
+  "columnas": [
+   "Banco",
+   "Frecuencia de muestreo (Hz)",
+   "Duración de muestra (s)",
+   "Velocidad (rpm)",
+   "Carga citada"
+  ],
+  "filas": [
+   [
+    "CWRU",
+    "12,000 y 48,000",
+    "10",
+    "cerca de 1,720 y 1,797",
+    "0 hp en el ejemplo de la Figura 9 (el paper lista 0, 1, 2 y 3 hp en la partición)"
+   ],
+   [
+    "UORED-VAFCLS",
+    "42,000",
+    "10",
+    "1,700 a 1,800",
+    "no indicada en el extracto"
+   ],
+   [
+    "HUST",
+    "25,600",
+    "20",
+    "600 a 2,100",
+    "200 W en el ejemplo de la Figura 11"
+   ],
+   [
+    "PADERBORN",
+    "8,000 y 16,000",
+    "sin dato",
+    "600; 800; 1,000; 1,200; 1,400 y 1,600",
+    "0.7 Nm y 10000 de fuerza radial a 900 rpm en el ejemplo de la Figura 12"
+   ]
+  ]
+ },
+ {
+  "id": "R-02",
+  "titulo": "Parámetros de preprocesamiento a espectrograma por banco",
+  "tipo": "tabla",
+  "unidad": "muestras; kHz",
+  "condiciones": "Segmentos de 0.25 s, 1600 puntos de FFT, 96 % de solape, banda de 0 a 10 kHz",
+  "replica_de": "Sehri et al. (2025), Tabla 1 (arXiv:2504.11581), https://arxiv.org/abs/2504.11581",
+  "evidencia": [
+   "E-9452"
+  ],
+  "limites": "Las frecuencias de HUST y PADERBORN de esta tabla no coinciden con las del texto de la Sección 2.1 (25,600 Hz; 8,000 y 16,000 Hz). Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora.",
+  "columnas": [
+   "Banco",
+   "Longitud de señal (muestras)",
+   "Longitud de ventana",
+   "Frecuencia de muestreo (kHz)"
+  ],
+  "filas": [
+   [
+    "CWRU",
+    "12000",
+    "200",
+    "48 / 12"
+   ],
+   [
+    "UORED-VAFCLS",
+    "10500",
+    "180",
+    "42"
+   ],
+   [
+    "HUST",
+    "12800",
+    "200",
+    "51.2"
+   ],
+   [
+    "PADERBORN",
+    "16000",
+    "180",
+    "64"
+   ]
+  ]
+ },
+ {
+  "id": "R-03",
+  "titulo": "Muestras por estado del rodamiento (totales)",
+  "tipo": "tabla",
+  "unidad": "segmentos",
+  "condiciones": "H sano, I pista interna, O pista externa, B bola; segmentos de espectrograma",
+  "replica_de": "Sehri et al. (2025), Tabla 3, filas de totales (arXiv:2504.11581), https://arxiv.org/abs/2504.11581",
+  "evidencia": [
+   "E-9455"
+  ],
+  "limites": "Solo las filas de totales; los conteos por pliegue no se replican. Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora. La asignación de las filas de totales a carga y severidad sigue el orden del texto; es interpretación del lector.",
+  "columnas": [
+   "Banco / partición",
+   "H",
+   "I",
+   "O",
+   "B"
+  ],
+  "filas": [
+   [
+    "CWRU por carga",
+    "280",
+    "1542",
+    "1540",
+    "1580"
+   ],
+   [
+    "CWRU por severidad",
+    "280",
+    "1522",
+    "1540",
+    "1600"
+   ],
+   [
+    "HUST",
+    "600",
+    "600",
+    "600",
+    "405"
+   ],
+   [
+    "UORED-VAFCLS",
+    "800",
+    "200",
+    "200",
+    "200"
+   ],
+   [
+    "PADERBORN",
+    "1918",
+    "1267",
+    "1907",
+    "0"
+   ]
+  ]
+ },
+ {
+  "id": "R-04",
+  "titulo": "Resultados de transferencia en CWRU: partición por carga y por severidad",
+  "tipo": "tabla",
+  "unidad": "% (media y desviación estándar entre 4 pliegues)",
+  "condiciones": "Exactitud balanceada y F1 macro; K = 4; DenseNet121 sobre espectrogramas",
+  "replica_de": "Sehri et al. (2025), Tabla 4 (arXiv:2504.11581), https://arxiv.org/abs/2504.11581",
+  "evidencia": [
+   "E-9456",
+   "E-9457",
+   "E-9458",
+   "E-9459",
+   "E-9460"
+  ],
+  "limites": "La extracción del texto coloca la fila 'ImageNet parcial 90.04' bajo severidad; se asignó a carga según el texto de la Sección 4.3. Un solo banco, desviaciones de más de 20 puntos en severidad. Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora.",
+  "columnas": [
+   "Partición",
+   "Método",
+   "Exactitud media",
+   "F1 medio",
+   "Desv. exactitud",
+   "Desv. F1"
+  ],
+  "filas": [
+   [
+    "Carga",
+    "Afinado completo ImageNet",
+    "97.58",
+    "97.46",
+    "4.30",
+    "4.53"
+   ],
+   [
+    "Carga",
+    "Afinado completo VibNet",
+    "97.39",
+    "97.32",
+    "3.79",
+    "3.94"
+   ],
+   [
+    "Carga",
+    "Desde cero",
+    "96.84",
+    "96.81",
+    "3.82",
+    "3.89"
+   ],
+   [
+    "Carga",
+    "Afinado parcial VibNet",
+    "95.66",
+    "95.66",
+    "3.62",
+    "3.63"
+   ],
+   [
+    "Carga",
+    "Afinado parcial ImageNet",
+    "90.04",
+    "89.94",
+    "14.86",
+    "15.53"
+   ],
+   [
+    "Severidad",
+    "Afinado completo ImageNet",
+    "64.38",
+    "65.12",
+    "21.39",
+    "21.69"
+   ],
+   [
+    "Severidad",
+    "Afinado completo VibNet",
+    "66.57",
+    "65.91",
+    "22.47",
+    "22.94"
+   ],
+   [
+    "Severidad",
+    "Desde cero",
+    "64.35",
+    "58.00",
+    "20.18",
+    "10.43"
+   ],
+   [
+    "Severidad",
+    "Afinado parcial VibNet",
+    "66.88",
+    "66.21",
+    "21.38",
+    "21.69"
+   ],
+   [
+    "Severidad",
+    "Afinado parcial ImageNet",
+    "58.26",
+    "52.75",
+    "4.31",
+    "7.00"
+   ]
+  ]
+ },
+ {
+  "id": "R-05",
+  "titulo": "Exactitud balanceada media en CWRU con pliegues por carga",
+  "tipo": "barras",
+  "unidad": "% exactitud balanceada media (K = 4)",
+  "condiciones": "Partición por carga (0 a 3 hp); sin intervalos de confianza",
+  "replica_de": "Sehri et al. (2025), Tabla 4, división por carga (arXiv:2504.11581), https://arxiv.org/abs/2504.11581",
+  "evidencia": [
+   "E-9456",
+   "E-9459"
+  ],
+  "limites": "Barras de medias; las desviaciones están en la tabla R-04, no son intervalos de confianza. Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora.",
+  "series": [
+   {
+    "etiqueta": "Afinado completo ImageNet",
+    "valor": "97.58"
+   },
+   {
+    "etiqueta": "Afinado completo VibNet",
+    "valor": "97.39"
+   },
+   {
+    "etiqueta": "Desde cero",
+    "valor": "96.84"
+   },
+   {
+    "etiqueta": "Afinado parcial VibNet",
+    "valor": "95.66"
+   },
+   {
+    "etiqueta": "Afinado parcial ImageNet",
+    "valor": "90.04"
+   }
+  ]
+ },
+ {
+  "id": "R-06",
+  "titulo": "Exactitud balanceada media en CWRU con pliegues por severidad de falla",
+  "tipo": "barras",
+  "unidad": "% exactitud balanceada media (K = 4)",
+  "condiciones": "Partición por severidad (0.007 a 0.028 pulgadas); desviaciones de ~21 puntos",
+  "replica_de": "Sehri et al. (2025), Tabla 4, división por severidad (arXiv:2504.11581), https://arxiv.org/abs/2504.11581",
+  "evidencia": [
+   "E-9457",
+   "E-9458",
+   "E-9460"
+  ],
+  "limites": "Barras de medias; las desviaciones (hasta 22.47) están en la tabla R-04. Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora.",
+  "series": [
+   {
+    "etiqueta": "Afinado completo ImageNet",
+    "valor": "64.38"
+   },
+   {
+    "etiqueta": "Afinado completo VibNet",
+    "valor": "66.57"
+   },
+   {
+    "etiqueta": "Desde cero",
+    "valor": "64.35"
+   },
+   {
+    "etiqueta": "Afinado parcial VibNet",
+    "valor": "66.88"
+   },
+   {
+    "etiqueta": "Afinado parcial ImageNet",
+    "valor": "58.26"
+   }
+  ]
+ },
+ {
+  "id": "R-07",
+  "titulo": "Banco KAIST y protocolo de validación del diagnóstico con velocidad variable",
+  "tipo": "tabla",
+  "unidad": "según fila",
+  "condiciones": "Banco de laboratorio con defectos sembrados; 4 clases (Normal, Outer, Inner, Ball)",
+  "replica_de": "Jalonen et al. (2023), Secciones II-A a II-C (arXiv:2311.18547), https://arxiv.org/abs/2311.18547",
+  "evidencia": [
+   "E-9462",
+   "E-9463"
+  ],
+  "limites": "Tabla armada con valores del texto; la Tabla I de resultados por SNR no figura en el texto recuperado. Pliegues barajados de las mismas grabaciones. Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora.",
+  "columnas": [
+   "Parámetro",
+   "Valor"
+  ],
+  "filas": [
+   [
+    "Velocidad del motor (rpm)",
+    "680-2460"
+   ],
+   [
+    "Frecuencia de muestreo original (kHz)",
+    "25.6"
+   ],
+   [
+    "Frecuencia tras reducción (kHz)",
+    "20"
+   ],
+   [
+    "Duración por clase (s)",
+    "2,100"
+   ],
+   [
+    "Longitud de segmento (muestras)",
+    "2,000"
+   ],
+   [
+    "Duración del segmento (s)",
+    "0.1"
+   ],
+   [
+    "Segmentos por clase",
+    "21,000"
+   ],
+   [
+    "Muestras totales",
+    "84,000"
+   ],
+   [
+    "Entrenamiento / prueba por pliegue",
+    "67,200 / 16,800"
+   ],
+   [
+    "Niveles de ruido añadido (dB)",
+    "20; 15; 10; 5; 0; -5"
+   ]
+  ]
+ },
+ {
+  "id": "R-08",
+  "titulo": "Exactitud de la clase pista interna: señal limpia y ruido de -5 dB",
+  "tipo": "barras",
+  "unidad": "% exactitud",
+  "condiciones": "Banco KAIST; promedio de 5 pliegues; ruido blanco gaussiano añadido",
+  "replica_de": "Jalonen et al. (2023), Sección III-A (arXiv:2311.18547), https://arxiv.org/abs/2311.18547",
+  "evidencia": [
+   "E-9464"
+  ],
+  "limites": "Solo la clase pista interna; la Figura 3 y la Tabla I con las demás clases y niveles de SNR no se recuperaron: SIN DATOS PARA ARMARLAS. Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora.",
+  "series": [
+   {
+    "etiqueta": "Pista interna, señal limpia",
+    "valor": "100"
+   },
+   {
+    "etiqueta": "Pista interna, SNR de -5 dB",
+    "valor": "95.6"
+   }
+  ]
+ },
+ {
+  "id": "R-09",
+  "titulo": "Exactitud al retener una condición completa (CWRU y JNU)",
+  "tipo": "barras",
+  "unidad": "% exactitud",
+  "condiciones": "Leave-one-condition-out; CWRU por carga, JNU reteniendo 1000 rpm; solo datos del resumen del autor",
+  "replica_de": "Leyva-Vazquez et al. (2026), resumen (arXiv:2610.06880), https://arxiv.org/abs/2610.06880",
+  "evidencia": [
+   "E-9466"
+  ],
+  "limites": "Solo resumen del autor (el lector no entregó texto completo); no hay tablas ni intervalos. Bancos de laboratorio. Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora.",
+  "series": [
+   {
+    "etiqueta": "CWRU, ensamble, tres cargas retenidas",
+    "valor": "100.00"
+   },
+   {
+    "etiqueta": "CWRU, ensamble, cuarta carga retenida",
+    "valor": "92.27"
+   },
+   {
+    "etiqueta": "JNU, ensamble, 1000 rpm retenido",
+    "valor": "40.64"
+   },
+   {
+    "etiqueta": "JNU, regresión logística, 1000 rpm retenido",
+    "valor": "57.91"
+   }
+  ]
+ },
+ {
+  "id": "R-10",
+  "titulo": "Componentes del puntaje CARE",
+  "tipo": "tabla",
+  "unidad": "según fila",
+  "condiciones": "Definición de la métrica por evento; datos de aerogeneradores con resolución de 10 minutos",
+  "replica_de": "Gück et al. (2024), Sección 4.1 (arXiv:2404.10320), https://arxiv.org/abs/2404.10320",
+  "evidencia": [
+   "E-9468",
+   "E-9469",
+   "E-9470",
+   "E-9472"
+  ],
+  "limites": "La tabla resume el texto; las fórmulas se renderizan con símbolos no citables. Parámetros calibrados para series de 10 minutos de aerogeneradores.",
+  "columnas": [
+   "Componente",
+   "Qué mide",
+   "Métrica",
+   "Parámetro citado"
+  ],
+  "filas": [
+   [
+    "Coverage",
+    "Detección de tantas anomalías correctas como sea posible",
+    "Fβ puntual en series con evento",
+    "β = 1/2"
+   ],
+   [
+    "Accuracy",
+    "Reconocimiento de comportamiento normal",
+    "Exactitud sobre series sin anomalías",
+    "—"
+   ],
+   [
+    "Reliability",
+    "Pocas alarmas falsas por evento",
+    "Fβ por evento; alarma si la criticidad máxima supera el umbral",
+    "72 (12 horas seguidas con datos cada 10 minutos)"
+   ],
+   [
+    "Earliness",
+    "Detección antes de que la falla sea crítica",
+    "Puntaje ponderado: peso 1 en la primera mitad del evento y decrece linealmente a 0 en la segunda",
+    "1 y 0"
+   ],
+   [
+    "CARE",
+    "Combinación",
+    "Promedio ponderado con pesos 1, 1, 1 y 2 (el 2 es de Accuracy); vale 0 si no hay detecciones",
+    "1, 1, 1 y 2"
+   ]
+  ]
+ },
+ {
+  "id": "R-11",
+  "titulo": "Composición del conjunto de datos CARE",
+  "tipo": "tabla",
+  "unidad": "conteo",
+  "condiciones": "Aerogeneradores; parque A en tierra, B y C marinos; SCADA de 10 minutos",
+  "replica_de": "Gück et al. (2024), Sección 3.2, tabla de estadísticas (arXiv:2404.10320), https://arxiv.org/abs/2404.10320",
+  "evidencia": [
+   "E-9471"
+  ],
+  "limites": "No son datos de vibración ni de chumaceras. Las celdas '—' del total no se publican en el texto.",
+  "columnas": [
+   "Concepto",
+   "Parque A",
+   "Parque B",
+   "Parque C",
+   "Total"
+  ],
+  "filas": [
+   [
+    "Turbinas",
+    "5",
+    "9",
+    "22",
+    "36"
+   ],
+   [
+    "Series",
+    "22",
+    "15",
+    "58",
+    "95"
+   ],
+   [
+    "Eventos de anomalía",
+    "11",
+    "6",
+    "27",
+    "44"
+   ],
+   [
+    "Comportamiento normal",
+    "11",
+    "9",
+    "31",
+    "51"
+   ],
+   [
+    "Variables",
+    "86",
+    "257",
+    "957",
+    "—"
+   ],
+   [
+    "Sensores",
+    "54",
+    "63",
+    "238",
+    "—"
+   ]
+  ]
+ },
+ {
+  "id": "R-12",
+  "titulo": "Puntaje CARE del mini-benchmark",
+  "tipo": "barras",
+  "unidad": "puntaje CARE (0 a 1)",
+  "condiciones": "95 series de aerogeneradores; el bosque de aislamiento no se grafica porque su valor solo está en la Figura 3",
+  "replica_de": "Gück et al. (2024), Sección 4.2.3, texto de la Figura 3 (arXiv:2404.10320), https://arxiv.org/abs/2404.10320",
+  "evidencia": [
+   "E-9473"
+  ],
+  "limites": "Solo cuatro de las cinco estrategias del paper tienen valor en el texto. No es referencia para chumaceras.",
+  "series": [
+   {
+    "etiqueta": "Todo anomalía",
+    "valor": "0"
+   },
+   {
+    "etiqueta": "Todo normal",
+    "valor": "0"
+   },
+   {
+    "etiqueta": "Aleatorio",
+    "valor": "0.5"
+   },
+   {
+    "etiqueta": "Autoencoder con umbral calibrado",
+    "valor": "0.66"
+   }
+  ]
+ },
+ {
+  "id": "R-13",
+  "titulo": "Bancos de MBHM: muestreo, condiciones, fallas y tiempo",
+  "tipo": "tabla",
+  "unidad": "kHz; conteo; s",
+  "condiciones": "Diez filas de la Tabla 1 del paper (nueve bancos y el conjunto MBHM combinado)",
+  "replica_de": "Peng et al. (2024), Tabla 1 (arXiv:2408.11281), https://arxiv.org/abs/2408.11281",
+  "evidencia": [
+   "E-9474"
+  ],
+  "limites": "Se omite la columna de marcas de texto. Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora. El paper cuenta condiciones por carga, velocidad y sensor, distinto de las tres condiciones de carga y velocidad de otro paper.",
+  "columnas": [
+   "Banco",
+   "Frecuencia de muestreo (kHz)",
+   "Condiciones de trabajo",
+   "Tipos de falla",
+   "Tiempo (s)"
+  ],
+  "filas": [
+   [
+    "CWRU",
+    "12 / 48",
+    "12",
+    "10",
+    "3932"
+   ],
+   [
+    "DIRG",
+    "51.2",
+    "102",
+    "7",
+    "7140"
+   ],
+   [
+    "HIT",
+    "20",
+    "40",
+    "3",
+    "9648"
+   ],
+   [
+    "IMS",
+    "20",
+    "16",
+    "7",
+    "46480"
+   ],
+   [
+    "JNU",
+    "100",
+    "45",
+    "4",
+    "3600"
+   ],
+   [
+    "JUST",
+    "50",
+    "36",
+    "4",
+    "43986"
+   ],
+   [
+    "MFPT",
+    "48.8 / 97.6",
+    "1",
+    "3",
+    "78"
+   ],
+   [
+    "PU",
+    "64",
+    "4",
+    "5",
+    "7316"
+   ],
+   [
+    "XJTU",
+    "25.6",
+    "6",
+    "10",
+    "13336"
+   ],
+   [
+    "MBHM",
+    "12 a ~100",
+    "262",
+    "10",
+    "135516"
+   ]
+  ]
+ },
+ {
+  "id": "R-14",
+  "titulo": "Exactitud cero disparos en bancos no vistos",
+  "tipo": "barras",
+  "unidad": "% exactitud",
+  "condiciones": "Modelo entrenado sin el banco de prueba; con y sin canales de referencia sin falla y residuo",
+  "replica_de": "Peng et al. (2024), Sección 5.3 (arXiv:2408.11281), https://arxiv.org/abs/2408.11281",
+  "evidencia": [
+   "E-9475",
+   "E-9476",
+   "E-9477"
+  ],
+  "limites": "Valores tomados del texto; las matrices de confusión no se recuperaron. IMS está desbalanceado. El método exige una señal de referencia sin falla de las mismas condiciones. Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora.",
+  "series": [
+   {
+    "etiqueta": "JUST, con canales de referencia y residuo",
+    "valor": "90.22"
+   },
+   {
+    "etiqueta": "JUST, sin esos canales",
+    "valor": "87.54"
+   },
+   {
+    "etiqueta": "IMS, con canales de referencia y residuo",
+    "valor": "98.52"
+   },
+   {
+    "etiqueta": "IMS, sin esos canales",
+    "valor": "97.81"
+   },
+   {
+    "etiqueta": "CWRU, entrenado sin CWRU",
+    "valor": "90.26"
+   },
+   {
+    "etiqueta": "CWRU, entrenado sin CWRU ni XJTU",
+    "valor": "89.14"
+   }
+  ]
+ },
+ {
+  "id": "R-15",
+  "titulo": "Error de pronóstico de vida remanente: cabeza lineal sobre Chronos-2 frente a TCN",
+  "tipo": "barras",
+  "unidad": "MAE (el texto no rotula la unidad; la RUL está en días)",
+  "condiciones": "Dispositivo A; ventana de contexto de 5 pasos; el contexto de 5 pasos es un supuesto del lector, no consta que las cifras correspondan a él",
+  "replica_de": "El-Ghoussani et al. (2026), Sección III-F (arXiv:2606.11990), https://arxiv.org/abs/2606.11990",
+  "evidencia": [
+   "E-9481"
+  ],
+  "limites": "Solo dos barras citadas en el texto; las tablas I y II completas no se recuperaron: SIN DATOS PARA ARMARLO. Datos de equipos industriales, no de rodamientos.",
+  "series": [
+   {
+    "etiqueta": "Chronos-2 congelado con cabeza lineal",
+    "valor": "60"
+   },
+   {
+    "etiqueta": "TCN",
+    "valor": "88"
    }
   ]
  }
