@@ -1,0 +1,74 @@
+[
+ {
+  "agente": "reliability-engineer",
+  "rol": "Líder del equipo",
+  "hizo": "Repartió siete frentes con un encargo de ocho bloques, comprobó que la red no permitía leer literatura de bombas, heredó las fuentes de rodamientos ya leídas y armó el dossier con las compuertas.",
+  "entrada": "Solicitud: falla de bomba centrífuga",
+  "salida": "Dossier, informe y preguntas a la persona",
+  "aprendio": "Cuando no hay lectura posible, el dossier queda con SIN DATOS PARA ARMARLO y lista las fuentes por abrir."
+ },
+ {
+  "agente": "reliability-literature-researcher",
+  "rol": "Investigación de fuentes",
+  "hizo": "Tres frentes: mecanismos y modos, sellos y rodamientos, y monitoreo de condición. Registraron 17, 9 y 24 entradas; solo 10 con lectura (rodamientos y motor), el resto pistas de buscador.",
+  "entrada": "Frente de búsqueda y rango de ids",
+  "salida": "Entradas del registro y listas de lagunas",
+  "aprendio": "El índice de preprints no contiene literatura de bombas; los sitios de revistas están bloqueados."
+ },
+ {
+  "agente": "reliability-standards-researcher",
+  "rol": "Normas y fuentes formales",
+  "hizo": "Identificó 51 normas y guías con estado visto en resúmenes de buscador y 23 vacíos declarados.",
+  "entrada": "Bomba centrífuga y organismos",
+  "salida": "normas_tabla y registro",
+  "aprendio": "API 610 e ISO 13709 dejaron de ser equivalentes; ISO 10816-1 está retirada."
+ },
+ {
+  "agente": "reliability-paper-analyst",
+  "rol": "Lectura profunda de papers",
+  "hizo": "Buscó papers de ML y RUL en bombas; no hay ninguno en el índice legible, por eso no registró cifras ni réplicas.",
+  "entrada": "Frente ML y RUL",
+  "salida": "Listas vacías y pistas por abrir",
+  "aprendio": "Las cifras de bombas solo pueden venir de textos que hoy no se pueden abrir."
+ },
+ {
+  "agente": "reliability-dataset-scout",
+  "rol": "Datos abiertos",
+  "hizo": "Revisó conjuntos abiertos: hay audio de bombas para diagnóstico y ninguno con tiempos hasta la falla.",
+  "entrada": "Bombas centrífugas",
+  "salida": "7 entradas de conjuntos",
+  "aprendio": "Sin tiempos hasta la falla no se ajusta Weibull ni RUL de la bomba."
+ },
+ {
+  "agente": "reliability-literature-researcher",
+  "rol": "Vida, Weibull y costos",
+  "hizo": "Cuarto frente: 7 pistas sin lectura; costos y parámetros Weibull de bombas quedaron vacíos.",
+  "entrada": "Frente de vida y costos",
+  "salida": "Registro de pistas",
+  "aprendio": "Los costos solo se aceptan si están en el texto de una fuente leída."
+ },
+ {
+  "agente": "reliability-rca-investigator",
+  "rol": "Causa raíz",
+  "hizo": "Hipótesis, árbol, Ishikawa, porqués y qué observar sobre lo respaldado (rodamientos de bomba, contaminación, lubricación, desalineación).",
+  "entrada": "Registro combinado",
+  "salida": "ACR y análisis",
+  "aprendio": "Los modos propios de bomba sin fuente leída van como vacíos, no como hipótesis."
+ },
+ {
+  "agente": "reliability-fmeca-rcm",
+  "rol": "FMECA y RCM",
+  "hizo": "FMECA con los modos respaldados y vacíos para los demás.",
+  "entrada": "Registro combinado",
+  "salida": "fmeca.json",
+  "aprendio": "S, O y D no se puntúan sin datos del activo."
+ },
+ {
+  "agente": "reliability-predictive-analyst",
+  "rol": "Predictivo y ML",
+  "hizo": "Estrategia por etapas y riesgos de validación sin trasladar resultados de bancos de rodamientos a bombas.",
+  "entrada": "Registro combinado",
+  "salida": "predictivo.json",
+  "aprendio": "Sin etiquetas ni tiempos hasta la falla corresponde detección de anomalías con línea base por activo."
+ }
+]

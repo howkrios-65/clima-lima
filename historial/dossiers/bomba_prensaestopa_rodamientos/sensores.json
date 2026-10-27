@@ -1,0 +1,141 @@
+[
+ {
+  "tecnica_o_sensor": "Filtro gaussiano, transformada wavelet continua y siete caracteristicas tiempo-frecuencia (energia, frecuencia dominante, entropia, curtosis, asimetria, media, desviacion) sobre vibracion de dos ejes",
+  "que_mide": "Degradacion de rodamientos de bolas a partir de vibracion horizontal y vertical",
+  "resultado_publicado": "Con esas caracteristicas, una red CNN-atencion-LSTM mas bosque aleatorio reporta MAE de 0.04087 en el rodamiento 3 de XJTU-SY en la condicion de entrenamiento y mejor desempeno que variantes en condiciones no vistas",
+  "condiciones": "XJTU-SY a 25 kHz y PRONOSTIA a 25.6 kHz, degradacion acelerada; entrenamiento en una condicion",
+  "limites": "Banco, sin bomba; interpretaciones fisicas con referencias no leidas; inconsistencias internas de Score",
+  "evidencia": [
+   "E-2301",
+   "E-2303",
+   "E-2304"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Modelo de supervivencia con divergencia KL para deteccion temprana y RUL con censura",
+  "que_mide": "Inicio de degradacion y vida remanente en rodamientos de bolas con datos censurados",
+  "resultado_publicado": "Metodo ya registrado en el caso de la bomba (E-1201 a E-1204); se hereda sin releer",
+  "condiciones": "XJTU-SY, rodamientos de banco",
+  "limites": "Banco; solo reutilizable como metodo",
+  "evidencia": [
+   "E-1201",
+   "E-1204"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Modelo base de series de tiempo congelado con cabezal de regresion para RUL",
+  "que_mide": "RUL en dias a partir de registros de sensores y de reparaciones",
+  "resultado_publicado": "Los autores afirman mejora sobre linea base recurrente, convolucional, de transformadores y de arboles potenciados",
+  "condiciones": "Dos tipos de dispositivos industriales; ventana de contexto corta",
+  "limites": "Solo resumen e inicio; sin cifras; no es rodamiento ni bomba",
+  "evidencia": [
+   "E-2306"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Ensamble de clasificadores con descomposicion neutrosofica de incertidumbre",
+  "que_mide": "Confianza de la clasificacion de fallas de rodamientos CWRU y JNU",
+  "resultado_publicado": "Entropia predictiva se asocia con el error; exactitud de JNU cae a 40.64 % al retener 1000 rpm",
+  "condiciones": "Fallas sembradas, banco, retencion de una condicion",
+  "limites": "Solo resumen; sin RUL",
+  "evidencia": [
+   "E-2309"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Vibracion triaxial y corrientes de fase del motor",
+  "que_mide": "Aceleracion y corrientes trifasicas del motor",
+  "resultado_publicado": "Los autores afirman que vibracion y corriente son indicadores efectivos de la salud del motor",
+  "condiciones": "Motor de induccion 2.2 kW, banco, 12.8 kHz, velocidad y carga variables",
+  "limites": "Sin bomba ni prensaestopa; sin umbrales",
+  "evidencia": [
+   "E-2202"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Espectro de envolvente en frecuencias de falla de rodamiento",
+  "que_mide": "Modulacion de la vibracion por defecto de rodamiento",
+  "resultado_publicado": "Separacion casi perfecta de la mayoria de clases en un conjunto de banco; mala generalizacion entre conjuntos (resumen)",
+  "condiciones": "Conjuntos de banco CWRU y JNU",
+  "limites": "Solo resumen; sin bomba; sin kurtosis ni RMS aislados",
+  "evidencia": [
+   "E-2201"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Vibracion para defectos incipientes de rodamiento",
+  "que_mide": "Cambios de dinamica asociados a defectos tempranos",
+  "resultado_publicado": "Afirmacion de introduccion apoyada en estudios de terceros",
+  "condiciones": "Rodamientos en general; pruebas de banco del articulo",
+  "limites": "Cita de terceros; sin cifras; sin bomba",
+  "evidencia": [
+   "E-2200"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Analisis de aceite o grasa con contenido de agua",
+  "que_mide": "Agua en lubricante",
+  "resultado_publicado": "SOLO-SNIPPET: pista de que el agua reduce la vida a fatiga; sin cifra respaldada",
+  "condiciones": "No leido",
+  "limites": "No leido; pendiente E-2210 y E-2211",
+  "evidencia": [
+   "E-2210",
+   "E-2211"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Ultrasonido y termografia en la curva P-F",
+  "que_mide": "Deteccion temprana relativa",
+  "resultado_publicado": "SOLO-SNIPPET: orden relativo y rangos en prensa y paginas comerciales que se contradicen",
+  "condiciones": "No leido",
+  "limites": "Sin cifras respaldadas",
+  "evidencia": [
+   "E-2212",
+   "E-2213",
+   "E-2214"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Inspeccion de fuga del prensaestopa y temperatura",
+  "que_mide": "Goteo y calor por friccion de la empaquetadura",
+  "resultado_publicado": "SOLO-SNIPPET: el sobreapriete genera calor y dano de camisa (articulo de fabricante)",
+  "condiciones": "No leido",
+  "limites": "No es estudio sobre rodamientos",
+  "evidencia": [
+   "E-2215",
+   "E-2216",
+   "E-2217"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Vibracion triaxial (acelerometro) y corrientes de fase del motor",
+  "que_mide": "Aceleracion en el extremo de accionamiento del motor y corrientes trifasicas, en sincronia con par y fase clave",
+  "resultado_publicado": "Los autores afirman que vibracion y corriente son indicadores efectivos de la salud del motor",
+  "condiciones": "Motor de induccion 2.2 kW, banco de laboratorio, 12.8 kHz, velocidad y carga variables",
+  "limites": "Sin bomba, sin cavitacion, sin umbrales; laboratorio con interferencia electromagnetica minima",
+  "evidencia": [
+   "E-1301",
+   "E-1305"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Fusion vibracion, temperatura y ruido (sensores IoT) con FFT, wavelet y binning",
+  "que_mide": "Anomalias en motores de induccion usados en bombas, compresores y ventiladores",
+  "resultado_publicado": "Sistema de deteccion de anomalias con optimizacion multiobjetivo entre tasa de deteccion, falsos positivos y velocidad de inferencia (resumen)",
+  "condiciones": "Motores de induccion; datos propios con sensores de bajo costo",
+  "limites": "Solo resumen; sin cifras; motor, no bomba",
+  "evidencia": [
+   "E-1302"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Microfono (acustica de maquina)",
+  "que_mide": "Sonido de maquinas industriales, incluidas bombas, normal y con anomalias",
+  "resultado_publicado": "Conjunto publico de sonidos con anomalias como contaminacion, fuga, desbalance rotatorio y dano de riel (resumen)",
+  "condiciones": "Grabaciones en entornos de fabrica",
+  "limites": "Solo resumen; no precisa anomalias por maquina ni tipo de bomba; sin cavitacion",
+  "evidencia": [
+   "E-1303"
+  ]
+ }
+]

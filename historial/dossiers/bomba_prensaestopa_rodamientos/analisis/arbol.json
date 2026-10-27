@@ -1,0 +1,327 @@
+{
+ "evento_tope": "Falla funcional de la bomba centrífuga: pérdida de la función de bombeo del activo.",
+ "nodos": [
+  {
+   "id": "N0",
+   "texto": "Falla funcional de la bomba centrífuga (tren motor-bomba).",
+   "puerta": "OR",
+   "hijos": [
+    "N1",
+    "N19"
+   ],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-1304",
+    "E-1205"
+   ],
+   "nota": "Agrupación del equipo: falla por la vía del rodamiento de la bomba, por el motor impulsor o por modos propios de la bomba (sin rama: SIN DATOS PARA ARMARLO). Sin caso real no hay datos para ponderar ramas. Debe ser validado por un experto del activo.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N1",
+   "texto": "Falla del rodamiento de la bomba: se inicia un daño Y progresa sin detección oportuna.",
+   "puerta": "AND",
+   "hijos": [
+    "N2",
+    "N15"
+   ],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-8008",
+    "E-8003"
+   ],
+   "nota": "La puerta AND es lectura del equipo: E-8008 describe etapas de degradación con defectos previos a la falla. No es un hecho de la literatura sobre bombas. Debe ser validado por un experto del activo.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N2",
+   "texto": "Se inicia un daño en el rodamiento o su montaje (por fatiga normal, por causa fuera de condiciones convencionales o por causa latente de gestión).",
+   "puerta": "OR",
+   "hijos": [
+    "N3",
+    "N4",
+    "N12"
+   ],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6002",
+    "E-6004"
+   ],
+   "nota": "Agrupación del equipo de las causas que las fuentes dan para el daño de rodamientos. Las fuentes no son de bomba centrífuga. Debe ser validado por un experto del activo.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N3",
+   "texto": "Fatiga de contacto por rodadura en condiciones convencionales: fin de vida esperado y no falla prematura.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6003",
+    "E-1205",
+    "E-6002"
+   ],
+   "nota": "Premisas: E-6003 define la vida nominal para condiciones convencionales; E-1205 cita la susceptibilidad del rodamiento al desgaste y la fatiga. Que la fatiga de contacto sea la causa en condiciones convencionales consta en el resumen de E-6002, no en su extracto. Edición de la norma no verificada.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N4",
+   "texto": "Causas fuera de condiciones convencionales: carga, desalineación, ajustes, lubricación, instalación, contaminación y mecanismos secundarios.",
+   "puerta": "OR",
+   "hijos": [
+    "N5",
+    "N6",
+    "N7",
+    "N8",
+    "N9",
+    "N10",
+    "N11"
+   ],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6002"
+   ],
+   "nota": "El extracto de E-6002 clasifica los daños por cargas excesivas, desalineación, ajustes apretados, falla de lubricante, desgaste, corrosión y fretting. Rodamientos de bolas, no bombas. Los términos instalación, contaminación y la rotulación fuera de condiciones convencionales constan en el resumen, no en el extracto.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N5",
+   "texto": "Lubricación inadecuada o falla del lubricante.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6004",
+    "E-1201",
+    "E-6002"
+   ],
+   "nota": "Citada como causa de falla prematura de rodamientos de bombas (E-6004, resumen), como mala lubricación en rodamientos usados también en bombas (E-1201) y como causa de daño (E-6002). Que ocurra en este activo es hipótesis.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N6",
+   "texto": "Contaminación que produce corrosión o desgaste del rodamiento.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6004",
+    "E-1201"
+   ],
+   "nota": "E-6004: corrosión causada por contaminación; E-1201: desgaste por contaminación. Sin dato de sellado de bomba.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N7",
+   "texto": "Mala manipulación o instalación del rodamiento antes y durante el montaje.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6004",
+    "E-1201"
+   ],
+   "nota": "E-6004: mal manejo antes y durante la instalación; E-1201: montaje inadecuado. La pregunta de fondo es qué del sistema lo permitió.",
+   "clase": "humana"
+  },
+  {
+   "id": "N8",
+   "texto": "Ajustes inadecuados en alojamiento o eje, con sobrecalentamiento.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6004",
+    "E-6002"
+   ],
+   "nota": "E-6004: sobrecalentamiento por ajustes inadecuados en alojamientos o ejes; E-6002: ajustes apretados.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N9",
+   "texto": "Desalineación del rodamiento o del eje respecto del soporte.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6002"
+   ],
+   "nota": "Listada por E-6002 como causa de daño de rodamientos. La desalineación propia de bombas no tiene fuente leída (ver vacíos).",
+   "clase": "fisica"
+  },
+  {
+   "id": "N10",
+   "texto": "Carga excesiva sobre el rodamiento.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6002",
+    "E-1204"
+   ],
+   "nota": "E-6002 la lista como causa de daño; E-1204 (banco acelerado) advierte que la carga muy alta acelera la degradación y el riesgo de calentamiento local. Las cargas hidráulicas de la bomba no tienen fuente leída.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N11",
+   "texto": "Mecanismos secundarios de daño: desgaste, corrosión y fricción por micro-movimiento (fretting).",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6002",
+    "E-1205"
+   ],
+   "nota": "Listados por E-6002 como causas de daño de rodamientos; E-1205 cita desgaste y fatiga.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N12",
+   "texto": "Causas latentes de gestión que permiten el inicio del daño.",
+   "puerta": "OR",
+   "hijos": [
+    "N13",
+    "N14"
+   ],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6003",
+    "E-6004"
+   ],
+   "nota": "Razonamiento del equipo: las causas físicas requieren una deficiencia del sistema que las permita. Debe ser validado por un experto del activo.",
+   "clase": "latente"
+  },
+  {
+   "id": "N13",
+   "texto": "Prácticas de lubricación, protección contra contaminación, manipulación e instalación sin control suficiente.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6004",
+    "E-1201"
+   ],
+   "nota": "Premisas: E-6004 y E-1201 atribuyen defectos a lubricación, contaminación e instalación. La deficiencia de procedimiento o control es inferencia del equipo; no hay dato del activo. Debe ser validado por un experto del activo.",
+   "clase": "latente"
+  },
+  {
+   "id": "N14",
+   "texto": "Selección basada en la vida nominal, que cubre solo fatiga de contacto en condiciones convencionales.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6003",
+    "E-6002",
+    "E-1202"
+   ],
+   "nota": "Premisas: E-6003 y E-1202 definen la vida nominal para condiciones convencionales; E-6002 enumera causas fuera de ellas. Inferencia del equipo. Debe ser validado por un experto del activo.",
+   "clase": "latente"
+  },
+  {
+   "id": "N15",
+   "texto": "El daño progresa sin detección oportuna ni intervención.",
+   "puerta": "OR",
+   "hijos": [
+    "N16",
+    "N17",
+    "N18"
+   ],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-8008",
+    "E-8003"
+   ],
+   "nota": "Razonamiento del equipo a partir de las limitaciones de indicadores descritas en las fuentes. Debe ser validado por un experto del activo.",
+   "clase": "latente"
+  },
+  {
+   "id": "N16",
+   "texto": "Indicador que pierde señal o detecta tarde: la kurtosis vuelve a valores normales al extenderse el defecto; la etapa 1 de degradación solo es detectable con sensores especializados.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8003",
+    "E-8008"
+   ],
+   "nota": "Revisión de 2008 y preprint de rodamientos de bolas con datos de banco. No tratan bombas ni dan tiempos de aviso.",
+   "clase": "latente"
+  },
+  {
+   "id": "N17",
+   "texto": "Umbrales de alarma sin sustento o conjuntos de banco que no cubren la degradación continua de servicio.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-8001",
+    "E-1305"
+   ],
+   "nota": "E-8001: los autores de la revisión no hallaron sustento teórico ni empírico de los umbrales de kurtosis 3 y 5. E-1305: el conjunto de motor no incluye fallas progresivas de servicio prolongado y define severidades discretas. El límite de los conjuntos de banco es una limitación del dato, no una causa demostrada.",
+   "clase": "latente"
+  },
+  {
+   "id": "N18",
+   "texto": "Vigilancia sin integrar vibración, temperatura, ruido y corriente, ni dar seguimiento a señales tempranas.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-1301",
+    "E-1302",
+    "E-8003"
+   ],
+   "nota": "Premisas: E-1301 (vibración y corriente como indicadores de salud del motor), E-1302 (resumen: fusión de vibración, temperatura y ruido). La combinación de técnicas consta en el resumen de E-8003, no en su extracto. La inferencia sobre la gestión del activo es del equipo. Debe ser validado por un experto del activo.",
+   "clase": "latente"
+  },
+  {
+   "id": "N19",
+   "texto": "Origen o confusión de la falla en el motor impulsor (falla mecánica o eléctrica del motor).",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-1304",
+    "E-1301"
+   ],
+   "nota": "E-1304: en la práctica es difícil distinguir fallas mecánicas de eléctricas por manifestaciones similares; E-1301: vibración y corriente son indicadores de salud del motor. Bancos de motor de 2,2 kW, no de bombas. Debe ser validado por un experto del activo.",
+   "clase": "fisica"
+  }
+ ],
+ "vacios": [
+  "No existe caso real ni datos de planta: todas las probabilidades son null y ninguna rama puede darse por confirmada.",
+  "Puertas: N0, N2, N4, N12, N15 y modos propios son OR. La puerta AND de N1 es lectura del equipo y no tiene fuente leída; si el líder o el experto no la acepta, el árbol se limita a OR.",
+  "Modos propios de la bomba (sello, cavitación, recirculación, anillos de desgaste, golpe de ariete, desbalance y desalineación de la bomba): SIN DATOS PARA ARMARLO; solo hay pistas sin leer.",
+  "Fuentes de causas de rodamientos: bolas en fatiga de ciclos muy altos, aerogeneradores, un resumen de 1988 sobre bombas y bancos de laboratorio; comparabilidad baja o media con una bomba centrífuga de planta.",
+  "Los nodos latentes N12 a N18 son SINTESIS o EVIDENCIA de banco pendientes de validación con un experto del activo.",
+  "Nivel VACIO (valor propio de este árbol): nodo sin contenido respaldado.",
+  "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Modos propios de la bomba centrífuga (hidráulicos y de sello).",
+  "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Cavitación y erosión del impulsor.",
+  "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Recirculación y operación fuera del punto de mejor eficiencia.",
+  "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Falla del sello mecánico.",
+  "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Desgaste de los anillos de desgaste y aumento de holgura.",
+  "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Golpe de ariete y transitorios hidráulicos.",
+  "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Fatiga de eje, acople y desalineación propia de la bomba."
+ ]
+}

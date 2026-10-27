@@ -1,0 +1,236 @@
+[
+ {
+  "id": "pdat-R1",
+  "titulo": "Inventario de repositorios abiertos de Hugging Face revisados para rodamientos con tiempos hasta la falla o series de condicion",
+  "tipo": "tabla",
+  "unidad": "",
+  "condiciones": "Revision del 2026-10-27 por lector de Hugging Face; ningun dato descargado",
+  "replica_de": "Elaboracion propia a partir de README y listados (no replica una tabla publicada)",
+  "evidencia": [
+   "E-2350",
+   "E-2351",
+   "E-2352",
+   "E-2353",
+   "E-2354",
+   "E-2355",
+   "E-2356",
+   "E-9604",
+   "E-1703"
+  ],
+  "limites": "Licencias y descripciones son las declaradas por los usuarios; FEMTO y PRONOSTIA no se verificaron contra el original; no hay unidades de bomba.",
+  "columnas": [
+   "Repositorio",
+   "Contenido declarado",
+   "Licencia declarada",
+   "Tamano visto",
+   "Tiene tiempos hasta falla"
+  ],
+  "filas": [
+   [
+    "DavidNguyen/XJTU-SY_Bearing_Datasets",
+    "XJTU-SY, 15 rodamientos",
+    "no visible",
+    "5447931446 bytes",
+    "si (por descripcion del conjunto)"
+   ],
+   [
+    "odysseywt/FEMTO",
+    "CSV sin descripcion",
+    "mit",
+    "1305035588 bytes",
+    "no verificado"
+   ],
+   [
+    "submission096/FEMTO",
+    "CSV PdM.csv",
+    "no leida",
+    "1305035588 bytes",
+    "no verificado"
+   ],
+   [
+    "Amgharr/FEMTO-ST_DATASET",
+    "caracteristicas en parquet",
+    "mit",
+    "tres parquet de 0.47 a 0.96 GB",
+    "no verificado"
+   ],
+   [
+    "wutZYH/cwru-bearing-fault-qa",
+    "pares de texto sobre CWRU",
+    "no visible",
+    "1177 ejemplos",
+    "no"
+   ],
+   [
+    "mdsajjadullah/bearing-fault-diagnosis-cwru-results",
+    "caracteristicas de CWRU",
+    "mit",
+    "9487 segmentos",
+    "no"
+   ],
+   [
+    "rasinmuhammed/predictive-maintenance-remaining-useful-life",
+    "sintetico, 100 maquinas",
+    "mit",
+    "23118 lecturas",
+    "si, sintetico"
+   ],
+   [
+    "Nounours777/Paderborn-bearing",
+    "Paderborn hasta falla, 17 rodamientos",
+    "cc-by-4.0",
+    "no medido",
+    "si (E-9604)"
+   ]
+  ]
+ },
+ {
+  "id": "pml-R1",
+  "titulo": "Condiciones de operacion de XJTU-SY y PRONOSTIA segun el preprint CARLE",
+  "tipo": "tabla",
+  "unidad": "",
+  "condiciones": "Rodamientos de banco con degradacion acelerada",
+  "replica_de": "Seccion 4.1 de CARLE (arXiv 2510.17846)",
+  "evidencia": [
+   "E-2301"
+  ],
+  "limites": "Transcripcion del texto de los autores; en XJTU-SY el texto escribe 1200 rpm junto a 35 Hz (35 Hz equivale a 2100 rpm, vease E-1204), por lo que la velocidad en rpm de la primera fila se marca como dudosa.",
+  "columnas": [
+   "Conjunto",
+   "Condicion",
+   "Velocidad declarada",
+   "Carga radial [kN]",
+   "Frecuencia [Hz]"
+  ],
+  "filas": [
+   [
+    "XJTU-SY",
+    "C1",
+    "1200 rpm (dudosa)",
+    "12",
+    "35"
+   ],
+   [
+    "XJTU-SY",
+    "C2",
+    "2250 rpm",
+    "11",
+    "37.5"
+   ],
+   [
+    "XJTU-SY",
+    "C3",
+    "2400 rpm",
+    "10",
+    "40"
+   ],
+   [
+    "PRONOSTIA",
+    "C1",
+    "1800 rpm",
+    "4",
+    "100"
+   ],
+   [
+    "PRONOSTIA",
+    "C2",
+    "1650 rpm",
+    "4.2",
+    "100"
+   ],
+   [
+    "PRONOSTIA",
+    "C3",
+    "1500 rpm",
+    "5",
+    "100"
+   ]
+  ]
+ },
+ {
+  "id": "pml-R2",
+  "titulo": "Ablacion de CARLE en el rodamiento 3 de XJTU-SY, condicion 35 Hz y 12 kN",
+  "tipo": "tabla",
+  "unidad": "RUL normalizado (a confirmar)",
+  "condiciones": "Entrenamiento y prueba en la misma condicion; un solo rodamiento elegido por los autores",
+  "replica_de": "Seccion 4.4 de CARLE, texto de la vineta 35Hz12kN",
+  "evidencia": [
+   "E-2303"
+  ],
+  "limites": "Cifras del texto de los autores; el 'MSE' definido por ellos es raiz del error cuadratico; el Score de la Tabla 4 para el mismo caso es otro (199.6124); un rodamiento no basta para una conclusion.",
+  "columnas": [
+   "Modelo",
+   "MSE",
+   "MAE",
+   "Score"
+  ],
+  "filas": [
+   [
+    "CARLE",
+    "0.00220",
+    "0.04087",
+    "130.016"
+   ],
+   [
+    "CALE (sin conexiones residuales)",
+    "0.00265",
+    "0.04561",
+    "144.2532"
+   ],
+   [
+    "CRLE (sin atencion)",
+    "0.00275",
+    "0.04747",
+    "149.22"
+   ],
+   [
+    "CARL (sin conjunto)",
+    "0.00806",
+    "0.07905",
+    "250.3705"
+   ]
+  ]
+ },
+ {
+  "id": "hsel-R1",
+  "titulo": "L10h nominal segun carga radial y velocidad, banco XJTU-SY",
+  "tipo": "tabla",
+  "unidad": "",
+  "condiciones": "15 rodamientos de bolas LDK UER204, 5 por condicion; banco acelerado",
+  "replica_de": "Tabla 2 de RULSurv (arXiv 2405.01614)",
+  "evidencia": [
+   "E-1204"
+  ],
+  "limites": "Banco de laboratorio con rodamientos de bolas cargados cerca de su capacidad dinamica; no representa bombas centrifugas ni vida de campo; sirve solo para ilustrar la dependencia de L10h con la carga y la velocidad.",
+  "columnas": [
+   "Condicion",
+   "L10h [h]",
+   "Fuerza radial [kN]",
+   "Velocidad [rpm]",
+   "Rodamientos"
+  ],
+  "filas": [
+   [
+    "C1",
+    "9.6",
+    "12.0",
+    "2100",
+    "Bearing 1_1 to 1_5"
+   ],
+   [
+    "C2",
+    "11.7",
+    "11.0",
+    "2250",
+    "Bearing 2_1 to 2_5"
+   ],
+   [
+    "C3",
+    "14.6",
+    "10.0",
+    "2400",
+    "Bearing 3_1 to 3_5"
+   ]
+  ]
+ }
+]

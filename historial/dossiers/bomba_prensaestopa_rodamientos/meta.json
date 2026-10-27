@@ -1,0 +1,49 @@
+{
+ "modo_falla": "rodamientos de bomba con prensaestopa",
+ "fecha": "2026-10-27",
+ "version": 1,
+ "entradas_registro": 431,
+ "omitidos": [
+  [
+   "Datos de bombas heredables del caso anterior",
+   "evidencia no leída o inexistente"
+  ],
+  [
+   "Conjunto de bomba con prensaestopa y tiempos hasta la falla ",
+   "evidencia no leída o inexistente"
+  ],
+  [
+   "Candidatos sin leer: intervalos de incertidumbre, explicabil",
+   "evidencia no leída o inexistente"
+  ],
+  [
+   "Bomba con prensaestopa: no se hallo modelo de aprendizaje au",
+   "evidencia no leída o inexistente"
+  ],
+  [
+   "monitoreo_elementos.json",
+   "sección inválida"
+  ],
+  [
+   "SIN DATOS PARA ARMARLO: troubleshooting de rodamientos de bo",
+   "evidencia no leída o inexistente"
+  ],
+  [
+   "Comparacion empaquetadura frente a sello mecanico: pistas de",
+   "evidencia no leída o inexistente"
+  ],
+  [
+   "Mecanismo: fuga de la empaquetadura, agua en el lubricante y",
+   "evidencia no leída o inexistente"
+  ],
+  [
+   "vida_elementos.json",
+   "sección inválida"
+  ],
+  [
+   "Candidatos de diagnostico de bomba centrifuga no verificados",
+   "evidencia no leída o inexistente"
+  ]
+ ],
+ "nota": "Pistas SOLO-SNIPPET no respaldan afirmaciones"
+}

@@ -1,0 +1,323 @@
+{
+ "modo_falla": "rodamientos de bomba con prensaestopa",
+ "secciones": {
+  "mediciones": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Vibracion y corriente del motor como indicadores de salud, con velocidad y carga variables que complican el diagnostico",
+     "evidencia": [
+      "E-2202"
+     ],
+     "limite": "Banco de motor sin bomba; no da umbrales."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Vibracion como tecnica fiable y barata para defectos incipientes de rodamiento (cita de terceros) y analisis de envolvente en bancos",
+     "evidencia": [
+      "E-2200",
+      "E-2201"
+     ],
+     "limite": "Bancos de laboratorio; en E-2201 solo resumen; sin bomba ni prensaestopa."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Vibracion triaxial y corrientes de fase del motor adquiridas en sincronia",
+     "evidencia": [
+      "E-1301"
+     ],
+     "limite": "Banco de motor de 2.2 kW sin bomba; solo respalda que existe este esquema de medicion y la afirmacion de los autores; no da umbrales para bombas. Detalles como vibración triaxial, FFT, wavelet y entornos de fábrica constan en resúmenes, no en los extractos."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Fusion de vibracion, temperatura y ruido con sensores IoT en motores que accionan bombas",
+     "evidencia": [
+      "E-1302"
+     ],
+     "limite": "Solo resumen del autor; sin cifras ni umbrales. Detalles como vibración triaxial, FFT, wavelet y entornos de fábrica constan en resúmenes, no en los extractos."
+    }
+   ]
+  },
+  "fenomenos": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Causas de falla de rodamientos: contaminacion, mala lubricacion y montaje inadecuado",
+     "evidencia": [
+      "E-1201",
+      "E-1203"
+     ],
+     "limite": "Afirmaciones generales de introduccion de un trabajo de banco sobre rodamientos de bolas, con referencias no leidas; sin cifras ni especificidad de bomba centrifuga; no cubre sellos mecanicos ni empaquetaduras. La cita de que la pelicula lubricante reparte la carga axial o radial y que la salud depende de temperatura de operacion no trae umbrales."
+    }
+   ]
+  },
+  "top_fallas": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+  },
+  "fmeca": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+  },
+  "confiabilidad": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Cantidad y tamano de los conjuntos hasta falla: base para ajustar vida de rodamiento solo con cautela",
+     "evidencia": [
+      "E-2301",
+      "E-9604",
+      "E-9612"
+     ],
+     "limite": "15, 16 y 17 unidades de banco; el criterio de falla y la censura se declaran en cada fuente original, no en los reempaquetados."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Vida de rodamientos en banco como analogo del rodamiento de la bomba (Paderborn, 17 unidades)",
+     "evidencia": [
+      "E-9604",
+      "E-1703"
+     ],
+     "limite": "Rodamientos de bolas de banco con carga y velocidad variables, no bomba centrifuga ni campo; criterio de falla no declarado en lo leido; admite Weibull del componente solo con cautela y decision del lider."
+    }
+   ]
+  },
+  "punto_optimo": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+  },
+  "lcc": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+  },
+  "vida_util": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Definicion de L10 y ejemplo de L10h segun carga y velocidad",
+     "evidencia": [
+      "E-1202",
+      "E-1204"
+     ],
+     "limite": "Definicion estandar citada de segunda mano y ejemplo de banco con rodamientos de bolas cercanos a su capacidad dinamica; no es un calculo L10 ajustado (contaminacion, lubricacion) para bombas centrifugas; la cifra 90 %/0,5 % proviene de una referencia no leida y sin poblacion."
+    }
+   ]
+  },
+  "ibr": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+  },
+  "ml": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Conjuntos abiertos de rodamientos con corrida hasta la falla disponibles en Hugging Face (XJTU-SY, Paderborn de carga y velocidad variables, FEMTO/PRONOSTIA reempaquetados)",
+     "evidencia": [
+      "E-2350",
+      "E-2351",
+      "E-2353",
+      "E-9604",
+      "E-1703",
+      "E-9612"
+     ],
+     "limite": "Todos son rodamientos de bolas de banco con degradacion acelerada o variable; tarjetas con poca o ninguna descripcion en los reempaquetados de FEMTO; licencia verificada solo en E-9604; ninguno se descargo; XJTU-SY tiene 15 unidades."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Conjuntos de diagnostico (fallas sembradas) de CWRU en Hugging Face",
+     "evidencia": [
+      "E-2354",
+      "E-2355",
+      "E-2309"
+     ],
+     "limite": "Sin tiempos hasta la falla; E-2354 son pares de texto; E-2355 con resultados autodeclarados; CWRU saturado segun E-2309."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Conjunto sintetico con RUL exacto para pruebas de codigo",
+     "evidencia": [
+      "E-2356"
+     ],
+     "limite": "Sintetico; sin modos de falla de rodamiento ni de prensaestopa."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Modelos profundos de vida remanente de rodamientos entrenados y probados en bancos con degradacion acelerada (XJTU-SY y PRONOSTIA)",
+     "evidencia": [
+      "E-2300",
+      "E-2301",
+      "E-2302",
+      "E-2303",
+      "E-1204"
+     ],
+     "limite": "Todo es banco con rodamientos de bolas cargados cerca de su capacidad dinamica y etiquetas de RUL construidas por los autores; error reportado en unidades normalizadas; sin bomba, sin prensaestopa, sin campo. Inconsistencias internas de Score en E-2303 y de velocidad en E-2301."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Tratamiento de censura y de datos incompletos en prognostico con registros de mantenimiento",
+     "evidencia": [
+      "E-2306",
+      "E-1201",
+      "E-1202",
+      "E-9601"
+     ],
+     "limite": "E-2306 excluye los instantes sin falla posterior (censura a la derecha) en dispositivos no mecanicos; E-1201 a E-1202 son un metodo de supervivencia en rodamientos de banco. Ninguno es dato de bomba."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Diagnostico de fallas de rodamientos: saturacion de CWRU y mala generalizacion entre condiciones",
+     "evidencia": [
+      "E-2309",
+      "E-2308",
+      "E-2307",
+      "E-1205",
+      "E-2355"
+     ],
+     "limite": "Fallas sembradas en bancos; E-2309 solo por resumen; E-2308 y E-2307 solo fragmentos iniciales; E-2355 son resultados autodeclarados sin protocolo de particion. No es vida remanente."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Modelos base y preentrenamiento entre sistemas para prognostico con pocos datos propios",
+     "evidencia": [
+      "E-2305",
+      "E-2306"
+     ],
+     "limite": "Fragmentos de resumen e introduccion; sin cifras leidas; dominios distintos de bombas."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Datos acusticos de bombas etiquetados normal/anomalo (MIMII y reempaquetados)",
+     "evidencia": [
+      "E-1700",
+      "E-1701"
+     ],
+     "limite": "Solo diagnostico/deteccion de anomalia por audio; sin tiempos hasta la falla, sin censura, sin vibracion/presion/caudal/corriente; licencia y definicion de etiquetas no leidas en los repos de Hugging Face. Un reempaquetado (E-1702) no se usa como respaldo: su origen no está verificado."
+    }
+   ]
+  },
+  "acr": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+  },
+  "troubleshooting": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Los metodos de banco se optimizan para entornos controlados y generalizan mal a velocidades no vistas",
+     "evidencia": [
+      "E-2203",
+      "E-2201"
+     ],
+     "limite": "Resumenes y lectura parcial; es advertencia de transferencia, no procedimiento de bomba."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Distinguir falla mecanica de electrica del motor es dificil en campo",
+     "evidencia": [
+      "E-1304"
+     ],
+     "limite": "Afirmacion de contexto de los autores sobre motores; no es un procedimiento de investigacion de bombas."
+    }
+   ]
+  },
+  "mpd_normas": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles",
+   "nota": "Las normas identificadas se vieron solo en resúmenes de buscador (SOLO-SNIPPET): ver Referencias, Normas técnicas."
+  },
+  "referencias": {
+   "elementos": [
+    {
+     "tipo": "referencia",
+     "titulo": "Fuentes realmente usadas en este dossier",
+     "evidencia": [
+      "E-1201",
+      "E-1202",
+      "E-1203",
+      "E-1204",
+      "E-1205",
+      "E-1301",
+      "E-1302",
+      "E-1303",
+      "E-1304",
+      "E-1305",
+      "E-1700",
+      "E-1701",
+      "E-1702",
+      "E-1703",
+      "E-2200",
+      "E-2201",
+      "E-2202",
+      "E-2203",
+      "E-2300",
+      "E-2301",
+      "E-2302",
+      "E-2303",
+      "E-2305",
+      "E-2306",
+      "E-2307",
+      "E-2308",
+      "E-2309",
+      "E-2350",
+      "E-2351",
+      "E-2353",
+      "E-2354",
+      "E-2355",
+      "E-2356",
+      "E-6002",
+      "E-6003",
+      "E-6004",
+      "E-8001",
+      "E-8003",
+      "E-8008",
+      "E-9205",
+      "E-9401",
+      "E-9403",
+      "E-9404",
+      "E-9405",
+      "E-9426",
+      "E-9430",
+      "E-9431",
+      "E-9432",
+      "E-9433",
+      "E-9444",
+      "E-9455",
+      "E-9456",
+      "E-9457",
+      "E-9461",
+      "E-9463",
+      "E-9464",
+      "E-9466",
+      "E-9468",
+      "E-9469",
+      "E-9472",
+      "E-9473",
+      "E-9475",
+      "E-9476",
+      "E-9477",
+      "E-9479",
+      "E-9480",
+      "E-9481",
+      "E-9505",
+      "E-9506",
+      "E-9507",
+      "E-9511",
+      "E-9513",
+      "E-9514",
+      "E-9515",
+      "E-9517",
+      "E-9519",
+      "E-9522",
+      "E-9523",
+      "E-9524",
+      "E-9525",
+      "E-9601",
+      "E-9604",
+      "E-9612"
+     ],
+     "limite": "no declarado"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,174 @@
+[
+ {
+  "id": "pdat-CF-01",
+  "valor": "5447931446",
+  "unidad": "bytes",
+  "mide": "Tamano del zip de XJTU-SY en el repo de Hugging Face",
+  "condiciones": "Listado del repo; no se descargo",
+  "evidencia": [
+   "E-2350"
+  ]
+ },
+ {
+  "id": "pdat-CF-02",
+  "valor": "1305035588",
+  "unidad": "bytes",
+  "mide": "Tamano de FEMTO.csv y de PdM.csv en dos repos distintos",
+  "condiciones": "Listados; igualdad sugiere duplicado, contenido no comparado",
+  "evidencia": [
+   "E-2351",
+   "E-2352"
+  ]
+ },
+ {
+  "id": "pdat-CF-03",
+  "valor": "9487",
+  "unidad": "segmentos",
+  "mide": "Segmentos de CWRU en el repo de resultados",
+  "condiciones": "Dato declarado por el usuario del repo",
+  "evidencia": [
+   "E-2355"
+  ]
+ },
+ {
+  "id": "pdat-CF-04",
+  "valor": "23118",
+  "unidad": "lecturas horarias",
+  "mide": "Lecturas del conjunto sintetico de 100 maquinas",
+  "condiciones": "Sintetico",
+  "evidencia": [
+   "E-2356"
+  ]
+ },
+ {
+  "id": "pml-CF-01",
+  "valor": "40 a 50",
+  "unidad": "%",
+  "mide": "Proporcion de fallas de maquinaria que los autores atribuyen a rodamientos",
+  "condiciones": "Afirmacion de introduccion con referencia [1] no leida; no es de bombas",
+  "evidencia": [
+   "E-2300"
+  ]
+ },
+ {
+  "id": "pml-CF-02",
+  "valor": "15",
+  "unidad": "rodamientos",
+  "mide": "Cantidad de rodamientos con corrida hasta la falla en XJTU-SY (3 condiciones, 5 por condicion segun E-1204)",
+  "condiciones": "Banco con degradacion acelerada",
+  "evidencia": [
+   "E-2301",
+   "E-1204"
+  ]
+ },
+ {
+  "id": "pml-CF-03",
+  "valor": "16",
+  "unidad": "corridas",
+  "mide": "Corridas completas hasta la falla en PRONOSTIA segun el preprint",
+  "condiciones": "Banco con degradacion acelerada; 3 condiciones de 4, 4.2 y 5 kN",
+  "evidencia": [
+   "E-2301"
+  ]
+ },
+ {
+  "id": "pml-CF-04",
+  "valor": "0.04087",
+  "unidad": "adimensional (RUL normalizado, a confirmar)",
+  "mide": "Error absoluto medio reportado para el rodamiento 3 de XJTU-SY en la condicion de entrenamiento",
+  "condiciones": "35 Hz y 12 kN; resultado de los autores; unidades del RUL no declaradas en lo leido",
+  "evidencia": [
+   "E-2303"
+  ]
+ },
+ {
+  "id": "pml-CF-05",
+  "valor": "40.64",
+  "unidad": "%",
+  "mide": "Exactitud de un conjunto de clasificadores en JNU al retener 1000 rpm, inferior a la clase mayoritaria",
+  "condiciones": "Fallas sembradas en banco; solo resumen",
+  "evidencia": [
+   "E-2309"
+  ]
+ },
+ {
+  "id": "pml-CF-06",
+  "valor": "1000",
+  "unidad": "dias",
+  "mide": "Tope de la etiqueta de RUL usado por los autores",
+  "condiciones": "Dispositivos industriales no mecanicos; etiqueta derivada de registros de reparacion",
+  "evidencia": [
+   "E-2306"
+  ]
+ },
+ {
+  "id": "pmon-CF-01",
+  "valor": "12.8",
+  "unidad": "kHz",
+  "mide": "Frecuencia de muestreo de vibracion, corrientes, par y fase clave en el banco de motor",
+  "condiciones": "Motor de induccion de 2.2 kW en banco de laboratorio, 282 corridas de 90 s; sin bomba",
+  "evidencia": [
+   "E-2202"
+  ]
+ },
+ {
+  "id": "pmon-CF-02",
+  "valor": "2.2",
+  "unidad": "kW",
+  "mide": "Potencia del motor del banco",
+  "condiciones": "Banco de laboratorio; sin bomba ni prensaestopa",
+  "evidencia": [
+   "E-2202"
+  ]
+ },
+ {
+  "id": "hmon-CF-01",
+  "valor": "12.8",
+  "unidad": "kHz",
+  "mide": "Frecuencia de muestreo de vibracion, corrientes, par y fase clave en el banco de motor",
+  "condiciones": "Motor de induccion de 2.2 kW en banco de laboratorio, 282 corridas de 90 s; sin bomba",
+  "evidencia": [
+   "E-9613"
+  ]
+ },
+ {
+  "id": "hmon-CF-02",
+  "valor": "2.2",
+  "unidad": "kW",
+  "mide": "Potencia del motor del banco",
+  "condiciones": "Banco de laboratorio con caja reductora y freno de polvo magnetico; sin bomba",
+  "evidencia": [
+   "E-1301"
+  ]
+ },
+ {
+  "id": "hsel-C1",
+  "valor": "10",
+  "unidad": "% de falla en la definicion de L10",
+  "mide": "Fraccion de un grupo de rodamientos identicos que ha fallado al alcanzar la vida L10",
+  "condiciones": "Definicion citada por RULSurv (arXiv 2405.01614), Seccion 3.1; velocidad constante; no es dato de campo ni de bombas",
+  "evidencia": [
+   "E-1202"
+  ]
+ },
+ {
+  "id": "hsel-C2",
+  "valor": "0.5",
+  "unidad": "%",
+  "mide": "Fraccion de rodamientos industriales reemplazados por falla real (cita de segunda mano; ~90 % sobreviven al equipo y ~10 % se reemplazan preventivamente)",
+  "condiciones": "RULSurv Seccion 3.1, referencia [56] no leida; poblacion, pais y anio desconocidos; no especifico de bombas",
+  "evidencia": [
+   "E-1202"
+  ]
+ },
+ {
+  "id": "hsel-C3",
+  "valor": "9.6 / 11.7 / 14.6",
+  "unidad": "h",
+  "mide": "L10h nominal de las condiciones C1, C2, C3 del banco XJTU-SY",
+  "condiciones": "Rodamiento de bolas LDK UER204; 12.0, 11.0 y 10.0 kN radial; 2100, 2250 y 2400 rpm; banco acelerado (RULSurv, Tabla 2)",
+  "evidencia": [
+   "E-1204"
+  ]
+ }
+]
