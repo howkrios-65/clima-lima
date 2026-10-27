@@ -1,0 +1,311 @@
+{
+ "items": [
+  {
+   "causa": "H1",
+   "titulo": "Lubricación inadecuada o falla del lubricante",
+   "cadena": [
+    {
+     "porque": "¿Por qué podría fallar el rodamiento de la bomba? Si esta hipótesis se cumpliera, las superficies de rodadura acumularían daño por falla del lubricante hasta perder el giro.",
+     "evidencia": [
+      "E-6004",
+      "E-6002"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué fallaría el lubricante? Si se cumpliera, porque la película no separó los elementos rodantes ni evitó el contacto entre asperezas, a verificar con el lubricante retirado y las pistas.",
+     "evidencia": [
+      "E-1203"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué no cumpliría la película? Si se cumpliera, porque tipo, cantidad o intervalo de relubricación no estaban ajustados a la condición de operación y la temperatura reales, de las que depende la salud del rodamiento.",
+     "evidencia": [
+      "E-1203",
+      "E-1201"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué no estarían ajustados? Si se cumpliera, porque la práctica se definió para condiciones convencionales sin verificar el resultado en servicio.",
+     "evidencia": [
+      "E-6003"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque la lubricación no se gestionó como modo de falla con indicador y verificación, y los indicadores en uso pierden señal al extenderse el defecto. Causa latente a confirmar con registros.",
+     "evidencia": [
+      "E-8003",
+      "E-8008"
+     ],
+     "nivel": "SINTESIS"
+    }
+   ]
+  },
+  {
+   "causa": "H2",
+   "titulo": "Contaminación del rodamiento",
+   "cadena": [
+    {
+     "porque": "¿Por qué podría fallar el rodamiento? Si esta hipótesis se cumpliera, sería por corrosión y desgaste de pistas y elementos rodantes asociados a contaminación.",
+     "evidencia": [
+      "E-6004",
+      "E-1201"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué entraría contaminación? Si se cumpliera, porque la barrera del alojamiento no impidió el ingreso de partículas o humedad, o porque se introdujo durante la instalación o el engrase (a verificar).",
+     "evidencia": [
+      "E-6004",
+      "E-1201"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué la barrera no habría sido suficiente? Si se cumpliera, porque se especificó y mantuvo para condiciones convencionales, o porque su deterioro no se detectó.",
+     "evidencia": [
+      "E-6003"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué no se detectaría el deterioro? Si se cumpliera, porque las rutas de inspección no incluyen el estado del lubricante ni de las barreras y la vibración muestra el defecto solo en etapas avanzadas.",
+     "evidencia": [
+      "E-8008",
+      "E-8003"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque la selección y el plan de mantenimiento se apoyaron en la vida nominal, que cubre fatiga en condiciones convencionales, y no trataron la contaminación como modo de falla gestionado. Causa latente a confirmar con registros.",
+     "evidencia": [
+      "E-6002",
+      "E-6003",
+      "E-1202"
+     ],
+     "nivel": "SINTESIS"
+    }
+   ]
+  },
+  {
+   "causa": "H3",
+   "titulo": "Manipulación o instalación inadecuada del rodamiento",
+   "cadena": [
+    {
+     "porque": "¿Por qué podría fallar el rodamiento? Si esta hipótesis se cumpliera, habría sufrido daño antes o durante el montaje y fallaría de forma prematura.",
+     "evidencia": [
+      "E-6004",
+      "E-1201"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué se habría dañado en el montaje? Si se cumpliera, porque la manipulación y el calado dejaron marcas o cargas indebidas en las pistas, a verificar en el rodamiento retirado.",
+     "evidencia": [
+      "E-6004"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué ocurrirían esas marcas? Si se cumpliera, porque el procedimiento, las herramientas o la verificación posterior eran insuficientes.",
+     "evidencia": [
+      "E-6004"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué no se detectaría tras el montaje? Si se cumpliera, porque no hubo verificación ni medición de línea base posterior y el defecto solo se manifiesta con claridad en etapas posteriores de degradación.",
+     "evidencia": [
+      "E-8008"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque el montaje de rodamientos no tiene procedimiento con dueño, herramienta adecuada y criterio de aceptación. Causa latente a confirmar con registros.",
+     "evidencia": [
+      "E-6004",
+      "E-1201"
+     ],
+     "nivel": "SINTESIS"
+    }
+   ]
+  },
+  {
+   "causa": "H4",
+   "titulo": "Ajuste inadecuado con sobrecalentamiento",
+   "cadena": [
+    {
+     "porque": "¿Por qué podría fallar el rodamiento? Si esta hipótesis se cumpliera, sería por sobrecalentamiento causado por un ajuste inadecuado en el eje o el alojamiento.",
+     "evidencia": [
+      "E-6004",
+      "E-6002"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué habría un ajuste inadecuado? Si se cumpliera, porque el diámetro del eje o del alojamiento estaba fuera de la tolerancia del fabricante, a verificar con medición.",
+     "evidencia": [
+      "E-6004"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué estaría fuera de tolerancia? Si se cumpliera, porque no se verificó la dimensión tras una reparación, un montaje o un cambio de pieza, o por desgaste del asiento.",
+     "evidencia": [
+      "E-6002"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué no se detectaría el sobrecalentamiento? Si se cumpliera, porque no se vigilaba la temperatura junto con la vibración, que son indicadores que conviene fusionar.",
+     "evidencia": [
+      "E-1302",
+      "E-1203"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque el montaje y la reparación no exigen verificar ajustes ni la vigilancia incluye temperatura del soporte. Causa latente a confirmar con registros.",
+     "evidencia": [
+      "E-6004",
+      "E-1302"
+     ],
+     "nivel": "SINTESIS"
+    }
+   ]
+  },
+  {
+   "causa": "H5",
+   "titulo": "Desalineación del eje y el soporte",
+   "cadena": [
+    {
+     "porque": "¿Por qué podría fallar el rodamiento? Si esta hipótesis se cumpliera, la desalineación causaría daño del rodamiento, una de las causas de daño listadas en la literatura.",
+     "evidencia": [
+      "E-6002"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué habría desalineación? Si se cumpliera, porque el eje y el soporte quedaron fuera de la posición de diseño, a verificar con medición de alineación.",
+     "evidencia": [
+      "E-6002"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué quedarían fuera de posición? Si se cumpliera, por falta de verificación de alineación al montar o tras intervenciones, o por pérdida de posición en servicio; sin fuente leída propia de bombas.",
+     "evidencia": [
+      "E-6002"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué no se detectaría antes? Si se cumpliera, porque el monitoreo se enfoca en defectos de rodamiento y estos aparecen en etapas avanzadas de degradación.",
+     "evidencia": [
+      "E-8008",
+      "E-8001"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque no hay requisito de verificar alineación en la puesta en servicio ni tras intervenciones, ni indicador que la vigile. Causa latente a confirmar con registros.",
+     "evidencia": [
+      "E-6002",
+      "E-8003"
+     ],
+     "nivel": "SINTESIS"
+    }
+   ]
+  },
+  {
+   "causa": "H9",
+   "titulo": "Detección tardía del defecto",
+   "cadena": [
+    {
+     "porque": "¿Por qué llegaría el rodamiento a la falla funcional? Si esta hipótesis se cumpliera, porque el defecto avanzó por las etapas de degradación hasta la final sin intervención.",
+     "evidencia": [
+      "E-8008"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué no se intervino? Si se cumpliera, porque el indicador usado pierde señal al extenderse el defecto, como la kurtosis, y la caída se leyó como mejora.",
+     "evidencia": [
+      "E-8003"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué se leyó así? Si se cumpliera, porque los umbrales de alarma no tenían sustento ni se calibraron con fallas del activo.",
+     "evidencia": [
+      "E-8001"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué no se calibraron? Si se cumpliera, porque se tomaron métodos validados en banco, que no cubren la degradación continua de servicio, sin validarlos en el campo.",
+     "evidencia": [
+      "E-1305",
+      "E-8001"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque la estrategia de vigilancia no define quién valida umbrales ni combina técnicas con seguimiento de señales tempranas. Causa latente a confirmar con el historial de mediciones.",
+     "evidencia": [
+      "E-8003",
+      "E-1302"
+     ],
+     "nivel": "SINTESIS"
+    }
+   ]
+  },
+  {
+   "causa": "H10",
+   "titulo": "Selección basada solo en vida nominal",
+   "cadena": [
+    {
+     "porque": "¿Por qué podría fallar antes de lo esperado? Si esta hipótesis se cumpliera, porque la vida nominal supone condiciones convencionales y no cubre las demás causas de daño.",
+     "evidencia": [
+      "E-6003",
+      "E-6002"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué no se cubrirían? Si se cumpliera, porque la selección no incorporó lubricación, contaminación ni carga reales del servicio.",
+     "evidencia": [
+      "E-6003",
+      "E-1202"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué no las incorporó? Si se cumpliera, porque las condiciones reales (cargas de la bomba, entorno) no se midieron ni documentaron al seleccionar.",
+     "evidencia": [
+      "E-1204"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué no se midieron? Si se cumpliera, porque la memoria de selección no exige comparar supuestos con condiciones reales ni revisarlos tras una falla.",
+     "evidencia": [
+      "E-6003"
+     ],
+     "nivel": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque la gestión del ciclo de vida del rodamiento trata la vida nominal como garantía y no como supuesto a verificar. Causa latente a confirmar con la memoria de selección.",
+     "evidencia": [
+      "E-6002",
+      "E-6003"
+     ],
+     "nivel": "SINTESIS"
+    }
+   ]
+  }
+ ]
+}

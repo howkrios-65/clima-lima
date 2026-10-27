@@ -1,0 +1,433 @@
+{
+ "hipotesis": [
+  {
+   "id": "H1",
+   "texto": "Lubricación inadecuada o falla del lubricante en el rodamiento de la bomba.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Evidencia del activo: registros de lubricación (producto, cantidad, intervalo), estado del lubricante retirado y de las superficies de rodadura tras desmontar, y vibración, temperatura y análisis de lubricante previos a la parada. Se descarta si el lubricante y las superficies no muestran signos de falla de lubricación.",
+   "evidencia": [
+    "E-6004",
+    "E-1201",
+    "E-6002",
+    "E-1203"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "Premisas: E-6004 (resumen) atribuye fallas prematuras de rodamientos de bolas de bombas, entre otras causas, a falla de lubricante; E-1201 cita la mala lubricación como origen de defectos de rodamientos; E-6002 la lista entre las causas de daño; E-1203 describe la película lubricante que separa los elementos rodantes. Fuentes de rodamientos y de bombas en general, no de bomba centrífuga específica. Que ocurra en este activo es hipótesis sin registros. Debe ser validado por un experto del activo.",
+   "clase": "fisica"
+  },
+  {
+   "id": "H2",
+   "texto": "Contaminación (partículas, humedad, proceso) que ingresa al alojamiento del rodamiento y produce corrosión o desgaste de las pistas.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Inspección del lubricante y de las pistas retirados, estado de las barreras del alojamiento del rodamiento y condiciones del sitio. Se descarta si el lubricante y las barreras están íntegros y no hay rastros de corrosión.",
+   "evidencia": [
+    "E-6004",
+    "E-1201"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-6004 cita la corrosión causada por contaminación en rodamientos de bombas; E-1201 cita el desgaste por contaminación. Ninguna fuente leída trata el sellado del alojamiento ni el sello mecánico de la bomba (ver vacíos). Debe ser validado por un experto del activo.",
+   "clase": "fisica"
+  },
+  {
+   "id": "H3",
+   "texto": "Mala manipulación o instalación del rodamiento antes y durante el montaje.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Registros y procedimiento de montaje, herramientas usadas y marcas de manipulación en las pistas del rodamiento retirado; fecha de la última instalación frente al momento de la falla. Se descarta si el procedimiento se cumplió y no hay marcas.",
+   "evidencia": [
+    "E-6004",
+    "E-1201"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-6004 cita el mal manejo antes y durante la instalación como causa de falla prematura en bombas; E-1201 cita el montaje inadecuado. La pregunta de fondo es qué del sistema lo permitió (procedimiento, capacitación, herramienta, verificación), no quién lo hizo. Debe ser validado por un experto del activo.",
+   "clase": "humana"
+  },
+  {
+   "id": "H4",
+   "texto": "Ajuste inadecuado del rodamiento en el eje o en el alojamiento, con sobrecalentamiento.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Medir diámetros y tolerancias del eje y del alojamiento y buscar signos térmicos en el rodamiento retirado; termografía previa si existe. Se descarta si los ajustes cumplen la especificación del fabricante y no hay signos térmicos.",
+   "evidencia": [
+    "E-6004",
+    "E-6002"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-6004 liga el sobrecalentamiento a ajustes inadecuados en alojamientos o ejes; E-6002 lista los ajustes apretados entre las causas de daño. Transferida a este activo por analogía de mecanismo. Debe ser validado por un experto del activo.",
+   "clase": "fisica"
+  },
+  {
+   "id": "H5",
+   "texto": "Desalineación del rodamiento o del eje respecto del soporte (incluida la del conjunto motor-bomba, a verificar).",
+   "estado": "posible",
+   "prueba_para_confirmar": "Medición de alineación del conjunto y asentamiento del soporte con el método que fije el fabricante; patrón de desgaste de las pistas tras desmontar. Se descarta si la alineación está dentro de lo que fije el fabricante y el desgaste es simétrico.",
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-6002 lista la desalineación entre las causas de daño de rodamientos (bolas, fatiga de ciclos muy altos). La desalineación propia de bombas (acople, rotor) solo tiene pistas no leídas: ver vacíos. Debe ser validado por un experto del activo.",
+   "clase": "fisica"
+  },
+  {
+   "id": "H6",
+   "texto": "Carga sobre el rodamiento mayor que la de diseño (radial o axial), con aceleración del daño.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Comparar las cargas reales radial y axial sobre el rodamiento con las de diseño, con datos del activo; huella de carga en la pista del rodamiento retirado. Se descarta si la carga real es menor que la de diseño y no hay huella localizada.",
+   "evidencia": [
+    "E-6002",
+    "E-1204"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-6002 lista la carga excesiva entre las causas de daño; E-1204 (banco acelerado de rodamientos de bolas) advierte que la carga muy alta acelera la degradación e incrementa el riesgo de iniciar defectos y de calentamiento local. Las cargas hidráulicas de una bomba centrífuga no tienen fuente leída (ver vacíos). Debe ser validado por un experto del activo.",
+   "clase": "fisica"
+  },
+  {
+   "id": "H7",
+   "texto": "Fatiga de contacto por rodadura en condiciones convencionales: fin de vida esperado y no falla prematura.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Horas o ciclos del rodamiento frente a su vida nominal calculada con la carga real y morfología del daño tras desmontar. Se descarta si falló muy por debajo de su vida nominal con signos de otras causas.",
+   "evidencia": [
+    "E-6003",
+    "E-1202",
+    "E-1205",
+    "E-6002"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-6003 y E-1202 definen la vida nominal para condiciones convencionales; E-1205 menciona desgaste y fatiga como susceptibilidad del rodamiento. Que en condiciones convencionales la causa de falla sea la fatiga de contacto consta en el resumen de E-6002, no en su extracto. La edición de la norma de vida nominal no está verificada. Debe ser validado por un experto del activo.",
+   "clase": "fisica"
+  },
+  {
+   "id": "H8",
+   "texto": "Mecanismos secundarios de daño: corrosión, fricción por micro-movimiento (fretting) y desgaste del rodamiento o de su asiento.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Examen de las superficies del rodamiento y de los asientos tras desmontar. Se descarta si no presentan estos signos.",
+   "evidencia": [
+    "E-6002",
+    "E-1205"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-6002 los lista como causas de daño; E-1205 cita desgaste y fatiga. Son mecanismos de daño; la causa de origen puede estar en H1 a H5. Debe ser validado por un experto del activo.",
+   "clase": "fisica"
+  },
+  {
+   "id": "H9",
+   "texto": "Detección tardía: el defecto avanza sin ser detectado por los indicadores y umbrales de vigilancia en uso.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Historial de mediciones previas: indicadores, periodicidad, umbrales y señales previas no atendidas. Se descarta si el defecto apareció entre dos mediciones sin señal previa detectable.",
+   "evidencia": [
+    "E-8008",
+    "E-8003",
+    "E-8001",
+    "E-1305"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "Premisas: etapas de degradación con contenido espectral distinto, la primera detectable solo con sensores especializados (E-8008); la kurtosis vuelve a valores normales al extenderse el defecto (E-8003); no se halló sustento de los umbrales de kurtosis 3 y 5 (E-8001); los conjuntos de banco no cubren fallas progresivas de servicio prolongado (E-1305). Contribuye a la consecuencia, no al inicio del daño. Revisiones y bancos de rodamientos o motores, no de bombas. Debe ser validado por un experto del activo.",
+   "clase": "latente"
+  },
+  {
+   "id": "H10",
+   "texto": "Selección del rodamiento solo por vida nominal, que cubre fatiga de contacto en condiciones convencionales y no las demás causas.",
+   "estado": "posible",
+   "prueba_para_confirmar": "Memoria de selección: vida nominal básica o modificada, factores de lubricación y contaminación supuestos y comparación con las condiciones reales del sitio. Se descarta si la selección incorporó esas condiciones y se verificaron.",
+   "evidencia": [
+    "E-6003",
+    "E-6002",
+    "E-1202"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-6003 define la vida nominal para condiciones convencionales; E-6002 enumera causas fuera de ellas. La inferencia sobre la práctica de selección es del equipo, sin datos del activo. La vida modificada por viscosidad y contaminación consta en el resumen de E-6003, no en su extracto. Debe ser validado por un experto del activo.",
+   "clase": "latente"
+  },
+  {
+   "id": "H11",
+   "texto": "La falla observada en el tren de la bomba se origina o se confunde con una falla del motor impulsor (mecánica o eléctrica).",
+   "estado": "posible",
+   "prueba_para_confirmar": "Vibración y corriente del motor con la bomba desacoplada o en vacío si es seguro, historial del motor y comparación del espectro del lado motor con el del lado bomba. Se descarta si el motor muestra señales normales y el daño se localiza solo en el lado bomba.",
+   "evidencia": [
+    "E-1304",
+    "E-1301",
+    "E-1302"
+   ],
+   "nivel": "SINTESIS",
+   "nota": "E-1304: en la práctica es difícil distinguir fallas mecánicas de eléctricas por sus manifestaciones similares; E-1301: vibración y corriente son indicadores de salud del motor; E-1302 (solo resumen): motores de inducción usados en bombas. Bancos de motor de 2,2 kW, no de bombas. Debe ser validado por un experto del activo.",
+   "clase": "fisica"
+  }
+ ],
+ "ensayos": [
+  {
+   "ensayo": "Análisis de envolvente de la vibración para identificar tipo y ubicación del defecto de rodamiento (frecuencias características); en la etapa 3 aparecen las frecuencias fundamentales de defecto y sus armónicos.",
+   "para_hipotesis": [
+    "H1",
+    "H2",
+    "H5",
+    "H7",
+    "H9"
+   ],
+   "evidencia": [
+    "E-8001",
+    "E-8008"
+   ]
+  },
+  {
+   "ensayo": "Kurtosis como indicador de defecto incipiente, leída junto con otros indicadores porque no es monótona con el avance del daño.",
+   "para_hipotesis": [
+    "H9",
+    "H7"
+   ],
+   "evidencia": [
+    "E-8003"
+   ]
+  },
+  {
+   "ensayo": "Vibración y corriente del motor impulsor como indicadores de su salud, para separar causa del lado motor de la del lado bomba.",
+   "para_hipotesis": [
+    "H11"
+   ],
+   "evidencia": [
+    "E-1301",
+    "E-1304"
+   ]
+  },
+  {
+   "ensayo": "Monitoreo multisensor (vibración, temperatura, ruido) del motor de una bomba; solo se leyó el resumen.",
+   "para_hipotesis": [
+    "H4",
+    "H9",
+    "H11"
+   ],
+   "evidencia": [
+    "E-1302"
+   ]
+  }
+ ],
+ "vacios": [
+  "No existe caso real ni datos de planta: ninguna hipótesis puede pasar de posible.",
+  "Entradas del caso que faltan y deben pedirse al líder: evento y fecha, línea de tiempo con fuentes, series de proceso y condición (caudal, presión de succión y descarga, NPSH disponible, corriente del motor, temperatura), historial de órdenes, análisis de aceite o grasa, evidencia física preservada y su custodio, acciones previas y eventos similares.",
+  "Cavitación y erosión del impulsor: SIN DATOS PARA ARMARLO. Pistas no leídas: E-1104, E-1105, E-1106, E-1107, E-1315.",
+  "Recirculación y operación fuera del punto de mejor eficiencia: SIN DATOS PARA ARMARLO. Pistas no leídas: E-1107, E-1108, E-1115.",
+  "Sellos mecánicos de la bomba (marcha en seco, desalineación, deflexión del eje): SIN DATOS PARA ARMARLO. Pistas no leídas: E-1212, E-1213, E-1100.",
+  "Anillos de desgaste y su holgura: SIN DATOS PARA ARMARLO. Pistas no leídas: E-1113, E-1100.",
+  "Golpe de ariete y transitorios hidráulicos: SIN DATOS PARA ARMARLO. Pista no leída: E-1112.",
+  "Eje, acople y desalineación propios de la bomba (fatiga de eje, rotor): SIN DATOS PARA ARMARLO. Pistas no leídas: E-1109, E-1110, E-1111.",
+  "Cargas hidráulicas radial y axial de una bomba centrífuga y su efecto sobre el rodamiento: SIN DATOS PARA ARMARLO. Pistas no leídas: E-1104, E-1108.",
+  "Reparto porcentual de modos de falla de bombas (sellos, rodamientos y otros): SIN DATOS PARA ARMARLO. Las pistas E-1100, E-1101, E-1102, E-1103, E-1116, E-1210 y E-1211 no se leyeron y se contradicen entre sí; no se usa ninguna cifra. La atribución de E-6004 es una afirmación del autor en un resumen de 1988, sin base de datos ni tamaño de muestra, y se usa solo como causa cualitativa.",
+  "Taxonomía y FMEA de bombas: SIN DATOS PARA ARMARLO. Pista no leída: E-1114.",
+  "Ensayos post mortem del rodamiento (metalografía, microscopía), técnicas para verificar ajustes y alineación, y normas aplicables: sin fuente leída; las pruebas propuestas son inspecciones generales y el registro de normas no se consultó en este análisis.",
+  "Tiempos de aviso por técnica y criterios de alarma de vibración, temperatura o corriente para bombas: SIN DATOS PARA ARMARLO; los umbrales se fijan con el fabricante o con datos del activo.",
+  "Las fuentes leídas de rodamientos son de bolas en fatiga de ciclos muy altos (E-6002), aerogeneradores (E-6003), bancos aceleradados de laboratorio (E-1201 a E-1204, E-8008), un resumen de 1988 sobre bombas (E-6004) y bancos de motor (E-1301 a E-1305): comparabilidad baja o media con una bomba centrífuga de planta.",
+  "La puerta AND de N1 (inicio de daño y progresión sin detección) es lectura del equipo, no un hecho de la literatura. Convergencia no es confirmación: las hipótesis H1 a H5 se apoyan en pocas fuentes distintas (E-6004, E-1201, E-6002) y varias comparten la misma de origen. La literatura revisada no mide si combinar técnicas mejora la validez."
+ ],
+ "ishikawa": {
+  "Máquina": [
+   {
+    "texto": "Ajuste inadecuado o apretado entre rodamiento, eje y alojamiento.",
+    "mecanismo": "El sobrecalentamiento por ajustes inadecuados en alojamientos o ejes figura como causa de falla prematura de rodamientos de bombas (E-6004) y los ajustes apretados figuran entre las causas de daño (E-6002).",
+    "verificar": "Medir diámetros de eje y alojamiento y compararlos con la tolerancia del fabricante del rodamiento; buscar coloración térmica en las pistas y marcas de giro del anillo en el asiento; termografía previa a la parada si existe.",
+    "evidencia": [
+     "E-6004",
+     "E-6002"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Resumen de 1988 sobre rodamientos de bolas de bombas y fuente de rodamientos de bolas en fatiga de ciclos muy altos. Que el ajuste de este activo sea inadecuado es hipótesis."
+   },
+   {
+    "texto": "Desalineación del rodamiento o del eje respecto del soporte.",
+    "mecanismo": "La desalineación figura entre las causas de daño de rodamientos (E-6002).",
+    "verificar": "Medir alineación del conjunto con el método que fije el fabricante; revisar la huella de contacto asimétrica en las pistas del rodamiento retirado.",
+    "evidencia": [
+     "E-6002"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Solo respalda que la desalineación figura como causa de daño. La desalineación propia de bomba (acople, rotor) no tiene fuente leída. Carga localizada y desgaste asimétrico son razonamiento del equipo."
+   },
+   {
+    "texto": "Carga radial o axial sobre el rodamiento mayor que la de diseño. CONDICION A VERIFICAR.",
+    "mecanismo": "La carga excesiva figura entre las causas de daño (E-6002) y, en un banco acelerado de rodamientos de bolas, la carga muy alta acelera la degradación y arriesga calentamiento local (E-1204).",
+    "verificar": "Estimar las cargas reales con datos del fabricante de la bomba y compararlas con la capacidad del rodamiento; revisar la huella de carga en la pista del rodamiento retirado.",
+    "evidencia": [
+     "E-6002",
+     "E-1204"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Las cargas hidráulicas de una bomba centrífuga no tienen fuente leída. E-1204 es un banco acelerado, no una bomba. Validar con un experto del activo."
+   },
+   {
+    "texto": "Barrera de protección del alojamiento del rodamiento insuficiente frente a contaminantes. CONDICION A VERIFICAR.",
+    "mecanismo": "La corrosión causada por contaminación figura como causa de falla prematura en rodamientos de bombas (E-6004) y el desgaste por contaminación como origen de defectos (E-1201).",
+    "verificar": "Inspeccionar el estado de retenes y tapas del alojamiento del rodamiento y la limpieza de puertos de engrase; examinar el lubricante retirado en busca de partículas o agua.",
+    "evidencia": [
+     "E-6004",
+     "E-1201"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Que la barrera de este alojamiento sea la débil es hipótesis del equipo. No cubre el sello mecánico de la bomba (ver notas). Validar con un experto del activo."
+   },
+   {
+    "texto": "Daño secundario de asientos y superficies: fretting, corrosión y desgaste.",
+    "mecanismo": "Micro-movimiento entre anillo y asiento, corrosión y desgaste figuran entre las causas de daño de rodamientos (E-6002).",
+    "verificar": "Examen visual y con aumento de asientos del eje y del alojamiento y de las superficies del anillo tras desmontar.",
+    "evidencia": [
+     "E-6002"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Fuente de rodamientos de bolas en fatiga de ciclos muy altos, no de bombas."
+   },
+   {
+    "texto": "Falla del motor impulsor, mecánica o eléctrica, que se manifiesta en el tren motor-bomba.",
+    "mecanismo": "En la práctica es difícil distinguir fallas mecánicas de eléctricas por sus manifestaciones similares (E-1304); vibración y corriente son indicadores de la salud del motor (E-1301).",
+    "verificar": "Vibración y corriente del motor, historial del motor y comparación del espectro del lado motor con el del lado bomba.",
+    "evidencia": [
+     "E-1304",
+     "E-1301"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Bancos de motor de 2,2 kW, no de bombas. Que el motor contribuya a esta falla es hipótesis. Validar con un experto del activo."
+   }
+  ],
+  "Método": [
+   {
+    "texto": "Práctica de relubricación (tipo, cantidad, intervalo) no ajustada a las condiciones reales de operación.",
+    "mecanismo": "La falla de lubricante figura como causa de falla prematura en rodamientos de bombas (E-6004) y la mala lubricación como origen de defectos (E-1201); la salud del rodamiento depende de la condición de operación, la temperatura y el nivel de mantenimiento (E-1203).",
+    "verificar": "Revisar el plan y los registros de engrase (producto, cantidad, frecuencia, fecha) y compararlos con la recomendación del fabricante del rodamiento.",
+    "evidencia": [
+     "E-6004",
+     "E-1201",
+     "E-1203"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "La lubricación inadecuada es causa nombrada en las fuentes; que la práctica del activo esté desajustada es hipótesis sin registros. Validar con un experto del activo."
+   },
+   {
+    "texto": "Montaje e instalación del rodamiento sin control suficiente (manipulación previa, método de calado, verificación posterior).",
+    "mecanismo": "El mal manejo antes y durante la instalación figura como causa de falla prematura (E-6004) y el montaje inadecuado como origen de defectos (E-1201).",
+    "verificar": "Revisar el procedimiento de montaje, las herramientas usadas y los registros; buscar marcas de impacto o carga indebida en las pistas del rodamiento retirado.",
+    "evidencia": [
+     "E-6004",
+     "E-1201"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "El enfoque es el sistema (procedimiento, herramienta, verificación), no quién montó. Que haya falta de control es hipótesis sin datos. Validar con un experto del activo."
+   },
+   {
+    "texto": "Selección del rodamiento solo por vida nominal, que cubre fatiga de contacto en condiciones convencionales y no las demás causas.",
+    "mecanismo": "E-6003 y E-1202 definen la vida nominal para condiciones convencionales; E-6002 enumera causas fuera de ellas.",
+    "verificar": "Revisar la memoria de selección: vida nominal básica o modificada, factores de lubricación y contaminación supuestos y su comparación con las condiciones reales del sitio.",
+    "evidencia": [
+     "E-6003",
+     "E-1202",
+     "E-6002"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Razonamiento del equipo a partir de las fuentes. La vida modificada por viscosidad y contaminación consta en el resumen de E-6003, no en su extracto. Validar con un experto del activo."
+   }
+  ],
+  "Material": [
+   {
+    "texto": "Lubricante degradado, inadecuado o incompatible con la aplicación.",
+    "mecanismo": "La falla de lubricante es causa de falla prematura de rodamientos de bombas (E-6004) y de daño de rodamientos (E-6002).",
+    "verificar": "Muestra del lubricante retirado: aspecto, olor, presencia de partículas o agua; análisis de aceite o de grasa.",
+    "evidencia": [
+     "E-6004",
+     "E-6002"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Resumen de 1988 sobre bombas y fuente de rodamientos de bolas. Que el lubricante de este activo esté degradado es hipótesis."
+   },
+   {
+    "texto": "Corrosión y desgaste de las superficies del rodamiento.",
+    "mecanismo": "La corrosión por contaminación y el desgaste son causas de daño (E-6004, E-6002).",
+    "verificar": "Inspección visual y con aumento de pistas y elementos rodantes tras desmontar.",
+    "evidencia": [
+     "E-6004",
+     "E-6002"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Son mecanismos de daño; la causa de origen está en otras ramas (contaminación, lubricación)."
+   },
+   {
+    "texto": "Fatiga normal del material (descascarado): fin de vida esperado y no falla prematura.",
+    "mecanismo": "La vida nominal es la que alcanza o supera el 90 % de la población en condiciones convencionales (E-6003); el rodamiento es susceptible a desgaste y fatiga (E-1205).",
+    "verificar": "Comparar las horas de servicio con la vida nominal calculada con la carga real; morfología del daño en la pista.",
+    "evidencia": [
+     "E-6003",
+     "E-1205"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Se descarta si el rodamiento falló muy por debajo de su vida nominal con signos de otras causas. Edición de la norma no verificada. Validar con un experto del activo."
+   },
+   {
+    "texto": "Rodamiento con daño previo o calidad no verificada (almacenamiento, manejo, trazabilidad).",
+    "mecanismo": "La vida nominal supone material de alta calidad y buena manufactura (E-6003); el mal manejo antes de la instalación causa falla prematura (E-6004).",
+    "verificar": "Trazabilidad del lote, inspección dimensional y de superficies de rodamientos nuevos de la misma partida; condiciones de almacenamiento.",
+    "evidencia": [
+     "E-6003",
+     "E-6004"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Que haya un problema de lote es hipótesis sin datos. Validar con un experto del activo."
+   }
+  ],
+  "Mano de obra": [],
+  "Medición": [
+   {
+    "texto": "Kurtosis usada como indicador único: no es monótona con el avance del daño.",
+    "mecanismo": "La kurtosis es buen indicador de defecto incipiente, pero vuelve a valores normales cuando el defecto se extiende (E-8003).",
+    "verificar": "Graficar kurtosis y envolvente en el tiempo para ver si la caída de kurtosis se leyó como mejora.",
+    "evidencia": [
+     "E-8003"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Revisión de 2008; no trata bombas ni cuantifica tiempos de aviso."
+   },
+   {
+    "texto": "Umbrales de kurtosis 3 y 5 sin sustento hallado.",
+    "mecanismo": "Los autores de una revisión no hallaron sustento teórico ni empírico de los límites de kurtosis 3 y 5 (E-8001).",
+    "verificar": "Identificar el origen de los umbrales de alarma vigentes y si se calibraron con fallas propias de este activo.",
+    "evidencia": [
+     "E-8001"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Ningún umbral citado aplica a bombas; no deben usarse como umbral."
+   },
+   {
+    "texto": "Etapas tempranas de degradación solo detectables con sensores especializados o con análisis de envolvente.",
+    "mecanismo": "En la etapa 1 aparecen frecuencias ultrasónicas detectables solo con sensores especializados; en la etapa 3 aparecen las frecuencias fundamentales de defecto y sus armónicos (E-8008); el espectro de la envolvente identifica tipo y ubicación del defecto (E-8001).",
+    "verificar": "Revisar rango de frecuencias del sensor y si se aplicó envolvente; qué etapa se alcanzó en la última medición antes de la parada.",
+    "evidencia": [
+     "E-8008",
+     "E-8001"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Descripción cualitativa de preprint de banco, sin duración ni tiempos de aviso; la aplicación al activo es inferencia del equipo. Validar con un experto del activo."
+   },
+   {
+    "texto": "Datos y modelos de banco que no representan la degradación continua de servicio prolongado.",
+    "mecanismo": "Los autores de un conjunto de banco declaran que no incluye fallas distribuidas ni progresivas de servicio prolongado y que las severidades son discretas (E-1305).",
+    "verificar": "Si hay un detector automático, pedir cómo se validó y si se probó en bombas de esta flota.",
+    "evidencia": [
+     "E-1305"
+    ],
+    "nivel": "EVIDENCIA",
+    "nota": "Conjunto de motor de 2,2 kW; aplica solo si el activo usa algoritmos de diagnóstico, lo cual no se sabe."
+   },
+   {
+    "texto": "Vigilancia sin integrar vibración, temperatura, ruido y corriente del tren motor-bomba, y sin línea base por activo.",
+    "mecanismo": "Vibración y corriente son indicadores de salud del motor (E-1301) y existen sistemas que fusionan vibración, temperatura y ruido en motores usados en bombas (E-1302, solo resumen).",
+    "verificar": "Revisar si existe línea base del tren sano y si se cruzan vibración, temperatura, ruido, corriente y análisis de lubricante.",
+    "evidencia": [
+     "E-1301",
+     "E-1302"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "Fuentes de motor, comparabilidad baja con la bomba. Validar con un experto del activo."
+   }
+  ],
+  "Medio ambiente": []
+ },
+ "ishikawa_notas": {
+  "Mano de obra": "SIN DATOS PARA ARMARLO (parcial). Datos que faltan: rol de turnos y dotación, matriz de competencias y formación en montaje de rodamientos y alineación, procedimientos vigentes de montaje, engrase y arranque, registros de intervenciones previas, traspaso de información entre turnos sobre señales tempranas (ruido, temperatura, fugas) y competencia de análisis de vibración. Ninguna fuente leída trata el factor humano en bombas; la causa humana H3 queda en la rama Método como práctica del sistema.",
+  "Medio ambiente": "SIN DATOS PARA ARMARLO (parcial). Datos que faltan: tipo de fluido bombeado y su temperatura, sólidos o abrasivos en el proceso, polvo y humedad del sitio, temperatura ambiente y del soporte, cimentación y base del tren, vibración transmitida por tuberías y clima local. Ninguna fuente leída trata el ambiente de una bomba.",
+  "Máquina": "SIN DATOS PARA ARMARLO (parcial) en modos propios de bomba: cavitación (E-1104, E-1105, E-1106, E-1107, E-1315), recirculación y operación fuera del punto de mejor eficiencia (E-1107, E-1108), sello mecánico (E-1212, E-1213), anillos de desgaste (E-1113), eje, acople y desalineación propia de bomba (E-1109, E-1110, E-1111). Son pistas no leídas y no respaldan nada.",
+  "Método": "SIN DATOS PARA ARMARLO (parcial): punto de operación respecto de la curva de la bomba, secuencia de arranque y parada, golpe de ariete y transitorios (pista no leída E-1112). Sin fuente leída; quedan como preguntas a verificar en terreno.",
+  "Material": "SIN DATOS PARA ARMARLO (parcial): materiales del impulsor y erosión por cavitación (pista no leída E-1105). Sin fuente leída.",
+  "Medición": "SIN DATOS PARA ARMARLO (parcial): variables de proceso de la bomba (caudal, presión de succión y descarga, NPSH disponible) y su uso como indicadores; pistas no leídas E-1107 y E-1315 (cavitación por corriente). Sin fuente leída, no hay criterios de alarma para bombas."
+ }
+}

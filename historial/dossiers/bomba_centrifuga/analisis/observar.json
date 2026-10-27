@@ -1,0 +1,272 @@
+{
+ "items": [
+  {
+   "hipotesis": "H1",
+   "sintoma": "Lubricante retirado seco, degradado, decolorado o con partículas",
+   "medicion": "Inspección del lubricante al desmontar y análisis de aceite o grasa (síntoma y medición: razonamiento del equipo; las fuentes respaldan el contexto, no el síntoma exacto)",
+   "referencia": null,
+   "evidencia": [
+    "E-6004",
+    "E-1203"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H1",
+   "sintoma": "Superficies de rodadura con desgaste o contacto metal-metal",
+   "medicion": "Inspección visual y con aumento de pistas y elementos rodantes tras desmontar",
+   "referencia": "La película lubricante separa los elementos rodantes para evitar el contacto entre asperezas (E-1203).",
+   "evidencia": [
+    "E-1203"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H1",
+   "sintoma": "Soporte con temperatura más alta que lo habitual",
+   "medicion": "Termografía o medición de temperatura comparada con el histórico del propio activo",
+   "referencia": null,
+   "evidencia": [
+    "E-1203"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H1",
+   "sintoma": "Registros de engrase irregulares o ausentes",
+   "medicion": "Revisión del plan, producto, cantidad y frecuencia contra la recomendación del fabricante",
+   "referencia": null,
+   "evidencia": [
+    "E-6004",
+    "E-1201"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H2",
+   "sintoma": "Corrosión o picaduras en pistas y asientos",
+   "medicion": "Inspección visual y con aumento tras desmontar",
+   "referencia": "Corrosión causada por contaminación como origen de falla prematura (E-6004).",
+   "evidencia": [
+    "E-6004"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H2",
+   "sintoma": "Partículas o agua en el lubricante",
+   "medicion": "Análisis del lubricante retirado",
+   "referencia": null,
+   "evidencia": [
+    "E-6004",
+    "E-1201"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H2",
+   "sintoma": "Barreras del alojamiento del rodamiento deterioradas o desplazadas",
+   "medicion": "Inspección de retenes y tapas, y limpieza de puertos de engrase",
+   "referencia": null,
+   "evidencia": [
+    "E-6004"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H3",
+   "sintoma": "Marcas de impacto o carga indebida en pistas",
+   "medicion": "Inspección de pistas del rodamiento retirado",
+   "referencia": null,
+   "evidencia": [
+    "E-6004"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H3",
+   "sintoma": "Falla temprana tras un montaje reciente",
+   "medicion": "Fecha y registro de la última instalación frente al momento de la falla",
+   "referencia": null,
+   "evidencia": [
+    "E-6004",
+    "E-1201"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H3",
+   "sintoma": "Procedimiento, herramientas o verificación de montaje ausentes",
+   "medicion": "Revisar el procedimiento vigente y las herramientas de calado",
+   "referencia": null,
+   "evidencia": [
+    "E-6004"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H4",
+   "sintoma": "Sobrecalentamiento del rodamiento asociado a ajustes en alojamiento o eje",
+   "medicion": "Coloración térmica en las pistas y termografía previa a la parada",
+   "referencia": "Sobrecalentamiento por ajustes inadecuados en alojamientos o ejes (E-6004).",
+   "evidencia": [
+    "E-6004"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H4",
+   "sintoma": "Ajuste fuera de especificación",
+   "medicion": "Medir diámetros de eje y alojamiento y comparar con la tolerancia del fabricante del rodamiento (medición: razonamiento del equipo)",
+   "referencia": null,
+   "evidencia": [
+    "E-6004",
+    "E-6002"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H4",
+   "sintoma": "Marcas de giro del anillo en el asiento",
+   "medicion": "Inspección del asiento del eje y del alojamiento (síntoma: razonamiento del equipo)",
+   "referencia": null,
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H5",
+   "sintoma": "Desgaste asimétrico o huella de contacto desplazada en la pista",
+   "medicion": "Inspección de pistas tras desmontar (síntoma: razonamiento del equipo)",
+   "referencia": null,
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H5",
+   "sintoma": "Eje o soporte fuera de la posición de diseño",
+   "medicion": "Alineación del conjunto con el método del fabricante; revisión de pernos y base",
+   "referencia": null,
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H6",
+   "sintoma": "Daño acelerado o calentamiento local compatible con carga muy alta",
+   "medicion": "Huella de carga en la pista del rodamiento retirado y comparación de cargas reales con las de diseño",
+   "referencia": "En un banco acelerado, la carga muy alta acelera la degradación y arriesga calentamiento local (E-1204).",
+   "evidencia": [
+    "E-1204",
+    "E-6002"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H7",
+   "sintoma": "Horas de servicio cercanas o superiores a la vida nominal calculada con la carga real",
+   "medicion": "Comparar horas acumuladas con la vida nominal",
+   "referencia": "Vida nominal básica: valor que el 90 % de una población de rodamientos idénticos alcanza o supera, en condiciones convencionales (E-6003); L10 es el número de horas antes de que falle el 10 % de un grupo de rodamientos idénticos a velocidad constante (E-1202).",
+   "evidencia": [
+    "E-6003",
+    "E-1202"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H7",
+   "sintoma": "Descascarado subsuperficial en la pista",
+   "medicion": "Inspección y morfología del daño tras desmontar (síntoma: razonamiento del equipo; consta en el resumen de E-6002, no en su extracto)",
+   "referencia": null,
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H8",
+   "sintoma": "Fretting, corrosión o desgaste en el asiento o en el anillo",
+   "medicion": "Examen visual y con aumento de asiento y anillo",
+   "referencia": "E-6002 lista corrosión, desgaste y fretting entre las causas de daño de rodamientos.",
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H9",
+   "sintoma": "Frecuencias fundamentales de defecto y armónicos en el espectro cuando el daño ya se ha extendido",
+   "medicion": "Análisis de envolvente del historial de vibración",
+   "referencia": "Etapa 3 de degradación: frecuencias fundamentales de defecto y sus armónicos, que indican propagación del defecto (E-8008).",
+   "evidencia": [
+    "E-8008",
+    "E-8001"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H9",
+   "sintoma": "Kurtosis que baja a valores normales mientras el defecto avanza",
+   "medicion": "Graficar kurtosis junto con envolvente en el tiempo",
+   "referencia": "Criterio citado en una revisión: kurtosis menor que 3 buen estado, mayor que 3 operación con restricciones, mayor que 5 inaceptable; los autores no hallaron sustento teórico ni empírico de estos límites y NO deben usarse como umbral (E-8001).",
+   "evidencia": [
+    "E-8003",
+    "E-8001"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H9",
+   "sintoma": "Umbrales de alarma sin calibrar con fallas del activo",
+   "medicion": "Rastrear el origen de cada umbral y su validación (medición: razonamiento del equipo)",
+   "referencia": null,
+   "evidencia": [
+    "E-8001",
+    "E-1305"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H10",
+   "sintoma": "Memoria de selección basada solo en vida nominal básica",
+   "medicion": "Revisar si se usó vida nominal básica o modificada y qué factores de lubricación y contaminación se supusieron (síntoma: razonamiento del equipo)",
+   "referencia": null,
+   "evidencia": [
+    "E-6003",
+    "E-1202"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H11",
+   "sintoma": "Señales de vibración y corriente del motor anormales o semejantes a las del lado bomba",
+   "medicion": "Vibración y corriente del motor, comparados con la línea base del propio motor",
+   "referencia": "Vibración y corriente son indicadores de salud del motor; separar causa mecánica de eléctrica es difícil en la práctica (E-1301, E-1304).",
+   "evidencia": [
+    "E-1301",
+    "E-1304"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H11",
+   "sintoma": "Ruido o temperatura del motor anómalos",
+   "medicion": "Monitoreo multisensor de vibración, temperatura y ruido (solo resumen)",
+   "referencia": null,
+   "evidencia": [
+    "E-1302"
+   ],
+   "nivel": "SINTESIS"
+  }
+ ],
+ "vacios": [
+  "Valores de referencia (umbrales de temperatura, vibración, corriente, contaminación, caudal, presión y NPSH): SIN DATOS PARA ARMARLO; se fijan con el fabricante o con datos del activo.",
+  "Qué observar para cavitación, recirculación, sellos mecánicos, anillos de desgaste, golpe de ariete y fatiga de eje de la bomba: SIN DATOS PARA ARMARLO. Pistas no leídas: E-1104, E-1105, E-1106, E-1107, E-1108, E-1315, E-1212, E-1213, E-1113, E-1112, E-1109.",
+  "Síntomas de desalineación propios de bomba en el espectro: SIN DATOS PARA ARMARLO. Pistas no leídas: E-1110, E-1111.",
+  "Técnicas post mortem del rodamiento y normas de ensayo aplicables: sin fuente leída ni consulta del registro de normas en este análisis."
+ ]
+}

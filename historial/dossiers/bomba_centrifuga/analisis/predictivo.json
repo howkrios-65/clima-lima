@@ -1,0 +1,422 @@
+{
+ "hallazgos": [
+  {
+   "id": "P1",
+   "texto": "Los conjuntos de bomba leídos son de audio. MIMII reúne sonidos de máquinas industriales, entre ellas bombas, en condición normal y con anomalías provocadas (contaminación, fuga, desbalance rotatorio, daño de riel). Un reempaquetado trae 12615 ejemplos (8830 de entrenamiento, 1893 de validación y 1892 de prueba) con campos path, label y snr; otro trae 2177 ejemplos con path, label y pos. Son clips etiquetados, no historiales de vida.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-1700",
+    "E-1701",
+    "E-1702"
+   ],
+   "nota": "De E-1700 solo se leyó el resumen. Que no haya tiempos hasta la falla ni censura lo declaran los límites del registro, no el extracto. El vínculo de E-1701 con MIMII se infiere del nombre del repositorio, label no está definida, y E-1702 no tiene origen verificable. Comparabilidad con la bomba centrífuga: baja."
+  },
+  {
+   "id": "P2",
+   "texto": "Hoy no hay base para entrenar ni validar un modelo de clasificación, de anomalías o de RUL con datos de la bomba: no hay datos propios, ni etiquetas, ni fallas con fecha. Los únicos datos leídos con tiempos hasta la falla son de rodamientos de banco (17 unidades, criterio de falla no declarado); los de bomba son clips de audio. Una RUL con datos reales se construye con los registros de reparación como tiempo al siguiente fallo, de modo que lo primero es contar con el historial de fallas con fechas.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-1700",
+    "E-1701",
+    "E-1702",
+    "E-1703",
+    "E-9480"
+   ],
+   "nota": "Razonamiento a partir de lo leído; E-9480 construye la RUL con registros de reparación en equipos de otro tipo. Validar con un experto del activo."
+  },
+  {
+   "id": "P3",
+   "texto": "En un banco de rodamientos de bolas (XJTU-SY) con 25 % de censura aleatoria simulada, los modelos de supervivencia que admiten censura tuvieron error absoluto medio de 14,7 min (CoxPH lineal, IC 95 % 13,6 a 15,8) y de 12,6 min (bosque de supervivencia, IC 95 % 11,8 a 13,4), frente a 18,5 min (IC 95 % 17,4 a 19,6) del modelo LASSO que no admite censura. Los autores indican que ignorar los datos censurados empeora el error en la mayoría de conjuntos y niveles de censura.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9205",
+    "E-9405",
+    "E-9431"
+   ],
+   "nota": "Censura sintética aplicada a datos completos, error en minutos, carga alta (12,0 kN, 2100 rpm), cinco rodamientos por condición. Es un argumento de método (tratar la censura como tal), no de desempeño en bombas: resultados de bancos de rodamientos no se trasladan a bombas."
+  },
+  {
+   "id": "P4",
+   "texto": "Un error bajo no implica calibración. En la tabla de calibración de los autores, el bosque de supervivencia, que tuvo el menor error en general, pasó la calibración de distribución en 0 de 5 particiones en la condición de carga baja con 25 % de censura, y solo el modelo MTLR la pasó en todas las condiciones y niveles de censura.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9426",
+    "E-9430"
+   ],
+   "nota": "Preprint con banco acelerado y cinco particiones por celda. Los límites del registro señalan una diferencia entre el texto y la tabla para otro modelo (BNNSurv). Sin equivalente en bombas."
+  },
+  {
+   "id": "P5",
+   "texto": "En el mismo banco, rodamientos de la misma condición fallan en tiempos muy distintos: en la condición media el fin de registro va de 41 a 532 min y en la baja de 113 a 2537 min. Los autores atribuyen la dispersión a temperatura, lubricación y desgaste previo, y señalan que la degradación acelerada acorta la vida frente a rodamientos industriales.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9432",
+    "E-9403",
+    "E-9404"
+   ],
+   "nota": "La atribución es interpretación de los autores, no una medición. Sugiere entregar la RUL como distribución y no como un número; los minutos del banco no se trasladan a la bomba."
+  },
+  {
+   "id": "P6",
+   "texto": "La exactitud depende de la partición. En CWRU con pliegues por carga, el afinado completo desde pesos de ImageNet logra 97,58 % de exactitud media; con pliegues por severidad de falla baja a 64,38 % con desviación de 21,39 puntos. En otro trabajo (solo resumen), al retener una condición en JNU la exactitud cae a 40,64 %, bajo una línea base de clase mayoritaria, y la regresión logística (57,91 %) generaliza mejor que los conjuntos de árboles.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9456",
+    "E-9457",
+    "E-9466"
+   ],
+   "nota": "Rodamientos de bolas de banco; un solo banco con K = 4 en el primero; E-9466 es VERIFICADO-ABSTRACT, sin tablas ni protocolo. No hay resultado equivalente en bombas."
+  },
+  {
+   "id": "P7",
+   "texto": "Un resultado alto con segmentos barajados de las mismas grabaciones no prueba generalización a otra máquina o régimen. Un trabajo de diagnóstico usó 5 pliegues estratificados barajados de segmentos de 0,1 s (84000 segmentos), y los autores de otro advierten que cargas parecidas entre entrenamiento y prueba afectan la generalización y que los datos sanos abundan más que los datos con falla.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-9461",
+    "E-9463"
+   ],
+   "nota": "Que el barajado de segmentos no retiene grabaciones completas es interpretación del investigador (límites de E-9463). Para la bomba: partición por activo completo y por tiempo. Validar con un experto del activo."
+  },
+  {
+   "id": "P8",
+   "texto": "Un método de bancos de rodamientos logra sin ajuste adicional 90,22 % en JUST y 90,26 % y 89,14 % en CWRU, pero necesita comparar con una señal sin falla de las mismas condiciones de trabajo y, según sus autores, no puede aplicarse a equipos cuyas condiciones (velocidad, carga) varían en el tiempo.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9475",
+    "E-9477",
+    "E-9479"
+   ],
+   "nota": "Transferencia entre bancos de laboratorio, sin intervalo de confianza. Inferencia del analista, no de la fuente: una bomba con caudal o velocidad variables cae en esa limitación, así que la referencia sana debe construirse por punto de operación."
+  },
+  {
+   "id": "P9",
+   "texto": "Los detectores entrenados solo con sonido normal (990 clips de dominio fuente y 10 de dominio objetivo, sin clips anómalos) dan, en la máquina de rodamiento de laboratorio, una AUC de 65,92 % (fuente) y 55,75 % (objetivo) con el autoencoder base. Con máquinas nuevas la AUC del dominio objetivo bajó en la mayoría de los equipos, y los autores de un sistema base reconocen que su desempeño no es comparable al del ganador, que usó ajuste por tipo de máquina y un conjunto masivo de herramientas.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9505",
+    "E-9506",
+    "E-9507",
+    "E-9511"
+   ],
+   "nota": "Sonido de laboratorio mezclado con ruido de fábrica; no son bombas. Una AUC cercana a 50 % es poco mejor que el azar (límites del registro)."
+  },
+  {
+   "id": "P10",
+   "texto": "En campo real (cepilladora de madera, unas 21 h de micrófono, entrenamiento sin anomalías y evaluación con 105 anomalías), el bosque de aislamiento obtuvo AUC 0,518, la línea base 0,520, la SVM de una clase 0,683 y los autoencoders convolucionales 0,846 y 0,875. Los autores señalan que el ruido de fábrica puede enmascarar los sonidos anormales.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9513",
+    "E-9514",
+    "E-9515"
+   ],
+   "nota": "Una sola máquina, evaluación de dos días sin intervalos de confianza y con 105 anomalías, alguna posiblemente sin etiquetar; no es una bomba. Sirve como diseño de ensayo (entrenar sin falla, evaluar con eventos) y como aviso de que un detector aprendido puede quedar cerca del azar."
+  },
+  {
+   "id": "P11",
+   "texto": "Para evaluar detectores por evento, la métrica CARE combina cobertura de anomalías, exactitud en comportamiento normal, fiabilidad (pocas falsas alarmas) y tempranía. Las estrategias triviales 'todo normal' y 'todo anomalía' obtienen 0 y la aleatoria 0,5, que es la cota inferior a superar.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9468",
+    "E-9469",
+    "E-9473"
+   ],
+   "nota": "Datos de aerogeneradores con resolución de 10 min; el umbral de criticidad 72 se calibró a esa resolución y debe recalibrarse. Solo la definición de la métrica es trasladable, no los valores."
+  },
+  {
+   "id": "P12",
+   "texto": "Los autores del conjunto CARE exigen al menos un año de datos de entrenamiento por serie para aprender efectos estacionales, y marcan los 14 días previos a cada falla como estado de falla para no contaminar el entrenamiento.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9472"
+   ],
+   "nota": "Criterio de aerogeneradores con SCADA, no una cifra para la bomba (los 14 días son un criterio conservador de los autores). Ilustra que el periodo previo a la falla se excluye de lo que se llama normal."
+  },
+  {
+   "id": "P13",
+   "texto": "Para el lado motor del equipo, un banco de motor de inducción de 2,2 kW registró ocho canales sincronizados de vibración, corriente, par y fase clave a 12,8 kHz bajo velocidad y carga variables. Los autores afirman que vibración y corriente son indicadores de salud del motor, que la velocidad y la carga variables complican el diagnóstico, que distinguir fallas mecánicas de eléctricas es difícil en la práctica, y que el conjunto cubre fallas de un solo punto con severidades discretas, sin degradación continua.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-1301",
+    "E-1304",
+    "E-1305"
+   ],
+   "nota": "Banco con caja reductora y freno; no incluye bomba, caudal, presión ni cavitación (límites de E-1301). Comparabilidad con la bomba: baja."
+  },
+  {
+   "id": "P14",
+   "texto": "Una propuesta de detección de anomalías en motores de inducción fusiona vibración, temperatura y ruido de sensores IoT de bajo costo y se valida con un conjunto de datos propio.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9522"
+   ],
+   "nota": "VERIFICADO-ABSTRACT: solo resumen, sin cifras ni umbrales. Motor, no bomba. Respalda únicamente la idea de fusionar señales baratas, no un desempeño."
+  },
+  {
+   "id": "P15",
+   "texto": "La kurtosis y la asimetría son buenos indicadores de defecto incipiente en rodamientos, pero sus valores vuelven a la normalidad cuando el defecto se extiende por las superficies.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8003"
+   ],
+   "nota": "Revisión de 2008, sin tiempos de aviso. Inferencia del analista: una kurtosis baja no prueba un rodamiento sano y una tendencia de kurtosis puede dar falsa tranquilidad, por lo que no sirve sola para pronóstico."
+  },
+  {
+   "id": "P16",
+   "texto": "Los umbrales de kurtosis 3 (operación con restricciones) y 5 (inaceptable) circulan en la literatura, pero los autores de la revisión no hallaron sustento teórico ni empírico. Aparte, el espectro de la envolvente tiene alta sensibilidad, inmunidad al ruido y permite identificar el tipo y la ubicación del defecto.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8001"
+   ],
+   "nota": "Revisión narrativa de rodamientos, sin bombas. Los umbrales 3 y 5 no se adoptan como alarma ni como etiqueta."
+  },
+  {
+   "id": "P17",
+   "texto": "La degradación del rodamiento se describe en cuatro etapas cualitativas por contenido espectral: 1 ultrasonido sin defectos visibles; 2 resonancia natural con aparición inicial de defectos; 3 frecuencias fundamentales de defecto y sus armónicos; 4 etapa final previa a la falla.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8008"
+   ],
+   "nota": "Sin duraciones ni tiempos de aviso, por lo que no permite fijar un intervalo entre la primera detección y la falla. Datos de banco acelerado; preprint leído parcialmente."
+  },
+  {
+   "id": "P18",
+   "texto": "Sobre modelos fundacionales de series: los autores de un preprint reportan que una cabeza ligera sobre embeddings congelados baja el error hasta 5 veces frente a modelos de referencia, en equipos de telecomunicaciones con registros de reparación. En otro trabajo de preentrenamiento multidominio el beneficio es mayor con pocas etiquetas, y con 100 % de etiquetas el modelo entrenado desde cero fue mejor (RMSE 0,0768 frente a 0,0841).",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9481",
+    "E-9525"
+   ],
+   "nota": "Sin evidencia en bombas. Las tablas de errores de ambos preprints no se recuperaron (SIN DATOS PARA ARMARLAS) y el segundo caso es un motor turbofan. No se afirma que un modelo fundacional prediga RUL de la bomba sin entrenamiento propio."
+  },
+  {
+   "id": "P19",
+   "texto": "Referencia propia del activo sano por punto de operación, con carta de control o tendencia sobre la envolvente de los rodamientos, el RMS, la temperatura y la corriente del motor; los umbrales se expresan como desviación de esa referencia y los aprueba un experto del activo. Es el baseline que cualquier modelo aprendido debe superar antes de justificarse.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-8001",
+    "E-8003",
+    "E-9479",
+    "E-1301"
+   ],
+   "nota": "Razonamiento: los umbrales genéricos carecen de sustento (E-8001), la kurtosis no es monótona (E-8003) y el método con línea base sana exige las mismas condiciones de trabajo (E-9479). Qué variables hidráulicas incluir: SIN DATOS PARA ARMARLO. Validar con un experto del activo."
+  },
+  {
+   "id": "P20",
+   "texto": "Cavitación, recirculación, operación fuera del punto de mejor eficiencia, NPSH, sellos mecánicos, desgaste del impulsor y señales hidráulicas (presión, caudal, pulsaciones): SIN DATOS PARA ARMARLO. No hay fuente leída de monitoreo ni de aprendizaje automático sobre bombas para estos fenómenos.",
+   "nivel": "SIN DATOS PARA ARMARLO",
+   "evidencia": [],
+   "nota": "Pistas por leer, sin respaldo hasta abrirlas: E-1704 (vibración y corriente de bombas centrífugas con impulsor dañado y cavitación, dominio no resuelve), E-1705 (vibración de bomba con estados sano, falla simple y compuesta), E-1706 (carcasa, rodamiento e impulsor, caudal, presión y corriente), E-1106 y E-1107 (criterios de NPSH y recirculación fuera del BEP, solo resumen de buscador), E-1105 (erosión por cavitación), E-1115 (tesis de detección de fallas de bomba por vibración)."
+  }
+ ],
+ "estrategia": [
+  {
+   "etapa": "0. Definición previa (sin modelo)",
+   "accion": "Fijar con el negocio el objetivo (detección, diagnóstico o RUL), el horizonte H y el costo de falso negativo frente a falso positivo. Definir qué es falla funcional de la bomba (y por modo: rodamiento, sello, impulsor, hidráulica) y qué es censura (retiro preventivo, cambio por otra causa, bomba aún en servicio). Reunir el historial de fallas con fechas y la bitácora de intervenciones. Registrar velocidad, punto de operación (caudal, presión) y datos de placa de rodamientos y motor. Fijar punto, orientación y frecuencia de muestreo de cada medición.",
+   "condicion_para_avanzar": "Horizonte, costos y definición de falla y de censura aprobados por una persona responsable; punto y método de medición fijados. Valores: VACÍO hasta que el negocio los entregue.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-9405",
+    "E-9480",
+    "E-9479"
+   ]
+  },
+  {
+   "etapa": "1. Línea base por activo y por punto de operación",
+   "accion": "Medir cada bomba en buen estado y construir su referencia propia por punto de operación (RMS, espectro de envolvente en los rodamientos, temperatura y corriente del motor), con carta de control o tendencia. Las variables hidráulicas se definen con un experto: SIN DATOS PARA ARMARLO por falta de fuente leída. No usar kurtosis 3 y 5 como alarma. Umbrales como desviación respecto de la línea base propia, aprobados por un experto del activo.",
+   "condicion_para_avanzar": "Línea base con mediciones repetidas del activo sano, repetibilidad del punto de medición verificada y criterio de umbral aprobado por una persona. Cantidad mínima de mediciones: VACÍO (no hay fuente leída).",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-8001",
+    "E-8003",
+    "E-9479",
+    "E-1301",
+    "E-9522"
+   ]
+  },
+  {
+   "etapa": "2. Detección de anomalías sin etiquetas, en sombra",
+   "accion": "Entrenar solo con datos normales del propio activo (el diseño sin muestras anómalas de los retos acústicos y del ensayo de campo) y operar en sombra, sin actuar, registrando cada alerta con su inspección posterior. Partición cronológica por activo, descartando ventanas que cruzan el límite entre entrenamiento y prueba, y excluyendo del normal el periodo previo a cada falla. Medir por evento (cobertura, falsas alarmas por activo-mes, tempranía) y comparar contra el umbral de ingeniería y la carta de control; un detector aprendido que no los supere no se recomienda.",
+   "condicion_para_avanzar": "Piloto en sombra completado con alertas verificadas por inspección y falsos negativos revisados uno a uno. Para pasar a un detector aprendido: superar el baseline con validación hacia adelante y reserva de activos no vistos, con intervalos de confianza. Cantidad mínima de eventos reales: VACÍO. Un año de entrenamiento de CARE es criterio de aerogeneradores, no cifra para la bomba.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-9505",
+    "E-9514",
+    "E-9515",
+    "E-9507",
+    "E-9468",
+    "E-9469",
+    "E-9472",
+    "E-9480"
+   ]
+  },
+  {
+   "etapa": "3. Diagnóstico (tipo y ubicación del defecto)",
+   "accion": "Diagnóstico por reglas: envolvente y frecuencias características para los rodamientos de bomba y motor, y corriente del motor para separar causa mecánica de eléctrica, contrastado con la inspección del componente desmontado. Un clasificador supervisado solo con fallas etiquetadas del propio activo o de la flota: los de banco no sirven de sustituto (la exactitud cae al cambiar la severidad o la condición). Cavitación y recirculación: SIN DATOS PARA ARMARLO hasta leer las pistas de bomba.",
+   "condicion_para_avanzar": "Diagnósticos contrastados con la inspección real. Para un clasificador aprendido: fallas etiquetadas por modo suficientes (cifra: VACÍO), partición por activo completo y por tiempo, y recall de la clase crítica superior al del diagnóstico por reglas.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-8008",
+    "E-8001",
+    "E-1304",
+    "E-9457",
+    "E-9466"
+   ]
+  },
+  {
+   "etapa": "4. Pronóstico (RUL) solo con tiempos hasta la falla",
+   "accion": "Pasar a RUL únicamente cuando existan tiempos hasta la falla del propio activo o flota. Primero supervivencia clásica con censura (Kaplan-Meier, Weibull con tools/reliability), tratando la censura como tal y no como RUL = 0. Después evaluar CoxPH o bosque de supervivencia como candidatos de método. Entregar la RUL como distribución y medir calibración y cobertura por activo, no solo error medio.",
+   "condicion_para_avanzar": "Cantidad mínima de fallas por modo cumplida (cifra: VACÍO; si no se alcanza, el resultado se rotula exploratorio), validación hacia adelante y en activos reservados, calibración y cobertura medidas, y aprobación humana para actuar. Intervalo entre primera detección y falla: VACÍO.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-9205",
+    "E-9431",
+    "E-9426",
+    "E-9430",
+    "E-9432"
+   ]
+  },
+  {
+   "etapa": "5. Operación, deriva y reentrenamiento",
+   "accion": "Piloto en sombra antes de actuar. Plan de deriva por cambio de punto de operación, de rodamiento, de impulsor o de lubricante; recalibrar en planta, no importar parámetros de banco. Reentrenar solo con aprobación humana y guardar script, semilla y versiones.",
+   "condicion_para_avanzar": "Criterio de deriva y de reentrenamiento definido y aprobado por una persona; cifras de disparo: VACÍO.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-9507",
+    "E-9479",
+    "E-9433"
+   ]
+  }
+ ],
+ "riesgos_de_validacion": [
+  {
+   "riesgo": "Banco frente a campo y rodamiento frente a bomba: los bancos leídos son rodamientos pequeños de bolas, con carga radial de 10 a 12 kN, 2100 a 2400 rpm y vida de minutos a horas, ensayo acelerado. Umbrales, errores y exactitudes no se trasladan a una bomba. No hay conjunto leído de bombas con tiempos hasta la falla.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9401",
+    "E-9433",
+    "E-9432",
+    "E-9205",
+    "E-1701"
+   ]
+  },
+  {
+   "riesgo": "Partición que infla el desempeño: la exactitud cambió de 97,58 % a 64,38 % solo por cambiar la forma de retener datos, y al retener una condición cayó a 40,64 % bajo una línea base de clase mayoritaria. La partición debe ser por activo completo y por tiempo, nunca por segmento, ventana o fotograma.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9456",
+    "E-9457",
+    "E-9466"
+   ]
+  },
+  {
+   "riesgo": "Fuga de datos: segmentos de la misma grabación en entrenamiento y prueba; ventanas que cruzan el límite temporal; periodo previo a la falla incluido como normal; normalización, selección de variables o banda de envolvente ajustadas con todos los datos.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-9463",
+    "E-9480",
+    "E-9472"
+   ]
+  },
+  {
+   "riesgo": "Censura sintética frente a censura real: los bancos solo traen fallas observadas y la censura se simuló al azar; en una flota la censura real (retiros preventivos, cambios por otra causa) no es aleatoria. Tratarla como RUL = 0 o descartarla sesga el resultado.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9405",
+    "E-9431"
+   ]
+  },
+  {
+   "riesgo": "Error bajo no es calibración: el modelo con menor error puede no pasar la calibración de distribución, por lo que un RUL puntual o un intervalo sin cobertura medida por activo no sirve para decidir.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9426",
+    "E-9430"
+   ]
+  },
+  {
+   "riesgo": "Pocas fallas y dispersión de vidas: con cinco rodamientos por condición, las vidas de una misma condición varían en un factor de más de diez; un modelo por modo con pocas fallas queda exploratorio.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9403",
+    "E-9404",
+    "E-9432"
+   ]
+  },
+  {
+   "riesgo": "Punto de operación variable: caudal, velocidad o carga distintos invalidan la comparación con una línea base sana tomada en otro punto, y los errores de diagnóstico se concentran a baja velocidad en el banco leído. Rango de velocidad de la bomba: VACÍO.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9479",
+    "E-1301",
+    "E-9519"
+   ]
+  },
+  {
+   "riesgo": "Métrica por puntos y detectores sin referencia: una AUC cercana a 50 %, un solo conjunto de evaluación sin intervalos y pocas anomalías no sustentan un detector. Evaluar por evento y por falsas alarmas por activo-mes, y exigir superar la estrategia aleatoria y el umbral de ingeniería.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9506",
+    "E-9515",
+    "E-9468",
+    "E-9473"
+   ]
+  },
+  {
+   "riesgo": "Comparar contra una referencia débil o contar un mejor caso: una ganancia de hasta 15,8 puntos se calculó contra los mejores resultados del método rival y no contra su promedio. El modelo debe superar umbral, tendencia, supervivencia clásica y bosque aleatorio, con promedio y dispersión.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9464",
+    "E-9515"
+   ]
+  },
+  {
+   "riesgo": "Exactitud global en datos desbalanceados: con muestras mayormente sanas la exactitud casi no cambia aunque la severidad se subestime (61 % de las fallas severas de pista externa clasificadas como moderadas). Usar precisión-recall, recall por clase y matriz de severidad.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9476",
+    "E-9455"
+   ]
+  },
+  {
+   "riesgo": "Robustez medida solo con ruido sintético: los ensayos leídos añaden ruido blanco a niveles fijos; el ruido hidráulico y de proceso de una bomba, y la robustez a datos faltantes, no tienen fuente leída (VACÍO).",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9463",
+    "E-9517",
+    "E-9513"
+   ]
+  },
+  {
+   "riesgo": "Indicador no monótono y umbrales sin sustento: la kurtosis vuelve a lo normal al extenderse el defecto y los umbrales 3 y 5 no tienen sustento; usarlos como alarma o etiqueta propagaría errores al modelo.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8003",
+    "E-8001"
+   ]
+  },
+  {
+   "riesgo": "Promesas sin evidencia propia: los resultados de modelos fundacionales y de preentrenamiento son de otros equipos o de bancos, con tablas no recuperadas, y con muchas etiquetas el modelo desde cero fue mejor. No se afirma ninguna reducción de paradas.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9481",
+    "E-9525",
+    "E-9523"
+   ]
+  }
+ ],
+ "vacios": [
+  "Sin datos propios ni etiquetas: no se entrenó ni evaluó ningún modelo; todo desempeño en la bomba es VACÍO. Cierra: historial de fallas con fechas y modo, bitácora de intervenciones, series de vibración, corriente y temperatura, y data_quality.audit sobre ellas.",
+  "Cavitación, recirculación, NPSH, sellos y señales hidráulicas: SIN DATOS PARA ARMARLO. Cierra: abrir E-1704, E-1705 y E-1706 (requieren habilitar los dominios que no resuelven) y los resúmenes de buscador E-1105, E-1106, E-1107, E-1108 y E-1115 por su texto completo; ninguna de estas pistas respalda hoy una afirmación.",
+  "Ninguna fuente leída trae tiempos hasta la falla de bombas, y los datos de bomba leídos son audio (E-1700 a E-1702). Cierra: leer el texto completo de MIMII (solo se leyó el resumen; tipo de bomba y definición de cada anomalía sin verificar), el origen y la definición de label de los reempaquetados, y una base de desempeño y fallas de bombas (E-1116, sin leer).",
+  "Cantidad mínima de fallas por modo y de mediciones de línea base: sin cifra en las fuentes leídas; la fija el protocolo del equipo con data_quality.audit al disponer de datos. El año de entrenamiento de E-9472 es de aerogeneradores.",
+  "Intervalo entre primera detección y falla en rodamientos de bomba: ninguna fuente leída lo da (E-8008 es cualitativa; E-9205 está en minutos y banco acelerado). Cierra: estimarlo con datos propios o leer un estudio de campo de rodamientos de bomba.",
+  "Horizonte H y costos de falso negativo y falso positivo: los define el negocio.",
+  "Umbrales de alarma de vibración, corriente y temperatura para esta bomba: sin fuente leída; los de kurtosis 3 y 5 carecen de sustento (E-8001). Cierra: leer una guía de severidad de vibración para bombas, a identificar.",
+  "Frecuencias características numéricas, frecuencia de paso de álabes, velocidad real, punto de operación y datos de placa de rodamientos y motor de la bomba: sin datos del activo.",
+  "Robustez a datos faltantes y a ruido de proceso: solo hay ruido blanco sintético en los bancos leídos (E-9463, E-9517). Cierra: ensayo propio con la telemetría real.",
+  "Modelos fundacionales, modelos de lenguaje y gemelos digitales: sin evidencia en bombas (E-9481 es de telecomunicaciones; las tablas de E-9481, E-9523 y E-9524 no se recuperaron). Cierra: recuperar las tablas de 2606.11990 y comparar contra el baseline en datos propios; ningún porcentaje de reducción de paradas.",
+  "Visión por computadora (termografía, inspección de fugas o desgaste): sin fuente leída para bombas.",
+  "Fuentes SOLO-SNIPPET y NO-VERIFICADO (E-1704 a E-1706, E-1105 a E-1108, E-1115, E-1116) sin abrir: pistas pendientes, no respaldan nada.",
+  "Modelos NO justificados hoy, por falta de fallas propias, de partición validada por activo y de superación demostrada del baseline: (a) redes profundas o CNN de diagnóstico, cuyas exactitudes de banco no generalizan (E-9457, E-9466); (b) regresión de RUL con aprendizaje profundo entrenada en banco y aplicada a la bomba (E-9444 muestra generalización entre bancos aún limitada); (c) transferencia directa de modelos o umbrales de banco a la bomba; (d) detector de anomalías con alarma automática sin piloto en sombra (E-9506, E-9515); (e) modelos fundacionales o de lenguaje como sustituto de datos propios (E-9481, E-9525); (f) cualquier modelo que use kurtosis 3 y 5 como etiqueta o alarma (E-8001). Lo que sí procede hoy: etapas 0 y 1 y, en sombra, la 2."
+ ]
+}

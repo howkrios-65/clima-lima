@@ -1,0 +1,20 @@
+{
+ "titulo": "Falla de la bomba centrífuga: qué respalda la literatura que se pudo leer, qué se puede monitorear y por qué el dossier queda mayormente sin datos",
+ "autor": "HOWK RIOS - CONFIABILIDAD",
+ "parrafos": [
+  "Problema. Una bomba centrífuga transfiere energía al fluido con un eje que gira sobre rodamientos, y su falla detiene el bombeo. En este entorno no se pudo leer ninguna fuente específica de bombas centrífugas: el índice de preprints legible no las contiene y los sitios de revistas, repositorios y organismos están bloqueados. Todo lo propio de la bomba (cavitación, recirculación, sellos mecánicos, anillos de desgaste, golpe de ariete, reparto de modos de falla, MTBF y costos) está solo como pista de buscador y queda SIN DATOS PARA ARMARLO.",
+  "Lo que sí se leyó. Los rodamientos se usan en bombas y están entre los componentes más propensos a fallar, con contaminación, mala lubricación y montaje inadecuado entre sus causas {E-1201}; son susceptibles a desgaste y fatiga {E-1205}. Un resumen de 1988 atribuye el 90 % de las fallas prematuras de rodamientos de bolas de bombas a corrosión por contaminación, mala manipulación e instalación, falla de lubricante o sobrecalentamiento por ajustes inadecuados {E-6004}; esa cifra es una atribución del autor, no una estadística con base de datos y muestra. Las fuentes de daño de rodamientos incluyen además carga excesiva, desalineación, ajustes apretados, desgaste, corrosión y fretting {E-6002}.",
+  "Vida y detección. La vida nominal L10 es el número de horas que dura un grupo de rodamientos idénticos antes de que falle el 10 % {E-1202} y se define para condiciones convencionales {E-6003}. La película de lubricante separa los elementos rodantes y la salud del rodamiento depende de la temperatura de operación y del mantenimiento {E-1203}. El defecto progresa por etapas espectrales {E-8008}; la kurtosis detecta el defecto incipiente pero vuelve a valores normales al extenderse {E-8003}, y los umbrales 3 y 5 de kurtosis no tienen sustento hallado {E-8001}.",
+  "Datos y modelos. Un conjunto abierto de sonidos de máquinas industriales incluye bombas con anomalías provocadas como contaminación, fuga y desbalance rotatorio {E-1700}; no hay ningún conjunto abierto de bombas con tiempos hasta la falla, por lo que no es admisible ajustar Weibull ni vida remanente de la bomba. Los resultados de vida remanente y diagnóstico leídos son de bancos de rodamientos {E-9205}, y un conjunto de motor con vibración y corriente se limita a fallas puntuales de rodamiento sin patrones progresivos {E-1305}.",
+  "Límites y vacíos. Las 51 normas identificadas se vieron solo en resúmenes de buscador y requieren verificación oficial. Este dossier es de escritorio: sin datos del activo no se confirma ninguna causa ni se puntúa el FMECA. Para cerrarlo hace falta habilitar los dominios académicos o aportar PDF de revisiones y tesis de bombas centrífugas, y el historial de fallas de las bombas."
+ ],
+ "palabras_clave": [
+  "bomba centrífuga",
+  "rodamientos",
+  "modos de falla",
+  "lubricación",
+  "mantenimiento predictivo",
+  "FMECA"
+ ],
+ "criterio": "Las fuentes citadas son las únicas leídas que aplican; no se eligieron por número de citas, que son SIN DATOS PARA ARMARLO en este entorno."
+}
