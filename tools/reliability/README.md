@@ -9,7 +9,7 @@ este código y reporta n, método, intervalos y advertencias.
 ```bash
 cd tools/reliability
 pip install -r requirements.txt
-python -m pytest -q          # 104 pruebas (~25 s): kit, correcciones y reglas del equipo de agentes
+python -m pytest -q          # 142 pruebas (~25 s): kit, correcciones y reglas del equipo de agentes
 python examples/demo.py      # flujo completo con datos sintéticos (ILUSTRATIVOS)
 ```
 
@@ -59,3 +59,10 @@ IC de la MCF, IC de B10 (LR y Kaplan-Meier), advertencia de sesgo/censura, corre
 ΔAIC<2 como empate y bondad de ajuste con censura. Cobertura de los nuevos IC y tamaño de las nuevas pruebas
 verificados por simulación en `tests/test_fixes.py`. Un error propio detectado por esas pruebas: las bandas del
 cuantil de Kaplan-Meier estaban invertidas (corregido).
+
+## Evidencia, señales, historial e informe HTML
+- `evidence`: registro de fuentes (`Ledger`); el nivel se deriva del acceso y exige extracto literal.
+- `signals`: línea base robusta, primera alarma, CUSUM, tendencia (Mann-Kendall y Sen), correlación y comparación de periodos.
+- `case_store`: historial de casos, recurrencia y líneas base versionadas (`historial/`, fuera de git por defecto).
+- `report_html.construir_informe(caso, ledger, salida)`: informe HTML autocontenido con compuertas de evidencia, Weibull en el navegador
+  con autoprueba contra este kit, detección retrospectiva con controles y matriz de convergencia que muestra fuentes de información distintas.

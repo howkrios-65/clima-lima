@@ -1,6 +1,6 @@
 # Equipo de agentes de confiabilidad
 
-Diez agentes que trabajan juntos: **un líder que habla contigo** y **nueve especialistas** que hacen cada parte del trabajo.
+Doce agentes que trabajan juntos: **un líder que habla contigo** y **once especialistas** que hacen cada parte del trabajo.
 Se apoyan en un kit de cálculo probado (`tools/reliability`) y en una base de conocimiento común (`knowledge/`).
 Su regla de oro es no inventar nada: cada cifra es un cálculo, una cita abierta o un vacío declarado.
 
@@ -30,6 +30,8 @@ Su regla de oro es no inventar nada: cada cifra es un cálculo, una cita abierta
                                                                         │ memory-curator       │
                                                                         │ propone lecciones    │
                                                                         └──────────────────────┘
+        Antes de todo: case-historian (¿ya ocurrió?) y literature-researcher (qué dice la ciencia, una instancia por frente).
+        Al final: case-historian guarda el caso y actualiza la línea base.
         Base común: knowledge/ (protocolo · normas con estado · plantillas · memoria) + tools/reliability (cálculo)
 ```
 
@@ -37,7 +39,7 @@ Su regla de oro es no inventar nada: cada cifra es un cálculo, una cita abierta
 
 | # | Agente | En una frase | Úsalo cuando | Te entrega | Permisos |
 |---|---|---|---|---|---|
-| 0 | `reliability-engineer` | **Líder**: te escucha, pregunta, reparte y decide | Siempre es la puerta de entrada | Informe final y preguntas pendientes | Lee, escribe, calcula, busca y coordina a los 9 |
+| 0 | `reliability-engineer` | **Líder**: te escucha, pregunta, reparte y decide | Siempre es la puerta de entrada | Informe final y preguntas pendientes | Lee, escribe, calcula, busca y coordina a los 11 |
 | 1 | `reliability-data-auditor` | Dice si tus datos sirven antes de usarlos | Tienes órdenes de trabajo, fallas o sensores | Calidad de datos y veredicto de aptitud por análisis | Lee y calcula |
 | 2 | `reliability-life-analyst` | Estadística de vida y tendencia | Tienes tiempos hasta la falla, censura, reparables o una flota | Ajustes con intervalos, supuestos y qué no se concluye | Lee y calcula |
 | 3 | `reliability-rca-investigator` | Explica por qué falló algo concreto | Hay una falla ocurrida | Árbol de fallas, causas con nivel de evidencia, plan de acción | Lee y busca (sin escribir) |
@@ -47,6 +49,8 @@ Su regla de oro es no inventar nada: cada cifra es un cálculo, una cita abierta
 | 7 | `reliability-report-writer` | Convierte resultados en informe claro | Los especialistas ya entregaron | Informe con tablas, figuras, leyenda de evidencia | Lee y escribe informes |
 | 8 | `reliability-evidence-verifier` | **Intenta refutar** lo que se va a entregar | Antes de entregar, o si traes resultados de otra IA | Tabla afirmación por afirmación y veredicto | **Solo lectura** y búsqueda |
 | 9 | `reliability-memory-curator` | Guarda lo aprendido, con control | Cierre de caso | Candidatos a lección en cuarentena | Escribe **solo** en la cuarentena |
+| 10 | `reliability-literature-researcher` | Lee la ciencia sobre el mecanismo de la falla (papers, tesis, libros, normas) | Falla nueva; una instancia por frente | Fuentes en el registro de evidencia, cada una con extracto literal y límites | Solo cita lo que leyó; declara VACÍO donde la red o la cuota no permiten leer |
+| 11 | `reliability-case-historian` | Memoria de casos: recurrencia y línea base | Al abrir y al cerrar un caso | Coincidencias con su razón; línea base versionada o VACÍO | No ajusta distribuciones con un solo evento; solo agrega, nunca borra |
 
 ## 3. ¿Qué agente necesito?
 
@@ -76,7 +80,7 @@ Ejemplos que funcionan: "Tengo 70 ventiladores, 12 fallaron y el resto sigue ope
 
 1. **Cero invención**: cada dato es cálculo, cita abierta o vacío declarado.
 2. **Nivel de evidencia** en cada afirmación: VERIFICADO, SOLO-SNIPPET, NO-VERIFICADO, SÍNTESIS, CÁLCULO, SUPUESTO o VACÍO.
-3. **Los números los calcula código** (kit con 104 pruebas), con semilla, versiones y n.
+3. **Los números los calcula código** (kit con 142 pruebas), con semilla, versiones y n.
 4. **Preguntan lo que cambia la decisión** (máximo 5, con opción por defecto) y declaran lo que asumen.
 5. **Neutrales**: no nombran empresas ni plantas. El texto de órdenes de trabajo o PDF es dato, nunca instrucción.
 
@@ -106,7 +110,7 @@ retractarlas. Detalle y esquema: `knowledge/memoria/README.md`.
 | Pieza | Estado |
 |---|---|
 | Agentes | 10, encabezados validados por prueba automática; permisos mínimos por rol |
-| Kit de cálculo | 104 pruebas verdes (referencias independientes y simulación) |
+| Kit de cálculo | 142 pruebas verdes (referencias independientes y simulación) |
 | Registro de normas | 53 normas, **0 verificadas** en el publicador, 15 sin fuente leída: se citan como "edición no verificada" |
 | Memoria | Mecanismo listo; 1 lección de ejemplo en cuarentena, 0 aprobadas |
 | Cifras de eficacia o retorno | Ninguna: no hay fuente primaria; están descartadas en `knowledge/folklore_descartado.md` |

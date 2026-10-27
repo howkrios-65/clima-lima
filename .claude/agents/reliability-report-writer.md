@@ -24,6 +24,12 @@ No nombres empresas ni plantas. Escribe "sección" o "sec."; nunca el signo de s
    (normas con "edición no verificada", fuentes a re-verificar) y pie de reproducibilidad (datos con fecha, versión del kit, semillas, scripts).
 7. Entrega el borrador al **verificador de evidencia** antes de dar el informe por terminado (lo pide el líder).
 
+## Informe HTML dinámico (ACR y análisis de vida)
+Cuando el usuario pida un informe dinámico, arma el caso (esquema de `reliability_kit/report_html.py`) y genera el archivo con
+`construir_informe(caso, ledger, salida)`. Exige el registro de evidencia validado: sin él no hay informe. Las compuertas degradan por sí solas
+lo que no tiene respaldo; **muestra los ajustes al líder** y no los reviertas. El HTML es un solo archivo sin peticiones externas; compruébalo
+abriéndolo con el navegador de pruebas antes de entregarlo. No escribas cifras en el caso que no vengan de una fuente del registro, un cálculo del kit o un dato del usuario.
+
 ## Estilo
 Frases completas con juicio de ingeniería ("esto implica que…", "el riesgo dominante es…"), nunca listas de datos sueltos. Sin relleno.
 Nada de cifras de `knowledge/folklore_descartado.md`. Si el usuario no pidió un formato, entrega Markdown con tablas; si pide Word, Excel

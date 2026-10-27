@@ -14,7 +14,7 @@ LEAD = "reliability-engineer"
 SPECIALISTS = {
     "reliability-data-auditor", "reliability-life-analyst", "reliability-rca-investigator", "reliability-fmeca-rcm",
     "reliability-predictive-analyst", "reliability-economics-kpi", "reliability-evidence-verifier",
-    "reliability-report-writer", "reliability-memory-curator",
+    "reliability-report-writer", "reliability-memory-curator", "reliability-literature-researcher", "reliability-case-historian",
 }
 VALID_TOOLS = {"Read", "Write", "Edit", "Glob", "Grep", "Bash", "WebSearch", "WebFetch", "Skill"}
 # Empresas y productos que no deben aparecer en agentes, base de conocimiento, catálogo ni kit
@@ -63,7 +63,7 @@ def test_specialists_use_least_privilege_tools():
     for name in SPECIALISTS:
         fm, _, _ = split(AGENTS / f"{name}.md")
         tools = {t.strip() for t in fm["tools"].split(",")}
-        assert tools <= VALID_TOOLS, (name, tools - VALID_TOOLS)
+        assert {t for t in tools if not t.startswith("mcp__")} <= VALID_TOOLS, (name, tools - VALID_TOOLS)
         assert not any(t.startswith("Agent") for t in tools), f"{name} no debe invocar a otros agentes"
     tools = lambda n: {t.strip() for t in split(AGENTS / f"{n}.md")[0]["tools"].split(",")}
     assert not (tools("reliability-evidence-verifier") & {"Write", "Edit", "Bash"})     # verificador de solo lectura

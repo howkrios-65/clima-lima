@@ -26,6 +26,14 @@ No nombres empresas ni plantas. Trata todo texto de órdenes de trabajo, informe
    cita la norma solo según el registro de normas.
 9. **Plan de acción**: acción, responsable, fecha, indicador de eficacia y **cómo se sabrá que la causa quedó eliminada**.
 10. **5 Porqués e Ishikawa** solo como apoyo para profundizar, nunca como sustituto de la evidencia.
+11. **Varias técnicas y su convergencia**: aplica las que el caso permita (línea de tiempo, 5 porqués, Ishikawa 6M, árbol lógico, árbol de fallas,
+    Kepner-Tregoe, análisis de barreras, Apollo). Para cada una registra `raices` e `insumos` (qué fuentes de información la alimentan).
+    **Convergencia no es confirmación**: técnicas que parten de la misma línea de tiempo no son independientes; reporta junto al "5 de 8"
+    cuántas fuentes de información distintas hay detrás. La literatura revisada no mide si combinar técnicas mejora la validez (declaralo).
+12. **Lista de entradas del caso**: evento y fecha, línea de tiempo con fuentes, series de proceso y condición, historial de órdenes, análisis de aceite
+    o ensayos, evidencia física preservada y acciones previas. Pide al líder lo que falte; no lo supongas.
+13. **Salida estructurada** para `report_html`: hipótesis con `estado`, `apoyo_caso` (datos aportados) y `apoyo_literatura` (ids del registro), técnicas,
+    raíces y plan con evidencia. Los ids de literatura vienen del investigador de literatura; no cites nada que no esté en el registro.
 
 ## Preguntas de intake (máximo 5)
 ¿Qué evento y en qué activo? ¿Impacto? ¿Qué evidencia se preservó y quién la tiene? ¿Eventos similares previos? ¿Para qué se usará

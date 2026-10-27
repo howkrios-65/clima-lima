@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITULO__</title>
+<style>
+:root{--bg:#f6f7f9;--panel:#fff;--ink:#16202b;--mut:#5b6877;--line:#d9dee5;--acc:#1f5fbf;--ok:#1a7f4b;--warn:#a86400;--bad:#b3261e;--c1:#1f5fbf;--c2:#c2410c;--c3:#0f766e;--c4:#7c3aed;--soft:#eef2f7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f141a;--panel:#171e26;--ink:#e6ebf1;--mut:#9aa7b6;--line:#2b3542;--acc:#6aa5f5;--ok:#4cc38a;--warn:#e0a04a;--bad:#f2766e;--c1:#6aa5f5;--c2:#f08a50;--c3:#3cc2b0;--c4:#b08af7;--soft:#1e2733}}
+:root[data-theme="dark"]{--bg:#0f141a;--panel:#171e26;--ink:#e6ebf1;--mut:#9aa7b6;--line:#2b3542;--acc:#6aa5f5;--ok:#4cc38a;--warn:#e0a04a;--bad:#f2766e;--c1:#6aa5f5;--c2:#f08a50;--c3:#3cc2b0;--c4:#b08af7;--soft:#1e2733}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:16px;border-bottom:1px solid var(--line);background:var(--panel)}
+header h1{margin:0 0 4px;font-size:20px}
+header .sub{color:var(--mut);font-size:13px}
+.wrap{max-width:1150px;margin:0 auto;padding:0 16px}
+nav{position:sticky;top:0;z-index:5;background:var(--panel);border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap}
+nav button{border:0;background:none;color:var(--mut);padding:11px 13px;font:inherit;cursor:pointer;border-bottom:3px solid transparent}
+nav button[aria-selected=true]{color:var(--ink);border-color:var(--acc);font-weight:600}
+main{padding:16px 0 60px}
+section.tab{display:none}section.tab.on{display:block}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:0 0 14px}
+.card h2{margin:0 0 8px;font-size:17px}.card h3{margin:12px 0 6px;font-size:15px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.kpi{background:var(--soft);border-radius:8px;padding:10px}
+.kpi b{display:block;font-size:22px}.kpi span{color:var(--mut);font-size:12px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{color:var(--mut);font-weight:600;background:var(--soft)}
+.tw{overflow-x:auto}
+.chip{display:inline-block;font-size:11px;padding:1px 6px;margin:0 2px;border-radius:10px;border:1px solid var(--acc);color:var(--acc);background:none;cursor:pointer;font-family:inherit}
+.lv{font-size:11px;padding:1px 6px;border-radius:4px;color:#fff;white-space:nowrap}
+.lv.t{background:var(--ok)}.lv.a{background:#4b8f6b}.lv.s{background:var(--warn)}.lv.n{background:var(--bad)}.lv.u{background:var(--c4)}
+.badge{font-size:12px;padding:1px 8px;border-radius:10px;border:1px solid var(--line);background:var(--soft)}
+.badge.confirmada{border-color:var(--ok);color:var(--ok)}.badge.probable{border-color:var(--acc);color:var(--acc)}.badge.posible{border-color:var(--warn);color:var(--warn)}.badge.descartada{border-color:var(--bad);color:var(--bad)}
+.note{border-left:4px solid var(--warn);background:var(--soft);padding:8px 10px;border-radius:4px;margin:8px 0;font-size:13px}
+.note.bad{border-color:var(--bad)}.note.ok{border-color:var(--ok)}
+label{font-size:13px;color:var(--mut);display:inline-block;margin:4px 12px 4px 0}
+input[type=range]{vertical-align:middle;width:150px}input[type=number],select{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:3px 6px;font:inherit;width:90px}
+select{width:auto}
+svg text{fill:var(--mut);font-size:11px}
+.tl{border-left:2px solid var(--line);margin-left:6px;padding-left:14px}
+.tl .ev{position:relative;margin:0 0 10px}.tl .ev:before{content:"";position:absolute;left:-21px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--acc)}
+.tl .ev.ot:before{background:var(--c2)}.tl .ev.medicion:before{background:var(--c3)}.tl .ev.hito:before{background:var(--bad)}.tl .ev.accion:before{background:var(--ok)}.tl .ev.analisis:before{background:var(--c4)}
+.tl small{color:var(--mut)}
+#drawer{position:fixed;top:0;right:0;width:min(420px,100%);height:100%;background:var(--panel);border-left:1px solid var(--line);box-shadow:-4px 0 16px rgba(0,0,0,.2);padding:14px;overflow:auto;transform:translateX(100%);transition:transform .2s;z-index:20}
+#drawer.on{transform:none}
+#drawer blockquote{margin:6px 0;padding:6px 10px;border-left:3px solid var(--acc);background:var(--soft);font-size:13px}
+.x{float:right;border:0;background:none;color:var(--ink);font-size:20px;cursor:pointer}
+.mat td.y{background:var(--acc);color:#fff;text-align:center}.mat td.nn{text-align:center;color:var(--mut)}
+.tb{display:flex;gap:8px;align-items:center;float:right}
+.tb button,.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:6px;padding:3px 9px;font:inherit;cursor:pointer}
+pre.code{background:var(--soft);padding:8px;border-radius:6px;overflow:auto;font-size:12px}
+@media print{nav,#drawer,.tb{display:none}section.tab{display:block!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="tb"><button id="thm" title="Cambiar tema">Tema</button><button onclick="window.print()">Imprimir</button></div>
+<h1 id="ttl"></h1><div class="sub" id="sub"></div>
+</div></header>
+<nav><div class="wrap" id="tabs" role="tablist"></div></nav>
+<main><div class="wrap" id="main"></div></main>
+<aside id="drawer" aria-label="Evidencia"></aside>
+<noscript>Este informe requiere JavaScript para mostrar sus tablas y gráficos.</noscript>
+<script>
+"use strict";
+var D=/*__INFORME_JSON__*/null;
+var $=function(s,r){return (r||document).querySelector(s)};
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function fmt(x,d){if(x==null||!isFinite(x))return"n/d";d=d==null?3:d;var a=Math.abs(x);return a!==0&&(a>=1e6||a<1e-3)?x.toExponential(2):(+x.toFixed(d)).toString()}
+var EV={};
+var LV={"VERIFICADO-TEXTO":["t","VERIFICADO-TEXTO"],"VERIFICADO-ABSTRACT":["a","VERIFICADO-ABSTRACT"],"SOLO-SNIPPET":["s","SOLO-SNIPPET"],"NO-VERIFICADO":["n","NO-VERIFICADO"],"DATO-USUARIO":["u","DATO-USUARIO"]};
+function lv(n){var l=LV[n]||["n",n];return '<span class="lv '+l[0]+'">'+esc(l[1])+'</span>'}
+function chips(ids){return (ids||[]).map(function(i){return '<button class="chip" data-ev="'+esc(i)+'">'+esc(i)+'</button>'}).join("")||'<span class="badge">sin fuente</span>'}
+function openEv(id){
+  var e=EV[id],d=$("#drawer");if(!e)return;
+  var r=e.referencia||{};
+  d.innerHTML='<button class="x" aria-label="Cerrar">×</button><h3>'+esc(id)+' '+lv(e.nivel_evidencia)+'</h3><p>'+esc(e.apa)+'</p>'+
+  '<p><b>Qué respalda:</b> '+esc(e.afirma)+'</p><p><b>Límites:</b> '+esc(e.limites)+'</p>'+
+  (e.extracto?'<p><b>Extracto literal</b> ('+esc(e.localizador||"")+')</p><blockquote>'+esc(e.extracto)+'</blockquote>':'<p class="note">No se leyó texto de esta fuente: solo referencia o resumen de buscador.</p>')+
+  '<p><b>Acceso:</b> '+esc(e.acceso||"dato aportado")+' · <b>vía:</b> '+esc(e.via||"n/d")+' · <b>fecha:</b> '+esc(e.fecha_acceso||"")+'</p>'+
+  '<p><b>Cuartil de revista:</b> '+((e.revista_cuartil&&e.revista_cuartil.valor)?'Q'+e.revista_cuartil.valor+' ('+esc(e.revista_cuartil.fuente)+')':'no verificado')+'</p>'+
+  (e.avisos&&e.avisos.length?'<div class="note">'+e.avisos.map(esc).join("<br>")+'</div>':'');
+  d.classList.add("on");
+}
+document.addEventListener("click",function(ev){
+  var t=ev.target;
+  if(t.dataset&&t.dataset.ev)openEv(t.dataset.ev);
+  else if(t.classList&&t.classList.contains("x"))$("#drawer").classList.remove("on");
+});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")$("#drawer").classList.remove("on")});
+
+/* ---------- gráfico de líneas SVG con cursor sincronizado ---------- */
+var CURSOR={};
+function lineChart(host,o){
+  var W=760,H=o.h||210,m={l:46,r:12,t:10,b:24},x=o.x,ys=o.series;
+  var xs=x.map(function(v){return +v}),x0=Math.min.apply(0,xs),x1=Math.max.apply(0,xs);
+  var all=[];ys.forEach(function(s){s.y.forEach(function(v){if(isFinite(v))all.push(v)})});(o.hlines||[]).forEach(function(h){all.push(h.y)});
+  var y0=Math.min.apply(0,all),y1=Math.max.apply(0,all);if(y0===y1){y0-=1;y1+=1}var pad=(y1-y0)*.06;y0-=pad;y1+=pad;
+  function X(v){return m.l+(v-x0)/((x1-x0)||1)*(W-m.l-m.r)}function Y(v){return H-m.b-(v-y0)/(y1-y0)*(H-m.t-m.b)}
+  var g='';for(var i=0;i<=4;i++){var yv=y0+(y1-y0)*i/4;g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+Y(yv)+'" y2="'+Y(yv)+'" stroke="var(--line)"/><text x="4" y="'+(Y(yv)+4)+'">'+fmt(yv,2)+'</text>'}
+  for(i=0;i<=4;i++){var xv=x0+(x1-x0)*i/4;g+='<text x="'+X(xv)+'" y="'+(H-6)+'" text-anchor="middle">'+esc(o.xfmt?o.xfmt(xv):fmt(xv,1))+'</text>'}
+  (o.vlines||[]).forEach(function(v){g+='<line x1="'+X(v.x)+'" x2="'+X(v.x)+'" y1="'+m.t+'" y2="'+(H-m.b)+'" stroke="'+(v.c||"var(--bad)")+'" stroke-dasharray="4 3"/><text x="'+(X(v.x)+3)+'" y="'+(m.t+9)+'">'+esc(v.label||"")+'</text>'});
+  (o.hlines||[]).forEach(function(h){g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+Y(h.y)+'" y2="'+Y(h.y)+'" stroke="'+(h.c||"var(--warn)")+'" stroke-dasharray="5 3"/><text x="'+(W-m.r-2)+'" y="'+(Y(h.y)-3)+'" text-anchor="end">'+esc(h.label||"")+'</text>'});
+  var cols=["var(--c1)","var(--c2)","var(--c3)","var(--c4)"];
+  ys.forEach(function(s,k){var d="",on=false;s.y.forEach(function(v,j){if(!isFinite(v)){on=false;return}d+=(on?"L":"M")+X(xs[j]).toFixed(1)+" "+Y(v).toFixed(1);on=true});g+='<path d="'+d+'" fill="none" stroke="'+cols[k%4]+'" stroke-width="1.6"/>'});
+  (o.marks||[]).forEach(function(p){g+='<circle cx="'+X(p.x)+'" cy="'+Y(p.y)+'" r="4" fill="var(--bad)"><title>'+esc(p.label||"")+'</title></circle>'});
+  var leg=ys.map(function(s,k){return '<span style="color:'+cols[k%4]+'">&#9632;</span> '+esc(s.name||"")}).join("  ");
+  host.innerHTML='<div style="font-size:12px;color:var(--mut)">'+leg+'</div><svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="'+esc(o.titulo||"gráfico")+'">'+g+
+   '<line class="cur" x1="0" x2="0" y1="'+m.t+'" y2="'+(H-m.b)+'" stroke="var(--ink)" opacity="0"/></svg><div class="rd" style="font-size:12px;color:var(--mut);min-height:16px"></div>';
+  var svg=$("svg",host),cur=$(".cur",svg),rd=$(".rd",host);
+  function show(xv,fromSelf){
+    if(xv==null){cur.setAttribute("opacity",0);rd.textContent="";return}
+    var j=0,b=1e99;xs.forEach(function(v,k){var dd=Math.abs(v-xv);if(dd<b){b=dd;j=k}});
+    cur.setAttribute("x1",X(xs[j]));cur.setAttribute("x2",X(xs[j]));cur.setAttribute("opacity",.6);
+    rd.textContent=(o.xfmt?o.xfmt(xs[j]):fmt(xs[j],1))+" · "+ys.map(function(s){return (s.name||"")+" = "+fmt(s.y[j],3)}).join(" · ");
+  }
+  svg.addEventListener("mousemove",function(e){var r=svg.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W,xv=x0+(px-m.l)/(W-m.l-m.r)*(x1-x0);Object.keys(CURSOR).forEach(function(k){CURSOR[k](xv)})});
+  svg.addEventListener("mouseleave",function(){Object.keys(CURSOR).forEach(function(k){CURSOR[k](null)})});
+  CURSOR[o.key||host.id]=show;
+}
+function dnum(s){var t=Date.parse(s);return isNaN(t)?NaN:t/864e5}
+function dfmt(n){return new Date(n*864e5).toISOString().slice(0,10)}
+
+/* ---------- estadística robusta (réplica de signals.py: mediana y MAD) ---------- */
+function median(a){var b=a.filter(isFinite).slice().sort(function(x,y){return x-y}),n=b.length;if(!n)return NaN;return n%2?b[(n-1)/2]:(b[n/2-1]+b[n/2])/2}
+function baseRobusta(y,n){var w=y.slice(0,n).filter(isFinite),m=median(w),s=1.4826*median(w.map(function(v){return Math.abs(v-m)}));if(!s){var mu=w.reduce(function(a,b){return a+b},0)/w.length;s=Math.sqrt(w.reduce(function(a,b){return a+(b-mu)*(b-mu)},0)/(w.length-1))||1e-12}return{med:m,sig:s,n:w.length}}
+function primerCruce(y,u,p){var run=0;for(var i=0;i<y.length;i++){if(y[i]>u){run++;if(run>=p)return i-p+1}else run=0}return -1}
+function cusum(y,mu,sig,k){var s=0,o=[];y.forEach(function(v){s=Math.max(0,s+(v-mu)/sig-k);o.push(s)});return o}
+
+/* ---------- motor Weibull (máxima verosimilitud con censura a la derecha) ---------- */
+function sortedData(d){return d.slice().sort(function(a,b){return a.t-b.t})}
+function profLL(beta,t,c){var r=0,sf=0,st=0;for(var i=0;i<t.length;i++){st+=Math.pow(t[i],beta);if(!c[i]){r++;sf+=Math.log(t[i])}}return r*Math.log(beta)-r*Math.log(st/r)+(beta-1)*sf-r}
+function solveBeta(t,c){
+  var r=0,sf=0;t.forEach(function(v,i){if(!c[i]){r++;sf+=Math.log(v)}});
+  function g(b){var a=0,bb=0;t.forEach(function(v){var p=Math.pow(v,b);a+=p*Math.log(v);bb+=p});return a/bb-1/b-sf/r}
+  var lo=0.02,hi=100;if(g(lo)>0||g(hi)<0)return NaN;
+  for(var k=0;k<200;k++){var mid=(lo+hi)/2;if(g(mid)>0)hi=mid;else lo=mid}
+  return(lo+hi)/2;
+}
+function fitWeibull(data){
+  var t=data.map(function(d){return d.t}),c=data.map(function(d){return !!d.censurado}),r=c.filter(function(x){return!x}).length;
+  if(r<2)return{error:"se necesitan al menos 2 fallas para ajustar Weibull"};
+  var beta=solveBeta(t,c);if(!isFinite(beta))return{error:"el estimador no converge (¿todos los tiempos iguales?)"};
+  var st=0;t.forEach(function(v){st+=Math.pow(v,beta)});var eta=Math.pow(st/r,1/beta);
+  return{beta:beta,eta:eta,r:r,n:t.length,ll:profLL(beta,t,c),t:t,c:c};
+}
+function bisect(f,a,b){var fa=f(a);for(var i=0;i<100;i++){var m=(a+b)/2,fm=f(m);if((fa>0)===(fm>0)){a=m;fa=fm}else b=m}return(a+b)/2}
+var CHI=1.9207; /* chi-cuadrado(1, 0.95)/2 */
+function ciBeta(f){
+  var t=f.t,c=f.c,tgt=f.ll-CHI,h=function(b){return profLL(b,t,c)-tgt};
+  var lo=h(0.02)<0?bisect(h,0.02,f.beta):0.02,hi=h(100)<0?bisect(h,f.beta,100):100;return[lo,hi];
+}
+function bLife(beta,eta,p){return eta*Math.pow(-Math.log(1-p),1/beta)}
+function llTp(beta,tp,p,t,c){var eta=tp/Math.pow(-Math.log(1-p),1/beta),r=0,sf=0,s=0;for(var i=0;i<t.length;i++){s+=Math.pow(t[i]/eta,beta);if(!c[i]){r++;sf+=Math.log(t[i])}}return r*Math.log(beta)-r*beta*Math.log(eta)+(beta-1)*sf-s}
+function maxOverBeta(tp,p,t,c){var a=0.05,b=60,gr=0.6180339887;for(var i=0;i<80;i++){var x1=b-gr*(b-a),x2=a+gr*(b-a);if(llTp(x1,tp,p,t,c)<llTp(x2,tp,p,t,c))a=x1;else b=x2}return llTp((a+b)/2,tp,p,t,c)}
+function ciBLife(f,p){
+  var tp=bLife(f.beta,f.eta,p),tgt=f.ll-CHI,h=function(x){return maxOverBeta(x,p,f.t,f.c)-tgt};
+  var lo=tp,i=0;while(h(lo)>0&&i++<60)lo/=1.5;var hi=tp;i=0;while(h(hi)>0&&i++<60)hi*=1.5;
+  return[bisect(h,lo,tp),bisect(h,tp,hi)];
+}
+function medianRanks(data){ /* rangos de Johnson con censura + aproximación de Bernard */
+  var s=sortedData(data),n=s.length,prev=0,out=[],k=n;
+  s.forEach(function(d,i){var rem=n-i;if(!d.censurado){var inc=(n+1-prev)/(1+rem);prev=prev+inc;out.push({t:d.t,F:(prev-0.3)/(n+0.4)})}});
+  return out;
+}
+function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function bootR(data,tm,B,seed){
+  var rng=mulberry(seed),out=[],n=data.length;
+  for(var b=0;b<B;b++){var s=[];for(var i=0;i<n;i++)s.push(data[Math.floor(rng()*n)]);var f=fitWeibull(s);if(f.error)continue;out.push(Math.exp(-Math.pow(tm/f.eta,f.beta)))}
+  out.sort(function(a,b){return a-b});return out;
+}
+function quant(a,q){if(!a.length)return NaN;var i=(a.length-1)*q,lo=Math.floor(i),hi=Math.ceil(i);return a[lo]+(a[hi]-a[lo])*(i-lo)}
+
+/* ---------- vistas ---------- */
+var VIEWS=[];
+function tab(id,label,fn,show){if(show===false)return;VIEWS.push({id:id,label:label,fn:fn})}
+function mkCard(h,body){return '<div class="card"><h2>'+h+'</h2>'+body+'</div>'}
+
+function vResumen(host){
+  var c=D.caso,r=c.resumen||{},m=c.meta||{},re=D.resumen_evidencia;
+  var h='';
+  if(D.ajustes.length)h+='<div class="note bad"><b>'+D.ajustes.length+' ajuste(s) automático(s) por falta de respaldo.</b> Ver pestaña Rastro. Lo que no tenía fuente fue degradado o marcado.</div>';
+  h+='<div class="card"><h2>Indicadores</h2><div class="grid">'+(r.kpis||[]).map(function(k){return '<div class="kpi"><b>'+esc(k.valor)+'</b><span>'+esc(k.label)+'</span><div>'+chips(k.evidencia)+'</div></div>'}).join("")+
+   '<div class="kpi"><b>'+re.total+'</b><span>fuentes en el registro</span></div></div></div>';
+  h+=mkCard("Hallazgos",'<ol>'+(r.hallazgos||[]).map(function(x){return '<li>'+esc(x.texto)+' '+(x.sin_evidencia?'<span class="badge confirmada" style="border-color:var(--bad);color:var(--bad)">SIN EVIDENCIA</span>':chips(x.evidencia))+'</li>'}).join("")+'</ol>');
+  h+=mkCard("Hipótesis de causa",'<div class="tw"><table><tr><th>Id</th><th>Hipótesis</th><th>Estado</th><th>Evidencia del caso</th><th>Respaldo científico</th><th>Contradice</th></tr>'+
+   (c.hipotesis||[]).map(function(x){return '<tr><td>'+esc(x.id)+'</td><td>'+esc(x.titulo)+'<br><small>'+esc(x.tipo||"")+'</small></td><td><span class="badge '+esc(x.estado)+'">'+esc(x.estado)+(x.degradada?' ↓':'')+'</span></td><td>'+chips(x.apoyo_caso)+'</td><td>'+chips(x.apoyo_literatura)+'</td><td>'+chips(x.contradice)+'</td></tr>'}).join("")+'</table></div>'+
+   '<div class="note">Una causa solo figura como confirmada con evidencia del propio caso. La literatura respalda plausibilidad, no que haya ocurrido aquí.</div>');
+  h+=mkCard("Calidad de la evidencia",'<div class="tw"><table><tr><th>Nivel</th><th>Fuentes</th></tr>'+Object.keys(re.por_nivel).map(function(k){return '<tr><td>'+lv(k)+'</td><td>'+re.por_nivel[k]+'</td></tr>'}).join("")+'</table></div><p style="font-size:13px;color:var(--mut)">Cuartil verificado: '+(Object.keys(re.cuartil_verificado).length?JSON.stringify(re.cuartil_verificado):"ninguno (no se pudo comprobar en esta ejecución)")+'. Fuentes sin país declarado no se cuentan por país.</p>');
+  host.innerHTML=h;
+}
+
+function vTiempo(host){
+  var ev=(D.caso.linea_tiempo||[]).slice().sort(function(a,b){return a.fecha<b.fecha?-1:1}),tipos={};
+  ev.forEach(function(e){tipos[e.tipo]=1});
+  host.innerHTML='<div class="card"><h2>Línea de tiempo</h2><div id="ftip">'+Object.keys(tipos).map(function(t){return '<label><input type="checkbox" checked data-t="'+esc(t)+'"> '+esc(t)+'</label>'}).join("")+
+   '</div><label>Buscar <input id="fq" type="text" style="width:160px"></label><div class="tl" id="tlb"></div></div>';
+  function draw(){
+    var on={};document.querySelectorAll("#ftip input").forEach(function(i){if(i.checked)on[i.dataset.t]=1});var q=($("#fq").value||"").toLowerCase();
+    $("#tlb").innerHTML=ev.filter(function(e){return on[e.tipo]&&((e.titulo+" "+(e.detalle||"")).toLowerCase().indexOf(q)>=0)}).map(function(e){
+      return '<div class="ev '+esc(e.tipo)+'"><small>'+esc(e.fecha)+' · '+esc(e.tipo)+'</small><br><b>'+esc(e.titulo)+'</b><br>'+esc(e.detalle||"")+' '+chips(e.evidencia)+'</div>'}).join("")||"<p>Sin eventos con ese filtro.</p>";
+  }
+  host.addEventListener("input",draw);draw();
+}
+
+function vSenales(host){
+  CURSOR={};var ser=D.caso.series||[],hit=D.caso.meta.fecha_evento?dnum(D.caso.meta.fecha_evento):NaN;
+  host.innerHTML=ser.map(function(s,i){return '<div class="card"><h2>'+esc(s.titulo)+' <small>('+esc(s.unidad||"")+')</small> '+chips(s.evidencia)+'</h2><div id="sg'+i+'"></div>'+
+    '<div id="sc'+i+'"></div></div>'}).join("")||"<p>Sin series aportadas.</p>";
+  ser.forEach(function(s,i){
+    var xs=s.puntos.map(function(p){return dnum(p[0])}),y=s.puntos.map(function(p){return +p[1]});
+    var ctl='<label>Puntos de línea base <input type="range" min="10" max="'+Math.max(11,Math.floor(y.length*.8))+'" value="'+Math.min(s.base_n||30,y.length-1)+'" data-r="n"> <b class="vn"></b></label>'+
+      '<label>Umbral (× sigma robusta) <input type="range" min="2" max="8" step="0.5" value="'+(s.k||3)+'" data-r="k"> <b class="vk"></b></label>'+
+      '<label>Persistencia (puntos) <input type="range" min="1" max="7" value="'+(s.persistencia||3)+'" data-r="p"> <b class="vp"></b></label>';
+    var box=$("#sc"+i);box.innerHTML=ctl+'<div class="rs"></div><div id="sh'+i+'"></div>';
+    function draw(){
+      var n=+$('[data-r=n]',box).value,k=+$('[data-r=k]',box).value,p=+$('[data-r=p]',box).value,b=baseRobusta(y,n),u=b.med+k*b.sig,ix=primerCruce(y,u,p);
+      $(".vn",box).textContent=n;$(".vk",box).textContent=k;$(".vp",box).textContent=p;
+      var vl=[];if(isFinite(hit))vl.push({x:hit,label:"evento"});if(ix>=0)vl.push({x:xs[ix],label:"1.ª alarma",c:"var(--warn)"});
+      var g=$("#sg"+i);
+      lineChart(g,{x:xs,series:[{name:s.titulo,y:y}],hlines:[{y:u,label:"umbral "+fmt(u,2)},{y:b.med,label:"mediana base",c:"var(--mut)"}],vlines:vl,xfmt:dfmt,titulo:s.titulo});
+      var lead=(ix>=0&&isFinite(hit))?(hit-xs[ix]):null;
+      $(".rs",box).innerHTML='<div class="note ok">Línea base: mediana '+fmt(b.med,3)+' · sigma robusta (MAD) '+fmt(b.sig,3)+' · umbral '+fmt(u,3)+'. '+
+        (ix>=0?'Primera alarma: <b>'+dfmt(xs[ix])+'</b>'+(lead!=null?' ('+fmt(lead,0)+' días antes del evento).':'.'):'La serie no cruza el umbral con esa persistencia.')+'</div>'+
+        '<div class="note">Detección retrospectiva con un solo evento (n=1): describe este caso, no valida un umbral ni una tasa de falsas alarmas. Para eso hacen falta periodos sanos y varias fallas.</div>';
+    }
+    box.addEventListener("input",draw);draw();
+  });
+  /* cursor sincronizado: un solo manejador por gráfico ya difunde a todos los registrados */
+}
+
+function vCausas(host){
+  var c=D.caso,cv=D.convergencia,h='';
+  if(cv){
+    h+='<div class="card"><h2>Matriz de convergencia: técnicas × causas raíz</h2><div class="tw"><table class="mat"><tr><th>Técnica</th>'+cv.raices.map(function(r){return '<th>'+esc(r)+'</th>'}).join("")+'</tr>'+
+      c.tecnicas.map(function(t){return '<tr><td>'+esc(t.nombre)+' '+chips(t.evidencia)+'</td>'+cv.raices.map(function(r){return cv.matriz[t.id][r]?'<td class="y">●</td>':'<td class="nn">·</td>'}).join("")+'</tr>'}).join("")+
+      '<tr><th>Técnicas que convergen</th>'+cv.raices.map(function(r){return '<th>'+cv.por_raiz[r].n+' de '+cv.por_raiz[r].de+'</th>'}).join("")+'</tr>'+
+      '<tr><th>Fuentes de información distintas</th>'+cv.raices.map(function(r){return '<th>'+cv.por_raiz[r].fuentes_distintas+'</th>'}).join("")+'</tr></table></div><div class="note">'+esc(cv.nota)+'</div></div>';
+    h+='<div class="card"><h2>Causas raíz</h2><div class="tw"><table><tr><th>Id</th><th>Causa</th><th>Técnicas</th><th>Insumos</th></tr>'+c.raices.map(function(r){return '<tr><td>'+esc(r.id)+'</td><td><b>'+esc(r.titulo)+'</b><br>'+esc(r.descripcion||"")+' '+chips(r.evidencia)+'</td><td>'+esc(cv.por_raiz[r.id].tecnicas.join(", "))+'</td><td>'+esc(cv.por_raiz[r.id].insumos.join(", "))+'</td></tr>'}).join("")+'</table></div></div>';
+  }
+  h+=(c.tecnicas||[]).map(function(t){return '<div class="card"><h3>'+esc(t.nombre)+' '+chips(t.evidencia)+'</h3><p>'+esc(t.hallazgo||"")+'</p>'+(t.pasos&&t.pasos.length?'<ol>'+t.pasos.map(function(p){return '<li>'+esc(p)+'</li>'}).join("")+'</ol>':'')+'<small>Insumos: '+esc((t.insumos||[]).join(", ")||"no declarados")+'</small></div>'}).join("");
+  host.innerHTML=h||"<p>Sin técnicas cargadas.</p>";
+}
+
+function vEvidencia(host){
+  host.innerHTML='<div class="card"><h2>Registro de evidencia</h2><label>Nivel <select id="fn"><option value="">todos</option>'+Object.keys(LV).map(function(k){return '<option>'+k+'</option>'}).join("")+'</select></label><label>Buscar <input id="fe" type="text" style="width:180px"></label><div class="tw"><table id="te"></table></div></div>';
+  function draw(){
+    var n=$("#fn").value,q=($("#fe").value||"").toLowerCase();
+    $("#te").innerHTML='<tr><th>Id</th><th>Referencia (APA)</th><th>Nivel</th><th>Respalda</th></tr>'+D.evidencia.filter(function(e){return(!n||e.nivel_evidencia===n)&&((e.apa+" "+e.afirma).toLowerCase().indexOf(q)>=0)}).map(function(e){return '<tr><td><button class="chip" data-ev="'+esc(e.id)+'">'+esc(e.id)+'</button></td><td>'+esc(e.apa)+'</td><td>'+lv(e.nivel_evidencia)+'</td><td>'+esc(e.afirma)+'</td></tr>'}).join("");
+  }
+  host.addEventListener("input",draw);draw();
+}
+
+function vVida(host){
+  var v=D.caso.vida;
+  if(!v||!v.datos||!v.datos.length){host.innerHTML='<div class="card"><h2>Vida (Weibull)</h2><div class="note bad">No hay tiempos de vida suficientes para este análisis. No se calcula nada: un solo evento no permite ajustar una distribución.</div></div>';return}
+  var f=fitWeibull(v.datos);
+  if(f.error){host.innerHTML='<div class="card"><h2>Vida (Weibull)</h2><div class="note bad">'+esc(f.error)+'</div></div>';return}
+  var cb=ciBeta(f),b10=bLife(f.beta,f.eta,.1),cb10=ciBLife(f,.1),ref=v.referencia,test="";
+  if(ref){var okb=Math.abs(f.beta-ref.beta)/ref.beta<2e-3,oke=Math.abs(f.eta-ref.eta)/ref.eta<2e-3;
+    test='<div class="note '+((okb&&oke)?'ok':'bad')+'">Autoprueba contra el kit de Python ('+esc(ref.origen||"reliability_kit")+'): β '+fmt(f.beta,4)+' frente a '+fmt(ref.beta,4)+' y η '+fmt(f.eta,2)+' frente a '+fmt(ref.eta,2)+' → <b>'+((okb&&oke)?"coinciden":"NO COINCIDEN: no use estas cifras")+'</b>.</div>'}
+  else test='<div class="note">Sin valores de referencia incrustados: el cálculo del navegador no pudo contrastarse con el kit.</div>';
+  var warn=f.r<10?'<div class="note bad">Solo '+f.r+' falla(s): resultado exploratorio. Los intervalos son anchos y pueden ser poco fiables; no extrapole más allá de la mayor edad observada ('+fmt(Math.max.apply(0,f.t),1)+').</div>':'';
+  host.innerHTML='<div class="card"><h2>Vida: Weibull de dos parámetros por máxima verosimilitud con censura</h2><p>'+esc(v.nota||"")+' '+chips(v.evidencia)+'</p>'+warn+test+
+   '<div class="grid"><div class="kpi"><b>'+fmt(f.beta,3)+'</b><span>β forma · IC 95 % verosimilitud perfilada ['+fmt(cb[0],2)+'; '+fmt(cb[1],2)+']</span></div>'+
+   '<div class="kpi"><b>'+fmt(f.eta,1)+'</b><span>η escala ('+esc(v.unidad||"")+')</span></div>'+
+   '<div class="kpi"><b>'+fmt(b10,1)+'</b><span>B10 · IC 95 % ['+fmt(cb10[0],1)+'; '+fmt(cb10[1],1)+']</span></div>'+
+   '<div class="kpi"><b>'+f.r+' / '+f.n+'</b><span>fallas / observaciones</span></div></div>'+
+   '<p style="font-size:13px">Lectura de β: '+(f.beta<.95?'menor que 1, tasa decreciente (mortalidad infantil o mezcla de modos)':f.beta>1.05?'mayor que 1, desgaste (la tasa crece con la edad)':'cercano a 1, tasa aproximadamente constante')+
+   '. Si el intervalo incluye 1, los datos no distinguen entre tasa constante y variable.</p></div>'+
+   '<div class="card"><h2>Papel de probabilidad Weibull</h2><div id="wp"></div></div>'+
+   '<div class="card"><h2>Simulación: confiabilidad de una misión</h2><label>Duración de misión <input type="number" id="tm" value="'+fmt(Math.round(f.eta*0.25),0)+'"></label><label>Remuestreos <input type="number" id="bb" value="300"></label><button class="btn" id="go">Simular</button><div id="mc"></div></div>';
+  var rk=medianRanks(v.datos);
+  var W=760,H=300,m={l:50,r:14,t:10,b:30},lx=rk.map(function(p){return Math.log(p.t)}),ly=rk.map(function(p){return Math.log(-Math.log(1-p.F))});
+  var xmin=Math.min.apply(0,lx.concat([Math.log(b10)]))-.3,xmax=Math.max.apply(0,lx)+.3,ymin=Math.min.apply(0,ly.concat([-3]))-.2,ymax=Math.max.apply(0,ly)+.4;
+  function X(a){return m.l+(a-xmin)/(xmax-xmin)*(W-m.l-m.r)}function Y(a){return H-m.b-(a-ymin)/(ymax-ymin)*(H-m.t-m.b)}
+  var s='';[.01,.05,.1,.25,.5,.75,.9,.99].forEach(function(q){var yy=Math.log(-Math.log(1-q));s+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+Y(yy)+'" y2="'+Y(yy)+'" stroke="var(--line)"/><text x="4" y="'+(Y(yy)+4)+'">'+(q*100)+'%</text>'});
+  for(var e=Math.ceil(xmin/Math.LN10);e<=xmax/Math.LN10;e++){var xx=e*Math.LN10;s+='<line y1="'+m.t+'" y2="'+(H-m.b)+'" x1="'+X(xx)+'" x2="'+X(xx)+'" stroke="var(--line)"/><text x="'+X(xx)+'" y="'+(H-10)+'" text-anchor="middle">10^'+e+'</text>'}
+  s+='<line x1="'+X(xmin)+'" y1="'+Y(f.beta*(xmin-Math.log(f.eta)))+'" x2="'+X(xmax)+'" y2="'+Y(f.beta*(xmax-Math.log(f.eta)))+'" stroke="var(--c1)" stroke-width="1.6"/>';
+  rk.forEach(function(p,i){s+='<circle cx="'+X(lx[i])+'" cy="'+Y(ly[i])+'" r="4" fill="var(--c2)"><title>t='+fmt(p.t,1)+' F='+fmt(p.F,3)+'</title></circle>'});
+  $("#wp").innerHTML='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Papel Weibull">'+s+'</svg><div style="font-size:12px;color:var(--mut)">Puntos: rangos de Johnson con aproximación de Bernard (solo fallas). La recta es el ajuste de máxima verosimilitud, no una regresión sobre los puntos.</div>';
+  $("#go").onclick=function(){
+    var tm=+$("#tm").value,B=Math.min(2000,Math.max(50,+$("#bb").value)),R=Math.exp(-Math.pow(tm/f.eta,f.beta)),bs=bootR(v.datos,tm,B,12345);
+    $("#mc").innerHTML='<div class="grid"><div class="kpi"><b>'+fmt(R,3)+'</b><span>R(t) puntual</span></div><div class="kpi"><b>['+fmt(quant(bs,.025),3)+'; '+fmt(quant(bs,.975),3)+']</b><span>intervalo bootstrap 95 % ('+bs.length+' remuestreos válidos)</span></div></div><div class="note">Bootstrap no paramétrico sobre las observaciones, con semilla fija (12345) para que el resultado se repita. Es condicional al modelo Weibull y a que las unidades sean intercambiables.</div>';
+  };
+  $("#go").onclick();
+}
+
+function vPredictivo(host){
+  var nf=(D.caso.meta.n_fallas!=null)?D.caso.meta.n_fallas:((D.caso.vida&&D.caso.vida.datos)?D.caso.vida.datos.filter(function(d){return!d.censurado}).length:0);
+  host.innerHTML='<div class="card"><h2>¿Qué enfoque predictivo admiten sus datos?</h2><label>Fallas observadas <input type="number" id="nf" value="'+nf+'" min="0"></label><label><input type="checkbox" id="et"> hay etiquetas de falla confiables por activo y fecha</label><div class="tw"><table id="gm"></table></div>'+
+   '<div class="note">Esta guía es una síntesis del equipo basada en reglas de validación, no un resultado de literatura. Los mínimos de fallas son umbrales de prudencia; no sustituyen validar con activos no vistos.</div></div>';
+  function draw(){
+    var n=+$("#nf").value,et=$("#et").checked;
+    $("#gm").innerHTML='<tr><th>Enfoque</th><th>Veredicto</th><th>Evitar si</th><th>Validación mínima</th><th>Riesgo</th></tr>'+D.guia_modelos.map(function(g){
+      var ok=n>=g.min_fallas&&(g.etiquetas==="no"||et),ex=!ok&&n>0&&n>=g.min_fallas/2&&(g.etiquetas==="no"||et);
+      var vd=ok?'<span class="badge confirmada">admisible</span>':ex?'<span class="badge posible">solo exploratorio</span>':'<span class="badge descartada">no recomendado</span>';
+      return '<tr><td>'+esc(g.nombre)+'<br><small>mín. fallas: '+g.min_fallas+(g.etiquetas==="si"?' · requiere etiquetas':'')+'</small></td><td>'+vd+'</td><td>'+esc(g.cuando_evitar)+'</td><td><ul>'+g.validacion.map(function(x){return '<li>'+esc(x)+'</li>'}).join("")+'</ul></td><td>'+esc(g.riesgo)+'</td></tr>'}).join("");
+  }
+  host.addEventListener("input",draw);draw();
+}
+
+function vPlan(host){
+  var p=D.caso.plan||[];
+  host.innerHTML='<div class="card"><h2>Plan de acciones (CAPA)</h2><div class="tw"><table><tr><th>Id</th><th>Acción</th><th>Tipo</th><th>Causa</th><th>Responsable</th><th>Verificación de eficacia</th><th>Fuente</th></tr>'+
+   p.map(function(a){return '<tr><td>'+esc(a.id)+'</td><td>'+esc(a.accion)+'</td><td>'+esc(a.tipo||"")+'</td><td>'+esc(a.causa||"")+'</td><td>'+esc(a.responsable||"por asignar")+'</td><td>'+esc(a.verificacion||"por definir")+'</td><td>'+chips(a.evidencia)+'</td></tr>'}).join("")+'</table></div></div>';
+}
+
+function vHistorial(host){
+  var c=D.caso,hs=c.historial||[];
+  host.innerHTML='<div class="card"><h2>Historial y línea base del caso</h2>'+(c.recurrencia?'<div class="note '+(c.recurrencia.detectada?'bad':'ok')+'"><b>Recurrencia:</b> '+esc(c.recurrencia.texto||"")+'</div>':'<div class="note">Sin casos previos comparables registrados: no se puede afirmar recurrencia ni actualizar una línea base.</div>')+
+   '<div class="tw"><table><tr><th>Versión</th><th>Fecha</th><th>Cambio</th><th>Línea base</th></tr>'+hs.map(function(h){return '<tr><td>'+esc(h.version)+'</td><td>'+esc(h.fecha)+'</td><td>'+esc(h.cambio)+'</td><td>'+esc(h.baseline||"")+'</td></tr>'}).join("")+'</table></div></div>';
+}
+
+function vRastro(host){
+  var c=D.caso,L=function(a){return a&&a.length?'<ul>'+a.map(function(x){return '<li>'+esc(typeof x==="string"?x:(x.texto||JSON.stringify(x)))+'</li>'}).join("")+'</ul>':'<p>Ninguno.</p>'};
+  host.innerHTML=mkCard("Ajustes aplicados por las compuertas",D.ajustes.length?'<div class="tw"><table><tr><th>Dónde</th><th>Tipo</th><th>Detalle</th></tr>'+D.ajustes.map(function(a){return '<tr><td>'+esc(a.donde)+'</td><td>'+esc(a.tipo)+'</td><td>'+esc(a.detalle)+'</td></tr>'}).join("")+'</table></div>':'<p>Ninguno: todo lo afirmado tenía respaldo del nivel exigido.</p>')+
+   mkCard("Vacíos (lo que no se encontró o no se tiene)",L(c.vacios))+mkCard("Supuestos",L(c.supuestos))+mkCard("Preguntas abiertas",L(c.preguntas))+
+   mkCard("Reproducibilidad",'<p>Generado el '+esc(D.generado)+' con reliability_kit. Los números de vida se recalculan en el navegador y se contrastan con el kit de Python cuando hay valores de referencia. Todo el informe es un solo archivo sin peticiones externas.</p>'+(c.busqueda?'<pre class="code">'+esc(JSON.stringify(c.busqueda,null,1))+'</pre>':''));
+}
+
+/* ---------- arranque ---------- */
+function boot(){
+  if(!D){document.body.innerHTML="<p style='padding:20px'>El informe no tiene datos incrustados.</p>";return}
+  D.evidencia.forEach(function(e){EV[e.id]=e});
+  var m=D.caso.meta;$("#ttl").textContent=m.titulo;$("#sub").textContent=[m.activo,m.fecha_evento&&("evento "+m.fecha_evento),m.origen_datos&&("datos: "+m.origen_datos)].filter(Boolean).join(" · ");
+  var c=D.caso;
+  tab("res","Resumen",vResumen);
+  tab("tl","Línea de tiempo",vTiempo,(c.linea_tiempo||[]).length>0);
+  tab("sen","Señales",vSenales,(c.series||[]).length>0);
+  tab("cau","Causas y técnicas",vCausas);
+  tab("evi","Evidencia",vEvidencia);
+  tab("vid","Vida",vVida);
+  tab("pre","Predictivo",vPredictivo);
+  tab("pla","Plan",vPlan,(c.plan||[]).length>0);
+  tab("his","Historial",vHistorial);
+  tab("ras","Rastro",vRastro);
+  var tb=$("#tabs"),mn=$("#main");
+  VIEWS.forEach(function(v,i){
+    var b=document.createElement("button");b.textContent=v.label;b.setAttribute("role","tab");b.dataset.id=v.id;tb.appendChild(b);
+    var s=document.createElement("section");s.className="tab";s.id="v-"+v.id;mn.appendChild(s);
+    b.onclick=function(){sel(v.id)};
+  });
+  function sel(id){
+    VIEWS.forEach(function(v){var s=$("#v-"+v.id),b=$('[data-id='+v.id+']',tb);var on=v.id===id;s.classList.toggle("on",on);b.setAttribute("aria-selected",on);
+      if(on&&!s.dataset.done){s.dataset.done=1;try{v.fn(s)}catch(e){s.innerHTML='<div class="note bad">Error al dibujar esta vista: '+esc(e.message)+'</div>';window.__errores=(window.__errores||[]).concat(String(e))}}});
+    try{history.replaceState(null,"","#"+id)}catch(e){}
+  }
+  var h=(location.hash||"").slice(1);sel(VIEWS.some(function(v){return v.id===h})?h:"res");
+  $("#thm").onclick=function(){var r=document.documentElement,d=r.dataset.theme==="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches);r.dataset.theme=d?"light":"dark"};
+  window.__listo=true;
+}
+boot();
+</script>
+</body>
+</html>
