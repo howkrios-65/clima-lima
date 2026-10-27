@@ -84,7 +84,7 @@ Hay base publicada para memoria jerárquica (MemGPT), extracción/consolidación
 | Patrón | Qué resuelve | Riesgo | Fuente URL | Estado |
 |---|---|---|---|---|
 | Contexto virtual / memoria por niveles (MemGPT) | Contexto limitado: pagina entre contexto principal y almacenamiento externo; agentes conversacionales con memoria multi-sesión | Dependencia de decisiones del LLM para gestionar memoria (crítica de trabajos posteriores, solo snippet) | https://arxiv.org/abs/2310.08560 (texto leído vía espejo HF) | VERIFICADO (abstract); críticas SOLO-SNIPPET |
-| Extracción-consolidación-recuperación (Mem0) y variante con grafo | Consistencia en diálogos largos; −91 % latencia p95 y >90 % menos tokens vs. contexto completo; +26 % relativo en LLM-as-judge vs. OpenAI (benchmark LOCOMO) | Cifras reportadas por los autores del producto y medidas con LLM-as-judge (sesgos, ver §3) | https://arxiv.org/abs/2504.19413 | VERIFICADO (abstract) |
+| Extracción-consolidación-recuperación (Mem0) y variante con grafo | Consistencia en diálogos largos; −91 % latencia p95 y >90 % menos tokens vs. contexto completo; +26 % relativo en LLM-as-judge vs. OpenAI (benchmark LOCOMO) | Cifras reportadas por los autores del producto y medidas con LLM-as-judge (sesgos, ver sec. 3) | https://arxiv.org/abs/2504.19413 | VERIFICADO (abstract) |
 | Flujo de memoria + reflexión + recuperación (Generative Agents) | Almacena experiencias en lenguaje natural, las sintetiza en reflexiones de nivel superior, las recupera para planificar | Reflexiones sin verificación pueden fijar errores (inferencia mía) | https://arxiv.org/abs/2304.03442 | VERIFICADO (abstract) |
 | CoALA: módulos de memoria modulares + espacio de acciones estructurado | Marco para organizar agentes; separa memoria de trabajo y memorias de largo plazo | Es un marco conceptual, no una política de seguridad | https://arxiv.org/abs/2309.02427 | VERIFICADO (abstract) |
 | Taxonomía semántica/episódica/procedimental en LangGraph; memoria en JSON bajo namespace+key; escritura "on the hot path" o en segundo plano; `InMemoryStore` solo desarrollo | Aislamiento por namespace (usuario/org); cross-thread | Escritura en la ruta crítica = el agente decide qué recordar sin revisión | https://docs.langchain.com/oss/python/concepts/memory | SOLO-SNIPPET |
@@ -119,7 +119,7 @@ Hay base publicada para memoria jerárquica (MemGPT), extracción/consolidación
   6. **Cuarentena y versionado:** las memorias entran como `estado=propuesta` en un área separada; al aprobarse, se versionan (git/commit o registro inmutable con hash, autor, fecha, fuente); nunca se sobrescribe, solo se supersede.
   7. **Vigencia:** `valid_from/valid_to`, `revisar_antes_de`, decaimiento de confianza; las memorias sobre estado de equipos expiran rápido.
   8. **Reversión y auditoría:** cada respuesta registra qué memorias usó (IDs/versiones) para poder retractarlas y re-evaluar respuestas afectadas; "lecciones" derivadas de fallos van a una memoria aparte (A-MemGuard).
-  9. **Regresión:** cualquier cambio de memoria procedimental ejecuta el conjunto de evaluación (§5) antes de pasar a producción.
+  9. **Regresión:** cualquier cambio de memoria procedimental ejecuta el conjunto de evaluación (sec. 5) antes de pasar a producción.
 - Mapeo a Claude Code: `memory: project` en repositorio versionado + revisión por PR = Compuerta 4 y versionado; hook `PostToolUse`/`PreToolUse` sobre Write en el directorio de memoria para forzar el esquema y bloquear escrituras directas en la carpeta "aprobada" (mecanismo SÍNTESIS apoyado en hooks VERIFICADOS).
 
 ### Gaps
@@ -277,4 +277,4 @@ No pude verificar normas de reporte ACR/RCA ni guías de visualización de datos
 5. Críticas a MemGPT (latencia, FIFO) y papers 2025–2026 de memoria (MemoryGraft, Zombie Agents, DREAM, MemAdapter, ASPI, abstención): solo títulos/resúmenes de una línea.
 6. Fuentes de ingeniería de requisitos (preguntas de aclaración) y normas de reporte ACR/RCA y visualización: no consultadas.
 7. Cualquier benchmark específico de agentes LLM en mantenimiento/confiabilidad: no hallado.
-8. La eficacia de la política de compuertas propuesta (§2) no está demostrada en la literatura leída: es hipótesis de diseño.
+8. La eficacia de la política de compuertas propuesta (sec. 2) no está demostrada en la literatura leída: es hipótesis de diseño.

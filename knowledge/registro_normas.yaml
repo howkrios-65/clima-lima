@@ -1,0 +1,292 @@
+# Registro de normas y estándares.  Fuente: research_notes/Agentes mundiales de confiabilidad/03_normas_y_estandares.md
+# y reports/Agentes mundiales de confiabilidad.md (sección 3).
+#
+# REGLA: ninguna fila está VERIFICADA todavía. El acceso al publicador estuvo bloqueado durante la investigación.
+# Una fila solo sube a VERIFICADO cuando una persona abre la página oficial y completa 'verificado_por' y 'fecha_verificacion'.
+# Mientras tanto se cita así: "norma X (edición no verificada)".
+#
+# verificacion: SOLO-SNIPPET = visto solo en resumen de buscador | NO-VERIFICADO = sin fuente leída
+# estado_segun_notas: lo que dicen los resúmenes; NO es una confirmación
+
+normas:
+  - id: ISO 14224
+    tema: Taxonomía y recolección de datos de confiabilidad y mantenimiento
+    edicion_citada: "2016 (3.ª ed.)"
+    estado_segun_notas: "vigente, confirmada en 2022; la ed. 2006 está retirada; posible revisión en curso sin confirmar"
+    verificacion: SOLO-SNIPPET
+    url_reportada: https://www.iso.org/standard/64076.html
+  - id: OREDA
+    tema: Handbook de datos de confiabilidad de equipos (no es una norma)
+    edicion_citada: "6.ª ed., 2015"
+    estado_segun_notas: "handbook de datos; úsese como línea base de tasa de falla con advertencia"
+    verificacion: SOLO-SNIPPET
+    url_reportada: https://oreda.com/standards-and-publications/
+  - id: EN 13306
+    tema: Terminología de mantenimiento
+    edicion_citada: "2017"
+    estado_segun_notas: vigente
+    verificacion: SOLO-SNIPPET
+  - id: ISO 55000
+    tema: Gestión de activos, visión general y vocabulario
+    edicion_citada: "2024"
+    estado_segun_notas: "reemplaza la ed. 2014; no citar la ed. 2014"
+    verificacion: SOLO-SNIPPET
+  - id: ISO 55001
+    tema: Gestión de activos, requisitos
+    edicion_citada: "2024 (2.ª ed.)"
+    estado_segun_notas: "reemplaza la ed. 2014; plazo de transición por confirmar"
+    verificacion: SOLO-SNIPPET
+    url_reportada: https://www.iso.org/standard/88433.html
+  - id: ISO 55002
+    tema: Gestión de activos, guía de aplicación
+    edicion_citada: "2018"
+    estado_segun_notas: "'to be revised'"
+    verificacion: SOLO-SNIPPET
+  - id: ISO 17359
+    tema: Monitoreo de condición y diagnóstico, guía general
+    edicion_citada: "2018"
+    estado_segun_notas: "confirmada en 2023"
+    verificacion: SOLO-SNIPPET
+    url_reportada: https://www.iso.org/standard/71194.html
+    nota: "No se confirmó que prescriba una fracción del intervalo P-F"
+  - id: ISO 13372
+    tema: Monitoreo de condición, vocabulario
+    edicion_citada: null
+    estado_segun_notas: "vigencia no confirmada"
+    verificacion: NO-VERIFICADO
+  - id: ISO 13374 (partes 1 y 2)
+    tema: Procesamiento y presentación de datos de monitoreo de condición
+    edicion_citada: null
+    estado_segun_notas: "sin año ni estado"
+    verificacion: NO-VERIFICADO
+  - id: ISO 13379-1
+    tema: Diagnóstico, interpretación de datos
+    edicion_citada: "2012; un distribuidor muestra una edición 2025"
+    estado_segun_notas: "conflicto entre fuentes"
+    verificacion: SOLO-SNIPPET
+  - id: ISO 13381-1
+    tema: Pronóstico de vida remanente, estructura general
+    edicion_citada: "2015"
+    estado_segun_notas: vigente
+    verificacion: SOLO-SNIPPET
+  - id: ISO 18436-2
+    tema: Cualificación de analistas de vibración
+    edicion_citada: "2014"
+    estado_segun_notas: "vigente; nueva edición en trámite (FDIS)"
+    verificacion: SOLO-SNIPPET
+    url_reportada: https://www.iso.org/standard/88030.html
+  - id: ISO 20816-1
+    tema: Vibración mecánica, evaluación en máquinas
+    edicion_citada: "2016"
+    estado_segun_notas: "vigente; 2.ª ed. en FDIS; ISO 10816-1 y 7919-1 retiradas según BSI y DIN"
+    verificacion: SOLO-SNIPPET
+  - id: ISO 20816-3
+    tema: Vibración, máquinas industriales
+    edicion_citada: "2022"
+    estado_segun_notas: vigente
+    verificacion: SOLO-SNIPPET
+    url_reportada: https://www.iso.org/standard/78311.html
+  - id: ISO 20816-2/-4/-5/-8
+    tema: Vibración, otras partes
+    edicion_citada: null
+    estado_segun_notas: "sin año ni estado"
+    verificacion: NO-VERIFICADO
+  - id: ISO 4406
+    tema: Código de limpieza de fluidos hidráulicos
+    edicion_citada: "2021"
+    estado_segun_notas: "confirmada en 2026"
+    verificacion: SOLO-SNIPPET
+    url_reportada: https://www.iso.org/standard/79716.html
+  - id: ISO 281
+    tema: Vida nominal de rodamientos
+    edicion_citada: "2007"
+    estado_segun_notas: "enmienda en elaboración"
+    verificacion: SOLO-SNIPPET
+  - id: IEC 60812
+    tema: FMEA y FMECA
+    edicion_citada: "2018 (3.ª ed.)"
+    estado_segun_notas: "vigente; admite RPN y variantes; no usar la ed. 2006"
+    verificacion: SOLO-SNIPPET
+    url_reportada: https://webstore.iec.ch/publication/26359
+  - id: AIAG-VDA FMEA Handbook
+    tema: FMEA con Action Priority en lugar de RPN
+    edicion_citada: "2019 (abril o junio, fuentes en conflicto)"
+    estado_segun_notas: "sustituye el RPN por Action Priority; tablas oficiales no abiertas"
+    verificacion: SOLO-SNIPPET
+  - id: MIL-STD-1629A
+    tema: FMECA, procedimiento militar
+    edicion_citada: "1984"
+    estado_segun_notas: "estado no verificado; tratar como histórica hasta confirmar"
+    verificacion: NO-VERIFICADO
+  - id: IEC 61025
+    tema: Análisis de árbol de fallas
+    edicion_citada: "2006 (2.ª ed.)"
+    estado_segun_notas: "ed. 3 en curso"
+    verificacion: SOLO-SNIPPET
+  - id: IEC 62740
+    tema: Análisis de causa raíz
+    edicion_citada: "2015"
+    estado_segun_notas: "vigente; no asigna culpa; solo eventos ya ocurridos"
+    verificacion: SOLO-SNIPPET
+  - id: IEC 31010
+    tema: Técnicas de evaluación de riesgo
+    edicion_citada: "2019"
+    estado_segun_notas: vigente
+    verificacion: SOLO-SNIPPET
+  - id: ISO 31000
+    tema: Gestión del riesgo
+    edicion_citada: "2018"
+    estado_segun_notas: vigente
+    verificacion: SOLO-SNIPPET
+  - id: API RP 580
+    tema: Inspección basada en riesgo, principios
+    edicion_citada: "4.ª ed. 2023 con addendum 2025 (otras fuentes: 3.ª ed. 2019)"
+    estado_segun_notas: "edición vigente en conflicto; solo listados de terceros"
+    verificacion: SOLO-SNIPPET
+  - id: API RP 581
+    tema: Inspección basada en riesgo, métodos cuantitativos
+    edicion_citada: "4.ª ed. 2025"
+    estado_segun_notas: "solo listados de terceros"
+    verificacion: SOLO-SNIPPET
+  - id: NORSOK Z-008
+    tema: Análisis de criticidad para mantenimiento
+    edicion_citada: "2017; revisión aprobada en 2023 sin fecha de publicación"
+    estado_segun_notas: "revisión publicada por confirmar"
+    verificacion: SOLO-SNIPPET
+  - id: IEC 61078
+    tema: Diagramas de bloques de confiabilidad (RBD)
+    edicion_citada: "2016"
+    estado_segun_notas: vigente
+    verificacion: SOLO-SNIPPET
+  - id: IEC 61703
+    tema: Expresiones matemáticas de confiabilidad y mantenibilidad
+    edicion_citada: null
+    estado_segun_notas: "año no confirmado"
+    verificacion: NO-VERIFICADO
+  - id: IEC 60300-3-11
+    tema: Mantenimiento centrado en confiabilidad (guía)
+    edicion_citada: "2009"
+    estado_segun_notas: vigente
+    verificacion: SOLO-SNIPPET
+  - id: IEC 60300-3-3
+    tema: Costo de ciclo de vida
+    edicion_citada: "conflicto: 2004/2005 frente a 2017"
+    estado_segun_notas: "edición por resolver"
+    verificacion: NO-VERIFICADO
+  - id: IEC 60300-3-1
+    tema: Técnicas de análisis de confiabilidad, guía de aplicación
+    edicion_citada: null
+    estado_segun_notas: "vigencia no confirmada"
+    verificacion: NO-VERIFICADO
+  - id: IEC 60300-3-12
+    tema: Soporte logístico integrado
+    edicion_citada: null
+    estado_segun_notas: "sin año ni estado"
+    verificacion: NO-VERIFICADO
+  - id: IEC 60050-192
+    tema: Vocabulario de confiabilidad (dependability)
+    edicion_citada: null
+    estado_segun_notas: "sin año ni estado"
+    verificacion: NO-VERIFICADO
+  - id: IEC 61649
+    tema: Análisis Weibull
+    edicion_citada: null
+    estado_segun_notas: "sin año ni estado"
+    verificacion: NO-VERIFICADO
+    nota: "El agente solo puede citarla como 'edición no verificada'"
+  - id: IEC 61164
+    tema: Crecimiento de confiabilidad, métodos estadísticos (Crow-AMSAA)
+    edicion_citada: "2004 (no 2008)"
+    estado_segun_notas: "ed. 2004 según los resúmenes"
+    verificacion: SOLO-SNIPPET
+  - id: MIL-HDBK-189C
+    tema: Gestión de crecimiento de confiabilidad
+    edicion_citada: null
+    estado_segun_notas: "sin año ni estado"
+    verificacion: NO-VERIFICADO
+  - id: MIL-HDBK-217
+    tema: Predicción de confiabilidad de electrónicos
+    edicion_citada: "217F Notice 2, 1995"
+    estado_segun_notas: "no se actualiza desde 1995"
+    verificacion: SOLO-SNIPPET
+  - id: SAE JA1011
+    tema: Criterios de evaluación de procesos RCM
+    edicion_citada: null
+    estado_segun_notas: "edición vigente no confirmada"
+    verificacion: NO-VERIFICADO
+    nota: "Siete preguntas, cuatro categorías de consecuencia y jerarquía de tareas, según resúmenes secundarios"
+  - id: SAE JA1012
+    tema: Guía de aplicación del estándar RCM
+    edicion_citada: "2011 (ed. 2002 aparece como 'current' en una fuente)"
+    estado_segun_notas: "conflicto entre fuentes"
+    verificacion: SOLO-SNIPPET
+    url_reportada: https://saemobilus.sae.org/content/JA1012_201108
+  - id: Nowlan y Heap (informe)
+    tema: Seis patrones de falla, origen del RCM
+    edicion_citada: "1978, informe público ADA066579"
+    estado_segun_notas: "disponible en el repositorio de informes técnicos de defensa de EE. UU."
+    verificacion: SOLO-SNIPPET
+    url_reportada: https://apps.dtic.mil/sti/html/tr/ADA066579/index.html
+    nota: "Los porcentajes que circulan no se contrastaron con la tabla original"
+  - id: EN 15341
+    tema: Indicadores clave de desempeño de mantenimiento
+    edicion_citada: "2019+A1:2022"
+    estado_segun_notas: "citar con la enmienda; la ed. 2019 sola figura retirada en un organismo nacional desde junio de 2022"
+    verificacion: SOLO-SNIPPET
+    url_reportada: https://www.evs.ee/en/evs-en-15341-2019
+  - id: ISO 22400-2
+    tema: KPI de operaciones de manufactura
+    edicion_citada: null
+    estado_segun_notas: "no verificado"
+    verificacion: NO-VERIFICADO
+  - id: SMRP Best Practice Metrics
+    tema: Métricas de mantenimiento y confiabilidad (no es norma)
+    edicion_citada: null
+    estado_segun_notas: "numeración en conflicto entre fuentes (p. ej. trabajo reactivo 5.4.1 o 5.6.1)"
+    verificacion: NO-VERIFICADO
+  - id: GFMAM Landscape
+    tema: Marco de gestión de activos
+    edicion_citada: "2.ª ed.: 39 subjetos en 6 grupos; v3: 40 subjetos en 7 áreas"
+    estado_segun_notas: "visto en resúmenes"
+    verificacion: SOLO-SNIPPET
+  - id: NIST AI RMF 1.0 (AI 100-1)
+    tema: Gestión de riesgo de IA
+    edicion_citada: "enero 2023"
+    estado_segun_notas: "voluntario"
+    verificacion: SOLO-SNIPPET
+  - id: NIST AI 600-1
+    tema: Perfil de IA generativa del AI RMF
+    edicion_citada: "julio 2024"
+    estado_segun_notas: "voluntario"
+    verificacion: SOLO-SNIPPET
+    url_reportada: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf
+  - id: ISO/IEC 42001
+    tema: Sistema de gestión de IA
+    edicion_citada: "2023"
+    estado_segun_notas: "certificable; no se afirma cumplimiento"
+    verificacion: SOLO-SNIPPET
+  - id: ISO/IEC 23894
+    tema: Guía de gestión de riesgo de IA
+    edicion_citada: "2023"
+    estado_segun_notas: guía
+    verificacion: SOLO-SNIPPET
+  - id: IEC 62443
+    tema: Ciberseguridad de sistemas de control industrial (serie por partes)
+    edicion_citada: "serie; existe IEC PAS 62443-1-6:2025"
+    estado_segun_notas: "estado por parte sin verificar"
+    verificacion: SOLO-SNIPPET
+  - id: NIST SP 800-82
+    tema: Seguridad de tecnología operacional
+    edicion_citada: "Rev. 3, 2023-09-28; posible borrador Rev. 4 fechado 2026-09-21 solo en un resumen"
+    estado_segun_notas: "borrador Rev. 4 no verificado"
+    verificacion: SOLO-SNIPPET
+  - id: ISO 8000-61
+    tema: Calidad de datos, gestión de procesos
+    edicion_citada: "2016"
+    estado_segun_notas: "vigencia no verificada"
+    verificacion: SOLO-SNIPPET
+  - id: ISO 8000-1
+    tema: Calidad de datos, visión general
+    edicion_citada: null
+    estado_segun_notas: "sin año ni estado"
+    verificacion: NO-VERIFICADO

@@ -136,7 +136,7 @@ SAE JA1012 (ed. agosto 2011) figura vigente en SAE Mobilus; la ed. 2002 aparece 
 ### Cited Findings
 - SAE JA1012_201108 "A Guide to the Reliability-Centered Maintenance (RCM) Standard": revisión de 2011 por ciclo de 5 años y consistencia con JA1011; amplía y aclara los criterios de JA1011 — [SAE Mobilus](https://saemobilus.sae.org/content/JA1012_201108) (SS)
 - SAE JA1011 "Evaluation Criteria for RCM Processes": un glosario de proveedor da 1999; edición vigente NV — [Tractian glosario](https://tractian.com/en/glossary/sae-ja1011) (secundaria)
-- IEC 60300-3-11:2009 (ver tabla §5).
+- IEC 60300-3-11:2009 (ver tabla sec. 5).
 - Nowlan & Heap, "Reliability-Centered Maintenance", informe DoD/United Airlines, diciembre 1978, DTIC accesión ADA066579, PDF abierto; también copia en EverySpec AD-A066579 — [DTIC](https://apps.dtic.mil/sti/html/tr/ADA066579/index.html) ; [EverySpec](https://everyspec.com/DoD/DOD-General/AD-A066579_18228/) (SS)
 - Moubray, RCM II (libro): NO verificado; no hallé ubicación pública (es libro comercial, Industrial Press).
 
