@@ -124,3 +124,9 @@ configuración escribir en la memoria aprobada; piloto en sombra con tus datos r
 
 ## Dossier por modo de falla
 Con solo nombrar un componente y su modo de falla (`/modo-de-falla`), el líder sigue `knowledge/protocolo_dossier_modo_falla.md`: 14 secciones (mediciones, fenómenos, top de fallas, FMECA, confiabilidad, punto óptimo, LCC, vida útil, IBR, ML, ACR, troubleshooting, normas, referencias), cada elemento con su fuente o declarado VACÍO (`reliability_kit.dossier`).
+
+## Mapa interactivo y guía de comandos
+
+- `docs/agentes/mapa_agentes.html`: organigrama interactivo del equipo para el caso de la chumacera, con doble clic en cada agente y reproducción del flujo.
+- `docs/agentes/guia_comandos.md`: comandos (/modo-de-falla, /confiabilidad), agentes invocables, flujo de trabajo y dónde se guarda cada resultado.
+- `docs/entregables/presentacion_chumacera_polea.pptx`: presentación del proyecto.

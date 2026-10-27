@@ -3,11 +3,11 @@
   "organismo": "ISO",
   "codigo": "ISO 13373-1",
   "titulo": "Condition monitoring and diagnostics of machines - Vibration condition monitoring - Part 1: General procedures",
-  "edicion_vista": "2002",
+  "edicion_vista": "2002 (segun resumen; edicion no verificada)",
   "estado_visto": "Publicada; el resumen dice que la página ISO la muestra revisada y confirmada en 2024",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Procedimientos generales de medición de vibración para monitoreo de máquinas rotativas (transductores, ubicación, adquisición de datos)",
-  "relaciones": "Parte 1 de la serie 13373; la parte 2 trata procesamiento y presentación; la parte 3 diagnóstico; otros métodos (aceite, termografía) van en otras normas",
+  "relaciones": "Segun el resumen de buscador: Parte 1 de la serie 13373; la parte 2 trata procesamiento y presentación; la parte 3 diagnóstico; otros métodos (aceite, termografía) van en otras normas",
   "url": "https://www.iso.org/standard/21831.html",
   "evidencia": [
    "E-9701"
@@ -17,11 +17,11 @@
   "organismo": "ISO",
   "codigo": "ISO 13373-3",
   "titulo": "Condition monitoring and diagnostics of machines - Vibration condition monitoring - Part 3: Guidelines for vibration diagnosis",
-  "edicion_vista": "2015",
+  "edicion_vista": "2015 (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente según resumen (fechas de revisión 2020 o 2026 en conflicto)",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Marco estructurado de diagnóstico de fallas por vibración en máquinas rotativas",
-  "relaciones": "Complementa 13373-1 y -2; las guías por tipo de máquina están en otras partes (4 y 9)",
+  "relaciones": "Segun el resumen de buscador: Complementa 13373-1 y -2; las guías por tipo de máquina están en otras partes (4 y 9)",
   "url": "https://www.iso.org/standard/40840.html",
   "evidencia": [
    "E-9702"
@@ -31,11 +31,11 @@
   "organismo": "ISO",
   "codigo": "ISO 13372",
   "titulo": "Condition monitoring and diagnostics of machines - Vocabulary",
-  "edicion_vista": "2012",
+  "edicion_vista": "2012 (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente según resumen; reemplaza la ed. 2004 (cancelada)",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Vocabulario común de monitoreo de condición y diagnóstico",
-  "relaciones": "Reemplaza ISO 13372:2004",
+  "relaciones": "Segun el resumen de buscador: Reemplaza ISO 13372:2004",
   "url": "https://scc-ccn.ca/standardsdb/standards/8149605",
   "evidencia": [
    "E-9703"
@@ -45,11 +45,11 @@
   "organismo": "ISO",
   "codigo": "ISO 13374-1",
   "titulo": "Condition monitoring and diagnostics of machines - Data processing, communication and presentation - Part 1: General guidelines",
-  "edicion_vista": "2003",
+  "edicion_vista": "2003 (segun resumen; edicion no verificada)",
   "estado_visto": "Listada como vigente por BSI; Genorma muestra un proyecto de revisión abandonado; estado dudoso",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Pautas de especificación de software para procesar, comunicar y presentar datos de monitoreo de condición",
-  "relaciones": "Las partes siguientes (p. ej. procesamiento de datos) detallan la arquitectura abierta",
+  "relaciones": "Segun el resumen de buscador: Las partes siguientes (p. ej. procesamiento de datos) detallan la arquitectura abierta",
   "url": "https://scc-ccn.ca/standardsdb/standards/8110275",
   "evidencia": [
    "E-9704"
@@ -59,11 +59,11 @@
   "organismo": "ISO",
   "codigo": "ISO 13379-1",
   "titulo": "Condition monitoring and diagnostics of machine systems - Data interpretation and diagnostics techniques - Part 1: General guidelines",
-  "edicion_vista": "2025 (2.ª ed.); la ed. 2012 figura como reemplazada",
+  "edicion_vista": "2025 (2.ª ed.); la ed. 2012 figura como reemplazada (segun resumen; edicion no verificada)",
   "estado_visto": "Publicada 2025-10 según resumen; el registro del repo aún cita 2012",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Conceptos comunes y guía para elegir un enfoque de diagnóstico",
-  "relaciones": "Reemplaza ISO 13379-1:2012 (resuelve el conflicto de registro_normas.yaml)",
+  "relaciones": "Contradice el registro del repositorio (edicion 2012); sin resolver hasta abrir la pagina oficial",
   "url": "https://www.iso.org/standard/88027.html",
   "evidencia": [
    "E-9705"
@@ -73,11 +73,11 @@
   "organismo": "ISO",
   "codigo": "ISO 13381-1",
   "titulo": "Condition monitoring and diagnostics of machine systems - Prognostics - Part 1: General guidelines and requirements",
-  "edicion_vista": "2025 (3.ª ed.); la ed. 2015 figura como reemplazada (un listado aún muestra 2015 vigente)",
+  "edicion_vista": "2025 (3.ª ed.); la ed. 2015 figura como reemplazada (un listado aún muestra 2015 vigente) (segun resumen; edicion no verificada)",
   "estado_visto": "Publicada 2025-09 según resumen; CONFLICTO con registro_normas.yaml (2015 vigente)",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Guía y requisitos para procesos de pronóstico (base de RUL); el resumen dice que añade requisitos, no solo guía",
-  "relaciones": "Reemplaza ISO 13381-1:2015 según resumen; las partes 2 a 4 estaban previstas (tendencias, uso de vida cíclico, modelos de RUL)",
+  "relaciones": "Segun el resumen de buscador: Reemplaza ISO 13381-1:2015 según resumen; las partes 2 a 4 estaban previstas (tendencias, uso de vida cíclico, modelos de RUL)",
   "url": "https://www.iso.org/standard/88029.html",
   "evidencia": [
    "E-9706"
@@ -87,11 +87,11 @@
   "organismo": "ISO",
   "codigo": "ISO 17359",
   "titulo": "Condition monitoring and diagnostics of machines - General guidelines",
-  "edicion_vista": "2018",
+  "edicion_vista": "2018 (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente; confirmada en 2023 según adopción eslovaca",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Guía para montar un programa de monitoreo de condición en cualquier máquina",
-  "relaciones": "Reemplaza ISO 17359:2011 (DIN la lista retirada) y a ISO 13380",
+  "relaciones": "Segun el resumen de buscador: Reemplaza ISO 17359:2011 (DIN la lista retirada) y a ISO 13380",
   "url": "https://scc-ccn.ca/standardsdb/standards/8164933",
   "evidencia": [
    "E-9707"
@@ -101,11 +101,11 @@
   "organismo": "ISO",
   "codigo": "ISO 18436-1",
   "titulo": "Condition monitoring and diagnostics of machine systems - Requirements for certification of personnel - Part 1: Sector specific requirements for certification bodies and the certification process",
-  "edicion_vista": "2021 (3.ª ed.)",
+  "edicion_vista": "2021 (3.ª ed.) (segun resumen; edicion no verificada)",
   "estado_visto": "Publicada; Genorma muestra revisión periódica jul-2026",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Requisitos para organismos que certifican personal de monitoreo",
-  "relaciones": "Se apoya en ISO/IEC 17024; las partes 2, 3, 8 definen categorías por técnica",
+  "relaciones": "Segun el resumen de buscador: Se apoya en ISO/IEC 17024; las partes 2, 3, 8 definen categorías por técnica",
   "url": "https://www.iso.org/standard/67515.html",
   "evidencia": [
    "E-9708"
@@ -115,11 +115,11 @@
   "organismo": "ISO",
   "codigo": "ISO 18436-2",
   "titulo": "Condition monitoring and diagnostics of machines - Requirements for qualification and assessment of personnel - Part 2: Vibration condition monitoring and diagnostics",
-  "edicion_vista": "2014",
+  "edicion_vista": "2014 (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente, confirmada en 2019; CD de nueva edición en desarrollo",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Formación, experiencia y examen de analistas de vibración (cuatro categorías)",
-  "relaciones": "Parte de la serie 18436",
+  "relaciones": "Segun el resumen de buscador: Parte de la serie 18436",
   "url": "https://www.iso.org/standard/50447.html",
   "evidencia": [
    "E-9709"
@@ -129,11 +129,11 @@
   "organismo": "ISO",
   "codigo": "ISO 18436-8",
   "titulo": "Condition monitoring and diagnostics of machines - Requirements for qualification and assessment of personnel - Part 8: Ultrasound",
-  "edicion_vista": "2013",
+  "edicion_vista": "2013 (segun resumen; edicion no verificada)",
   "estado_visto": "Publicada; 2.ª ed. en DIS/FDIS",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Calificación de personal de monitoreo por ultrasonido (tres categorías)",
-  "relaciones": "La 2.ª ed. reemplazaría a la 2013",
+  "relaciones": "Segun el resumen de buscador: La 2.ª ed. reemplazaría a la 2013",
   "url": "https://scc-ccn.ca/standardsdb/standards/8153835",
   "evidencia": [
    "E-9710"
@@ -143,11 +143,11 @@
   "organismo": "ISO",
   "codigo": "ISO 18434-1",
   "titulo": "Condition monitoring and diagnostics of machines - Thermography - Part 1: General procedures",
-  "edicion_vista": "2008",
+  "edicion_vista": "2008 (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente, confirmada en 2023 según resumen",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Termografía infrarroja en monitoreo de máquinas; criterios de severidad, corrección de emisividad",
-  "relaciones": "DIN 19277 es la adaptación alemana modificada (2015-12)",
+  "relaciones": "Segun el resumen de buscador: DIN 19277 es la adaptación alemana modificada (2015-12)",
   "url": "https://committee.iso.org/standard/41648.html?browse=ics",
   "evidencia": [
    "E-9711"
@@ -157,11 +157,11 @@
   "organismo": "ISO",
   "codigo": "ISO 29821",
   "titulo": "Condition monitoring and diagnostics of machines - Ultrasound - General guidelines, procedures and validation",
-  "edicion_vista": "2018",
+  "edicion_vista": "2018 (segun resumen; edicion no verificada)",
   "estado_visto": "Publicada ene-2018; vigencia no confirmada en el resumen",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Cómo ejecutar exámenes ultrasónicos de máquinas y criterios de severidad de fallas",
-  "relaciones": "Par con ISO 18436-8 (calificación del personal)",
+  "relaciones": "Segun el resumen de buscador: Par con ISO 18436-8 (calificación del personal)",
   "url": "https://iteh.es/catalog/standards/iso/7142aa65-679c-467b-8340-d7451e63b2c8/iso-29821-2018",
   "evidencia": [
    "E-9712"
@@ -171,11 +171,11 @@
   "organismo": "ISO",
   "codigo": "ISO 10816-1",
   "titulo": "Mechanical vibration - Evaluation of machine vibration by measurements on non-rotating parts - Part 1: General guidelines",
-  "edicion_vista": "1995 (+Amd 1:2009)",
+  "edicion_vista": "1995 (+Amd 1:2009) (segun resumen; edicion no verificada)",
   "estado_visto": "RETIRADA; página ISO la lista retirada y revisada por ISO 20816-1:2016 (retiro 2016-11-09 según un catálogo)",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Histórica: criterios de severidad para partes no rotativas",
-  "relaciones": "Reemplazada por ISO 20816-1:2016 (DIN: DIN ISO 20816-1:2017-03)",
+  "relaciones": "Segun el resumen de buscador: Reemplazada por ISO 20816-1:2016 (DIN: DIN ISO 20816-1:2017-03)",
   "url": "https://www.iso.org/standard/18866.html",
   "evidencia": [
    "E-9713"
@@ -185,11 +185,11 @@
   "organismo": "ISO",
   "codigo": "ISO 10816-3",
   "titulo": "Mechanical vibration - Evaluation of machine vibration by measurements on non-rotating parts - Part 3: Industrial machines with nominal power above 15 kW and nominal speeds between 120 r/min and 15 000 r/min",
-  "edicion_vista": "2009 (+Amd 1:2017)",
+  "edicion_vista": "2009 (+Amd 1:2017) (segun resumen; edicion no verificada)",
   "estado_visto": "RETIRADA el 2022-10-05 según resumen",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Histórica: zonas de severidad in situ para maquinaria industrial",
-  "relaciones": "Reemplazada por ISO 20816-3:2022 (DIN ISO 20816-3:2023-04)",
+  "relaciones": "Segun el resumen de buscador: Reemplazada por ISO 20816-3:2022 (DIN ISO 20816-3:2023-04)",
   "url": "https://www.iso.org/standard/50528.html",
   "evidencia": [
    "E-9714"
@@ -199,11 +199,11 @@
   "organismo": "ISO",
   "codigo": "ISO 20816-1",
   "titulo": "Mechanical vibration - Measurement and evaluation of machine vibration - Part 1: General guidelines",
-  "edicion_vista": "2016",
+  "edicion_vista": "2016 (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente, confirmada en 2021; 2.ª ed. en aprobación (FDIS)",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Condiciones y procedimientos generales de medición y evaluación de vibración en máquinas completas",
-  "relaciones": "Reemplaza ISO 10816-1 e ISO 7919-1 (BSI); los criterios por clase de máquina van en otras partes",
+  "relaciones": "Segun el resumen de buscador: Reemplaza ISO 10816-1 e ISO 7919-1 (BSI); los criterios por clase de máquina van en otras partes",
   "url": "https://www.iso.org/standard/63180.html",
   "evidencia": [
    "E-9715"
@@ -213,11 +213,11 @@
   "organismo": "ISO",
   "codigo": "ISO 20816-3",
   "titulo": "Mechanical vibration - Measurement and evaluation of machine vibration - Part 3: Industrial machines with a power rating above 15 kW and operating speeds between 120 r/min and 30 000 r/min",
-  "edicion_vista": "2022 (1.ª ed., oct-2022)",
+  "edicion_vista": "2022 (1.ª ed., oct-2022) (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente según resumen",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Evaluación in situ de vibración (carcasa y eje) de máquinas industriales acopladas; valores son guía de experiencia mundial",
-  "relaciones": "Reemplaza ISO 10816-3:2009; turbinas de gas >3 MW van en 20816-4",
+  "relaciones": "Segun el resumen de buscador: Reemplaza ISO 10816-3:2009; turbinas de gas >3 MW van en 20816-4",
   "url": "https://www.iso.org/standard/78311.html",
   "evidencia": [
    "E-9716"
@@ -227,11 +227,11 @@
   "organismo": "ISO",
   "codigo": "ISO 21940-11",
   "titulo": "Mechanical vibration - Rotor balancing - Part 11: Procedures and tolerances for rotors with rigid behaviour",
-  "edicion_vista": "2016 (BSI lista consolidado +A1:2022)",
+  "edicion_vista": "2016 (BSI lista consolidado +A1:2022) (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente, confirmada en 2021 según resumen",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Desbalance residual permisible y planos de corrección para rotores rígidos",
-  "relaciones": "Rotores flexibles en 21940-12; fundamentos en ISO 19499; errores en 21940-14",
+  "relaciones": "Segun el resumen de buscador: Rotores flexibles en 21940-12; fundamentos en ISO 19499; errores en 21940-14",
   "url": "https://www.iso.org/standard/54074.html",
   "evidencia": [
    "E-9717"
@@ -241,11 +241,11 @@
   "organismo": "ISO",
   "codigo": "ISO 281",
   "titulo": "Rolling bearings - Dynamic load ratings and rating life",
-  "edicion_vista": "2007",
+  "edicion_vista": "2007 (segun resumen; edicion no verificada)",
   "estado_visto": "Publicada vigente; 3.ª ed. ISO/DIS 281 en consulta (no publicada)",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Vida nominal básica (90 % de confiabilidad) y vida modificada (L10, L10m); no cubre desgaste, corrosión ni erosión eléctrica",
-  "relaciones": "La 3.ª ed. reemplazaría a la 2007; DIN la adopta como DIN ISO 281:2010-10",
+  "relaciones": "Segun el resumen de buscador: La 3.ª ed. reemplazaría a la 2007; DIN la adopta como DIN ISO 281:2010-10",
   "url": "https://www.iso.org/es/contents/data/standard/09/45/94537.html",
   "evidencia": [
    "E-9718"
@@ -255,11 +255,11 @@
   "organismo": "ISO",
   "codigo": "ISO 15243",
   "titulo": "Rolling bearings - Damage and failures - Terms, characteristics and causes",
-  "edicion_vista": "2017",
+  "edicion_vista": "2017 (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente, confirmada en 2022; borrador de trabajo ISO/WD 15243.2 listado",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Clasifica modos de falla de rodamientos y sus causas más frecuentes con fotografías",
-  "relaciones": "El borrador reemplazaría a la ed. 2017 (no publicado)",
+  "relaciones": "Segun el resumen de buscador: El borrador reemplazaría a la ed. 2017 (no publicado)",
   "url": "https://www.iso.org/standard/59619.html",
   "evidencia": [
    "E-9719"
@@ -269,11 +269,11 @@
   "organismo": "ISO",
   "codigo": "ISO 4406",
   "titulo": "Hydraulic fluid power - Fluids - Method for coding the level of contamination by solid particles",
-  "edicion_vista": "2021 (4.ª ed.)",
+  "edicion_vista": "2021 (4.ª ed.) (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente; página ISO muestra confirmación 2026 y otro listado muestra revisión sistemática",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Código de limpieza por conteo de partículas; un paso de código es aproximadamente el doble de contaminación (según BSI)",
-  "relaciones": "Reemplaza ISO 4406:2017 (cancelada); es norma de fluidos hidráulicos, su uso en grasa de chumacera SIN DATOS PARA ARMARLO",
+  "relaciones": "Segun el resumen de buscador: Reemplaza ISO 4406:2017 (cancelada); es norma de fluidos hidráulicos, su uso en grasa de chumacera SIN DATOS PARA ARMARLO",
   "url": "https://www.iso.org/standard/79716.html",
   "evidencia": [
    "E-9720"
@@ -283,11 +283,11 @@
   "organismo": "ISO",
   "codigo": "ISO 14224",
   "titulo": "Petroleum, petrochemical and natural gas industries - Collection and exchange of reliability and maintenance data for equipment",
-  "edicion_vista": "2016",
+  "edicion_vista": "2016 (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente, confirmada en 2022 según resumen",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Datos mínimos de equipo, falla y mantenimiento y formato de intercambio (datos de falla)",
-  "relaciones": "Ed. 1999 histórica; es del sector petróleo y gas, su uso en minería/transportadores SIN DATOS PARA ARMARLO",
+  "relaciones": "Segun el resumen de buscador: Ed. 1999 histórica; es del sector petróleo y gas, su uso en minería/transportadores SIN DATOS PARA ARMARLO",
   "url": "https://www.iso.org/standard/64076.html",
   "evidencia": [
    "E-9721"
@@ -297,11 +297,11 @@
   "organismo": "ISO",
   "codigo": "ISO 55000",
   "titulo": "Asset management - Vocabulary, overview and principles",
-  "edicion_vista": "2024 (2.ª ed., jul-2024)",
+  "edicion_vista": "2024 (2.ª ed., jul-2024) (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente según la página ISO citada por el resumen",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Visión general, principios y terminología de gestión de activos",
-  "relaciones": "Desarrollada por ISO 55001 (requisitos) e ISO 55002 (guía)",
+  "relaciones": "Segun el resumen de buscador: Desarrollada por ISO 55001 (requisitos) e ISO 55002 (guía)",
   "url": "https://www.iso.org/standard/83053.html",
   "evidencia": [
    "E-9722"
@@ -311,11 +311,11 @@
   "organismo": "ISO",
   "codigo": "ISO 5048",
   "titulo": "Continuous mechanical handling equipment - Belt conveyors with carrying idlers - Calculation of operating power and tensile forces",
-  "edicion_vista": "1989 (2.ª ed.)",
+  "edicion_vista": "1989 (2.ª ed.) (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente según resumen; confirmación 2026 en una página y 2019 en espejo (conflicto)",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Cálculo de potencia en el tambor motriz y tensiones de banda; resistencias al movimiento",
-  "relaciones": "Solo cubre transportadores con rodillos portantes",
+  "relaciones": "Segun el resumen de buscador: Solo cubre transportadores con rodillos portantes",
   "url": "https://www.iso.org/standard/11069.html",
   "evidencia": [
    "E-9723"
@@ -325,11 +325,11 @@
   "organismo": "ISO",
   "codigo": "ISO 1537",
   "titulo": "Continuous mechanical handling equipment for loose bulk materials - Troughed belt conveyors (other than portable conveyors) - Idlers",
-  "edicion_vista": "1975 (1.ª ed.)",
+  "edicion_vista": "1975 (1.ª ed.) (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente, confirmada en 2025 según resumen",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Dimensiones, disposiciones y holguras de rodillos de bandas en artesa con tres rodillos",
-  "relaciones": "Cita ISO 64 (tubos de acero)",
+  "relaciones": "Segun el resumen de buscador: Cita ISO 64 (tubos de acero)",
   "url": "https://www.iso.org/standard/6125.html",
   "evidencia": [
    "E-9724"
@@ -339,11 +339,11 @@
   "organismo": "ISO/IEC",
   "codigo": "ISO/IEC 30173",
   "titulo": "Digital twin - Concepts and terminology",
-  "edicion_vista": "2023 (1.ª ed.)",
+  "edicion_vista": "2023 (1.ª ed.) (segun resumen; edicion no verificada)",
   "estado_visto": "Publicada según listados",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Conceptos y terminología de gemelo digital (tipos, ciclo de vida, vista funcional); relación con simulación, CPS e IoT",
-  "relaciones": "Apoya otras normas de gemelo digital; mantenimiento predictivo no se menciona en lo visto",
+  "relaciones": "Segun el resumen de buscador: Apoya otras normas de gemelo digital; mantenimiento predictivo no se menciona en lo visto",
   "url": "https://committee.iso.org/standard/81442.html",
   "evidencia": [
    "E-9725"
@@ -353,11 +353,11 @@
   "organismo": "ISO",
   "codigo": "ISO 23247-1",
   "titulo": "Automation systems and integration - Digital twin framework for manufacturing - Part 1: Overview and general principles",
-  "edicion_vista": "2021",
+  "edicion_vista": "2021 (segun resumen; edicion no verificada)",
   "estado_visto": "Publicada oct-2021 según resumen",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Marco de gemelo digital en manufactura; el índice incluye mantenimiento predictivo y chequeos de salud entre las aplicaciones",
-  "relaciones": "Primera de cuatro partes",
+  "relaciones": "Segun el resumen de buscador: Primera de cuatro partes",
   "url": "https://committee.iso.org/standard/75066.html",
   "evidencia": [
    "E-9726"
@@ -367,11 +367,11 @@
   "organismo": "API",
   "codigo": "API Std 670",
   "titulo": "Machinery Protection Systems",
-  "edicion_vista": "5.ª ed. 2014 (activa según un listado, superada según otro); 6.ª ed. 2025 solo en un artículo de tercero",
+  "edicion_vista": "5.ª ed. 2014 (activa según un listado, superada según otro); 6.ª ed. 2025 solo en un artículo de tercero (segun resumen; edicion no verificada)",
   "estado_visto": "CONFLICTO: edición vigente no confirmada; sin página de API vista",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Especificación de compra de sistemas de protección de maquinaria (no certificación de producto, según Emerson)",
-  "relaciones": "6.ª ed. reemplazaría a la 5.ª según un artículo de proveedor",
+  "relaciones": "Segun el resumen de buscador: 6.ª ed. reemplazaría a la 5.ª según un artículo de proveedor",
   "url": "https://www.emersonautomationexperts.com/?p=46251",
   "evidencia": [
    "E-9727"
@@ -381,11 +381,11 @@
   "organismo": "API",
   "codigo": "API RP 691",
   "titulo": "Risk-Based Machinery Management",
-  "edicion_vista": "2017 (1.ª ed.)",
+  "edicion_vista": "2017 (1.ª ed.) (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente según listados (BSI lo muestra con fecha 2026-01-29, posible reedición)",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Gestión de riesgo de maquinaria en el ciclo de vida; anexos informativos con FMEA y monitoreo de condición",
-  "relaciones": "Aplica a maquinaria de alto riesgo (proceso, no minería); su uso en este caso SIN DATOS PARA ARMARLO",
+  "relaciones": "Segun el resumen de buscador: Aplica a maquinaria de alto riesgo (proceso, no minería); su uso en este caso SIN DATOS PARA ARMARLO",
   "url": "https://shop.standards.ie/en-ie/standards/api-691-2017-98284_saig_api_api_206329/",
   "evidencia": [
    "E-9728"
@@ -395,11 +395,11 @@
   "organismo": "IEEE",
   "codigo": "IEEE 3007.2",
   "titulo": "IEEE Recommended Practice for the Maintenance of Industrial and Commercial Power Systems (fundamentos de mantenimiento)",
-  "edicion_vista": "2010",
+  "edicion_vista": "2010 (segun resumen; edicion no verificada)",
   "estado_visto": "Inactiva-reservada desde 2021-03-25 según IEEE; retirada 2023-10-17 según SAI (conflicto); revisión P3007.2 con PAR activa",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Fundamentos de mantenimiento, estrategias y pruebas de equipo eléctrico",
-  "relaciones": "P3007.2 reemplazaría a 3007.2-2010 si se aprueba",
+  "relaciones": "Segun el resumen de buscador: P3007.2 reemplazaría a 3007.2-2010 si se aprueba",
   "url": "https://standards.ieee.org/ieee/3007.2/4450/",
   "evidencia": [
    "E-9729"
@@ -409,11 +409,11 @@
   "organismo": "IEEE",
   "codigo": "IEEE 3007.3",
   "titulo": "IEEE Recommended Practice for Electrical Safety in Industrial and Commercial Power Systems (mantenimiento y operación)",
-  "edicion_vista": "2012",
+  "edicion_vista": "2012 (segun resumen; edicion no verificada)",
   "estado_visto": "Inactiva-reservada según IEEE",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Seguridad eléctrica al operar y mantener distribución en planta (no mecánica)",
-  "relaciones": "Serie IEEE 3000",
+  "relaciones": "Segun el resumen de buscador: Serie IEEE 3000",
   "url": "https://standards.ieee.org/ieee/3007.3/4451",
   "evidencia": [
    "E-9730"
@@ -423,11 +423,11 @@
   "organismo": "IEEE",
   "codigo": "IEEE 1856",
   "titulo": "IEEE Standard Framework for Prognostics and Health Management of Electronic Systems",
-  "edicion_vista": "2017 (publicada 2017-12-13)",
+  "edicion_vista": "2017 (publicada 2017-12-13) (segun resumen; edicion no verificada)",
   "estado_visto": "Activa según IEEE",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Marco de PHM, modelo funcional y operativo, métricas; es para sistemas electrónicos, no para chumaceras",
-  "relaciones": "Trabajo de grupo PHM (presidente M. Pecht)",
+  "relaciones": "Segun el resumen de buscador: Trabajo de grupo PHM (presidente M. Pecht)",
   "url": "https://standards.ieee.org/standard/1856-2017.html",
   "evidencia": [
    "E-9731"
@@ -437,11 +437,11 @@
   "organismo": "ASTM",
   "codigo": "ASTM D7669",
   "titulo": "Standard Guide for Practical Lubricant Condition Data Trend Analysis",
-  "edicion_vista": "D7669-20 (reemplaza D7669-15)",
+  "edicion_vista": "D7669-20 (reemplaza D7669-15) (segun resumen; edicion no verificada)",
   "estado_visto": "Última revisión vista 2020; posible nueva no verificada",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Análisis de tendencia de datos de condición de lubricante; no fija límites de control",
-  "relaciones": "Remite a D4378, D6224, D7720 para límites y a D3244, D6299, D6792 para estadística",
+  "relaciones": "Segun el resumen de buscador: Remite a D4378, D6224, D7720 para límites y a D3244, D6299, D6792 para estadística",
   "url": "https://store.astm.org/d7669-20.html",
   "evidencia": [
    "E-9732"
@@ -451,11 +451,11 @@
   "organismo": "ASTM",
   "codigo": "ASTM D7874",
   "titulo": "Standard Guide for Applying Failure Mode and Effect Analysis (FMEA) to In-Service Lubricant Testing",
-  "edicion_vista": "D7874-13 (reaprobada 2022)",
+  "edicion_vista": "D7874-13 (reaprobada 2022) (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente según listado ANSI",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Elegir ensayos de lubricante ligados a modos de falla de componentes en un programa de monitoreo de condición",
-  "relaciones": "No cubre fallas con alta probabilidad de operación insegura",
+  "relaciones": "Segun el resumen de buscador: No cubre fallas con alta probabilidad de operación insegura",
   "url": "https://webstore.ansi.org/standards/astm/astmd7874132022",
   "evidencia": [
    "E-9733"
@@ -465,11 +465,11 @@
   "organismo": "ASTM",
   "codigo": "ASTM D6224",
   "titulo": "Standard Practice for In-Service Monitoring of Lubricating Oil for Auxiliary Power Plant Equipment",
-  "edicion_vista": "D6224-23 (última listada)",
+  "edicion_vista": "D6224-23 (última listada) (segun resumen; edicion no verificada)",
   "estado_visto": "Edición 2023 listada; vigencia no confirmada",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Monitoreo de aceite en equipo auxiliar de planta de generación; no cubre turbinas; grasas no mencionadas",
-  "relaciones": "Citada por D7669 para límites",
+  "relaciones": "Segun el resumen de buscador: Citada por D7669 para límites",
   "url": "https://webstore.ansi.org/standards/astm/astmd622423",
   "evidencia": [
    "E-9734"
@@ -479,11 +479,11 @@
   "organismo": "CEMA",
   "codigo": "CEMA Belt Conveyors for Bulk Materials (Belt Book)",
   "titulo": "Belt Conveyors for Bulk Materials",
-  "edicion_vista": "7.ª ed., 2.ª impresión ago-2020",
+  "edicion_vista": "7.ª ed., 2.ª impresión ago-2020 (segun resumen; edicion no verificada)",
   "estado_visto": "Versión actual según la página de erratas de CEMA; 8.ª ed. en desarrollo (agenda 2023, incluye monitoreo de condición de rodillos) sin fecha",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Diseño de transportadores de banda: capacidades, selección de banda, factores Ki y Ai",
-  "relaciones": "No es norma ISO; la 8.ª ed. añadiría reemplazo y monitoreo de condición de rodillos",
+  "relaciones": "Segun el resumen de buscador: No es norma ISO; la 8.ª ed. añadiría reemplazo y monitoreo de condición de rodillos",
   "url": "https://cemanet.org/cema-7th-ed-belt-book-errata/",
   "evidencia": [
    "E-9735"
@@ -493,11 +493,11 @@
   "organismo": "CEMA",
   "codigo": "ANSI/CEMA 502",
   "titulo": "Troughing, return and picking idlers (clases B a F)",
-  "edicion_vista": "edición no verificada",
+  "edicion_vista": "edición no verificada (segun resumen; edicion no verificada)",
   "estado_visto": "Existencia descrita en un listado de CEMA; estado y edición no vistos",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Rodillos de transportadores CEMA clases B, C, D, E y F",
-  "relaciones": "Documento separado del Belt Book",
+  "relaciones": "Segun el resumen de buscador: Documento separado del Belt Book",
   "url": "https://cemanet.org/publications-category2/",
   "evidencia": [
    "E-9736"
@@ -507,11 +507,11 @@
   "organismo": "IEC",
   "codigo": "IEC 60034-14",
   "titulo": "Rotating electrical machines - Part 14: Mechanical vibration of certain machines with shaft heights 56 mm and higher - Measurement, evaluation and limits of vibration severity",
-  "edicion_vista": "2018",
+  "edicion_vista": "2018 (segun resumen; edicion no verificada)",
   "estado_visto": "Listada como EN IEC 60034-14:2018 por EVS; vigencia no confirmada",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Procedimientos y límites de vibración de motores eléctricos con altura de eje desde 56 mm hasta 50 MW (el motor, no la chumacera de polea)",
-  "relaciones": "NEMA MG 1 Parte 7 se armonizó con esta norma en 2018",
+  "relaciones": "Segun el resumen de buscador: NEMA MG 1 Parte 7 se armonizó con esta norma en 2018",
   "url": "https://evs.ee/en/evs-en-iec-60034-14-2018",
   "evidencia": [
    "E-9737"
@@ -521,11 +521,11 @@
   "organismo": "NEMA",
   "codigo": "ANSI/NEMA MG 1",
   "titulo": "Motors and Generators",
-  "edicion_vista": "2016 marcada Historical en ANSI; edición vigente no confirmada",
+  "edicion_vista": "2016 marcada Historical en ANSI; edición vigente no confirmada (segun resumen; edicion no verificada)",
   "estado_visto": "Edición vigente no vista",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Parte 7 con límites de vibración de motores armonizados con IEC 60034-14 (2018)",
-  "relaciones": "Reemplazada por una edición posterior no identificada",
+  "relaciones": "Segun el resumen de buscador: Reemplazada por una edición posterior no identificada",
   "url": "https://webstore.ansi.org/standards/nema/ansinemamg2016",
   "evidencia": [
    "E-9738"
@@ -535,11 +535,11 @@
   "organismo": "VDI",
   "codigo": "VDI 3832",
   "titulo": "Measurement of structure-borne sound of rolling element bearings in machines and plants for evaluation of condition",
-  "edicion_vista": "2013-04",
+  "edicion_vista": "2013-04 (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente (ed. 2007-01 retirada) según resumen",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Medición de ruido estructural para diagnosticar condición de rodamientos en marcha; complementa la vibración hasta ~1 kHz",
-  "relaciones": "Complementa la serie DIN ISO 10816; responde al Anexo E informativo de 10816-1",
+  "relaciones": "Segun el resumen de buscador: Complementa la serie DIN ISO 10816; responde al Anexo E informativo de 10816-1",
   "url": "https://vdi.de/en/home/vdi-standards/details/vdi-3832-measurement-of-structure-borne-sound-of-rolling-element-bearings-in-machines-and-plants-for-evaluation-of-condition",
   "evidencia": [
    "E-9739"
@@ -549,11 +549,11 @@
   "organismo": "DIN",
   "codigo": "DIN 31051",
   "titulo": "Grundlagen der Instandhaltung (Fundamentals of maintenance)",
-  "edicion_vista": "2019-06",
+  "edicion_vista": "2019-06 (segun resumen; edicion no verificada)",
   "estado_visto": "Vigente según DIN Media; reemplaza la ed. 2012-09",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Fundamentos de mantenimiento; integra ajustes de EN 13306",
-  "relaciones": "Reemplaza DIN 31051:2012-09; alineada con EN 13306",
+  "relaciones": "Segun el resumen de buscador: Reemplaza DIN 31051:2012-09; alineada con EN 13306",
   "url": "https://www.dinmedia.de/de/norm/din-31051/303020440",
   "evidencia": [
    "E-9740"
@@ -563,11 +563,11 @@
   "organismo": "UNE",
   "codigo": "UNE-EN 13306",
   "titulo": "Mantenimiento. Terminología del mantenimiento",
-  "edicion_vista": "2018 (UNE; EN 13306:2017)",
+  "edicion_vista": "2018 (UNE; EN 13306:2017) (segun resumen; edicion no verificada)",
   "estado_visto": "UNE-EN 13306:2018 publicada 2018-07-11; reemplaza la ed. 2010; fuentes dan EN 2017 (ya en registro_normas.yaml)",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Terminología de mantenimiento, estados, tipos de mantenimiento, matriz de criticidad (anexo)",
-  "relaciones": "Reemplaza UNE-EN 13306:2010; CTN 151 Mantenimiento",
+  "relaciones": "Segun el resumen de buscador: Reemplaza UNE-EN 13306:2010; CTN 151 Mantenimiento",
   "url": "https://www.technickenormy.cz/en/une-en-13306-2018-maintenance-maintenance-terminology/",
   "evidencia": [
    "E-9741"
@@ -577,11 +577,11 @@
   "organismo": "SAE",
   "codigo": "SAE JA1011",
   "titulo": "Evaluation Criteria for Reliability-Centered Maintenance (RCM) Processes",
-  "edicion_vista": "2024-11 según BSI y DIN Media; SAI aún lista 2009",
+  "edicion_vista": "2024-11 según BSI y DIN Media; SAI aún lista 2009 (segun resumen; edicion no verificada)",
   "estado_visto": "Edición 2024 listada como actual; conflicto con listado 2009",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Criterios mínimos que debe cumplir un proceso para ser RCM",
-  "relaciones": "Edición 2024 vs 2009 (el repo aún la tiene como NO-VERIFICADO sin edición)",
+  "relaciones": "Segun el resumen de buscador: Edición 2024 vs 2009 (el repo aún la tiene como NO-VERIFICADO sin edición)",
   "url": "https://knowledge.bsigroup.com/products/evaluation-criteria-for-reliability-centered-maintenance-rcm-processes",
   "evidencia": [
    "E-9742"
@@ -591,11 +591,11 @@
   "organismo": "NCh",
   "codigo": "NCh-ISO 55000 / 55001 / 55002",
   "titulo": "Gestión de activos (adopciones chilenas)",
-  "edicion_vista": "NCh-ISO 55000:2014, NCh-ISO 55001:2014 y NCh-ISO 55002:2020 según documento INN de 2020",
+  "edicion_vista": "NCh-ISO 55000:2014, NCh-ISO 55001:2014 y NCh-ISO 55002:2020 según documento INN de 2020 (segun resumen; edicion no verificada)",
   "estado_visto": "Estado actual no visto (ISO 55000 ya es ed. 2024)",
   "nivel": "SOLO-SNIPPET",
   "uso_en_el_caso": "Marco de gestión de activos; NCh-ISO 31000:2018 aparece en el mismo documento",
-  "relaciones": "Adopciones de ISO 55000/55001/55002; ediciones chilenas posteriores a 2020 no vistas",
+  "relaciones": "Segun el resumen de buscador: Adopciones de ISO 55000/55001/55002; ediciones chilenas posteriores a 2020 no vistas",
   "url": "https://www.inn.cl/sites/default/files/Noticia/08_pg_taller_sistemas_de_gestion_de_activos_24_26_y_28_agosto_2020.pdf",
   "evidencia": [
    "E-9743"

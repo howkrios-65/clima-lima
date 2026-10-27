@@ -39,7 +39,7 @@
  {
   "tecnica_o_sensor": "Sobremuestreo (SMOTE), Mixup, clasificadores de atributos con modelos preentrenados y kNN en deteccion de anomalias sonoras",
   "que_mide": "Mejora de la deteccion con pocas muestras del dominio objetivo",
-  "resultado_publicado": "Segun el analisis de 86 envios de 23 equipos, estas tecnicas fueron las claves para superar las lineas base; el texto no da la magnitud por tecnica",
+  "resultado_publicado": "Segun el analisis de 86 envios de 23 equipos, las claves fueron el remuestreo, las muestras sinteticas y los modelos preentrenados grandes; el texto no da la magnitud por tecnica",
   "condiciones": "DCASE 2023 T2, maquinas nuevas, un solo grupo por tipo de maquina",
   "limites": "Sin cifras por tecnica; sonido de laboratorio; en el dominio objetivo el AUC bajo en la mayoria de equipos",
   "evidencia": [
@@ -76,7 +76,7 @@
   "tecnica_o_sensor": "CNN ligera ejecutada en microcontrolador STM32H743VI (diagnostico en el borde)",
   "que_mide": "Clasificacion de 10 estados de falla de rodamiento en CWRU",
   "resultado_publicado": "Exactitud 98.9 %; 19 ms por diagnostico; 142.15 KB de FLASH y 11.32 KB de RAM; 36,390 parametros",
-  "condiciones": "CWRU, 1797 rpm, 12 kHz, datos enviados por puerto serie desde un PC, pantalla TFT-LCD",
+  "condiciones": "CWRU; datos enviados por puerto serie desde un PC, sin sensor inalambrico en el ensayo",
   "limites": "Banco con ruido bajo; no hay sensor ni radio inalambrica en el ensayo; no es chumacera de faja",
   "evidencia": [
    "E-9520",

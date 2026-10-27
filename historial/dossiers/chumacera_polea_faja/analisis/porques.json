@@ -29,7 +29,7 @@
     "nivel": "SINTESIS"
    },
    {
-    "porque": "¿Por qué no estaban ajustados? Posible respuesta, a verificar con registros del activo: Porque la práctica se definió con base en condiciones convencionales, sin verificar el resultado, mientras la vida modificada depende de la viscosidad del lubricante y de la contaminación.",
+    "porque": "¿Por qué no estaban ajustados? Posible respuesta, a verificar con registros del activo: Porque la práctica se definió con base en condiciones convencionales, sin verificar el resultado, mientras la vida modificada depende de la viscosidad del lubricante y de la contaminación. (La dependencia de la vida modificada con la viscosidad y la contaminación consta en el resumen de E-6003, no en su extracto.)",
     "evidencia": [
      "E-6003",
      "E-9302"

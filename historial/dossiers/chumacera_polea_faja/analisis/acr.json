@@ -87,8 +87,8 @@
     "E-6002",
     "E-6003"
    ],
-   "nivel": "EVIDENCIA",
-   "nota": "Según E-6002, en condiciones convencionales la causa de falla es la fatiga de contacto. Según E-6003, la vida nominal es la que alcanza o supera el 90 % de la población. La edición de la norma no está verificada.",
+   "nivel": "SINTESIS",
+   "nota": "Según E-6002, en condiciones convencionales la causa de falla es la fatiga de contacto. Según E-6003, la vida nominal es la que alcanza o supera el 90 % de la población. La edición de la norma no está verificada. La causa de falla en condiciones convencionales consta en el resumen de E-6002, no en su extracto.",
    "clase": "fisica"
   },
   {
@@ -235,7 +235,7 @@
      "E-8003"
     ],
     "nivel": "SINTESIS",
-    "nota": "Contribuye a que el daño llegue a la falla funcional, no a su inicio. Revisiones narrativas, no de fajas. Validar con un experto del activo."
+    "nota": "Contribuye a que el daño llegue a la falla funcional, no a su inicio. Revisiones narrativas, no de fajas. Validar con un experto del activo. La combinación de técnicas consta en el resumen de E-8003, no en su extracto."
    }
   ],
   "Material": [
@@ -328,8 +328,8 @@
     "evidencia": [
      "E-8001"
     ],
-    "nivel": "EVIDENCIA",
-    "nota": "Revisión narrativa; no trata fajas ni da tiempos de aviso."
+    "nivel": "SINTESIS",
+    "nota": "Revisión narrativa; no trata fajas ni da tiempos de aviso. La frase sobre RMS y velocidad no está en el extracto de E-8001 (solo en su resumen): razonamiento del equipo."
    },
    {
     "texto": "Kurtosis usada como indicador único: no es monótona con el avance del daño.",
@@ -338,8 +338,8 @@
     "evidencia": [
      "E-8003"
     ],
-    "nivel": "SINTESIS",
-    "nota": "Revisión de 2008; no cuantifica tiempos de aviso. La frase sobre RMS y velocidad no figura en el extracto de E-8001; es razonamiento del equipo."
+    "nivel": "EVIDENCIA",
+    "nota": "Revisión de 2008; no cuantifica tiempos de aviso."
    },
    {
     "texto": "Umbrales de kurtosis 3 y 5 sin sustento hallado; los umbrales fijos describen pocos tipos de falla.",
@@ -381,14 +381,14 @@
    },
    {
     "texto": "Vigilancia sin integrar aceite o grasa, temperatura y termografía, y sin línea base por activo.",
-    "mecanismo": "La confianza mejora al combinar vibración con aceite y termografía (E-8003); una referencia sin falla de la misma máquina es una idea de línea base por activo (E-9209).",
+    "mecanismo": "La confianza mejora al combinar vibración con aceite y termografía (E-8003); una referencia sin falla de la misma máquina es una idea de línea base por activo (E-9479).",
     "verificar": "Revisar si existe línea base de la chumacera sana y si se cruzan vibración, temperatura y análisis de lubricante.",
     "evidencia": [
      "E-8003",
      "E-9479"
     ],
     "nivel": "SINTESIS",
-    "nota": "E-9209 es una idea de un preprint de aprendizaje automático. Validar con un experto del activo."
+    "nota": "E-9209 es una idea de un preprint de aprendizaje automático. Validar con un experto del activo. La combinación de técnicas consta en el resumen de E-8003, no en su extracto."
    }
   ],
   "Medio ambiente": [
