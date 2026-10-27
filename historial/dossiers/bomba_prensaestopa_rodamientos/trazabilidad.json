@@ -2,33 +2,73 @@
  {
   "agente": "reliability-engineer",
   "rol": "Líder del equipo",
-  "hizo": "Repartió cinco frentes en paralelo, comprobó que la red no permitía leer literatura de prensaestopa, heredó las fuentes de rodamientos del caso de la bomba centrífuga y armó el dossier con las compuertas.",
-  "entrada": "Solicitud: rodamientos de bombas con prensaestopa",
-  "salida": "Dossier y entregables",
-  "aprendio": "Lo propio del prensaestopa queda como pista y se declara SIN DATOS PARA ARMARLO."
+  "hizo": "Recibió la falla, lanzó dos oleadas de agentes, registró el texto aportado por la persona (E-2700), reconstruyó el registro de 483 entradas e integró la versión 2 con las compuertas.",
+  "entrada": "Falla del paquete de rodamientos de bombas con prensaestopa",
+  "salida": "Dossier v2 y entregables",
+  "aprendio": "El eslabón entre prensaestopa y rodamiento no tiene fuente leída; queda como hipótesis en dos rutas."
  },
  {
   "agente": "reliability-literature-researcher",
-  "rol": "Investigación de fuentes",
-  "hizo": "Tres frentes: mecanismos y causas (6 entradas), empaquetadura y contaminación (11) y monitoreo y diagnóstico (13). Solo 4 con lectura, todas de bancos de rodamientos.",
-  "entrada": "Frente de búsqueda y rango de ids",
-  "salida": "Registros y pistas",
-  "aprendio": "Las cifras de agua y de fuga de las pistas se contradicen y no se usan."
+  "rol": "Cadena prensaestopa a rodamiento",
+  "hizo": "23 pistas de buscador (E-2500 a E-2522), ninguna leída.",
+  "entrada": "Frente cadena",
+  "salida": "cadena_registro",
+  "aprendio": "Las cifras de peso de la contaminación se contradicen y no se usan."
  },
  {
   "agente": "reliability-literature-researcher",
-  "rol": "ML, RUL y datos abiertos",
-  "hizo": "23 entradas; bancos de rodamientos leídos (XJTU-SY, PRONOSTIA, Paderborn); ninguno de bombas con prensaestopa.",
-  "entrada": "Frente ML y datos",
-  "salida": "ml_* y datos_*",
-  "aprendio": "Sin tiempos hasta la falla de bombas con prensaestopa no se ajusta Weibull ni RUL."
+  "rol": "Protección y detección",
+  "hizo": "28 pistas (E-2600 a E-2627), ninguna leída; sin umbrales usables.",
+  "entrada": "Frente protección y detección",
+  "salida": "proteccion_registro",
+  "aprendio": "La eficacia de deflectores, laberintos y aisladores no tiene ensayo leído."
  },
  {
-  "agente": "reliability-standards-researcher",
-  "rol": "Normas, vida y costos",
-  "hizo": "11 normas de empaquetadura y sellado y 16 fuentes de vida y costos, todas en resúmenes de buscador; 13 vacíos de normas.",
-  "entrada": "Frente normas, vida y costos",
-  "salida": "normas_tabla y registros",
-  "aprendio": "Varias normas tienen ediciones en conflicto: citar como edición no verificada."
+  "agente": "reliability-case-historian",
+  "rol": "Recurrencia",
+  "hizo": "Buscó casos previos: no hay casos ni línea base; declaró SIN DATOS PARA ARMARLO.",
+  "entrada": "Historial",
+  "salida": "Informe corto",
+  "aprendio": "Un solo evento no permite ajustar una distribución."
+ },
+ {
+  "agente": "reliability-data-auditor",
+  "rol": "Plantilla de datos",
+  "hizo": "Definió falla, censura y la tabla mínima que la persona debe aportar, con reglas de limpieza.",
+  "entrada": "Caso sin datos",
+  "salida": "Diseño de recolección",
+  "aprendio": "El ajuste del prensaestopa se registra a menudo como respuesta a la fuga: sesgo de registro."
+ },
+ {
+  "agente": "reliability-rca-investigator",
+  "rol": "Causa raíz",
+  "hizo": "Hipótesis, árbol, Ishikawa, 5 porqués y qué observar con las rutas A (agua) y B (calor).",
+  "entrada": "Registro combinado",
+  "salida": "acr, arbol, ishikawa, porques, observar",
+  "aprendio": "Solo el mecanismo de la empaquetadura (E-2700) tiene lectura; los eslabones puente son síntesis."
+ },
+ {
+  "agente": "reliability-fmeca-rcm",
+  "rol": "FMECA y RCM",
+  "hizo": "14 modos: 7 de rodamiento heredados y 7 de la cadena; S, O y D sin datos.",
+  "entrada": "Registro combinado",
+  "salida": "fmeca.json",
+  "aprendio": "Dos PM a cuestionar con datos: apriete calendario y relubricación sin análisis."
+ },
+ {
+  "agente": "reliability-predictive-analyst",
+  "rol": "Predictivo",
+  "hizo": "Estrategia en 8 etapas de medición y riesgos de validación propios del caso.",
+  "entrada": "Registro combinado",
+  "salida": "predictivo.json",
+  "aprendio": "Hoy no se justifica ningún modelo entrenado."
+ },
+ {
+  "agente": "reliability-economics-kpi",
+  "rol": "Economía y KPIs",
+  "hizo": "Estructura del costo de ciclo de vida, lista de costos a aportar y 8 KPIs, sin cifras.",
+  "entrada": "Caso sin costos",
+  "salida": "economia_kpi.json",
+  "aprendio": "Sin costos aportados no se calcula edad óptima ni VPN."
  }
 ]

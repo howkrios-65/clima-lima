@@ -12,7 +12,7 @@
   },
   {
    "id": "P2",
-   "texto": "Hoy no hay base para entrenar ni validar un modelo de clasificación, de anomalías o de RUL con datos de la bomba: no hay datos propios, ni etiquetas, ni fallas con fecha. Los únicos datos leídos con tiempos hasta la falla son de rodamientos de banco (17 unidades, criterio de falla no declarado); los de bomba son clips de audio. Una RUL con datos reales se construye con los registros de reparación como tiempo al siguiente fallo, de modo que lo primero es contar con el historial de fallas con fechas.",
+   "texto": "Hoy no hay base para entrenar ni validar un modelo de clasificación, de anomalías, de supervivencia con covariables o de RUL con datos de la bomba con prensaestopa: no hay datos propios, ni etiquetas, ni fallas del paquete de rodamientos con fecha. Los únicos datos leídos con tiempos hasta la falla son de rodamientos de banco (17 unidades, criterio de falla no declarado); los de bomba son clips de audio. Una RUL con datos reales se construye con los registros de reparación como tiempo al siguiente fallo, de modo que lo primero es contar con el historial de fallas del paquete de rodamientos con fechas.",
    "nivel": "SINTESIS",
    "evidencia": [
     "E-1700",
@@ -188,53 +188,114 @@
   },
   {
    "id": "P19",
-   "texto": "Referencia propia del activo sano por punto de operación, con carta de control o tendencia sobre la envolvente de los rodamientos, el RMS, la temperatura y la corriente del motor; los umbrales se expresan como desviación de esa referencia y los aprueba un experto del activo. Es el baseline que cualquier modelo aprendido debe superar antes de justificarse.",
+   "texto": "Referencia propia de cada bomba y de cada posición de medición (lado acople y lado libre, dirección) en buen estado y por punto de operación, con carta de control o tendencia sobre la envolvente de los rodamientos, el RMS y la temperatura del soporte; los umbrales se expresan como desviación de esa referencia y los aprueba un experto del activo. Es el baseline que cualquier modelo aprendido debe superar antes de justificarse.",
    "nivel": "SINTESIS",
    "evidencia": [
     "E-8001",
     "E-8003",
     "E-9479",
-    "E-1301"
+    "E-9522"
    ],
-   "nota": "Razonamiento: los umbrales genéricos carecen de sustento (E-8001), la kurtosis no es monótona (E-8003) y el método con línea base sana exige las mismas condiciones de trabajo (E-9479). Qué variables hidráulicas incluir: SIN DATOS PARA ARMARLO. Validar con un experto del activo."
+   "nota": "Razonamiento: los umbrales genéricos carecen de sustento (E-8001), la kurtosis no es monótona (E-8003), el método con línea base sana exige las mismas condiciones de trabajo (E-9479) y E-9522 (solo resumen) respalda únicamente la idea de fusionar vibración y temperatura de bajo costo. La temperatura del soporte puede subir por daño del rodamiento o por calor que llegue desde la caja de empaquetadura; que ese calor llegue al soporte no consta en ninguna fuente leída. Validar con un experto del activo."
   },
   {
    "id": "P20",
-   "texto": "Cavitación, recirculación, operación fuera del punto de mejor eficiencia, NPSH, sellos mecánicos, desgaste del impulsor y señales hidráulicas (presión, caudal, pulsaciones): SIN DATOS PARA ARMARLO. No hay fuente leída de monitoreo ni de aprendizaje automático sobre bombas para estos fenómenos.",
+   "texto": "Cavitación, recirculación, NPSH, sellos mecánicos, desgaste del impulsor y señales hidráulicas: SIN DATOS PARA ARMARLO. En la bomba con prensaestopa se suman: umbral de goteo aceptable, relación entre goteo y agua en el soporte, valor de alarma de agua en el lubricante, valor de alarma de temperatura del soporte, estado de drenaje y vida del paquete de rodamientos según el ajuste. Ninguna fuente leída (VERIFICADO-TEXTO o VERIFICADO-ABSTRACT) los trae.",
    "nivel": "SIN DATOS PARA ARMARLO",
    "evidencia": [],
-   "nota": "Pistas por leer, sin respaldo hasta abrirlas: E-1704 (vibración y corriente de bombas centrífugas con impulsor dañado y cavitación, dominio no resuelve), E-1705 (vibración de bomba con estados sano, falla simple y compuesta), E-1706 (carcasa, rodamiento e impulsor, caudal, presión y corriente), E-1106 y E-1107 (criterios de NPSH y recirculación fuera del BEP, solo resumen de buscador), E-1105 (erosión por cavitación), E-1115 (tesis de detección de fallas de bomba por vibración)."
+   "nota": "Pistas SOLO-SNIPPET o NO-VERIFICADO, sin respaldo hasta abrirlas y que NO aportan umbrales ni cifras (los ppm de agua y los dB de ultrasonido de los buscadores no se usan): agua en lubricante y vida del rodamiento E-2002, E-2003, E-2005, E-2100 a E-2103, E-2210, E-2211, E-2438, E-2439, E-2440; ajuste de goteo y empaquetadura E-2000, E-2001, E-2104 a E-2106, E-2110, E-2215, E-2216, E-2441, E-2443; aislamiento del soporte y drenaje E-2108, E-2217; bomba E-1704 a E-1706, E-1105 a E-1108, E-1115."
+  },
+  {
+   "id": "P21",
+   "texto": "Mecanismo del ajuste del prensaestopa según un blog comercial: al instalar los anillos, el prensaestopas transfiere fuerza axial que se convierte en expansión radial contra el eje. Si falta ajuste, el fluido lava los lubricantes internos de la trenza y se acelera la falla; si se excede, se elimina el goteo necesario, se destruye la película térmica, hay recalentamiento y el empaque cristaliza. El efecto del ajuste tiene entonces dos extremos dañinos, no uno.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2700"
+   ],
+   "nota": "Fuente comercial no arbitrada; fragmento aportado por la persona, página original no abierta. Trata la falla de la empaquetadura y no menciona el rodamiento. El extracto trae una cifra de goteo (10-60 gotas/min) sin diámetro de eje, presión ni producto: no se adopta como umbral ni como etiqueta. Consecuencia de diseño (razonamiento del analista): el ajuste y el goteo se registran como estado con ambos extremos posibles, no como 'más ajuste, menos riesgo'; un coeficiente lineal único o un umbral de un solo lado estaría mal especificado."
+  },
+  {
+   "id": "P22",
+   "texto": "En bombas, un autor atribuye el 90 % de las fallas prematuras de rodamientos de bolas a corrosión por contaminación, mal manejo antes y durante la instalación, falla del lubricante o sobrecalentamiento por ajustes inadecuados en alojamientos o ejes.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6004"
+   ],
+   "nota": "Solo resumen de un artículo de divulgación de 1988, sin base de datos ni tamaño de muestra; no trata prensaestopa. Respalda que la contaminación y el lubricante son candidatos plausibles, pero también que instalación, manejo y ajustes de alojamiento son causas alternativas: hay que registrarlos como confusores y no atribuir al prensaestopa lo que pueda ser montaje."
+  },
+  {
+   "id": "P23",
+   "texto": "La cadena completa de la hipótesis (ajuste insuficiente, fuga, agua en el soporte, falla del paquete de rodamientos) no tiene fuente leída: ninguna mide la relación entre el ajuste o el goteo del prensaestopa y la vida del paquete de rodamientos, ni entre agua en el lubricante y vibración o temperatura de la bomba. Cada eslabón está respaldado solo por el mecanismo de E-2700 (lado empaquetadura) y por la lista de causas de E-6004 (lado rodamiento).",
+   "nivel": "SIN DATOS PARA ARMARLO",
+   "evidencia": [],
+   "nota": "Los eslabones fuga hacia agua en el soporte y agua en el soporte hacia falla son hipótesis a contrastar con datos propios. Las pistas sobre agua en lubricante son SOLO-SNIPPET o NO-VERIFICADO y no se usan para cifras."
+  },
+  {
+   "id": "P24",
+   "texto": "Forma del riesgo: la familia Weibull permite riesgo decreciente, constante o creciente según su parámetro de forma, con la exponencial como caso γ = 1. Tras un montaje o reparación con errores de instalación (causa citada en E-6004) cabe riesgo decreciente al inicio de cada paquete; no se debe suponer desgaste creciente de antemano.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-9603",
+    "E-6004"
+   ],
+   "nota": "E-9603 solo respalda la definición matemática (ejemplos médicos, sin datos de equipos). Que el repaquetado produzca mortalidad temprana en estas bombas es una posibilidad a contrastar con el parámetro de forma y su intervalo, no un hallazgo."
+  },
+  {
+   "id": "P25",
+   "texto": "Qué calcula el kit de confiabilidad y con cuántos eventos (simulación sintética del analista, semilla 20261027, escenario inventado de forma 1,5 y escala 1000, no son datos de bomba). Intervalo de la forma Weibull (razón límite superior sobre inferior, mediana de 200 repeticiones, sin censura): 4,3 con 5 fallas, 2,7 con 10 y 1,8 con 30, con cobertura empírica de 93 a 95 %. Prueba log-rank de dos grupos con razón de escalas 2 y censura en 1200: potencia 0,31 con 8,5 eventos en total (5 bombas por grupo), 0,56 con 17, 0,72 con 25 y 0,97 con 51 (300 repeticiones). El kit advierte resultado exploratorio con menos de 10 fallas, posible sesgo de la forma con menos de 30 y dependencia del modelo con más de 50 % de suspensiones; no implementa Cox ni riesgos competitivos.",
+   "nivel": "SINTESIS",
+   "evidencia": [],
+   "nota": "Script: /tmp/claude-0/-home-user-clima-lima/5d78240e-f4f2-5b7a-9ab4-8fd5b0b1815f/scratchpad/modo_prensa/analisis_v2/sim_capacidad.py (numpy 2.5.3, scipy 1.18.1). Ilustra la capacidad del kit, no el desempeño en campo: con efecto menor que el simulado o con más censura la potencia es menor. La regla del auditor (menos de 10 fallas exploratorio, 30 o más preferible) es criterio del equipo y coincide con las advertencias del código del kit; no proviene de un id leído."
   }
  ],
  "estrategia": [
   {
    "etapa": "0. Definición previa (sin modelo)",
-   "accion": "Fijar con el negocio el objetivo (detección, diagnóstico o RUL), el horizonte H y el costo de falso negativo frente a falso positivo. Definir qué es falla funcional de la bomba (y por modo: rodamiento, sello, impulsor, hidráulica) y qué es censura (retiro preventivo, cambio por otra causa, bomba aún en servicio). Reunir el historial de fallas con fechas y la bitácora de intervenciones. Registrar velocidad, punto de operación (caudal, presión) y datos de placa de rodamientos y motor. Fijar punto, orientación y frecuencia de muestreo de cada medición.",
-   "condicion_para_avanzar": "Horizonte, costos y definición de falla y de censura aprobados por una persona responsable; punto y método de medición fijados. Valores: VACÍO hasta que el negocio los entregue.",
+   "accion": "Fijar con el negocio el objetivo (detección temprana, diagnóstico o RUL del paquete de rodamientos), el horizonte H y el costo de falso negativo frente a falso positivo. Definir qué es falla funcional del paquete (criterio de retiro) y qué es censura (retiro preventivo, cambio por otra causa, bomba aún en servicio, cambio de sello). Fijar la unidad de análisis: bomba y posición (lado acople, lado libre) y el reloj de cada paquete (fecha de instalación o de último cambio de rodamientos y de lubricante). Reunir el historial de fallas del paquete con fechas, la bitácora de ajustes y cambios de empaquetadura y los datos de placa de bomba, motor y rodamientos.",
+   "condicion_para_avanzar": "Horizonte, costos, definición de falla y de censura, unidad de análisis y reloj aprobados por una persona responsable. Valores: VACÍO hasta que el negocio los entregue.",
    "nivel": "SINTESIS",
    "evidencia": [
     "E-9405",
     "E-9480",
-    "E-9479"
+    "E-9479",
+    "E-6004"
    ]
   },
   {
-   "etapa": "1. Línea base por activo y por punto de operación",
-   "accion": "Medir cada bomba en buen estado y construir su referencia propia por punto de operación (RMS, espectro de envolvente en los rodamientos, temperatura y corriente del motor), con carta de control o tendencia. Las variables hidráulicas se definen con un experto: SIN DATOS PARA ARMARLO por falta de fuente leída. No usar kurtosis 3 y 5 como alarma. Umbrales como desviación respecto de la línea base propia, aprobados por un experto del activo.",
-   "condicion_para_avanzar": "Línea base con mediciones repetidas del activo sano, repetibilidad del punto de medición verificada y criterio de umbral aprobado por una persona. Cantidad mínima de mediciones: VACÍO (no hay fuente leída).",
+   "etapa": "1. Registro con fecha, sin sensores (primero, es lo más barato)",
+   "accion": "Registrar por bomba, con fecha y responsable: (a) goteo del prensaestopa en una escala ordinal fija, medida con el mismo método y a calendario fijo (no solo cuando alguien ve la fuga), con la clase 'sin goteo' como categoría propia porque el exceso de ajuste también es dañino (E-2700); (b) cada ajuste del prensaestopa con campo obligatorio de motivo (programado o por fuga) y estado de goteo antes y después; (c) cada cambio de empaquetadura y de camisa; (d) estado del drenaje del soporte (libre, obstruido, con líquido) y si hay salpicadura o agua de lavado sobre el soporte; (e) hallazgos al desmontar con un formato fijo (agua o emulsión en el lubricante, corrosión, marcas de pista, estado de sellos del soporte), tanto en bombas falladas como en toda bomba que se abra por otra razón; (f) causas alternativas del lado rodamiento: montaje, ajustes de alojamiento y eje, lubricante usado (E-6004). No se fija ningún valor de goteo como umbral.",
+   "condicion_para_avanzar": "Registro operando con calendario fijo en las bombas del alcance, con al menos una lectura repetida por bomba y revisada la calidad con data_quality.audit (campos críticos, fechas invertidas, duplicados). Duración y número de lecturas: VACÍO (sin fuente leída).",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-2700",
+    "E-6004"
+   ]
+  },
+  {
+   "etapa": "2. Línea base por bomba y posición: temperatura del soporte y vibración con envolvente",
+   "accion": "Con cada bomba en buen estado, y por punto de operación, medir en puntos y orientaciones fijados y marcados: temperatura del soporte (junto con temperatura ambiente y del fluido bombeado, para no confundir) y vibración con RMS y espectro de envolvente. Línea base propia con signals.linea_base (mediana y MAD de una ventana de al menos 5 puntos válidos, mínimo del código del kit) y carta de control o CUSUM sobre la desviación. No usar kurtosis 3 y 5 como alarma (E-8001) ni asumir que la kurtosis baja es rodamiento sano (E-8003). La envolvente se usa por su sensibilidad y por permitir identificar tipo y ubicación del defecto (E-8001). La temperatura puede subir por el rodamiento o por el calor de un empaque sobreajustado: se interpreta junto con el estado de goteo, no sola. Umbrales como desviación de la línea base, aprobados por un experto; ningún valor absoluto de temperatura o vibración se toma de las pistas.",
+   "condicion_para_avanzar": "Línea base por bomba y posición con mediciones repetidas del activo sano, repetibilidad del punto verificada (mismo operador y distinto operador) y criterio de desviación aprobado por una persona. Cantidad de puntos más allá de 5 y periodo: VACÍO.",
    "nivel": "SINTESIS",
    "evidencia": [
     "E-8001",
     "E-8003",
     "E-9479",
-    "E-1301",
     "E-9522"
    ]
   },
   {
-   "etapa": "2. Detección de anomalías sin etiquetas, en sombra",
-   "accion": "Entrenar solo con datos normales del propio activo (el diseño sin muestras anómalas de los retos acústicos y del ensayo de campo) y operar en sombra, sin actuar, registrando cada alerta con su inspección posterior. Partición cronológica por activo, descartando ventanas que cruzan el límite entre entrenamiento y prueba, y excluyendo del normal el periodo previo a cada falla. Medir por evento (cobertura, falsas alarmas por activo-mes, tempranía) y comparar contra el umbral de ingeniería y la carta de control; un detector aprendido que no los supere no se recomienda.",
-   "condicion_para_avanzar": "Piloto en sombra completado con alertas verificadas por inspección y falsos negativos revisados uno a uno. Para pasar a un detector aprendido: superar el baseline con validación hacia adelante y reserva de activos no vistos, con intervalos de confianza. Cantidad mínima de eventos reales: VACÍO. Un año de entrenamiento de CARE es criterio de aerogeneradores, no cifra para la bomba.",
+   "etapa": "3. Análisis de agua en el lubricante e inspección de drenaje",
+   "accion": "Muestrear el lubricante del soporte en servicio, antes de abrir el soporte, a intervalos fijos y tras cada episodio de fuga o lavado; ensayar con un laboratorio y método definidos por un experto y registrar el resultado con su incertidumbre. Incluir bombas sin fuga como referencia: sin ellas no hay tasa base. Al inicio el agua es covariable y marcador de evento, no criterio de alarma; no se adopta ningún valor de agua de las pistas (SOLO-SNIPPET). El drenaje se inspecciona en la misma visita que el goteo.",
+   "condicion_para_avanzar": "Método de ensayo y frecuencia aprobados; resultados de bombas sin fuga y con fuga disponibles. Valor de alarma de agua: VACÍO hasta contar con fuente leída o con datos propios que lo respalden.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6004"
+   ]
+  },
+  {
+   "etapa": "4. Detección de anomalías sin etiquetas, en sombra",
+   "accion": "Sobre las series de las etapas 2 y 3, entrenar solo con datos normales de la propia bomba (diseño sin muestras anómalas de los retos acústicos y del ensayo de campo) y operar en sombra, sin actuar, registrando cada alerta con la inspección posterior (incluido el estado de goteo y de agua). Primero los detectores simples del kit (carta de control, CUSUM, primera alarma) y solo después uno aprendido. Partición cronológica por bomba, descartando ventanas que cruzan el límite entre entrenamiento y prueba y excluyendo del normal el periodo previo a cada falla. Medir por evento (cobertura de eventos, falsas alarmas por bomba-mes, tempranía) y exigir superar la estrategia aleatoria (0,5 en CARE) y el umbral de ingeniería; un detector aprendido que no los supere no se recomienda. Los eventos son los reemplazos reales de paquete y los hallazgos confirmados, no los episodios de fuga.",
+   "condicion_para_avanzar": "Piloto en sombra completado con alertas verificadas por inspección y falsos negativos revisados uno a uno. Para pasar a un detector aprendido: superar el baseline con validación hacia adelante y reserva de bombas no vistas, con intervalos. Cantidad de eventos y duración del sombra: VACÍO; el año de entrenamiento de CARE es criterio de aerogeneradores.",
    "nivel": "SINTESIS",
    "evidencia": [
     "E-9505",
@@ -248,34 +309,34 @@
    ]
   },
   {
-   "etapa": "3. Diagnóstico (tipo y ubicación del defecto)",
-   "accion": "Diagnóstico por reglas: envolvente y frecuencias características para los rodamientos de bomba y motor, y corriente del motor para separar causa mecánica de eléctrica, contrastado con la inspección del componente desmontado. Un clasificador supervisado solo con fallas etiquetadas del propio activo o de la flota: los de banco no sirven de sustituto (la exactitud cae al cambiar la severidad o la condición). Cavitación y recirculación: SIN DATOS PARA ARMARLO hasta leer las pistas de bomba.",
-   "condicion_para_avanzar": "Diagnósticos contrastados con la inspección real. Para un clasificador aprendido: fallas etiquetadas por modo suficientes (cifra: VACÍO), partición por activo completo y por tiempo, y recall de la clase crítica superior al del diagnóstico por reglas.",
+   "etapa": "5. Diagnóstico por reglas (tipo de defecto y causa probable)",
+   "accion": "Envolvente y frecuencias características de rodamiento para tipo y ubicación (E-8001), contrastado con el hallazgo al desmontar del formato de la etapa 1; la causa probable (agua, lubricante, montaje, sobrecalentamiento) se asigna por inspección y no por el modelo. Un clasificador supervisado solo con fallas etiquetadas del propio activo o de la flota: los de banco no sustituyen (la exactitud cae al cambiar severidad o condición). Cavitación y recirculación: SIN DATOS PARA ARMARLO.",
+   "condicion_para_avanzar": "Diagnósticos contrastados con la inspección real. Para un clasificador aprendido: fallas etiquetadas por modo (menos de 10 por modo es exploratorio; 30 o más preferible, criterio del auditor), partición por bomba completa y por tiempo, y recall de la clase crítica superior al de las reglas.",
    "nivel": "SINTESIS",
    "evidencia": [
-    "E-8008",
     "E-8001",
-    "E-1304",
     "E-9457",
-    "E-9466"
+    "E-9466",
+    "E-6004"
    ]
   },
   {
-   "etapa": "4. Pronóstico (RUL) solo con tiempos hasta la falla",
-   "accion": "Pasar a RUL únicamente cuando existan tiempos hasta la falla del propio activo o flota. Primero supervivencia clásica con censura (Kaplan-Meier, Weibull con tools/reliability), tratando la censura como tal y no como RUL = 0. Después evaluar CoxPH o bosque de supervivencia como candidatos de método. Entregar la RUL como distribución y medir calibración y cobertura por activo, no solo error medio.",
-   "condicion_para_avanzar": "Cantidad mínima de fallas por modo cumplida (cifra: VACÍO; si no se alcanza, el resultado se rotula exploratorio), validación hacia adelante y en activos reservados, calibración y cobertura medidas, y aprobación humana para actuar. Intervalo entre primera detección y falla: VACÍO.",
+   "etapa": "6. Supervivencia exploratoria y pronóstico, solo con tiempos hasta la falla propios",
+   "accion": "Cada paquete es una unidad con fecha de inicio, fecha de falla o de censura. Empezar por descriptivo: Kaplan-Meier (kaplan_meier y km_failure_quantile con su banda) y Weibull con fit_weibull_mle, con intervalo de la forma y advertencias del kit; la censura se trata como tal, nunca como RUL = 0. Comparar dos grupos con logrank_test (por ejemplo ajuste programado frente a ajuste solo por fuga, o goteo en una clase frente a otra) usando un análisis de punto fijo: el grupo se asigna por el estado en una fecha de corte y solo entran los paquetes aún en riesgo en esa fecha, para no premiar al grupo por haber sobrevivido hasta el ajuste. Qué se puede decir según el total de fallas del modo (kit y simulación sintética de P25): 0 fallas, Kaplan-Meier no está definida y solo hay cartas de control; 1 a 4, listar cronologías y no estimar; 5 a 9, Kaplan-Meier y Weibull rotulados exploratorios con intervalo muy ancho (razón del intervalo de la forma cercana a 4 con 5 fallas) y log-rank con potencia baja; 10 a 29, Weibull con el sesgo de la forma contrastado con bias_correct_beta y comparación de dos grupos solo para efectos grandes; 30 o más, resultado preferible, con intervalo de la forma por debajo de 2 en el escenario simulado. Los eventos se cuentan por modo (falla con agua en el soporte, sin agua, por montaje), no en total. Si una bomba acumula varios paquetes, usar audit_recurrent y, para tendencia entre intervenciones, la MCF o Crow-AMSAA multiunidad del kit en lugar de tratar cada paquete como independiente sin revisar la renovación. Cox con covariables no está implementado en el kit (el README remite a lifelines, no usado ni validado aquí) y ninguna covariable variable en el tiempo (goteo, temperatura) se maneja con Kaplan-Meier o log-rank; tampoco hay riesgos competitivos. Después de lo anterior, y con el gate cumplido, se puede evaluar CoxPH o bosque de supervivencia como candidatos de método; la RUL se entrega como distribución con calibración y cobertura por bomba.",
+   "condicion_para_avanzar": "Fallas por modo cumplidas (10 como mínimo para salir de exploratorio, 30 o más preferible, criterio del auditor), data_quality.audit sin banderas críticas, validación hacia adelante y en bombas reservadas, calibración y cobertura medidas, y aprobación humana para actuar. Intervalo entre primera detección y falla: VACÍO.",
    "nivel": "SINTESIS",
    "evidencia": [
     "E-9205",
     "E-9431",
     "E-9426",
     "E-9430",
-    "E-9432"
+    "E-9432",
+    "E-9603"
    ]
   },
   {
-   "etapa": "5. Operación, deriva y reentrenamiento",
-   "accion": "Piloto en sombra antes de actuar. Plan de deriva por cambio de punto de operación, de rodamiento, de impulsor o de lubricante; recalibrar en planta, no importar parámetros de banco. Reentrenar solo con aprobación humana y guardar script, semilla y versiones.",
+   "etapa": "7. Operación, deriva y reentrenamiento",
+   "accion": "Piloto en sombra antes de actuar. Plan de deriva por cambio de punto de operación, de tipo o proveedor de empaquetadura, de lubricante, de rodamiento, de operador o de método de medición; recalibrar en planta, no importar parámetros de banco. Cada alerta dispara una inspección, nunca un cambio automático. Reentrenar solo con aprobación humana y guardar script, semilla y versiones.",
    "condicion_para_avanzar": "Criterio de deriva y de reentrenamiento definido y aprobado por una persona; cifras de disparo: VACÍO.",
    "nivel": "SINTESIS",
    "evidencia": [
@@ -286,6 +347,75 @@
   }
  ],
  "riesgos_de_validacion": [
+  {
+   "riesgo": "Sesgo de registro: el ajuste del prensaestopa suele hacerse como respuesta a la fuga, no como causa de la falla. La fecha de ajuste y el estado de goteo quedan determinados por el estado previo de la bomba, de modo que la asociación ajuste y falla puede estar invertida o confundida (una bomba que gotea mucho se ajusta más y quizá falle por la misma razón de fondo). Controles: lecturas a calendario fijo y no solo ante la fuga, motivo obligatorio del ajuste, lecturas sin evento, y análisis de punto fijo.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-2700"
+   ]
+  },
+  {
+   "riesgo": "Sesgo de verificación: los hallazgos al desmontar (agua, corrosión) existen solo en los paquetes fallados, y el agua hallada puede ser consecuencia del desmontaje o del lavado y no la causa. Sin desmontar bombas sanas no hay tasa base de agua o corrosión. Controles: muestra de lubricante antes de abrir, formato fijo de hallazgos, desmontaje o muestreo de bombas sin falla, y causas alternativas (montaje, ajustes, lubricante) registradas aparte.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6004"
+   ]
+  },
+  {
+   "riesgo": "Fuga de datos propia del caso: usar como entrada el hallazgo al desmontar, el goteo o el ajuste registrados en la orden de falla, o la lectura posterior a la fecha del evento; confundir fecha de la orden con fecha de falla; incluir el periodo previo a la falla como normal; ventanas que cruzan el límite temporal; normalización, selección de variables o bandas de envolvente ajustadas con todos los datos; segmentos de la misma medición en entrenamiento y prueba.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-9463",
+    "E-9480",
+    "E-9472"
+   ]
+  },
+  {
+   "riesgo": "Partición por bomba: las lecturas de una bomba, sus dos posiciones y las bombas gemelas (misma línea, mismo lote de empaquetadura, mismo personal) están correlacionadas. Se parte por bomba completa y por tiempo y se verifica con assert_no_overlap. Con pocas bombas, la reserva de bombas no vistas es de pocas unidades y la dispersión entre particiones es grande: en un banco la exactitud pasó de 97,58 % a 64,38 % solo por cambiar el criterio de retención.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-9456",
+    "E-9457",
+    "E-9463"
+   ]
+  },
+  {
+   "riesgo": "Tiempo inmortal: si una bomba se clasifica como 'ajustada' por haber llegado a recibir el ajuste, su supervivencia previa se atribuye al ajuste. Se evita con análisis de punto fijo o con exposición dependiente del tiempo, que Kaplan-Meier y log-rank del kit no manejan.",
+   "nivel": "SINTESIS",
+   "evidencia": []
+  },
+  {
+   "riesgo": "Efecto no monótono y confusión por temperatura: tanto el ajuste insuficiente como el excesivo dañan el empaque (E-2700), y el exceso recalienta. Un modelo lineal en el apriete, o una alarma de goteo de un solo lado, está mal especificado; y una temperatura alta del soporte no distingue rodamiento dañado de empaque sobreajustado.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2700"
+   ]
+  },
+  {
+   "riesgo": "Eventos recurrentes y renovación: una bomba acumula varios paquetes; tratarlos como independientes supone renovación perfecta. Además, retiros por sello, por otra falla o por fuga severa son riesgos competitivos y censura informativa, que el kit no modela (Cox y riesgos competitivos no incluidos).",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-9405",
+    "E-9431"
+   ]
+  },
+  {
+   "riesgo": "Pocas fallas, modos mezclados y multiplicidad: el total de fallas se reparte entre modos (con agua, sin agua, montaje) y cada modo puede quedar bajo 10 (exploratorio). Probar muchas variables, umbrales y grupos con pocos eventos produce hallazgos espurios: las hipótesis, variables y grupos se fijan antes de mirar los resultados y se reporta el número de comparaciones.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-9403",
+    "E-9404",
+    "E-9432"
+   ]
+  },
+  {
+   "riesgo": "Variación de medición: el goteo depende de quién lo mide y cuándo; la temperatura y la vibración, del punto, la orientación, la carga y la temperatura ambiente. Sin repetibilidad verificada, la desviación respecto de la línea base mide al operador. Rango de operación de las bombas: VACÍO.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-9479",
+    "E-9519"
+   ]
+  },
   {
    "riesgo": "Banco frente a campo y rodamiento frente a bomba: los bancos leídos son rodamientos pequeños de bolas, con carga radial de 10 a 12 kN, 2100 a 2400 rpm y vida de minutos a horas, ensayo acelerado. Umbrales, errores y exactitudes no se trasladan a una bomba. No hay conjunto leído de bombas con tiempos hasta la falla.",
    "nivel": "EVIDENCIA",
@@ -304,15 +434,6 @@
     "E-9456",
     "E-9457",
     "E-9466"
-   ]
-  },
-  {
-   "riesgo": "Fuga de datos: segmentos de la misma grabación en entrenamiento y prueba; ventanas que cruzan el límite temporal; periodo previo a la falla incluido como normal; normalización, selección de variables o banda de envolvente ajustadas con todos los datos.",
-   "nivel": "SINTESIS",
-   "evidencia": [
-    "E-9463",
-    "E-9480",
-    "E-9472"
    ]
   },
   {
@@ -401,18 +522,20 @@
   }
  ],
  "vacios": [
-  "Sin datos propios ni etiquetas: no se entrenó ni evaluó ningún modelo; todo desempeño en la bomba es VACÍO. Cierra: historial de fallas con fechas y modo, bitácora de intervenciones, series de vibración, corriente y temperatura, y data_quality.audit sobre ellas.",
-  "Cavitación, recirculación, NPSH, sellos y señales hidráulicas: SIN DATOS PARA ARMARLO. Cierra: abrir E-1704, E-1705 y E-1706 (requieren habilitar los dominios que no resuelven) y los resúmenes de buscador E-1105, E-1106, E-1107, E-1108 y E-1115 por su texto completo; ninguna de estas pistas respalda hoy una afirmación.",
-  "Ninguna fuente leída trae tiempos hasta la falla de bombas, y los datos de bomba leídos son audio (E-1700 y E-1701). Cierra: leer el texto completo de MIMII (solo se leyó el resumen; tipo de bomba y definición de cada anomalía sin verificar), el origen y la definición de label de los reempaquetados, y una base de desempeño y fallas de bombas (E-1116, sin leer).",
-  "Cantidad mínima de fallas por modo y de mediciones de línea base: sin cifra en las fuentes leídas; la fija el protocolo del equipo con data_quality.audit al disponer de datos. El año de entrenamiento de E-9472 es de aerogeneradores.",
-  "Intervalo entre primera detección y falla en rodamientos de bomba: ninguna fuente leída lo da (E-8008 es cualitativa; E-9205 está en minutos y banco acelerado). Cierra: estimarlo con datos propios o leer un estudio de campo de rodamientos de bomba.",
+  "Sin datos propios ni etiquetas: no se entrenó ni evaluó ningún modelo; todo desempeño en la bomba es VACÍO. Cierra: historial de fallas del paquete de rodamientos con fechas y modo, bitácora de ajustes y cambios de empaquetadura con su motivo, series de goteo, temperatura del soporte, vibración con envolvente y agua en el lubricante, y data_quality.audit sobre ellas.",
+  "Cadena fuga, agua en el soporte y falla del paquete: sin fuente leída (P23). Solo hay el mecanismo de la empaquetadura (E-2700, comercial) y la lista de causas de rodamientos de bomba (E-6004, resumen de 1988). Cierra: abrir las pistas SOLO-SNIPPET de agua en lubricante (E-2002, E-2003, E-2100 a E-2103, E-2210, E-2211) y de aislamiento del soporte (E-2108, E-2217) por su texto completo, y contrastar con datos propios.",
+  "Umbrales de goteo, de agua en el lubricante, de temperatura del soporte y de vibración para esta bomba: sin fuente leída. La cifra de goteo de E-2700 no trae diámetro, presión ni producto y no se adopta; los ppm de agua y los dB de ultrasonido de las pistas no se usan. Los de kurtosis 3 y 5 carecen de sustento (E-8001).",
+  "Cavitación, recirculación, NPSH, sellos mecánicos y señales hidráulicas: SIN DATOS PARA ARMARLO. Cierra: abrir E-1704, E-1705 y E-1706 (dominios que no resuelven) y los resúmenes de buscador E-1105 a E-1108 y E-1115.",
+  "Ninguna fuente leída trae tiempos hasta la falla de bombas, y los datos de bomba leídos son audio (E-1700 y E-1701). Cierra: texto completo de MIMII, origen y definición de label de los reempaquetados, y una base de desempeño y fallas de bombas (E-1116, sin leer).",
+  "Cantidad de mediciones de línea base, duración del piloto en sombra y número de eventos para pasar a un detector aprendido: sin cifra en las fuentes leídas. Para fallas por modo rige el criterio del auditor (menos de 10 exploratorio, 30 o más preferible), que no proviene de un id leído.",
+  "Intervalo entre la primera detección y la falla del paquete de rodamientos: ninguna fuente leída lo da (E-8008 es cualitativa; E-9205 está en minutos y banco acelerado). Cierra: estimarlo con datos propios.",
   "Horizonte H y costos de falso negativo y falso positivo: los define el negocio.",
-  "Umbrales de alarma de vibración, corriente y temperatura para esta bomba: sin fuente leída; los de kurtosis 3 y 5 carecen de sustento (E-8001). Cierra: leer una guía de severidad de vibración para bombas, a identificar.",
-  "Frecuencias características numéricas, frecuencia de paso de álabes, velocidad real, punto de operación y datos de placa de rodamientos y motor de la bomba: sin datos del activo.",
-  "Robustez a datos faltantes y a ruido de proceso: solo hay ruido blanco sintético en los bancos leídos (E-9463, E-9517). Cierra: ensayo propio con la telemetría real.",
-  "Modelos fundacionales, modelos de lenguaje y gemelos digitales: sin evidencia en bombas (E-9481 es de telecomunicaciones; las tablas de E-9481, E-9523 y E-9524 no se recuperaron). Cierra: recuperar las tablas de 2606.11990 y comparar contra el baseline en datos propios; ningún porcentaje de reducción de paradas.",
-  "Visión por computadora (termografía, inspección de fugas o desgaste): sin fuente leída para bombas.",
-  "Fuentes SOLO-SNIPPET y NO-VERIFICADO (E-1704 a E-1706, E-1105 a E-1108, E-1115, E-1116) sin abrir: pistas pendientes, no respaldan nada.",
-  "Modelos NO justificados hoy, por falta de fallas propias, de partición validada por activo y de superación demostrada del baseline: (a) redes profundas o CNN de diagnóstico, cuyas exactitudes de banco no generalizan (E-9457, E-9466); (b) regresión de RUL con aprendizaje profundo entrenada en banco y aplicada a la bomba (E-9444 muestra generalización entre bancos aún limitada); (c) transferencia directa de modelos o umbrales de banco a la bomba; (d) detector de anomalías con alarma automática sin piloto en sombra (E-9506, E-9515); (e) modelos fundacionales o de lenguaje como sustituto de datos propios (E-9481, E-9525); (f) cualquier modelo que use kurtosis 3 y 5 como etiqueta o alarma (E-8001). Lo que sí procede hoy: etapas 0 y 1 y, en sombra, la 2."
+  "Cox con covariables, Cox con covariables variables en el tiempo y riesgos competitivos: no están en el kit; lifelines se menciona en el README del kit y no se usó ni validó aquí. Cierra: decidir con el líder si se justifica instalarlo y validarlo cuando se cumpla el criterio de fallas.",
+  "Frecuencias características numéricas, velocidad real, punto de operación, datos de placa de rodamientos, motor y empaquetadura: sin datos del activo.",
+  "Robustez a datos faltantes y a ruido de proceso (salpicadura, agua de lavado, vibración de tubería): solo hay ruido blanco sintético en los bancos leídos (E-9463, E-9517). Cierra: ensayo propio con la telemetría real.",
+  "Modelos fundacionales, modelos de lenguaje y gemelos digitales: sin evidencia en bombas (E-9481 es de telecomunicaciones; las tablas de E-9481, E-9523 y E-9524 no se recuperaron). Ningún porcentaje de reducción de paradas.",
+  "Visión por computadora (fugas, goteo, corrosión del soporte): sin fuente leída para bombas. Si se usa, exige protocolo de captura (luz, ángulo, distancia), anotación con acuerdo entre anotadores, partición por bomba o sesión y conjunto de campo aparte.",
+  "Fuentes SOLO-SNIPPET y NO-VERIFICADO (E-1704 a E-1706, E-1105 a E-1108, E-1115, E-1116, E-2000 a E-2110, E-2210 a E-2218, E-2430 a E-2445) sin abrir: pistas pendientes, no respaldan nada.",
+  "Modelos NO justificados hoy, por falta de fallas etiquetadas propias, de partición validada por bomba y de superación demostrada del baseline: (a) supervivencia con covariables, Cox y bosque de supervivencia: sin fallas con fecha por modo no hay qué ajustar, Cox no está en el kit y el único respaldo (E-9205, E-9431) es de un banco con censura simulada, error en minutos y cinco rodamientos por condición; (b) cualquier aprendizaje supervisado (clasificador de causa, de riesgo en horizonte H, RUL): con menos de 10 fallas por modo es exploratorio y las exactitudes de banco no generalizan (E-9457, E-9466); (c) redes profundas o CNN de diagnóstico y RUL con aprendizaje profundo entrenada en banco (E-9444); (d) transferencia directa de modelos o umbrales de banco a la bomba; (e) detector de anomalías con alarma automática sin piloto en sombra (E-9506, E-9515); (f) modelos fundacionales o de lenguaje como sustituto de datos propios (E-9481, E-9525); (g) kurtosis 3 y 5 como etiqueta o alarma (E-8001); (h) cualquier regla que fije un goteo o un ajuste objetivo con la cifra de un blog comercial. Lo que sí procede hoy: etapas 0 y 1, la 2 y la 3 al disponer de mediciones, y la 4 en sombra."
  ]
 }

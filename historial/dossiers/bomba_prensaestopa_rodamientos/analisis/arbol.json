@@ -1,9 +1,9 @@
 {
- "evento_tope": "Falla funcional de la bomba centrífuga: pérdida de la función de bombeo del activo.",
+ "evento_tope": "Falla del paquete de rodamientos de una bomba con prensaestopa (empaquetadura): pérdida de la función de soportar y guiar el eje en giro, con parada de la bomba.",
  "nodos": [
   {
    "id": "N0",
-   "texto": "Falla funcional de la bomba centrífuga (tren motor-bomba).",
+   "texto": "Falla del paquete de rodamientos de la bomba con prensaestopa.",
    "puerta": "OR",
    "hijos": [
     "N1",
@@ -15,12 +15,12 @@
     "E-1304",
     "E-1205"
    ],
-   "nota": "Agrupación del equipo: falla por la vía del rodamiento de la bomba, por el motor impulsor o por modos propios de la bomba (sin rama: SIN DATOS PARA ARMARLO). Sin caso real no hay datos para ponderar ramas. Debe ser validado por un experto del activo.",
+   "nota": "Agrupación del equipo: falla por la vía del rodamiento, por el motor impulsor o por modos propios de la bomba (sin rama respaldada). Sin caso real no hay datos para ponderar ramas. Validar con un experto del activo.",
    "clase": "fisica"
   },
   {
    "id": "N1",
-   "texto": "Falla del rodamiento de la bomba: se inicia un daño Y progresa sin detección oportuna.",
+   "texto": "Falla del paquete de rodamientos: se inicia un daño Y progresa sin detección oportuna.",
    "puerta": "AND",
    "hijos": [
     "N2",
@@ -32,16 +32,18 @@
     "E-8008",
     "E-8003"
    ],
-   "nota": "La puerta AND es lectura del equipo: E-8008 describe etapas de degradación con defectos previos a la falla. No es un hecho de la literatura sobre bombas. Debe ser validado por un experto del activo.",
+   "nota": "La puerta AND es lectura del equipo: E-8008 describe etapas de degradación con defectos previos a la falla. No es hecho de la literatura sobre bombas. Si no se acepta, el árbol se limita a OR.",
    "clase": "fisica"
   },
   {
    "id": "N2",
-   "texto": "Se inicia un daño en el rodamiento o su montaje (por fatiga normal, por causa fuera de condiciones convencionales o por causa latente de gestión).",
+   "texto": "Se inicia un daño en el rodamiento o su montaje (fatiga normal, causa fuera de condiciones convencionales, ruta por el prensaestopa o causa latente de gestión).",
    "puerta": "OR",
    "hijos": [
     "N3",
     "N4",
+    "N27",
+    "N28",
     "N12"
    ],
    "probabilidad": null,
@@ -50,7 +52,7 @@
     "E-6002",
     "E-6004"
    ],
-   "nota": "Agrupación del equipo de las causas que las fuentes dan para el daño de rodamientos. Las fuentes no son de bomba centrífuga. Debe ser validado por un experto del activo.",
+   "nota": "Agrupación del equipo de las causas que las fuentes dan para el daño de rodamientos, más las rutas A y B que unen el prensaestopa con el rodamiento (sin fuente leída para el vínculo).",
    "clase": "fisica"
   },
   {
@@ -65,7 +67,7 @@
     "E-1205",
     "E-6002"
    ],
-   "nota": "Premisas: E-6003 define la vida nominal para condiciones convencionales; E-1205 cita la susceptibilidad del rodamiento al desgaste y la fatiga. Que la fatiga de contacto sea la causa en condiciones convencionales consta en el resumen de E-6002, no en su extracto. Edición de la norma no verificada.",
+   "nota": "E-6003 define la vida nominal para condiciones convencionales; E-1205 cita susceptibilidad al desgaste y la fatiga. Que la fatiga sea la causa en condiciones convencionales consta en el resumen de E-6002, no en su extracto.",
    "clase": "fisica"
   },
   {
@@ -86,7 +88,7 @@
    "evidencia": [
     "E-6002"
    ],
-   "nota": "El extracto de E-6002 clasifica los daños por cargas excesivas, desalineación, ajustes apretados, falla de lubricante, desgaste, corrosión y fretting. Rodamientos de bolas, no bombas. Los términos instalación, contaminación y la rotulación fuera de condiciones convencionales constan en el resumen, no en el extracto.",
+   "nota": "El extracto de E-6002 clasifica daños por cargas excesivas, desalineación, ajustes apretados, falla de lubricante, desgaste, corrosión y fretting. Rodamientos de bolas, no bombas.",
    "clase": "fisica"
   },
   {
@@ -101,7 +103,7 @@
     "E-1201",
     "E-6002"
    ],
-   "nota": "Citada como causa de falla prematura de rodamientos de bombas (E-6004, resumen), como mala lubricación en rodamientos usados también en bombas (E-1201) y como causa de daño (E-6002). Que ocurra en este activo es hipótesis.",
+   "nota": "Citada como causa de falla prematura de rodamientos de bombas (E-6004), como mala lubricación (E-1201) y como causa de daño (E-6002). Que ocurra en este activo es hipótesis.",
    "clase": "fisica"
   },
   {
@@ -115,7 +117,7 @@
     "E-6004",
     "E-1201"
    ],
-   "nota": "E-6004: corrosión causada por contaminación; E-1201: desgaste por contaminación. Sin dato de sellado de bomba.",
+   "nota": "E-6004: corrosión causada por contaminación; E-1201: desgaste por contaminación. La fuente del contaminante (por ejemplo la fuga del prensaestopa) no consta: ver N27.",
    "clase": "fisica"
   },
   {
@@ -143,7 +145,7 @@
     "E-6004",
     "E-6002"
    ],
-   "nota": "E-6004: sobrecalentamiento por ajustes inadecuados en alojamientos o ejes; E-6002: ajustes apretados.",
+   "nota": "E-6004: sobrecalentamiento por ajustes inadecuados en alojamientos o ejes; E-6002: ajustes apretados. Se refiere al rodamiento, no al prensaestopa.",
    "clase": "fisica"
   },
   {
@@ -156,7 +158,7 @@
    "evidencia": [
     "E-6002"
    ],
-   "nota": "Listada por E-6002 como causa de daño de rodamientos. La desalineación propia de bombas no tiene fuente leída (ver vacíos).",
+   "nota": "Listada por E-6002 como causa de daño. La desalineación propia de bombas no tiene fuente leída.",
    "clase": "fisica"
   },
   {
@@ -170,7 +172,7 @@
     "E-6002",
     "E-1204"
    ],
-   "nota": "E-6002 la lista como causa de daño; E-1204 (banco acelerado) advierte que la carga muy alta acelera la degradación y el riesgo de calentamiento local. Las cargas hidráulicas de la bomba no tienen fuente leída.",
+   "nota": "E-6002 la lista como causa de daño; E-1204 (banco acelerado) advierte que la carga muy alta acelera la degradación y arriesga calentamiento local. Cargas hidráulicas sin fuente leída.",
    "clase": "fisica"
   },
   {
@@ -184,7 +186,7 @@
     "E-6002",
     "E-1205"
    ],
-   "nota": "Listados por E-6002 como causas de daño de rodamientos; E-1205 cita desgaste y fatiga.",
+   "nota": "Listados por E-6002 como causas de daño; E-1205 cita desgaste y fatiga.",
    "clase": "fisica"
   },
   {
@@ -193,7 +195,11 @@
    "puerta": "OR",
    "hijos": [
     "N13",
-    "N14"
+    "N14",
+    "N42",
+    "N43",
+    "N44",
+    "N45"
    ],
    "probabilidad": null,
    "nivel": "SINTESIS",
@@ -201,7 +207,7 @@
     "E-6003",
     "E-6004"
    ],
-   "nota": "Razonamiento del equipo: las causas físicas requieren una deficiencia del sistema que las permita. Debe ser validado por un experto del activo.",
+   "nota": "Razonamiento del equipo: las causas físicas requieren una deficiencia del sistema que las permita. Validar con un experto del activo.",
    "clase": "latente"
   },
   {
@@ -215,7 +221,7 @@
     "E-6004",
     "E-1201"
    ],
-   "nota": "Premisas: E-6004 y E-1201 atribuyen defectos a lubricación, contaminación e instalación. La deficiencia de procedimiento o control es inferencia del equipo; no hay dato del activo. Debe ser validado por un experto del activo.",
+   "nota": "Premisas: E-6004 y E-1201 atribuyen defectos a lubricación, contaminación e instalación. La deficiencia de control es inferencia del equipo.",
    "clase": "latente"
   },
   {
@@ -230,7 +236,7 @@
     "E-6002",
     "E-1202"
    ],
-   "nota": "Premisas: E-6003 y E-1202 definen la vida nominal para condiciones convencionales; E-6002 enumera causas fuera de ellas. Inferencia del equipo. Debe ser validado por un experto del activo.",
+   "nota": "Premisas: E-6003 y E-1202 definen la vida nominal para condiciones convencionales; E-6002 enumera causas fuera de ellas. Inferencia del equipo.",
    "clase": "latente"
   },
   {
@@ -248,7 +254,7 @@
     "E-8008",
     "E-8003"
    ],
-   "nota": "Razonamiento del equipo a partir de las limitaciones de indicadores descritas en las fuentes. Debe ser validado por un experto del activo.",
+   "nota": "Razonamiento del equipo a partir de limitaciones de indicadores descritas en las fuentes.",
    "clase": "latente"
   },
   {
@@ -262,7 +268,7 @@
     "E-8003",
     "E-8008"
    ],
-   "nota": "Revisión de 2008 y preprint de rodamientos de bolas con datos de banco. No tratan bombas ni dan tiempos de aviso.",
+   "nota": "Revisión y preprint de rodamientos de bolas con datos de banco. No tratan bombas ni dan tiempos de aviso.",
    "clase": "latente"
   },
   {
@@ -276,12 +282,12 @@
     "E-8001",
     "E-1305"
    ],
-   "nota": "E-8001: los autores de la revisión no hallaron sustento teórico ni empírico de los umbrales de kurtosis 3 y 5. E-1305: el conjunto de motor no incluye fallas progresivas de servicio prolongado y define severidades discretas. El límite de los conjuntos de banco es una limitación del dato, no una causa demostrada.",
+   "nota": "E-8001: los autores no hallaron sustento teórico ni empírico de los umbrales de kurtosis 3 y 5. E-1305: el conjunto de motor no incluye fallas progresivas de servicio prolongado. Es limitación del dato, no causa demostrada.",
    "clase": "latente"
   },
   {
    "id": "N18",
-   "texto": "Vigilancia sin integrar vibración, temperatura, ruido y corriente, ni dar seguimiento a señales tempranas.",
+   "texto": "Vigilancia sin integrar vibración, temperatura, ruido y corriente, ni seguimiento de señales tempranas (incluida la temperatura del soporte y la fuga del prensaestopa).",
    "puerta": "BASE",
    "hijos": [],
    "probabilidad": null,
@@ -291,12 +297,12 @@
     "E-1302",
     "E-8003"
    ],
-   "nota": "Premisas: E-1301 (vibración y corriente como indicadores de salud del motor), E-1302 (resumen: fusión de vibración, temperatura y ruido). La combinación de técnicas consta en el resumen de E-8003, no en su extracto. La inferencia sobre la gestión del activo es del equipo. Debe ser validado por un experto del activo.",
+   "nota": "Premisas: E-1301 (vibración y corriente como indicadores de salud del motor), E-1302 (resumen). La inferencia sobre la gestión del activo es del equipo.",
    "clase": "latente"
   },
   {
    "id": "N19",
-   "texto": "Origen o confusión de la falla en el motor impulsor (falla mecánica o eléctrica del motor).",
+   "texto": "Origen o confusión de la falla en el motor impulsor (mecánica o eléctrica).",
    "puerta": "BASE",
    "hijos": [],
    "probabilidad": null,
@@ -305,23 +311,270 @@
     "E-1304",
     "E-1301"
    ],
-   "nota": "E-1304: en la práctica es difícil distinguir fallas mecánicas de eléctricas por manifestaciones similares; E-1301: vibración y corriente son indicadores de salud del motor. Bancos de motor de 2,2 kW, no de bombas. Debe ser validado por un experto del activo.",
+   "nota": "E-1304: en la práctica es difícil distinguir fallas mecánicas de eléctricas; E-1301: vibración y corriente son indicadores de salud del motor. Bancos de motor, no de bombas.",
    "clase": "fisica"
+  },
+  {
+   "id": "N23",
+   "texto": "Mecanismo de la propia empaquetadura: sin ajuste el fluido lava los lubricantes de la trenza; con ajuste excesivo se elimina el goteo, hay recalentamiento y la trenza cristaliza.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2700"
+   ],
+   "nota": "Texto comercial aportado por la persona; trata la falla de la empaquetadura y no menciona el rodamiento. No es una falla del rodamiento por sí misma: es la raíz de las rutas A y B si se verifica el vínculo.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N27",
+   "texto": "Ruta A (hipótesis): ajuste insuficiente del prensaestopa, fuga, agua o contaminante en el soporte, pérdida de película, corrosión y fatiga.",
+   "puerta": "AND",
+   "hijos": [
+    "N30",
+    "N32"
+   ],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-2700",
+    "E-6004"
+   ],
+   "nota": "Cadena secuencial; AND como forma lógica de eslabones que deben cumplirse todos y que se verifican uno a uno. La cadena completa no tiene fuente leída. Pistas por abrir: E-2500, E-2503, E-2504, E-2000. Si no se acepta el AND, se lista como OR de eslabones sueltos.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N30",
+   "texto": "Ajuste insuficiente: el fluido lava los lubricantes internos de la trenza y se acelera la falla de la empaquetadura.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2700"
+   ],
+   "nota": "Literal en E-2700 para la empaquetadura. Que el ajuste fuera insuficiente en este activo es hipótesis. El paso a 'más fuga' es SINTESIS.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N32",
+   "texto": "El agua o contaminante degrada el lubricante y las pistas: pérdida de película, corrosión y fatiga.",
+   "puerta": "OR",
+   "hijos": [
+    "N33",
+    "N34",
+    "N35"
+   ],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-1203",
+    "E-6004"
+   ],
+   "nota": "Que el agua del prensaestopa produzca estos mecanismos es razonamiento del equipo. Pistas por abrir: E-2002, E-2003.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N33",
+   "texto": "Pérdida de la película lubricante que separa los elementos rodantes (falla de lubricante).",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-1203",
+    "E-6004"
+   ],
+   "nota": "E-1203: la película separa los elementos rodantes; E-6004: la falla de lubricante es causa de falla prematura. No trata agua.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N34",
+   "texto": "Corrosión de las pistas causada por contaminación.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6004"
+   ],
+   "nota": "Literal para contaminación en general.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N35",
+   "texto": "Desgaste y fatiga a las que el rodamiento es susceptible.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-1205",
+    "E-6002"
+   ],
+   "nota": "Literal en términos generales; la aceleración por agua es SINTESIS.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N28",
+   "texto": "Ruta B (hipótesis): apriete excesivo del prensaestopa, fricción y calor en eje y camisa, carga térmica y deflexión sobre el rodamiento.",
+   "puerta": "AND",
+   "hijos": [
+    "N36",
+    "N37",
+    "N38"
+   ],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-2700",
+    "E-6004"
+   ],
+   "nota": "Cadena secuencial, igual que la ruta A. Pistas por abrir: E-2001, E-2002 no aplica, E-2502, E-2004.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N36",
+   "texto": "Apriete excesivo: se elimina el goteo, se destruye la película térmica, hay recalentamiento y la empaquetadura cristaliza.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2700"
+   ],
+   "nota": "Literal en E-2700 para la empaquetadura. No se usa la cifra de goteo.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N37",
+   "texto": "Fricción y calor se transmiten al eje y a la camisa.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-2700"
+   ],
+   "nota": "E-2700 trata el recalentamiento de la empaquetadura; el paso al eje y a la camisa es razonamiento del equipo. Pistas por abrir: E-2001, E-2004.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N38",
+   "texto": "Carga térmica y deflexión del eje llegan al paquete de rodamientos.",
+   "puerta": "OR",
+   "hijos": [
+    "N39",
+    "N40"
+   ],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-1203",
+    "E-6002",
+    "E-1204"
+   ],
+   "nota": "Eslabón puente sin fuente leída. Premisas generales de temperatura y carga.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N39",
+   "texto": "Sobrecalentamiento del rodamiento como causa de falla prematura.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6004",
+    "E-1203"
+   ],
+   "nota": "E-6004 cita el sobrecalentamiento por ajustes inadecuados en alojamientos o ejes; E-1203 cita la temperatura de operación entre los factores de salud. Que el calor provenga del prensaestopa es SINTESIS.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N40",
+   "texto": "Carga adicional o deflexión sobre el rodamiento.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6002",
+    "E-1204"
+   ],
+   "nota": "E-6002 lista las cargas excesivas; E-1204 es un banco acelerado. Que el prensaestopa la genere es SINTESIS.",
+   "clase": "fisica"
+  },
+  {
+   "id": "N42",
+   "texto": "Ausencia de rutina de inspección de fuga y goteo del prensaestopa, y de seguimiento de su tendencia.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-2700"
+   ],
+   "nota": "Premisa: E-2700 describe consecuencias opuestas de ajustar de menos y de más, lo que exige revisión periódica. Que la rutina falte en este activo es hipótesis sin registros.",
+   "clase": "latente"
+  },
+  {
+   "id": "N43",
+   "texto": "Drenaje de la caja o bandeja bloqueado sin revisión, que deja acumular agua cerca del soporte.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6004"
+   ],
+   "nota": "Premisa: contaminación como causa (E-6004). El drenaje no tiene extracto leído; pistas por abrir E-2001 y E-2500.",
+   "clase": "latente"
+  },
+  {
+   "id": "N44",
+   "texto": "Falta de protección del soporte frente al agua (retenes, deflectores, tapas) o mantenimiento de esas barreras.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6004",
+    "E-1201"
+   ],
+   "nota": "Premisas: contaminación como causa de corrosión y desgaste. Sin extracto leído sobre barreras de bomba. Pista por abrir: E-2504.",
+   "clase": "latente"
+  },
+  {
+   "id": "N45",
+   "texto": "Falta de criterio de ajuste del prensaestopa (cuánto goteo es aceptable, cómo se ajusta, quién lo verifica) y de formación en ello.",
+   "puerta": "BASE",
+   "hijos": [],
+   "probabilidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-2700"
+   ],
+   "nota": "Premisa: E-2700 muestra que el ajuste mal dosificado produce fallas opuestas. La ausencia del criterio es hipótesis; el cifra de goteo de E-2700 no se usa como umbral. Es un fallo del sistema, no de la persona.",
+   "clase": "latente"
   }
  ],
  "vacios": [
   "No existe caso real ni datos de planta: todas las probabilidades son null y ninguna rama puede darse por confirmada.",
-  "Puertas: N0, N2, N4, N12, N15 y modos propios son OR. La puerta AND de N1 es lectura del equipo y no tiene fuente leída; si el líder o el experto no la acepta, el árbol se limita a OR.",
-  "Modos propios de la bomba (sello, cavitación, recirculación, anillos de desgaste, golpe de ariete, desbalance y desalineación de la bomba): SIN DATOS PARA ARMARLO; solo hay pistas sin leer.",
-  "Fuentes de causas de rodamientos: bolas en fatiga de ciclos muy altos, aerogeneradores, un resumen de 1988 sobre bombas y bancos de laboratorio; comparabilidad baja o media con una bomba centrífuga de planta.",
-  "Los nodos latentes N12 a N18 son SINTESIS o EVIDENCIA de banco pendientes de validación con un experto del activo.",
+  "Puertas: N0, N2, N4, N12, N15, N20, N32 y N38 son OR. Las puertas AND de N1, N27 y N28 son lectura del equipo y no tienen fuente leída; si el líder o el experto no las acepta, el árbol se limita a OR.",
+  "Eslabones puente de las rutas A y B (N31, N37, N38): SIN FUENTE LEIDA. Solo E-2700 respalda el mecanismo de la empaquetadura (N23, N30, N36). Pistas no leídas: E-2500, E-2502, E-2503, E-2504, E-2000, E-2001, E-2002, E-2003, E-2004.",
+  "Modos propios de la bomba (sello mecánico, cavitación, recirculación, anillos de desgaste, golpe de ariete, eje y acople): SIN DATOS PARA ARMARLO.",
+  "Fuentes de causas de rodamientos: bolas en fatiga de ciclos muy altos, aerogeneradores, un resumen sobre bombas y bancos de laboratorio; comparabilidad baja.",
+  "Los nodos latentes N12 a N18 y N42 a N45 son SINTESIS o EVIDENCIA de banco pendientes de validación con un experto del activo.",
   "Nivel VACIO (valor propio de este árbol): nodo sin contenido respaldado.",
-  "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Modos propios de la bomba centrífuga (hidráulicos y de sello).",
+  "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Modos propios de la bomba con prensaestopa (hidráulicos y de sellado).",
   "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Cavitación y erosión del impulsor.",
   "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Recirculación y operación fuera del punto de mejor eficiencia.",
   "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Falla del sello mecánico.",
   "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Desgaste de los anillos de desgaste y aumento de holgura.",
   "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Golpe de ariete y transitorios hidráulicos.",
-  "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Fatiga de eje, acople y desalineación propia de la bomba."
+  "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Fatiga de eje, acople y desalineación propia de la bomba.",
+  "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): La fuga llega al soporte de rodamientos porque el drenaje, los retenes o deflectores no la desvían."
  ]
 }

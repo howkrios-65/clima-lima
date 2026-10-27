@@ -109,6 +109,58 @@
   ]
  },
  {
+  "tecnica_o_sensor": "Analisis de agua en aceite por Karl Fischer (ISO 12937, ASTM D6304)",
+  "que_mide": "Contenido de agua del lubricante",
+  "resultado_publicado": "Alcances de metodo vistos en catalogo; la FAQ dice que no hay ppm uniforme",
+  "condiciones": "SOLO-SNIPPET",
+  "limites": "No se leyeron clausulas; ISO 12937 sin precision establecida para aceites base",
+  "evidencia": [
+   "E-2611",
+   "E-2612",
+   "E-2600"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Vibracion y analisis de aceite combinados en banco con agua en aceite",
+  "que_mide": "Efecto del agua sobre aceite y vibracion de rodamientos a varias velocidades",
+  "resultado_publicado": "Pista: banco con tres aceites y varios contenidos de agua (ver E-2211 previa)",
+  "condiciones": "Aceite, no grasa",
+  "limites": "No leido; ya registrado antes",
+  "evidencia": [
+   "E-2606"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Emision acustica con CNN para agua en lubricante",
+  "que_mide": "Humedad en lubricante de maquinas rotativas",
+  "resultado_publicado": "Solo titulo y resumen de buscador",
+  "condiciones": "No leido",
+  "limites": "Sin cifras",
+  "evidencia": [
+   "E-2616"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Ultrasonido en dB sobre linea base",
+  "que_mide": "Friccion y falta de lubricacion",
+  "resultado_publicado": "8, 16 y 35 dB segun material de proveedor",
+  "condiciones": "No leido",
+  "limites": "No mide agua; sin validacion",
+  "evidencia": [
+   "E-2615"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Capacitancia en el soporte de rodamientos",
+  "que_mide": "Posible agua en aceite",
+  "resultado_publicado": "Solo titulos de patentes",
+  "condiciones": "No leido",
+  "limites": "Sin datos",
+  "evidencia": [
+   "E-2621"
+  ]
+ },
+ {
   "tecnica_o_sensor": "Vibracion triaxial (acelerometro) y corrientes de fase del motor",
   "que_mide": "Aceleracion en el extremo de accionamiento del motor y corrientes trifasicas, en sincronia con par y fase clave",
   "resultado_publicado": "Los autores afirman que vibracion y corriente son indicadores efectivos de la salud del motor",

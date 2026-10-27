@@ -1,6 +1,152 @@
 {
  "items": [
   {
+   "causa": "H12",
+   "titulo": "Ruta A: ajuste insuficiente del prensaestopa, fuga y agua en el soporte",
+   "cadena": [
+    {
+     "porque": "¿Por qué podría fallar el paquete de rodamientos? Si esta hipótesis se cumpliera, porque el agua o contaminante degradó el lubricante y las pistas hasta la falla (pérdida de película, corrosión y fatiga). El mecanismo general figura en las fuentes; que sea el de este activo es hipótesis.",
+     "evidencia": [
+      "E-6004",
+      "E-1203",
+      "E-1205"
+     ],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "EVIDENCIA para falla de lubricante, corrosión por contaminación y desgaste y fatiga en general; SINTESIS para que sea por agua del prensaestopa"
+    },
+    {
+     "porque": "¿Por qué habría agua o contaminante en el soporte? Si se cumpliera, porque la fuga del prensaestopa llegó al alojamiento sin que el drenaje, los retenes o los deflectores la desviaran. Eslabón sin fuente leída.",
+     "evidencia": [],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué habría fuga mayor en el prensaestopa? Si se cumpliera, porque el ajuste fue insuficiente y el fluido lavó los lubricantes internos de la trenza, acelerando la falla de la empaquetadura. El paso a 'más fuga' es del equipo.",
+     "evidencia": [
+      "E-2700"
+     ],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "EVIDENCIA para el efecto del ajuste insuficiente sobre la trenza; SINTESIS para más fuga"
+    },
+    {
+     "porque": "¿Por qué estaría insuficiente el ajuste? Si se cumpliera, porque no se había definido ni se verificaba un criterio de ajuste y de goteo, y no existía rutina de inspección de fuga que lo detectara.",
+     "evidencia": [
+      "E-2700"
+     ],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque la fuga del prensaestopa y el estado del drenaje no se gestionaban como un modo de falla que puede alcanzar al rodamiento, con dueño, indicador y verificación, y la protección del soporte no se mantenía. Causa latente a confirmar con registros.",
+     "evidencia": [
+      "E-6004",
+      "E-8003"
+     ],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "SINTESIS"
+    }
+   ],
+   "raiz_a_verificar": "¿Sería la causa raíz que el sistema no tenía rutina de inspección de fuga, criterio de ajuste del prensaestopa ni protección y drenaje del soporte verificados? Condicional: solo si se demuestra, en el activo, fuga sostenida, agua en el lubricante, corrosión en pistas y ausencia de causas alternas (H1, H3, H4).",
+   "nota": "Pistas por abrir, sin respaldo: E-2500, E-2503, E-2504, E-2000, E-2002, E-2003."
+  },
+  {
+   "causa": "H13",
+   "titulo": "Ruta B: apriete excesivo del prensaestopa, fricción y calor, carga térmica y deflexión",
+   "cadena": [
+    {
+     "porque": "¿Por qué podría fallar el paquete de rodamientos? Si esta hipótesis se cumpliera, por sobrecalentamiento o carga adicional sobre el rodamiento. El sobrecalentamiento por ajustes inadecuados figura como causa de falla prematura de rodamientos de bombas y la carga excesiva entre las causas de daño; que sea por el prensaestopa es hipótesis.",
+     "evidencia": [
+      "E-6004",
+      "E-6002",
+      "E-1204"
+     ],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "EVIDENCIA para sobrecalentamiento y carga excesiva en general; SINTESIS para el origen en el prensaestopa"
+    },
+    {
+     "porque": "¿Por qué habría calor o deflexión en el rodamiento? Si se cumpliera, porque la fricción y el calor del prensaestopa se transmitieron por eje, camisa y soporte. Eslabón sin fuente leída.",
+     "evidencia": [
+      "E-1203"
+     ],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué habría fricción y calor? Si se cumpliera, porque el apriete excesivo eliminó el goteo, destruyó la película térmica y generó recalentamiento hasta cristalizar la empaquetadura.",
+     "evidencia": [
+      "E-2700"
+     ],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "EVIDENCIA para el efecto sobre la empaquetadura; SINTESIS para que llegue al eje y a la camisa"
+    },
+    {
+     "porque": "¿Por qué se habría apretado en exceso? Si se cumpliera, porque se ajustó para detener una fuga visible sin criterio de goteo mínimo ni verificación de temperatura, quizá tras una fuga previa.",
+     "evidencia": [
+      "E-2700"
+     ],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque ajustar el prensaestopa no tiene instrucción con criterio, ni verificación posterior de temperatura del soporte, ni se vigila la camisa. Causa latente a confirmar con registros.",
+     "evidencia": [
+      "E-2700",
+      "E-1302"
+     ],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "SINTESIS"
+    }
+   ],
+   "raiz_a_verificar": "¿Sería la causa raíz que el ajuste del prensaestopa se hace sin criterio de goteo ni verificación de temperatura y estado de la camisa? Condicional: solo si se demuestra apriete excesivo, huella térmica en camisa o grasa, y se descartan H4, H6 y H1.",
+   "nota": "Pistas por abrir, sin respaldo: E-2001, E-2502, E-2004. La cifra de goteo de E-2700 no se usa."
+  },
+  {
+   "causa": "H14",
+   "titulo": "Latentes del prensaestopa: rutina, criterio de ajuste, drenaje y protección del soporte",
+   "cadena": [
+    {
+     "porque": "¿Por qué convivirían las rutas A y B con la operación normal? Si se cumpliera, porque ajustar de menos y de más tienen efectos opuestos sobre la empaquetadura y ninguno se detectaba a tiempo.",
+     "evidencia": [
+      "E-2700"
+     ],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "EVIDENCIA para efectos opuestos sobre la empaquetadura; SINTESIS para lo demás"
+    },
+    {
+     "porque": "¿Por qué no se detectaban? Si se cumpliera, porque no había rutina de inspección de fuga ni medición de temperatura del soporte con tendencia.",
+     "evidencia": [
+      "E-1302"
+     ],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué no había esa rutina? Si se cumpliera, porque el prensaestopa se trataba como accesorio y no como modo de falla del rodamiento, sin dueño ni criterio de ajuste.",
+     "evidencia": [],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué el drenaje y la protección del soporte podrían fallar sin aviso? Si se cumpliera, porque no estaban en el plan de inspección.",
+     "evidencia": [
+      "E-6004"
+     ],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "SINTESIS"
+    },
+    {
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque el análisis de modos de falla y el plan de mantenimiento no incluyeron la interfaz entre prensaestopa y soporte. Causa latente a confirmar con el plan de mantenimiento.",
+     "evidencia": [
+      "E-6003"
+     ],
+     "nivel": "SINTESIS",
+     "rotulo_eslabon": "SINTESIS"
+    }
+   ],
+   "raiz_a_verificar": "¿Sería la causa raíz que la interfaz prensaestopa-soporte no está cubierta por el plan de mantenimiento? Condicional: a confirmar con el plan, las rutas y los registros.",
+   "nota": "Todo SINTESIS. Pistas por abrir: E-2001, E-2500."
+  },
+  {
    "causa": "H1",
    "titulo": "Lubricación inadecuada o falla del lubricante",
    "cadena": [
@@ -20,7 +166,7 @@
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué no cumpliría la película? Si se cumpliera, porque tipo, cantidad o intervalo de relubricación no estaban ajustados a la condición de operación y la temperatura reales, de las que depende la salud del rodamiento.",
+     "porque": "¿Por qué no cumpliría la película? Si se cumpliera, porque tipo, cantidad o intervalo de relubricación no estaban ajustados a la condición de operación y la temperatura reales, o por contaminación con agua (ruta A).",
      "evidencia": [
       "E-1203",
       "E-1201"
@@ -43,14 +189,15 @@
      "nivel": "SINTESIS"
     }
    ],
-   "nota": " Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto."
+   "raiz_a_verificar": "¿Sería la causa raíz que la lubricación no se gestiona como modo de falla con verificación? Condicional a registros de engrase y análisis del lubricante.",
+   "nota": "La combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto."
   },
   {
    "causa": "H2",
    "titulo": "Contaminación del rodamiento",
    "cadena": [
     {
-     "porque": "¿Por qué podría fallar el rodamiento? Si esta hipótesis se cumpliera, sería por corrosión y desgaste de pistas y elementos rodantes asociados a contaminación.",
+     "porque": "¿Por qué podría fallar el rodamiento? Si se cumpliera, por corrosión y desgaste de pistas y elementos rodantes asociados a contaminación.",
      "evidencia": [
       "E-6004",
       "E-1201"
@@ -58,7 +205,7 @@
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué entraría contaminación? Si se cumpliera, porque la barrera del alojamiento no impidió el ingreso de partículas o humedad, o porque se introdujo durante la instalación o el engrase (a verificar).",
+     "porque": "¿Por qué entraría contaminación? Si se cumpliera, porque la barrera del alojamiento no impidió el ingreso de partículas o humedad (incluida la fuga del prensaestopa, ruta A), o porque se introdujo durante la instalación o el engrase.",
      "evidencia": [
       "E-6004",
       "E-1201"
@@ -81,7 +228,7 @@
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque la selección y el plan de mantenimiento se apoyaron en la vida nominal, que cubre fatiga en condiciones convencionales, y no trataron la contaminación como modo de falla gestionado. Causa latente a confirmar con registros.",
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque la selección y el plan de mantenimiento se apoyaron en la vida nominal y no trataron la contaminación como modo de falla gestionado. Causa latente a confirmar con registros.",
      "evidencia": [
       "E-6002",
       "E-6003",
@@ -90,14 +237,15 @@
      "nivel": "SINTESIS"
     }
    ],
-   "nota": " Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto. Que la vibración muestre el defecto solo en etapas avanzadas consta en el resumen de E-8001."
+   "raiz_a_verificar": "¿Sería la causa raíz que la contaminación no se trata como modo de falla gestionado? Condicional a la inspección del lubricante y las barreras.",
+   "nota": "Que la vibración muestre el defecto solo en etapas avanzadas consta en el resumen de E-8001."
   },
   {
    "causa": "H3",
    "titulo": "Manipulación o instalación inadecuada del rodamiento",
    "cadena": [
     {
-     "porque": "¿Por qué podría fallar el rodamiento? Si esta hipótesis se cumpliera, habría sufrido daño antes o durante el montaje y fallaría de forma prematura.",
+     "porque": "¿Por qué podría fallar el rodamiento? Si se cumpliera, habría sufrido daño antes o durante el montaje y fallaría de forma prematura.",
      "evidencia": [
       "E-6004",
       "E-1201"
@@ -105,7 +253,7 @@
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué se habría dañado en el montaje? Si se cumpliera, porque la manipulación y el calado dejaron marcas o cargas indebidas en las pistas, a verificar en el rodamiento retirado.",
+     "porque": "¿Por qué se habría dañado en el montaje? Si se cumpliera, porque la manipulación y el calado dejaron marcas o cargas indebidas en las pistas.",
      "evidencia": [
       "E-6004"
      ],
@@ -119,28 +267,30 @@
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué no se detectaría tras el montaje? Si se cumpliera, porque no hubo verificación ni medición de línea base posterior y el defecto solo se manifiesta con claridad en etapas posteriores de degradación.",
+     "porque": "¿Por qué no se detectaría tras el montaje? Si se cumpliera, porque no hubo verificación ni medición de línea base posterior.",
      "evidencia": [
       "E-8008"
      ],
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque el montaje de rodamientos no tiene procedimiento con dueño, herramienta adecuada y criterio de aceptación. Causa latente a confirmar con registros.",
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque el montaje no tiene procedimiento con dueño, herramienta adecuada y criterio de aceptación. Causa latente a confirmar con registros.",
      "evidencia": [
       "E-6004",
       "E-1201"
      ],
      "nivel": "SINTESIS"
     }
-   ]
+   ],
+   "raiz_a_verificar": "¿Sería la causa raíz la falta de procedimiento de montaje con criterio de aceptación? Condicional a registros y marcas en las pistas.",
+   "nota": ""
   },
   {
    "causa": "H4",
    "titulo": "Ajuste inadecuado con sobrecalentamiento",
    "cadena": [
     {
-     "porque": "¿Por qué podría fallar el rodamiento? Si esta hipótesis se cumpliera, sería por sobrecalentamiento causado por un ajuste inadecuado en el eje o el alojamiento.",
+     "porque": "¿Por qué podría fallar el rodamiento? Si se cumpliera, por sobrecalentamiento causado por un ajuste inadecuado en el eje o el alojamiento.",
      "evidencia": [
       "E-6004",
       "E-6002"
@@ -148,21 +298,21 @@
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué habría un ajuste inadecuado? Si se cumpliera, porque el diámetro del eje o del alojamiento estaba fuera de la tolerancia del fabricante, a verificar con medición.",
+     "porque": "¿Por qué habría un ajuste inadecuado? Si se cumpliera, porque el diámetro del eje o del alojamiento estaba fuera de la tolerancia, a verificar con medición.",
      "evidencia": [
       "E-6004"
      ],
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué estaría fuera de tolerancia? Si se cumpliera, porque no se verificó la dimensión tras una reparación, un montaje o un cambio de pieza, o por desgaste del asiento.",
+     "porque": "¿Por qué estaría fuera de tolerancia? Si se cumpliera, porque no se verificó la dimensión tras una reparación o cambio de pieza, o por desgaste del asiento (incluida la camisa).",
      "evidencia": [
       "E-6002"
      ],
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué no se detectaría el sobrecalentamiento? Si se cumpliera, porque no se vigilaba la temperatura junto con la vibración, que son indicadores que conviene fusionar.",
+     "porque": "¿Por qué no se detectaría el sobrecalentamiento? Si se cumpliera, porque no se vigilaba la temperatura junto con la vibración.",
      "evidencia": [
       "E-1302",
       "E-1203"
@@ -177,35 +327,37 @@
      ],
      "nivel": "SINTESIS"
     }
-   ]
+   ],
+   "raiz_a_verificar": "¿Sería la causa raíz que no se verifican ajustes tras intervenciones? Condicional a mediciones.",
+   "nota": ""
   },
   {
    "causa": "H5",
    "titulo": "Desalineación del eje y el soporte",
    "cadena": [
     {
-     "porque": "¿Por qué podría fallar el rodamiento? Si esta hipótesis se cumpliera, la desalineación causaría daño del rodamiento, una de las causas de daño listadas en la literatura.",
+     "porque": "¿Por qué podría fallar el rodamiento? Si se cumpliera, la desalineación causaría daño, una de las causas listadas en la literatura.",
      "evidencia": [
       "E-6002"
      ],
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué habría desalineación? Si se cumpliera, porque el eje y el soporte quedaron fuera de la posición de diseño, a verificar con medición de alineación.",
+     "porque": "¿Por qué habría desalineación? Si se cumpliera, porque el eje y el soporte quedaron fuera de la posición de diseño, a verificar con medición.",
      "evidencia": [
       "E-6002"
      ],
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué quedarían fuera de posición? Si se cumpliera, por falta de verificación de alineación al montar o tras intervenciones, o por pérdida de posición en servicio; sin fuente leída propia de bombas.",
+     "porque": "¿Por qué quedarían fuera de posición? Si se cumpliera, por falta de verificación al montar o tras intervenciones, o por pérdida de posición en servicio; sin fuente leída propia de bombas.",
      "evidencia": [
       "E-6002"
      ],
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué no se detectaría antes? Si se cumpliera, porque el monitoreo se enfoca en defectos de rodamiento y estos aparecen en etapas avanzadas de degradación.",
+     "porque": "¿Por qué no se detectaría antes? Si se cumpliera, porque el monitoreo se enfoca en defectos de rodamiento, que aparecen en etapas avanzadas.",
      "evidencia": [
       "E-8008",
       "E-8001"
@@ -213,7 +365,7 @@
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque no hay requisito de verificar alineación en la puesta en servicio ni tras intervenciones, ni indicador que la vigile. Causa latente a confirmar con registros.",
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque no hay requisito de verificar alineación en la puesta en servicio ni tras intervenciones. Causa latente a confirmar con registros.",
      "evidencia": [
       "E-6002",
       "E-8003"
@@ -221,21 +373,22 @@
      "nivel": "SINTESIS"
     }
    ],
-   "nota": " Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto. Que la vibración muestre el defecto solo en etapas avanzadas consta en el resumen de E-8001."
+   "raiz_a_verificar": "¿Sería la causa raíz la falta de requisito de verificar alineación? Condicional a medición.",
+   "nota": ""
   },
   {
    "causa": "H9",
    "titulo": "Detección tardía del defecto",
    "cadena": [
     {
-     "porque": "¿Por qué llegaría el rodamiento a la falla funcional? Si esta hipótesis se cumpliera, porque el defecto avanzó por las etapas de degradación hasta la final sin intervención.",
+     "porque": "¿Por qué llegaría el rodamiento a la falla funcional? Si se cumpliera, porque el defecto avanzó por las etapas de degradación hasta la final sin intervención.",
      "evidencia": [
       "E-8008"
      ],
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué no se intervino? Si se cumpliera, porque el indicador usado pierde señal al extenderse el defecto, como la kurtosis, y la caída se leyó como mejora.",
+     "porque": "¿Por qué no se intervino? Si se cumpliera, porque el indicador pierde señal al extenderse el defecto, como la kurtosis, y la caída se leyó como mejora.",
      "evidencia": [
       "E-8003"
      ],
@@ -249,7 +402,7 @@
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué no se calibraron? Si se cumpliera, porque se tomaron métodos validados en banco, que no cubren la degradación continua de servicio, sin validarlos en el campo.",
+     "porque": "¿Por qué no se calibraron? Si se cumpliera, porque se tomaron métodos validados en banco, que no cubren la degradación continua de servicio, sin validarlos en campo.",
      "evidencia": [
       "E-1305",
       "E-8001"
@@ -257,7 +410,7 @@
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque la estrategia de vigilancia no define quién valida umbrales ni combina técnicas con seguimiento de señales tempranas. Causa latente a confirmar con el historial de mediciones.",
+     "porque": "¿Por qué el sistema lo permitiría? Si se cumpliera, porque la estrategia de vigilancia no define quién valida umbrales ni combina técnicas, incluida la temperatura del soporte y la fuga del prensaestopa. Causa latente a confirmar con el historial de mediciones.",
      "evidencia": [
       "E-8003",
       "E-1302"
@@ -265,14 +418,15 @@
      "nivel": "SINTESIS"
     }
    ],
-   "nota": " Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto."
+   "raiz_a_verificar": "¿Sería la causa raíz que la estrategia de vigilancia no valida umbrales ni integra señales? Condicional al historial de mediciones.",
+   "nota": "La combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto."
   },
   {
    "causa": "H10",
    "titulo": "Selección basada solo en vida nominal",
    "cadena": [
     {
-     "porque": "¿Por qué podría fallar antes de lo esperado? Si esta hipótesis se cumpliera, porque la vida nominal supone condiciones convencionales y no cubre las demás causas de daño.",
+     "porque": "¿Por qué podría fallar antes de lo esperado? Si se cumpliera, porque la vida nominal supone condiciones convencionales y no cubre las demás causas de daño.",
      "evidencia": [
       "E-6003",
       "E-6002"
@@ -280,7 +434,7 @@
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué no se cubrirían? Si se cumpliera, porque la selección no incorporó lubricación, contaminación ni carga reales del servicio.",
+     "porque": "¿Por qué no se cubrirían? Si se cumpliera, porque la selección no incorporó lubricación, contaminación (incluida el agua del prensaestopa) ni carga reales del servicio.",
      "evidencia": [
       "E-6003",
       "E-1202"
@@ -288,7 +442,7 @@
      "nivel": "SINTESIS"
     },
     {
-     "porque": "¿Por qué no las incorporó? Si se cumpliera, porque las condiciones reales (cargas de la bomba, entorno) no se midieron ni documentaron al seleccionar.",
+     "porque": "¿Por qué no las incorporó? Si se cumpliera, porque las condiciones reales no se midieron ni documentaron al seleccionar.",
      "evidencia": [
       "E-1204"
      ],
@@ -309,7 +463,9 @@
      ],
      "nivel": "SINTESIS"
     }
-   ]
+   ],
+   "raiz_a_verificar": "¿Sería la causa raíz que la vida nominal se trata como garantía? Condicional a la memoria de selección.",
+   "nota": ""
   }
  ]
 }

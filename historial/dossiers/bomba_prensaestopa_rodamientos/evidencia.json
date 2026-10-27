@@ -9218,5 +9218,1052 @@
   "aplica_a": "Marco de gestión de activos; NCh-ISO 31000:2018 aparece en el mismo documento",
   "revista_cuartil": null,
   "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2700",
+  "tipo": "otro",
+  "acceso": "texto_completo",
+  "via": "aportado_por_la_persona",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Distribuidor de empaquetaduras (blog comercial)",
+   "anio": null,
+   "titulo": "Cómo evitar el fallo prematuro de la empaquetadura en bombas",
+   "fuente": "Blog de un distribuidor industrial; fragmento pegado por la persona; página no abierta desde el entorno",
+   "url": "",
+   "pais": "Perú",
+   "institucion": "distribuidor comercial"
+  },
+  "extracto": "Cuando instalas los anillos en la caja de empaquetadura, el prensaestopas transfiere una fuerza axial que se convierte en expansión radial contra el eje. Si falta ajuste, el fluido \"lava\" los lubricantes internos de la trenza, acelerando la falla. Si se excede el ajuste, se elimina el goteo necesario (10-60 gotas/min), lo que destruye la película térmica, genera recalentamiento y termina por cristalizar el empaque.",
+  "localizador": "Fragmento pegado por la persona en el mensaje del 2026-10-27",
+  "afirma": "Mecanismo del ajuste del prensaestopa: falta de ajuste lava los lubricantes de la trenza; exceso elimina el goteo y recalienta el empaque.",
+  "limites": "Texto aportado por la persona, sin poder abrir la página original; contenido comercial, no arbitrado; trata fallas de la empaquetadura y no menciona el rodamiento; la cifra de goteo no trae diámetro de eje, presión ni producto y no se usa como umbral. Enlace omitido por ser de un distribuidor.",
+  "aplica_a": "Mecanismo del ajuste de la empaquetadura",
+  "revista_cuartil": null,
+  "nivel_evidencia": "VERIFICADO-TEXTO"
+ },
+ {
+  "id": "E-2500",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "fabricante: pagina de mantenimiento de caja de empaquetadura",
+   "fuente": "fabricante de bombas (pagina de mantenimiento); misma pagina que E-2001, texto de resumen distinto"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen atribuye al fabricante que una fuga excesiva de agua de sellado a lo largo del eje puede contribuir a falla prematura del rodamiento si el agua entra al alojamiento, y que un drenaje de bandeja obstruido permite acumular agua que puede entrar.",
+  "limites": "Texto de fabricante de bombas, sin cifra, sin frecuencia ni poblacion; es afirmacion de servicio, no estudio. Declara posibilidad ('puede contribuir'), no probabilidad.",
+  "aplica_a": "Eslabones fuga de prensaestopa, agua en el soporte y falla del rodamiento (existencia declarada, sin peso). Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2501",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "guia de bombas alojada en servicio de documentos (origen incierto)",
+   "fuente": "documento alojado en un servicio de documentos con sesion; no se accedio"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita que la mayoria de las bombas llevan un deflector (flinger) entre caja de empaquetadura y soporte para evitar que la fuga llegue al rodamiento, y que el soporte actua como sumidero con drenaje.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Origen y autor desconocidos; servicio con sesion, no se accede. No respalda nada.",
+  "aplica_a": "Barreras de diseno entre fuga y rodamiento (deflector, sumidero, drenaje). Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2502",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "tabla de localizacion de averias de bombas (origen no identificado)",
+   "fuente": "pumpfundamentals.com (segun el buscador)",
+   "url": "https://www.pumpfundamentals.com/trouble-shooting%20chart.pdf"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita que un rodamiento cuya temperatura sube sin estabilizarse indica que se debe inspeccionar la empaquetadura; lista gland demasiado apretada o empaquetadura mal instalada como causas.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Autor y fecha no obtenidos; es regla practica de taller.",
+  "aplica_a": "Sintoma de vigilancia (temperatura del rodamiento) ligado a la empaquetadura. Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2503",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "fabricante de empaquetaduras: sellado de equipos grandes (version en portugues)",
+   "fuente": "fabricante de empaquetaduras y sellos (folleto PDF)"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita que la fuga del proceso puede acarrear falla prematura de los rodamientos y corrosion del equipo, y que materiales convencionales de empaquetadura desgastan el eje y aumentan la fuga.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Material comercial que promueve un producto; sin cifra ni poblacion.",
+  "aplica_a": "Eslabon fuga a rodamiento (afirmacion comercial). Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2504",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "fabricante de sellos: caso de planta de agua en Oriente Medio",
+   "fuente": "fabricante de sellos (hoja de caso en espanol)"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen describe un caso en que el diseno laberinto del soporte no impidio que una fuga continua de la empaquetadura llegara al rodamiento, con falla prematura del rodamiento y de la bomba.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Caso comercial unico y no revisado; sin datos de tiempo a la falla; interes comercial en vender sello o aislador.",
+  "aplica_a": "Un caso de campo de la cadena completa (declarado por un fabricante). Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2505",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "articulo de revista tecnica de una universidad corporativa (portugues)",
+   "fuente": "revista tecnica (dominio de empresa)"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen indica que la contaminacion del lubricante seria la causa predominante de falla de rodamientos y que en motores la falla mas comun es en el lado acoplado por agua y polvo en el lubricante.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Se refiere a motores y a contaminacion en general; no a bombas ni a prensaestopa.",
+  "aplica_a": "Peso de la contaminacion como causa de falla de rodamientos (sin cifra). Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2506",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "tesis UNAM sobre fallas de sellos mecanicos en bombas (titulo y autor no obtenidos)",
+   "fuente": "tesis, repositorio de la UNAM (segun el buscador)",
+   "url": "https://ru.dgb.unam.mx/bitstream/20.500.14330/TES01000234540/3/0234540.pdf",
+   "pais": "Mexico"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita que las fallas mas frecuentes en bombas se originan en el sello mecanico, por errores de instalacion, mala especificacion, diseno basico y contaminacion del liquido en la caja. Candidata a leer completa; la otra tesis UNAM del resultado (TES01000094697) no se describio.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Habla de sello mecanico, no de empaquetadura ni de rodamiento. Titulo, autor y anio desconocidos.",
+  "aplica_a": "Peso relativo del sello frente al rodamiento en bombas (cualitativo). Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2507",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "Reliability and Life Data Analysis on the Components of Pump",
+   "fuente": "Atlantis Press (doi segun el buscador)"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita 15 anos de datos de tres bombas, donde los mas fallados son sello mecanico y rodamientos; sello con dano prematuro por el fluido y rodamientos con falla aleatoria.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Tres bombas; autores no obtenidos; no hay empaquetadura. El resumen no dice si la causa del rodamiento fue agua.",
+  "aplica_a": "Peso de rodamiento frente a sello en datos de campo (n pequeno). Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2508",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "estudio de confiabilidad de bombas, congreso (KFUPM)",
+   "fuente": "faculty.kfupm.edu.sa (segun el buscador)",
+   "url": "https://faculty.kfupm.edu.sa/ee/sbaiyat/events/sec2002/vol4/P475.pdf"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita que el mayor numero de fallas se atribuye a sellos, seguido de tiempo de parada por revision general, mal funcionamiento del impulsor y fallas de rodamientos.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Sin cifra en el resumen; autores y anio no obtenidos (el nombre del archivo sugiere 2002, sin verificar).",
+  "aplica_a": "Orden de causas: sello por encima de rodamiento. Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2509",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "articulo en East African Journal of Engineering sobre confiabilidad de bombas (doi segun el buscador)",
+   "fuente": "journals.eanso.org (segun el buscador)",
+   "anio": 2025
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita un orden de causas raiz de factores de confiabilidad: falla de rodamiento primero, falla de tuberia segundo, fuga de sello tercero (sin porcentajes).",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Autores citados por el buscador (Faki y Thomas) no verificados; contexto de agua en Africa oriental; sin cifras; no distingue empaquetadura.",
+  "aplica_a": "Orden de causas: rodamiento por encima de sello (contradice E-2508). Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2510",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "pagina de estadisticas de confiabilidad de bombas (revista tecnica) con conjunto de la asociacion europea de sellado",
+   "fuente": "revista tecnica en linea; cita de segunda mano",
+   "url": "https://reliamag.com/guides/pump-reliability-mtbf-statistics/"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita un conjunto de 3500 fallas de bombas de 18 usuarios con sellos en 60,4 %, y causas raiz de fallas prematuras de sello repartidas en 49 % operacion, 28 % mantenimiento y 23 % ingenieria.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Cifra de segunda mano, sin leer la asociacion; mide sellos, no rodamientos; no se usa como respaldo.",
+  "aplica_a": "Peso de sellos en reparaciones; no del rodamiento ni del agua. Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2511",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "pagina de estadisticas de causas de falla de rodamientos (revista tecnica)",
+   "fuente": "revista tecnica en linea; cita de segunda mano de capacitacion de un fabricante de rodamientos",
+   "url": "https://reliamag.com/guides/bearing-failure-cause-statistics/"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita 36 % lubricacion, 34 % fatiga, 16 % montaje y manejo y 14 % contaminacion de fallas prematuras.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Rodamientos en general, no bombas; agua no separada de contaminacion; cifras de segunda mano. Contradice E-2512 y E-2513 en el peso de la contaminacion.",
+  "aplica_a": "Peso de contaminacion como causa de rodamiento (14 % en esta fuente). Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2512",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "articulo de revista de bombeo sobre lubricacion de precision",
+   "fuente": "revista tecnica en linea",
+   "url": "https://modernpumpingtoday.com/extending-pump-life-precision-lubrication/"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita 47 % de fallas prematuras por contaminacion del lubricante y 11 % por lubricacion incorrecta o ausente, citando a un fabricante de rodamientos.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Cita de segunda mano; poblacion y anio desconocidos; contradice E-2511 (14 % de contaminacion).",
+  "aplica_a": "Peso de contaminacion (47 %) en rodamientos; no separa agua. Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2513",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "nota de revista de accionamientos sobre fallas de rodamientos en bombas",
+   "fuente": "revista tecnica en linea",
+   "url": "https://m.drivesncontrols.com/news/fullstory.php/aid/5784/.html"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita que las fallas de rodamientos son mas de 20 % de las averias de bombas y equipo rotativo, y que en mas de la mitad la causa raiz es contaminacion del aceite; corrosion por contaminacion del aceite 4 %.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Fuente primaria desconocida (el buscador la liga a un estudio de refineria citado por un fabricante de sellos); sin definicion de contaminacion.",
+  "aplica_a": "Peso de contaminacion en rodamientos de bombas (cifra candidata a leer). Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2514",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "noticia: 68 % de fallas de rodamientos de bombas por lubricacion",
+   "fuente": "revista tecnica en linea",
+   "url": "https://reliabilityweb.com/amp/68-of-pump-bearing-failures-are-caused-by-lubrication-related-issues-2656031023"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita 68 % de fallas de rodamientos de bombas relacionadas con lubricacion, con nivel de aceite incorrecto frecuente.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Definicion amplia de lubricacion que probablemente incluye contaminacion; poblacion desconocida.",
+  "aplica_a": "Peso de lubricacion; contradice E-2511. Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2515",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "articulo de revista de confiabilidad sobre agua en rodamientos",
+   "fuente": "revista tecnica en linea",
+   "url": "https://reliamag.com/topics/cartoons/the-bearings-worst-nightmare-why-water-is-the-silent-killer"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita que el agua entra al alojamiento por sellos deteriorados, lavado a presion o condensacion, y que desde unas 500 ppm hay degradacion medible; no menciona prensaestopa.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Texto divulgativo; cifra de ppm sin fuente leida; no vincula fuga de empaquetadura.",
+  "aplica_a": "Via de entrada del agua (varias) y umbral de ppm (candidato). Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2516",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "patente US7878757 de bomba de agua centrifuga",
+   "fuente": "Google Patents (segun el buscador)",
+   "url": "https://patents.google.com/patent/US7878757"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita que las causas tipicas de falla de rodamientos son perdida de lubricacion, contaminacion del lubricante o agua que se fuga a los compartimentos del rodamiento.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Una patente no es estudio de campo; texto de motivacion de una invencion.",
+  "aplica_a": "Existencia del eslabon agua en compartimento, sin peso. Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2517",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "analisis de falla de rodamiento en bomba centrifuga en una planta (caso, Indonesia segun el dominio)",
+   "fuente": "ejournal de una universidad (segun el buscador)",
+   "url": "https://proksima.ejournal.unri.ac.id/index.php/9489/article/view/20"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita desalineacion, lubricacion inadecuada y cargas excesivas como causas raiz, con temperatura y vibracion altas explicando diferencias entre vida calculada y de campo.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Caso unico; el resumen no menciona agua ni prensaestopa; sirve de contraste (otra causa).",
+  "aplica_a": "Causa alternativa a la cadena (desalineacion, lubricacion). Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2518",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "TCC de la UFGD sobre bombas centrifugas",
+   "fuente": "repositorio institucional (segun el buscador)",
+   "url": "https://repositorio.ufgd.edu.br/jspui/bitstream/prefix/5532/1/GuilhermePiesantiIshydeMatos.pdf",
+   "pais": "Brasil"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA: el resumen cita cavitacion, desgaste de piezas, falta de lubricacion e impurezas del fluido como factores de falla de bombas centrifugas.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Trabajo de grado; no menciona prensaestopa ni agua en soporte; autor no verificado.",
+  "aplica_a": "Lista cualitativa de causas alternativas. Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2519",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "manual de mantenimiento de sistemas de bombeo de agua, primera edicion",
+   "fuente": "banco multilateral de desarrollo (publicaciones)",
+   "url": "https://publications.iadb.org/publications/spanish/document/Evaluacion-para-sistemas-de-bombeo-de-agua-Manual-de-mantenimiento.pdf"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA PARA ABRIR: el buscador solo mostro titulo; no se vio contenido sobre empaquetadura ni rodamientos. Candidato a leer.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). No se leyo nada del contenido; no respalda nada.",
+  "aplica_a": "Manual institucional publico por abrir. Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2520",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "tesis UNI Lima 2024 (FMEA de bombas) y 2025 (vibraciones de bomba centrifuga)",
+   "fuente": "repositorio de la UNI; candidatos repositorio.uni.edu.pe/bitstream/20.500.14076/29006/1/sanchez_gl.pdf y .../28106/1/gonzales_pa.pdf (cual es cual no se pudo asignar)",
+   "pais": "Peru"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA PARA ABRIR: segun el buscador una aplica FMEA a bombas de alta criticidad y otra analiza vibraciones de una bomba centrifuga; ninguna se vio con tabla de causas de rodamientos.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). No se leyo nada; no se asigno cual archivo es cual; no respalda nada.",
+  "aplica_a": "Tesis peruanas por abrir con tabla de modos de falla. Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2521",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "articulo de asociacion de talleres de motores: por que fallan las bombas",
+   "fuente": "asociacion de talleres de servicio electromecanico (segun el buscador)",
+   "url": "https://easa.com/resources/trade_press/why-pumps-fail"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA PARA ABRIR: solo titulo y autor; sin contenido visto.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). No se vio contenido; no respalda nada.",
+  "aplica_a": "Revision divulgativa de causas de falla de bombas por abrir. Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2522",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "titulo": "articulo de software de mantenimiento: 40 % de averias de bombas en agua por rodamientos",
+   "fuente": "proveedor de software (marketing)"
+  },
+  "extracto": "",
+  "localizador": "resultado de busqueda web 2026-10-27",
+  "afirma": "PISTA DESCARTADA COMO RESPALDO: el buscador cita 40 % de averias en servicios de agua por rodamientos; otras paginas del mismo proveedor dan 69 % y 36 % para sello y 45 %/25 % atribuidos a un instituto sin verificar.",
+  "limites": "Solo resumen de buscador, pagina no abierta (WebFetch bloqueado por la red, no se evadio). Marketing comercial con cifras contradictorias entre paginas; no se usa.",
+  "aplica_a": "Contradiccion de cifras de peso (se registra para que no se use). Comparabilidad: baja o no evaluable (no leido).",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2600",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Hydraulic Institute (preguntas frecuentes)",
+   "anio": 2020,
+   "titulo": "HI Pump FAQs, Pumps & Systems, noviembre 2020 (titulo de pagina visto: \"Pumps & Systems - November 2020\")",
+   "fuente": "Pumps & Systems, nov. 2020 segun el buscador",
+   "url": "https://www.qgdigitalpublishing.com/article/HI+PUMP+FAQS/3789953/677480/article.html"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que cada aceite tiene su nivel seguro de agua, que no hay un ppm uniforme, da como ejemplo en aceites minerales dano por agua libre entre 400 y 500 ppm a 60 C y agua libre desde 200 ppm a 52 C, y recomienda un lubricador de nivel constante de sistema cerrado con tapon sellante en lugar de respiradero.",
+  "limites": "Pagina de preguntas frecuentes de una asociacion de bombas, no estudio; ejemplos para un aceite mineral no identificado; no es limite de norma. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Limite de agua en aceite de soporte de bomba (c); respiraderos y lubricador (a)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2601",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": null,
+   "titulo": "Understanding bearing housing protection and reliable lubricant application (articulo de revista tecnica en linea)",
+   "fuente": "reliabilityweb.com (fecha no vista)",
+   "url": "https://reliabilityweb.com/articles/entry/understanding_bearing_housing_protection_and_reliable_lubricant_application"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que los soportes respiran por dilatacion y contraccion del gas con la temperatura y aspiran aire humedo en cada ciclo, y recomienda quitar respiraderos y usar lubricadores de nivel constante compensados por presion.",
+  "limites": "Articulo de revista tecnica de mantenimiento sin ensayo visible; autoria y fecha no vistas. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Respiraderos y ciclos termicos como via de agua distinta del prensaestopa (a)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2602",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": 2014,
+   "titulo": "Articulo de revista tecnica de un fabricante de rodamientos sobre sellado de cubos de eje (resumen del buscador; titulo exacto no visto)",
+   "fuente": "Revista de ingenieria de un fabricante (2014 segun el buscador)",
+   "url": ""
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que el agua es atraida al laberinto por tension superficial, que una pelicula de agua en el laberinto puede bloquear mas penetracion con el cubo girando y que queda agua residual al parar; tambien trata desgaste de labio y oxido.",
+  "limites": "Dominio de empresa (url vacia); cubo de eje de vehiculo, no soporte de bomba; no cuantifica eficacia en soporte de bomba. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Comportamiento de un laberinto frente a agua (a); comparabilidad con soporte de bomba: baja",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2603",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": null,
+   "titulo": "Bearing device with seal treatment to reduce water ingress and method thereof (patente US9677604B2)",
+   "fuente": "Patente US9677604B2 (Google Patents)",
+   "url": "https://patents.google.com/patent/US9677604"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que la patente describe que un laberinto de trayecto serpenteante da proteccion limitada contra el agua y que un retén de labio separado es solo parcialmente eficaz; propone tratamiento hidrofobico.",
+  "limites": "Patente: texto de antecedentes del solicitante, sin datos de ensayo visibles; no es estudio revisado por pares. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Limites declarados de laberinto y retén de labio frente a agua (a)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2604",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": null,
+   "titulo": "Sealing device (patente US10344803)",
+   "fuente": "Patente US10344803 (US PPUBS)",
+   "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10344803"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que la patente reporta ejemplos experimentales de vida de sellado con un laberinto: mayor vida si el primer tramo mide al menos 1,5 mm de largo axial y el segundo tramo tiene holgura de 1 mm o menos, y que el bombeo por rotacion expulsa agua con barro.",
+  "limites": "Patente de un dispositivo concreto, con agua con barro; no es soporte de bomba ni prensaestopa; cifras no verificadas en el texto. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Geometria de laberinto y expulsion de agua por rotacion (a)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2605",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": null,
+   "titulo": "Bearing isolators meet tough demands (articulo de revista de la industria de bombas)",
+   "fuente": "Pumps & Systems (fecha no vista)",
+   "url": "https://pumpsandsystems.com/bearing-isolators-meet-tough-demands"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que los aisladores de rodamiento son sellos sin contacto con trayecto tortuoso, fuerza centrifuga y puertos de drenaje, y que no son la seleccion correcta si el soporte puede quedar sumergido.",
+  "limites": "Articulo de revista tecnica sin ensayo comparativo visible; el buscador no halló ensayo de ingreso de agua con aislador, retén y laberinto en soporte de bomba. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Aisladores sin contacto y drenaje (a); comparabilidad con soporte de bomba: media",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2606",
+  "tipo": "tesis",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Marcello Attilio Gracia",
+   "anio": 2003,
+   "titulo": "Avaliacao da contaminacao em oleos lubrificantes de rolamentos atraves da analise do oleo e da assinatura dos sinais de vibracoes",
+   "fuente": "Dissertacion de maestria, Universidad de Sao Paulo (segun el buscador; orientador Linilson Rodrigues Padovese)",
+   "url": "https://www.teses.usp.br/teses/disponiveis/3/3132/tde-19022024-105452/?&lang=en",
+   "pais": "Brasil"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que se midio a la vez el nivel de contaminacion segun ISO 4406 y la vibracion de rodamientos en bano de aceite limpio y contaminado y se compararon con el RMS en bandas de frecuencia; contaminacion de origen fisico (particulas).",
+  "limites": "Contaminacion por particulas, no agua; banco; el buscador no mostro texto integral ni cifras; resumen truncado en la fuente. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Deteccion con aceite mas vibracion (b); ISO 4406 aplicado a rodamientos (c); no cubre agua",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2607",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": null,
+   "titulo": "How to Determine Moisture Limits in Oil (articulo de revista tecnica de lubricacion)",
+   "fuente": "machinerylubrication.com, articulo 30744 (fecha no vista)",
+   "url": "https://www.machinerylubrication.com/Articles/Print/30744"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que los niveles objetivo de humedad dependen de la sensibilidad y criticidad de la maquina, que como referencia para motores sobre 300 ppm se vigila y entre 1500 y 2000 ppm hay alarma, que los aditivos pueden interferir con Karl Fischer y que el limite lo fija normalmente el fabricante.",
+  "limites": "Articulo de revista tecnica; las cifras se dieron como referencia de motores, no de rodamientos de bomba; atribucion de las cifras al articulo viene del resumen del buscador. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Limites practicos de agua en aceite (c); interferencia en la medicion (b)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2608",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": null,
+   "titulo": "Water in Turbine Oil: What is the Suggested Limit? (articulo de revista tecnica de lubricacion)",
+   "fuente": "machinerylubrication.com, articulo 30440 (fecha no vista)",
+   "url": "https://machinerylubrication.com/Articles/Print/30440?id=30440"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que no hay norma que fije el agua permitida en aceite de turbina, que ASTM D4378 trata 1000 ppm como cantidad significativa a condenar, que algunos fabricantes usan 500 ppm de advertencia y que el articulo sugiere fijar limites con Karl Fischer.",
+  "limites": "Aceite de turbina, no de soporte de bomba; atribuciones por resumen de buscador. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Limites de agua en aceite de turbina como referencia comparativa (c)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2609",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": null,
+   "titulo": "Tabla de extension de vida por limpieza y humedad de un fabricante de lubricantes (febrero 2016)",
+   "fuente": "Hoja de ventas de fabricante de lubricantes",
+   "url": ""
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que la tabla da un factor de extension de vida de 2,0 para rodamientos de elementos rodantes al bajar la humedad de 1000 a 250 ppm y cita una revista tecnica como fuente.",
+  "limites": "Dominio de empresa (url vacia); material comercial; origen del factor no verificado; no es ensayo. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Efecto del agua en la vida del rodamiento (c)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2610",
+  "tipo": "paper",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Felsen, McQuaid y Marzani (segun el resumen del buscador)",
+   "anio": 1972,
+   "titulo": "Effect of seawater on the fatigue life and failure distribution of flood-lubricated angular contact ball bearings",
+   "fuente": "ASLE (segun el buscador); registro de base de datos de transporte",
+   "url": "https://trid.trb.org/View/11446"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que la vida a fatiga de contacto cayo hasta 80 por ciento al anadir 1 por ciento de agua de mar en volumen a varios lubricantes y que las fallas pasaron de las bolas a las pistas.",
+  "limites": "Agua de mar en aceite con lubricacion por inundacion, ensayo de banco de 1972; no es grasa ni agua dulce de prensaestopa; titulo y datos vistos solo en listado; el resumen resume el registro. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Efecto del agua en la vida a fatiga (mecanismo) que justifica proteccion y deteccion (a, b)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2611",
+  "tipo": "norma",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "ISO",
+   "anio": 2000,
+   "titulo": "ISO 12937:2000 Petroleum products - Determination of water - Coulometric Karl Fischer titration method",
+   "fuente": "ISO 12937:2000 (copia del catalogo de un organismo de normalizacion)",
+   "url": "https://dgsm.gso.org.sa/store/standards/iso:pub:std:IS:2730/ISO%2012937:2000?lang=en"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador reproduce el alcance: determinacion directa de agua en productos del petroleo que hierven por debajo de 390 C, rango de fraccion masica 0,003 % a 0,100 % (m/m); no aplica a productos con cetonas ni a combustibles residuales; puede aplicar a aceites base lubricantes pero la precision no esta establecida para ellos.",
+  "limites": "Pagina de catalogo, no el documento de la norma; la precision de la clausula 12 y el anexo B no se verificaron; edicion vigente no confirmada. No fija limite alguno de agua para lubricantes. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Metodo de medicion de agua (c): su alcance no cubre bien aceites lubricantes ni grasas",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2612",
+  "tipo": "norma",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "ASTM",
+   "anio": 2016,
+   "titulo": "ASTM D6304-16e1 Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration",
+   "fuente": "ASTM D6304 (edicion 2016 en catalogo; el buscador indica edicion 2025 vigente)",
+   "url": "https://store.astm.org/d6304-16e01.html"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador reproduce el alcance de la edicion 2016: agua entre 10 y 25000 mg/kg en productos del petroleo e hidrocarburos, incluye aceites lubricantes y aditivos, analisis indirecto con gas inerte seco, e interferencias de mercaptanos y sulfuros.",
+  "limites": "Alcance de la edicion 2016 por secundarias; no se abrio la edicion 2025; norma de metodo, no de limite. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Metodo de agua en aceite de lubricacion (b, c)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2613",
+  "tipo": "norma",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "ISO",
+   "anio": 2017,
+   "titulo": "ISO 15243:2017 Rolling bearings - Damage and failures - Terms, characteristics and causes",
+   "fuente": "ISO 15243:2017 (catalogo de un organismo de normalizacion)",
+   "url": "https://genorma.com/en/standards/iso-15243-2017"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que la norma clasifica los modos de falla en servicio de rodamientos de acero estandar, por apariencia y no solo por causa raiz; fuentes secundarias listan corrosion y fallas relacionadas con la lubricacion, pero las listas de categorias difieren entre fuentes.",
+  "limites": "No se vio ninguna clausula de la norma ni limite de agua; la norma clasifica dano y no fija ppm. Ya hay entrada previa de esta norma (E-1520); esta anade solo el alcance visto. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Clasificacion de dano por agua y corrosion (c); no limite de agua",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2614",
+  "tipo": "norma",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "ISO",
+   "anio": 2001,
+   "titulo": "ISO 4406 Hydraulic fluid power - Fluids - Method for coding the level of contamination by solid particles (edicion 2001 en catalogo)",
+   "fuente": "SIST ISO 4406:2001 (catalogo de un organismo de normalizacion)",
+   "url": "https://iteh.es/catalog/standards/sist/b95d029c-b576-4ac4-90da-01f32a73eadf/sist-iso-4406-2001"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador indica que el codigo ISO 4406 clasifica la contaminacion por conteo de particulas solidas, con un paso de codigo equivalente a duplicar la contaminacion; no hallo texto que trate el agua como parte del codigo.",
+  "limites": "Catalogo; no se leyo el alcance ni la clausula de interferencia por agua en contadores opticos (no confirmado). ISO 4406 es de particulas solidas, no de agua. Ya hay entrada previa de la norma (E-2408). Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Aclara que ISO 4406 no es limite de agua (c)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2615",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Blair Fraser (presentacion; segun el buscador)",
+   "anio": null,
+   "titulo": "Gain Deep Insights Into Bearing Health (presentacion alojada en sitio universitario)",
+   "fuente": "rmc.utk.edu, PDF de presentacion (2021 segun la ruta)",
+   "url": "https://rmc.utk.edu/wp-content/uploads/2021/07/Blair_Fraser-Gain_Deep_Insights_Into_Bearing_Health.pdf"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador describe material de proveedor que usa aumentos en dB sobre la linea base: 8 dB como falta de lubricacion, 16 dB como dano de rodamiento y 35 dB como cercano a la falla.",
+  "limites": "Presentacion de proveedor: heuristica sin validacion; no mide agua; no es evidencia segun el protocolo. Cifras no leidas en el documento. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Ultrasonido para deteccion temprana (b); umbrales NO usables hasta leer",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2616",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": 2025,
+   "titulo": "Monitoring of water contamination in lubricants for rotating machines (emision acustica con metodo hibrido IVY-VMD y CNN; titulo recortado por el buscador)",
+   "fuente": "Repositorio de la Universidad de Huddersfield (segun el buscador)",
+   "url": "https://pure.hud.ac.uk/en/publications/monitoring-of-water-contamination-in-lubricants-for-rotating-mach/",
+   "pais": "Reino Unido"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que un estudio de 2025 aborda la humedad en lubricantes de maquinas rotativas con emision acustica y un metodo hibrido IVY-VMD con CNN.",
+  "limites": "Solo titulo y resumen del buscador; metodo, niveles de agua y resultados no vistos; no es bomba ni prensaestopa. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Deteccion de agua en lubricante con emision acustica (b)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2617",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": 2022,
+   "titulo": "Grease Contamination Detection in the Rolling Element Bearing Using Deep Learning Technique",
+   "fuente": "Repositorio institucional ir.vignan.ac.in (segun el buscador)",
+   "url": "https://ir.vignan.ac.in/id/eprint/516/"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que se uso polvo de arena en grasa de rodamientos de bolas y que vibracion con SVM y CNN clasifico bien las fallas por contaminacion del lubricante.",
+  "limites": "Contaminante solido (arena), no agua; banco; modelos de aprendizaje; solo resumen de buscador. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Deteccion de contaminacion de grasa por vibracion (b); no cubre agua",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2618",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": 2005,
+   "titulo": "Contaminacion de aceite con cuarzo y analisis espectral de vibracion en rodamiento (trabajo en actas COBEM 2005; titulo exacto no visto)",
+   "fuente": "Actas COBEM 2005, trabajo 0808 (abcm.org.br)",
+   "url": "https://abcm.org.br/app/webroot/anais/cobem/2005/PDF/COBEM2005-0808.pdf"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que el analisis espectral de acelerometro indico que la contaminacion se puede identificar en bandas de frecuencia concretas de la vibracion.",
+  "limites": "Contaminante de cuarzo, no agua; banco; autoria y titulo no vistos. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Vibracion para contaminacion del lubricante (b); no cubre agua",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2619",
+  "tipo": "tesis",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": 2018,
+   "titulo": "Propuesta de mejora para elementos sellantes de la unidad rotatoria en bomba centrifuga de la zona de caustificacion de una planta de celulosa (palabra clave: sello laberinto)",
+   "fuente": "Tesis, Universidad Tecnica Federico Santa Maria, Chile (segun el buscador)",
+   "url": "https://repositorio.usm.cl/entities/tesis/7d59ea64-f5ec-480a-baca-d99a51a4c1ec/full",
+   "pais": "Chile"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador la senala como tesis de acceso abierto sobre mejora de elementos sellantes de una bomba centrifuga que incluye palabra clave sello laberinto.",
+  "limites": "Solo titulo y palabras clave vistos; no se sabe si trata ingreso de agua al soporte de rodamientos ni si mide eficacia; pista principal para abrir. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Sellado de bomba centrifuga con laberinto (a): pista por abrir",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2620",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": null,
+   "titulo": "Patente de respiradero con desecante para rodamientos (US4177048A) y patente de sistema de lubricacion cerrado (US5129482)",
+   "fuente": "Patentes en Google Patents y US PPUBS",
+   "url": "https://patents.google.com/patent/US4177048A/en"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que una patente de 1978 describe un dispositivo con desecante que alimenta aire seco a los rodamientos para reducir condensacion y oxido y que reconoce que no es posible eliminar toda la humedad del aire; otra patente describe humedad que condensa en paredes de la bomba durante paradas y que pequenas cantidades de agua causan deterioro rapido del rodamiento.",
+  "limites": "Patentes; sin datos de eficacia vistos; dos documentos resumidos en una entrada. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Respiraderos con desecante y sistemas cerrados (a)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2621",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": null,
+   "titulo": "Capacitance measurement in a bearing housing (patentes US9644684 y US9556913)",
+   "fuente": "Patentes en US PPUBS",
+   "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/9644684"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador muestra solo el titulo de dos patentes sobre medicion de capacitancia en un soporte de rodamientos; no se vio su contenido.",
+  "limites": "Solo titulo; no se sabe si miden agua en el aceite; sin datos de desempeno. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Posible sensor de agua en soporte (b): pista por abrir",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2622",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": null,
+   "titulo": "Water contamination in bearing lubrication (articulo de Pumps & Systems; solo titulo y direccion vistos)",
+   "fuente": "Pumps & Systems (fecha no vista)",
+   "url": "https://pumpsandsystems.com/water-contamination-bearing-lubrication"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): solo se vio el titulo y la direccion en el listado del buscador; el contenido no se vio.",
+  "limites": "Contenido desconocido. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Agua en lubricacion de rodamientos de bombas (a, b, c): pista por abrir",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2623",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": null,
+   "titulo": "Manuales de instrucciones en espanol y portugues de bombas centrifugas horizontales de fabricantes (portadas e indices vistos)",
+   "fuente": "Manuales de fabricantes de bombas",
+   "url": ""
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador indica que los indices incluyen mantenimiento de cojinetes, reengrase y requisitos de grasa y control y sustitucion del sello mecanico; no se vio texto sobre deflector, anillo lanzador ni drenaje.",
+  "limites": "Dominios de empresa (url vacia); solo indices; no respaldan ninguna afirmacion sobre eficacia. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Manuales publicos de bombas: pista para buscar anillo deflector y drenaje (a)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2624",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": 2019,
+   "titulo": "The Impact of Water Contamination on Lubricants (documento tecnico de un proveedor de analisis de lubricantes)",
+   "fuente": "Documento tecnico de proveedor (2019 segun la ruta)",
+   "url": ""
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que el agua desplaza la pelicula de aceite y provoca erosion en cojinetes de deslizamiento y acelera oxidacion y corrosion.",
+  "limites": "Dominio de empresa (url vacia); material comercial; no es ensayo. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Mecanismo del agua (b, c)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2625",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": null,
+   "titulo": "Hilo de foro de usuarios: lubricadores de nivel constante y entrada de agua en bombas de una fabrica de papel",
+   "fuente": "Foro de profesionales (pista, no evidencia)",
+   "url": "https://forums.noria.com/topic/constant-level-oilers-cause-problems"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador dice que un usuario atribuyo la entrada de agua a lubricadores ventilados y que la sustitucion por tubos de nivel y tapones cerrados en 30 a 40 bombas no dio problemas en un ano, apoyado en aisladores de laberinto.",
+  "limites": "Foro: anecdota sin control; no es evidencia segun el protocolo; sin autor. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Respiraderos y lubricadores como via de agua (a): solo pista",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2626",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Maru, Serrato Castillo y Padovese (segun el buscador)",
+   "anio": 2007,
+   "titulo": "Study of solid contamination in ball bearings through vibration and wear analyses (Maru, Serrato Castillo y Padovese; Tribology International 40(3), 433-440 segun el buscador)",
+   "fuente": "Repositorio de la Universidad de Sao Paulo (bdpi.usp.br)",
+   "url": "https://bdpi.usp.br/item/001642689",
+   "pais": "Brasil"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador lo lista como trabajo del mismo grupo sobre contaminacion por solidos con analisis de vibracion y desgaste.",
+  "limites": "Contaminacion por solidos, no agua; solo titulo y metadatos; el tipo (articulo) se registra como otro. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Contexto de deteccion por vibracion (b)",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-2627",
+  "tipo": "norma",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-10-27",
+  "referencia": {
+   "autores": "Autoria no visible en el resumen",
+   "anio": null,
+   "titulo": "DIN 51639-5 (borrador): agua en lubricantes en servicio, rango de 100 a 5000 mg/kg (segun resumen del buscador; vinculo de pagina no confirmado)",
+   "fuente": "DIN (catalogo de normas)",
+   "url": "https://din.de/en/wdc-proj:din21:370970249"
+  },
+  "extracto": "",
+  "localizador": "",
+  "afirma": "SOLO-SNIPPET (pagina no abierta): el resumen del buscador menciona una norma DIN 51639-5 en borrador que cubriria de 100 a 5000 mg/kg de agua en lubricantes en servicio.",
+  "limites": "La correspondencia entre la pagina y esta afirmacion no se confirmo; estado de borrador; metodo, no limite. Texto no leido; solo resumen de buscador; no respalda cifras ni entregables hasta abrir la fuente.",
+  "aplica_a": "Metodo de agua en lubricantes en servicio (b, c): por verificar",
+  "revista_cuartil": null,
+  "nivel_evidencia": "SOLO-SNIPPET"
  }
 ]

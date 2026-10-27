@@ -92,6 +92,76 @@
   ]
  },
  {
+  "id": "ppro-CF-P1",
+  "valor": "400 a 500",
+  "unidad": "ppm",
+  "mide": "Inicio de dano por agua libre en algunos aceites minerales a 60 C segun la FAQ (ejemplo, no limite)",
+  "condiciones": "SOLO-SNIPPET; aceite mineral no identificado",
+  "evidencia": [
+   "E-2600"
+  ]
+ },
+ {
+  "id": "ppro-CF-P2",
+  "valor": "0,003 a 0,100",
+  "unidad": "% m/m",
+  "mide": "Rango de fraccion masica del metodo ISO 12937 para productos ligeros del petroleo",
+  "condiciones": "SOLO-SNIPPET; precision no establecida para aceites base; no es limite de agua",
+  "evidencia": [
+   "E-2611"
+  ]
+ },
+ {
+  "id": "ppro-CF-P3",
+  "valor": "10 a 25000",
+  "unidad": "mg/kg",
+  "mide": "Rango de agua del metodo ASTM D6304 edicion 2016",
+  "condiciones": "SOLO-SNIPPET; secundarias",
+  "evidencia": [
+   "E-2612"
+  ]
+ },
+ {
+  "id": "ppro-CF-P4",
+  "valor": "1000 / 500",
+  "unidad": "ppm",
+  "mide": "Referencias en aceite de turbina: ASTM D4378 (condenar) y advertencia de algunos fabricantes",
+  "condiciones": "SOLO-SNIPPET; turbinas, no soporte de bomba",
+  "evidencia": [
+   "E-2608"
+  ]
+ },
+ {
+  "id": "ppro-CF-P5",
+  "valor": "8 / 16 / 35",
+  "unidad": "dB sobre linea base",
+  "mide": "Heuristicas de proveedor de ultrasonido (falta de lubricacion / dano / cercano a falla)",
+  "condiciones": "SOLO-SNIPPET; sin validacion; no mide agua; NO usable como umbral",
+  "evidencia": [
+   "E-2615"
+  ]
+ },
+ {
+  "id": "ppro-CF-P6",
+  "valor": "80",
+  "unidad": "%",
+  "mide": "Reduccion de vida a fatiga con 1 % de agua de mar en volumen (ensayo de banco, 1972, aceite)",
+  "condiciones": "SOLO-SNIPPET; no es grasa ni agua dulce",
+  "evidencia": [
+   "E-2610"
+  ]
+ },
+ {
+  "id": "ppro-CF-P7",
+  "valor": "2,0",
+  "unidad": "factor de vida",
+  "mide": "Factor de extension de vida al bajar de 1000 a 250 ppm de humedad en rodamientos rodantes (tabla de fabricante)",
+  "condiciones": "SOLO-SNIPPET; material comercial",
+  "evidencia": [
+   "E-2609"
+  ]
+ },
+ {
   "id": "hmon-CF-01",
   "valor": "12.8",
   "unidad": "kHz",

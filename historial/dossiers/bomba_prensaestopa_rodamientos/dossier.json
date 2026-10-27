@@ -1,5 +1,5 @@
 {
- "modo_falla": "rodamientos de bomba con prensaestopa",
+ "modo_falla": "falla del paquete de rodamientos de bombas con prensaestopa",
  "secciones": {
   "mediciones": {
    "elementos": [
@@ -40,6 +40,14 @@
   },
   "fenomenos": {
    "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Mecanismo del ajuste del prensaestopa: la fuerza axial se convierte en expansión radial; con falta de ajuste el fluido lava los lubricantes de la trenza y con exceso se elimina el goteo, se recalienta y cristaliza el empaque",
+     "evidencia": [
+      "E-2700"
+     ],
+     "limite": "Fuente comercial aportada por la persona; describe la empaquetadura, no el rodamiento; sin umbral usable de goteo."
+    },
     {
      "tipo": "afirmacion",
      "titulo": "Causas de falla de rodamientos: contaminacion, mala lubricacion y montaje inadecuado",
@@ -262,6 +270,7 @@
       "E-2354",
       "E-2355",
       "E-2356",
+      "E-2700",
       "E-6002",
       "E-6003",
       "E-6004",
@@ -310,6 +319,7 @@
       "E-9524",
       "E-9525",
       "E-9601",
+      "E-9603",
       "E-9604",
       "E-9612"
      ],

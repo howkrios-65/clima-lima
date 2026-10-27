@@ -1,9 +1,200 @@
 {
  "items": [
   {
+   "hipotesis": "H12",
+   "discrimina": "A",
+   "sintoma": "Agua, emulsión o aspecto lechoso en el lubricante retirado (aceite turbio, grasa blanda o con gotas).",
+   "medicion": "Inspección al desmontar y determinación de agua en el lubricante (técnica a definir con el laboratorio).",
+   "referencia": null,
+   "evidencia": [
+    "E-1203"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H12",
+   "discrimina": "A",
+   "sintoma": "Herrumbre, corrosión o picaduras en las pistas y elementos rodantes, con patrón repetido a la separación de los elementos rodantes.",
+   "medicion": "Inspección visual y con aumento de las pistas tras desmontar (el patrón es razonamiento del equipo).",
+   "referencia": "Corrosión causada por contaminación como origen de falla prematura de rodamientos de bolas de bombas (E-6004).",
+   "evidencia": [
+    "E-6004"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H12",
+   "discrimina": "A",
+   "sintoma": "Grasa lavada, emulsionada o ausente de la zona de rodadura; jaula limpia o sin película.",
+   "medicion": "Estado de la grasa en cada lado del rodamiento y en el alojamiento.",
+   "referencia": "La película lubricante separa los elementos rodantes para evitar el contacto entre asperezas (E-1203).",
+   "evidencia": [
+    "E-1203"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H12",
+   "discrimina": "A",
+   "sintoma": "Huella de contacto difusa con desgaste uniforme por falta de película y sin coloración térmica.",
+   "medicion": "Inspección de pistas (razonamiento del equipo).",
+   "referencia": null,
+   "evidencia": [
+    "E-6004"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H12",
+   "discrimina": "A",
+   "sintoma": "Goteo continuo o chorro por el prensaestopa antes de la parada; empaquetadura retirada blanda, lavada o sin lubricante.",
+   "medicion": "Registro de ronda y estado de la empaquetadura retirada.",
+   "referencia": "Con falta de ajuste el fluido lava los lubricantes internos de la trenza (E-2700).",
+   "evidencia": [
+    "E-2700"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H12",
+   "discrimina": "A",
+   "sintoma": "Drenaje de la caja o bandeja bloqueado, con agua acumulada o huellas de agua en el soporte (óxido en la carcasa, restos de humedad).",
+   "medicion": "Inspeccionar el drenaje y el recorrido del agua hacia el soporte.",
+   "referencia": null,
+   "evidencia": [
+    "E-6004"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H12",
+   "discrimina": "A",
+   "sintoma": "Retenes, deflectores o tapas del soporte deteriorados, desplazados o ausentes.",
+   "medicion": "Inspección de las barreras del alojamiento.",
+   "referencia": null,
+   "evidencia": [
+    "E-6004",
+    "E-1201"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H12",
+   "discrimina": "A",
+   "sintoma": "Temperatura del soporte estable, sin tendencia creciente, mientras el lubricante muestra agua.",
+   "medicion": "Tendencia de temperatura comparada con la línea base del propio activo.",
+   "referencia": null,
+   "evidencia": [
+    "E-1201",
+    "E-6004"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H13",
+   "discrimina": "B",
+   "sintoma": "Sin goteo o con goteo mínimo en el prensaestopa antes de la parada; empaquetadura retirada dura, quebradiza, oscurecida o cristalizada.",
+   "medicion": "Registro de ronda y examen de la empaquetadura retirada.",
+   "referencia": "Con exceso de ajuste se elimina el goteo, hay recalentamiento y el empaque cristaliza (E-2700).",
+   "evidencia": [
+    "E-2700"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H13",
+   "discrimina": "B",
+   "sintoma": "Camisa del eje con surco, rayado, coloración azul o desgaste en la zona de empaquetadura.",
+   "medicion": "Inspección visual y rugosidad de la camisa; medición de excentricidad del eje (razonamiento del equipo).",
+   "referencia": null,
+   "evidencia": [
+    "E-2700"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H13",
+   "discrimina": "B",
+   "sintoma": "Soporte con temperatura que sube y no se estabiliza, o más caliente del lado del prensaestopa.",
+   "medicion": "Termografía o medición de contacto comparada con el histórico del propio activo y con el otro lado del soporte.",
+   "referencia": null,
+   "evidencia": [
+    "E-1203"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H13",
+   "discrimina": "B",
+   "sintoma": "Grasa oscurecida, endurecida o quemada y coloración térmica en pistas, jaula o anillos.",
+   "medicion": "Inspección del lubricante y de las pistas tras desmontar.",
+   "referencia": "El sobrecalentamiento figura como causa de falla prematura de rodamientos de bolas de bombas (E-6004).",
+   "evidencia": [
+    "E-6004"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H13",
+   "discrimina": "B",
+   "sintoma": "Huella de carga localizada en la pista o desgaste asimétrico compatible con deflexión del eje.",
+   "medicion": "Inspección de pistas y medición de excentricidad o flecha del eje (razonamiento del equipo).",
+   "referencia": "La carga excesiva figura entre las causas de daño (E-6002).",
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H13",
+   "discrimina": "B",
+   "sintoma": "Lubricante sin agua y pistas sin corrosión, con señales térmicas.",
+   "medicion": "Combinación de las observaciones anteriores.",
+   "referencia": null,
+   "evidencia": [
+    "E-1203",
+    "E-2700"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H12",
+   "discrimina": "ninguna",
+   "sintoma": "Si ni agua ni señales térmicas aparecen, el prensaestopa pierde peso como causa y se pasa a las demás hipótesis (H1, H3, H4, H5, H6, H7).",
+   "medicion": "Resumen del examen post mortem.",
+   "referencia": null,
+   "evidencia": [
+    "E-1201",
+    "E-6004"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H14",
+   "discrimina": "ambas",
+   "sintoma": "Ausencia de rutina de inspección de fuga, criterio de ajuste o registro del último ajuste.",
+   "medicion": "Revisar rutas de ronda, instrucción de ajuste y órdenes del activo.",
+   "referencia": null,
+   "evidencia": [
+    "E-2700"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H14",
+   "discrimina": "ambas",
+   "sintoma": "Plan de mantenimiento sin tarea sobre el drenaje, los retenes del soporte o la camisa.",
+   "medicion": "Revisar el plan y el historial de órdenes.",
+   "referencia": null,
+   "evidencia": [
+    "E-6004"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
    "hipotesis": "H1",
    "sintoma": "Lubricante retirado seco, degradado, decolorado o con partículas",
-   "medicion": "Inspección del lubricante al desmontar y análisis de aceite o grasa (síntoma y medición: razonamiento del equipo; las fuentes respaldan el contexto, no el síntoma exacto)",
+   "medicion": "Inspección del lubricante al desmontar y análisis de aceite o grasa (síntoma y medición: razonamiento del equipo)",
    "referencia": null,
    "evidencia": [
     "E-6004",
@@ -54,7 +245,7 @@
   },
   {
    "hipotesis": "H2",
-   "sintoma": "Partículas en el lubricante (el agua no consta en E-6004 ni E-1201; razonamiento del equipo)",
+   "sintoma": "Partículas o agua en el lubricante (el agua no consta en E-6004 ni E-1201; razonamiento del equipo)",
    "medicion": "Análisis del lubricante retirado",
    "referencia": null,
    "evidencia": [
@@ -65,7 +256,7 @@
   },
   {
    "hipotesis": "H2",
-   "sintoma": "Barreras del alojamiento del rodamiento deterioradas o desplazadas",
+   "sintoma": "Barreras del alojamiento deterioradas o desplazadas",
    "medicion": "Inspección de retenes y tapas, y limpieza de puertos de engrase",
    "referencia": null,
    "evidencia": [
@@ -117,7 +308,7 @@
   {
    "hipotesis": "H4",
    "sintoma": "Ajuste fuera de especificación",
-   "medicion": "Medir diámetros de eje y alojamiento y comparar con la tolerancia del fabricante del rodamiento (medición: razonamiento del equipo)",
+   "medicion": "Medir diámetros de eje y alojamiento y comparar con la tolerancia del fabricante (medición: razonamiento del equipo)",
    "referencia": null,
    "evidencia": [
     "E-6004",
@@ -158,7 +349,7 @@
   {
    "hipotesis": "H6",
    "sintoma": "Daño acelerado o calentamiento local compatible con carga muy alta",
-   "medicion": "Huella de carga en la pista del rodamiento retirado y comparación de cargas reales con las de diseño",
+   "medicion": "Huella de carga en la pista y comparación de cargas reales con las de diseño",
    "referencia": "En un banco acelerado, la carga muy alta acelera la degradación y arriesga calentamiento local (E-1204).",
    "evidencia": [
     "E-1204",
@@ -170,7 +361,7 @@
    "hipotesis": "H7",
    "sintoma": "Horas de servicio cercanas o superiores a la vida nominal calculada con la carga real",
    "medicion": "Comparar horas acumuladas con la vida nominal",
-   "referencia": "Vida nominal básica: valor que el 90 % de una población de rodamientos idénticos alcanza o supera, en condiciones convencionales (E-6003); L10 es el número de horas antes de que falle el 10 % de un grupo de rodamientos idénticos a velocidad constante (E-1202).",
+   "referencia": "L10 es el número de horas antes de que falle el 10% de un grupo de rodamientos idénticos a velocidad constante (E-1202); la vida nominal básica supone condiciones convencionales (E-6003).",
    "evidencia": [
     "E-6003",
     "E-1202"
@@ -212,7 +403,7 @@
    "hipotesis": "H9",
    "sintoma": "Kurtosis que baja a valores normales mientras el defecto avanza",
    "medicion": "Graficar kurtosis junto con envolvente en el tiempo",
-   "referencia": "Criterio citado en una revisión: kurtosis menor que 3 buen estado, mayor que 3 operación con restricciones, mayor que 5 inaceptable; los autores no hallaron sustento teórico ni empírico de estos límites y NO deben usarse como umbral (E-8001).",
+   "referencia": "Criterio citado en una revisión: kurtosis menor que 3 buen estado, mayor que 3 operación con restricciones, mayor que 5 inaceptable; los autores no hallaron sustento de estos límites y NO deben usarse como umbral (E-8001).",
    "evidencia": [
     "E-8003",
     "E-8001"
@@ -263,9 +454,32 @@
    "nivel": "SINTESIS"
   }
  ],
+ "discriminacion": [
+  {
+   "observacion": "Agua o emulsión en el lubricante + corrosión en pistas + grasa lavada + goteo continuo + drenaje bloqueado",
+   "orienta_a": "Ruta A (H12)",
+   "nota": "Cada observación sola es compatible con H2; la combinación con el estado del prensaestopa es lo que orienta. SINTESIS."
+  },
+  {
+   "observacion": "Sin goteo + trenza cristalizada o dura + camisa con huella térmica + soporte con temperatura creciente + grasa quemada + huella de carga",
+   "orienta_a": "Ruta B (H13)",
+   "nota": "Cada observación sola es compatible con H1, H4 o H6. SINTESIS."
+  },
+  {
+   "observacion": "Lubricante sin agua, pistas sin corrosión ni señales térmicas, y empaquetadura y camisa en buen estado",
+   "orienta_a": "Ni A ni B: pasar a H1, H3, H4, H5, H6, H7",
+   "nota": "Descarta el prensaestopa como vía solo si el drenaje y las barreras también estaban sanos."
+  },
+  {
+   "observacion": "Agua y señales térmicas a la vez",
+   "orienta_a": "Ambas rutas o secuencia (por ejemplo ajuste excesivo seguido de desajuste y fuga)",
+   "nota": "Reconstruir la línea de tiempo de ajustes con el historial de órdenes."
+  }
+ ],
  "vacios": [
-  "Valores de referencia (umbrales de temperatura, vibración, corriente, contaminación, caudal, presión y NPSH): SIN DATOS PARA ARMARLO; se fijan con el fabricante o con datos del activo.",
-  "Qué observar para cavitación, recirculación, sellos mecánicos, anillos de desgaste, golpe de ariete y fatiga de eje de la bomba: SIN DATOS PARA ARMARLO. Pistas no leídas: E-1104, E-1105, E-1106, E-1107, E-1108, E-1315, E-1212, E-1213, E-1113, E-1112, E-1109.",
+  "Valores de referencia (umbrales de temperatura, vibración, corriente, contaminación, goteo, caudal, presión y NPSH): SIN DATOS PARA ARMARLO; se fijan con el fabricante o con datos del activo. La cifra de goteo de E-2700 no se usa como umbral.",
+  "Síntomas de la ruta A y B más allá del mecanismo de la empaquetadura (E-2700) y de las causas generales de rodamientos (E-6004): sin fuente leída. Pistas por abrir: E-2500, E-2502, E-2503, E-2504, E-2000, E-2001, E-2002, E-2003, E-2004; E-2005 sin verificar.",
+  "Qué observar para cavitación, recirculación, sellos mecánicos, anillos de desgaste, golpe de ariete y fatiga de eje: SIN DATOS PARA ARMARLO. Pistas no leídas: E-1104 a E-1113, E-1315, E-1212, E-1213.",
   "Síntomas de desalineación propios de bomba en el espectro: SIN DATOS PARA ARMARLO. Pistas no leídas: E-1110, E-1111.",
   "Técnicas post mortem del rodamiento y normas de ensayo aplicables: sin fuente leída ni consulta del registro de normas en este análisis."
  ]

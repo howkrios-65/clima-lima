@@ -1,0 +1,250 @@
+{
+ "elementos": [
+  {
+   "id": "C1",
+   "nombre": "empaquetadura",
+   "tipo": "costo a aportar",
+   "como_se_calcula": "precio de compra, cantidad por reempaque (por juego o por metro)",
+   "evidencia": []
+  },
+  {
+   "id": "C2",
+   "nombre": "agua de sellado",
+   "tipo": "costo a aportar",
+   "como_se_calcula": "caudal de sellado por bomba (litros por minuto), horas de operacion, costo de agua, tratamiento y disposicion del efluente (por metro cubico)",
+   "evidencia": []
+  },
+  {
+   "id": "C3",
+   "nombre": "camisa del eje",
+   "tipo": "costo a aportar",
+   "como_se_calcula": "precio, vida observada, horas de cambio, si se cambia en cada reempaque o por desgaste medido (por pieza)",
+   "evidencia": []
+  },
+  {
+   "id": "C4",
+   "nombre": "rodamiento",
+   "tipo": "costo a aportar",
+   "como_se_calcula": "precio de ambos lados del soporte, tipo y designacion, costo de mantener existencia (por pieza o par)",
+   "evidencia": []
+  },
+  {
+   "id": "C5",
+   "nombre": "mano de obra",
+   "tipo": "costo a aportar",
+   "como_se_calcula": "tarifa cargada, horas por tarea: ajuste, reempaque, cambio de rodamiento planificado y correctivo, cambio de sello, inspeccion (por hora)",
+   "evidencia": []
+  },
+  {
+   "id": "C6",
+   "nombre": "parada",
+   "tipo": "costo a aportar",
+   "como_se_calcula": "valor de la hora parada o lucro cesante, horas de parada planificada y no planificada, existencia de bomba de reserva (si la hay, el costo de parada puede ser distinto) (por hora de indisponibilidad)",
+   "evidencia": []
+  },
+  {
+   "id": "C7",
+   "nombre": "lubricante",
+   "tipo": "costo a aportar",
+   "como_se_calcula": "tipo (aceite o grasa), volumen por carga, frecuencia de reposicion o cambio (por litro o por kg)",
+   "evidencia": []
+  },
+  {
+   "id": "C8",
+   "nombre": "analisis de aceite",
+   "tipo": "costo a aportar",
+   "como_se_calcula": "costo del laboratorio, toma de muestra, frecuencia, numero de bombas (por muestra)",
+   "evidencia": []
+  },
+  {
+   "id": "C9",
+   "nombre": "proteccion del soporte",
+   "tipo": "costo a aportar",
+   "como_se_calcula": "precio, instalacion, vida, necesidad de revision (por unidad)",
+   "evidencia": []
+  },
+  {
+   "id": "C10",
+   "nombre": "sello alternativo (O3)",
+   "tipo": "costo a aportar",
+   "como_se_calcula": "precio, instalacion, adaptacion de la caja, repuestos, vida esperada segun el fabricante (como dato del proveedor, rotulado) (por unidad)",
+   "evidencia": []
+  },
+  {
+   "id": "C11",
+   "nombre": "parametros financieros",
+   "tipo": "costo a aportar",
+   "como_se_calcula": "tasa de descuento declarada y horizonte (tasa y anios)",
+   "evidencia": []
+  },
+  {
+   "id": "C12",
+   "nombre": "consecuencias de falla",
+   "tipo": "costo a aportar",
+   "como_se_calcula": "seguridad, ambiente y calidad, si la persona las cuantifica; si no, se listan sin cifra (por evento)",
+   "evidencia": []
+  }
+ ],
+ "formulas": [
+  {
+   "nombre": "Edad óptima de reemplazo del rodamiento",
+   "expresion": "T* que minimiza la tasa de costo por hora con beta, eta, c_p y c_f; solo existe mínimo interior si beta > 1 y c_f > c_p"
+  },
+  {
+   "nombre": "Costo anual equivalente",
+   "expresion": "EAC = VPN * r / (1 - (1 + r)^(-n))"
+  },
+  {
+   "nombre": "MTBR por posición",
+   "expresion": "horas de operación acumuladas de la posición / número de retiros"
+  }
+ ],
+ "kpis": [
+  {
+   "id": "K1",
+   "nombre": "Tiempo medio entre retiros de rodamiento por posicion (MTBR)",
+   "definicion": "Horas de operacion acumuladas de la posicion entre numero de retiros de rodamiento. Es un indicador de sistema reparable por posicion, no una vida util.",
+   "formula": "MTBR_pos = horas de operacion acumuladas de la posicion (incluyendo el tramo aun sin retiro) / numero de retiros en la posicion",
+   "fuente_de_datos": "ordenes de trabajo con codigo de retiro de rodamiento, registro de horas de operacion, fecha de instalacion",
+   "frecuencia": "trimestral, con fecha de corte",
+   "dueno": "a definir (confiabilidad o mantenimiento)",
+   "umbral": "definir con la persona; convencion local",
+   "decision": "Posiciones con MTBR menor al de su grupo pasan a analisis de causa y a la comparacion con y sin proteccion. Para vida con censura se usa Weibull o Kaplan-Meier, no este cociente.",
+   "trampas": "censura; mezclar posiciones; contar retiros por paradas planificadas o por otra causa; MTBF no es vida util"
+  },
+  {
+   "id": "K2",
+   "nombre": "Proporcion de retiros con agua hallada al desmontar",
+   "definicion": "Retiros de rodamiento en los que se registro agua, oxidacion o lubricante emulsionado sobre el total de retiros con hallazgo registrado.",
+   "formula": "P_agua = retiros con agua hallada / retiros con hallazgo registrado (el denominador excluye los desconocidos, que se reportan aparte)",
+   "fuente_de_datos": "formato de desmontaje con campos obligatorios; fotos; analisis de aceite",
+   "frecuencia": "mensual y acumulado",
+   "dueno": "a definir",
+   "umbral": "definir con la persona",
+   "decision": "Si P_agua es alta, se prioriza la via de contaminacion por fuga (ajuste, proteccion del soporte, cambio de sello); si es baja, se baja la prioridad de esa hipotesis y se investigan otras causas.",
+   "trampas": "sesgo de registro (solo se anota cuando se ve); denominador pequeno: reportar el numero absoluto y un intervalo"
+  },
+  {
+   "id": "K3",
+   "nombre": "Goteo fuera de rango por inspeccion",
+   "definicion": "Inspecciones en las que el goteo del prensaestopa esta fuera del rango definido por la planta, sobre el total de inspecciones realizadas.",
+   "formula": "P_goteo_fuera = inspecciones con goteo fuera de rango / inspecciones realizadas, por bomba y periodo",
+   "fuente_de_datos": "ronda de inspeccion con escala de goteo definida (por ejemplo gotas por minuto o litros por hora, a definir) y fecha",
+   "frecuencia": "semanal o por ronda",
+   "dueno": "a definir (operacion o mantenimiento)",
+   "umbral": "definicion local: el rango de goteo aceptable lo fija la persona; no hay valor con fuente en esta base",
+   "decision": "Goteo bajo (sobreajuste) o alto (fuga hacia el soporte) dispara el ajuste, el reempaque o la revision del sello segun el arbol de decision; sostenido dispara el analisis de O1 frente a O2 y O3.",
+   "trampas": "inspecciones no realizadas contadas como en rango; escala distinta entre inspectores"
+  },
+  {
+   "id": "K4",
+   "nombre": "Ajustes del prensaestopa por bomba y periodo",
+   "definicion": "Numero de intervenciones de ajuste de la empaquetadura por bomba en un periodo, con fecha y motivo.",
+   "formula": "N_ajustes = conteo de ordenes o registros de ajuste por bomba / periodo; opcional: ajustes por 1000 horas de operacion",
+   "fuente_de_datos": "ordenes de trabajo y hoja de ronda",
+   "frecuencia": "mensual",
+   "dueno": "a definir",
+   "umbral": "definir con la persona",
+   "decision": "Muchos ajustes seguidos de retiro de rodamiento apoyan la hipotesis del ajuste como causa y activan el reempaque o el cambio de sello; sin ajustes, el efecto no se puede evaluar.",
+   "trampas": "ajustes no registrados; ajuste correctivo y de rutina mezclados"
+  },
+  {
+   "id": "K5",
+   "nombre": "Tiempo entre deteccion de fuga y correccion",
+   "definicion": "Horas o dias desde la primera anotacion de goteo fuera de rango hasta la correccion verificada.",
+   "formula": "T_corr = fecha y hora de correccion verificada - fecha y hora de deteccion; reportar mediana y percentil alto, por bomba",
+   "fuente_de_datos": "rondas de inspeccion y orden de trabajo de correccion",
+   "frecuencia": "mensual",
+   "dueno": "a definir",
+   "umbral": "definir con la persona",
+   "decision": "Si el tiempo es largo y coincide con retiros por agua, se cambia la prioridad de la orden o se adelanta el reempaque o el cambio de sello.",
+   "trampas": "fugas sin fecha de detección; correcciones sin verificacion"
+  },
+  {
+   "id": "K6",
+   "nombre": "Costo por hora de operacion",
+   "definicion": "Costo de mantenimiento y operacion atribuible al conjunto prensaestopa y soporte por hora de operacion, en la moneda y fecha de referencia aportadas.",
+   "formula": "CHO = (empaquetadura + camisa + rodamiento + lubricante + analisis de aceite + mano de obra + agua de sellado + costo de parada) / horas de operacion, por bomba y periodo; se informa con y sin costo de parada",
+   "fuente_de_datos": "ordenes con costos cargados, almacen, factura de agua, hoja de parada",
+   "frecuencia": "trimestral",
+   "dueno": "a definir",
+   "umbral": "definir con la persona",
+   "decision": "Alimenta la comparacion de EAC de O1, O2 y O3 y la decision de proteger el soporte; no dispara nada si no hay costos aportados.",
+   "trampas": "ordenes sin costo; asignar costos compartidos sin criterio declarado"
+  },
+  {
+   "id": "K7",
+   "nombre": "Disponibilidad inherente de la bomba",
+   "definicion": "Disponibilidad que excluye demoras logisticas y mantenimiento preventivo.",
+   "formula": "A_i = MTBF / (MTBF + MTTR) (kit: inherent_availability). Se aclara que no es disponibilidad alcanzada ni operacional.",
+   "fuente_de_datos": "ordenes correctivas con duracion de reparacion",
+   "frecuencia": "trimestral",
+   "dueno": "a definir",
+   "umbral": "definir con la persona",
+   "decision": "Cuantifica el efecto de cada opcion sobre indisponibilidad para el costo de parada.",
+   "trampas": "MTTR con o sin diagnostico y espera de repuesto: se adopta la version que la persona elija y se anota"
+  },
+  {
+   "id": "K8",
+   "nombre": "Repetidores cronicos de retiro de rodamiento",
+   "definicion": "Bombas o posiciones con varios retiros del mismo codigo en una ventana.",
+   "formula": "Kit: chronic_repeaters con min_repeats y ventana declarados; definicion local de repeticion, porque no hay formula con fuente abierta en esta base",
+   "fuente_de_datos": "ordenes con codigo de falla y fecha",
+   "frecuencia": "mensual",
+   "dueno": "a definir",
+   "umbral": "definicion local",
+   "decision": "Lista de posiciones para analisis de causa y para el piloto de proteccion del soporte.",
+   "trampas": "codigos de falla inconsistentes"
+  }
+ ],
+ "estructura": {
+  "nota": "Ninguna cifra de costo, tasa ni vida fue aportada ni esta literal en un id VERIFICADO del registro. Todo lo siguiente es estructura y formula; las celdas numericas quedan PENDIENTES. Rotulo de las formulas: SINTESIS (formula estandar de ingenieria, sin texto citado leido en el registro).",
+  "unidad_de_decision": "Una posicion de rodamiento del soporte de una bomba (lado acople y lado libre se separan). Horizonte y tasa de descuento: declarados por la persona.",
+  "elementos_de_costo_por_opcion": [
+   "adquisicion (rodamiento, empaquetadura o sello, camisa, lubricante inicial)",
+   "operacion (agua de sellado, lubricante de reposicion, energia por friccion si la persona la quiere incluir)",
+   "mantenimiento preventivo (ajustes del prensaestopa, reempaque, inspecciones, analisis de aceite)",
+   "costo de falla del rodamiento (rodamiento, camisa u otros danos asociados, mano de obra correctiva, parada, lucro cesante, consecuencias)",
+   "fin de vida o instalacion (cambio a otro sello: obra, adaptacion de la caja, puesta en marcha)"
+  ],
+  "escenarios_rodamiento": {
+   "A_sin_proteccion_del_soporte": "Rodamiento expuesto a fuga del prensaestopa hacia el soporte. Vida con parametros beta_A, eta_A estimados de retiros por posicion en ese periodo.",
+   "B_con_proteccion_del_soporte": "Con protector o deflector del soporte (tipo a definir por la persona). Vida con beta_B, eta_B de las posiciones o periodo con proteccion. Costo extra de adquisicion e instalacion de la proteccion entra como c_proteccion.",
+   "comparacion_de_vidas": "Si hay datos de ambos grupos: kaplan_meier y logrank_test por grupo (censurando los rodamientos aun en servicio). Con pocos retiros, el resultado es exploratorio y se dice."
+  },
+  "edad_optima_de_reemplazo_del_rodamiento": {
+   "formula": "C(T) = [c_p*R(T) + c_f*(1-R(T))] / integral de 0 a T de R(t) dt, con R(t)=exp(-(t/eta)^beta). Costo por hora sin prevencion: c_f / (eta*Gamma(1+1/beta)). Fuente de la formula: el propio kit (age_replacement_cost_rate), de tipo Barlow-Proschan; SINTESIS (formula estandar de ingenieria, sin texto citado leido en el registro) hasta citar texto.",
+   "condicion": "Solo hay minimo interior si beta>1 y c_f>c_p. Si no, se reporta 'no hay edad optima calculable' y no se fuerza un numero. Rodamientos con falla por contaminacion (agua) pueden dar beta cercano a 1: es una hipotesis, no un dato.",
+   "c_p_del_rodamiento": "rodamiento + mano de obra planificada + lubricante + (parada planificada si aplica) + (analisis de aceite si es parte del ciclo)",
+   "c_f_del_rodamiento": "rodamiento + mano de obra correctiva + camisa/otros danos asociados + parada no planificada y lucro cesante + consecuencias",
+   "con_vs_sin_proteccion": "Calcular T* y la tasa de costo por hora en A y en B. Para B, sumar al costo por hora el costo anualizado de la proteccion (eac). Se elige B si su tasa total es menor; la comparacion debe llevar el intervalo de beta y eta por escenario (bootstrap del kit) y no solo el punto.",
+   "sensibilidad": "Variar las 2 o 3 variables mas inciertas: razon c_f/c_p, eta_B (efecto de la proteccion), beta con su intervalo."
+  },
+  "decision_ajustar_reempacar_cambiar_sello": {
+   "opciones": [
+    "O1 solo ajustar el prensaestopa segun regimen de goteo",
+    "O2 reempacar (cambio de empaquetadura, con o sin cambio de camisa)",
+    "O3 cambiar a otro sello (tipo a definir por la persona)"
+   ],
+   "formula_por_opcion": "VPN_i = npv(flujos anuales de adquisicion, operacion, mantenimiento, fallas esperadas, fin de vida) con tasa declarada; EAC_i = eac(VPN_i, tasa, anios). Se compara EAC_i entre opciones y se elige el menor, sujeto a la sensibilidad. Rotulo: SINTESIS (formula estandar de ingenieria, sin texto citado leido en el registro).",
+   "flujo_de_fallas_esperadas": "Numero esperado de retiros de rodamiento por anio bajo cada opcion = horas por anio / MTBR_i (tiempo medio entre retiros) o, para sistema reparable, intensidad del modelo Crow-AMSAA por posicion; multiplicado por c_f. El efecto de cada opcion sobre el MTBR es una hipotesis a contrastar con datos de la propia planta; hoy no hay dato.",
+   "variables_clave_por_opcion": {
+    "O1": "frecuencia de ajustes por bomba, horas por ajuste, agua de sellado consumida con fuga controlada, riesgo de sobreajuste (calentamiento y desgaste de camisa: hipotesis a investigar, no cifra)",
+    "O2": "vida de la empaquetadura, vida de la camisa, horas de reempaque, parada por reempaque",
+    "O3": "costo del sello, instalacion, ahorro de agua de sellado, cambio en la frecuencia de retiros de rodamiento"
+   },
+   "hipotesis_causal": "El ajuste del prensaestopa como causa del retiro del rodamiento es una hipotesis. Se contrasta con la proporcion de retiros con agua hallada y la relacion temporal entre ajustes, fugas y retiros; el calculo economico no la da por probada."
+  },
+  "herramientas_del_kit": "ver vacios y entradas en la seccion de kpis_y_kit"
+ },
+ "vacios": [
+  "VACIO: ningun costo aportado (empaquetadura, agua de sellado, camisa, rodamiento, mano de obra, parada, lubricante, analisis de aceite, proteccion, sello alternativo). Sin ellos no se calcula c_p, c_f, VPN ni EAC.",
+  "VACIO: no hay historial de retiros por posicion con fechas, horas y censura; sin eso no hay beta, eta ni comparacion con y sin proteccion.",
+  "VACIO: tasa de descuento y horizonte no declarados.",
+  "VACIO: rango aceptable de goteo y escala de medicion no definidos (definicion local).",
+  "VACIO: definiciones locales pendientes de la persona: repeticion de fallas, MTTR (con o sin diagnostico y espera logistica), planificado frente a reactivo, tipo de disponibilidad.",
+  "VACIO: efecto de la proteccion del soporte y del cambio de sello sobre la vida del rodamiento: no hay cifra con fuente en el registro; solo hipotesis a contrastar con datos propios o con datos del proveedor rotulados como tales.",
+  "VACIO: demanda de repuestos (rodamientos, empaquetadura, camisas) no aportada; criticidad, tiempo de reposicion y nivel de servicio por definir.",
+  "PARA EL INVESTIGADOR: leer una tesis o informe con costos de ciclo de vida o de reemplazo por edad para rodamientos de bombas y sellos mecanicos frente a empaquetadura (costo de agua de sellado, vida de camisa, intervalos de reempaque), y una fuente con definiciones de MTBF, MTTR y disponibilidad para fijar la version adoptada."
+ ]
+}
