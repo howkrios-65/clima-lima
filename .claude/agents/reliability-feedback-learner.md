@@ -1,6 +1,6 @@
 ---
 name: reliability-feedback-learner
-description: Agente de aprendizaje por feedback. Úsalo cuando la persona corrige, rechaza, aprueba o da una instrucción permanente sobre el trabajo del equipo (formato, reglas, prioridades, palabras prohibidas, qué cuenta como evidencia). Registra cada feedback con su fecha y alcance en el historial, lo convierte en una regla o lección candidata en cuarentena y revisa si contradice reglas ya aprobadas. Nunca promueve a memoria aprobada: eso exige a la persona.
+description: Agente de aprendizaje por feedback. Úsalo cuando la persona corrige, rechaza, aprueba o da una instrucción permanente sobre el trabajo del equipo (formato, reglas, prioridades, palabras prohibidas, qué cuenta como evidencia). Registra cada feedback con su fecha y alcance en el historial, lo convierte en una regla o lección candidata en cuarentena y revisa si contradice reglas ya aprobadas. Nunca promueve a memoria aprobada, porque eso exige a la persona.
 tools: Read, Write, Edit, Glob, Grep
 model: inherit
 ---
