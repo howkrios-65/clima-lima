@@ -6,9 +6,9 @@
   "edicion_vista": "2000, 2.a edicion (segun resumen); un catalogo nacional lista ademas GSO ISO 3069:2013; edicion no verificada",
   "estado_visto": "CONFLICTO de edicion entre listados (2000 frente a una adopcion nacional de 2013); no se confirmo cual es la vigente en el publicador",
   "nivel": "CONFLICTO",
-  "nivel_evidencia": "SOLO-SNIPPET",
-  "uso_en_el_caso": "Dimensiones de las cavidades (caja de empaquetadura o camara de sello) de bombas centrifugas horizontales de succion axial, incluidas las de ISO 2858: una gama hasta 16 bar manometricos para empaquetadura blanda o sello mecanico y cavidades mayores hasta 40 bar para sellos mecanicos y de cartucho",
-  "relaciones": "Segun el resumen: la ed. 2000 reemplaza a la de 1974 sin cambiar las dimensiones ya publicadas y amplia los tamanos; no es para lodos ni altos solidos; EN 12756 remite a sus cavidades",
+  "nivel_evidencia": "NO-VERIFICADO",
+  "uso_en_el_caso": "Tema declarado en el resumen de buscador; contenido no verificado.",
+  "relaciones": "",
   "url": "https://www.sis.se/en/produkter/fluid-systems-and-components-for-general-use/pumps/ssiso3069/",
   "evidencia": [
    "E-2400"
@@ -21,9 +21,9 @@
   "edicion_vista": "EN 12756:2000 (adopciones 2001 segun resumenes); un listado muestra tambien una ed. 2004; edicion no verificada",
   "estado_visto": "CONFLICTO menor de edicion (2000/2001 frente a 2004 en un listado); no se confirmo vigencia",
   "nivel": "CONFLICTO",
-  "nivel_evidencia": "SOLO-SNIPPET",
-  "uso_en_el_caso": "Dimensiones de instalacion en la cavidad, designacion y codigos de materiales de sellos mecanicos de resortes rotativos; define la envolvente, no el desempeno: sirve para evaluar la conversion de empaquetadura a sello mecanico",
-  "relaciones": "Segun el resumen: las dimensiones de cavidad siguen ISO 3069 y las bombas de EN 22858 y EN 733",
+  "nivel_evidencia": "NO-VERIFICADO",
+  "uso_en_el_caso": "Tema declarado en el resumen de buscador; contenido no verificado.",
+  "relaciones": "",
   "url": "https://www.sis.se/en/produkter/mechanical-systems-and-components-for-general-use/seals-glands/ssen12756/",
   "evidencia": [
    "E-2401"
@@ -36,9 +36,9 @@
   "edicion_vista": "2015 (adopciones BS, DIN y SS segun resumenes; edicion no verificada)",
   "estado_visto": "Listada como edicion 2015 en varias tiendas nacionales; no se vio su estado de vigencia ni su revision",
   "nivel": "SOLO-SNIPPET",
-  "nivel_evidencia": "SOLO-SNIPPET",
-  "uso_en_el_caso": "Procedimiento de ensayo de empaquetaduras de cajas de empaquetadura de bombas centrifugas (equipo, parametros estandar, informe); define 3 clases de estanqueidad sin fijar criterios de desempeno",
-  "relaciones": "Segun el resumen: los limites de fuga de las clases no se vieron; un resumen del borrador (Pr EN 16752) de un instituto tecnico menciona agua limpia a temperatura ambiente, ejes de 40 mm a 65 mm y minimo 2 ensayos, que puede diferir de la ed. final",
+  "nivel_evidencia": "NO-VERIFICADO",
+  "uso_en_el_caso": "Tema declarado en el resumen de buscador; contenido no verificado.",
+  "relaciones": "",
   "url": "https://www.technickenormy.cz/bs-en-16752-2015-centrifugal-pumps-test-procedure-for-seal-packings/",
   "evidencia": [
    "E-2402"
@@ -51,9 +51,9 @@
   "edicion_vista": "2013 (con edicion previa 2009 vista en la tienda ANSI); edicion no verificada",
   "estado_visto": "CONFLICTO: la tienda ANSI muestra la ed. 2013 como historica y otro listado la da por retirada sin indicar sustituto con el mismo numero; se desconoce la edicion vigente",
   "nivel": "CONFLICTO",
-  "nivel_evidencia": "SOLO-SNIPPET",
-  "uso_en_el_caso": "Guia de diseno y aplicacion de bombas rotodinamicas centrifugas (incluye consideraciones de sellado); el resumen no permitio ver el texto sobre empaquetadura ni caja de empaquetadura",
-  "relaciones": "El resumen excluye los tipos verticales de una y varias etapas con difusor; no se vio si la serie fue reorganizada en otros numeros HI",
+  "nivel_evidencia": "NO-VERIFICADO",
+  "uso_en_el_caso": "Tema declarado en el resumen de buscador; contenido no verificado.",
+  "relaciones": "",
   "url": "https://webstore.ansi.org/standards/hi/ansihi2013",
   "evidencia": [
    "E-2403"
@@ -66,9 +66,9 @@
   "edicion_vista": "CONFLICTO de edicion: un catalogo lista B73.1-2026 (31/03/2026) y otro B73.1-2020; edicion 2012 y 2001 (R2007) figuran como anteriores; edicion no verificada",
   "estado_visto": "Las paginas de ASME son inconsistentes entre 2026 y 2020; no se confirmo cual es la vigente",
   "nivel": "CONFLICTO",
-  "nivel_evidencia": "SOLO-SNIPPET",
-  "uso_en_el_caso": "Especificacion de bombas de proceso quimico horizontales de succion axial, una etapa (metalicas y de polimero solido), con intercambiabilidad dimensional; no se vio texto sobre caja de empaquetadura o camara de sello",
-  "relaciones": "Sin relacion vista con otras normas",
+  "nivel_evidencia": "NO-VERIFICADO",
+  "uso_en_el_caso": "Tema declarado en el resumen de buscador; contenido no verificado.",
+  "relaciones": "",
   "url": "https://store.sfs.fi/en/asme-b731-2026",
   "evidencia": [
    "E-2404"
@@ -81,9 +81,9 @@
   "edicion_vista": "4.a edicion, mayo de 2014; listados muestran API STD 682(R2022), es decir reafirmada, no revisada (segun resumen; edicion no verificada)",
   "estado_visto": "Complementa E-1506: dos consultas adicionales no hallaron una 5.a edicion; esto NO prueba que no exista",
   "nivel": "SOLO-SNIPPET",
-  "nivel_evidencia": "SOLO-SNIPPET",
-  "uso_en_el_caso": "Sistemas de sello de eje de bombas centrifugas y rotativas (ejes de 20 mm a 110 mm); API 610 la cita de forma normativa; referencia para justificar la conversion de empaquetadura a sello mecanico en servicios peligrosos",
-  "relaciones": "Segun el resumen: la 4.a ed. prefiere transmisores continuos de presion y nivel en lugar de interruptores en los sistemas auxiliares de lavado y agrega un metodo alternativo de seleccion de arreglos (anexo A.4); la 3.a ed. es la adopcion identica de ISO 21049",
+  "nivel_evidencia": "NO-VERIFICADO",
+  "uso_en_el_caso": "Tema declarado en el resumen de buscador; contenido no verificado.",
+  "relaciones": "",
   "url": "https://eshop.normservis.sk/norma/apistd-682_r2022-1.5.2014.html",
   "evidencia": [
    "E-2405"
@@ -96,9 +96,9 @@
   "edicion_vista": "2004, 1.a edicion (segun resumen; edicion no verificada); adopcion EN ISO 21049:2004",
   "estado_visto": "Complementa E-1507: la pagina ISO (segun el resumen) dice revisada y confirmada en 2021, pero su version en espanol dice en revision sistematica: el CONFLICTO sigue sin resolverse; un borrador de 2010 figura abandonado",
   "nivel": "CONFLICTO",
-  "nivel_evidencia": "SOLO-SNIPPET",
-  "uso_en_el_caso": "Sistemas de sello de eje (20 mm a 110 mm); equivalente tecnico de la 3.a ed. de API 682",
-  "relaciones": "Segun el resumen: el borrador ISO/DIS 21049:2010 fue abandonado segun un catalogo esloveno",
+  "nivel_evidencia": "NO-VERIFICADO",
+  "uso_en_el_caso": "Tema declarado en el resumen de buscador; contenido no verificado.",
+  "relaciones": "",
   "url": "https://www.iso.org/standard/35625.html",
   "evidencia": [
    "E-2406"
@@ -111,9 +111,9 @@
   "edicion_vista": "Parte 1: 2007 (2.a ed.); parte 2: 2007 (2.a ed.), confirmada tras revision de 2018; parte 3: 2007 (la ed. 2003 retirada) (segun resumenes); ediciones no verificadas",
   "estado_visto": "No se confirmo si existe una edicion posterior a 2007 en alguna parte; la parte 4 no se vio",
   "nivel": "SOLO-SNIPPET",
-  "nivel_evidencia": "SOLO-SNIPPET",
-  "uso_en_el_caso": "Sistemas de lubricacion y de sellado por aceite de equipos rotativos de proceso (parte 3: sistemas de uso general que solo lubrican); contexto de lubricacion de rodamientos, no define la lubricacion por anillo ni por bano de aceite de una bomba de empaquetadura",
-  "relaciones": "Segun el resumen: la parte 1 se usa junto con las partes 2, 3 o 4",
+  "nivel_evidencia": "NO-VERIFICADO",
+  "uso_en_el_caso": "Tema declarado en el resumen de buscador; contenido no verificado.",
+  "relaciones": "",
   "url": "https://www.sis.se/en/produkter/petroleum-and-related-technologies/equipment-for-petroleum-and-natural-gas-industries/processing/sseniso1043812007/",
   "evidencia": [
    "E-2407"
@@ -141,9 +141,9 @@
   "edicion_vista": "1992, 2.a edicion (segun resumen; edicion no verificada)",
   "estado_visto": "La pagina ISO (segun el resumen) la muestra revisada y confirmada en 2023; no se vio una edicion posterior",
   "nivel": "SOLO-SNIPPET",
-  "nivel_evidencia": "SOLO-SNIPPET",
-  "uso_en_el_caso": "Grados ISO de viscosidad de lubricantes industriales; sirve para fijar el grado del aceite del rodamiento de la bomba",
-  "relaciones": "Segun el resumen: la viscosidad cinematica se mide por ISO 3104",
+  "nivel_evidencia": "NO-VERIFICADO",
+  "uso_en_el_caso": "Tema declarado en el resumen de buscador; contenido no verificado.",
+  "relaciones": "",
   "url": "https://www.iso.org/standard/8774.html",
   "evidencia": [
    "E-2409"
@@ -156,9 +156,9 @@
   "edicion_vista": "Edicion 2025-11 marcada como vigente en un listado DIN; referencias antiguas citan junio de 2012; edicion no verificada",
   "estado_visto": "Dos ediciones en circulacion; no se abrio el texto",
   "nivel": "SOLO-SNIPPET",
-  "nivel_evidencia": "SOLO-SNIPPET",
-  "uso_en_el_caso": "TANGENCIAL: es una guia de estanqueidad de bridas hasta 400 grados Celsius; segun el resumen no cubre empaquetaduras ni sellos de eje de bombas; solo contexto de emisiones fugitivas",
-  "relaciones": "Segun el resumen: companeras VDI 2200 y VDI 2440; se apoya en TA Luft y EN 1591-1",
+  "nivel_evidencia": "NO-VERIFICADO",
+  "uso_en_el_caso": "Tema declarado en el resumen de buscador; contenido no verificado.",
+  "relaciones": "",
   "url": "https://www.din.de/en/getting-involved/standards-committees/napa/wdc-beuth:din21:391880376",
   "evidencia": [
    "E-2410"

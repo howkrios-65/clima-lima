@@ -57,7 +57,7 @@
    "mecanismo": "Corrosión causada por contaminación, entre las causas a las que el autor atribuye el 90 % de las fallas prematuras de rodamientos de bolas de bombas (E-6004, resumen de 1988; la cifra no se usa como estadística, sin base de datos ni muestra). Contaminación y montaje inadecuado también se citan como origen de fallas de rodamientos (E-1201).",
    "efecto_local": "Deterioro de superficies, aumento de fricción y ruido (posible, sin fuente específica).",
    "efecto_sistema": "Falla prematura del rodamiento; efecto en el sistema de bombeo no documentado (VACÍO).",
-   "causa": "Ingreso de contaminantes (agua u otros); vía de ingreso en la bomba desconocida (VACÍO).",
+   "causa": "Ingreso de contaminantes (tipo de contaminante no consta en E-6004 ni E-1201); vía de ingreso en la bomba desconocida (VACÍO).",
    "estado_causa": "posible",
    "deteccion": "Análisis de aceite o grasa y termografía como complemento de la vibración (E-8003); la evidencia no da técnica específica para corrosión.",
    "control_sugerido": "Revisión de la protección del soporte y del estado del lubricante; control a definir por el experto.",

@@ -114,13 +114,12 @@
      "titulo": "Conjuntos abiertos de rodamientos con corrida hasta la falla disponibles en Hugging Face (XJTU-SY, Paderborn de carga y velocidad variables, FEMTO/PRONOSTIA reempaquetados)",
      "evidencia": [
       "E-2350",
-      "E-2351",
       "E-2353",
       "E-9604",
       "E-1703",
       "E-9612"
      ],
-     "limite": "Todos son rodamientos de bolas de banco con degradacion acelerada o variable; tarjetas con poca o ninguna descripcion en los reempaquetados de FEMTO; licencia verificada solo en E-9604; ninguno se descargo; XJTU-SY tiene 15 unidades."
+     "limite": "Todos son rodamientos de bolas de banco con degradacion acelerada o variable; tarjetas con poca o ninguna descripcion en los reempaquetados de FEMTO; licencia verificada solo en E-9604; ninguno se descargo; XJTU-SY tiene 15 unidades. E-2351 no se usa como respaldo: su extracto solo muestra licencia y tipo de tarea y no nombra PRONOSTIA."
     },
     {
      "tipo": "afirmacion",
@@ -134,7 +133,7 @@
     },
     {
      "tipo": "afirmacion",
-     "titulo": "Conjunto sintetico con RUL exacto para pruebas de codigo",
+     "titulo": "Conjunto sintético de lecturas horarias hasta la falla (100 máquinas) para pruebas de código",
      "evidencia": [
       "E-2356"
      ],
@@ -206,7 +205,7 @@
      "titulo": "Los metodos de banco se optimizan para entornos controlados y generalizan mal a velocidades no vistas",
      "evidencia": [
       "E-2203",
-      "E-2201"
+      "E-2309"
      ],
      "limite": "Resumenes y lectura parcial; es advertencia de transferencia, no procedimiento de bomba."
     },
@@ -259,7 +258,6 @@
       "E-2308",
       "E-2309",
       "E-2350",
-      "E-2351",
       "E-2353",
       "E-2354",
       "E-2355",

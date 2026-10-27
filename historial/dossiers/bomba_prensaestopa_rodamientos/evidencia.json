@@ -1689,7 +1689,7 @@
  {
   "id": "E-1700",
   "tipo": "preprint",
-  "acceso": "fragmento",
+  "acceso": "abstract",
   "via": "lector_hf_papers",
   "fecha_acceso": "2026-10-27",
   "referencia": {
@@ -1707,7 +1707,7 @@
   "limites": "Solo se leyo el resumen; no se leyo licencia, numero de bombas, ni definicion de cada anomalia por tipo de maquina. Datos de sonido (audio), no vibracion, presion, caudal ni corriente. No contiene tiempos hasta la falla ni censura: son clips etiquetados normal/anomalo. Anomalias provocadas, no historial de vida. El resumen no dice que la bomba sea centrifuga. Fuente heredada del caso de la bomba centrífuga (rodamientos o máquinas rotativas); no trata prensaestopa.",
   "aplica_a": "Diagnostico acustico de bombas (deteccion de anomalia); no vida remanente; comparabilidad con bomba centrifuga de campo: baja.",
   "revista_cuartil": null,
-  "nivel_evidencia": "VERIFICADO-TEXTO"
+  "nivel_evidencia": "VERIFICADO-ABSTRACT"
  },
  {
   "id": "E-1701",
@@ -2531,10 +2531,10 @@
   "via": "websearch",
   "fecha_acceso": "2026-10-27",
   "referencia": {
-   "autores": "KSB (lexico del fabricante)",
+   "autores": "fabricante de bombas (lexico del fabricante)",
    "anio": null,
    "titulo": "Cavitation (Centrifugal pump lexicon)",
-   "fuente": "Lexico de bombas centrifugas, KSB",
+   "fuente": "Lexico de bombas centrifugas, fabricante de bombas",
    "url": "https://www.ksb.com/en-global/centrifugal-pump-lexicon/article/cavitation-1117364"
   },
   "extracto": "",
@@ -5300,7 +5300,7 @@
  {
   "id": "E-9205",
   "tipo": "preprint",
-  "acceso": "texto_completo",
+  "acceso": "abstract",
   "via": "lector_hf_papers",
   "fecha_acceso": "2026-10-27",
   "referencia": {
@@ -5317,7 +5317,7 @@
   "revista_cuartil": null,
   "extracto": "When predicting the time to failure for bearings under the highest load (C1, 12.0 kN and 2100 RPM) with 25% random censoring, our approach achieves a mean absolute error (MAE) of 14.7 minutes (95% CI = 13.6-15.8) using a linear CoxPH model, and an MAE of 12.6 minutes (95% CI = 11.8-13.4) using a nonlinear Random Survival Forests model, compared to an MAE of 18.5 minutes (95% CI = 17.4-19.6) using a linear LASSO model that does not support censoring.",
   "localizador": "Abstract",
-  "nivel_evidencia": "VERIFICADO-TEXTO"
+  "nivel_evidencia": "VERIFICADO-ABSTRACT"
  },
  {
   "id": "E-9206",
@@ -8940,9 +8940,9 @@
   },
   "extracto": null,
   "localizador": "resumen del buscador (WebSearch); la página no se abrió: WebFetch devolvió ENOTFOUND para iso.org, evs.ee y webstore.ansi.org",
-  "afirma": "Según el resumen: edición 5.ª ed. 2014 (activa según un listado, superada según otro); 6.ª ed. 2025 solo en un artículo de tercero; estado: CONFLICTO: edición vigente no confirmada; sin página de API vista. Uso: Especificación de compra de sistemas de protección de maquinaria (no certificación de producto, según Emerson).",
+  "afirma": "Según el resumen: edición 5.ª ed. 2014 (activa según un listado, superada según otro); 6.ª ed. 2025 solo en un artículo de tercero; estado: CONFLICTO: edición vigente no confirmada; sin página de API vista. Uso: Especificación de compra de sistemas de protección de maquinaria (no certificación de producto, según un proveedor de instrumentación).",
   "limites": "Solo resumen de buscador con listados de terceros; no se leyó el texto ni la página oficial; no respalda cláusulas, valores ni fórmulas. Edición y estado por confirmar en el publicador. Fuente heredada del caso anterior (rodamientos o máquinas rotativas); se usa por analogía con los rodamientos de la bomba. Fuente heredada del caso de la bomba centrífuga (rodamientos o máquinas rotativas); no trata prensaestopa.",
-  "aplica_a": "Especificación de compra de sistemas de protección de maquinaria (no certificación de producto, según Emerson)",
+  "aplica_a": "Especificación de compra de sistemas de protección de maquinaria (no certificación de producto, según un proveedor de instrumentación)",
   "revista_cuartil": null,
   "nivel_evidencia": "SOLO-SNIPPET"
  },

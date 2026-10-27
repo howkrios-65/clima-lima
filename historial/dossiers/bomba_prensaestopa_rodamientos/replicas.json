@@ -9,7 +9,6 @@
   "evidencia": [
    "E-2350",
    "E-2351",
-   "E-2352",
    "E-2353",
    "E-2354",
    "E-2355",
@@ -17,7 +16,7 @@
    "E-9604",
    "E-1703"
   ],
-  "limites": "Licencias y descripciones son las declaradas por los usuarios; FEMTO y PRONOSTIA no se verificaron contra el original; no hay unidades de bomba.",
+  "limites": "Licencias y descripciones son las declaradas por los usuarios; FEMTO y PRONOSTIA no se verificaron contra el original; no hay unidades de bomba. El número de rodamientos y la condición de corrida hasta la falla constan en E-2301, E-1204 y E-9604, no en los extractos de los repositorios.",
   "columnas": [
    "Repositorio",
    "Contenido declarado",

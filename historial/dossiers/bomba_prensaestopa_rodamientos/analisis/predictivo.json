@@ -17,7 +17,6 @@
    "evidencia": [
     "E-1700",
     "E-1701",
-    "E-1702",
     "E-1703",
     "E-9480"
    ],
@@ -404,7 +403,7 @@
  "vacios": [
   "Sin datos propios ni etiquetas: no se entrenó ni evaluó ningún modelo; todo desempeño en la bomba es VACÍO. Cierra: historial de fallas con fechas y modo, bitácora de intervenciones, series de vibración, corriente y temperatura, y data_quality.audit sobre ellas.",
   "Cavitación, recirculación, NPSH, sellos y señales hidráulicas: SIN DATOS PARA ARMARLO. Cierra: abrir E-1704, E-1705 y E-1706 (requieren habilitar los dominios que no resuelven) y los resúmenes de buscador E-1105, E-1106, E-1107, E-1108 y E-1115 por su texto completo; ninguna de estas pistas respalda hoy una afirmación.",
-  "Ninguna fuente leída trae tiempos hasta la falla de bombas, y los datos de bomba leídos son audio (E-1700 a E-1702). Cierra: leer el texto completo de MIMII (solo se leyó el resumen; tipo de bomba y definición de cada anomalía sin verificar), el origen y la definición de label de los reempaquetados, y una base de desempeño y fallas de bombas (E-1116, sin leer).",
+  "Ninguna fuente leída trae tiempos hasta la falla de bombas, y los datos de bomba leídos son audio (E-1700 y E-1701). Cierra: leer el texto completo de MIMII (solo se leyó el resumen; tipo de bomba y definición de cada anomalía sin verificar), el origen y la definición de label de los reempaquetados, y una base de desempeño y fallas de bombas (E-1116, sin leer).",
   "Cantidad mínima de fallas por modo y de mediciones de línea base: sin cifra en las fuentes leídas; la fija el protocolo del equipo con data_quality.audit al disponer de datos. El año de entrenamiento de E-9472 es de aerogeneradores.",
   "Intervalo entre primera detección y falla en rodamientos de bomba: ninguna fuente leída lo da (E-8008 es cualitativa; E-9205 está en minutos y banco acelerado). Cierra: estimarlo con datos propios o leer un estudio de campo de rodamientos de bomba.",
   "Horizonte H y costos de falso negativo y falso positivo: los define el negocio.",

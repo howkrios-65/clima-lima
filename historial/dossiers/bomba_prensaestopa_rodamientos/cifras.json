@@ -4,9 +4,10 @@
   "valor": "5447931446",
   "unidad": "bytes",
   "mide": "Tamano del zip de XJTU-SY en el repo de Hugging Face",
-  "condiciones": "Listado del repo; no se descargo",
+  "condiciones": "Listado del repo; no se descargo Que sean 15 rodamientos con corrida hasta la falla consta en E-2301 y E-1204, no en el extracto de E-2350.",
   "evidencia": [
-   "E-2350"
+   "E-2350",
+   "E-2301"
   ]
  },
  {
@@ -16,8 +17,7 @@
   "mide": "Tamano de FEMTO.csv y de PdM.csv en dos repos distintos",
   "condiciones": "Listados; igualdad sugiere duplicado, contenido no comparado",
   "evidencia": [
-   "E-2351",
-   "E-2352"
+   "E-2351"
   ]
  },
  {
@@ -89,36 +89,6 @@
   "condiciones": "Fallas sembradas en banco; solo resumen",
   "evidencia": [
    "E-2309"
-  ]
- },
- {
-  "id": "pml-CF-06",
-  "valor": "1000",
-  "unidad": "dias",
-  "mide": "Tope de la etiqueta de RUL usado por los autores",
-  "condiciones": "Dispositivos industriales no mecanicos; etiqueta derivada de registros de reparacion",
-  "evidencia": [
-   "E-2306"
-  ]
- },
- {
-  "id": "pmon-CF-01",
-  "valor": "12.8",
-  "unidad": "kHz",
-  "mide": "Frecuencia de muestreo de vibracion, corrientes, par y fase clave en el banco de motor",
-  "condiciones": "Motor de induccion de 2.2 kW en banco de laboratorio, 282 corridas de 90 s; sin bomba",
-  "evidencia": [
-   "E-2202"
-  ]
- },
- {
-  "id": "pmon-CF-02",
-  "valor": "2.2",
-  "unidad": "kW",
-  "mide": "Potencia del motor del banco",
-  "condiciones": "Banco de laboratorio; sin bomba ni prensaestopa",
-  "evidencia": [
-   "E-2202"
   ]
  },
  {

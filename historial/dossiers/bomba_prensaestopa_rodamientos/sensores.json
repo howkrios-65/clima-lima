@@ -1,9 +1,9 @@
 [
  {
-  "tecnica_o_sensor": "Filtro gaussiano, transformada wavelet continua y siete caracteristicas tiempo-frecuencia (energia, frecuencia dominante, entropia, curtosis, asimetria, media, desviacion) sobre vibracion de dos ejes",
-  "que_mide": "Degradacion de rodamientos de bolas a partir de vibracion horizontal y vertical",
+  "tecnica_o_sensor": "Extracción de características tiempo-frecuencia para RUL de rodamientos",
+  "que_mide": "No consta en los extractos el detalle de filtros, ejes ni frecuencias de muestreo.",
   "resultado_publicado": "Con esas caracteristicas, una red CNN-atencion-LSTM mas bosque aleatorio reporta MAE de 0.04087 en el rodamiento 3 de XJTU-SY en la condicion de entrenamiento y mejor desempeno que variantes en condiciones no vistas",
-  "condiciones": "XJTU-SY a 25 kHz y PRONOSTIA a 25.6 kHz, degradacion acelerada; entrenamiento en una condicion",
+  "condiciones": "Bancos de rodamientos; detalle por confirmar en el preprint completo.",
   "limites": "Banco, sin bomba; interpretaciones fisicas con referencias no leidas; inconsistencias internas de Score",
   "evidencia": [
    "E-2301",
@@ -23,10 +23,10 @@
   ]
  },
  {
-  "tecnica_o_sensor": "Modelo base de series de tiempo congelado con cabezal de regresion para RUL",
-  "que_mide": "RUL en dias a partir de registros de sensores y de reparaciones",
-  "resultado_publicado": "Los autores afirman mejora sobre linea base recurrente, convolucional, de transformadores y de arboles potenciados",
-  "condiciones": "Dos tipos de dispositivos industriales; ventana de contexto corta",
+  "tecnica_o_sensor": "Modelo base de series de tiempo para RUL (solo consta en el extracto el uso de registros de mantenimiento sin eventos de reparación posteriores)",
+  "que_mide": "No consta en el extracto; ver el preprint completo.",
+  "resultado_publicado": "No consta en el extracto; ver el preprint completo.",
+  "condiciones": "No consta en el extracto; ver el preprint completo.",
   "limites": "Solo resumen e inicio; sin cifras; no es rodamiento ni bomba",
   "evidencia": [
    "E-2306"
@@ -43,23 +43,24 @@
   ]
  },
  {
-  "tecnica_o_sensor": "Vibracion triaxial y corrientes de fase del motor",
-  "que_mide": "Aceleracion y corrientes trifasicas del motor",
+  "tecnica_o_sensor": "Vibración y corrientes de fase del motor (banco de motor)",
+  "que_mide": "Ocho canales sincronizados según el extracto de E-1302; detalle del eje y de la ubicación no consta en el extracto.",
   "resultado_publicado": "Los autores afirman que vibracion y corriente son indicadores efectivos de la salud del motor",
   "condiciones": "Motor de induccion 2.2 kW, banco, 12.8 kHz, velocidad y carga variables",
   "limites": "Sin bomba ni prensaestopa; sin umbrales",
   "evidencia": [
-   "E-2202"
+   "E-1301"
   ]
  },
  {
   "tecnica_o_sensor": "Espectro de envolvente en frecuencias de falla de rodamiento",
   "que_mide": "Modulacion de la vibracion por defecto de rodamiento",
-  "resultado_publicado": "Separacion casi perfecta de la mayoria de clases en un conjunto de banco; mala generalizacion entre conjuntos (resumen)",
+  "resultado_publicado": "Exactitud de 99.57 % en CWRU (E-2201) que cae a 40.64 % en JNU al retener una velocidad (E-2309)",
   "condiciones": "Conjuntos de banco CWRU y JNU",
   "limites": "Solo resumen; sin bomba; sin kurtosis ni RMS aislados",
   "evidencia": [
-   "E-2201"
+   "E-2201",
+   "E-2309"
   ]
  },
  {
