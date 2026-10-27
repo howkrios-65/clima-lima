@@ -307,6 +307,58 @@ function vDatos(host){
     t.filas.map(function(r){return '<tr>'+r.map(function(x){return '<td>'+esc(x)+'</td>'}).join("")+'</tr>'}).join("")+'</table></div>'+(t.nota?'<p style="font-size:13px;color:var(--mut)">'+esc(t.nota)+'</p>':'')+'</div>'}).join("");
 }
 
+
+function vDossier(host){
+  var dz=D.caso.dossier,ord=dz.orden,LVC={"VERIFICADO-TEXTO":"var(--ok)","VERIFICADO-ABSTRACT":"#4b8f6b","SOLO-SNIPPET":"var(--warn)","NO-VERIFICADO":"var(--bad)","DATO-USUARIO":"var(--c4)"};
+  function srcs(sid){var o={};((dz.secciones[sid]||{}).elementos||[]).forEach(function(e){(e.evidencia||[]).forEach(function(i){o[i]=1})});return Object.keys(o)}
+  var con=ord.filter(function(k){return((dz.secciones[k]||{}).elementos||[]).length}).length;
+  var h='<div class="card"><h2>Cobertura del dossier</h2><div class="grid"><div class="kpi"><b>'+con+' de '+ord.length+'</b><span>secciones con evidencia leída (incluye Referencias)</span></div><div class="kpi"><b>'+(ord.length-con)+'</b><span>secciones VACÍO declarado</span></div><div class="kpi"><b>'+D.evidencia.length+'</b><span>entradas en el registro (incluye pistas)</span></div></div>'+
+   '<h3>Fuentes citadas por sección y nivel de evidencia</h3><div id="dzb"></div><div style="font-size:12px;color:var(--mut)">'+Object.keys(LVC).map(function(k){return '<span style="color:'+LVC[k]+'">&#9632;</span> '+k}).join("  ")+'</div></div>';
+  h+='<div class="card"><h2>Secciones</h2><label>Mostrar <select id="dzf"><option value="">todas</option><option value="con">solo con evidencia</option><option value="vac">solo VACÍO</option></select></label><label>Buscar <input id="dzq" type="text" style="width:170px"></label><div id="dzs"></div></div>';
+  h+='<div class="card"><h2>Matriz sección × fuente</h2><p style="font-size:13px;color:var(--mut)">Cada punto es una fuente que respalda algo de esa sección. Pulse un punto para abrir la fuente.</p><div class="tw"><table id="dzm"></table></div></div>';
+  host.innerHTML=h;
+  /* barras apiladas */
+  var W=760,rowH=24,H=ord.length*rowH+10,x0=210,mx=1;
+  ord.forEach(function(k){mx=Math.max(mx,srcs(k).length)});
+  var g='';ord.forEach(function(k,i){var y=i*rowH+4,x=x0,ss=srcs(k);g+='<text x="4" y="'+(y+14)+'">'+esc(dz.titulos[k]).slice(0,34)+'</text>';
+    ss.sort().forEach(function(id){var w=(W-x0-30)/mx;g+='<rect x="'+x+'" y="'+y+'" width="'+(w-1)+'" height="16" fill="'+(LVC[EV[id].nivel_evidencia]||"var(--mut)")+'"><title>'+esc(id)+' '+esc(EV[id].nivel_evidencia)+'</title></rect>';x+=w});
+    if(!ss.length)g+='<text x="'+x0+'" y="'+(y+13)+'" style="fill:var(--bad)">VACÍO</text>'});
+  $("#dzb").innerHTML='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Fuentes por sección">'+g+'</svg>';
+  function draw(){
+    var f=$("#dzf").value,q=($("#dzq").value||"").toLowerCase();
+    $("#dzs").innerHTML=ord.filter(function(k){var s=dz.secciones[k]||{},n=(s.elementos||[]).length;return(!f||(f==="con"?n>0:n===0))&&((dz.titulos[k]+" "+JSON.stringify(s)).toLowerCase().indexOf(q)>=0)}).map(function(k){
+      var s=dz.secciones[k]||{},els=s.elementos||[];
+      return '<details'+(els.length?'':' open')+' style="margin:6px 0"><summary><b>'+esc(dz.titulos[k])+'</b> <span class="badge '+(els.length?'confirmada':'descartada')+'">'+(els.length?els.length+' elemento(s)':'VACÍO')+'</span> <small>frente: '+esc(dz.frentes[k]||"")+'</small></summary>'+
+        els.map(function(e){return '<p>• '+esc(e.titulo)+' '+chips(e.evidencia)+(e.limite?'<br><small>Límite: '+esc(e.limite)+'</small>':'')+'</p>'}).join("")+
+        (s.vacio?'<div class="note bad">VACÍO: '+esc(s.vacio)+'</div>':'')+(s.nota?'<div class="note">'+esc(s.nota)+'</div>':'')+'</details>'}).join("")||"<p>Sin secciones con ese filtro.</p>";
+  }
+  host.addEventListener("input",draw);draw();
+  var all={};ord.forEach(function(k){srcs(k).forEach(function(i){all[i]=1})});var cols=Object.keys(all).sort();
+  $("#dzm").innerHTML='<tr><th>Sección</th>'+cols.map(function(i){return '<th style="font-size:10px">'+esc(i.slice(2))+'</th>'}).join("")+'</tr>'+ord.map(function(k){var ss=srcs(k);return '<tr><td>'+esc(dz.titulos[k])+'</td>'+cols.map(function(i){return '<td>'+(ss.indexOf(i)>=0?'<button class="chip" data-ev="'+i+'" style="padding:0 5px">●</button>':'')+'</td>'}).join("")+'</tr>'}).join("");
+}
+
+function vSim(host){
+  host.innerHTML='<div class="card"><h2>Simulador didáctico del reemplazo por edad</h2><div class="note bad"><b>No es evidencia ni representa a la chumacera.</b> Los valores los elige quien usa la página; no hay para este modo de falla una forma, una escala ni costos con fuente leída. Úselo para entender cómo cambia el punto óptimo cuando tenga datos o parámetros citables.</div>'+
+   '<label>β forma <input type="range" id="sb" min="0.5" max="5" step="0.05" value="2"> <b id="vb"></b></label><label>η escala (horas) <input type="number" id="se" value="10000" min="1"></label>'+
+   '<label>Costo preventivo <input type="number" id="sp" value="1" min="0.01" step="0.1"></label><label>Costo de falla <input type="number" id="sf" value="5" min="0.01" step="0.1"></label><span style="font-size:12px;color:var(--mut)">(costos en unidades relativas que usted define)</span>'+
+   '<div id="sr"></div><div id="s1"></div><div id="s2"></div><div id="s3"></div></div>';
+  function run(){
+    var b=+$("#sb").value,e=+$("#se").value,cp=+$("#sp").value,cf=+$("#sf").value;$("#vb").textContent=b;
+    var N=300,T=[],R=[],Hh=[],C=[],ts=e*3,i,t,cum=0,prevR=1,prevT=0;
+    for(i=1;i<=N;i++){t=ts*i/N;var r=Math.exp(-Math.pow(t/e,b));cum+=(prevR+r)/2*(t-prevT);prevR=r;prevT=t;T.push(t);R.push(r);Hh.push(b/e*Math.pow(t/e,b-1));C.push((cp*r+cf*(1-r))/cum)}
+    var k=0;C.forEach(function(v,j){if(v<C[k])k=j});var interior=b>1&&cf>cp&&k<N-1&&k>0,rtf=cf/(e*gamma1(b));
+    $("#sr").innerHTML=interior?'<div class="grid"><div class="kpi"><b>'+fmt(T[k],0)+'</b><span>edad de reemplazo óptima (h)</span></div><div class="kpi"><b>'+fmt(C[k],5)+'</b><span>costo por hora en el óptimo</span></div><div class="kpi"><b>'+fmt(rtf,5)+'</b><span>costo por hora si se corre a la falla</span></div><div class="kpi"><b>'+fmt(100*(1-C[k]/rtf),1)+' %</b><span>ahorro teórico</span></div></div>':
+      '<div class="note">Sin mínimo interior: '+(b<=1?'con β ≤ 1 el riesgo no crece con la edad y reemplazar por edad no reduce el costo.':cf<=cp?'si la falla no cuesta más que la prevención, esperar a la falla es igual o más barato.':'el mínimo cae fuera del rango mostrado.')+'</div>';
+    lineChart($("#s1"),{x:T,series:[{name:"R(t) confiabilidad",y:R}],titulo:"Confiabilidad",xfmt:function(v){return fmt(v,0)},key:"s1"});
+    lineChart($("#s2"),{x:T,series:[{name:"h(t) tasa de falla",y:Hh}],titulo:"Tasa de falla",xfmt:function(v){return fmt(v,0)},key:"s2"});
+    lineChart($("#s3"),{x:T,series:[{name:"costo por hora C(T)",y:C}],vlines:interior?[{x:T[k],label:"óptimo",c:"var(--ok)"}]:[],hlines:[{y:rtf,label:"correr a la falla",c:"var(--warn)"}],titulo:"Costo por hora",xfmt:function(v){return fmt(v,0)},key:"s3"});
+  }
+  function gamma1(b){var z=1+1/b,g=7,c=[0.99999999999980993,676.5203681218851,-1259.1392167224028,771.32342877765313,-176.61502916214059,12.507343278686905,-0.13857109526572012,9.9843695780195716e-6,1.5056327351493116e-7];
+    function G(z){if(z<.5)return Math.PI/(Math.sin(Math.PI*z)*G(1-z));z-=1;var x=c[0];for(var i=1;i<g+2;i++)x+=c[i]/(z+i);var t=z+g+.5;return Math.sqrt(2*Math.PI)*Math.pow(t,z+.5)*Math.exp(-t)*x}return G(z)}
+  host.addEventListener("input",run);CURSOR={};run();
+  window.__sim=function(b,e,cp,cf){$("#sb").value=b;$("#se").value=e;$("#sp").value=cp;$("#sf").value=cf;run();return $("#sr").textContent};
+}
+
 function vPlan(host){
   var p=D.caso.plan||[];
   host.innerHTML='<div class="card"><h2>Plan de acciones (CAPA)</h2><div class="tw"><table><tr><th>Id</th><th>Acción</th><th>Tipo</th><th>Causa</th><th>Responsable</th><th>Fecha</th><th>Verificación de eficacia</th><th>Fuente</th></tr>'+
@@ -336,6 +388,8 @@ function boot(){
   tab("tl","Línea de tiempo",vTiempo,(c.linea_tiempo||[]).length>0);
   tab("sen","Señales",vSenales,(c.series||[]).length>0);
   tab("cau","Causas y técnicas",vCausas);
+  tab("dos","Dossier",vDossier,!!c.dossier);
+  tab("sim","Simulador",vSim,!!c.simulador);
   tab("dat","Datos",vDatos,(c.tablas||[]).length>0);
   tab("evi","Evidencia",vEvidencia);
   tab("vid","Vida",vVida);

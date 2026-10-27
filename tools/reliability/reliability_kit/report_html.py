@@ -120,6 +120,11 @@ def aplicar_compuertas(caso: dict, ledger: Ledger) -> list[dict]:
         ids_existen(k.get("evidencia", []), f"KPI {k.get('label', '?')}")
     for t in caso.get("tecnicas", []):
         ids_existen(t.get("evidencia", []), f"técnica {t['id']}")
+    for sid, sec in (caso.get("dossier") or {}).get("secciones", {}).items():
+        for el in sec.get("elementos", []):
+            ids_existen(el.get("evidencia", []), f"dossier {sid}")
+            if not el.get("evidencia"):
+                raise ValueError(f"dossier {sid}: elemento sin fuente")
     for p in caso.get("plan", []):
         ids_existen(p.get("evidencia", []), f"acción {p.get('id', '?')}")
         if not p.get("evidencia"):

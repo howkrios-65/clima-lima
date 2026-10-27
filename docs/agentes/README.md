@@ -1,6 +1,6 @@
 # Equipo de agentes de confiabilidad
 
-Catorce agentes que trabajan juntos: **un líder estratega** y **trece especialistas** que hacen cada parte del trabajo.
+Quince agentes que trabajan juntos: **un líder estratega** y **catorce especialistas** que hacen cada parte del trabajo.
 Se apoyan en un kit de cálculo probado (`tools/reliability`) y en una base de conocimiento común (`knowledge/`).
 Su regla de oro es no inventar nada: cada cifra es un cálculo, una cita abierta o un vacío declarado.
 
@@ -39,7 +39,7 @@ Su regla de oro es no inventar nada: cada cifra es un cálculo, una cita abierta
 
 | # | Agente | En una frase | Úsalo cuando | Te entrega | Permisos |
 |---|---|---|---|---|---|
-| 0 | `reliability-engineer` | **Líder**: te escucha, pregunta, reparte y decide | Siempre es la puerta de entrada | Informe final y preguntas pendientes | Lee, escribe, calcula, busca y coordina a los 13 |
+| 0 | `reliability-engineer` | **Líder**: te escucha, pregunta, reparte y decide | Siempre es la puerta de entrada | Informe final y preguntas pendientes | Lee, escribe, calcula, busca y coordina a los 14 |
 | 1 | `reliability-data-auditor` | Dice si tus datos sirven antes de usarlos | Tienes órdenes de trabajo, fallas o sensores | Calidad de datos y veredicto de aptitud por análisis | Lee y calcula |
 | 2 | `reliability-life-analyst` | Estadística de vida y tendencia | Tienes tiempos hasta la falla, censura, reparables o una flota | Ajustes con intervalos, supuestos y qué no se concluye | Lee y calcula |
 | 3 | `reliability-rca-investigator` | Explica por qué falló algo concreto | Hay una falla ocurrida | Árbol de fallas, causas con nivel de evidencia, plan de acción | Lee y busca (sin escribir) |
@@ -52,6 +52,7 @@ Su regla de oro es no inventar nada: cada cifra es un cálculo, una cita abierta
 | 10 | `reliability-literature-researcher` | Lee la ciencia sobre el mecanismo de la falla (papers, tesis, libros, normas) | Falla nueva; una instancia por frente | Fuentes en el registro de evidencia, cada una con extracto literal y límites | Solo cita lo que leyó; declara VACÍO donde la red o la cuota no permiten leer |
 | 12 | `reliability-dataset-scout` | Busca datos públicos de vida y condición del modo de falla | Dossier por modo de falla | Tabla de conjuntos con origen, licencia y límites | Nunca fabrica datos; VACÍO si no hay |
 | 13 | `reliability-standards-researcher` | Normas, guías, tesis, libros y clases aplicables | Dossier por modo de falla | Referencias APA solo de lo verificado | No cita normas sin edición verificada |
+| 14 | `reliability-feedback-learner` | Aprende de tus correcciones y reglas permanentes | Cuando corriges, apruebas o das una regla | Feedback registrado y reglas candidatas en cuarentena | Escribe solo en `historial/feedback/` y la cuarentena |
 | 11 | `reliability-case-historian` | Memoria de casos: recurrencia y línea base | Al abrir y al cerrar un caso | Coincidencias con su razón; línea base versionada o VACÍO | No ajusta distribuciones con un solo evento; solo agrega, nunca borra |
 
 ## 3. ¿Qué agente necesito?

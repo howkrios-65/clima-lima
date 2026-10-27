@@ -1,0 +1,14 @@
+{
+ "modo_falla": "chumacera de polea de faja transportadora",
+ "fecha": "2026-10-27",
+ "version": 1,
+ "secciones_con_evidencia": 10,
+ "secciones_vacias": [
+  "punto_optimo",
+  "lcc",
+  "ibr",
+  "mpd_normas"
+ ],
+ "entradas_registro": 63,
+ "nota": "Pistas SOLO-SNIPPET no respaldan afirmaciones; ver evidencia.json"
+}

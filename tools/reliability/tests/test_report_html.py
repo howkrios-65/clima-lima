@@ -127,3 +127,28 @@ await b.close()})();
         lo, hi = weibull_beta_ci_lr(t, cs); b = weibull_b_life_ci_lr(t, cs, p=0.10)
         assert f"[{lo:.2f}; {hi:.2f}]" in o["grid"] and f"[{b['lower']:.1f}; {b['upper']:.1f}]" in o["grid"], o["grid"]
         assert o["vida"] and o["alarma"] and o["dr"] and o["listo"], o
+
+
+@pytest.mark.skipif(not _node_ok(), reason="node o playwright no disponible")
+def test_simulador_coincide_con_el_kit_y_dossier_se_dibuja():
+    from reliability_kit import optimal_age_replacement
+    c = _caso(); c["simulador"] = True
+    c["dossier"] = {"orden": ["a", "b"], "titulos": {"a": "Sec A", "b": "Sec B"}, "frentes": {"a": "x", "b": "y"},
+                    "secciones": {"a": {"elementos": [{"tipo": "afirmacion", "titulo": "t", "evidencia": ["E-0001"], "limite": "l"}]},
+                                  "b": {"elementos": [], "vacio": "nada"}}}
+    with tempfile.TemporaryDirectory() as d:
+        out = Path(d) / "i.html"; rh.construir_informe(c, _ledger(), out)
+        js = """const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const p=await b.newPage();const e=[];p.on('pageerror',x=>e.push(String(x)));
+await p.goto('file://'+process.argv[1]);await p.click('#tabs button:has-text("Simulador")');const k=await p.$eval('#sr .kpi b',x=>x.textContent);
+await p.click('#tabs button:has-text("Dossier")');const t=await p.textContent('#dzs');console.log(JSON.stringify({k,t,e}));await b.close()})()"""
+        r = subprocess.run(["node", "-e", js, str(out)], capture_output=True, text=True, timeout=120)
+        o = json.loads(r.stdout.strip().splitlines()[-1])
+        ref = optimal_age_replacement(2, 10000, 1, 5)["optimal_age"]
+        assert o["e"] == [] and abs(float(o["k"]) - ref) / ref < 0.02 and "VACÍO" in o["t"], o
+
+
+def test_dossier_con_elemento_sin_fuente_falla():
+    c = _caso()
+    c["dossier"] = {"orden": ["a"], "titulos": {"a": "A"}, "frentes": {"a": "x"}, "secciones": {"a": {"elementos": [{"tipo": "valor", "titulo": "v", "evidencia": []}]}}}
+    with pytest.raises(ValueError):
+        rh.construir_informe(c, _ledger())

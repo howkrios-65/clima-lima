@@ -1,0 +1,8 @@
+{"fecha": "2026-10-27", "tipo": "prohibicion", "texto": "Nunca usar en ninguna forma la palabra que la persona prohibió para nombrar al coordinador; decir siempre 'estratega' o 'líder'", "alcance": "todos", "estado": "vigente"}
+{"fecha": "2026-10-27", "tipo": "regla_permanente", "texto": "Nunca inventar: sin fuente no hay tabla, valor, referencia ni imagen; lo que no tenga evidencia científica queda VACÍO", "alcance": "todos", "estado": "vigente"}
+{"fecha": "2026-10-27", "tipo": "regla_permanente", "texto": "Nunca referirse a una empresa específica; no usar el símbolo de sección", "alcance": "todos", "estado": "vigente"}
+{"fecha": "2026-10-27", "tipo": "regla_permanente", "texto": "Los datos que la persona declare ilustrativos no cuentan como evidencia", "alcance": "todos", "estado": "vigente"}
+{"fecha": "2026-10-27", "tipo": "regla_permanente", "texto": "Los costos y parámetros solo vienen de tesis, papers y fuentes halladas; la persona no los aporta", "alcance": "economía, vida, dossier", "estado": "vigente"}
+{"fecha": "2026-10-27", "tipo": "preferencia", "texto": "Entregar el HTML aunque haya secciones VACÍO; muy interactivo, con muchas gráficas y análisis, y seguir aprendiendo con feedback", "alcance": "informes", "estado": "vigente"}
+{"fecha": "2026-10-27", "tipo": "regla_permanente", "texto": "Guardar todo en el historial del repositorio (autorizado el 2026-10-27); si el repositorio es compartido, pedir permiso", "alcance": "historiador", "estado": "vigente"}
+{"fecha": "2026-10-27", "tipo": "preferencia", "texto": "Países y universidades prioritarios: Chile, Perú, Australia, EEUU, México, Brasil, Finlandia, Reino Unido, Suiza, Alemania, Canadá", "alcance": "investigadores", "estado": "vigente"}

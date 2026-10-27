@@ -1,0 +1,216 @@
+{
+ "modo_falla": "chumacera de polea de faja transportadora",
+ "secciones": {
+  "mediciones": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Análisis de envolvente: se filtra en una resonancia, se demodula y se buscan las frecuencias BPFO, BPFI, BSF y FTF según la geometría del rodamiento",
+     "evidencia": [
+      "E-8006",
+      "E-8008",
+      "E-8001"
+     ],
+     "limite": "Fuentes de introducción y revisión; datos de banco, no de poleas de faja"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "La kurtosis es buen indicador de defectos incipientes pero vuelve a valores normales cuando el defecto se extiende (curva no monótona). Una revisión no halló sustento teórico ni empírico de los umbrales 3 y 5 en las fuentes que consultó",
+     "evidencia": [
+      "E-8003",
+      "E-8001"
+     ],
+     "limite": "Revisiones narrativas; ausencia de hallazgo en sus fuentes, no prueba de inexistencia; no hay tiempos de aviso"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Degradación en cuatro etapas espectrales (ultrasónica, resonancia natural, frecuencias de defecto y armónicos, ruido de fondo aleatorio), descritas de forma cualitativa y sin duración",
+     "evidencia": [
+      "E-8008"
+     ],
+     "limite": "Preprint de banco"
+    }
+   ],
+   "nota": "Temperatura, ultrasonido y aceite o grasa: sin curvas leídas (VACÍO parcial)."
+  },
+  "fenomenos": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "En condiciones convencionales (ISO 281:2007, edición no verificada) la causa de falla es la fatiga de contacto con descascarado subsuperficial; fuera de ellas intervienen carga excesiva, desalineación, ajustes apretados, falla de lubricante, desgaste, corrosión y fretting",
+     "evidencia": [
+      "E-6002"
+     ],
+     "limite": "Rodamientos de bolas en ciclos muy altos; no es un estudio de transportadores"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "El autor atribuye el 90 % de las fallas prematuras de rodamientos de bolas de bombas a corrosión causada por contaminación, mala manipulación antes y durante la instalación, falla del lubricante o sobrecalentamiento por ajustes inadecuados en alojamientos o ejes",
+     "evidencia": [
+      "E-6004"
+     ],
+     "limite": "Resumen de 1988; bombas, no transportadores; sin base de datos ni n"
+    }
+   ],
+   "nota": "Mecanismos propios de la chumacera de polea (flexión del eje, sellos en polvo, calentamiento del soporte): VACÍO."
+  },
+  "top_fallas": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Cita secundaria: más del 50 % de las fallas de banda transportadora se deben a rodillos (idlers) en mal funcionamiento; daño de rodillos por lubricación impropia, contaminación y desalineación",
+     "evidencia": [
+      "E-6001"
+     ],
+     "limite": "Introducción que cita a otros; rodillos, no chumaceras de poleas; sin base de datos, tamaño ni año; la fuente primaria (E-6009) no se leyó"
+    }
+   ],
+   "nota": "Ranking de componentes y modos con base de datos, n y año: VACÍO."
+  },
+  "fmeca": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Causas mencionadas en la literatura leída para el daño de rodamientos (insumo candidato de causas del FMECA; nivel POSIBLE por analogía, sin datos de polea): carga excesiva, desalineación, ajustes, lubricación, desgaste, corrosión, fretting, contaminación y sobrecalentamiento",
+     "evidencia": [
+      "E-6002",
+      "E-6004"
+     ],
+     "limite": "Respaldo: introducción de un artículo sobre fatiga de ciclos muy altos en bolas y un resumen divulgativo de bombas; efectos, severidad, ocurrencia y detección no se puntúan sin un experto del activo"
+    }
+   ],
+   "nota": "Escalas S-O-D: VACÍO (requieren experto y datos del activo)."
+  },
+  "confiabilidad": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "La vida nominal básica es el valor de vida que se espera que el 90 % de una población de rodamientos alcance o supere, en condiciones de operación convencionales",
+     "evidencia": [
+      "E-6003"
+     ],
+     "limite": "Contexto de aerogeneradores; no entrega horas para poleas"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Existen conjuntos abiertos de rodamientos de laboratorio: Paderborn (17 rodamientos; número de fallas y censura no verificados) y un subconjunto de 2 ensayos de UNSW; ninguno es de faja ni de campo",
+     "evidencia": [
+      "E-7001",
+      "E-7003"
+     ],
+     "limite": "Con 2 fallas Weibull es inviable. Solo sirven como contraste metodológico"
+    }
+   ],
+   "nota": "Parámetros Weibull publicados verificados y datos de campo de chumaceras de polea: VACÍO. No se ajusta ningún Weibull."
+  },
+  "punto_optimo": {
+   "elementos": [],
+   "vacio": "Sin costos de falla y de reemplazo aportados por la persona, y sin fuente leída del modelo en el registro: no se calcula ninguna edad óptima."
+  },
+  "lcc": {
+   "elementos": [],
+   "vacio": "Sin costos aportados y sin fuente de datos de costo: no se calcula LCC."
+  },
+  "vida_util": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "La vida nominal es una vida de fatiga bajo condiciones convencionales; la edición de la norma de vida nominal no está verificada",
+     "evidencia": [
+      "E-6003"
+     ],
+     "limite": "Contexto de aerogeneradores"
+    }
+   ],
+   "nota": "Vida de diseño de poleas en fuente leída: VACÍO. Existen pistas comerciales sin abrir (E-6006, E-6007) que no respaldan cifras."
+  },
+  "ibr": {
+   "elementos": [],
+   "vacio": "API RP 580 y 581 solo se vieron como resúmenes de buscador (E-8513, E-8514); a criterio del equipo, no verificado, son para equipos de proceso. No se leyó ninguna fuente de IBR aplicable a la chumacera."
+  },
+  "ml": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "En un preprint, al retener la condición de 1000 rpm en el conjunto JNU la exactitud colapsa a 40,64 %, por debajo de la clase mayoritaria; la regresión logística (57,91 %) generaliza mejor que los conjuntos de árboles. La exactitud depende de la partición; no hay datos de campo",
+     "evidencia": [
+      "E-8010"
+     ],
+     "limite": "Solo resumen de un preprint sin texto completo; el identificador arXiv debe verificarse; conjuntos de banco"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "En un banco de ensayo para vida remanente, todos los rodamientos se llevan a falla bajo carga muy alta para acelerar la degradación, lo que aumenta el riesgo de calentamiento local y daño incontrolado. Implicación del equipo: esa vida no representa la de una chumacera lenta de faja",
+     "evidencia": [
+      "E-8009"
+     ],
+     "limite": "Preprint no arbitrado, leído parcialmente; las métricas de error no se citan porque no figuran en el extracto registrado"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Los propios autores señalan que muchas técnicas se prueban en condiciones controladas, lo que limita su adaptabilidad",
+     "evidencia": [
+      "E-8011"
+     ],
+     "limite": "Solo resumen e inicio"
+    }
+   ],
+   "nota": "Estudios de campo con partición por activo: VACÍO."
+  },
+  "acr": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Causas mencionadas (nivel POSIBLE, por analogía): lubricación inadecuada, contaminación y desalineación en rodillos, e instalación, ajustes y lubricación en bombas",
+     "evidencia": [
+      "E-6001",
+      "E-6004"
+     ],
+     "limite": "Ninguna es específica de chumaceras de polea; sin datos del activo"
+    }
+   ]
+  },
+  "troubleshooting": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "El kurtograma se basa en la curtosis espectral para detectar transitorios no estacionarios y ubicarlos en bandas de frecuencia de la señal del rodamiento",
+     "evidencia": [
+      "E-8005"
+     ],
+     "limite": "Solo introducción"
+    }
+   ],
+   "nota": "Criterios de alarma de vibración para poleas, fusión de técnicas y tiempo de aviso (P-F): VACÍO."
+  },
+  "mpd_normas": {
+   "elementos": [],
+   "vacio": "Ninguna norma se leyó: las 15 candidatas (ISO 281, 15243, 20816-3, 13373, 18436-2, 5048, DIN 22101, ISO 113, CEMA 7, API 580 y 581, SAE JA1011) están solo como resúmenes de buscador y se listan aparte como pistas con estado NO-VERIFICADO."
+  },
+  "referencias": {
+   "elementos": [
+    {
+     "tipo": "referencia",
+     "titulo": "Fuentes realmente usadas en este dossier",
+     "evidencia": [
+      "E-6001",
+      "E-6002",
+      "E-6003",
+      "E-6004",
+      "E-7001",
+      "E-7003",
+      "E-8001",
+      "E-8003",
+      "E-8005",
+      "E-8006",
+      "E-8008",
+      "E-8009",
+      "E-8010",
+      "E-8011"
+     ],
+     "limite": ""
+    }
+   ]
+  }
+ }
+}
