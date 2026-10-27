@@ -1,7 +1,7 @@
 {
  "modo_falla": "chumacera de polea de faja transportadora",
  "fecha": "2026-10-27",
- "version": 2,
+ "version": 1,
  "secciones_con_evidencia": 10,
  "secciones_vacias": [
   "punto_optimo",
@@ -10,14 +10,5 @@
   "mpd_normas"
  ],
  "entradas_registro": 63,
- "nota": "Pistas SOLO-SNIPPET no respaldan afirmaciones; ver evidencia.json",
- "analisis": [
-  "fmeca",
-  "arbol",
-  "acr",
-  "lcc",
-  "vida",
-  "predictivo"
- ],
- "nota_analisis": "Los JSON de analisis/ son los entregados por los especialistas; las correcciones de la verificación independiente se aplican al generar el informe (informe.html es la versión corregida)."
+ "nota": "Pistas SOLO-SNIPPET no respaldan afirmaciones; ver evidencia.json"
 }

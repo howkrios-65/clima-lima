@@ -152,3 +152,20 @@ def test_dossier_con_elemento_sin_fuente_falla():
     c["dossier"] = {"orden": ["a"], "titulos": {"a": "A"}, "frentes": {"a": "x"}, "secciones": {"a": {"elementos": [{"tipo": "valor", "titulo": "v", "evidencia": []}]}}}
     with pytest.raises(ValueError):
         rh.construir_informe(c, _ledger())
+
+
+def test_ensamblar_desde_carpeta(tmp_path):
+    import reliability_kit as rk
+    L = _ledger(); L.to_json(tmp_path / "evidencia.json")
+    D = {"modo_falla": "x", "secciones": {s[0]: {"vacio": "no se halló", "elementos": []} for s in rk.dossier.SECCIONES}}
+    D["secciones"]["fenomenos"] = {"elementos": [{"tipo": "afirmacion", "titulo": "t", "evidencia": ["E-0001"], "limite": "l"}]}
+    (tmp_path / "dossier.json").write_text(json.dumps(D), encoding="utf-8")
+    (tmp_path / "analisis").mkdir()
+    (tmp_path / "analisis" / "arbol.json").write_text(json.dumps({"evento_tope": "e", "nodos": [
+        {"id": "N0", "texto": "tope", "puerta": "OR", "hijos": ["N1"], "nivel": "SINTESIS", "evidencia": ["E-0001"]},
+        {"id": "N1", "texto": "base", "puerta": "BASE", "hijos": [], "probabilidad": 0.3, "nivel": "EVIDENCIA", "evidencia": ["E-0001"]},
+        {"id": "N2", "texto": "snippet", "puerta": "BASE", "hijos": [], "nivel": "EVIDENCIA", "evidencia": ["E-0002"]}]}), encoding="utf-8")
+    r = rk.ensamblar(tmp_path)
+    assert (tmp_path / "informe.html").exists()
+    tipos = {a["tipo"] for a in r["ajustes"]}
+    assert "probabilidad_retirada" in tipos and "item_eliminado" in tipos      # snippet no respalda; probabilidad sin fuente se retira

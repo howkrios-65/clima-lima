@@ -341,7 +341,7 @@ function vSim(host){
   host.innerHTML='<div class="card"><h2>Simulador didáctico del reemplazo por edad</h2><div class="note bad"><b>No es evidencia ni representa a la chumacera.</b> Los valores los elige quien usa la página; no hay para este modo de falla una forma, una escala ni costos con fuente leída. Úselo para entender cómo cambia el punto óptimo cuando tenga datos o parámetros citables.</div>'+
    '<label>β forma <input type="range" id="sb" min="0.5" max="5" step="0.05" value="2"> <b id="vb"></b></label><label>η escala (horas) <input type="number" id="se" value="10000" min="1"></label>'+
    '<label>Costo preventivo <input type="number" id="sp" value="1" min="0.01" step="0.1"></label><label>Costo de falla <input type="number" id="sf" value="5" min="0.01" step="0.1"></label><span style="font-size:12px;color:var(--mut)">(costos en unidades relativas que usted define)</span>'+
-   '<div id="sr"></div><div id="s1"></div><div id="s2"></div><div id="s3"></div></div>';
+   '<div id="sr"></div><div id="s1"></div><div id="s2"></div><div id="s4"></div><div id="s5"></div><div id="s3"></div><div id="sz"></div></div>';
   function run(){
     var b=+$("#sb").value,e=+$("#se").value,cp=+$("#sp").value,cf=+$("#sf").value;$("#vb").textContent=b;
     var N=300,T=[],R=[],Hh=[],C=[],ts=e*3,i,t,cum=0,prevR=1,prevT=0;
@@ -349,7 +349,12 @@ function vSim(host){
     var k=0;C.forEach(function(v,j){if(v<C[k])k=j});var interior=b>1&&cf>cp&&k<N-1&&k>0,rtf=cf/(e*gamma1(b));
     $("#sr").innerHTML=interior?'<div class="grid"><div class="kpi"><b>'+fmt(T[k],0)+'</b><span>edad óptima con SUS valores de ejemplo (h)</span></div><div class="kpi"><b>'+fmt(C[k],5)+'</b><span>costo por hora en el óptimo</span></div><div class="kpi"><b>'+fmt(rtf,5)+'</b><span>costo por hora si se corre a la falla</span></div><div class="kpi"><b>'+fmt(100*(1-C[k]/rtf),1)+' %</b><span>ahorro teórico con sus valores, no un resultado del activo</span></div></div>':
       '<div class="note">Sin mínimo interior: '+(b<=1?'con β ≤ 1 el riesgo no crece con la edad y reemplazar por edad no reduce el costo.':cf<=cp?'si la falla no cuesta más que la prevención, esperar a la falla es igual o más barato.':'el mínimo cae fuera del rango mostrado.')+'</div>';
-    lineChart($("#s1"),{x:T,series:[{name:"R(t) confiabilidad",y:R}],titulo:"Confiabilidad",xfmt:function(v){return fmt(v,0)},key:"s1"});
+    var B10=e*Math.pow(-Math.log(0.9),1/b),B50=e*Math.pow(Math.LN2,1/b),MT=e*gamma1(b),vm=[{x:B10,label:"B10",c:"var(--c1)"},{x:B50,label:"B50",c:"var(--ok)"},{x:MT,label:"MTTF",c:"var(--warn)"}].filter(function(m){return m.x<=ts});
+    var Fv=R.map(function(r){return 1-r}),fv=T.map(function(t){return b/e*Math.pow(t/e,b-1)*Math.exp(-Math.pow(t/e,b))});
+    $("#sz").innerHTML='<div class="note"><b>Forma de la tasa de falla con β = '+b+':</b> '+(b<0.95?'decreciente (mortalidad infantil o mezcla de modos).':b>1.05?'creciente (desgaste): el reemplazo preventivo puede tener sentido.':'aproximadamente constante (fallas aleatorias): reemplazar por edad no ayuda.')+' B10 = '+fmt(B10,0)+' h, B50 = '+fmt(B50,0)+' h, MTTF = '+fmt(MT,0)+' h (con sus valores).</div>';
+    lineChart($("#s1"),{x:T,series:[{name:"R(t) confiabilidad",y:R}],vlines:vm,titulo:"Confiabilidad",xfmt:function(v){return fmt(v,0)},key:"s1"});
+    lineChart($("#s4"),{x:T,series:[{name:"f(t) densidad de fallas",y:fv}],vlines:vm,titulo:"Densidad de fallas",xfmt:function(v){return fmt(v,0)},key:"s4"});
+    lineChart($("#s5"),{x:T,series:[{name:"F(t) probabilidad de falla",y:Fv}],vlines:vm,titulo:"Probabilidad de falla",xfmt:function(v){return fmt(v,0)},key:"s5"});
     lineChart($("#s2"),{x:T,series:[{name:"h(t) tasa de falla",y:Hh}],titulo:"Tasa de falla",xfmt:function(v){return fmt(v,0)},key:"s2"});
     lineChart($("#s3"),{x:T,series:[{name:"costo por hora C(T)",y:C}],vlines:interior?[{x:T[k],label:"óptimo",c:"var(--ok)"}]:[],hlines:[{y:rtf,label:"correr a la falla",c:"var(--warn)"}],titulo:"Costo por hora",xfmt:function(v){return fmt(v,0)},key:"s3"});
   }
@@ -369,6 +374,70 @@ function barChart(host,rows,o){ /* rows=[{label,value,color}] */
 }
 function listaEv(items,campo){return '<ul>'+(items||[]).map(function(x){return '<li>'+esc(x[campo||"texto"])+' '+nv(x.nivel)+' '+chips(x.evidencia)+(x.nota?'<br><small>'+esc(x.nota)+'</small>':'')+'</li>'}).join("")+'</ul>'}
 function vaciosHtml(a){return (a&&a.length)?'<div class="note bad"><b>VACÍO</b><ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join("")+'</ul></div>':''}
+
+function openHtml(h){var d=$("#drawer");d.innerHTML='<button class="x" aria-label="Cerrar">×</button>'+h;d.classList.add("on")}
+function wrapTxt(t,n){var w=String(t).split(" "),l=[],c="";w.forEach(function(x){if((c+" "+x).trim().length>n){l.push(c);c=x}else c=(c+" "+x).trim()});if(c)l.push(c);return l}
+
+function svgArbol(host,a){
+  var N={};a.nodos.forEach(function(n){N[n.id]=n});var isChild={};a.nodos.forEach(function(n){(n.hijos||[]).forEach(function(h){isChild[h]=1})});
+  var roots=a.nodos.filter(function(n){return!isChild[n.id]}),BW=186,BH=104,GX=14,GY=50,leaf=0,pos={},maxd=0;
+  function lay(n,d){maxd=Math.max(maxd,d);var hs=(n.hijos||[]).map(function(h){return N[h]}).filter(Boolean);
+    if(!hs.length){pos[n.id]={x:leaf*(BW+GX),d:d};leaf++;return}
+    hs.forEach(function(h){lay(h,d+1)});var xs=hs.map(function(h){return pos[h.id].x});pos[n.id]={x:(Math.min.apply(0,xs)+Math.max.apply(0,xs))/2,d:d}}
+  roots.forEach(function(r){lay(r,0)});
+  var W=Math.max(leaf,1)*(BW+GX)+20,H=(maxd+1)*(BH+GY)+10,g='';
+  a.nodos.forEach(function(n){var P=pos[n.id];if(!P)return;(n.hijos||[]).forEach(function(h){var Q=pos[h];if(!Q)return;
+    g+='<path d="M'+(P.x+BW/2+10)+' '+(P.d*(BH+GY)+BH+5)+' V'+(P.d*(BH+GY)+BH+GY/2)+' H'+(Q.x+BW/2+10)+' V'+(Q.d*(BH+GY)+5)+'" fill="none" stroke="var(--mut)"/>'})});
+  a.nodos.forEach(function(n){var P=pos[n.id];if(!P)return;var x=P.x+10,y=P.d*(BH+GY)+5,col=n.nivel==="EVIDENCIA"?"var(--ok)":"var(--warn)";
+    g+='<g class="nd" data-n="'+esc(n.id)+'" style="cursor:pointer"><rect x="'+x+'" y="'+y+'" width="'+BW+'" height="'+BH+'" rx="6" fill="var(--panel)" stroke="'+col+'" stroke-width="2"/>'+
+      wrapTxt(n.texto,31).slice(0,8).map(function(l,i){return '<text x="'+(x+6)+'" y="'+(y+14+i*12)+'" style="fill:var(--ink)">'+esc(l)+'</text>'}).join("")+
+      (n.hijos&&n.hijos.length?'<circle cx="'+(x+BW/2)+'" cy="'+(y+BH+14)+'" r="12" fill="var(--panel)" stroke="var(--mut)"/><text x="'+(x+BW/2)+'" y="'+(y+BH+18)+'" text-anchor="middle" style="fill:var(--ink)">'+esc(n.puerta)+'</text>':'')+'</g>'});
+  host.innerHTML='<div class="tw"><svg viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'" role="img" aria-label="Árbol de fallas">'+g+'</svg></div><div style="font-size:12px;color:var(--mut)"><span style="color:var(--ok)">&#9632;</span> respaldo directo de la evidencia · <span style="color:var(--warn)">&#9632;</span> síntesis del equipo · círculo = puerta lógica · pulse un nodo para ver sus fuentes</div>';
+  host.querySelectorAll(".nd").forEach(function(el){el.onclick=function(){var n=N[el.dataset.n];openHtml('<h3>'+esc(n.id)+' '+nv(n.nivel)+'</h3><p>'+esc(n.texto)+'</p><p>'+chips(n.evidencia)+'</p><p><small>'+esc(n.nota||"")+'</small></p>')}});
+}
+
+function svgIshikawa(host,ish){
+  var cats=Object.keys(ish),W=1400,H=640,sx=250,ex=W-200,my=H/2,g='<line x1="'+sx+'" y1="'+my+'" x2="'+ex+'" y2="'+my+'" stroke="var(--ink)" stroke-width="3"/><polygon points="'+ex+','+(my-8)+' '+(ex+14)+','+my+' '+ex+','+(my+8)+'" fill="var(--ink)"/><text x="'+(ex+20)+'" y="'+(my+4)+'" style="fill:var(--ink);font-weight:600">falla de la chumacera</text>';
+  var perSide=Math.ceil(cats.length/2),step=(ex-sx-40)/perSide;
+  cats.forEach(function(c,i){var up=i%2===0,col=Math.floor(i/2),bx=sx+40+col*step+step*0.6,by=up?20:H-20,ey=my;
+    g+='<line x1="'+(bx-step*0.35)+'" y1="'+by+'" x2="'+bx+'" y2="'+ey+'" stroke="var(--c1)" stroke-width="2"/><text x="'+(bx-step*0.35)+'" y="'+(up?by-6:by+14)+'" text-anchor="middle" style="fill:var(--c1);font-weight:700;font-size:13px">'+esc(c)+'</text>';
+    (ish[c]||[]).slice(0,4).forEach(function(it,k){var ty=up?by+26+k*62:by-40-k*62,tx=bx-step*0.35+(bx-(bx-step*0.35))*((ty-by)/(ey-by));
+      wrapTxt(it.texto,40).slice(0,4).forEach(function(l,j){g+='<text x="'+(tx-8)+'" y="'+(ty+j*12)+'" text-anchor="end" style="fill:'+(it.nivel==="EVIDENCIA"?"var(--ok)":"var(--warn)")+'">'+esc(l)+'</text>'})});
+    if(!(ish[c]||[]).length)g+='<text x="'+(bx-step*0.35)+'" y="'+(up?by+30:by-24)+'" text-anchor="middle" style="fill:var(--bad)">VACÍO</text>'});
+  host.innerHTML='<div class="tw"><svg viewBox="0 0 '+W+' '+H+'" width="100%" style="min-width:1100px" role="img" aria-label="Diagrama de Ishikawa">'+g+'</svg></div><div style="font-size:12px;color:var(--mut)"><span style="color:var(--ok)">&#9632;</span> respaldo directo · <span style="color:var(--warn)">&#9632;</span> síntesis del equipo</div>';
+}
+
+function vMapa(host){
+  var c=D.caso,an=c.analisis||{},dz=c.dossier,h='';
+  function nEl(k){return dz&&dz.secciones[k]?(dz.secciones[k].elementos||[]).length:0}
+  var pasos=[["Referencias",nEl("fenomenos")+nEl("mediciones")>0?"ok":"vac",nEl("fenomenos")+nEl("mediciones")+" elementos leídos"],
+   ["Top de fallas",nEl("top_fallas")?"par":"vac",nEl("top_fallas")?"solo cita de segunda mano":"VACÍO"],
+   ["FMECA",an.fmeca?"par":"vac",an.fmeca?(an.fmeca.items.length+" modos; S-O-D sin puntuar"):"VACÍO"],
+   ["Árbol de fallas",an.arbol?"ok":"vac",an.arbol?(an.arbol.nodos.length+" nodos"):"VACÍO"],
+   ["Troubleshooting",nEl("troubleshooting")?"par":"vac",nEl("troubleshooting")?"técnicas descritas; sin criterios de alarma":"VACÍO"],
+   ["Mant. predictivo (P-F)","vac","intervalo P-F: VACÍO"],
+   ["Escenarios",c.simulador?"par":"vac","simulador didáctico"]];
+  var col={ok:"var(--ok)",par:"var(--warn)",vac:"var(--bad)"},W=1100,sv='';
+  pasos.forEach(function(p,i){var x=i*155+4;sv+='<rect x="'+x+'" y="6" width="140" height="62" rx="10" fill="var(--panel)" stroke="'+col[p[1]]+'" stroke-width="3"/><text x="'+(x+70)+'" y="28" text-anchor="middle" style="fill:var(--ink);font-weight:700;font-size:12px">'+(i+1)+'. '+esc(p[0])+'</text>'+wrapTxt(p[2],24).slice(0,2).map(function(l,j){return '<text x="'+(x+70)+'" y="'+(44+j*12)+'" text-anchor="middle">'+esc(l)+'</text>'}).join("")+(i<pasos.length-1?'<text x="'+(x+147)+'" y="42" style="fill:var(--mut);font-size:16px">→</text>':'')});
+  h+='<div class="card"><h2>Cadena RCM: qué está respaldado y qué falta</h2><div class="tw"><svg viewBox="0 0 '+W+' 76" width="100%" style="min-width:900px">'+sv+'</svg></div><div style="font-size:12px;color:var(--mut)"><span style="color:var(--ok)">&#9632;</span> con respaldo · <span style="color:var(--warn)">&#9632;</span> parcial · <span style="color:var(--bad)">&#9632;</span> VACÍO</div></div>';
+  if(an.arbol)h+='<div class="card"><h2>Árbol de fallas</h2><div id="mp-arb"></div></div>';
+  if(an.acr&&an.acr.ishikawa)h+='<div class="card"><h2>Ishikawa (6M)</h2><div id="mp-ish"></div></div>';
+  if(an.acr&&an.acr.ensayos&&an.acr.hipotesis)h+='<div class="card"><h2>Qué ensayo o técnica ayuda a cada hipótesis</h2><div id="mp-hm"></div></div>';
+  if(an.fmeca)h+='<div class="card"><h2>Respaldo documental por modo de falla</h2><div class="note bad"><b>No es prevalencia.</b> Cuenta cuántas fuentes leídas respaldan cada modo; mide cuánta evidencia hay, no con qué frecuencia ocurre. El ranking de frecuencias es VACÍO.</div><div id="mp-doc"></div></div>';
+  h+='<div class="card"><h2>Esquema cualitativo de la degradación</h2><div id="mp-deg"></div></div>';
+  host.innerHTML=h;
+  if(an.arbol)svgArbol($("#mp-arb"),an.arbol);
+  if(an.acr&&an.acr.ishikawa)svgIshikawa($("#mp-ish"),an.acr.ishikawa);
+  if(an.acr&&an.acr.ensayos&&an.acr.hipotesis){var hs=an.acr.hipotesis.map(function(x){return x.id}),t='<div class="tw"><table><tr><th>Ensayo o técnica</th>'+hs.map(function(x){return '<th>'+esc(x)+'</th>'}).join("")+'</tr>'+an.acr.ensayos.map(function(e){return '<tr><td>'+esc(e.ensayo.slice(0,90))+(e.ensayo.length>90?'…':'')+' '+chips(e.evidencia)+'</td>'+hs.map(function(x){return (e.para_hipotesis||[]).indexOf(x)>=0?'<td style="background:var(--acc);text-align:center;color:#fff">●</td>':'<td></td>'}).join("")+'</tr>'}).join("")+'</table></div><p style="font-size:12px;color:var(--mut)">Columnas sin punto: la evidencia leída no menciona ensayo para esa hipótesis (VACÍO).</p>';$("#mp-hm").innerHTML=t}
+  if(an.fmeca)barChart($("#mp-doc"),an.fmeca.items.map(function(m){return{label:m.id+" "+m.modo,value:m.evidencia.length,color:"var(--c3)"}}),{titulo:"Fuentes por modo"});
+  /* esquema de degradación (E-8008) y kurtosis no monótona (E-8003): curvas dibujadas a mano, sin escala */
+  var W2=760,H2=210,st='';var xs=[0,.25,.5,.75,1];
+  st+='<line x1="40" y1="170" x2="740" y2="170" stroke="var(--mut)"/><line x1="40" y1="10" x2="40" y2="170" stroke="var(--mut)"/>';
+  [["1 ultrasónico",40],["2 resonancia natural",215],["3 frecuencias de defecto y armónicos",390],["4 ruido de fondo, previo a la falla",565]].forEach(function(e,i){st+='<rect x="'+e[1]+'" y="170" width="175" height="26" fill="var(--soft)" stroke="var(--line)"/><text x="'+(e[1]+87)+'" y="187" text-anchor="middle" style="fill:var(--ink)">'+esc(e[0])+'</text>'});
+  st+='<path d="M40 150 C120 148 160 60 300 40 C420 30 480 120 740 150" fill="none" stroke="var(--c2)" stroke-width="2.5"/><text x="300" y="32" text-anchor="middle" style="fill:var(--c2)">kurtosis: sube con el defecto incipiente y vuelve a lo normal al extenderse</text>';
+  st+='<path d="M40 160 C260 158 400 140 560 100 C660 70 700 40 740 20" fill="none" stroke="var(--c1)" stroke-width="2.5"/><text x="560" y="92" style="fill:var(--c1)">energía de las frecuencias de defecto: crece</text>';
+  $("#mp-deg").innerHTML='<svg viewBox="0 0 '+W2+' '+H2+'" width="100%" role="img" aria-label="Esquema cualitativo">'+st+'</svg><div class="note">Esquema <b>cualitativo y sin escala</b>: no son datos ni mediciones y no hay duraciones. Las cuatro etapas vienen de <button class="chip" data-ev="E-8008">E-8008</button> y el comportamiento no monótono de la kurtosis de <button class="chip" data-ev="E-8003">E-8003</button>; la forma de las curvas es ilustrativa.</div>';
+}
 
 function vFmeca(host){
   var f=D.caso.analisis.fmeca,it=f.items||[],sv=store("fmeca")||{};
@@ -445,7 +514,7 @@ function vHerr(host){
   host.innerHTML='<div class="card"><h2>Frecuencias características del rodamiento</h2><div class="note">Cinemática estándar de rodamientos; la evidencia registrada (<button class="chip" data-ev="E-8008">E-8008</button>) cita las ecuaciones BPFO, BPFI, BSF y FTF, pero su extracto registrado no las contiene: verifíquelas en la fuente. Los datos geométricos son de su rodamiento (catálogo), no de la evidencia. Supone aro exterior fijo, eje que gira y rodadura pura sin deslizamiento.</div>'+
    '<label>Elementos rodantes <input type="number" id="hn" value="" placeholder="n"></label><label>Diámetro del elemento d (mm) <input type="number" id="hd"></label><label>Diámetro primitivo D (mm) <input type="number" id="hD"></label><label>Ángulo de contacto (°) <input type="number" id="ha" value="0"></label><label>Velocidad del eje (rpm) <input type="number" id="hr"></label><div id="hf"></div><div id="hs"></div></div>'+
    '<div class="card"><h2>Vida nominal L10</h2><div class="note">Relación estándar L10 = (C/P)^p millones de revoluciones (p = 3 en bolas, 10/3 en rodillos). La fuente registrada <button class="chip" data-ev="E-6002">E-6002</button> la menciona; su extracto registrado no la contiene y la edición de la norma no está verificada. Es solo la vida de fatiga bajo condiciones convencionales.</div>'+
-   '<label>Capacidad dinámica C <input type="number" id="her-c"></label><label>Carga equivalente P <input type="number" id="her-p"></label><label>Tipo <select id="her-t"><option value="3">bolas (p=3)</option><option value="3.3333333">rodillos (p=10/3)</option></select></label><label>rpm <input type="number" id="her-n"></label><div id="her-o"></div></div>'+
+   '<label>Capacidad dinámica C <input type="number" id="her-c"></label><label>Carga equivalente P <input type="number" id="her-p"></label><label>Tipo <select id="her-t"><option value="3">bolas (p=3)</option><option value="3.3333333">rodillos (p=10/3)</option></select></label><label>rpm <input type="number" id="her-n"></label><div id="her-o"></div><div id="her-g"></div><p style="font-size:12px;color:var(--mut)">Curva de la relación L10 = (C/P)^p en millones de revoluciones frente a P/C (relación pura; no son datos de ningún rodamiento).</p></div>'+
    '<div class="card"><h2>Pareto de fallas con sus datos</h2><div class="note">El ranking de componentes y modos de la literatura es VACÍO. Si tiene conteos propios, ingréselos: «componente: cantidad», uno por línea.</div><textarea id="pa" rows="5" style="width:100%;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px" placeholder="chumacera: 12&#10;rodillo: 30"></textarea><div id="pg"></div></div>';
   function fr(){var n=+$("#hn").value,d=+$("#hd").value,Dd=+$("#hD").value,a=(+$("#ha").value||0)*Math.PI/180,rpm=+$("#hr").value;
     if(!(n>0&&d>0&&Dd>0&&rpm>0&&d<Dd)){$("#hf").innerHTML='<p>Ingrese n, d, D y rpm (d menor que D).</p>';$("#hs").innerHTML="";return}
@@ -458,7 +527,10 @@ function vHerr(host){
   function l10(){var C=+$("#her-c").value,P=+$("#her-p").value,p=+$("#her-t").value,n=+$("#her-n").value;if(!(C>0&&P>0)){$("#her-o").innerHTML="<p>Ingrese C y P.</p>";return}var L=Math.pow(C/P,p);$("#her-o").innerHTML='<div class="grid"><div class="kpi"><b>'+fmt(L,2)+'</b><span>L10 (millones de revoluciones)</span></div>'+(n>0?'<div class="kpi"><b>'+fmt(L*1e6/(60*n),0)+'</b><span>L10h (horas) = L10·10^6/(60·n)</span></div>':'')+'</div>'}
   function pa(){var rows=($("#pa").value||"").split("\n").map(function(l){var m=l.split(":");return{label:(m[0]||"").trim(),value:+(m[1]||"").trim()}}).filter(function(r){return r.label&&r.value>0}).sort(function(a,b){return b.value-a.value});
     if(!rows.length){$("#pg").innerHTML="";return}var tot=rows.reduce(function(a,b){return a+b.value},0),ac=0;rows.forEach(function(r){ac+=r.value;r.label=r.label+" ("+fmt(100*ac/tot,0)+" % acum.)"});$("#pg").innerHTML='<div id="pgb"></div>';barChart($("#pgb"),rows,{titulo:"Pareto"})}
-  host.addEventListener("input",function(){fr();l10();pa()});fr();l10();
+  function l10c(){var C=+$("#her-c").value,P=+$("#her-p").value,X=[],Y3=[],Y33=[],i;for(i=0;i<=45;i++){var r=0.05+i*0.01;X.push(r);Y3.push(Math.pow(1/r,3));Y33.push(Math.pow(1/r,10/3))}
+    var mk=(C>0&&P>0)?[{x:P/C,y:Math.pow(C/P,+$("#her-t").value),label:"su caso"}]:[];if(mk.length&&(P/C<0.05||P/C>0.5))mk=[];
+    lineChart($("#her-g"),{x:X,series:[{name:"bolas (p=3)",y:Y3},{name:"rodillos (p=10/3)",y:Y33}],marks:mk,titulo:"L10 frente a P/C",xfmt:function(v){return fmt(v,2)},key:"herg"})}
+  host.addEventListener("input",function(){fr();l10();pa();l10c()});fr();l10();l10c();
 }
 
 function vPlan(host){
@@ -492,6 +564,7 @@ function boot(){
   tab("cau","Causas y técnicas",vCausas);
   tab("dos","Dossier",vDossier,!!c.dossier);
   var an=c.analisis||{};
+  tab("map","Mapa visual",vMapa,!!(an.arbol||an.fmeca||an.acr));
   tab("fme","FMECA",vFmeca,!!(an.fmeca&&an.fmeca.items&&an.fmeca.items.length));
   tab("arb","Árbol de fallas",vArbol,!!(an.arbol&&an.arbol.nodos&&an.arbol.nodos.length));
   tab("acr","ACR",vAcr,!!(an.acr&&an.acr.hipotesis&&an.acr.hipotesis.length));

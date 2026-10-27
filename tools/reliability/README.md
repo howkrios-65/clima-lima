@@ -9,7 +9,7 @@ este código y reporta n, método, intervalos y advertencias.
 ```bash
 cd tools/reliability
 pip install -r requirements.txt
-python -m pytest -q          # 146 pruebas (~25 s): kit, correcciones y reglas del equipo de agentes
+python -m pytest -q          # 149 pruebas (~25 s): kit, correcciones y reglas del equipo de agentes
 python examples/demo.py      # flujo completo con datos sintéticos (ILUSTRATIVOS)
 ```
 
@@ -66,3 +66,4 @@ cuantil de Kaplan-Meier estaban invertidas (corregido).
 - `case_store`: historial de casos, recurrencia y líneas base versionadas (`historial/`, fuera de git por defecto).
 - `report_html.construir_informe(caso, ledger, salida)`: informe HTML autocontenido con compuertas de evidencia, Weibull en el navegador
   con autoprueba contra este kit, detección retrospectiva con controles y matriz de convergencia que muestra fuentes de información distintas.
+- `ensamblar(carpeta)`: arma el informe de un modo de falla desde `evidencia.json`, `dossier.json` y `analisis/*.json` con todas las compuertas.

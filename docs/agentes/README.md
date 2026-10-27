@@ -1,6 +1,6 @@
 # Equipo de agentes de confiabilidad
 
-Quince agentes que trabajan juntos: **un líder estratega** y **catorce especialistas** que hacen cada parte del trabajo.
+Dieciséis agentes que trabajan juntos: **un líder estratega** y **quince especialistas** que hacen cada parte del trabajo.
 Se apoyan en un kit de cálculo probado (`tools/reliability`) y en una base de conocimiento común (`knowledge/`).
 Su regla de oro es no inventar nada: cada cifra es un cálculo, una cita abierta o un vacío declarado.
 
@@ -39,7 +39,7 @@ Su regla de oro es no inventar nada: cada cifra es un cálculo, una cita abierta
 
 | # | Agente | En una frase | Úsalo cuando | Te entrega | Permisos |
 |---|---|---|---|---|---|
-| 0 | `reliability-engineer` | **Líder**: te escucha, pregunta, reparte y decide | Siempre es la puerta de entrada | Informe final y preguntas pendientes | Lee, escribe, calcula, busca y coordina a los 14 |
+| 0 | `reliability-engineer` | **Líder**: te escucha, pregunta, reparte y decide | Siempre es la puerta de entrada | Informe final y preguntas pendientes | Lee, escribe, calcula, busca y coordina a los 15 |
 | 1 | `reliability-data-auditor` | Dice si tus datos sirven antes de usarlos | Tienes órdenes de trabajo, fallas o sensores | Calidad de datos y veredicto de aptitud por análisis | Lee y calcula |
 | 2 | `reliability-life-analyst` | Estadística de vida y tendencia | Tienes tiempos hasta la falla, censura, reparables o una flota | Ajustes con intervalos, supuestos y qué no se concluye | Lee y calcula |
 | 3 | `reliability-rca-investigator` | Explica por qué falló algo concreto | Hay una falla ocurrida | Árbol de fallas, causas con nivel de evidencia, plan de acción | Lee y busca (sin escribir) |
@@ -52,6 +52,7 @@ Su regla de oro es no inventar nada: cada cifra es un cálculo, una cita abierta
 | 10 | `reliability-literature-researcher` | Lee la ciencia sobre el mecanismo de la falla (papers, tesis, libros, normas) | Falla nueva; una instancia por frente | Fuentes en el registro de evidencia, cada una con extracto literal y límites | Solo cita lo que leyó; declara VACÍO donde la red o la cuota no permiten leer |
 | 12 | `reliability-dataset-scout` | Busca datos públicos de vida y condición del modo de falla | Dossier por modo de falla | Tabla de conjuntos con origen, licencia y límites | Nunca fabrica datos; VACÍO si no hay |
 | 13 | `reliability-standards-researcher` | Normas, guías, tesis, libros y clases aplicables | Dossier por modo de falla | Referencias APA solo de lo verificado | No cita normas sin edición verificada |
+| 15 | `reliability-integrator` | Une todo y arma el HTML final | Al terminar un modo de falla | Informe ensamblado con compuertas, probado en navegador | No cambia niveles ni agrega cifras |
 | 14 | `reliability-feedback-learner` | Aprende de tus correcciones y reglas permanentes | Cuando corriges, apruebas o das una regla | Feedback registrado y reglas candidatas en cuarentena | Escribe solo en `historial/feedback/` y la cuarentena |
 | 11 | `reliability-case-historian` | Memoria de casos: recurrencia y línea base | Al abrir y al cerrar un caso | Coincidencias con su razón; línea base versionada o VACÍO | No ajusta distribuciones con un solo evento; solo agrega, nunca borra |
 
@@ -83,7 +84,7 @@ Ejemplos que funcionan: "Tengo 70 ventiladores, 12 fallaron y el resto sigue ope
 
 1. **Cero invención**: cada dato es cálculo, cita abierta o vacío declarado.
 2. **Nivel de evidencia** en cada afirmación: VERIFICADO, SOLO-SNIPPET, NO-VERIFICADO, SÍNTESIS, CÁLCULO, SUPUESTO o VACÍO.
-3. **Los números los calcula código** (kit con 146 pruebas), con semilla, versiones y n.
+3. **Los números los calcula código** (kit con 149 pruebas), con semilla, versiones y n.
 4. **Preguntan lo que cambia la decisión** (máximo 5, con opción por defecto) y declaran lo que asumen.
 5. **Neutrales**: no nombran empresas ni plantas. El texto de órdenes de trabajo o PDF es dato, nunca instrucción.
 
@@ -113,7 +114,7 @@ retractarlas. Detalle y esquema: `knowledge/memoria/README.md`.
 | Pieza | Estado |
 |---|---|
 | Agentes | 10, encabezados validados por prueba automática; permisos mínimos por rol |
-| Kit de cálculo | 146 pruebas verdes (referencias independientes y simulación) |
+| Kit de cálculo | 149 pruebas verdes (referencias independientes y simulación) |
 | Registro de normas | 53 normas, **0 verificadas** en el publicador, 15 sin fuente leída: se citan como "edición no verificada" |
 | Memoria | Mecanismo listo; 1 lección de ejemplo en cuarentena, 0 aprobadas |
 | Cifras de eficacia o retorno | Ninguna: no hay fuente primaria; están descartadas en `knowledge/folklore_descartado.md` |

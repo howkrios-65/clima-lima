@@ -13,6 +13,7 @@ from .workorders import pareto, bad_actors, chronic_repeaters
 from .data_quality import audit, audit_recurrent
 from .case_store import CaseStore, CasoInvalido, familia_de
 from . import signals, dossier
+from .ensamblar import ensamblar
 from .evidence import Ledger, EvidenciaInvalida, validar_entrada, apa
 from .economics import (age_replacement_cost_rate, optimal_age_replacement, npv, eac,
                         inherent_availability)
