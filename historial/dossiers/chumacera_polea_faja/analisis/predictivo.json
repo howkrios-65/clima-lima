@@ -1,0 +1,242 @@
+{
+ "hallazgos": [
+  {
+   "id": "P1",
+   "texto": "La envolvente es la técnica con respaldo para detectar y localizar el defecto: filtra en la resonancia, demodula y aplica FFT; tiene alta sensibilidad e inmunidad al ruido y permite identificar tipo y ubicación. Su dificultad declarada es elegir la banda del filtro. El espectro de velocidad solo detecta defectos en etapas tardías.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8001",
+    "E-8006"
+   ],
+   "nota": "Revisiones y introducciones, sin ensayo propio ni datos de fajas."
+  },
+  {
+   "id": "P2",
+   "texto": "Las frecuencias características (BPFO, BPFI, BSF, FTF) se calculan con la geometría del rodamiento, la velocidad del eje y el ángulo de contacto. En el activo requieren datos de placa del rodamiento y velocidad real de la polea; no se dan valores.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8008"
+   ],
+   "nota": "Ecuaciones en el preprint; los valores del activo son vacío."
+  },
+  {
+   "id": "P3",
+   "texto": "La kurtosis detecta defecto incipiente pero NO es monótona: vuelve a valores normales cuando el defecto se extiende. Por tanto, una kurtosis baja no prueba un rodamiento sano y no sirve sola para pronóstico.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8003"
+   ],
+   "nota": "Revisión de 2008 que no cuantifica tiempos de aviso ni trata fajas."
+  },
+  {
+   "id": "P4",
+   "texto": "Los umbrales de kurtosis 3 (operación con restricciones) y 5 (inaceptable) circulan en la literatura, pero los autores de la revisión no hallaron sustento teórico ni empírico, y no hay datos públicos de su fiabilidad. No son estándar para chumaceras de fajas y no se adoptan como alarma.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8001"
+   ],
+   "nota": "Se citan solo para advertir que no están validados."
+  },
+  {
+   "id": "P5",
+   "texto": "Las etapas de degradación descritas son cualitativas: 1 ultrasonido; 2 resonancia natural con defecto inicial; 3 frecuencias de defecto y armónicos; 4 etapa final previa a la falla. No traen duraciones, por lo que no permiten fijar un intervalo P-F.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8008"
+   ],
+   "nota": "Datos de banco acelerado; sin tiempos de aviso."
+  },
+  {
+   "id": "P6",
+   "texto": "Los resultados de ML en banco no demuestran generalización: una exactitud de 99,4 % no dice qué partición usó (por activo, condición o segmentos al azar); con partición que retiene una condición, la exactitud cae a 40,64 % en JNU, bajo una línea base de clase mayoritaria, mientras la regresión logística (57,91 %) generaliza mejor que los conjuntos de árboles.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8007",
+    "E-8010"
+   ],
+   "nota": "Resúmenes de autores, preprints no arbitrados, sin fajas."
+  },
+  {
+   "id": "P7",
+   "texto": "Los propios autores reconocen que muchas técnicas se desarrollan y prueban en condiciones controladas, lo que limita su adaptabilidad. Las mejoras reportadas (hasta 15,8 %) son frente a una referencia elegida por los autores, en banco.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8011",
+    "E-8518"
+   ],
+   "nota": "No son prueba de desempeño en campo."
+  },
+  {
+   "id": "P8",
+   "texto": "Un modelo de supervivencia (CoxPH, bosque de supervivencia) se validó para vida remanente en un conjunto de banco acelerado, con error en minutos y censura aleatoria. Sirve como método candidato por tratar la censura, pero la escala (minutos, carga muy alta) no se traslada a una polea de baja velocidad con vida de meses.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8009"
+   ],
+   "nota": "Preprint no arbitrado; el error no equivale a tiempo de aviso en campo."
+  },
+  {
+   "id": "P9",
+   "texto": "Los bancos públicos abiertos (rodamientos de bolas, carga y velocidad variables o fallas aceleradas) sirven para depurar código y comparar métodos, no para fijar umbrales ni intervalos del activo. Uno de ellos tiene solo 2 ensayos de falla y sin censura declarada: mínimo absoluto para Weibull.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-7001",
+    "E-7002",
+    "E-7003",
+    "E-8009"
+   ],
+   "nota": "Razonamiento: banco no representa baja velocidad, soporte de chumacera ni lubricación de campo. Validar con un experto del activo."
+  },
+  {
+   "id": "P10",
+   "texto": "La confianza mejora combinando vibración con aceite, termografía y otros indicadores, y la comparación contra una condición propia del activo es más defendible que un límite genérico.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-8003",
+    "E-8001"
+   ],
+   "nota": "Razonamiento: si el límite genérico no tiene sustento (P4), la referencia debe salir de datos propios del activo en buen estado. Validar con un experto del activo."
+  },
+  {
+   "id": "P11",
+   "texto": "Un baseline de ingeniería (tendencia de envolvente en las frecuencias de defecto, más temperatura y condición del lubricante) debe existir y ser superado con evidencia antes de justificar cualquier modelo de aprendizaje. Con pocas fallas por modo, el aprendizaje supervisado no es estimable.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-8010",
+    "E-8003",
+    "E-8009"
+   ],
+   "nota": "Razonamiento: el único contraste de generalización leído muestra que un modelo simple supera a conjuntos de árboles fuera de la condición de entrenamiento. Validar con un experto del activo."
+  }
+ ],
+ "estrategia": [
+  {
+   "etapa": "0. Definición previa (sin modelo)",
+   "accion": "Fijar con el negocio el objetivo (detección, diagnóstico o RUL), el horizonte H y el costo de falso negativo frente a falso positivo; definir qué es 'falla funcional' y qué es censura (retiro preventivo, cambio por otra causa). Registrar velocidad real, datos de placa del rodamiento y configuración de la polea. Instalar el flujo de datos: mismo punto de medición, misma orientación, misma frecuencia de muestreo y bitácora de intervenciones.",
+   "condicion_para_avanzar": "Horizonte, costos y definición de falla aprobados por una persona responsable; punto y método de medición fijados. Valores: VACÍO hasta que el negocio los entregue.",
+   "evidencia": [
+    "E-8008",
+    "E-8009"
+   ]
+  },
+  {
+   "etapa": "1. Línea base y umbral desde datos propios",
+   "accion": "Medir el activo en buen estado y construir su referencia propia (RMS, kurtosis, espectro de envolvente en BPFO, BPFI, BSF, FTF, temperatura), con carta de control o tendencia. Elegir la banda de filtro de envolvente en el activo y documentarla. No usar kurtosis 3 y 5 como alarma: están sin sustento y la kurtosis cae al crecer el defecto. Los umbrales se expresan como desviación respecto de la línea base propia y los aprueba un experto del activo.",
+   "condicion_para_avanzar": "Línea base con mediciones repetidas del activo sano, verificación de repetibilidad del punto de medición y criterio de umbral aprobado por humano. Cantidad mínima de mediciones: VACÍO (no hay fuente leída).",
+   "evidencia": [
+    "E-8001",
+    "E-8003",
+    "E-8006"
+   ]
+  },
+  {
+   "etapa": "2. Detección (baseline estadístico)",
+   "accion": "Operar alerta por desviación de la línea base propia combinando envolvente, temperatura y aceite o grasa, en modo sombra (sin actuar) y registrando cada alerta con la inspección posterior. Medir falsas alarmas por activo-mes y recall por evento, no por puntos. Comparar contra el baseline de umbral de ingeniería y tendencia.",
+   "condicion_para_avanzar": "Piloto en sombra completado con alertas verificadas por inspección y falsos negativos revisados uno a uno. Para pasar a un detector aprendido: evidencia de que supera al baseline con validación hacia adelante y reserva de activos no vistos, y cantidad mínima de eventos reales según el protocolo del equipo (cifra: VACÍO).",
+   "evidencia": [
+    "E-8001",
+    "E-8003",
+    "E-8010"
+   ]
+  },
+  {
+   "etapa": "3. Diagnóstico (ubicación y tipo del defecto)",
+   "accion": "Usar el espectro de envolvente para atribuir la alerta a pista externa, interna, elemento rodante o jaula mediante las frecuencias características, y cruzarlo con las etapas de degradación (etapa 3: frecuencias de defecto y armónicos). Un clasificador supervisado solo si existen fallas etiquetadas del propio activo o flota; antes, diagnóstico basado en reglas y criterio experto.",
+   "condicion_para_avanzar": "Diagnósticos contrastados con la inspección real del rodamiento desmontado. Para clasificador aprendido: fallas etiquetadas por modo suficientes (cifra: VACÍO), partición por activo completo y por tiempo, y recall de la clase crítica superior al del diagnóstico por reglas.",
+   "evidencia": [
+    "E-8008",
+    "E-8006",
+    "E-8010"
+   ]
+  },
+  {
+   "etapa": "4. Pronóstico (RUL o tiempo de aviso)",
+   "accion": "Primero estimar con datos propios el intervalo entre la primera detección y la falla funcional (P-F) por supervivencia clásica con censura (Weibull, Kaplan-Meier), tratando la censura como tal y no como RUL = 0. Solo después, evaluar CoxPH o bosque de supervivencia, que son los candidatos con respaldo en banco. El RUL se entrega como distribución con cobertura empírica medida por activo.",
+   "condicion_para_avanzar": "Cantidad mínima de fallas por modo cumplida (cifra: VACÍO; si no se alcanza, el resultado se rotula 'exploratorio'), validación hacia adelante y en activos reservados, calibración y cobertura de intervalos medidas, y aprobación humana para actuar. Intervalo P-F: VACÍO.",
+   "evidencia": [
+    "E-8009",
+    "E-8004"
+   ]
+  },
+  {
+   "etapa": "5. Operación, deriva y reentrenamiento",
+   "accion": "Piloto en sombra antes de actuar; plan de deriva por cambio de carga, velocidad, material transportado, lubricante o cambio de rodamiento; reentrenar solo con aprobación humana, y guardar script, semilla y versiones.",
+   "condicion_para_avanzar": "Criterio de deriva y de reentrenamiento definido y aprobado por una persona; cifras de disparo: VACÍO.",
+   "evidencia": [
+    "E-8011",
+    "E-8010"
+   ]
+  }
+ ],
+ "riesgos_de_validacion": [
+  {
+   "riesgo": "Banco frente a campo: los conjuntos abiertos son rodamientos pequeños en banco, con carga muy alta y vida de minutos, o carga y velocidad variables, no polea de faja de baja velocidad. Umbrales, errores y exactitudes no se trasladan.",
+   "evidencia": [
+    "E-8009",
+    "E-7001",
+    "E-7003",
+    "E-8011"
+   ]
+  },
+  {
+   "riesgo": "Partición que infla el desempeño: una exactitud alta sin partición declarada no respalda generalización; al retener una condición la exactitud pudo caer a 40,64 %. La partición debe ser por activo completo y por tiempo, nunca por fotograma, segmento o ventana.",
+   "evidencia": [
+    "E-8007",
+    "E-8010"
+   ]
+  },
+  {
+   "riesgo": "Fuga de datos: segmentos de un mismo rodamiento en entrenamiento y prueba; selección de variables, filtro de envolvente o normalización ajustados con todos los datos; etiquetas construidas con información posterior al evento.",
+   "evidencia": [
+    "E-8010",
+    "E-8007"
+   ]
+  },
+  {
+   "riesgo": "Pocas fallas y censura: las fallas son raras y los datos censurados; con 2 ensayos de falla el ajuste Weibull está en el mínimo absoluto y sin censura declarada. Tratar la censura como RUL = 0 o descartarla sesga el resultado.",
+   "evidencia": [
+    "E-8009",
+    "E-7003"
+   ]
+  },
+  {
+   "riesgo": "Indicador no monótono: la kurtosis vuelve a lo normal al extenderse el defecto, de modo que una tendencia de kurtosis puede dar falsa tranquilidad.",
+   "evidencia": [
+    "E-8003"
+   ]
+  },
+  {
+   "riesgo": "Umbrales genéricos sin sustento (kurtosis 3 y 5) usados como alarma o como etiqueta de entrenamiento: se propagarían errores al modelo.",
+   "evidencia": [
+    "E-8001"
+   ]
+  },
+  {
+   "riesgo": "Comparar contra una referencia débil: las mejoras reportadas son frente a referencias elegidas por los autores; el modelo debe superar al umbral, la tendencia, la supervivencia clásica y el bosque aleatorio.",
+   "evidencia": [
+    "E-8011",
+    "E-8518",
+    "E-8010"
+   ]
+  },
+  {
+   "riesgo": "Selección de banda de envolvente: es la principal dificultad de la técnica; ajustarla con datos de prueba es fuga.",
+   "evidencia": [
+    "E-8006",
+    "E-8001"
+   ]
+  }
+ ],
+ "vacios": [
+  "No hay datos del activo: no se entrenó ni evaluó ningún modelo; todo desempeño del activo es VACÍO.",
+  "Umbrales de alarma (vibración, envolvente, temperatura, kurtosis) para chumaceras de polea de faja: sin fuente leída. Los 3 y 5 de kurtosis carecen de sustento según E-8001.",
+  "Intervalo P-F y tiempo de aviso en campo: ninguna fuente leída lo da (E-8008 es cualitativa; E-8009 está en minutos y banco acelerado). Se estima con datos propios.",
+  "Cantidad mínima de fallas por modo y de mediciones de línea base: sin cifra en las fuentes leídas; la fija el protocolo del equipo con data_quality.audit al disponer de datos.",
+  "Horizonte H y costos de falso negativo y falso positivo: los define el negocio.",
+  "Frecuencias características numéricas, velocidad real y datos de placa del rodamiento del activo.",
+  "Cuántos ensayos de los bancos abiertos terminaron en falla y con qué censura (E-7001, E-7002 sin verificar); lectura de los reportes originales pendiente.",
+  "Fuentes SOLO-SNIPPET y NO-VERIFICADO (E-7004 a E-7010, E-8012 a E-8015, E-8521 a E-8530) sin abrir; pistas pendientes, no respaldan nada. Entre ellas hay bancos adicionales (por ejemplo E-7005, E-7006) y un estudio de monitoreo de rodillos (E-8012) por abrir.",
+  "Sin evidencia leída de que modelos fundacionales de series, modelos de lenguaje o gemelos digitales mejoren la predicción en este modo de falla; ningún porcentaje de reducción de paradas.",
+  "Modelos NO justificados hoy, por falta de fallas propias, de partición validada por activo y de superación demostrada del baseline: (a) redes profundas o CNN de diagnóstico, cuyas exactitudes de banco no generalizan (E-8007, E-8010, E-8011); (b) regresión de RUL con aprendizaje profundo entrenado en banco y aplicado al activo (E-8009); (c) transferencia directa de modelos o umbrales de banco a la polea; (d) detector de anomalías con alarma automática sin piloto en sombra; (e) cualquier modelo que use kurtosis 3 y 5 como etiqueta o alarma (E-8001). Lo que sí procede hoy: etapas 0 y 1 y, en sombra, la 2."
+ ]
+}

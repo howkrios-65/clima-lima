@@ -1,0 +1,220 @@
+{
+ "modo_de_falla": "Falla de la chumacera de la polea de una faja transportadora",
+ "elementos": [
+  {
+   "id": "C1",
+   "nombre": "Adquisición de chumacera y rodamiento (y sello/accesorios)",
+   "tipo": "capex",
+   "como_se_calcula": "Σ(precio unitario × cantidad) de chumacera, rodamiento, sellos, adaptador, fletes e impuestos no recuperables; si se prorratea, dividir por años de vida del conjunto.",
+   "fuente_del_dato": "Cotización o contrato de compra, ERP/almacén.",
+   "valor": null,
+   "unidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6002",
+    "E-6003"
+   ],
+   "nota": "Razonamiento de ingeniería del equipo a partir de las premisas citadas; debe ser validado por un experto del activo. Premisa: la vida del rodamiento es una distribución con L10 (E-6003) y el daño depende de ajuste y selección (E-6002). La selección condiciona el precio; ningún valor está en el registro.",
+   "nivel_evidencia_nota": "Los ids citados solo respaldan la premisa cualitativa; ninguna fuente del registro contiene valores de costo."
+  },
+  {
+   "id": "C2",
+   "nombre": "Instalación y puesta en marcha",
+   "tipo": "capex",
+   "como_se_calcula": "Horas-persona × tarifa horaria + equipos de izaje/andamios + horas de parada de faja para el montaje (esta última se valora en C7) + alineación y verificación.",
+   "fuente_del_dato": "Orden de trabajo, planilla de personal, contratos de servicio.",
+   "valor": null,
+   "unidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6002",
+    "E-6001"
+   ],
+   "nota": "Razonamiento de ingeniería del equipo a partir de las premisas citadas; debe ser validado por un experto del activo. Premisa: desalineación y ajustes apretados figuran como causas de daño (E-6002; E-6001 menciona desalineación en rodillos). Por eso el costo de alinear bien es parte de la instalación.",
+   "nivel_evidencia_nota": "Los ids citados solo respaldan la premisa cualitativa; ninguna fuente del registro contiene valores de costo."
+  },
+  {
+   "id": "C3",
+   "nombre": "Lubricación y mantenimiento rutinario",
+   "tipo": "opex",
+   "como_se_calcula": "(Frecuencia anual de engrase o cambio) × (horas-persona × tarifa + costo de lubricante y consumibles) + costo de limpieza y sellado; por año.",
+   "fuente_del_dato": "Plan de lubricación, órdenes de trabajo, consumo de almacén.",
+   "valor": null,
+   "unidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6001",
+    "E-6002"
+   ],
+   "nota": "Razonamiento de ingeniería del equipo a partir de las premisas citadas; debe ser validado por un experto del activo. Premisa: lubricación inadecuada y contaminación son factores de daño citados (E-6001, E-6002). La frecuencia y cantidad correctas no están en el registro.",
+   "nivel_evidencia_nota": "Los ids citados solo respaldan la premisa cualitativa; ninguna fuente del registro contiene valores de costo."
+  },
+  {
+   "id": "C4",
+   "nombre": "Inspección y monitoreo de condición",
+   "tipo": "opex",
+   "como_se_calcula": "Costo anual de ruta de medición = (mediciones/año × horas × tarifa) + depreciación y calibración del instrumento + software/licencias; o, si es permanente, costo del sensor y su mantenimiento por año.",
+   "fuente_del_dato": "Plan de inspección, inventario de instrumentos, contratos.",
+   "valor": null,
+   "unidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-8003",
+    "E-8008"
+   ],
+   "nota": "Razonamiento de ingeniería del equipo a partir de las premisas citadas; debe ser validado por un experto del activo. Premisa: existen técnicas de vibración y etapas de degradación que dan aviso antes de la falla (E-8003, E-8008). El costo de medirlas es del activo y se compara contra el costo de falla evitado.",
+   "nivel_evidencia_nota": "Los ids citados solo respaldan la premisa cualitativa; ninguna fuente del registro contiene valores de costo."
+  },
+  {
+   "id": "C5",
+   "nombre": "Repuestos e inventario",
+   "tipo": "repuesto",
+   "como_se_calcula": "Costo de mantener = (valor del inventario × tasa de mantenimiento de inventario declarada) por año + costo de pedidos; cantidad a mantener según demanda observada, tiempo de reposición y nivel de servicio declarado (para demanda intermitente, método con bootstrap o variantes; declarar la herramienta).",
+   "fuente_del_dato": "Historial de consumo, tiempos de reposición del proveedor, política de almacén.",
+   "valor": null,
+   "unidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6003",
+    "E-7003"
+   ],
+   "nota": "Razonamiento de ingeniería del equipo a partir de las premisas citadas; debe ser validado por un experto del activo. Premisa: la vida es aleatoria (E-6003) y con pocas fallas observadas la estimación de demanda es incierta (E-7003, n=2). No hay demanda observada en el registro.",
+   "nivel_evidencia_nota": "Los ids citados solo respaldan la premisa cualitativa; ninguna fuente del registro contiene valores de costo."
+  },
+  {
+   "id": "C6",
+   "nombre": "Costo de falla correctiva directo",
+   "tipo": "falla",
+   "como_se_calcula": "Cf_directo = reparación de urgencia (horas × tarifa × recargo) + piezas dañadas colaterales (eje, polea, carcasa) + servicios externos + consecuencias de seguridad o ambientales valoradas. Se separa de C7 para no duplicar.",
+   "fuente_del_dato": "Órdenes correctivas, reportes de incidente, análisis de falla.",
+   "valor": null,
+   "unidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6001",
+    "E-6002"
+   ],
+   "nota": "Razonamiento de ingeniería del equipo a partir de las premisas citadas; debe ser validado por un experto del activo. Premisa: una falla puede propagar daño (E-6002 lista modos de daño) y la falla de elementos del transportador es relevante (E-6001, que se refiere a rodillos, no a chumaceras de polea). Alcance de daño colateral: dato del activo.",
+   "nivel_evidencia_nota": "Los ids citados solo respaldan la premisa cualitativa; ninguna fuente del registro contiene valores de costo."
+  },
+  {
+   "id": "C7",
+   "nombre": "Indisponibilidad y pérdida de producción",
+   "tipo": "indisponibilidad",
+   "como_se_calcula": "Horas de parada (por falla en C7a y por mantenimiento preventivo en C7b) × margen perdido por hora (o costo de recuperación con horas extra) × fracción no recuperable. Parada no planificada y planificada con valores distintos.",
+   "fuente_del_dato": "Registro de paradas (CMMS/SCADA), plan de producción y margen aportado por finanzas.",
+   "valor": null,
+   "unidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6001"
+   ],
+   "nota": "Razonamiento de ingeniería del equipo a partir de las premisas citadas; debe ser validado por un experto del activo. Premisa: las fallas del transportador paran el sistema (E-6001, citada de manera secundaria). Cuánto cuesta una hora parada depende del contexto del activo: no hay dato.",
+   "nivel_evidencia_nota": "Los ids citados solo respaldan la premisa cualitativa; ninguna fuente del registro contiene valores de costo."
+  },
+  {
+   "id": "C8",
+   "nombre": "Disposición y fin de vida",
+   "tipo": "disposicion",
+   "como_se_calcula": "Costo de retiro y disposición del conjunto − valor de recuperación (chatarra, reacondicionado), por evento; se trae a valor presente al año del evento.",
+   "fuente_del_dato": "Contratos de disposición, valor de chatarra, política ambiental.",
+   "valor": null,
+   "unidad": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6002"
+   ],
+   "nota": "Razonamiento de ingeniería del equipo a partir de las premisas citadas; debe ser validado por un experto del activo. Premisa mínima: el rodamiento dañado se retira y se analiza (E-6002 clasifica el daño). Sin evidencia de costos de disposición.",
+   "nivel_evidencia_nota": "Los ids citados solo respaldan la premisa cualitativa; ninguna fuente del registro contiene valores de costo."
+  }
+ ],
+ "formulas": [
+  {
+   "nombre": "Costo de ciclo de vida (LCC)",
+   "expresion": "LCC = C1 + C2 + Σ_{t=1..N} [C3_t + C4_t + C5_t + Cf·λ_t + C7_t] / (1+r)^t + C8/(1+r)^N, con λ_t = número esperado de fallas en el año t y r = tasa de descuento declarada por la persona.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6003"
+   ],
+   "nota": "Relación estándar tomada de la teoría de renovación y de la ingeniería económica; NO tiene fuente en el registro de evidencia. Se cita como SINTESIS: verificar en una fuente (texto de ingeniería económica o de confiabilidad) antes de usar. E-6003 solo respalda que la vida es una distribución (L10 = vida que el 90 % alcanza o supera). Cf incluye C6 + C7a."
+  },
+  {
+   "nombre": "Valor presente neto (VPN)",
+   "expresion": "VPN = Σ_{k=0..n} F_k / (1+r)^(t0+k), donde F_k es el flujo del año k.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6003"
+   ],
+   "nota": "Relación estándar tomada de la teoría de renovación y de la ingeniería económica; NO tiene fuente en el registro de evidencia. Se cita como SINTESIS: verificar en una fuente (texto de ingeniería económica o de confiabilidad) antes de usar. Implementado en economics.npv."
+  },
+  {
+   "nombre": "Costo anual equivalente (CAE / EAC)",
+   "expresion": "CAE = VPN · r / (1 − (1+r)^(−n)); si r = 0, CAE = VPN / n.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6003"
+   ],
+   "nota": "Relación estándar tomada de la teoría de renovación y de la ingeniería económica; NO tiene fuente en el registro de evidencia. Se cita como SINTESIS: verificar en una fuente (texto de ingeniería económica o de confiabilidad) antes de usar. Implementado en economics.eac."
+  },
+  {
+   "nombre": "Costo por unidad de tiempo con reemplazo por edad T",
+   "expresion": "C(T) = (Cp·R(T) + Cf·(1−R(T))) / ∫0^T R(t) dt, con R(t)=exp(−(t/η)^β) si se adopta Weibull. Cp = costo del reemplazo preventivo (C1+C2+C7b+C8 neto); Cf = costo del reemplazo por falla (C1+C2+C6+C7a+C8 neto).",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6003",
+    "E-7003"
+   ],
+   "nota": "Relación estándar tomada de la teoría de renovación y de la ingeniería económica; NO tiene fuente en el registro de evidencia. Se cita como SINTESIS: verificar en una fuente (texto de ingeniería económica o de confiabilidad) antes de usar. E-6003 respalda que R(t) describe la proporción de la población que sobrevive; E-7003 advierte que con n=2 fallas Weibull es inviable. β, η, Cp y Cf son datos del activo (null); sin ellos C(T) no se evalúa."
+  },
+  {
+   "nombre": "Condición de existencia de edad óptima",
+   "expresion": "Mínimo interior de C(T) solo si β > 1 y Cf > Cp. Si no, se declara: no hay edad óptima calculable (no se fuerza un número). Referencia sin reemplazo preventivo: C(∞) = Cf / (η·Γ(1+1/β)).",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6003",
+    "E-7003"
+   ],
+   "nota": "Relación estándar tomada de la teoría de renovación y de la ingeniería económica; NO tiene fuente en el registro de evidencia. Se cita como SINTESIS: verificar en una fuente (texto de ingeniería económica o de confiabilidad) antes de usar. Comportamiento observado en economics.optimal_age_replacement (ver prueba_implementacion)."
+  }
+ ],
+ "parametros_requeridos_del_activo": {
+  "beta": null,
+  "eta": null,
+  "intervalo_beta": null,
+  "Cp": null,
+  "Cf": null,
+  "tasa_descuento_r": null,
+  "horizonte_N": null,
+  "unidad_tiempo": null,
+  "nota": "Todos null: los ingresa la persona o un experto del activo en el informe interactivo. β debe venir del analista de vida con su intervalo."
+ },
+ "prueba_implementacion": {
+  "etiqueta": "PRUEBA DE LA IMPLEMENTACIÓN, NO ES DATO DEL ACTIVO NI REFERENCIA PARA DECIDIR",
+  "kit": "tools/reliability/reliability_kit/economics.py",
+  "entrada_arbitraria": {
+   "beta": 2.5,
+   "eta": 1.0,
+   "Cp": 1.0,
+   "Cf": 5.0,
+   "unidades": "adimensionales"
+  },
+  "resultado": [
+   "optimal_age_replacement devolvió T*≈0.49305 y C(T*)≈3.46204; una búsqueda en rejilla independiente de C(T)=(Cp·R+Cf·(1−R))/∫R (trapecio) dio T≈0.4932 y C≈3.46204: coinciden (diferencia en C(T*) ≈ 3e-10).",
+   "age_replacement_cost_rate(0.7) coincide con la fórmula escrita aquí (diferencia ≈ 6e-10).",
+   "El costo sin prevención del kit coincide con Cf/(η·Γ(1+1/β)) (5.6353 en ambos).",
+   "β=1.0 devuelve optimal_age=None y Cf=Cp devuelve optimal_age=None (la herramienta niega la edad óptima como indica la condición de existencia).",
+   "npv y eac coinciden con la suma directa de flujos descontados y con VPN·r/(1−(1+r)^−n) (flujos [3,2,2,2,2], r=0.1: VPN≈9.3397, CAE≈2.4638)."
+  ],
+  "conclusion": "Las fórmulas de este archivo coinciden con la implementación del kit. Esto verifica el código, no la validez económica para el activo."
+ },
+ "vacios": [
+  "Sin datos de costo en el registro: ninguna de las 63 entradas contiene precios, tarifas, costos de falla ni de parada. Los 8 elementos quedan con valor y unidad en null. No se calcula LCC, CAE ni VPN.",
+  "Sin edad óptima de reemplazo: faltan Cp, Cf (datos de la persona) y β, η del activo con intervalo. No hay datos de campo de chumaceras de polea; los Weibull publicados están solo como SOLO-SNIPPET (E-7007 a E-7009), que no pueden respaldar nada. Los ensayos abiertos verificados (E-7003, n=2) no permiten ajustar Weibull.",
+  "Las fórmulas (LCC, VPN, CAE, C(T)) no tienen fuente en el registro: son SINTESIS (relaciones estándar a verificar en una fuente). Se recomienda abrir y registrar un texto de ingeniería económica y el de Barlow-Proschan (referencia que cita el docstring del kit) como evidencia verificada.",
+  "Sin tasa de descuento, horizonte ni moneda: los declara la persona.",
+  "Sin datos de repuestos: demanda observada, tiempo de reposición, nivel de servicio y criticidad por consecuencia.",
+  "Sin definición local de la tasa de repetición de fallas, cumplimiento de PM, backlog y costo de mantenimiento sobre valor de reposición: preguntar qué definición usa la planta.",
+  "Costo de indisponibilidad (margen por hora, recuperabilidad de la producción) depende de la operación: dato de finanzas/producción.",
+  "Cp y Cf deben definirse sin doble conteo entre C6 y C7, y con el mismo criterio de tramos de tiempo de reparación (incluir o no diagnóstico y espera logística): definir cuál versión se adopta."
+ ]
+}

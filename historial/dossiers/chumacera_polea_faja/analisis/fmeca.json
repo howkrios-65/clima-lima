@@ -1,0 +1,279 @@
+{
+ "funcion": "Función: soportar el eje de la polea de la faja transportadora y permitir su giro con baja fricción, transmitiendo la carga radial al bastidor, durante el tiempo de servicio requerido (estándar de desempeño cuantificado: VACÍO, sin datos del activo). Falla funcional total: la chumacera se agarrota o se destruye y la polea no gira o deja de estar soportada. Falla funcional parcial: la chumacera sigue soportando la polea pero con ruido, vibración, juego o temperatura fuera de lo aceptable (límites: VACÍO).",
+ "items": [
+  {
+   "id": "FM1",
+   "modo": "Fatiga de contacto por rodadura (descascarado subsuperficial)",
+   "mecanismo": "Fatiga de contacto en pistas y elementos rodantes; es la causa de falla en condiciones convencionales de operación (E-6002). Progresa por etapas espectrales cualitativas (E-8008).",
+   "efecto_local": "Rodamiento con descascarado, aumento de vibración y ruido, juego creciente en la chumacera.",
+   "efecto_sistema": "Si el rodamiento se agarrota o la polea se detiene o gira con fricción, hay pérdida parcial o total de la función de transporte; el efecto real depende del activo (VACÍO).",
+   "causa": "Fin de vida por fatiga bajo carga y velocidad de operación; vida nominal L10 como referencia estadística, sin horas para poleas en fuente leída (E-6003).",
+   "estado_causa": "posible",
+   "deteccion": "Análisis de envolvente (filtrar en la resonancia, demodular, buscar BPFO, BPFI, BSF, FTF) y kurtosis para defecto incipiente (E-8001, E-8003, E-8006, E-8008); la kurtosis vuelve a valores normales cuando el defecto se extiende y los umbrales 3 y 5 no tienen sustento hallado en la revisión (E-8001, E-8003). La vibración sola es menos confiable que combinada con aceite o grasa, termografía y otros indicadores (E-8003).",
+   "control_sugerido": "Monitoreo por condición del rodamiento con técnica de envolvente y tendencia, tras definir línea base propia; no usar umbrales de kurtosis como norma.",
+   "severidad": null,
+   "ocurrencia": null,
+   "deteccion_puntaje": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6002",
+    "E-6003",
+    "E-8001",
+    "E-8003",
+    "E-8006",
+    "E-8008"
+   ],
+   "nota": "SINTESIS: las fuentes describen el mecanismo y las técnicas en rodamientos de banco y revisiones; ninguna trata chumaceras de polea de faja. Se asume por analogía que aplican. Razonamiento del equipo a partir de las fuentes citadas; debe ser validado por un experto del activo.",
+   "tarea_rcm": {
+    "tipo": "En condición (on-condition)",
+    "consecuencia_a_confirmar": "A confirmar; si la falla es evidente y afecta la operación, operacional",
+    "razonamiento": "Hay una técnica que la literatura asocia a detección temprana (envolvente) y etapas de degradación descritas, por lo que una tarea en condición podría ser técnicamente factible. No se propone reemplazo por edad: no hay Weibull ni β > 1 demostrado para esta chumacera (E-6003 solo define L10 de población). La factibilidad real depende de accesibilidad y del tiempo de aviso, no disponible. No se asigna intervalo: el P-F no tiene fuente leída (ver vacíos).",
+    "nivel": "SINTESIS",
+    "evidencia": [
+     "E-8001",
+     "E-8003",
+     "E-8008",
+     "E-6003"
+    ],
+    "nota": "Propuesta SINTESIS, no recomendación firme; la consecuencia real (seguridad, ambiente, operacional, no operacional) y la factibilidad técnica y de costo-efectividad las define un experto del activo."
+   }
+  },
+  {
+   "id": "FM2",
+   "modo": "Desgaste del rodamiento o del asiento",
+   "mecanismo": "Pérdida progresiva de material por contacto en condiciones no convencionales; el desgaste figura entre las causas de daño clasificadas (E-6002).",
+   "efecto_local": "Aumento de juego radial, ruido y vibración, posible holgura del conjunto en el soporte.",
+   "efecto_sistema": "Desalineación de la polea y posible desvío de banda; efecto no documentado en la evidencia (VACÍO).",
+   "causa": "Contaminación, lubricación deficiente o carga excesiva como causas candidatas (E-6001, E-6002); sin datos del activo.",
+   "estado_causa": "posible",
+   "deteccion": "La evidencia no asocia una técnica específica al desgaste; por síntesis, tendencia de vibración y análisis de aceite o grasa combinados (E-8003).",
+   "control_sugerido": "Inspección en condición del estado de lubricante y juego; verificar causas raíz antes de restaurar.",
+   "severidad": null,
+   "ocurrencia": null,
+   "deteccion_puntaje": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6002",
+    "E-6001",
+    "E-8003"
+   ],
+   "nota": "SINTESIS: se une la clasificación de causas de daño con la recomendación de combinar vibración con aceite y termografía; no hay mecanismo de desgaste específico de chumacera de polea. Razonamiento del equipo a partir de las fuentes citadas; debe ser validado por un experto del activo.",
+   "tarea_rcm": {
+    "tipo": "En condición, con restauración solo si hay edad identificable",
+    "consecuencia_a_confirmar": "A confirmar",
+    "razonamiento": "El desgaste es el candidato clásico a restauración o reemplazo programado, pero eso exige edad de desgaste identificable (β > 1) que aquí no está demostrada. Mientras tanto se propone en condición. No se asigna intervalo: el P-F no tiene fuente leída (ver vacíos).",
+    "nivel": "SINTESIS",
+    "evidencia": [
+     "E-6002",
+     "E-8003"
+    ],
+    "nota": "Propuesta SINTESIS, no recomendación firme; la consecuencia real (seguridad, ambiente, operacional, no operacional) y la factibilidad técnica y de costo-efectividad las define un experto del activo."
+   }
+  },
+  {
+   "id": "FM3",
+   "modo": "Corrosión por contaminación",
+   "mecanismo": "Corrosión del rodamiento causada por contaminación (agua, polvo u otros agentes), según el autor, principal contribuyente a fallas prematuras en bombas (E-6004); la contaminación también aparece como causa de daño de rodillos de transportador (E-6001).",
+   "efecto_local": "Picaduras o superficies deterioradas, aumento de fricción y ruido; fallas prematuras.",
+   "efecto_sistema": "Falla prematura con pérdida de función de la polea; efecto en el sistema no documentado (VACÍO).",
+   "causa": "Ingreso de contaminantes por sello deficiente o ambiente del sitio (premisa por analogía; sin datos de polea).",
+   "estado_causa": "posible",
+   "deteccion": "Análisis de aceite o grasa y termografía como complemento de la vibración (E-8003); no hay técnica específica para corrosión en la evidencia.",
+   "control_sugerido": "Revisión del sello y del estado de la grasa; protección del soporte frente a contaminantes. Control a definir por el experto.",
+   "severidad": null,
+   "ocurrencia": null,
+   "deteccion_puntaje": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6004",
+    "E-6001",
+    "E-8003"
+   ],
+   "nota": "SINTESIS: la fuente de corrosión es de bombas (resumen de 1988) y la de contaminación es de rodillos; se transfiere por analogía a chumaceras de polea. Razonamiento del equipo a partir de las fuentes citadas; debe ser validado por un experto del activo.",
+   "tarea_rcm": {
+    "tipo": "Rediseño (sellado/protección) y en condición",
+    "consecuencia_a_confirmar": "A confirmar",
+    "razonamiento": "Si la contaminación es la causa dominante, atacar la causa (sello, protección) suele ser más eficaz que detectar el daño; por eso se propone evaluar rediseño del sellado, junto a inspección en condición del lubricante. No hay datos de planta que digan si domina. No se asigna intervalo: el P-F no tiene fuente leída (ver vacíos).",
+    "nivel": "SINTESIS",
+    "evidencia": [
+     "E-6004",
+     "E-6001"
+    ],
+    "nota": "Propuesta SINTESIS, no recomendación firme; la consecuencia real (seguridad, ambiente, operacional, no operacional) y la factibilidad técnica y de costo-efectividad las define un experto del activo."
+   }
+  },
+  {
+   "id": "FM4",
+   "modo": "Falla de lubricación (lubricante inadecuado, insuficiente o degradado)",
+   "mecanismo": "Falla del lubricante: se cita como causa de daño de rodamientos (E-6002), de falla prematura en bombas (E-6004) y, como lubricación impropia, de daño en rodillos de transportador (E-6001).",
+   "efecto_local": "Contacto metal con metal, aumento de fricción, temperatura y vibración, y daño en pistas y elementos rodantes.",
+   "efecto_sistema": "Progresión a agarrotamiento posible; efecto en el sistema no documentado (VACÍO).",
+   "causa": "Lubricación impropia, ausente o contaminada; método de relubricación del activo desconocido.",
+   "estado_causa": "posible",
+   "deteccion": "Análisis de aceite o grasa y termografía, combinados con vibración (E-8003). Etapas ultrasónicas tempranas solo detectables con sensores especializados (E-8008).",
+   "control_sugerido": "Revisar la práctica de lubricación (tipo, cantidad, método) y contrastar cada PM de engrase con el historial: si hay fallas tras la intervención, investigar sobrelubricación o contaminación al engrasar (hipótesis, sin dato).",
+   "severidad": null,
+   "ocurrencia": null,
+   "deteccion_puntaje": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6001",
+    "E-6002",
+    "E-6004",
+    "E-8003",
+    "E-8008"
+   ],
+   "nota": "SINTESIS: la lubricación es la causa más repetida en tres fuentes de contextos distintos (rodillos, bolas en fatiga y bombas); se asume que aplica a la chumacera. Razonamiento del equipo a partir de las fuentes citadas; debe ser validado por un experto del activo.",
+   "tarea_rcm": {
+    "tipo": "En condición y, si hay mecanismo identificable, tarea programada de lubricación",
+    "consecuencia_a_confirmar": "A confirmar",
+    "razonamiento": "La relubricación es una tarea de prevención basada en un mecanismo identificable; su contenido (cantidad, método) y su periodicidad requieren fuente y datos del activo, que no existen en la evidencia. Se complementa con inspección del estado del lubricante. No se asigna intervalo: el P-F no tiene fuente leída (ver vacíos).",
+    "nivel": "SINTESIS",
+    "evidencia": [
+     "E-6001",
+     "E-6002",
+     "E-6004",
+     "E-8003"
+    ],
+    "nota": "Propuesta SINTESIS, no recomendación firme; la consecuencia real (seguridad, ambiente, operacional, no operacional) y la factibilidad técnica y de costo-efectividad las define un experto del activo."
+   }
+  },
+  {
+   "id": "FM5",
+   "modo": "Sobrecalentamiento por ajuste inadecuado en alojamiento o eje",
+   "mecanismo": "Ajustes inadecuados (incluidos ajustes apretados) que causan sobrecalentamiento del rodamiento (E-6004, E-6002).",
+   "efecto_local": "Aumento de temperatura, pérdida de huelgo interno, degradación del lubricante y posible agarrotamiento.",
+   "efecto_sistema": "Posible parada de la polea; si el calentamiento es suficiente, riesgo de ignición descrito para rodillos en la literatura citada (E-6001: fallas de rodillos como causa principal de ignición); aplicabilidad a poleas no establecida.",
+   "causa": "Montaje con ajuste incorrecto de eje o alojamiento; mala práctica de instalación (E-6004).",
+   "estado_causa": "posible",
+   "deteccion": "Termografía combinada con vibración (E-8003); la evidencia no da umbrales de temperatura.",
+   "control_sugerido": "Verificación de ajustes y montaje en la instalación; registro de temperatura base tras el montaje.",
+   "severidad": null,
+   "ocurrencia": null,
+   "deteccion_puntaje": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6004",
+    "E-6002",
+    "E-6001",
+    "E-8003"
+   ],
+   "nota": "SINTESIS: se combina la causa de ajustes (bombas y bolas) con la mención de ignición por rodillos; la consecuencia de seguridad es una hipótesis que el experto debe evaluar. Razonamiento del equipo a partir de las fuentes citadas; debe ser validado por un experto del activo.",
+   "tarea_rcm": {
+    "tipo": "Rediseño o corrección del procedimiento de montaje; en condición por temperatura",
+    "consecuencia_a_confirmar": "A confirmar (posible seguridad o ambiente si hay riesgo de ignición)",
+    "razonamiento": "La causa está en la instalación; una tarea de montaje controlado actúa sobre la causa. Si el experto confirma consecuencia de seguridad, correr a la falla no sería aceptable y debe prevalecer la detección o el rediseño. No se asigna intervalo: el P-F no tiene fuente leída (ver vacíos).",
+    "nivel": "SINTESIS",
+    "evidencia": [
+     "E-6004",
+     "E-6001"
+    ],
+    "nota": "Propuesta SINTESIS, no recomendación firme; la consecuencia real (seguridad, ambiente, operacional, no operacional) y la factibilidad técnica y de costo-efectividad las define un experto del activo."
+   }
+  },
+  {
+   "id": "FM6",
+   "modo": "Desalineación o carga excesiva",
+   "mecanismo": "Desalineación y carga excesiva figuran entre las causas de daño de rodamientos (E-6002); la desalineación es causa de daño de rodillos de transportador (E-6001).",
+   "efecto_local": "Carga desigual en pistas, aumento de temperatura y vibración, acortamiento de la vida por fatiga.",
+   "efecto_sistema": "Desvío de banda y desgaste asociado: no documentado en la evidencia (VACÍO).",
+   "causa": "Desalineación de polea o soportes, deformación o flexión del eje, sobrecarga; mecanismos propios de poleas: VACÍO en el dossier.",
+   "estado_causa": "posible",
+   "deteccion": "Vibración con análisis espectral (E-8001, E-8008) y termografía (E-8003); no hay firma específica de desalineación en la evidencia leída.",
+   "control_sugerido": "Verificación de alineación en el montaje y tras intervenciones; revisión de cargas de diseño frente a las reales.",
+   "severidad": null,
+   "ocurrencia": null,
+   "deteccion_puntaje": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6001",
+    "E-6002",
+    "E-8003"
+   ],
+   "nota": "SINTESIS: causa tomada de rodamientos en general y rodillos; la evidencia no examina el eje ni el bastidor de poleas. Razonamiento del equipo a partir de las fuentes citadas; debe ser validado por un experto del activo.",
+   "tarea_rcm": {
+    "tipo": "Rediseño o corrección de alineación; en condición",
+    "consecuencia_a_confirmar": "A confirmar",
+    "razonamiento": "Si la desalineación es causa, corregirla es lo que reduce la ocurrencia; la inspección en condición solo detecta sus efectos. No se asigna intervalo: el P-F no tiene fuente leída (ver vacíos).",
+    "nivel": "SINTESIS",
+    "evidencia": [
+     "E-6001",
+     "E-6002"
+    ],
+    "nota": "Propuesta SINTESIS, no recomendación firme; la consecuencia real (seguridad, ambiente, operacional, no operacional) y la factibilidad técnica y de costo-efectividad las define un experto del activo."
+   }
+  },
+  {
+   "id": "FM7",
+   "modo": "Fretting (micro-movimiento en asientos)",
+   "mecanismo": "Fricción por micro-movimiento entre superficies en contacto, citada como causa de daño de rodamientos (E-6002).",
+   "efecto_local": "Desgaste y óxido en asientos de aro y eje o alojamiento, pérdida de ajuste.",
+   "efecto_sistema": "Aflojamiento del conjunto: no documentado (VACÍO).",
+   "causa": "Ajuste insuficiente o carga con movimiento relativo (síntesis; sin datos).",
+   "estado_causa": "posible",
+   "deteccion": "La evidencia no menciona técnica específica de detección para fretting. VACÍO.",
+   "control_sugerido": "Inspección visual de asientos al desmontar y registro fotográfico; el control debe definirlo el experto.",
+   "severidad": null,
+   "ocurrencia": null,
+   "deteccion_puntaje": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6002"
+   ],
+   "nota": "SINTESIS: solo hay una mención de lista; no se desarrolla el mecanismo en poleas. Razonamiento del equipo a partir de las fuentes citadas; debe ser validado por un experto del activo.",
+   "tarea_rcm": {
+    "tipo": "Búsqueda de falla no aplica; inspección al desmontar",
+    "consecuencia_a_confirmar": "A confirmar",
+    "razonamiento": "Sin técnica de detección en línea en la evidencia, solo se propone aprovechar el desmontaje para inspeccionar los asientos. Es un modo con respaldo mínimo y puede descartarse si el experto lo considera improbable. No se asigna intervalo: el P-F no tiene fuente leída (ver vacíos).",
+    "nivel": "SINTESIS",
+    "evidencia": [
+     "E-6002"
+    ],
+    "nota": "Propuesta SINTESIS, no recomendación firme; la consecuencia real (seguridad, ambiente, operacional, no operacional) y la factibilidad técnica y de costo-efectividad las define un experto del activo."
+   }
+  },
+  {
+   "id": "FM8",
+   "modo": "Daño por manipulación o instalación deficiente",
+   "mecanismo": "Mal manejo antes y durante la instalación como contribuyente a fallas prematuras (E-6004).",
+   "efecto_local": "Defectos de origen (marcas, contaminación en el montaje) que acortan la vida del rodamiento.",
+   "efecto_sistema": "Falla prematura tras cada reemplazo: mortalidad infantil posible, sin dato del historial (VACÍO).",
+   "causa": "Procedimiento de montaje y almacenaje deficiente (por analogía con bombas).",
+   "estado_causa": "posible",
+   "deteccion": "La evidencia no da técnica; revisar el historial de órdenes tras reemplazos (requiere datos del activo).",
+   "control_sugerido": "Procedimiento de instalación y almacenamiento; cuestionar las PM de reemplazo si el historial muestra fallas tempranas posteriores.",
+   "severidad": null,
+   "ocurrencia": null,
+   "deteccion_puntaje": null,
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6004"
+   ],
+   "nota": "SINTESIS: transferido de un resumen de bombas de 1988; sin datos del activo. Razonamiento del equipo a partir de las fuentes citadas; debe ser validado por un experto del activo.",
+   "tarea_rcm": {
+    "tipo": "Rediseño de procedimiento",
+    "consecuencia_a_confirmar": "A confirmar",
+    "razonamiento": "La causa es de método de trabajo; mejora el procedimiento y verifica con el historial si existe mortalidad infantil. No se asigna intervalo: el P-F no tiene fuente leída (ver vacíos).",
+    "nivel": "SINTESIS",
+    "evidencia": [
+     "E-6004"
+    ],
+    "nota": "Propuesta SINTESIS, no recomendación firme; la consecuencia real (seguridad, ambiente, operacional, no operacional) y la factibilidad técnica y de costo-efectividad las define un experto del activo."
+   }
+  }
+ ],
+ "vacios": [
+  "Intervalo P-F: ninguna fuente leída lo entrega para chumaceras de polea; la evidencia da etapas cualitativas sin duración (E-8008) y no cuantifica tiempos de aviso (E-8003). Por eso las tareas en condición no llevan intervalo numérico, y cualquier intervalo debe rotularse conceptual hasta tener datos.",
+  "Severidad, ocurrencia y detección: sin puntaje; requieren un experto del activo, escalas calibradas y el historial de órdenes de trabajo. Estándar exigido (FMEA clásico, Action Priority o proceso RCM) sin definir; no se lee ninguna norma (todas figuran como NO-VERIFICADO o solo resumen).",
+  "Estándar de desempeño de la función (capacidad, velocidad, vida requerida): no hay datos del activo; no se cuantifica.",
+  "Consecuencia real de cada modo (oculta, seguridad o ambiente, operacional, no operacional): no se conoce el sistema; las consecuencias de las tareas son propuestas a confirmar. El riesgo de ignición se menciona solo para rodillos (E-6001).",
+  "Edad de desgaste y β > 1: no hay Weibull ni datos de campo; por eso no se propone restauración ni reemplazo programado firme. Los conjuntos abiertos son de laboratorio y con pocas fallas (E-7001, E-7003).",
+  "Mecanismos propios de la chumacera de polea (flexión del eje, sellos en polvo, calentamiento del soporte), fallas del soporte o carcasa y modos de eje o soldadura: VACÍO (E-6005 es solo pista de buscador sin abrir).",
+  "Ranking de modos con base de datos, n y año: VACÍO; E-6001 trata rodillos, no chumaceras de poleas, y es cita secundaria.",
+  "Búsqueda de falla para funciones ocultas: no se sabe si la chumacera tiene dispositivos de protección ocultos; no se propone.",
+  "PM calendarias actuales: no se aportó plan ni historial; no se pudo contrastar ninguna PM con fallas (lista de PM cuestionadas: VACÍO).",
+  "Costos de falla, de tarea e indisponibilidad: VACÍO; la costo-efectividad de cada tarea queda sin evaluar.",
+  "Fiabilidad de las técnicas de detección en chumaceras de poleas lentas de faja: los estudios leídos son de banco o revisiones (E-8001, E-8003, E-8011); la exactitud de laboratorio puede no transferirse (E-8010).",
+  "Este FMECA es de escritorio basado solo en literatura de rodamientos en general: no es evidencia de campo."
+ ]
+}

@@ -1,0 +1,209 @@
+{
+ "hallazgos": [
+  {
+   "id": "V1",
+   "texto": "No existen datos de falla del activo, por lo que no se ajusta ningún Weibull ni se reporta β, η, B10 ni MTBF. Cualquier número de vida para esta chumacera sería inventado.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-7003",
+    "E-8009"
+   ],
+   "nota": "Razonamiento: las únicas series hasta la falla halladas son de banco (E-7003, E-8009), no del activo. Debe ser validado por un experto del activo."
+  },
+  {
+   "id": "V2",
+   "texto": "La vida nominal básica L10 (ISO 281) es el valor de vida que el 90 % de una población de rodamientos idénticos, de buena calidad y en condiciones convencionales, alcanza o supera; es decir, se espera que 10 % falle antes. La vida nominal modificada incorpora viscosidad del lubricante, contaminación y límite de carga de fatiga; ISO/TS 16281 añade desalineación, inclinación y holgura.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6003"
+   ],
+   "nota": "Fuente de aerogeneradores (rodamiento principal) usada solo por la definición. La edición de ISO 281 no se verificó."
+  },
+  {
+   "id": "V3",
+   "texto": "L10 es una vida de diseño por fatiga de contacto de una población, no una predicción de la vida de la chumacera instalada: la misma fuente indica que predice solo fatiga y no otras causas. Las causas de daño listadas (carga excesiva, desalineación, ajustes apretados, falla de lubricante, desgaste, corrosión, fretting) quedan fuera de L10 salvo en la medida en que la vida modificada o ISO/TS 16281 las incorpore.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6003",
+    "E-6002"
+   ],
+   "nota": "Razonamiento: se contrasta la definición de L10 (E-6003) con la lista de causas de daño (E-6002). Debe ser validado por un experto del activo."
+  },
+  {
+   "id": "V4",
+   "texto": "En bombas, un autor atribuye el 90 % de las fallas prematuras de rodamientos de bolas a corrosión por contaminación, mal manejo e instalación, falla de lubricante o sobrecalentamiento por ajustes inadecuados. Por analogía de mecanismos, la vida real puede quedar muy por debajo de L10 por causas de instalación, lubricación y contaminación, lo que impide usar L10 como vida esperada.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6004",
+    "E-6003"
+   ],
+   "nota": "Razonamiento por analogía (bombas, resumen de 1988, sin n ni base de datos). No es estadística de poleas. Debe ser validado por un experto del activo."
+  },
+  {
+   "id": "V5",
+   "texto": "Las cifras de L10 de práctica comercial (mínimos de decenas de miles de horas, especificaciones de fabricante) solo existen como pistas de buscador sin abrir (E-6006, E-6007) y no se usan como valores.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6003"
+   ],
+   "nota": "Las pistas E-6006 y E-6007 están pendientes de abrir; no respaldan nada. Lo verificado es solo la definición de L10. Debe ser validado por un experto del activo."
+  },
+  {
+   "id": "V6",
+   "texto": "Dato abierto verificado E-7001 (Paderborn, CC BY 4.0): 17 rodamientos de bolas con vibración de dos acelerómetros y bitácora, en banco con carga y velocidad variables. El README no declara cuántos terminaron en falla ni si hay censura, y los tiempos solo saldrían tras leer la bitácora. No es faja ni chumacera con soporte.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-7001"
+   ],
+   "nota": "n_fallas y censura quedan NO-VERIFICADO en la propia entrada."
+  },
+  {
+   "id": "V7",
+   "texto": "Dato abierto verificado E-7003 (UNSW, CC BY 4.0, subconjunto): 2 ensayos (Test 1 y 3) hasta la falla por defecto de pista externa, 80 y 79 registros, banco a 6 Hz y 10,5 kN, sin censura declarada. Son 2 fallas: mínimo absoluto, inviable para un Weibull con intervalo útil; las unidades son de un mismo diseño de laboratorio, no una población de campo.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-7003"
+   ],
+   "nota": "Los 80 y 79 son registros de vibración de cada ensayo, no fallas."
+  },
+  {
+   "id": "V8",
+   "texto": "Un tercer conjunto, XJTU-SY (copia en el Hub), no tiene licencia declarada en el espejo y sus cifras (n, condiciones) provienen solo de pistas de buscador (E-7004). Se lista como pendiente, no como dato.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-7002"
+   ],
+   "nota": "El ReadMe no se pudo leer; pedir licencia al autor original antes de redistribuir."
+  },
+  {
+   "id": "V9",
+   "texto": "Por qué los datos abiertos no sirven para la vida de la chumacera de una polea: (1) son de laboratorio, con rodamientos pequeños sin soporte, sin polvo, sin la carga de la faja ni el montaje en chumacera; (2) en el trabajo con XJTU-SY los autores señalan que se corre hasta la falla con carga muy alta para acelerar la degradación, con riesgo de calentamiento local y daño descontrolado, es decir otro mecanismo y vidas de minutos frente a una polea de baja velocidad; (3) hay muy pocas unidades y fallas (2 en E-7003; sin declarar en E-7001); (4) son unidades de un mismo ensayo, no una población de campo con historia de operación y de mantenimiento; (5) la exactitud reportada en bancos no se traslada a campo.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8009",
+    "E-7003",
+    "E-7001",
+    "E-8520"
+   ],
+   "nota": "E-8520 ilustra que la exactitud de laboratorio cae al cambiar de condición (40,64 % al retener 1000 rpm). Punto 1 es inferencia sobre E-7001 y E-7003; Debe ser validado por un experto del activo."
+  },
+  {
+   "id": "V10",
+   "texto": "Los trabajos de vida remanente sobre bancos (XJTU-SY y PRONOSTIA) citan en su introducción que una fracción de las fallas de maquinaria se atribuye a rodamientos, pero es cita secundaria sin fuente leída y no es dato de planta. El resumen de otro trabajo afirma que las fallas son raras y los datos están censurados, lo que justifica un método con censura y no promediar solo tiempos de falla.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-8519",
+    "E-8009"
+   ],
+   "nota": "Usar como contexto, no como tasa."
+  },
+  {
+   "id": "V11",
+   "texto": "Una cita secundaria indica que más de 50 % de las fallas de transportadores se deben a rodillos (idlers), no a chumaceras de poleas; la fuente primaria (E-6009) no se leyó. No se debe usar para dimensionar la población de la chumacera de polea.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-6001"
+   ],
+   "nota": "Cifra sin base de datos, tamaño ni año."
+  },
+  {
+   "id": "V12",
+   "texto": "Las pistas con parámetros Weibull publicados (E-7007, un valor de forma en ensayo de laboratorio; E-7008 y E-7009, β que varía con la carga o es asumido) NO se usan: son SOLO-SNIPPET, de laboratorio o valores asumidos. Un β asumido (Weibayes) solo sería admisible como supuesto explícito, rotulado y con análisis de sensibilidad, nunca como resultado.",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-6003",
+    "E-7003"
+   ],
+   "nota": "Razonamiento de método: sin datos propios, un β tomado de otra fuente es un supuesto, no una estimación. Las pistas E-7007 a E-7009 siguen pendientes de abrir. Debe ser validado por un experto del activo."
+  }
+ ],
+ "metodo_recomendado": [
+  {
+   "situacion": "Sin datos de falla propios (situación actual)",
+   "metodo": "No ajustar Weibull. Tratar L10 o la vida modificada solo como referencia de diseño; priorizar un registro de fallas y de censura y, mientras tanto, gestionar por condición (inspección y monitoreo) en vez de por edad. Si se usara Weibayes con β asumido, rotularlo como supuesto con rango de sensibilidad y sin conclusión de reemplazo por edad.",
+   "porque": "L10 es vida de población por fatiga de contacto (E-6003) y los datos abiertos son de banco (E-7003, E-8009).",
+   "evidencia": [
+    "E-6003",
+    "E-7003",
+    "E-8009"
+   ]
+  },
+  {
+   "situacion": "Pocas fallas propias (exploratorio)",
+   "metodo": "Weibull de máxima verosimilitud con intervalo por razón de verosimilitud (weibull_beta_ci_lr, weibull_b_life_ci_lr) y bootstrap (weibull_bootstrap_ci), corrección de sesgo de β (bias_correct_beta) reportando ambos valores, y Kaplan-Meier sin supuestos con km_failure_quantile. El kit advierte por debajo de 10 fallas (exploratorio, se rotula así) y por debajo de 30 (β con posible sesgo al alza). Si el intervalo de β contiene 1 no hay base para reemplazo por edad. Si compare_models_verdict da empate, no justificar la estrategia en la forma de la distribución.",
+   "porque": "Con n pequeño el intervalo es ancho; las dos fallas de E-7003 muestran que n=2 no permite un intervalo útil. Los umbrales 10 y 30 son criterios del kit (weibull.py), no de una fuente de la base de evidencia.",
+   "evidencia": [
+    "E-7003"
+   ]
+  },
+  {
+   "situacion": "Con censura (unidades que siguen operando o se reemplazaron sin fallar)",
+   "metodo": "Tratar toda chumacera sin falla como censura por la derecha y ajustar con verosimilitud censurada (fit_weibull_mle con censura), Kaplan-Meier y comparación lognormal y exponencial. Un reemplazo preventivo, un cambio por otra causa o una intervención es censura, no falla. No excluir las censuradas ni promediar solo los tiempos de falla.",
+   "porque": "Las fallas son raras y los datos son censurados en este tipo de problema (E-8009); quitar las censuras sesga la vida a la baja. La separación falla/censura se define con el experto del activo.",
+   "evidencia": [
+    "E-8009"
+   ]
+  },
+  {
+   "situacion": "Ítem reparable (la chumacera se cambia pero la polea o el eje sigue en servicio)",
+   "metodo": "No ajustar Weibull a los tiempos entre fallas sin probar tendencia. Por unidad: laplace_trend_test y fit_crow_amsaa. Con varias poleas y fines de observación distintos: mean_cumulative_function con intervalo, fit_crow_amsaa_multi (modelo condicional), laplace_trend_test_multi y unit_heterogeneity_test. Nunca concatenar los tiempos de varias poleas en una serie. Si cada chumacera se trata como ítem no reparable (primera vida tras cada instalación), definirlo explícitamente y usar Weibull con censura.",
+   "porque": "Reglas del protocolo de estadística de vida. La vida tras una reparación depende de la calidad del montaje, la lubricación y la alineación (E-6004, E-6002), no solo de la edad.",
+   "evidencia": [
+    "E-6004",
+    "E-6002"
+   ]
+  },
+  {
+   "situacion": "Modos de falla mezclados",
+   "metodo": "Separar por modo (fatiga de contacto, lubricación, contaminación, desalineación o ajuste, daño de montaje) y por posición de la polea (motriz y de cola), con los demás modos como censura. Un ajuste mixto con curva quebrada en el gráfico de probabilidad suele indicar poblaciones mezcladas. La clasificación del modo en cada falla requiere análisis de causa raíz o inspección del rodamiento retirado.",
+   "porque": "La literatura clasifica los daños por causas distintas (E-6002) y L10 cubre solo fatiga (E-6003). Mezclar modos da un β intermedio sin sentido físico.",
+   "evidencia": [
+    "E-6002",
+    "E-6003"
+   ]
+  },
+  {
+   "situacion": "Con covariables (carga, ambiente con polvo, tipo de lubricación, polea motriz o de cola)",
+   "metodo": "Modelos Cox o de tiempo de falla acelerado (lifelines, que el kit no trae), validados contra una referencia independiente. Solo con suficientes fallas por nivel de covariable; con pocas, estratificar y comparar con Kaplan-Meier.",
+   "porque": "El trabajo sobre XJTU-SY usó CoxPH y bosque de supervivencia con censura en banco (E-8009), lo que muestra el método pero no sus resultados en campo.",
+   "evidencia": [
+    "E-8009"
+   ]
+  },
+  {
+   "situacion": "Qué datos recolectar: registro de FALLAS (un renglón por evento)",
+   "metodo": "Campos mínimos: identificador de la chumacera y de la polea (motriz, cola, desvío), identificador de la faja o línea; fecha y hora de instalación con la unidad de tiempo elegida (horas de operación, no solo calendario); horas acumuladas de operación al fallar; fecha y hora de la falla; criterio de falla aplicado (alarma de vibración o temperatura, ruido, fuga de grasa, parada, hallazgo en inspección); modo de falla confirmado y cómo se confirmó (rodamiento retirado, análisis); si la unidad era nueva o reacondicionada y cuántas vidas previas tuvo; marca, modelo y tipo de rodamiento y de chumacera, sello y lubricante; condiciones (carga, velocidad, ambiente con polvo o humedad, historial de relubricación y de alineación); si la falla fue funcional o potencial; consecuencia (parada, horas perdidas).",
+   "porque": "Sin tiempo a la falla en horas de operación, el criterio de falla y el modo, no es posible un Weibull válido ni separar modos. Se pide registrar la vida acumulada y las intervenciones, porque L10 y la vida modificada dependen de lubricación, contaminación y desalineación (E-6003).",
+   "evidencia": [
+    "E-6003",
+    "E-6002"
+   ]
+  },
+  {
+   "situacion": "Qué datos recolectar: registro de CENSURA (un renglón por chumacera sin falla en el periodo)",
+   "metodo": "Campos mínimos: identificador de la chumacera y la polea; fecha de instalación y horas de operación acumuladas; fecha de fin de observación o de salida del estudio; motivo de la censura (sigue operando, reemplazo preventivo, reemplazo por otra falla, cambio de polea, venta o retiro de la línea); horas de operación en esa fecha; si fue retirada con daño visible; mismas covariables que el registro de fallas. Incluir TODAS las chumaceras instaladas, también las que nunca fallaron, y reportar el tamaño de la población en riesgo.",
+   "porque": "La censura por la derecha es la información de las unidades sobrevivientes; omitirla sesga la vida a la baja. Las fallas raras y los datos censurados son la norma (E-8009).",
+   "evidencia": [
+    "E-8009"
+   ]
+  },
+  {
+   "situacion": "Reglas de calidad del registro para un Weibull válido",
+   "metodo": "Todas las unidades empiezan nuevas, o la edad inicial se registra; mismo criterio de falla en todas; modos separados; una sola unidad de tiempo; sin eventos duplicados; fecha de fin de observación común y declarada; informar unidades sin eventos. Reportar sensibilidad a la ventana final, a duplicados y a la cola con pocas unidades en riesgo. Si el intervalo de β contiene 1, la conclusión es falla aleatoria y no hay base para reemplazo por edad. No se recomienda intervalo de reemplazo sin costos (lo cierra economía).",
+   "porque": "Criterios del protocolo de estadística de vida del equipo, que aplican a cualquier ajuste futuro; los umbrales numéricos son del kit, no de una fuente de la base.",
+   "evidencia": [
+    "E-6003"
+   ]
+  }
+ ],
+ "vacios": [
+  "No hay datos de falla ni de censura del activo: no se calculó ningún parámetro de vida, intervalo, AIC ni MTBF.",
+  "No se verificó cuántas de las 17 unidades de E-7001 fallaron ni su censura (pendiente leer la bitácora y E-7010).",
+  "La licencia de XJTU-SY (E-7002) no está declarada en el espejo y sus cifras son solo de pistas de buscador (E-7004).",
+  "Pistas sin abrir que no respaldan nada: E-6005 a E-6008 (L10 comercial, modos de falla de poleas), E-6009 (fuente primaria del dato de rodillos), E-7004 a E-7006 (otros bancos), E-7007 a E-7009 (parámetros Weibull publicados o asumidos).",
+  "No se leyó ninguna cifra de L10 de poleas de faja ni ISO 281 en su edición vigente (E-8512 es solo snippet); las horas de diseño comerciales no se reportan.",
+  "No hay una fuente leída sobre tasa de falla ni vida de chumaceras de poleas en campo (el dato de rodillos es cita secundaria).",
+  "No se calculó nada con el kit; solo se ejecutó su suite de pruebas (148 aprobadas) y se usó para describir criterios (umbrales del código para 10 y 30 fallas).",
+  "El criterio de falla y la definición de reemplazo y de censura deben acordarse con el experto del activo antes de recolectar datos."
+ ]
+}
