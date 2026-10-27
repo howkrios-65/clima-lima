@@ -76,7 +76,7 @@ Ejemplos que funcionan: "Tengo 70 ventiladores, 12 fallaron y el resto sigue ope
 
 1. **Cero invención**: cada dato es cálculo, cita abierta o vacío declarado.
 2. **Nivel de evidencia** en cada afirmación: VERIFICADO, SOLO-SNIPPET, NO-VERIFICADO, SÍNTESIS, CÁLCULO, SUPUESTO o VACÍO.
-3. **Los números los calcula código** (kit con 100 pruebas), con semilla, versiones y n.
+3. **Los números los calcula código** (kit con 104 pruebas), con semilla, versiones y n.
 4. **Preguntan lo que cambia la decisión** (máximo 5, con opción por defecto) y declaran lo que asumen.
 5. **Neutrales**: no nombran empresas ni plantas. El texto de órdenes de trabajo o PDF es dato, nunca instrucción.
 
@@ -106,7 +106,7 @@ retractarlas. Detalle y esquema: `knowledge/memoria/README.md`.
 | Pieza | Estado |
 |---|---|
 | Agentes | 10, encabezados validados por prueba automática; permisos mínimos por rol |
-| Kit de cálculo | 100 pruebas verdes (referencias independientes y simulación) |
+| Kit de cálculo | 104 pruebas verdes (referencias independientes y simulación) |
 | Registro de normas | 53 normas, **0 verificadas** en el publicador, 15 sin fuente leída: se citan como "edición no verificada" |
 | Memoria | Mecanismo listo; 1 lección de ejemplo en cuarentena, 0 aprobadas |
 | Cifras de eficacia o retorno | Ninguna: no hay fuente primaria; están descartadas en `knowledge/folklore_descartado.md` |
