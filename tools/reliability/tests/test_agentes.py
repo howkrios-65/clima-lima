@@ -18,7 +18,7 @@ SPECIALISTS = {
 }
 VALID_TOOLS = {"Read", "Write", "Edit", "Glob", "Grep", "Bash", "WebSearch", "WebFetch", "Skill"}
 # Empresas y productos que no deben aparecer en agentes, base de conocimiento, catálogo ni kit
-BANNED = re.compile(r"antamina|larox|komatsu|howk|reliability mining|shiploader|codelco|southern copper|rio tinto|"
+BANNED = re.compile(r"orquest|antamina|larox|komatsu|howk|reliability mining|shiploader|codelco|southern copper|rio tinto|"
                     r"\bbhp\b|\bppl\b|\bibm\b|siemens|aspen|ge vernova|augury|uptake|cognite|power ?bi|maximo|"
                     r"mlflow|roboflow|\bsap\b|\brmes\b|oxmaint|verdantix|fiix|maintainx|senseye|mtell", re.I)
 

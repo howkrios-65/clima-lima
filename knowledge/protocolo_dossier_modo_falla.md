@@ -21,7 +21,7 @@ en el mundo sobre ESE modo de falla, con evidencia. Los datos de casos anteriore
 | Inspección basada en riesgo; Mantenimiento predictivo y normas; Referencias | normas | `reliability-standards-researcher` |
 | Modelos de aprendizaje automático y profundo | ml | `reliability-literature-researcher` + `reliability-predictive-analyst` |
 
-## Flujo del orquestador (el líder)
+## Flujo del estratega (el líder)
 1. Intake y búsqueda de recurrencia en el historial (`reliability-case-historian`).
 2. Reparte la cuota del conector por frente y lanza en paralelo un investigador por frente, cada uno con su rango de ids.
 3. Integra: especialistas analizan lo hallado (FMECA, Weibull con datos citables, punto óptimo con costos de la persona, predictivo).

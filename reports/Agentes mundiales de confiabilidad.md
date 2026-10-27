@@ -349,8 +349,8 @@ flowchart TB
     I2 --> I3["Registro de suposiciones y VACIOS"]
   end
   L1 --> L2
-  subgraph L2["Capa 2 - Orquestacion por fases con compuertas"]
-    O1["Orquestador reliability-engineer"] --> G["Compuertas G1-G8"]
+  subgraph L2["Capa 2 - Estrategia por fases con compuertas"]
+    O1["Estratega reliability-engineer"] --> G["Compuertas G1-G8"]
   end
   L2 --> L3
   subgraph L3["Capa 3 - Modulos analiticos (subagentes)"]
@@ -398,8 +398,8 @@ flowchart TB
 
 | Capa | Función | Implementación con Claude Code (VERIFICADO en N6 sec. 1) | Qué es SÍNTESIS |
 |---|---|---|---|
-| 1. Intake | Clasificar la solicitud y preguntar solo lo que cambia el resultado | Skill/instrucciones del orquestador; el agente actual ya limita a 5 preguntas [REPO] | Banco de preguntas por tipo (sección 9); regla preguntar vs. asumir |
-| 2. Orquestación | Ciclo de 8 fases con compuertas (ya existe en agente sec. 2 [REPO]) | Subagente orquestador; `Skill` para rutas de apoyo | Compuertas añadidas de evidencia, citas y memoria (sección 7.4) |
+| 1. Intake | Clasificar la solicitud y preguntar solo lo que cambia el resultado | Skill/instrucciones del estratega; el agente actual ya limita a 5 preguntas [REPO] | Banco de preguntas por tipo (sección 9); regla preguntar vs. asumir |
+| 2. Estrategia | Ciclo de 8 fases con compuertas (ya existe en agente sec. 2 [REPO]) | Subagente estratega; `Skill` para rutas de apoyo | Compuertas añadidas de evidencia, citas y memoria (sección 7.4) |
 | 3. Módulos analíticos | Un subagente por competencia con `tools`/`disallowedTools` mínimos | Frontmatter: `tools`, `disallowedTools`, `model`, `permissionMode`, `maxTurns`, `skills`, `mcpServers`, `hooks`, `memory` | Reparto de roles y herramientas por módulo (tabla 7.5) |
 | 4. Kit de cálculo | Weibull, NHPP, KM, Pareto, economía, mlcheck [REPO] | `Bash` restringido a ejecutar el kit; `python -I` para archivos de terceros (agente sec. 0.5 [REPO]) | Extensiones (tabla 7.6) |
 | 5. Base de conocimiento | Registro de normas y fuentes con estado, edición, URL, fecha de verificación y extractos literales | API de Citations ("punteros válidos a los documentos entregados", VERIFICADO); guía de citas literales | Esquema de registro y regla "no citar si no está VERIFICADO" |
@@ -432,7 +432,7 @@ flowchart LR
 
 | Subagente | Rol | `tools` (mínimas) | Denegadas | Memoria |
 |---|---|---|---|---|
-| `reliability-engineer` (orquestador) | Intake, fases, síntesis | Read, Grep, Glob, Skill, Agent | Escritura en CMMS vía MCP | no |
+| `reliability-engineer` (estratega) | Intake, fases, síntesis | Read, Grep, Glob, Skill, Agent | Escritura en CMMS vía MCP | no |
 | `data-auditor` | Auditoría de calidad | Read, Bash (kit) | Write fuera de scratchpad | no |
 | `life-stats` | Weibull, NHPP, KM | Read, Bash (kit) | WebFetch | no |
 | `rca-investigator` | ACR/RCA según IEC 62740 (evidencia por causa) | Read, Grep | Bash | no |

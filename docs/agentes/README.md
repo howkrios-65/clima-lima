@@ -1,6 +1,6 @@
 # Equipo de agentes de confiabilidad
 
-Catorce agentes que trabajan juntos: **un líder que orquesta** y **trece especialistas** que hacen cada parte del trabajo.
+Catorce agentes que trabajan juntos: **un líder estratega** y **trece especialistas** que hacen cada parte del trabajo.
 Se apoyan en un kit de cálculo probado (`tools/reliability`) y en una base de conocimiento común (`knowledge/`).
 Su regla de oro es no inventar nada: cada cifra es un cálculo, una cita abierta o un vacío declarado.
 
