@@ -410,32 +410,37 @@ function svgIshikawa(host,ish){
 function vMapa(host){
   var c=D.caso,an=c.analisis||{},dz=c.dossier,h='';
   function nEl(k){return dz&&dz.secciones[k]?(dz.secciones[k].elementos||[]).length:0}
-  var pasos=[["Referencias",nEl("fenomenos")+nEl("mediciones")>0?"ok":"vac",nEl("fenomenos")+nEl("mediciones")+" elementos leídos"],
+  var pasos=[["Referencias",nEl("fenomenos")+nEl("mediciones")>0?"ok":"vac",nEl("fenomenos")+nEl("mediciones")+" elementos con cita"],
    ["Top de fallas",nEl("top_fallas")?"par":"vac",nEl("top_fallas")?"solo cita de segunda mano":"VACÍO"],
    ["FMECA",an.fmeca?"par":"vac",an.fmeca?(an.fmeca.items.length+" modos; S-O-D sin puntuar"):"VACÍO"],
-   ["Árbol de fallas",an.arbol?"ok":"vac",an.arbol?(an.arbol.nodos.length+" nodos"):"VACÍO"],
+   ["Árbol de fallas",an.arbol?"par":"vac",an.arbol?(an.arbol.nodos.length+" nodos; compuertas del equipo"):"VACÍO"],
    ["Troubleshooting",nEl("troubleshooting")?"par":"vac",nEl("troubleshooting")?"técnicas descritas; sin criterios de alarma":"VACÍO"],
    ["Mant. predictivo (P-F)","vac","intervalo P-F: VACÍO"],
    ["Escenarios",c.simulador?"par":"vac","simulador didáctico"]];
   var col={ok:"var(--ok)",par:"var(--warn)",vac:"var(--bad)"},W=1100,sv='';
   pasos.forEach(function(p,i){var x=i*155+4;sv+='<rect x="'+x+'" y="6" width="140" height="62" rx="10" fill="var(--panel)" stroke="'+col[p[1]]+'" stroke-width="3"/><text x="'+(x+70)+'" y="28" text-anchor="middle" style="fill:var(--ink);font-weight:700;font-size:12px">'+(i+1)+'. '+esc(p[0])+'</text>'+wrapTxt(p[2],24).slice(0,2).map(function(l,j){return '<text x="'+(x+70)+'" y="'+(44+j*12)+'" text-anchor="middle">'+esc(l)+'</text>'}).join("")+(i<pasos.length-1?'<text x="'+(x+147)+'" y="42" style="fill:var(--mut);font-size:16px">→</text>':'')});
   h+='<div class="card"><h2>Cadena RCM: qué está respaldado y qué falta</h2><div class="tw"><svg viewBox="0 0 '+W+' 76" width="100%" style="min-width:900px">'+sv+'</svg></div><div style="font-size:12px;color:var(--mut)"><span style="color:var(--ok)">&#9632;</span> con respaldo · <span style="color:var(--warn)">&#9632;</span> parcial · <span style="color:var(--bad)">&#9632;</span> VACÍO</div></div>';
+  h+='<div class="card"><h2>Perfil de la evidencia leída</h2><div class="grid"><div><h3>Por nivel de lectura</h3><div id="pf-n"></div></div><div><h3>Por año de publicación (fuentes con año)</h3><div id="pf-a"></div></div></div><p style="font-size:12px;color:var(--mut)">Muestra con qué se construyó el informe (cuenta entradas del registro: un mismo documento puede tener varias). Las pistas SOLO-SNIPPET y NO-VERIFICADO no respaldan ninguna afirmación.</p></div>';
   if(an.arbol)h+='<div class="card"><h2>Árbol de fallas</h2><div id="mp-arb"></div></div>';
   if(an.acr&&an.acr.ishikawa)h+='<div class="card"><h2>Ishikawa (6M)</h2><div id="mp-ish"></div></div>';
   if(an.acr&&an.acr.ensayos&&an.acr.hipotesis)h+='<div class="card"><h2>Qué ensayo o técnica ayuda a cada hipótesis</h2><div id="mp-hm"></div></div>';
-  if(an.fmeca)h+='<div class="card"><h2>Respaldo documental por modo de falla</h2><div class="note bad"><b>No es prevalencia.</b> Cuenta cuántas fuentes leídas respaldan cada modo; mide cuánta evidencia hay, no con qué frecuencia ocurre. El ranking de frecuencias es VACÍO.</div><div id="mp-doc"></div></div>';
+  if(an.fmeca)h+='<div class="card"><h2>Respaldo documental por modo de falla</h2><div class="note bad"><b>No es prevalencia.</b> Cuenta cuántos documentos distintos leídos (texto o resumen) respaldan cada modo; mide cuánta evidencia hay, no con qué frecuencia ocurre. El ranking de frecuencias es VACÍO.</div><div id="mp-doc"></div></div>';
   h+='<div class="card"><h2>Esquema cualitativo de la degradación</h2><div id="mp-deg"></div></div>';
   host.innerHTML=h;
+  (function(){var n={},y={};D.evidencia.forEach(function(e){n[e.nivel_evidencia]=(n[e.nivel_evidencia]||0)+1;var an_=e.referencia&&e.referencia.anio;if(an_&&(e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"))y[an_]=(y[an_]||0)+1});
+    var cl={"VERIFICADO-TEXTO":"var(--ok)","VERIFICADO-ABSTRACT":"#4b8f6b","SOLO-SNIPPET":"var(--warn)","NO-VERIFICADO":"var(--bad)","DATO-USUARIO":"var(--c4)"};
+    barChart($("#pf-n"),Object.keys(n).map(function(k){return{label:k,value:n[k],color:cl[k]}}),{titulo:"Por nivel"});
+    barChart($("#pf-a"),Object.keys(y).sort().map(function(k){return{label:k,value:y[k],color:"var(--c1)"}}),{titulo:"Por año"})})();
   if(an.arbol)svgArbol($("#mp-arb"),an.arbol);
   if(an.acr&&an.acr.ishikawa)svgIshikawa($("#mp-ish"),an.acr.ishikawa);
   if(an.acr&&an.acr.ensayos&&an.acr.hipotesis){var hs=an.acr.hipotesis.map(function(x){return x.id}),t='<div class="tw"><table><tr><th>Ensayo o técnica</th>'+hs.map(function(x){return '<th>'+esc(x)+'</th>'}).join("")+'</tr>'+an.acr.ensayos.map(function(e){return '<tr><td>'+esc(e.ensayo.slice(0,90))+(e.ensayo.length>90?'…':'')+' '+chips(e.evidencia)+'</td>'+hs.map(function(x){return (e.para_hipotesis||[]).indexOf(x)>=0?'<td style="background:var(--acc);text-align:center;color:#fff">●</td>':'<td></td>'}).join("")+'</tr>'}).join("")+'</table></div><p style="font-size:12px;color:var(--mut)">Columnas sin punto: la evidencia leída no menciona ensayo para esa hipótesis (VACÍO).</p>';$("#mp-hm").innerHTML=t}
-  if(an.fmeca)barChart($("#mp-doc"),an.fmeca.items.map(function(m){return{label:m.id+" "+m.modo,value:m.evidencia.length,color:"var(--c3)"}}),{titulo:"Fuentes por modo"});
+  if(an.fmeca)barChart($("#mp-doc"),an.fmeca.items.map(function(m){var d={};m.evidencia.forEach(function(i){var e=EV[i];if(e&&(e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"))d[(e.referencia&&e.referencia.titulo)||i]=1});return{label:m.id+" "+m.modo,value:Object.keys(d).length,color:"var(--c3)"}}),{titulo:"Documentos distintos por modo"});
   /* esquema de degradación (E-8008) y kurtosis no monótona (E-8003): curvas dibujadas a mano, sin escala */
-  var W2=760,H2=210,st='';var xs=[0,.25,.5,.75,1];
-  st+='<line x1="40" y1="170" x2="740" y2="170" stroke="var(--mut)"/><line x1="40" y1="10" x2="40" y2="170" stroke="var(--mut)"/>';
-  [["1 ultrasónico",40],["2 resonancia natural",215],["3 frecuencias de defecto y armónicos",390],["4 ruido de fondo, previo a la falla",565]].forEach(function(e,i){st+='<rect x="'+e[1]+'" y="170" width="175" height="26" fill="var(--soft)" stroke="var(--line)"/><text x="'+(e[1]+87)+'" y="187" text-anchor="middle" style="fill:var(--ink)">'+esc(e[0])+'</text>'});
+  var W2=760,H2=216,st='';var xs=[0,.25,.5,.75,1];
+  st+='<line x1="40" y1="170" x2="740" y2="170" stroke="var(--mut)"/><line x1="40" y1="10" x2="40" y2="170" stroke="var(--mut)"/><text x="390" y="206" text-anchor="middle" style="fill:var(--bad);font-weight:700">ESQUEMA ILUSTRATIVO: sin escala ni datos · eje horizontal: tiempo (sin escala) · eje vertical: magnitud relativa</text>';
+  [["1 ultrasónico",40],["2 resonancia natural",215],["3 frecuencias de defecto y armónicos",390],["4 ruido de fondo aleatorio",565]].forEach(function(e,i){st+='<rect x="'+e[1]+'" y="170" width="175" height="26" fill="var(--soft)" stroke="var(--line)"/><text x="'+(e[1]+87)+'" y="187" text-anchor="middle" style="fill:var(--ink)">'+esc(e[0])+'</text>'});
   st+='<path d="M40 150 C120 148 160 60 300 40 C420 30 480 120 740 150" fill="none" stroke="var(--c2)" stroke-width="2.5"/><text x="300" y="32" text-anchor="middle" style="fill:var(--c2)">kurtosis: sube con el defecto incipiente y vuelve a lo normal al extenderse</text>';
-  st+='<path d="M40 160 C260 158 400 140 560 100 C660 70 700 40 740 20" fill="none" stroke="var(--c1)" stroke-width="2.5"/><text x="560" y="92" style="fill:var(--c1)">energía de las frecuencias de defecto: crece</text>';
+  st+='<path d="M40 160 C260 158 400 140 565 100" fill="none" stroke="var(--c1)" stroke-width="2.5"/><text x="400" y="132" style="fill:var(--c1)">energía de las frecuencias de defecto: crece hasta la etapa 3</text><text x="660" y="110" text-anchor="middle" style="fill:var(--mut)">etapa 4: sin tendencia respaldada</text>';
   $("#mp-deg").innerHTML='<svg viewBox="0 0 '+W2+' '+H2+'" width="100%" role="img" aria-label="Esquema cualitativo">'+st+'</svg><div class="note">Esquema <b>cualitativo y sin escala</b>: no son datos ni mediciones y no hay duraciones. Las cuatro etapas vienen de <button class="chip" data-ev="E-8008">E-8008</button> y el comportamiento no monótono de la kurtosis de <button class="chip" data-ev="E-8003">E-8003</button>; la forma de las curvas es ilustrativa.</div>';
 }
 

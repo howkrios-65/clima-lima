@@ -24,6 +24,15 @@
     },
     {
      "tipo": "afirmacion",
+     "titulo": "Un rodamiento sano muestra solo frecuencias ligadas al eje, como el desbalance o la desalineación; las anomalías operacionales aparecen mínimamente en la superficie de los elementos rodantes y, con frecuencia, se energizan muchos armónicos al pasar sobre ellas",
+     "evidencia": [
+      "E-9305",
+      "E-9307"
+     ],
+     "limite": "Descripción cualitativa de un preprint de banco; sin amplitudes ni umbrales"
+    },
+    {
+     "tipo": "afirmacion",
      "titulo": "Degradación en cuatro etapas espectrales (ultrasónica, resonancia natural, frecuencias de defecto y armónicos, ruido de fondo aleatorio), descritas de forma cualitativa y sin duración",
      "evidencia": [
       "E-8008"
@@ -50,6 +59,14 @@
       "E-6004"
      ],
      "limite": "Resumen de 1988; bombas, no transportadores; sin base de datos ni n"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Un preprint señala que las fallas y defectos suelen inducirse por desgaste por contaminación, mala lubricación y montaje incorrecto, entre otros",
+     "evidencia": [
+      "E-9301"
+     ],
+     "limite": "Introducción que cita otras referencias no leídas; sin cifras"
     }
    ],
    "nota": "Mecanismos propios de la chumacera de polea (flexión del eje, sellos en polvo, calentamiento del soporte): VACÍO."
@@ -63,6 +80,14 @@
       "E-6001"
      ],
      "limite": "Introducción que cita a otros; rodillos, no chumaceras de poleas; sin base de datos, tamaño ni año; la fuente primaria (E-6009) no se leyó"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Cita secundaria: se estima que entre 40 y 50 % de las fallas de maquinaria se atribuyen a rodamientos",
+     "evidencia": [
+      "E-9102"
+     ],
+     "limite": "Cifra tomada de otra referencia no leída; maquinaria rotativa en general, no transportadores; sin base de datos, n ni año"
     }
    ],
    "nota": "Ranking de componentes y modos con base de datos, n y año: VACÍO."
@@ -90,6 +115,14 @@
       "E-6003"
      ],
      "limite": "Contexto de aerogeneradores; no entrega horas para poleas"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Las observaciones censuradas son frecuentes dada la rareza de las fallas en rodamientos de bolas, y pocos estudios abordan sus consecuencias",
+     "evidencia": [
+      "E-9101"
+     ],
+     "limite": "Introducción de un preprint de banco; apoyada en referencias no leídas"
     },
     {
      "tipo": "afirmacion",
@@ -137,6 +170,39 @@
       "E-8010"
      ],
      "limite": "Solo resumen de un preprint sin texto completo; el identificador arXiv debe verificarse; conjuntos de banco"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Un banco público de rodamientos (CWRU) no fue diseñado para aprendizaje automático y hay que evitar resultados engañosos; en los dos bancos descritos en ese preprint (HUST y CWRU) las velocidades van de 600 a 2100 rpm",
+     "evidencia": [
+      "E-9203",
+      "E-9204"
+     ],
+     "limite": "Descripción de datasets en un marco propuesto; el documento no lista velocidades menores, pero la velocidad de una polea lenta de faja no consta en la fuente: comparación VACÍO"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "La adaptación de dominio pierde exactitud cuando las categorías de falla de origen y destino no coinciden",
+     "evidencia": [
+      "E-9209"
+     ],
+     "limite": "Descripción de la literatura hecha por los autores de un método; resultados autoinformados en bancos"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Un preprint evita la fuga temporal con una partición cronológica: entrenamiento con ventanas hasta un instante y prueba posterior",
+     "evidencia": [
+      "E-9210"
+     ],
+     "limite": "Equipos de telecomunicaciones, no rodamientos; validación dentro de la misma flota"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Existe un conjunto de datos reales de operación de aerogeneradores (89 años de datos, 44 ventanas etiquetadas de anomalías) con un puntaje que combina detección, comportamiento normal, falsas alarmas y anticipación",
+     "evidencia": [
+      "E-9201"
+     ],
+     "limite": "Datos SCADA, no vibración ni rodamientos de poleas"
     },
     {
      "tipo": "afirmacion",
@@ -206,7 +272,17 @@
       "E-8008",
       "E-8009",
       "E-8010",
-      "E-8011"
+      "E-8011",
+      "E-9101",
+      "E-9102",
+      "E-9201",
+      "E-9203",
+      "E-9204",
+      "E-9209",
+      "E-9210",
+      "E-9301",
+      "E-9305",
+      "E-9307"
      ],
      "limite": ""
     }
