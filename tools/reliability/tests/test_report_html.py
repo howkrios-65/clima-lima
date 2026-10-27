@@ -9,6 +9,7 @@ import pytest
 
 from reliability_kit import Ledger, fit_weibull_mle, weibull_b_life_ci_lr, weibull_beta_ci_lr
 from reliability_kit import report_html as rh
+from reliability_kit import validar_cifras as rk_validar_cifras, validar_replicas as rk_validar_replicas
 
 HOY = "2026-10-01"
 
@@ -187,3 +188,14 @@ console.log(JSON.stringify({n,th,items,nombre,e}));await b.close()})()"""
         r = subprocess.run(["node", "-e", js, str(out)], capture_output=True, text=True, timeout=120)
         o = json.loads(r.stdout.strip().splitlines()[-1])
         assert o["n"] >= 1 and o["th"] == "dark" and o["items"] == 5 and o["nombre"].endswith(".csv") and o["e"] == [], o
+
+
+def test_gate_de_cifras_y_replicas():
+    L = Ledger([{"id": "E-0001", "tipo": "paper", "acceso": "fragmento", "via": "x", "fecha_acceso": HOY,
+                 "referencia": {"autores": "A, B.", "anio": 2024, "titulo": "T"}, "extracto": "MAE of 14.7 minutes (95% CI = 13.6-15.8) versus 18.5 minutes",
+                 "localizador": "resumen", "afirma": "a", "limites": "b"}])
+    ok, err = rk_validar_cifras([{"id": "C1", "valor": "14.7", "evidencia": ["E-0001"]}, {"id": "C2", "valor": "99", "evidencia": ["E-0001"]}], L)
+    assert [c["id"] for c in ok] == ["C1"] and len(err) == 1
+    ok, err = rk_validar_replicas([{"id": "R1", "tipo": "barras_ic", "evidencia": ["E-0001"], "series": [{"etiqueta": "a", "valor": "14.7", "ic": ["13.6", "15.8"]}]},
+                                   {"id": "R2", "tipo": "barras", "evidencia": ["E-0001"], "series": [{"etiqueta": "b", "valor": "12.6"}]}], L)
+    assert [r["id"] for r in ok] == ["R1"] and "12.6" in err[0]

@@ -220,6 +220,10 @@ def construir_informe(caso: dict, ledger: Ledger, salida: str | Path | None = No
     if not c["meta"].get("titulo"):
         raise ValueError("meta.titulo es obligatorio")
     ajustes = aplicar_compuertas(c, ledger) + aplicar_compuertas_analisis(c.get("analisis"), ledger)
+    from .replicas import validar_cifras, validar_replicas
+    c["cifras"], e1 = validar_cifras(c.get("cifras", []), ledger)
+    c["replicas"], e2 = validar_replicas(c.get("replicas", []), ledger)
+    ajustes += [{"donde": "cifras/réplicas", "tipo": "eliminado_por_gate", "detalle": x} for x in e1 + e2]
     for t in c["tecnicas"]:
         t.setdefault("insumos", [])
     conv = convergencia(c["tecnicas"], c["raices"]) if c["tecnicas"] and c["raices"] else None

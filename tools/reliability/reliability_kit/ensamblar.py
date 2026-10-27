@@ -61,5 +61,8 @@ def ensamblar(carpeta: str | Path, salida: str | Path | None = None, simulador: 
         "historial": [{"version": "v1", "fecha": _dt.date.today().isoformat(), "cambio": "Informe ensamblado", "baseline": "VACÍO: sin datos de falla del activo"}],
         "dossier": {"orden": [s[0] for s in _dz.SECCIONES], "titulos": titulos, "frentes": {s[0]: s[2] for s in _dz.SECCIONES}, "secciones": D["secciones"]},
         "analisis": an, "simulador": simulador,
+        "cifras": [x for f in sorted(c.glob("*cifras*.json")) for x in (_cargar(f) or [])],
+        "replicas": [x for f in sorted(c.glob("*replicas*.json")) for x in (_cargar(f) or [])],
+        "trazabilidad": _cargar(c / "trazabilidad.json") or [], "ranking": _cargar(c / "ranking.json") or [],
     }
     return construir_informe(caso, L, salida or c / "informe.html")
