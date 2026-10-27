@@ -1,0 +1,52 @@
+[
+ {
+  "id": "mon-CF-01",
+  "valor": "12.8",
+  "unidad": "kHz",
+  "mide": "Frecuencia de muestreo de vibracion, corrientes, par y fase clave en el banco de motor",
+  "condiciones": "Motor de induccion de 2.2 kW en banco de laboratorio, 282 corridas de 90 s; sin bomba",
+  "evidencia": [
+   "E-1301"
+  ]
+ },
+ {
+  "id": "mon-CF-02",
+  "valor": "2.2",
+  "unidad": "kW",
+  "mide": "Potencia del motor del banco",
+  "condiciones": "Banco de laboratorio con caja reductora y freno de polvo magnetico; sin bomba",
+  "evidencia": [
+   "E-1301"
+  ]
+ },
+ {
+  "id": "sel-C1",
+  "valor": "10",
+  "unidad": "% de falla en la definicion de L10",
+  "mide": "Fraccion de un grupo de rodamientos identicos que ha fallado al alcanzar la vida L10",
+  "condiciones": "Definicion citada por RULSurv (arXiv 2405.01614), Seccion 3.1; velocidad constante; no es dato de campo ni de bombas",
+  "evidencia": [
+   "E-1202"
+  ]
+ },
+ {
+  "id": "sel-C2",
+  "valor": "0.5",
+  "unidad": "%",
+  "mide": "Fraccion de rodamientos industriales reemplazados por falla real (cita de segunda mano; ~90 % sobreviven al equipo y ~10 % se reemplazan preventivamente)",
+  "condiciones": "RULSurv Seccion 3.1, referencia [56] no leida; poblacion, pais y anio desconocidos; no especifico de bombas",
+  "evidencia": [
+   "E-1202"
+  ]
+ },
+ {
+  "id": "sel-C3",
+  "valor": "9.6 / 11.7 / 14.6",
+  "unidad": "h",
+  "mide": "L10h nominal de las condiciones C1, C2, C3 del banco XJTU-SY",
+  "condiciones": "Rodamiento de bolas LDK UER204; 12.0, 11.0 y 10.0 kN radial; 2100, 2250 y 2400 rpm; banco acelerado (RULSurv, Tabla 2)",
+  "evidencia": [
+   "E-1204"
+  ]
+ }
+]

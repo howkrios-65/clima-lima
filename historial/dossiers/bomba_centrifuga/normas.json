@@ -1,0 +1,767 @@
+[
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 13709",
+  "titulo": "Centrifugal pumps for petroleum, petrochemical and natural gas industries",
+  "edicion_vista": "2009 (segun resumen; edicion no verificada)",
+  "estado_visto": "Listada como vigente (edicion 2009) en listados de terceros y en el organismo sueco (EN ISO 13709:2009 valida); no se confirmo si existe una edicion posterior; la edicion 2003 figura retirada",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Requisitos de bombas centrifugas (en voladizo, entre cojinetes, verticales suspendidas) para servicios de proceso de petroleo, petroquimica y gas",
+  "relaciones": "Segun el resumen: numerada tambien como API 610 (hasta la 11.a ed.); reemplaza la ed. 2003. La 12.a ed. de API 610 ya no se publica con la marca ISO",
+  "url": "https://www.sis.se/en/produkter/fluid-systems-and-components-for-general-use/pumps/sseniso13709/",
+  "evidencia": [
+   "E-1500"
+  ]
+ },
+ {
+  "organismo": "API",
+  "codigo": "API Std 610 (12.a ed.)",
+  "titulo": "Centrifugal Pumps for Petroleum, Petrochemical and Natural Gas Industry Services",
+  "edicion_vista": "12.a edicion, enero de 2021 (segun resumen; edicion no verificada)",
+  "estado_visto": "Un listado la marca como edicion vigente; no se reviso si hay 13.a edicion",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Requisitos de bombas centrifugas, incluidas las que operan en reversa como turbinas de recuperacion hidraulica, para servicios de proceso",
+  "relaciones": "Segun el resumen: las ediciones 9.a a 11.a se publicaron junto con ISO 13709; la 12.a ya no lleva la marca ISO; agrega el Anexo O (bombas de proposito especial) y remite a API RP 691",
+  "url": "https://www.hydrocarbonprocessing.com/news/2022/01/online-exclusive-api-610-12th-edition-addresses-pump-reliability-maintainability-and-more",
+  "evidencia": [
+   "E-1501"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 5199",
+  "titulo": "Technical specifications for centrifugal pumps - Class II",
+  "edicion_vista": "2002 (segun resumen; edicion no verificada)",
+  "estado_visto": "Un listado la marca como edicion vigente; la ed. 1986 fue reemplazada; adoptada como EN ISO 5199 (organismo sueco: valida)",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Especificaciones tecnicas de bombas centrifugas de aplicacion general (una o varias etapas, horizontales o verticales); cita como ejemplo tipico las bombas de proceso quimico como las de ISO 2858",
+  "relaciones": "Segun el resumen: reemplaza ISO 5199:1986; adoptada como EN ISO 5199",
+  "url": "https://www.sis.se/en/produkter/fluid-systems-and-components-for-general-use/pumps/sseniso5199/",
+  "evidencia": [
+   "E-1502"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 2858",
+  "titulo": "End-suction centrifugal pumps (rating 16 bar) - Designation, nominal duty point and dimensions",
+  "edicion_vista": "ISO 2858:1975 (pagina ISO); adopciones EN ISO 2858:2010 (BSI) y 2011 (EVS/DIN) segun resumenes; edicion no verificada",
+  "estado_visto": "La pagina ISO de la ed. 1975 figura revisada y confirmada en 2017 (segun el resumen); BSI muestra la adopcion europea como vigente y en revision",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Designacion, punto de operacion nominal y dimensiones de bombas de succion axial de una etapa hasta 16 bar",
+  "relaciones": "Segun el resumen: DIN EN ISO 2858 reemplaza a EN 22858 con el mismo contenido",
+  "url": "https://www.iso.org/standard/7862.html",
+  "evidencia": [
+   "E-1503"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 9906",
+  "titulo": "Rotodynamic pumps - Hydraulic performance acceptance tests - Grades 1, 2 and 3",
+  "edicion_vista": "2012 (segun resumen; edicion no verificada)",
+  "estado_visto": "Edicion 2012 presentada como la edicion internacional vigente; reemplaza la de 1999; adoptada como EN ISO 9906:2012",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Pruebas hidraulicas de aceptacion de bombas rotodinamicas (centrifugas, de flujo mixto y axiales) en bancos de prueba; grados 1B, 1E, 1U, 2B, 2U y 3B",
+  "relaciones": "Segun el resumen: reemplaza la edicion de 1999",
+  "url": "https://scc-ccn.ca/standardsdb/standards/8145237",
+  "evidencia": [
+   "E-1504"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 5198",
+  "titulo": "Centrifugal, mixed flow and axial pumps - Code for hydraulic performance tests - Precision class",
+  "edicion_vista": "ISO 5198:1987; EN ISO 5198:1998 (segun resumen; edicion no verificada)",
+  "estado_visto": "Los listados muestran la ed. 1987 y la adopcion europea 1998 (EVS 2003); no se vio si hay edicion posterior ni su vigencia",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Pruebas hidraulicas de clase de precision, orientadas a laboratorio, investigacion y desarrollo",
+  "relaciones": "Segun el resumen: cubre solo la clase de precision (antigua clase A); la version europea reemplazo a la NF de 1987",
+  "url": "https://knowledge.bsigroup.com/products/centrifugal-mixed-flow-and-axial-pumps-code-for-hydraulic-performance-tests-precision-class",
+  "evidencia": [
+   "E-1505"
+  ]
+ },
+ {
+  "organismo": "API",
+  "codigo": "API Std 682",
+  "titulo": "Pumps - Shaft Sealing Systems for Centrifugal and Rotary Pumps",
+  "edicion_vista": "4.a edicion, mayo de 2014; un listado muestra API STD 682 (R2022) (segun resumen; edicion no verificada)",
+  "estado_visto": "Resumen: la 4.a ed. aparece como la edicion vigente; no se reviso si hay edicion posterior",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Requisitos y recomendaciones de sistemas de sello de eje para bombas centrifugas y rotativas (categorias, tipos, arreglos, planes de tuberia auxiliar)",
+  "relaciones": "Segun el resumen: la 3.a ed. (2004, reafirmada 2011) es la adopcion identica de ISO 21049",
+  "url": "https://en.wikipedia.org/wiki/API_Standard_682",
+  "evidencia": [
+   "E-1506"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 21049",
+  "titulo": "Pumps - Shaft sealing systems for centrifugal and rotary pumps",
+  "edicion_vista": "2004 (segun resumen; edicion no verificada)",
+  "estado_visto": "CONFLICTO: un listado la describe en revision periodica y otro como confirmada en 2021; no se confirmo si fue reemplazada",
+  "nivel": "CONFLICTO",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Sistemas de sello de eje (ejes de 20 mm a 110 mm) de bombas centrifugas y rotativas en servicios peligrosos, inflamables o toxicos",
+  "relaciones": "Segun el resumen: API 682 3.a ed. es su adopcion identica; existe la contraparte EN ISO 21049:2004",
+  "url": "https://scc-ccn.ca/standardsdb/standards/8117408",
+  "evidencia": [
+   "E-1507"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 20816-1",
+  "titulo": "Mechanical vibration - Measurement and evaluation of machine vibration - Part 1: General guidelines",
+  "edicion_vista": "2016 (segun resumen; edicion no verificada)",
+  "estado_visto": "La pagina ISO (segun el resumen) la muestra revisada y confirmada en 2021; hay un borrador ISO/DIS 20816-1 (2.a ed.) en consulta que la reemplazaria",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Criterios generales de evaluacion de vibracion (magnitud y cambio) para monitoreo y aceptacion; vibracion radial de eje, excluye la axial",
+  "relaciones": "Segun el resumen: DIN la describe como consolidacion de ISO 7919-1 y ISO 10816-1; reemplaza a ISO 10816-1",
+  "url": "https://www.iso.org/standard/63180.html",
+  "evidencia": [
+   "E-1508"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 20816-3",
+  "titulo": "Mechanical vibration - Measurement and evaluation of machine vibration - Part 3: Industrial machinery with a power rating above 15 kW and operating speeds between 120 r/min and 30 000 r/min",
+  "edicion_vista": "2022 (aprobada el 5 de octubre de 2022 segun el resumen; edicion no verificada)",
+  "estado_visto": "Presentada como edicion vigente; adopciones DIN ISO 20816-3:2023-04 y BS ISO 20816-3",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Evaluacion de vibracion in situ de maquinas industriales acopladas, incluidos motores electricos con acoples flexibles, compresores rotativos y ventiladores",
+  "relaciones": "Segun el resumen: las turbinas y generadores grandes van en ISO 20816-2 y los generadores hidraulicos en ISO 20816-5. No se vio si reemplaza a ISO 10816-3",
+  "url": "https://www.din.de/en/wdc-beuth:din21:363471600",
+  "evidencia": [
+   "E-1509"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 10816-1",
+  "titulo": "Mechanical vibration - Evaluation of machine vibration by measurements on non-rotating parts - Part 1: General guidelines",
+  "edicion_vista": "1995 (segun resumen)",
+  "estado_visto": "Retirada; la pagina ISO (segun el resumen) nombra a ISO 20816-1:2016 como su revision (etapa 95.99)",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Solo antecedente: evita citar una norma retirada",
+  "relaciones": "Segun el resumen: reemplazada por ISO 20816-1:2016; la ed. 1995 reemplazo a ISO 2372 e ISO 3945; la enmienda 1 de 2009 tambien figura retirada",
+  "url": "https://www.iso.org/standard/18866.html",
+  "evidencia": [
+   "E-1510"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 10816-7",
+  "titulo": "Mechanical vibration - Evaluation of machine vibration by measurements on non-rotating parts - Part 7: Rotodynamic pumps for industrial applications, including measurements on rotating shafts",
+  "edicion_vista": "2009 (segun resumen; edicion no verificada)",
+  "estado_visto": "Varios listados la muestran vigente; un listado finlandes de 2017 sugiere una reedicion nacional; no se confirmo su estado frente a la serie ISO 20816",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Zonas y criterios de vibracion en carcasa de cojinetes para bombas rotodinamicas de mas de 1 kW (servicio y aceptacion)",
+  "relaciones": "Segun el resumen: trabaja junto con ISO 7919-3 para bombas",
+  "url": "https://scc-ccn.ca/standardsdb/standards/8121005",
+  "evidencia": [
+   "E-1511"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 7919-3",
+  "titulo": "Mechanical vibration - Evaluation of machine vibration by measurements on rotating shafts - Part 3: Coupled industrial machines",
+  "edicion_vista": "2009 (segun resumen; edicion no verificada)",
+  "estado_visto": "CONFLICTO: un listado la da retirada el 5 de octubre de 2022; otro la lista como vigente",
+  "nivel": "CONFLICTO",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Evaluacion de vibracion de eje en maquinas acopladas con cojinetes de pelicula fluida, incluidas bombas rotodinamicas",
+  "relaciones": "Segun el resumen: para bombas va junto con ISO 10816-7",
+  "url": "https://ccn-scc.ca/standardsdb/standards/8146226",
+  "evidencia": [
+   "E-1512"
+  ]
+ },
+ {
+  "organismo": "ANSI/HI",
+  "codigo": "ANSI/HI 9.6.4",
+  "titulo": "Rotodynamic Pumps for Vibration Measurements and Allowable Values",
+  "edicion_vista": "2022 (segun resumen; edicion no verificada)",
+  "estado_visto": "Edicion 2022 presentada como la vigente; las de 2000, 2009 y 2016 figuran superadas o historicas",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Vibracion en carcasa de cojinetes de bombas rotodinamicas de mas de 2 kW: instrumentacion, valores admisibles de campo y de fabrica, bombas verticales",
+  "relaciones": "Segun el resumen: la ed. 2022 reemplaza a la 2016 e incorpora las pruebas de vibracion de bombas sumergibles que estaban en ANSI/HI 11.6",
+  "url": "https://www.pumps.org/product/ansi-hi-9-6-4-rotodynamic-pumps-for-vibration-measurement-and-allowable-values/",
+  "evidencia": [
+   "E-1513"
+  ]
+ },
+ {
+  "organismo": "ANSI/HI",
+  "codigo": "ANSI/HI 9.6.3",
+  "titulo": "Rotodynamic Pumps - Guideline for Allowable Operating Region",
+  "edicion_vista": "CONFLICTO de edicion: 2012 (superada), 2017 (blog de ANSI) y una referencia a 2018 (un listado); edicion vigente no confirmada",
+  "estado_visto": "CONFLICTO: las fuentes dan fechas distintas para la edicion vigente",
+  "nivel": "CONFLICTO",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Region de operacion preferida y admisible respecto al punto de mejor eficiencia (cavitacion, vibracion, recirculacion, vida de cojinetes y sellos)",
+  "relaciones": "Segun el resumen: la ed. 2012 figura superada",
+  "url": "https://pumps.org/product/ansi-hi-9-6-3-rotodynamic-pumps-guideline-for-operating-regions",
+  "evidencia": [
+   "E-1514"
+  ]
+ },
+ {
+  "organismo": "ANSI/HI",
+  "codigo": "ANSI/HI 9.6.5",
+  "titulo": "Rotodynamic Pumps - Guideline for Condition Monitoring",
+  "edicion_vista": "2022 (segun resumen; edicion no verificada)",
+  "estado_visto": "Edicion 2022 presentada como la vigente; las de 2000, 2009 y 2016 figuran superadas",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Metodos de monitoreo de condicion y limites de control de bombas rotodinamicas (potencia, temperatura, fuga, presion, vibracion, lubricante, caudal, velocidad, desgaste de cojinetes, erosion)",
+  "relaciones": "Segun el resumen: la ed. 2022 revisa la 2016 y agrega erosion, mantenimiento basado en condicion y monitoreo critico y de seguridad",
+  "url": "https://pumps.org/product/ansi-hi-9-6-5-2022-rotodynamic-pumps-guidelines-for-condition-monitoring",
+  "evidencia": [
+   "E-1515"
+  ]
+ },
+ {
+  "organismo": "ANSI/HI",
+  "codigo": "ANSI/HI 14.6",
+  "titulo": "Rotodynamic Pumps for Hydraulic Performance Acceptance Tests",
+  "edicion_vista": "2022 (segun resumen, con fuentes mayormente de la ed. 2011; edicion no verificada)",
+  "estado_visto": "El resumen la da como edicion vigente con cautela; la ed. 2011 figura superada",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Pruebas hidraulicas, hidrostaticas, de integridad mecanica y de NPSH de bombas rotodinamicas",
+  "relaciones": "Segun el resumen: reemplazo a ANSI/HI 1.6 y 2.6",
+  "url": "https://www.pumps.org/product/ansi-hi-14-6-rotodynamic-pumps-for-hydraulic-performance-acceptance-tests/",
+  "evidencia": [
+   "E-1516"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 21940-11",
+  "titulo": "Mechanical vibration - Rotor balancing - Part 11: Procedures and tolerances for rotors with rigid behaviour",
+  "edicion_vista": "2016, con la enmienda 1 de 2022 (segun resumen; edicion no verificada)",
+  "estado_visto": "La pagina ISO (segun el resumen) la muestra revisada y confirmada en 2021, con la pagina en revision sistematica; BSI lista BS ISO 21940-11:2016+A1:2022 como vigente",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Desbalance residual admisible, numero de planos de correccion y su reparto en rotores rigidos (impulsor y rotor de bomba)",
+  "relaciones": "Segun el resumen: reemplaza a ISO 1940-1:2003; los rotores flexibles van en ISO 21940-12; ISO 21940-14 trata los errores de balanceo",
+  "url": "https://www.iso.org/standard/54074.html",
+  "evidencia": [
+   "E-1517"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 1940-1",
+  "titulo": "Mechanical vibration - Balance quality requirements for rotors in a constant (rigid) state - Part 1",
+  "edicion_vista": "2003 (segun resumen)",
+  "estado_visto": "Retirada (etapa de retiro el 9 de noviembre de 2016 segun el resumen); reemplazada por ISO 21940-11:2016",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Solo antecedente: evita citar una norma retirada",
+  "relaciones": "Segun el resumen: reemplazada por ISO 21940-11:2016; reemplazo a ISO 1940-1:1986",
+  "url": "https://www.iso.org/standard/27092.html",
+  "evidencia": [
+   "E-1518"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 281",
+  "titulo": "Rolling bearings - Dynamic load ratings and rating life",
+  "edicion_vista": "2007 (segun resumen; edicion no verificada)",
+  "estado_visto": "Edicion 2007 publicada y vigente; existe un borrador ISO/DIS 281 (3.a ed.) en consulta; no se confirmo su etapa actual",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Capacidad de carga dinamica basica, vida nominal basica y vida nominal modificada de rodamientos; excluye desgaste, corrosion y erosion electrica",
+  "relaciones": "Segun el resumen: el borrador de 3.a ed. reemplazaria a la 2007",
+  "url": "https://scc-ccn.ca/standardsdb/standards/8118896",
+  "evidencia": [
+   "E-1519"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 15243",
+  "titulo": "Rolling bearings - Damage and failures - Terms, characteristics and causes",
+  "edicion_vista": "2017 (segun resumen; edicion no verificada)",
+  "estado_visto": "La pagina ISO (segun el resumen) la muestra revisada y confirmada en 2022; hay un borrador de trabajo de nueva edicion",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Clasificacion de modos de falla de rodamientos por apariencia, con causas probables y acciones correctivas (anexos)",
+  "relaciones": "Segun el resumen: la nueva edicion en desarrollo reemplazaria a ISO 15243:2017",
+  "url": "https://www.iso.org/standard/59619.html",
+  "evidencia": [
+   "E-1520"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 13373-1",
+  "titulo": "Condition monitoring and diagnostics of machines - Vibration condition monitoring - Part 1: General procedures",
+  "edicion_vista": "2002 (segun resumen; edicion no verificada)",
+  "estado_visto": "Un listado la muestra como confirmada el 10 de septiembre de 2024 (segun el resumen)",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Procedimientos generales de medicion de vibracion: transductores, ubicacion, adquisicion, monitoreo continuo y periodico",
+  "relaciones": "Segun el resumen: la parte 2 trata procesamiento y presentacion; otros metodos (aceite, termografia) van en otras normas",
+  "url": "https://www.iso.org/standard/21831.html",
+  "evidencia": [
+   "E-1521"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 13373-2",
+  "titulo": "Condition monitoring and diagnostics of machines - Vibration condition monitoring - Part 2: Processing, analysis and presentation of vibration data",
+  "edicion_vista": "2016 (adopcion DIN segun el resumen; edicion no verificada)",
+  "estado_visto": "No se vio un estado explicito; el listado DIN la presenta con esa edicion",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Procesamiento, analisis y presentacion de datos de vibracion en dominio del tiempo y de la frecuencia",
+  "relaciones": "Segun el resumen: se apoya en la parte 1",
+  "url": "https://din.de/en/wdc-beuth:din21:257612548",
+  "evidencia": [
+   "E-1522"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 13373-3",
+  "titulo": "Condition monitoring and diagnostics of machines - Vibration condition monitoring - Part 3: Guidelines for vibration diagnosis",
+  "edicion_vista": "2015 (segun resumen; edicion no verificada)",
+  "estado_visto": "CONFLICTO menor: una pagina ISO dice revisada y confirmada en 2026 y otro listado ISO dice 2020; ambas la dan por vigente",
+  "nivel": "CONFLICTO",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Enfoque estructurado de diagnostico de fallas de maquinas rotativas por vibracion",
+  "relaciones": "Segun el resumen: las guias por tipo de maquina estan en otras partes (la 9 trata motores electricos y la 4 turbinas con cojinetes de pelicula fluida)",
+  "url": "https://www.iso.org/standard/40840.html",
+  "evidencia": [
+   "E-1523"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 13374-2",
+  "titulo": "Condition monitoring and diagnostics of machines - Data processing, communication and presentation - Part 2: Data processing",
+  "edicion_vista": "2007 (segun resumen; edicion no verificada)",
+  "estado_visto": "La pagina ISO (segun el resumen) la muestra revisada y confirmada en 2021",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Modelo de informacion y modelo de procesamiento de referencia para arquitecturas abiertas de monitoreo de condicion",
+  "relaciones": "No se vio relacion con otras normas",
+  "url": "https://www.iso.org/standard/36645.html",
+  "evidencia": [
+   "E-1524"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 17359",
+  "titulo": "Condition monitoring and diagnostics of machines - General guidelines",
+  "edicion_vista": "2018 (segun resumen; edicion no verificada)",
+  "estado_visto": "Edicion 2018 presentada como la vigente; las ediciones 2011 y 2003 figuran retiradas",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Procedimientos generales para un programa de monitoreo de condicion aplicable a todas las maquinas",
+  "relaciones": "Segun el resumen: la ed. 2018 reemplaza a la 2011",
+  "url": "https://scc-ccn.ca/standardsdb/standards/8164933",
+  "evidencia": [
+   "E-1525"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 13379-1",
+  "titulo": "Condition monitoring and diagnostics of machine systems - Data interpretation and diagnostics techniques - Part 1: General guidelines",
+  "edicion_vista": "2025, 2.a edicion, octubre de 2025 (segun resumen; edicion no verificada)",
+  "estado_visto": "Segun el resumen, publicada en 2025 y reemplaza a la ed. 2012; el registro del repositorio listaba la ed. 2012 como la citada, por lo que hay que actualizarlo tras abrir la pagina oficial",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Vocabulario, principios y eleccion de enfoque diagnostico; cita bombas entre las maquinas incluidas",
+  "relaciones": "Segun el resumen: reemplaza a ISO 13379-1:2012",
+  "url": "https://www.iso.org/standard/88027.html",
+  "evidencia": [
+   "E-1526"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 13381-1",
+  "titulo": "Condition monitoring and diagnostics of machine systems - Prognostics - Part 1: General guidelines and requirements",
+  "edicion_vista": "2025, 3.a edicion, septiembre de 2025 (segun resumen; edicion no verificada)",
+  "estado_visto": "Segun el resumen, la ed. 2015 esta retirada y la reemplaza la ed. 2025",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Lineamientos y requisitos para construir y aplicar procesos de pronostico (vida util remanente)",
+  "relaciones": "Segun el resumen: la ed. 2015 anunciaba partes 2 a 4 (tendencias, uso ciclico, modelos de vida remanente) cuyo estado no se confirmo",
+  "url": "https://www.iso.org/standard/88029.html",
+  "evidencia": [
+   "E-1527"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 18436-1",
+  "titulo": "Condition monitoring and diagnostics of machine systems - Requirements for certification of personnel",
+  "edicion_vista": "2021 (segun resumen; edicion no verificada)",
+  "estado_visto": "Edicion 2021 presentada como la vigente; la ed. 2012 figura retirada",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Requisitos para organismos de certificacion de personal de monitoreo de condicion",
+  "relaciones": "Segun el resumen: reemplaza a la ed. 2012; los requisitos por especialidad estan en ISO 18436-2 y 4 a 9",
+  "url": "https://www.boutique.afnor.org/en-gb/standard/iso-1843612021/condition-monitoring-and-diagnostics-of-machine-systems-requirements-for-ce/xs133865/263424",
+  "evidencia": [
+   "E-1528"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 18436-2",
+  "titulo": "Condition monitoring and diagnostics of machines - Requirements for qualification and assessment of personnel - Part 2: Vibration condition monitoring and diagnostics",
+  "edicion_vista": "2014 (segun resumen; edicion no verificada)",
+  "estado_visto": "La pagina ISO (segun el resumen) la muestra revisada y confirmada en 2019; hay una nueva version en desarrollo",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Formacion, experiencia y examen del personal que hace analisis de vibracion (cuatro categorias)",
+  "relaciones": "Segun el resumen: se apoya en ISO 18436-1",
+  "url": "https://scc-ccn.ca/standardsdb/standards/8149374",
+  "evidencia": [
+   "E-1529"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 14224",
+  "titulo": "Petroleum, petrochemical and natural gas industries - Collection and exchange of reliability and maintenance data for equipment",
+  "edicion_vista": "2016, 3.a edicion (segun resumen; edicion no verificada)",
+  "estado_visto": "La pagina ISO (segun el resumen) la muestra revisada y confirmada en 2022",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Taxonomia de equipos, datos de falla y mantenimiento; los modos de falla normativos sirven como tesauro de confiabilidad",
+  "relaciones": "No se vio relacion con otras normas",
+  "url": "https://www.iso.org/standard/64076.html",
+  "evidencia": [
+   "E-1530"
+  ]
+ },
+ {
+  "organismo": "CEN/EN",
+  "codigo": "EN 13306",
+  "titulo": "Maintenance - Maintenance terminology",
+  "edicion_vista": "2017, aprobada por CEN el 16 de julio de 2017 (segun resumen; edicion no verificada)",
+  "estado_visto": "Presentada como la edicion vigente; reemplaza a EN 13306:2010",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Terminologia de mantenimiento: fallas, tipos de mantenimiento, tiempos y factores tecnicos y economicos",
+  "relaciones": "Segun el resumen: reemplaza a BS EN 13306:2010; preparada por CEN/TC 319",
+  "url": "https://www.sis.se/en/produkter/standardization/vocabularies/services/ss-en-133062017/",
+  "evidencia": [
+   "E-1531"
+  ]
+ },
+ {
+  "organismo": "UNE",
+  "codigo": "UNE-EN 13306",
+  "titulo": "Mantenimiento. Terminologia del mantenimiento",
+  "edicion_vista": "2018 (publicada el 11 de julio de 2018 segun el resumen; edicion no verificada)",
+  "estado_visto": "Presentada como la version vigente en Espana; anula a la EN 13306:2010 y a la UNE-EN 13306:2002",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Version en espanol del vocabulario de mantenimiento",
+  "relaciones": "Segun el resumen: elaborada por el CTN 151; las fechas 2017 (EN) y 2018 (UNE) son de adopciones distintas",
+  "url": "https://www.en.une.org/encuentra-tu-norma/busca-tu-norma/norma?c=N0046894",
+  "evidencia": [
+   "E-1532"
+  ]
+ },
+ {
+  "organismo": "ISO",
+  "codigo": "ISO 55000",
+  "titulo": "Asset management - Vocabulary, overview and principles",
+  "edicion_vista": "2024, 2.a edicion, julio de 2024 (segun resumen; edicion no verificada)",
+  "estado_visto": "Edicion 2024 presentada como la vigente; reemplaza a la de 2014",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Principios, resultados y vocabulario de gestion de activos; base de ISO 55001 e ISO 55002",
+  "relaciones": "Segun el resumen: ISO 55001 fija los requisitos e ISO 55002 la guia de aplicacion",
+  "url": "https://www.iso.org/standard/83053.html",
+  "evidencia": [
+   "E-1533"
+  ]
+ },
+ {
+  "organismo": "NCh",
+  "codigo": "NCh-ISO 55000, NCh-ISO 55001 y NCh-ISO 55002",
+  "titulo": "Gestion de activos (adopciones chilenas)",
+  "edicion_vista": "NCh-ISO 55000:2014, NCh-ISO 55001:2014 y NCh-ISO 55002:2020 (segun materiales de cursos del INN)",
+  "estado_visto": "Solo figuran como normas citadas en cursos del INN; no se vio una ficha del catalogo ni su vigencia (ISO 55000 e ISO 55001 tienen ediciones 2024)",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Referencia nacional chilena para gestion de activos",
+  "relaciones": "No se vio relacion con otras normas",
+  "url": "https://www.inn.cl/sites/default/files/Noticia/08_pg_taller_sistemas_de_gestion_de_activos_24_26_y_28_agosto_2020.pdf",
+  "evidencia": [
+   "E-1534"
+  ]
+ },
+ {
+  "organismo": "IEC",
+  "codigo": "IEC 60034-1",
+  "titulo": "Rotating electrical machines - Part 1: Rating and performance",
+  "edicion_vista": "15.a edicion, 2026 (segun resumen; edicion no verificada)",
+  "estado_visto": "Segun el resumen, la ed. 2026 es la vigente y cancela la 14.a (2022); un listado aun muestra la ed. 2022 como la reemplazada",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Valores nominales y desempeno de motores electricos que accionan la bomba",
+  "relaciones": "Segun el resumen: cancela y reemplaza la ed. 2022; las ed. 2017 y 2010 figuran anteriores",
+  "url": "https://scc-ccn.ca/standardsdb/standards/2058453",
+  "evidencia": [
+   "E-1535"
+  ]
+ },
+ {
+  "organismo": "IEC",
+  "codigo": "IEC 60034-14",
+  "titulo": "Rotating electrical machines - Part 14: Mechanical vibration of certain machines with shaft heights 56 mm and higher - Measurement, evaluation and limits of vibration severity",
+  "edicion_vista": "2018, 4.a edicion (segun resumen; edicion no verificada)",
+  "estado_visto": "Ed. 2018 listada como publicada; la 5.a ed. aparece en proceso, sin confirmar su publicacion",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Vibracion de aceptacion en fabrica del motor desacoplado; para medicion in situ remite a ISO 20816-1 y -3",
+  "relaciones": "Segun el resumen: la ed. 1982 esta cancelada",
+  "url": "https://scc-ccn.ca/standardsdb/standards/2043303",
+  "evidencia": [
+   "E-1536"
+  ]
+ },
+ {
+  "organismo": "NEMA",
+  "codigo": "ANSI/NEMA MG 1",
+  "titulo": "Motors and Generators",
+  "edicion_vista": "2021 (segun resumen de un blog de ANSI; edicion no verificada)",
+  "estado_visto": "El blog la presenta como la edicion actual; la tienda de ANSI muestra la ed. 2018 como historica y actualizaciones 2021 en las partes 0, 1, 7, 12, 30 y 31; no se reviso si hay edicion posterior",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Seleccion, aplicacion, ensayos y valores nominales de motores y generadores",
+  "relaciones": "No se vio relacion con otras normas",
+  "url": "https://blog.ansi.org/ansi/ansi-nema-mg-1-2021-motors-generators/",
+  "evidencia": [
+   "E-1537"
+  ]
+ },
+ {
+  "organismo": "IEEE",
+  "codigo": "IEEE 841",
+  "titulo": "Standard for Petroleum and Chemical Industry - Premium-Efficiency, Severe-Duty, Totally Enclosed Fan-Cooled (TEFC) Squirrel Cage Induction Motors - Up to and Including 370 kW (500 hp)",
+  "edicion_vista": "2021 (segun resumen; edicion no verificada)",
+  "estado_visto": "Listada como activa; revisa la ed. 2009",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Motores de induccion TEFC de servicio severo para petroleo y quimica (0,75 a 370 kW); excluye cojinetes de manguito",
+  "relaciones": "Segun el resumen: referencia a NEMA MG 1 e IEC 60034-2-1",
+  "url": "https://store.sfs.fi/en/ieee-841-2021",
+  "evidencia": [
+   "E-1538"
+  ]
+ },
+ {
+  "organismo": "IEEE",
+  "codigo": "IEEE Std 112",
+  "titulo": "Standard Test Procedure for Polyphase Induction Motors and Generators",
+  "edicion_vista": "2017 (segun resumen; edicion no verificada)",
+  "estado_visto": "El resumen la presenta como la edicion actual; revisa la ed. 2004",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Ensayos de desempeno de motores de induccion polifasicos",
+  "relaciones": "Segun el resumen: ediciones anteriores 1984, 1991 y 2004",
+  "url": "https://law.resource.org/pub/us/cfr/ibr/inc/ieee/ieee.112.2017.pdf",
+  "evidencia": [
+   "E-1539"
+  ]
+ },
+ {
+  "organismo": "API",
+  "codigo": "API RP 686",
+  "titulo": "Recommended Practice for Machinery Installation and Installation Design",
+  "edicion_vista": "2.a edicion, 1 de diciembre de 2009; un listado muestra API RP 686 (R2024) (segun resumen; edicion no verificada)",
+  "estado_visto": "Listada como activa; la ed. 1996 figura inactiva",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Procedimientos y listas de verificacion de instalacion y precomisionado de maquinaria (base, alineacion, tuberias); suplementa las instrucciones del fabricante",
+  "relaciones": "Segun el resumen: complementa las instrucciones del fabricante",
+  "url": "https://knowledge.bsigroup.com/products/recommended-practice-for-machinery-installation-and-installation-design",
+  "evidencia": [
+   "E-1540"
+  ]
+ },
+ {
+  "organismo": "API",
+  "codigo": "API RP 691",
+  "titulo": "Risk-Based Machinery Management",
+  "edicion_vista": "1.a edicion, junio de 2017 (segun resumen; edicion no verificada)",
+  "estado_visto": "Un listado la muestra como vigente; no se vio edicion posterior",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Gestion de riesgo de maquinaria en todo el ciclo de vida; anexos sobre modos de falla, monitoreo de condicion y pronostico",
+  "relaciones": "Segun el resumen: API 610 12.a ed. remite a esta practica",
+  "url": "https://knowledge.bsigroup.com/products/risk-based-machinery-management",
+  "evidencia": [
+   "E-1541"
+  ]
+ },
+ {
+  "organismo": "API",
+  "codigo": "API Std 670",
+  "titulo": "Machinery Protection Systems",
+  "edicion_vista": "2014 (segun resumen; edicion no verificada)",
+  "estado_visto": "CONFLICTO: un listado marca la ed. 2014 como activa y otro como superada; la ed. 2000 figura inactiva",
+  "nivel": "CONFLICTO",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Sistemas de proteccion de maquinaria: vibracion radial de eje y de carcasa, posicion axial, temperatura de cojinetes",
+  "relaciones": "No se vio relacion con otras normas",
+  "url": "https://shop.standards.ie/en-ie/standards/api-670-2014-97086_saig_api_api_203499/",
+  "evidencia": [
+   "E-1542"
+  ]
+ },
+ {
+  "organismo": "ASTM",
+  "codigo": "ASTM D4378",
+  "titulo": "Standard Practice for In-Service Monitoring of Mineral Turbine Oils for Steam, Gas, and Combined Cycle Turbines",
+  "edicion_vista": "D4378-24 (segun resumen; edicion no verificada)",
+  "estado_visto": "Listada como edicion actual; las ed. 2003 y 2008 tenian otro titulo",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Monitoreo de aceite de turbina en servicio; no cubre lubricantes de equipo auxiliar (como bombas), que van en D6224. Uso en bombas: solo analogia, no aplica directo",
+  "relaciones": "Segun el resumen: lubricantes de equipo auxiliar van en ASTM D6224",
+  "url": "https://store.astm.org/d4378-24.html",
+  "evidencia": [
+   "E-1543"
+  ]
+ },
+ {
+  "organismo": "VDI",
+  "codigo": "VDI 3839 Blatt 7",
+  "titulo": "Instructions on measuring and interpreting the vibration of machines - Typical vibration patterns with centrifugal pumps",
+  "edicion_vista": "2012-05 (segun resumen; edicion no verificada)",
+  "estado_visto": "Aparece en el listado de DIN y VDI; no se vio un estado de vigencia",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Problemas de vibracion tipicos de bombas de mas de 1 kW",
+  "relaciones": "Segun el resumen: serie VDI 3839; la parte 1 trata principios generales y la parte 2 desbalance, montaje y danos de cojinetes",
+  "url": "https://vdi.de/richtlinien/details/vdi-3839-blatt-7-instructions-on-measuring-and-interpreting-the-vibration-of-machines-typical-vibration-patterns-with-centrifugal-pumps",
+  "evidencia": [
+   "E-1544"
+  ]
+ },
+ {
+  "organismo": "DIN",
+  "codigo": "DIN EN ISO 2858",
+  "titulo": "Kreiselpumpen mit axialem Eintritt (PN 16) - Bezeichnung, Nennleistung und Hauptabmessungen",
+  "edicion_vista": "2011-12 (segun resumen; edicion no verificada)",
+  "estado_visto": "Presentada como la norma vigente",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Version alemana de ISO 2858",
+  "relaciones": "Segun el resumen: reemplaza a EN 22858; DIN 24256 (1978-11) figura retirada y no se confirmo su sucesora",
+  "url": "https://www.dinmedia.de/en/standard/din-en-iso-2858/146823612",
+  "evidencia": [
+   "E-1545"
+  ]
+ },
+ {
+  "organismo": "DIN",
+  "codigo": "DIN EN 735",
+  "titulo": "Overall dimensions of rotodynamic pumps - Tolerances (Anschlussmasse fuer Kreiselpumpen - Toleranzen)",
+  "edicion_vista": "1995-08 (segun resumen; edicion no verificada)",
+  "estado_visto": "Presentada como vigente; no se confirmo con fuente de estado",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Tolerancias de dimensiones de conexion de bombas rotodinamicas",
+  "relaciones": "No se vio relacion con otras normas",
+  "url": "https://www.dinmedia.de/en/standard/din-en-735/2593112",
+  "evidencia": [
+   "E-1546"
+  ]
+ },
+ {
+  "organismo": "BSI",
+  "codigo": "BS EN ISO 2858",
+  "titulo": "End-suction centrifugal pumps (rating 16 bar). Designation, nominal duty point and dimensions",
+  "edicion_vista": "2010 (segun resumen; edicion no verificada)",
+  "estado_visto": "BSI la muestra como Current, Under Review",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Adopcion britanica de EN ISO 2858",
+  "relaciones": "No se vio relacion con otras normas",
+  "url": "https://knowledge.bsigroup.com/products/end-suction-centrifugal-pumps-rating-16-bar-designation-nominal-duty-point-and-dimensions",
+  "evidencia": [
+   "E-1547"
+  ]
+ },
+ {
+  "organismo": "BSI",
+  "codigo": "BS ISO 21940-11",
+  "titulo": "Mechanical vibration. Rotor balancing. Procedures and tolerances for rotors with rigid behaviour",
+  "edicion_vista": "2016+A1:2022, publicada el 30 de junio de 2022 (segun resumen)",
+  "estado_visto": "BSI la lista como vigente",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Adopcion britanica de ISO 21940-11 con la enmienda 1",
+  "relaciones": "Segun el resumen: combina ISO 21940-11:2016 con su enmienda 1 de 2022",
+  "url": "https://knowledge.bsigroup.com/products/mechanical-vibration-rotor-balancing-procedures-and-tolerances-for-rotors-with-rigid-behaviour-1",
+  "evidencia": [
+   "E-1548"
+  ]
+ },
+ {
+  "organismo": "ABNT",
+  "codigo": "ABNT NBR 10082",
+  "titulo": "Ensaios nao destrutivos - Analise de vibracoes - Avaliacao da vibracao mecanica de maquinas com velocidades de operacao de 600 r/min a 5 000 r/min",
+  "edicion_vista": "Una pagina indica edicion 12/2021 (segun resumen); no se confirmo",
+  "estado_visto": "No se confirmo si fue reemplazada por la serie ISO 20816; no se hallo ficha de ABNT NBR ISO 20816",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Evaluacion de vibracion de maquinas rotativas de mas de 15 kW con medicion en partes no rotativas; correlato brasileno, no equivalencia confirmada",
+  "relaciones": "No se vio relacion con otras normas",
+  "url": "https://normas.com.br/visualizar/abnt-nbr-nm/5908/abnt-nbr10082-ensaios-nao-destrutivos-analise-de-vibracoes-avaliacao-da-vibracao-mecanica-de-maquinas-com-velocidades-de-operacao-de-600-r-min-a-5-000-r-min",
+  "evidencia": [
+   "E-1549"
+  ]
+ },
+ {
+  "organismo": "NOM",
+  "codigo": "NOM-001-ENER-2014",
+  "titulo": "Eficiencia energetica de bombas verticales tipo turbina con motor externo electrico vertical. Limites y metodo de prueba",
+  "edicion_vista": "2014, publicada en el DOF el 6 de agosto de 2014 (segun resumen)",
+  "estado_visto": "No se confirmo su vigencia ni si fue sustituida",
+  "nivel": "SOLO-SNIPPET",
+  "nivel_evidencia": "SOLO-SNIPPET",
+  "uso_en_el_caso": "Eficiencia de bombas verticales tipo turbina y sumergibles de pozo profundo (5,5 a 261 kW); no cubre bombas centrifugas en general",
+  "relaciones": "Segun el resumen: antecedente NOM-001-ENER-1995; para bombas de agua limpia domesticas se menciona NOM-004-ENER",
+  "url": "https://platiica.economia.gob.mx/wp-content/uploads/sites/2/PDF_Normas_Publicas/001ener2014.pdf",
+  "evidencia": [
+   "E-1550"
+  ]
+ }
+]

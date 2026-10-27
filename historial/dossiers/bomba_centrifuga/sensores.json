@@ -1,0 +1,33 @@
+[
+ {
+  "tecnica_o_sensor": "Vibracion triaxial (acelerometro) y corrientes de fase del motor",
+  "que_mide": "Aceleracion en el extremo de accionamiento del motor y corrientes trifasicas, en sincronia con par y fase clave",
+  "resultado_publicado": "Los autores afirman que vibracion y corriente son indicadores efectivos de la salud del motor",
+  "condiciones": "Motor de induccion 2.2 kW, banco de laboratorio, 12.8 kHz, velocidad y carga variables",
+  "limites": "Sin bomba, sin cavitacion, sin umbrales; laboratorio con interferencia electromagnetica minima",
+  "evidencia": [
+   "E-1301",
+   "E-1305"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Fusion vibracion, temperatura y ruido (sensores IoT) con FFT, wavelet y binning",
+  "que_mide": "Anomalias en motores de induccion usados en bombas, compresores y ventiladores",
+  "resultado_publicado": "Sistema de deteccion de anomalias con optimizacion multiobjetivo entre tasa de deteccion, falsos positivos y velocidad de inferencia (resumen)",
+  "condiciones": "Motores de induccion; datos propios con sensores de bajo costo",
+  "limites": "Solo resumen; sin cifras; motor, no bomba",
+  "evidencia": [
+   "E-1302"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Microfono (acustica de maquina)",
+  "que_mide": "Sonido de maquinas industriales, incluidas bombas, normal y con anomalias",
+  "resultado_publicado": "Conjunto publico de sonidos con anomalias como contaminacion, fuga, desbalance rotatorio y dano de riel (resumen)",
+  "condiciones": "Grabaciones en entornos de fabrica",
+  "limites": "Solo resumen; no precisa anomalias por maquina ni tipo de bomba; sin cavitacion",
+  "evidencia": [
+   "E-1303"
+  ]
+ }
+]

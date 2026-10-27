@@ -1,0 +1,13 @@
+{
+ "modo_falla": "bomba centrífuga",
+ "fecha": "2026-10-27",
+ "version": 1,
+ "entradas_registro": 351,
+ "omitidos": [
+  [
+   "Candidatos de diagnostico de bomba centrifuga no verificados",
+   "evidencia no leída o inexistente"
+  ]
+ ],
+ "nota": "Pistas SOLO-SNIPPET no respaldan afirmaciones"
+}

@@ -1,0 +1,44 @@
+[
+ {
+  "id": "sel-R1",
+  "titulo": "L10h nominal segun carga radial y velocidad, banco XJTU-SY",
+  "tipo": "tabla",
+  "unidad": "",
+  "condiciones": "15 rodamientos de bolas LDK UER204, 5 por condicion; banco acelerado",
+  "replica_de": "Tabla 2 de RULSurv (arXiv 2405.01614)",
+  "evidencia": [
+   "E-1204"
+  ],
+  "limites": "Banco de laboratorio con rodamientos de bolas cargados cerca de su capacidad dinamica; no representa bombas centrifugas ni vida de campo; sirve solo para ilustrar la dependencia de L10h con la carga y la velocidad.",
+  "columnas": [
+   "Condicion",
+   "L10h [h]",
+   "Fuerza radial [kN]",
+   "Velocidad [rpm]",
+   "Rodamientos"
+  ],
+  "filas": [
+   [
+    "C1",
+    "9.6",
+    "12.0",
+    "2100",
+    "Bearing 1_1 to 1_5"
+   ],
+   [
+    "C2",
+    "11.7",
+    "11.0",
+    "2250",
+    "Bearing 2_1 to 2_5"
+   ],
+   [
+    "C3",
+    "14.6",
+    "10.0",
+    "2400",
+    "Bearing 3_1 to 3_5"
+   ]
+  ]
+ }
+]

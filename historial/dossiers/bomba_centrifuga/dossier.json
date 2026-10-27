@@ -1,0 +1,142 @@
+{
+ "modo_falla": "bomba centrífuga",
+ "secciones": {
+  "mediciones": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Vibracion triaxial y corrientes de fase del motor adquiridas en sincronia",
+     "evidencia": [
+      "E-1301"
+     ],
+     "limite": "Banco de motor de 2.2 kW sin bomba; solo respalda que existe este esquema de medicion y la afirmacion de los autores; no da umbrales para bombas."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Fusion de vibracion, temperatura y ruido con sensores IoT en motores que accionan bombas",
+     "evidencia": [
+      "E-1302"
+     ],
+     "limite": "Solo resumen del autor; sin cifras ni umbrales."
+    }
+   ]
+  },
+  "fenomenos": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Causas de falla de rodamientos: contaminacion, mala lubricacion y montaje inadecuado",
+     "evidencia": [
+      "E-1201",
+      "E-1203"
+     ],
+     "limite": "Afirmaciones generales de introduccion de un trabajo de banco sobre rodamientos de bolas, con referencias no leidas; sin cifras ni especificidad de bomba centrifuga; no cubre sellos mecanicos ni empaquetaduras. La cita de que la pelicula lubricante reparte la carga axial o radial y que la salud depende de temperatura de operacion no trae umbrales."
+    }
+   ]
+  },
+  "top_fallas": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+  },
+  "fmeca": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+  },
+  "confiabilidad": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Vida de rodamientos en banco como analogo del rodamiento de la bomba (Paderborn, 17 unidades)",
+     "evidencia": [
+      "E-9604",
+      "E-1703"
+     ],
+     "limite": "Rodamientos de bolas de banco con carga y velocidad variables, no bomba centrifuga ni campo; criterio de falla no declarado en lo leido; admite Weibull del componente solo con cautela y decision del lider."
+    }
+   ]
+  },
+  "punto_optimo": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+  },
+  "lcc": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+  },
+  "vida_util": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Definicion de L10 y ejemplo de L10h segun carga y velocidad",
+     "evidencia": [
+      "E-1202",
+      "E-1204"
+     ],
+     "limite": "Definicion estandar citada de segunda mano y ejemplo de banco con rodamientos de bolas cercanos a su capacidad dinamica; no es un calculo L10 ajustado (contaminacion, lubricacion) para bombas centrifugas; la cifra 90 %/0,5 % proviene de una referencia no leida y sin poblacion."
+    }
+   ]
+  },
+  "ibr": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+  },
+  "ml": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Datos acusticos de bombas etiquetados normal/anomalo (MIMII y reempaquetados)",
+     "evidencia": [
+      "E-1700",
+      "E-1701",
+      "E-1702"
+     ],
+     "limite": "Solo diagnostico/deteccion de anomalia por audio; sin tiempos hasta la falla, sin censura, sin vibracion/presion/caudal/corriente; licencia y definicion de etiquetas no leidas en los repos de Hugging Face."
+    }
+   ]
+  },
+  "acr": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+  },
+  "troubleshooting": {
+   "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Distinguir falla mecanica de electrica del motor es dificil en campo",
+     "evidencia": [
+      "E-1304"
+     ],
+     "limite": "Afirmacion de contexto de los autores sobre motores; no es un procedimiento de investigacion de bombas."
+    }
+   ]
+  },
+  "mpd_normas": {
+   "elementos": [],
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles",
+   "nota": "Las normas identificadas se vieron solo en resúmenes de buscador (SOLO-SNIPPET): ver Referencias, Normas técnicas."
+  },
+  "referencias": {
+   "elementos": [
+    {
+     "tipo": "referencia",
+     "titulo": "Fuentes realmente usadas en este dossier",
+     "evidencia": [
+      "E-1201",
+      "E-1202",
+      "E-1203",
+      "E-1204",
+      "E-1301",
+      "E-1302",
+      "E-1304",
+      "E-1700",
+      "E-1701",
+      "E-1702",
+      "E-1703",
+      "E-9604"
+     ],
+     "limite": "no declarado"
+    }
+   ]
+  }
+ }
+}
