@@ -145,7 +145,7 @@ await p.click('#tabs button:has-text("Evidencia")');await p.click('.pill:has-tex
         r = subprocess.run(["node", "-e", js, str(out)], capture_output=True, text=True, timeout=120)
         o = json.loads(r.stdout.strip().splitlines()[-1])
         ref = optimal_age_replacement(2, 10000, 1, 5)["optimal_age"]
-        assert o["e"] == [] and abs(float(o["k"]) - ref) / ref < 0.02 and "VACÍO" in o["t"], o
+        assert o["e"] == [] and abs(float(o["k"]) - ref) / ref < 0.02 and "SIN DATOS PARA ARMARLO" in o["t"], o
 
 
 def test_dossier_con_elemento_sin_fuente_falla():
@@ -187,7 +187,7 @@ const [dl]=await Promise.all([p.waitForEvent('download'),p.click('#dmenu button[
 console.log(JSON.stringify({n,th,items,nombre,e}));await b.close()})()"""
         r = subprocess.run(["node", "-e", js, str(out)], capture_output=True, text=True, timeout=120)
         o = json.loads(r.stdout.strip().splitlines()[-1])
-        assert o["n"] >= 1 and o["th"] == "dark" and o["items"] == 5 and o["nombre"].endswith(".csv") and o["e"] == [], o
+        assert o["n"] >= 1 and o["th"] == "dark" and o["items"] == 8 and o["nombre"].endswith(".csv") and o["e"] == [], o
 
 
 def test_gate_de_cifras_y_replicas():
@@ -199,3 +199,28 @@ def test_gate_de_cifras_y_replicas():
     ok, err = rk_validar_replicas([{"id": "R1", "tipo": "barras_ic", "evidencia": ["E-0001"], "series": [{"etiqueta": "a", "valor": "14.7", "ic": ["13.6", "15.8"]}]},
                                    {"id": "R2", "tipo": "barras", "evidencia": ["E-0001"], "series": [{"etiqueta": "b", "valor": "12.6"}]}], L)
     assert [r["id"] for r in ok] == ["R1"] and "12.6" in err[0]
+
+
+@pytest.mark.skipif(not _node_ok(), reason="node o playwright no disponible")
+def test_informe_real_ishikawa_referencias_enlaces_y_cierre_afuera():
+    html = Path(__file__).resolve().parents[3] / "historial" / "dossiers" / "chumacera_polea_faja" / "informe.html"
+    if not html.exists():
+        pytest.skip("sin informe en el historial")
+    js = """const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1500,height:950}});const e=[];p.on('pageerror',x=>e.push(String(x)));
+await p.goto('file://'+process.argv[1]);
+const tabs=await p.$$eval('#tabs button',x=>x.map(y=>y.textContent));
+await p.click('#tabs button:has-text("Modos y causas")');await p.click('.pill:has-text("Ishikawa")');
+const pills=(await p.$$('.pl[data-c]')).length;const notas=(await p.$$('.pl[data-nota]')).length;
+await p.click('.pl[data-c="0"][data-i="0"]');const a=await p.evaluate(()=>document.querySelector('#drawer').classList.contains('on'));
+await p.mouse.click(100,400);const c=await p.evaluate(()=>document.querySelector('#drawer').classList.contains('on'));
+await p.click('#tabs button:has-text("Referencias")');
+const links=await p.$$eval('#v-ref a[href^="https://"]',x=>x.length);
+const bad=await p.$$eval('a.ext,a.lnkb',x=>x.filter(y=>y.target!=='_blank'||!/noopener/.test(y.rel)).length);
+await p.click('#tabs button:has-text("Evidencia")');await p.click('.pill:has-text("Réplicas")');const gr=(await p.$$('#v-evi .chart svg')).length;
+await p.evaluate(()=>{window.__imp=0;window.print=()=>{window.__imp++}});await p.click('#b-imprimir');await p.waitForTimeout(600);const imp=await p.evaluate(()=>window.__imp);
+console.log(JSON.stringify({tabs,pills,notas,a,c,links,bad,gr,imp,e}));await b.close()})()"""
+    r = subprocess.run(["node", "-e", js, str(html)], capture_output=True, text=True, timeout=180)
+    o = json.loads(r.stdout.strip().splitlines()[-1])
+    assert "Referencias" in o["tabs"] and o["pills"] >= 20 and o["notas"] == 2, o
+    assert o["a"] is True and o["c"] is False, o          # el panel se cierra al hacer clic afuera
+    assert o["links"] > 20 and o["bad"] == 0 and o["gr"] >= 10 and o["imp"] == 1 and o["e"] == [], o

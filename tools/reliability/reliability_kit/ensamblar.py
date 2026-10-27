@@ -17,7 +17,7 @@ from . import dossier as _dz
 from .evidence import Ledger
 from .report_html import construir_informe
 
-ANALISIS = ("fmeca", "arbol", "acr", "lcc", "vida", "predictivo")
+ANALISIS = ("fmeca", "arbol", "acr", "lcc", "vida", "predictivo", "porques", "observar")
 
 
 def _cargar(p: Path):
@@ -44,7 +44,7 @@ def ensamblar(carpeta: str | Path, salida: str | Path | None = None, simulador: 
     vac = [f"{titulos[s]}: {x['vacio']}" for s, x in D["secciones"].items() if x.get("vacio")]
     vac += [f"{titulos[s]}: {x['nota']}" for s, x in D["secciones"].items() if x.get("nota")]
     an = {n: _cargar(c / "analisis" / f"{n}.json") for n in ANALISIS}
-    an = {k_: v for k_, v in an.items() if v}
+    an = {k_: ({"items": v} if isinstance(v, list) else v) for k_, v in an.items() if v}
     for v in an.values():
         vac += v.get("vacios", [])
     an["herramientas"] = True

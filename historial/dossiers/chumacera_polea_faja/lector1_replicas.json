@@ -1,0 +1,1578 @@
+[
+ {
+  "id": "R1",
+  "titulo": "MAE del tiempo a la falla con IC 95 %, banco XJTU-SY, C1, 25 % de censura",
+  "tipo": "barras_ic",
+  "unidad": "min",
+  "condiciones": "XJTU-SY, condicion C1 (12.0 kN, 2100 rpm), 25 % de censura aleatoria, validacion cruzada de 5 particiones, RULSurv (arXiv 2405.01614)",
+  "replica_de": "Resumen (abstract) de RULSurv",
+  "evidencia": [
+   "E-9205"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "series": [
+   {
+    "etiqueta": "CoxPH",
+    "valor": "14.7",
+    "ic": [
+     "13.6",
+     "15.8"
+    ]
+   },
+   {
+    "etiqueta": "Random Survival Forests",
+    "valor": "12.6",
+    "ic": [
+     "11.8",
+     "13.4"
+    ]
+   },
+   {
+    "etiqueta": "LASSO (sin censura)",
+    "valor": "18.5",
+    "ic": [
+     "17.4",
+     "19.6"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "R2",
+  "titulo": "Condiciones de operacion del banco XJTU-SY",
+  "tipo": "tabla",
+  "unidad": "",
+  "condiciones": "15 rodamientos de bolas LDK UER204, 5 por condicion",
+  "replica_de": "Tabla 2 de RULSurv",
+  "evidencia": [
+   "E-9401"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Condicion",
+   "L10h [h]",
+   "Fuerza radial [kN]",
+   "Velocidad [rpm]",
+   "Rodamientos"
+  ],
+  "filas": [
+   [
+    "C1",
+    "9.6",
+    "12.0",
+    "2100",
+    "Bearing 1_1 to 1_5"
+   ],
+   [
+    "C2",
+    "11.7",
+    "11.0",
+    "2250",
+    "Bearing 2_1 to 2_5"
+   ],
+   [
+    "C3",
+    "14.6",
+    "10.0",
+    "2400",
+    "Bearing 3_1 to 3_5"
+   ]
+  ]
+ },
+ {
+  "id": "R3",
+  "titulo": "Propiedades del rodamiento LDK UER204",
+  "tipo": "tabla",
+  "unidad": "",
+  "condiciones": "Tabla 3 de RULSurv",
+  "replica_de": "Tabla 3 de RULSurv",
+  "evidencia": [
+   "E-9402"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Propiedad",
+   "Valor"
+  ],
+  "filas": [
+   [
+    "Outer race diameter",
+    "39.80 mm"
+   ],
+   [
+    "Inner race diameter",
+    "29.30 mm"
+   ],
+   [
+    "Bearing mean diameter",
+    "34.55 mm"
+   ],
+   [
+    "Ball diameter",
+    "7.92 mm"
+   ],
+   [
+    "Number of balls",
+    "8"
+   ],
+   [
+    "Load rating (static)",
+    "6.65 kN"
+   ],
+   [
+    "Load rating (dynamic)",
+    "12.82 kN"
+   ]
+  ]
+ },
+ {
+  "id": "R4",
+  "titulo": "Tiempo de evento detectado frente al fin de registro por rodamiento",
+  "tipo": "tabla",
+  "unidad": "min",
+  "condiciones": "Detector KL de RULSurv; t_i = evento detectado, L = fin de registro",
+  "replica_de": "Tabla 5 de RULSurv",
+  "evidencia": [
+   "E-9403",
+   "E-9404"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Condicion",
+   "Rodamiento",
+   "t_i [min]",
+   "L [min]",
+   "Diferencia [min]",
+   "Diferencia [%]"
+  ],
+  "filas": [
+   [
+    "C1",
+    "Bearing 1_1",
+    "77",
+    "122",
+    "-45",
+    "36.9"
+   ],
+   [
+    "C1",
+    "Bearing 1_2",
+    "89",
+    "160",
+    "-71",
+    "44.4"
+   ],
+   [
+    "C1",
+    "Bearing 1_3",
+    "62",
+    "157",
+    "-95",
+    "60.5"
+   ],
+   [
+    "C1",
+    "Bearing 1_4",
+    "70",
+    "121",
+    "-51",
+    "42.1"
+   ],
+   [
+    "C1",
+    "Bearing 1_5",
+    "36",
+    "51",
+    "-15",
+    "29.4"
+   ],
+   [
+    "C2",
+    "Bearing 2_1",
+    "245",
+    "490",
+    "-245",
+    "50.0"
+   ],
+   [
+    "C2",
+    "Bearing 2_2",
+    "77",
+    "160",
+    "-83",
+    "51.9"
+   ],
+   [
+    "C2",
+    "Bearing 2_3",
+    "316",
+    "532",
+    "-216",
+    "40.6"
+   ],
+   [
+    "C2",
+    "Bearing 2_4",
+    "17",
+    "41",
+    "-24",
+    "58.5"
+   ],
+   [
+    "C2",
+    "Bearing 2_5",
+    "193",
+    "338",
+    "-145",
+    "42.9"
+   ],
+   [
+    "C3",
+    "Bearing 3_1",
+    "1014",
+    "2537",
+    "-1523",
+    "60.0"
+   ],
+   [
+    "C3",
+    "Bearing 3_2",
+    "612",
+    "2495",
+    "-1883",
+    "75.5"
+   ],
+   [
+    "C3",
+    "Bearing 3_3",
+    "206",
+    "370",
+    "-164",
+    "44.3"
+   ],
+   [
+    "C3",
+    "Bearing 3_4",
+    "514",
+    "1514",
+    "-1000",
+    "66.1"
+   ],
+   [
+    "C3",
+    "Bearing 3_5",
+    "69",
+    "113",
+    "-44",
+    "38.9"
+   ]
+  ]
+ },
+ {
+  "id": "R5",
+  "titulo": "MAE verdadero por modelo y nivel de censura, C1 (carga alta)",
+  "tipo": "tabla",
+  "unidad": "min",
+  "condiciones": "XJTU-SY C1 (12.0 kN, 2100 rpm); media ± desviacion estandar de 5 particiones; entre parentesis variacion relativa % frente a LASSO",
+  "replica_de": "Tabla 8 de RULSurv",
+  "evidencia": [
+   "E-9423"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Modelo",
+   "25 % de censura",
+   "50 % de censura",
+   "75 % de censura"
+  ],
+  "filas": [
+   [
+    "LASSO∗",
+    "18.5 ± 1.1",
+    "19.6 ± 0.8",
+    "19.7 ± 1.3"
+   ],
+   [
+    "CoxPH",
+    "14.7 ± 1.1 (-20.5)",
+    "15.5 ± 1.5 (-20.9)",
+    "17.3 ± 0.7 (-12.2)"
+   ],
+   [
+    "GBSA",
+    "17.4 ± 1.5 (-5.9)",
+    "19.5 ± 1.5 (-0.5)",
+    "23.0 ± 1.5 (+16.8)"
+   ],
+   [
+    "RSF",
+    "12.6 ± 0.8 (-31.9)",
+    "14.0 ± 1.7 (-28.6)",
+    "17.2 ± 1.2 (-12.7)"
+   ],
+   [
+    "MTLR",
+    "13.8 ± 1.1 (-25.4)",
+    "14.6 ± 2.4 (-25.5)",
+    "17.5 ± 2.4 (-11.2)"
+   ],
+   [
+    "BNNSurv",
+    "14.2 ± 1.1 (-23.2)",
+    "15.3 ± 2.1 (-21.9)",
+    "17.8 ± 1.7 (-9.6)"
+   ]
+  ]
+ },
+ {
+  "id": "R6",
+  "titulo": "MAE verdadero por modelo y nivel de censura, C2 (carga media)",
+  "tipo": "tabla",
+  "unidad": "min",
+  "condiciones": "XJTU-SY C2 (11.0 kN, 2250 rpm); media ± desviacion estandar de 5 particiones; entre parentesis variacion relativa % frente a LASSO",
+  "replica_de": "Tabla 8 de RULSurv",
+  "evidencia": [
+   "E-9424"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Modelo",
+   "25 % de censura",
+   "50 % de censura",
+   "75 % de censura"
+  ],
+  "filas": [
+   [
+    "LASSO∗",
+    "63.0 ± 3.6",
+    "64.8 ± 4.0",
+    "65.0 ± 3.2"
+   ],
+   [
+    "CoxPH",
+    "56.4 ± 3.8 (-10.5)",
+    "57.1 ± 2.9 (-11.9)",
+    "70.3 ± 14.6 (+8.2)"
+   ],
+   [
+    "GBSA",
+    "60.8 ± 3.0 (-3.5)",
+    "67.0 ± 2.0 (+3.4)",
+    "81.9 ± 6.3 (+26.0)"
+   ],
+   [
+    "RSF",
+    "31.5 ± 2.0 (-50.0)",
+    "34.3 ± 4.5 (-47.1)",
+    "43.2 ± 7.0 (-33.5)"
+   ],
+   [
+    "MTLR",
+    "50.9 ± 4.1 (-19.2)",
+    "53.1 ± 3.9 (-18.1)",
+    "59.1 ± 5.3 (-9.1)"
+   ],
+   [
+    "BNNSurv",
+    "49.2 ± 4.3 (-21.9)",
+    "49.7 ± 2.1 (-23.3)",
+    "53.2 ± 3.6 (-18.0)"
+   ]
+  ]
+ },
+ {
+  "id": "R7",
+  "titulo": "MAE verdadero por modelo y nivel de censura, C3 (carga baja)",
+  "tipo": "tabla",
+  "unidad": "min",
+  "condiciones": "XJTU-SY C3 (10.0 kN, 2400 rpm); media ± desviacion estandar de 5 particiones; entre parentesis variacion relativa % frente a LASSO",
+  "replica_de": "Tabla 8 de RULSurv",
+  "evidencia": [
+   "E-9425"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Modelo",
+   "25 % de censura",
+   "50 % de censura",
+   "75 % de censura"
+  ],
+  "filas": [
+   [
+    "LASSO∗",
+    "206.4 ± 5.1",
+    "209.9 ± 8.4",
+    "224.0 ± 6.1"
+   ],
+   [
+    "CoxPH",
+    "183.7 ± 6.2 (-11.0)",
+    "190.6 ± 5.9 (-9.2)",
+    "265.5 ± 34.2 (+18.5)"
+   ],
+   [
+    "GBSA",
+    "197.4 ± 2.6 (-4.4)",
+    "216.2 ± 4.2 (+3.0)",
+    "270.8 ± 5.2 (+20.9)"
+   ],
+   [
+    "RSF",
+    "105.3 ± 6.2 (-49.0)",
+    "110.7 ± 7.5 (-47.3)",
+    "136.2 ± 1.9 (-39.2)"
+   ],
+   [
+    "MTLR",
+    "151.7 ± 6.6 (-26.5)",
+    "159.0 ± 8.2 (-24.2)",
+    "191.0 ± 6.4 (-14.7)"
+   ],
+   [
+    "BNNSurv",
+    "139.8 ± 5.0 (-32.3)",
+    "141.0 ± 8.5 (-32.8)",
+    "149.5 ± 4.6 (-33.3)"
+   ]
+  ]
+ },
+ {
+  "id": "R8",
+  "titulo": "MAE verdadero con 25 % de censura, C1 (carga alta)",
+  "tipo": "barras",
+  "unidad": "min",
+  "condiciones": "XJTU-SY C1 (12.0 kN, 2100 rpm); 25 % de censura simulada; media de 5 particiones (desviaciones estandar en la Tabla 8, no son IC)",
+  "replica_de": "Tabla 8 de RULSurv (columna 25 %)",
+  "evidencia": [
+   "E-9423"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "series": [
+   {
+    "etiqueta": "LASSO (sin censura)",
+    "valor": "18.5"
+   },
+   {
+    "etiqueta": "CoxPH",
+    "valor": "14.7"
+   },
+   {
+    "etiqueta": "GBSA",
+    "valor": "17.4"
+   },
+   {
+    "etiqueta": "RSF",
+    "valor": "12.6"
+   },
+   {
+    "etiqueta": "MTLR",
+    "valor": "13.8"
+   },
+   {
+    "etiqueta": "BNNSurv",
+    "valor": "14.2"
+   }
+  ]
+ },
+ {
+  "id": "R9",
+  "titulo": "MAE verdadero con 25 % de censura, C2 (carga media)",
+  "tipo": "barras",
+  "unidad": "min",
+  "condiciones": "XJTU-SY C2 (11.0 kN, 2250 rpm); 25 % de censura simulada; media de 5 particiones (desviaciones estandar en la Tabla 8, no son IC)",
+  "replica_de": "Tabla 8 de RULSurv (columna 25 %)",
+  "evidencia": [
+   "E-9424"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "series": [
+   {
+    "etiqueta": "LASSO (sin censura)",
+    "valor": "63.0"
+   },
+   {
+    "etiqueta": "CoxPH",
+    "valor": "56.4"
+   },
+   {
+    "etiqueta": "GBSA",
+    "valor": "60.8"
+   },
+   {
+    "etiqueta": "RSF",
+    "valor": "31.5"
+   },
+   {
+    "etiqueta": "MTLR",
+    "valor": "50.9"
+   },
+   {
+    "etiqueta": "BNNSurv",
+    "valor": "49.2"
+   }
+  ]
+ },
+ {
+  "id": "R10",
+  "titulo": "MAE verdadero con 25 % de censura, C3 (carga baja)",
+  "tipo": "barras",
+  "unidad": "min",
+  "condiciones": "XJTU-SY C3 (10.0 kN, 2400 rpm); 25 % de censura simulada; media de 5 particiones (desviaciones estandar en la Tabla 8, no son IC)",
+  "replica_de": "Tabla 8 de RULSurv (columna 25 %)",
+  "evidencia": [
+   "E-9425"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "series": [
+   {
+    "etiqueta": "LASSO (sin censura)",
+    "valor": "206.4"
+   },
+   {
+    "etiqueta": "CoxPH",
+    "valor": "183.7"
+   },
+   {
+    "etiqueta": "GBSA",
+    "valor": "197.4"
+   },
+   {
+    "etiqueta": "RSF",
+    "valor": "105.3"
+   },
+   {
+    "etiqueta": "MTLR",
+    "valor": "151.7"
+   },
+   {
+    "etiqueta": "BNNSurv",
+    "valor": "139.8"
+   }
+  ]
+ },
+ {
+  "id": "R11",
+  "titulo": "Error absoluto medio (MAEH, MAEM, MAEPO) bajo censura, C1 (carga alta)",
+  "tipo": "tabla",
+  "unidad": "min",
+  "condiciones": "XJTU-SY C1 (12.0 kN, 2100 rpm); media ± desviacion estandar de 5 particiones; entre parentesis variacion relativa % frente a CoxPH",
+  "replica_de": "Tabla 6 de RULSurv",
+  "evidencia": [
+   "E-9412",
+   "E-9413"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Modelo",
+   "25 % MAEH",
+   "25 % MAEM",
+   "25 % MAEPO",
+   "50 % MAEH",
+   "50 % MAEM",
+   "50 % MAEPO",
+   "75 % MAEH",
+   "75 % MAEM",
+   "75 % MAEPO"
+  ],
+  "filas": [
+   [
+    "CoxPH",
+    "14.1 ± 1.7",
+    "14.8 ± 1.7",
+    "15.0 ± 1.6",
+    "13.0 ± 1.7",
+    "14.5 ± 1.8",
+    "15.5 ± 2.3",
+    "11.9 ± 2.6",
+    "14.2 ± 2.5",
+    "20.7 ± 4.4"
+   ],
+   [
+    "GBSA",
+    "16.9 ± 1.5 (+19.9)",
+    "17.7 ± 1.5 (+19.6)",
+    "18.0 ± 1.5 (+20.0)",
+    "16.7 ± 1.6 (+28.5)",
+    "18.0 ± 1.6 (+24.1)",
+    "19.1 ± 1.9 (+23.2)",
+    "17.3 ± 4.3 (+45.4)",
+    "18.9 ± 4.4 (+33.1)",
+    "25.9 ± 6.0 (+25.1)"
+   ],
+   [
+    "RSF",
+    "12.1 ± 1.0 (-14.2)",
+    "12.8 ± 1.0 (-13.5)",
+    "13.0 ± 1.0 (-13.3)",
+    "11.2 ± 1.5 (-13.8)",
+    "12.6 ± 1.7 (-13.1)",
+    "13.5 ± 2.1 (-12.9)",
+    "12.4 ± 2.4 (+4.2)",
+    "14.6 ± 2.1 (+2.8)",
+    "21.3 ± 4.6 (+2.9)"
+   ],
+   [
+    "MTLR",
+    "13.0 ± 1.3 (-7.8)",
+    "13.7 ± 1.4 (-7.4)",
+    "13.8 ± 1.3 (-8.0)",
+    "11.9 ± 2.6 (-8.5)",
+    "13.3 ± 2.6 (-8.3)",
+    "14.2 ± 2.9 (-8.4)",
+    "13.5 ± 2.4 (+13.4)",
+    "16.0 ± 2.4 (+12.7)",
+    "22.6 ± 5.0 (+9.2)"
+   ],
+   [
+    "BNNSurv",
+    "12.9 ± 1.7 (-8.5)",
+    "13.6 ± 1.7 (-8.1)",
+    "13.7 ± 1.6 (-8.7)",
+    "12.1 ± 2.2 (-6.9)",
+    "13.4 ± 2.3 (-7.6)",
+    "14.2 ± 2.6 (-8.4)",
+    "13.8 ± 2.0 (+16.0)",
+    "15.8 ± 1.8 (+11.3)",
+    "21.7 ± 4.5 (+4.8)"
+   ]
+  ]
+ },
+ {
+  "id": "R12",
+  "titulo": "Error absoluto medio (MAEH, MAEM, MAEPO) bajo censura, C2 (carga media)",
+  "tipo": "tabla",
+  "unidad": "min",
+  "condiciones": "XJTU-SY C2 (11.0 kN, 2250 rpm); media ± desviacion estandar de 5 particiones; entre parentesis variacion relativa % frente a CoxPH",
+  "replica_de": "Tabla 6 de RULSurv",
+  "evidencia": [
+   "E-9414",
+   "E-9415"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Modelo",
+   "25 % MAEH",
+   "25 % MAEM",
+   "25 % MAEPO",
+   "50 % MAEH",
+   "50 % MAEM",
+   "50 % MAEPO",
+   "75 % MAEH",
+   "75 % MAEM",
+   "75 % MAEPO"
+  ],
+  "filas": [
+   [
+    "CoxPH",
+    "52.8 ± 4.1",
+    "55.7 ± 4.0",
+    "56.7 ± 4.0",
+    "50.0 ± 1.6",
+    "56.6 ± 1.5",
+    "63.0 ± 2.6",
+    "51.5 ± 14.4",
+    "62.3 ± 14.1",
+    "89.9 ± 17.9"
+   ],
+   [
+    "GBSA",
+    "57.4 ± 3.1 (+8.7)",
+    "60.7 ± 2.9 (+9.0)",
+    "61.8 ± 2.7 (+9.0)",
+    "58.1 ± 4.0 (+16.2)",
+    "65.2 ± 3.7 (+15.2)",
+    "71.9 ± 4.7 (+14.1)",
+    "61.6 ± 6.8 (+19.6)",
+    "71.5 ± 7.1 (+14.8)",
+    "100.0 ± 10.7 (+11.2)"
+   ],
+   [
+    "RSF",
+    "29.4 ± 2.2 (-44.3)",
+    "32.7 ± 2.4 (-41.3)",
+    "33.4 ± 2.6 (-41.1)",
+    "29.8 ± 4.4 (-40.4)",
+    "36.8 ± 4.0 (-35.0)",
+    "42.5 ± 4.9 (-32.5)",
+    "31.8 ± 7.3 (-38.3)",
+    "43.1 ± 7.0 (-30.8)",
+    "69.9 ± 13.3 (-22.2)"
+   ],
+   [
+    "MTLR",
+    "47.0 ± 5.4 (-11.0)",
+    "49.9 ± 5.2 (-10.4)",
+    "50.7 ± 5.0 (-10.6)",
+    "45.5 ± 2.6 (-9.0)",
+    "52.3 ± 3.0 (-7.6)",
+    "58.2 ± 3.8 (-7.6)",
+    "42.8 ± 6.3 (-16.9)",
+    "54.5 ± 6.5 (-12.5)",
+    "81.6 ± 12.2 (-9.2)"
+   ],
+   [
+    "BNNSurv",
+    "46.1 ± 4.8 (-12.7)",
+    "48.9 ± 4.6 (-12.2)",
+    "49.8 ± 4.6 (-12.2)",
+    "43.5 ± 1.2 (-13.0)",
+    "50.1 ± 1.0 (-11.5)",
+    "56.4 ± 1.7 (-10.5)",
+    "40.0 ± 5.9 (-22.3)",
+    "52.9 ± 6.4 (-15.1)",
+    "81.3 ± 12.6 (-9.6)"
+   ]
+  ]
+ },
+ {
+  "id": "R13",
+  "titulo": "Error absoluto medio (MAEH, MAEM, MAEPO) bajo censura, C3 (carga baja)",
+  "tipo": "tabla",
+  "unidad": "min",
+  "condiciones": "XJTU-SY C3 (10.0 kN, 2400 rpm); media ± desviacion estandar de 5 particiones; entre parentesis variacion relativa % frente a CoxPH",
+  "replica_de": "Tabla 6 de RULSurv",
+  "evidencia": [
+   "E-9416",
+   "E-9417"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Modelo",
+   "25 % MAEH",
+   "25 % MAEM",
+   "25 % MAEPO",
+   "50 % MAEH",
+   "50 % MAEM",
+   "50 % MAEPO",
+   "75 % MAEH",
+   "75 % MAEM",
+   "75 % MAEPO"
+  ],
+  "filas": [
+   [
+    "CoxPH",
+    "173.9 ± 8.4",
+    "185.9 ± 7.8",
+    "189.8 ± 7.9",
+    "164.6 ± 10.2",
+    "192.2 ± 8.7",
+    "217.7 ± 7.8",
+    "196.8 ± 27.1",
+    "236.1 ± 24.5",
+    "330.3 ± 35.5"
+   ],
+   [
+    "GBSA",
+    "188.7 ± 3.2 (+8.5)",
+    "202.3 ± 2.9 (+8.8)",
+    "206.3 ± 3.3 (+8.7)",
+    "189.2 ± 9.6 (+14.9)",
+    "218.8 ± 7.8 (+13.8)",
+    "245.1 ± 6.3 (+12.6)",
+    "205.6 ± 11.1 (+4.5)",
+    "246.5 ± 11.0 (+4.4)",
+    "342.6 ± 20.5 (+3.7)"
+   ],
+   [
+    "RSF",
+    "98.8 ± 7.3 (-43.2)",
+    "110.2 ± 6.6 (-40.7)",
+    "113.1 ± 7.5 (-40.4)",
+    "96.7 ± 6.2 (-41.3)",
+    "123.6 ± 5.2 (-35.7)",
+    "146.6 ± 5.9 (-32.7)",
+    "96.3 ± 12.9 (-51.1)",
+    "141.9 ± 13.7 (-39.9)",
+    "230.8 ± 23.1 (-30.1)"
+   ],
+   [
+    "MTLR",
+    "143.4 ± 7.7 (-17.5)",
+    "155.4 ± 7.1 (-16.4)",
+    "158.6 ± 7.1 (-16.4)",
+    "139.2 ± 8.2 (-15.4)",
+    "166.9 ± 7.1 (-13.2)",
+    "190.2 ± 6.9 (-12.6)",
+    "137.2 ± 15.4 (-30.3)",
+    "182.2 ± 14.6 (-22.8)",
+    "267.9 ± 25.4 (-18.9)"
+   ],
+   [
+    "BNNSurv",
+    "132.4 ± 6.9 (-23.9)",
+    "144.2 ± 6.6 (-22.4)",
+    "147.9 ± 7.1 (-22.1)",
+    "125.5 ± 9.3 (-23.8)",
+    "155.0 ± 8.0 (-19.4)",
+    "180.5 ± 7.4 (-17.1)",
+    "121.4 ± 9.9 (-38.3)",
+    "178.8 ± 9.4 (-24.3)",
+    "274.9 ± 20.9 (-16.8)"
+   ]
+  ]
+ },
+ {
+  "id": "R14",
+  "titulo": "Diferencia eMAE respecto del MAE verdadero, C1 (carga alta)",
+  "tipo": "tabla",
+  "unidad": "min",
+  "condiciones": "XJTU-SY C1 (12.0 kN, 2100 rpm); media ± desviacion estandar de 5 particiones; entre parentesis variacion relativa % frente a CoxPH",
+  "replica_de": "Tabla 7 de RULSurv",
+  "evidencia": [
+   "E-9418"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Modelo",
+   "25 % eMAEH",
+   "25 % eMAEM",
+   "25 % eMAEPO",
+   "50 % eMAEH",
+   "50 % eMAEM",
+   "50 % eMAEPO",
+   "75 % eMAEH",
+   "75 % eMAEM",
+   "75 % eMAEPO"
+  ],
+  "filas": [
+   [
+    "CoxPH",
+    "0.8 ± 0.4",
+    "0.6 ± 0.4",
+    "0.6 ± 0.5",
+    "2.5 ± 0.9",
+    "1.3 ± 0.6",
+    "1.1 ± 0.8",
+    "5.5 ± 2.8",
+    "3.9 ± 1.3",
+    "5.0 ± 2.5"
+   ],
+   [
+    "GBSA",
+    "0.7 ± 0.4 (-12.5)",
+    "0.5 ± 0.4 (-16.7)",
+    "0.6 ± 0.5",
+    "2.7 ± 0.8 (+8.0)",
+    "1.5 ± 0.8 (+15.4)",
+    "0.9 ± 0.4 (-18.2)",
+    "6.8 ± 2.0 (+23.6)",
+    "5.9 ± 0.7 (+51.3)",
+    "5.3 ± 2.6 (+6.0)"
+   ],
+   [
+    "RSF",
+    "0.6 ± 0.5 (-25.0)",
+    "0.5 ± 0.2 (-16.7)",
+    "0.6 ± 0.2",
+    "2.9 ± 0.7 (+16.0)",
+    "1.4 ± 0.8 (+7.7)",
+    "1.2 ± 0.4 (+9.1)",
+    "4.8 ± 2.2 (-12.7)",
+    "3.0 ± 1.0 (-23.1)",
+    "4.4 ± 3.4 (-12.0)"
+   ],
+   [
+    "MTLR",
+    "0.8 ± 0.6",
+    "0.6 ± 0.3",
+    "0.6 ± 0.1",
+    "2.7 ± 0.8 (+8.0)",
+    "1.4 ± 0.7 (+7.7)",
+    "1.3 ± 0.5 (+18.2)",
+    "4.2 ± 2.0 (-23.6)",
+    "2.6 ± 0.6 (-33.3)",
+    "5.6 ± 3.3 (+12.0)"
+   ],
+   [
+    "BNNSurv",
+    "1.3 ± 0.9 (+62.5)",
+    "0.9 ± 0.7 (+28.6)",
+    "0.9 ± 0.6 (+50.0)",
+    "3.2 ± 0.9 (+33.3)",
+    "2.0 ± 0.9 (+53.8)",
+    "1.7 ± 0.8 (+41.7)",
+    "4.7 ± 2.7 (-14.5)",
+    "3.5 ± 1.2 (-10.3)",
+    "4.4 ± 3.4 (-12.0)"
+   ]
+  ]
+ },
+ {
+  "id": "R15",
+  "titulo": "Diferencia eMAE respecto del MAE verdadero, C2 (carga media)",
+  "tipo": "tabla",
+  "unidad": "min",
+  "condiciones": "XJTU-SY C2 (11.0 kN, 2250 rpm); media ± desviacion estandar de 5 particiones; entre parentesis variacion relativa % frente a CoxPH",
+  "replica_de": "Tabla 7 de RULSurv",
+  "evidencia": [
+   "E-9419",
+   "E-9420"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Modelo",
+   "25 % eMAEH",
+   "25 % eMAEM",
+   "25 % eMAEPO",
+   "50 % eMAEH",
+   "50 % eMAEM",
+   "50 % eMAEPO",
+   "75 % eMAEH",
+   "75 % eMAEM",
+   "75 % eMAEPO"
+  ],
+  "filas": [
+   [
+    "CoxPH",
+    "3.5 ± 1.6",
+    "1.6 ± 0.6",
+    "1.4 ± 0.7",
+    "7.1 ± 1.5",
+    "1.2 ± 1.0",
+    "5.9 ± 0.7",
+    "18.9 ± 3.7",
+    "8.1 ± 3.8",
+    "19.6 ± 7.0"
+   ],
+   [
+    "GBSA",
+    "3.3 ± 0.6 (-5.7)",
+    "0.4 ± 0.2 (-75.0)",
+    "1.0 ± 0.7 (-28.6)",
+    "8.9 ± 3.7 (+25.4)",
+    "2.8 ± 2.5 (+133.3)",
+    "5.6 ± 3.0 (-5.1)",
+    "20.3 ± 1.1 (+7.4)",
+    "10.4 ± 1.2 (+28.4)",
+    "18.1 ± 7.9 (-7.7)"
+   ],
+   [
+    "RSF",
+    "2.1 ± 0.6 (-40.0)",
+    "1.3 ± 0.7 (-18.8)",
+    "1.9 ± 1.1 (+35.7)",
+    "4.5 ± 1.3 (-36.6)",
+    "2.5 ± 1.4 (+108.3)",
+    "8.2 ± 1.4 (+39.0)",
+    "11.4 ± 1.6 (-39.7)",
+    "1.3 ± 0.9 (-84.0)",
+    "26.7 ± 7.1 (+36.2)"
+   ],
+   [
+    "MTLR",
+    "4.0 ± 2.0 (+14.3)",
+    "2.1 ± 1.0 (+31.2)",
+    "2.1 ± 0.6 (+50.0)",
+    "7.7 ± 1.8 (+8.5)",
+    "1.6 ± 1.2 (+33.3)",
+    "5.1 ± 1.1 (-13.6)",
+    "16.3 ± 3.4 (-13.8)",
+    "4.7 ± 3.5 (-42.0)",
+    "22.4 ± 9.5 (+14.3)"
+   ],
+   [
+    "BNNSurv",
+    "3.2 ± 1.7 (-8.6)",
+    "1.6 ± 0.7",
+    "1.5 ± 1.0 (+7.1)",
+    "6.2 ± 1.5 (-12.7)",
+    "1.4 ± 0.7 (+16.7)",
+    "6.8 ± 1.2 (+15.3)",
+    "13.2 ± 3.7 (-30.2)",
+    "3.8 ± 1.3 (-53.1)",
+    "28.1 ± 10.4 (+43.4)"
+   ]
+  ]
+ },
+ {
+  "id": "R16",
+  "titulo": "Diferencia eMAE respecto del MAE verdadero, C3 (carga baja)",
+  "tipo": "tabla",
+  "unidad": "min",
+  "condiciones": "XJTU-SY C3 (10.0 kN, 2400 rpm); media ± desviacion estandar de 5 particiones; entre parentesis variacion relativa % frente a CoxPH",
+  "replica_de": "Tabla 7 de RULSurv",
+  "evidencia": [
+   "E-9421",
+   "E-9422"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Modelo",
+   "25 % eMAEH",
+   "25 % eMAEM",
+   "25 % eMAEPO",
+   "50 % eMAEH",
+   "50 % eMAEM",
+   "50 % eMAEPO",
+   "75 % eMAEH",
+   "75 % eMAEM",
+   "75 % eMAEPO"
+  ],
+  "filas": [
+   [
+    "CoxPH",
+    "9.8 ± 2.9",
+    "2.7 ± 1.8",
+    "6.1 ± 2.4",
+    "26.1 ± 4.7",
+    "3.1 ± 1.8",
+    "27.0 ± 2.5",
+    "68.7 ± 9.6",
+    "29.4 ± 10.9",
+    "64.8 ± 18.7"
+   ],
+   [
+    "GBSA",
+    "8.7 ± 2.8 (-11.2)",
+    "4.9 ± 2.5 (+81.5)",
+    "8.9 ± 2.4 (+45.9)",
+    "27.0 ± 5.7 (+3.4)",
+    "4.4 ± 1.6 (+41.9)",
+    "29.0 ± 2.6 (+7.4)",
+    "65.2 ± 9.9 (-5.1)",
+    "24.4 ± 10.2 (-17.0)",
+    "71.8 ± 17.2 (+10.8)"
+   ],
+   [
+    "RSF",
+    "6.5 ± 2.0 (-33.7)",
+    "4.8 ± 2.1 (+77.8)",
+    "7.8 ± 2.6 (+27.9)",
+    "14.0 ± 3.0 (-46.4)",
+    "12.9 ± 3.4 (+316.1)",
+    "35.9 ± 2.8 (+33.0)",
+    "39.9 ± 12.0 (-41.9)",
+    "8.9 ± 10.4 (-69.7)",
+    "94.6 ± 23.1 (+46.0)"
+   ],
+   [
+    "MTLR",
+    "8.3 ± 2.7 (-15.3)",
+    "3.7 ± 2.1 (+37.0)",
+    "7.0 ± 2.5 (+14.8)",
+    "19.8 ± 2.7 (-24.1)",
+    "7.9 ± 3.0 (+154.8)",
+    "31.2 ± 2.5 (+15.6)",
+    "53.9 ± 9.8 (-21.5)",
+    "11.5 ± 5.3 (-60.9)",
+    "76.9 ± 22.2 (+18.7)"
+   ],
+   [
+    "BNNSurv",
+    "7.4 ± 3.0 (-24.5)",
+    "4.4 ± 2.5 (+63.0)",
+    "8.1 ± 2.7 (+32.8)",
+    "15.6 ± 3.6 (-40.2)",
+    "14.0 ± 3.7 (+351.6)",
+    "39.4 ± 3.1 (+45.9)",
+    "28.1 ± 5.6 (-59.1)",
+    "29.3 ± 5.9 (-0.3)",
+    "125.5 ± 19.1 (+93.7)"
+   ]
+  ]
+ },
+ {
+  "id": "R17",
+  "titulo": "Calibracion D y C (particiones calibradas de 5)",
+  "tipo": "tabla",
+  "unidad": "particiones de 5",
+  "condiciones": "XJTU-SY; calibrada si p > 0.05; C-Cal solo aplica a BNNSurv ('-' = no aplica)",
+  "replica_de": "Tabla 9 de RULSurv",
+  "evidencia": [
+   "E-9426"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Condicion",
+   "Modelo",
+   "25 % D-Cal",
+   "25 % C-Cal",
+   "50 % D-Cal",
+   "50 % C-Cal",
+   "75 % D-Cal",
+   "75 % C-Cal"
+  ],
+  "filas": [
+   [
+    "C1",
+    "CoxPH",
+    "5/5",
+    "-",
+    "5/5",
+    "-",
+    "5/5",
+    "-"
+   ],
+   [
+    "C1",
+    "GBSA",
+    "5/5",
+    "-",
+    "5/5",
+    "-",
+    "5/5",
+    "-"
+   ],
+   [
+    "C1",
+    "RSF",
+    "5/5",
+    "-",
+    "5/5",
+    "-",
+    "5/5",
+    "-"
+   ],
+   [
+    "C1",
+    "MTLR",
+    "5/5",
+    "-",
+    "5/5",
+    "-",
+    "5/5",
+    "-"
+   ],
+   [
+    "C1",
+    "BNNSurv",
+    "3/5",
+    "5/5",
+    "5/5",
+    "0/5",
+    "4/5",
+    "0/5"
+   ],
+   [
+    "C2",
+    "CoxPH",
+    "5/5",
+    "-",
+    "5/5",
+    "-",
+    "5/5",
+    "-"
+   ],
+   [
+    "C2",
+    "GBSA",
+    "4/5",
+    "-",
+    "5/5",
+    "-",
+    "5/5",
+    "-"
+   ],
+   [
+    "C2",
+    "RSF",
+    "4/5",
+    "-",
+    "5/5",
+    "-",
+    "5/5",
+    "-"
+   ],
+   [
+    "C2",
+    "MTLR",
+    "5/5",
+    "-",
+    "5/5",
+    "-",
+    "5/5",
+    "-"
+   ],
+   [
+    "C2",
+    "BNNSurv",
+    "4/5",
+    "5/5",
+    "5/5",
+    "2/5",
+    "5/5",
+    "0/5"
+   ],
+   [
+    "C3",
+    "CoxPH",
+    "3/5",
+    "-",
+    "5/5",
+    "-",
+    "5/5",
+    "-"
+   ],
+   [
+    "C3",
+    "GBSA",
+    "5/5",
+    "-",
+    "5/5",
+    "-",
+    "5/5",
+    "-"
+   ],
+   [
+    "C3",
+    "RSF",
+    "0/5",
+    "-",
+    "3/5",
+    "-",
+    "5/5",
+    "-"
+   ],
+   [
+    "C3",
+    "MTLR",
+    "5/5",
+    "-",
+    "5/5",
+    "-",
+    "5/5",
+    "-"
+   ],
+   [
+    "C3",
+    "BNNSurv",
+    "1/5",
+    "5/5",
+    "1/5",
+    "0/5",
+    "1/5",
+    "0/5"
+   ]
+  ]
+ },
+ {
+  "id": "R18",
+  "titulo": "CRA por rodamiento: RVM, DBN, PF, EKF, Hybrid y RULSurv",
+  "tipo": "tabla",
+  "unidad": "CRA (adimensional; 1 = exacto)",
+  "condiciones": "XJTU-SY; RULSurv con inspeccion en T_k = 1; los demas metodos tomados de la referencia [64] del articulo",
+  "replica_de": "Tabla 10 de RULSurv",
+  "evidencia": [
+   "E-9427",
+   "E-9428",
+   "E-9429"
+  ],
+  "limites": "Ensayo acelerado de banco XJTU-SY (rodamientos de bolas LDK UER204, cargas de 10 a 12 kN, 2100 a 2400 rpm) con censura simulada; minutos del banco, no vida de una chumacera de polea; no transferible en valor absoluto.",
+  "columnas": [
+   "Rodamiento",
+   "RVM",
+   "DBN",
+   "PF",
+   "EKF",
+   "Hybrid",
+   "RULSurv"
+  ],
+  "filas": [
+   [
+    "Bearing 1_1",
+    "0.5741",
+    "0.4318",
+    "0.6107",
+    "0.6209",
+    "0.9047",
+    "0.8745"
+   ],
+   [
+    "Bearing 1_2",
+    "0.1815",
+    "0.6248",
+    "0.7256",
+    "0.3500",
+    "0.8546",
+    "0.5501"
+   ],
+   [
+    "Bearing 1_3",
+    "0.6245",
+    "0.5571",
+    "0.4850",
+    "0.8010",
+    "0.8482",
+    "0.8782"
+   ],
+   [
+    "Bearing 1_4",
+    "0.3722",
+    "-0.9479",
+    "0.2305",
+    "0.6839",
+    "0.7240",
+    "0.6922"
+   ],
+   [
+    "Bearing 1_5",
+    "0.6122",
+    "0.6636",
+    "0.4311",
+    "0.5042",
+    "0.7878",
+    "0.7980"
+   ],
+   [
+    "Bearing 2_1",
+    "0.5718",
+    "0.5518",
+    "0.3963",
+    "0.5150",
+    "0.8621",
+    "0.7649"
+   ],
+   [
+    "Bearing 2_2",
+    "0.1789",
+    "-0.1977",
+    "0.2634",
+    "0.4314",
+    "0.6521",
+    "-0.7065"
+   ],
+   [
+    "Bearing 2_3",
+    "0.6172",
+    "0.9013",
+    "0.7364",
+    "0.8800",
+    "0.9612",
+    "0.4041"
+   ],
+   [
+    "Bearing 2_4",
+    "-0.0693",
+    "0.5316",
+    "0.4633",
+    "0.5004",
+    "0.6276",
+    "-8.3418"
+   ],
+   [
+    "Bearing 2_5",
+    "0.2563",
+    "0.0671",
+    "0.1833",
+    "0.4815",
+    "0.6328",
+    "0.0388"
+   ],
+   [
+    "Bearing 3_1",
+    "0.4329",
+    "0.6979",
+    "0.6557",
+    "0.7744",
+    "0.8942",
+    "0.1936"
+   ],
+   [
+    "Bearing 3_2",
+    "0.2225",
+    "-0.1301",
+    "0.1518",
+    "0.5362",
+    "0.6517",
+    "0.3039"
+   ],
+   [
+    "Bearing 3_3",
+    "-0.0883",
+    "0.5167",
+    "0.1283",
+    "-0.9653",
+    "0.8887",
+    "-0.5153"
+   ],
+   [
+    "Bearing 3_4",
+    "0.6570",
+    "0.6050",
+    "0.7830",
+    "0.6670",
+    "0.8133",
+    "0.6112"
+   ],
+   [
+    "Bearing 3_5",
+    "0.4881",
+    "0.5618",
+    "0.3857",
+    "0.5040",
+    "0.6512",
+    "-1.4658"
+   ]
+  ]
+ },
+ {
+  "id": "R19",
+  "titulo": "CARLE frente a CNN-LSTM, CABiLSTM y MSIDIN, rodamiento 3, XJTU-SY",
+  "tipo": "tabla",
+  "unidad": "RUL normalizada (MSE, MAE) y Score",
+  "condiciones": "Entrenado en 35 Hz y 12 kN; 37.5 Hz y 11 kN y 40 Hz y 10 kN son condiciones no vistas",
+  "replica_de": "Tabla 4 de CARLE (rodamiento 3)",
+  "evidencia": [
+   "E-9438"
+  ],
+  "limites": "Ensayo acelerado de banco (XJTU-SY/PRONOSTIA) con RUL normalizada; error adimensional, no minutos; no transferible a una chumacera de polea.",
+  "columnas": [
+   "Modelo",
+   "35Hz12kN MSE",
+   "35Hz12kN MAE",
+   "35Hz12kN Score",
+   "37.5Hz11kN MSE",
+   "37.5Hz11kN MAE",
+   "37.5Hz11kN Score",
+   "40Hz10kN MSE",
+   "40Hz10kN MAE",
+   "40Hz10kN Score"
+  ],
+  "filas": [
+   [
+    "CARLE",
+    "0.00220",
+    "0.04087",
+    "199.6124",
+    "0.01407",
+    "0.10697",
+    "2798.9778",
+    "0.03085",
+    "0.15631",
+    "530.86194"
+   ],
+   [
+    "CNN-LSTM",
+    "8.69865",
+    "1.81207",
+    "5917.488",
+    "1.19243",
+    "0.63258",
+    "6304.898",
+    "1.39763",
+    "0.76697",
+    "1562.1542"
+   ],
+   [
+    "CABiLSTM",
+    "2.41237",
+    "1.24057",
+    "3667.2644",
+    "0.71245",
+    "0.67876",
+    "6417.187",
+    "1.07763",
+    "0.88477",
+    "1746.2798"
+   ],
+   [
+    "MSIDIN",
+    "0.04383",
+    "0.15704",
+    "494.26984",
+    "0.08407",
+    "0.24669",
+    "2528.8157",
+    "0.09673",
+    "0.26387",
+    "554.0628"
+   ]
+  ]
+ },
+ {
+  "id": "R20",
+  "titulo": "Ablacion de CARLE, rodamiento 3, XJTU-SY",
+  "tipo": "tabla",
+  "unidad": "RUL normalizada (MSE, MAE) y Score",
+  "condiciones": "Variantes: CARL sin ensamble, CALE sin conexiones residuales, CRLE sin atencion multicabeza",
+  "replica_de": "Tabla 1 de CARLE (rodamiento 3)",
+  "evidencia": [
+   "E-9442"
+  ],
+  "limites": "Ensayo acelerado de banco (XJTU-SY/PRONOSTIA) con RUL normalizada; error adimensional, no minutos; no transferible a una chumacera de polea.",
+  "columnas": [
+   "Modelo",
+   "35Hz12kN MSE",
+   "35Hz12kN MAE",
+   "35Hz12kN Score",
+   "37.5Hz11kN MSE",
+   "37.5Hz11kN MAE",
+   "37.5Hz11kN Score",
+   "40Hz10kN MSE",
+   "40Hz10kN MAE",
+   "40Hz10kN Score"
+  ],
+  "filas": [
+   [
+    "CARLE",
+    "0.00220",
+    "0.04087",
+    "130.0166",
+    "0.01407",
+    "0.10697",
+    "1083.5319",
+    "0.03085",
+    "0.15631",
+    "331.6710"
+   ],
+   [
+    "CARL",
+    "0.00806",
+    "0.07905",
+    "250.3705",
+    "0.02100",
+    "0.13195",
+    "1334.1443",
+    "0.05309",
+    "0.20083",
+    "424.4746"
+   ],
+   [
+    "CALE",
+    "0.00265",
+    "0.04561",
+    "144.2532",
+    "0.01388",
+    "0.10701",
+    "1081.0886",
+    "0.02781",
+    "0.14869",
+    "323.8718"
+   ],
+   [
+    "CRLE",
+    "0.00275",
+    "0.04747",
+    "149.2223",
+    "0.02340",
+    "0.13731",
+    "1411.7924",
+    "0.05481",
+    "0.20161",
+    "420.0580"
+   ]
+  ]
+ },
+ {
+  "id": "R21",
+  "titulo": "CARLE entre dominios (PRONOSTIA a XJTU-SY): MAE",
+  "tipo": "barras",
+  "unidad": "RUL normalizada",
+  "condiciones": "Con y sin alineacion de caracteristicas CORAL",
+  "replica_de": "Seccion 4.6 y Tabla 3 de CARLE (valores del texto)",
+  "evidencia": [
+   "E-9444"
+  ],
+  "limites": "Ensayo acelerado de banco (XJTU-SY/PRONOSTIA) con RUL normalizada; error adimensional, no minutos; no transferible a una chumacera de polea.",
+  "series": [
+   {
+    "etiqueta": "Con CORAL",
+    "valor": "0.2803"
+   },
+   {
+    "etiqueta": "Sin alinear",
+    "valor": "0.2919"
+   }
+  ]
+ }
+]

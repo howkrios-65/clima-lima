@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>__TITULO__</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f2f7fc;--panel:#ffffff;--ink:#1e2b3a;--mut:#62758a;--line:#dbe6f1;--soft:#eaf2fa;--soft2:#f6f9fd;--acc:#4e8cc2;--acc2:#e3eef9;--ok:#4f9d75;--warn:#d99a42;--bad:#d96b72;--c1:#5b9bd5;--c2:#f2a65a;--c3:#7bbf8e;--c4:#b69bd6;--c5:#6cc3c3;--c6:#ecc96b;--shadow:0 1px 2px rgba(40,70,100,.06),0 8px 22px rgba(40,70,100,.07);--hero1:#d9eafa;--hero2:#efe6fa;--fb:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;--fh:"Manrope","Source Sans 3",system-ui,sans-serif}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1824;--panel:#152233;--ink:#e5eef8;--mut:#94a9bf;--line:#243a52;--soft:#1b2c40;--soft2:#182738;--acc:#79b2e6;--acc2:#1c3350;--ok:#6cc08f;--warn:#e6b05a;--bad:#ea8a90;--c1:#79b2e6;--c2:#f4b676;--c3:#8fd0a0;--c4:#c8afe6;--c5:#86d3d3;--c6:#f0d583;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.28);--hero1:#18314d;--hero2:#2a2440;color-scheme:dark}}
@@ -16,10 +16,10 @@ h1,h2,h3{font-family:var(--fh);letter-spacing:-.01em}
 .ic{vertical-align:-3px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 #app{display:grid;grid-template-columns:232px minmax(0,1fr);min-height:100vh}
 #side{position:sticky;top:0;height:100vh;background:var(--panel);border-right:1px solid var(--line);padding:14px 10px;display:flex;flex-direction:column;gap:6px;overflow:auto}
-.brand{display:flex;gap:10px;align-items:center;padding:6px 8px 14px;font:700 15px var(--fh);color:var(--ink)}
+.brand{display:flex;gap:10px;align-items:center;padding:6px 8px 14px;font:600 15px var(--fh);color:var(--ink)}
 .brand i{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--c1),var(--c5));color:#fff}
 #tabs{display:flex;flex-direction:column;gap:3px}
-#tabs button{display:flex;gap:10px;align-items:center;border:0;background:none;color:var(--mut);padding:10px 12px;border-radius:10px;font:600 14px var(--fb);cursor:pointer;text-align:left}
+#tabs button{display:flex;gap:10px;align-items:center;border:0;background:none;color:var(--mut);padding:10px 12px;border-radius:10px;font:500 14px var(--fb);cursor:pointer;text-align:left}
 #tabs button:hover{background:var(--soft)}
 #tabs button[aria-selected=true]{background:var(--acc2);color:var(--ink)}
 #tabs button[aria-selected=true] .ic{color:var(--acc)}
@@ -36,9 +36,9 @@ h1,h2,h3{font-family:var(--fh);letter-spacing:-.01em}
 #sres mark{background:var(--c6);color:#000;border-radius:3px;padding:0 1px}
 .acts{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
-.seg button{border:0;background:none;color:var(--mut);padding:7px 11px;font:600 13px var(--fb);cursor:pointer;display:flex;gap:6px;align-items:center}
+.seg button{border:0;background:none;color:var(--mut);padding:7px 11px;font:500 13px var(--fb);cursor:pointer;display:flex;gap:6px;align-items:center}
 .seg button[aria-pressed=true]{background:var(--acc2);color:var(--ink)}
-.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:12px;padding:7px 12px;font:600 13px var(--fb);cursor:pointer;display:inline-flex;gap:7px;align-items:center}
+.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:12px;padding:7px 12px;font:500 13px var(--fb);cursor:pointer;display:inline-flex;gap:7px;align-items:center}
 .btn:hover{background:var(--soft)}
 #dmenu{position:absolute;right:0;top:44px;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:6px;z-index:30;min-width:250px}
 #dmenu button{display:flex;gap:9px;width:100%;border:0;background:none;color:var(--ink);padding:9px 10px;border-radius:8px;font:500 14px var(--fb);cursor:pointer;text-align:left}
@@ -54,20 +54,20 @@ section.tab{display:none}section.tab.on{display:block}
 #app>div,main,.card,.hero,.chart{min-width:0}
 .kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;gap:12px;align-items:center}
 .kpi .ico{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--acc2);color:var(--acc);flex:none}
-.kpi b{display:block;font:700 20px var(--fh);line-height:1.1;white-space:nowrap}.kpi span{color:var(--mut);font-size:12px;display:block}
+.kpi b{display:block;font:600 20px var(--fh);line-height:1.1;white-space:nowrap}.kpi span{color:var(--mut);font-size:12px;display:block}
 .hero .kpi{background:color-mix(in srgb,var(--panel) 80%,transparent)}
 .sub{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
-.pill{border:1px solid var(--line);background:var(--panel);color:var(--mut);padding:7px 13px;border-radius:999px;font:600 13px var(--fb);cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.pill{border:1px solid var(--line);background:var(--panel);color:var(--mut);padding:7px 13px;border-radius:999px;font:500 13px var(--fb);cursor:pointer;display:inline-flex;gap:6px;align-items:center}
 .pill[aria-selected=true]{background:var(--acc);border-color:var(--acc);color:#fff}
 .subpane{display:none}.subpane.on{display:block}
 table{border-collapse:collapse;width:100%;font-size:13px}
 th,td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
 th{color:var(--mut);font-weight:600;background:var(--soft2);position:sticky;top:0}
 .tw{overflow-x:auto;border-radius:10px}
-.chip{white-space:nowrap;display:inline-block;font:600 11px var(--fb);padding:1px 7px;margin:1px 2px;border-radius:999px;border:1px solid color-mix(in srgb,var(--acc) 55%,transparent);color:var(--acc);background:var(--acc2);cursor:pointer}
-.lv{font:600 11px var(--fb);padding:2px 8px;border-radius:999px;color:#fff;white-space:nowrap}
+.chip{white-space:nowrap;display:inline-block;font:500 11px var(--fb);padding:1px 7px;margin:1px 2px;border-radius:999px;border:1px solid color-mix(in srgb,var(--acc) 55%,transparent);color:var(--acc);background:var(--acc2);cursor:pointer}
+.lv{font:500 11px var(--fb);padding:2px 8px;border-radius:999px;color:#fff;white-space:nowrap}
 .lv.t{background:var(--ok)}.lv.a{background:#7fb69a}.lv.s{background:var(--warn)}.lv.n{background:var(--bad)}.lv.u{background:var(--c4)}
-.badge{font:600 12px var(--fb);padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--soft)}
+.badge{font:500 12px var(--fb);padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--soft)}
 .badge.confirmada{border-color:var(--ok);color:var(--ok)}.badge.probable{border-color:var(--acc);color:var(--acc)}.badge.posible{border-color:var(--warn);color:var(--warn)}.badge.descartada{border-color:var(--bad);color:var(--bad)}
 .note{border-radius:12px;background:var(--soft);padding:9px 12px;margin:8px 0;font-size:13px;border:1px solid var(--line)}
 .note.bad{background:color-mix(in srgb,var(--bad) 10%,var(--panel));border-color:color-mix(in srgb,var(--bad) 40%,var(--line))}
@@ -80,7 +80,7 @@ input[type=number]{width:96px}
 svg text{fill:var(--mut);font:11px var(--fb)}
 .chart{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin:0 0 16px;box-shadow:var(--shadow)}
 .ch-h{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:4px}
-.ch-h b{font:700 14px var(--fh)}
+.ch-h b{font:600 14px var(--fh)}
 .ch-f{margin-top:6px;font-size:12px;color:var(--mut);background:var(--soft2);border-left:3px solid var(--c5);padding:6px 10px;border-radius:8px}
 .rd{font-size:12px;color:var(--mut);min-height:16px}
 .leg{font-size:12px;color:var(--mut)}
@@ -99,9 +99,54 @@ svg text{fill:var(--mut);font:11px var(--fb)}
 pre.code{background:var(--soft);padding:8px;border-radius:8px;overflow:auto;font-size:12px}
 #toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:12px;font-size:13px;z-index:60;display:none}
 details>summary{cursor:pointer;font-weight:600}
-.rank td:first-child{font:700 14px var(--fh);color:var(--acc);width:34px}
+.rank td:first-child{font:600 14px var(--fh);color:var(--acc);width:34px}
 @media (max-width:900px){#app{grid-template-columns:minmax(0,1fr)}body{overflow-x:hidden}#side{position:static;height:auto;flex-direction:row;align-items:center;overflow-x:auto;padding:8px;border-right:0;border-bottom:1px solid var(--line)}.brand{display:none}#tabs{flex-direction:row}#tabs button{white-space:nowrap}.side-f{display:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ---- v6: tipografía fina, separadores por tipo de fuente, Ishikawa, imprimir ---- */
+body{font-weight:350;letter-spacing:.005em}
+h1,h2,h3{font-weight:500}
+.card h2,.hero h2{font-weight:500}.ch-h b{font-weight:500}.kpi b{font-weight:600}
+.ic{stroke-width:1.6}
+.card,.chart,.kpi{box-shadow:0 1px 2px rgba(30,60,100,.06)}
+th{font-weight:500}
+#scrim{position:fixed;inset:0;background:rgba(15,30,50,.30);z-index:39;display:none}#scrim.on{display:block}
+a.ext{color:var(--acc);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--acc) 45%,transparent);word-break:break-all}
+a.ext:hover{background:var(--acc2)}
+.sep{display:flex;align-items:center;gap:10px;margin:24px 0 10px;color:var(--tc,var(--mut));font:500 12px var(--fh);text-transform:uppercase;letter-spacing:.09em}
+.sep:before,.sep:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--tc,var(--line)))}
+.sep:after{background:linear-gradient(270deg,transparent,var(--tc,var(--line)))}
+.sep .n{background:var(--soft);color:var(--ink);padding:1px 9px;border-radius:999px;font-weight:500}
+.sepr td{background:var(--soft2);color:var(--tc,var(--mut));font:500 11px var(--fh);text-transform:uppercase;letter-spacing:.09em;border-top:2px solid var(--tc,var(--line))}
+.apa{padding-left:2.4em;text-indent:-2.4em;margin:0 0 10px;list-style:none;font-size:13.5px}
+.apa .meta{display:block;text-indent:0;margin-top:3px}
+.lnkb{display:inline-flex;gap:5px;align-items:center;font:500 11.5px var(--fb);padding:1px 9px;border-radius:999px;border:1px solid var(--line);color:var(--acc);text-decoration:none;margin:1px 3px 1px 0;background:var(--panel)}
+.lnkb:hover{background:var(--acc2)}
+.sd{border:1px dashed color-mix(in srgb,var(--bad) 55%,var(--line));border-radius:12px;padding:12px 14px;color:var(--mut);background:color-mix(in srgb,var(--bad) 5%,var(--panel))}
+.sd b{display:block;color:var(--bad);font:500 12px var(--fh);letter-spacing:.06em;margin-bottom:3px}
+.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 12px}
+.tools .seg button{padding:5px 10px}
+.pl{cursor:pointer}.pl rect.bg{transition:opacity .15s}.pl:hover rect.bg{stroke-width:1.8}.pl.dim{opacity:.18}
+.ish-t text{fill:var(--ink)}
+.pq{position:relative;margin:0 0 6px;padding:10px 14px 10px 54px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.pq .num{position:absolute;left:12px;top:10px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--acc2);color:var(--acc);font:600 14px var(--fh)}
+.pq q,.pq .qq{display:block;font:500 13.5px var(--fh);margin-bottom:3px;quotes:none}
+.pq-ar{text-align:left;margin:0 0 6px 26px;color:var(--mut);height:16px;line-height:16px}
+.pq.fin{border-color:var(--warn);background:color-mix(in srgb,var(--warn) 7%,var(--panel))}
+.idx{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(min(210px,100%),1fr))}
+.idx button{display:flex;gap:9px;align-items:center;text-align:left;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:9px 11px;border-radius:12px;font:400 13px var(--fb);cursor:pointer}
+.idx button:hover{background:var(--soft)}.idx button small{display:block;color:var(--mut)}
+.idx button.vac{border-style:dashed;color:var(--mut)}
+.idx .ok{color:var(--ok)}.idx .no{color:var(--bad)}
+@media print{
+ #side,#top,#drawer,#scrim,#modal,#toast,.sub,.btn,.amp,.tools{display:none!important}
+ #app{display:block}body{background:#fff;color:#000;font-size:11pt}main{max-width:none;padding:0}
+ .card,.chart{box-shadow:none;break-inside:avoid;border-color:#bbb}
+ section.tab:not(.on){display:none}.subpane:not(.on){display:none}
+ body.print-all section.tab,body.print-all .subpane{display:block!important}
+ body.print-all section.tab:before{content:attr(data-label);display:block;font:600 20pt var(--fh);margin:18pt 0 6pt;border-bottom:2px solid #333;break-before:page}
+ body.print-all .subpane:before{content:attr(data-label);display:block;font:600 14pt var(--fh);margin:12pt 0 4pt;color:#333}
+ .tw{overflow:visible}
+}
 </style>
 </head>
 <body>
@@ -125,22 +170,46 @@ details>summary{cursor:pointer;font-weight:600}
 <symbol id="i-brujula" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
 <symbol id="i-pulso" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
 <symbol id="i-alerta" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
-</defs></svg>
+<symbol id="i-pico" viewBox="0 0 24 24"><path d="M3 10c4-6.5 14-6.5 18 0"/><path d="M12 5.2V21"/><path d="M3 10l2 1.2M21 10l-2 1.2"/></symbol>
+<symbol id="i-casco" viewBox="0 0 24 24"><path d="M5 16v-3a7 7 0 0 1 14 0v3"/><path d="M3 16h18v3H3z"/><path d="M12 6v6"/><path d="M9.5 7.5v4M14.5 7.5v4"/></symbol>
+<symbol id="i-vagoneta" viewBox="0 0 24 24"><path d="M3 8h18l-2.2 8H5.2z"/><circle cx="8" cy="19" r="1.7"/><circle cx="16" cy="19" r="1.7"/><path d="M8 8l1-3M16 8l-1-3"/></symbol>
+<symbol id="i-engranaje" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="6.6"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+<symbol id="i-rodamiento" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="4"/><circle cx="18.7" cy="12" r="1.1"/><circle cx="15.3" cy="17.9" r="1.1"/><circle cx="8.7" cy="17.9" r="1.1"/><circle cx="5.3" cy="12" r="1.1"/><circle cx="8.7" cy="6.1" r="1.1"/><circle cx="15.3" cy="6.1" r="1.1"/></symbol>
+<symbol id="i-faja" viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="3.5"/><circle cx="18.5" cy="12" r="3.5"/><path d="M5.5 8.5h13M5.5 15.5h13"/><circle cx="5.5" cy="12" r=".7"/><circle cx="18.5" cy="12" r=".7"/><path d="M9 19v2M12 19v2M15 19v2"/></symbol>
+<symbol id="i-tuerca" viewBox="0 0 24 24"><polygon points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-microscopio" viewBox="0 0 24 24"><path d="M6 21h12"/><path d="M12 21v-3"/><path d="M8 18a6 6 0 0 0 8-8"/><rect x="9.5" y="2.5" width="4" height="9" rx="1" transform="rotate(28 11.5 7)"/></symbol>
+<symbol id="i-gota" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol>
+<symbol id="i-onda" viewBox="0 0 24 24"><path d="M2 12c2-7 4-7 6 0s4 7 6 0 4-7 6 0"/></symbol>
+<symbol id="i-termo" viewBox="0 0 24 24"><path d="M14 14.8V4a2 2 0 0 0-4 0v10.8a4 4 0 1 0 4 0z"/></symbol>
+<symbol id="i-camion" viewBox="0 0 24 24"><path d="M2 15V6h11v9"/><path d="M13 9h4l4 3.5V15h-8"/><circle cx="6" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></symbol>
+<symbol id="i-imprimir" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+<symbol id="i-enlace" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+<symbol id="i-tesis" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
+<symbol id="i-edificio" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1"/></symbol>
+<symbol id="i-regla" viewBox="0 0 24 24"><path d="M3 17L17 3l4 4L7 21z"/><path d="M7 13l2 2M10 10l2 2M13 7l2 2"/></symbol>
+<symbol id="i-trofeo" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3"/></symbol>
+<symbol id="i-equipo" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c3 .2 5 2.3 5 5.3"/></symbol>
+<symbol id="i-pregunta" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+<symbol id="i-ojo" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-pez" viewBox="0 0 24 24"><path d="M2 12h17"/><path d="M19 12l3-3.5v7z"/><path d="M6 12L4 5.5M11 12L9 5.5M16 12l-2-6.5M6 12l-2 6.5M11 12l-2 6.5M16 12l-2 6.5"/></symbol>
+<symbol id="i-cerrar" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol></defs></svg>
 
 <div id="app">
-<aside id="side" aria-label="Secciones"><div class="brand"><i><svg class="ic" width="20" height="20"><use href="#i-matraz"/></svg></i><span>Ingeniería de<br>confiabilidad</span></div>
-<nav id="tabs" role="tablist"></nav><div class="side-f">Todo lo que se afirma lleva su fuente. Lo que no tiene respaldo queda VACÍO.</div></aside>
+<aside id="side" aria-label="Secciones"><div class="brand"><i><svg class="ic" width="20" height="20"><use href="#i-pico"/></svg></i><span>Ingeniería de<br>confiabilidad</span></div>
+<nav id="tabs" role="tablist"></nav><div class="side-f">Todo lo que se afirma lleva su fuente. Lo que no tiene respaldo queda como SIN DATOS PARA ARMARLO.</div></aside>
 <div>
 <header id="top"><h1 id="ttl"></h1>
 <div class="search"><svg class="ic" width="18" height="18"><use href="#i-lupa"/></svg><input id="q" type="text" placeholder="Buscar en todo el informe" autocomplete="off" aria-label="Buscador general"><div id="sres" hidden></div></div>
 <div class="acts" style="position:relative"><div class="seg" role="group" aria-label="Tema"><button id="t-dia" aria-pressed="false"><svg class="ic" width="15" height="15"><use href="#i-sol"/></svg>Día</button><button id="t-noche" aria-pressed="false"><svg class="ic" width="15" height="15"><use href="#i-luna"/></svg>Noche</button></div>
-<button class="btn" id="b-guardar"><svg class="ic" width="15" height="15"><use href="#i-guardar"/></svg>Guardar</button>
-<button class="btn" id="b-cargar"><svg class="ic" width="15" height="15"><use href="#i-subir"/></svg>Cargar</button>
-<button class="btn" id="b-desc"><svg class="ic" width="15" height="15"><use href="#i-bajar"/></svg>Descargar</button>
+<button class="btn" id="b-imprimir" title="Imprime todo el informe (si el visor lo bloquea, use Descargar > Informe para imprimir)"><svg class="ic" width="15" height="15"><use href="#i-imprimir"/></svg>Imprimir</button>
+<button class="btn" id="b-guardar" title="Guarda su sesión: puntajes del FMECA, probabilidades del árbol y valores que ingresó (archivo JSON)"><svg class="ic" width="15" height="15"><use href="#i-guardar"/></svg>Guardar</button>
+<button class="btn" id="b-cargar" title="Restaura una sesión guardada antes con «Guardar» (archivo JSON)"><svg class="ic" width="15" height="15"><use href="#i-subir"/></svg>Cargar</button>
+<button class="btn" id="b-desc" title="Informe completo, datos, referencias y tablas"><svg class="ic" width="15" height="15"><use href="#i-bajar"/></svg>Descargar</button>
 <div id="dmenu" hidden></div><input type="file" id="f-cargar" accept="application/json,.json" hidden></div>
 </header>
 <main id="main"></main>
 </div></div>
+<div id="scrim"></div>
 <aside id="drawer" aria-label="Evidencia"></aside>
 <div id="modal"><div class="box"><button class="x" id="mclose" aria-label="Cerrar">×</button><h3 id="mtit"></h3><div id="mbody"></div></div></div>
 <div id="toast" role="status"></div>
@@ -158,24 +227,27 @@ function chips(ids){return (ids||[]).map(function(i){return '<button class="chip
 function openEv(id){
   var e=EV[id],d=$("#drawer");if(!e)return;
   var r=e.referencia||{};
-  d.innerHTML='<button class="x" aria-label="Cerrar">×</button><h3>'+esc(id)+' '+lv(e.nivel_evidencia)+'</h3><p>'+esc(e.apa)+'</p>'+
+  d.innerHTML='<button class="x" aria-label="Cerrar">×</button><h3>'+esc(id)+' '+lv(e.nivel_evidencia)+'</h3><p>'+lk(e.apa)+'</p><p>'+btns(e)+'</p>'+
   '<p><b>Qué respalda:</b> '+esc(e.afirma)+'</p><p><b>Límites:</b> '+esc(e.limites)+'</p>'+
   (e.extracto?'<p><b>Extracto literal</b> ('+esc(e.localizador||"")+')</p><blockquote>'+esc(e.extracto)+'</blockquote>':'<p class="note">No se leyó texto de esta fuente: solo referencia o resumen de buscador.</p>')+
   '<p><b>Acceso:</b> '+esc(e.acceso||"dato aportado")+' · <b>vía:</b> '+esc(e.via||"n/d")+' · <b>fecha:</b> '+esc(e.fecha_acceso||"")+'</p>'+
   '<p><b>Cuartil de revista:</b> '+((e.revista_cuartil&&e.revista_cuartil.valor)?'Q'+e.revista_cuartil.valor+' ('+esc(e.revista_cuartil.fuente)+')':'no verificado')+'</p>'+
   (e.avisos&&e.avisos.length?'<div class="note">'+e.avisos.map(esc).join("<br>")+'</div>':'');
-  d.classList.add("on");
+  drawerOn();
 }
+function drawerOn(){$("#drawer").classList.add("on");$("#scrim").classList.add("on")}
+function drawerOff(){$("#drawer").classList.remove("on");$("#scrim").classList.remove("on")}
 document.addEventListener("click",function(ev){
   var t=ev.target;
-  if(t.dataset&&t.dataset.ev)openEv(t.dataset.ev);
-  else if(t.classList&&t.classList.contains("x"))$("#drawer").classList.remove("on");
+  if(t.id==="scrim")drawerOff();
+  else if(t.dataset&&t.dataset.ev)openEv(t.dataset.ev);
+  else if(t.classList&&t.classList.contains("x")&&$("#drawer").contains(t))drawerOff();
 });
-document.addEventListener("keydown",function(e){if(e.key==="Escape")$("#drawer").classList.remove("on")});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")drawerOff()});
 
 /* ---------- iconos, texto corto, modal, aviso ---------- */
 function ic(n,s){s=s||18;return '<svg class="ic" width="'+s+'" height="'+s+'" aria-hidden="true"><use href="#i-'+n+'"/></svg>'}
-function lt(t,n){t=String(t==null?"":t);n=n||120;if(t.length<=n+20)return esc(t);var c=t.lastIndexOf(" ",n);if(c<40)c=n;return '<span class="lt">'+esc(t.slice(0,c))+'… <a class="mas" role="button" tabindex="0">ver más</a><span class="rest" hidden>'+esc(t.slice(c))+'</span></span>'}
+function lt(t,n){t=String(t==null?"":t);n=n||120;if(t.length<=n+20)return lk(t);var c=t.lastIndexOf(" ",n);if(c<40)c=n;return '<span class="lt">'+lk(t.slice(0,c))+'… <a class="mas" role="button" tabindex="0">ver más</a><span class="rest" hidden>'+lk(t.slice(c))+'</span></span>'}
 function toast(m){var t=$("#toast");t.textContent=m;t.style.display="block";clearTimeout(toast._t);toast._t=setTimeout(function(){t.style.display="none"},2600)}
 function openModal(fn,title){$("#mtit").textContent=title||"";var b=$("#mbody");b.innerHTML="";$("#modal").classList.add("on");fn(b)}
 function closeModal(){$("#modal").classList.remove("on");$("#mbody").innerHTML="";Object.keys(CURSOR).forEach(function(k){if(/-big$/.test(k))delete CURSOR[k]})}
@@ -411,9 +483,9 @@ function vDossier(host){
   var dz=D.caso.dossier,ord=dz.orden,LVC={"VERIFICADO-TEXTO":"var(--ok)","VERIFICADO-ABSTRACT":"#4b8f6b","SOLO-SNIPPET":"var(--warn)","NO-VERIFICADO":"var(--bad)","DATO-USUARIO":"var(--c4)"};
   function srcs(sid){var o={};((dz.secciones[sid]||{}).elementos||[]).forEach(function(e){(e.evidencia||[]).forEach(function(i){o[i]=1})});return Object.keys(o)}
   var con=ord.filter(function(k){return((dz.secciones[k]||{}).elementos||[]).length}).length;
-  var h='<div class="card"><h2>Cobertura del dossier</h2><div class="grid"><div class="kpi"><b>'+con+' de '+ord.length+'</b><span>secciones con evidencia leída (incluye Referencias)</span></div><div class="kpi"><b>'+(ord.length-con)+'</b><span>secciones VACÍO declarado</span></div><div class="kpi"><b>'+D.evidencia.length+'</b><span>entradas en el registro (incluye pistas)</span></div></div>'+
+  var h='<div class="card"><h2>Cobertura del dossier</h2><div class="grid"><div class="kpi"><b>'+con+' de '+ord.length+'</b><span>secciones con evidencia leída (incluye Referencias)</span></div><div class="kpi"><b>'+(ord.length-con)+'</b><span>secciones SIN DATOS PARA ARMARLO declarado</span></div><div class="kpi"><b>'+D.evidencia.length+'</b><span>entradas en el registro (incluye pistas)</span></div></div>'+
    '<h3>Fuentes citadas por sección y nivel de evidencia</h3><div id="dzb"></div><div style="font-size:12px;color:var(--mut)">'+Object.keys(LVC).map(function(k){return '<span style="color:'+LVC[k]+'">&#9632;</span> '+k}).join("  ")+'</div></div>';
-  h+='<div class="card"><h2>Secciones</h2><label>Mostrar <select id="dzf"><option value="">todas</option><option value="con">solo con evidencia</option><option value="vac">solo VACÍO</option></select></label><label>Buscar <input id="dzq" type="text" style="width:170px"></label><div id="dzs"></div></div>';
+  h+='<div class="card"><h2>Secciones</h2><label>Mostrar <select id="dzf"><option value="">todas</option><option value="con">solo con evidencia</option><option value="vac">solo SIN DATOS PARA ARMARLO</option></select></label><label>Buscar <input id="dzq" type="text" style="width:170px"></label><div id="dzs"></div></div>';
   h+='<div class="card"><h2>Matriz sección × fuente</h2><p style="font-size:13px;color:var(--mut)">Cada punto es una fuente que respalda algo de esa sección. Pulse un punto para abrir la fuente.</p><div class="tw"><table id="dzm"></table></div></div>';
   host.innerHTML=h;
   /* barras apiladas */
@@ -421,15 +493,15 @@ function vDossier(host){
   ord.forEach(function(k){mx=Math.max(mx,srcs(k).length)});
   var g='';ord.forEach(function(k,i){var y=i*rowH+4,x=x0,ss=srcs(k);g+='<text x="4" y="'+(y+14)+'">'+esc(dz.titulos[k]).slice(0,34)+'</text>';
     ss.sort().forEach(function(id){var w=(W-x0-30)/mx;g+='<rect x="'+x+'" y="'+y+'" width="'+(w-1)+'" height="16" fill="'+(LVC[EV[id].nivel_evidencia]||"var(--mut)")+'"><title>'+esc(id)+' '+esc(EV[id].nivel_evidencia)+'</title></rect>';x+=w});
-    if(!ss.length)g+='<text x="'+x0+'" y="'+(y+13)+'" style="fill:var(--bad)">VACÍO</text>'});
+    if(!ss.length)g+='<text x="'+x0+'" y="'+(y+13)+'" style="fill:var(--bad)">SIN DATOS</text>'});
   $("#dzb").innerHTML='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Fuentes por sección">'+g+'</svg>';
   function draw(){
     var f=$("#dzf").value,q=($("#dzq").value||"").toLowerCase();
     $("#dzs").innerHTML=ord.filter(function(k){var s=dz.secciones[k]||{},n=(s.elementos||[]).length;return(!f||(f==="con"?n>0:n===0))&&((dz.titulos[k]+" "+JSON.stringify(s)).toLowerCase().indexOf(q)>=0)}).map(function(k){
       var s=dz.secciones[k]||{},els=s.elementos||[];
-      return '<details'+(els.length?'':' open')+' style="margin:6px 0"><summary><b>'+esc(dz.titulos[k])+'</b> <span class="badge '+(els.length?'confirmada':'descartada')+'">'+(els.length?els.length+' elemento(s)':'VACÍO')+'</span> <small>frente: '+esc(dz.frentes[k]||"")+'</small></summary>'+
+      return '<details'+(els.length?'':' open')+' style="margin:6px 0"><summary><b>'+esc(dz.titulos[k])+'</b> <span class="badge '+(els.length?'confirmada':'descartada')+'">'+(els.length?els.length+' elemento(s)':'SIN DATOS PARA ARMARLO')+'</span> <small>frente: '+esc(dz.frentes[k]||"")+'</small></summary>'+
         els.map(function(e){return '<p>• '+esc(e.titulo)+' '+chips(e.evidencia)+(e.limite?'<br><small>Límite: '+esc(e.limite)+'</small>':'')+'</p>'}).join("")+
-        (s.vacio?'<div class="note bad">VACÍO: '+esc(s.vacio)+'</div>':'')+(s.nota?'<div class="note">'+esc(s.nota)+'</div>':'')+'</details>'}).join("")||"<p>Sin secciones con ese filtro.</p>";
+        (s.vacio?'<div class="note bad">SIN DATOS PARA ARMARLO: '+esc(s.vacio)+'</div>':'')+(s.nota?'<div class="note">'+esc(s.nota)+'</div>':'')+'</details>'}).join("")||"<p>Sin secciones con ese filtro.</p>";
   }
   host.addEventListener("input",draw);draw();
   var all={};ord.forEach(function(k){srcs(k).forEach(function(i){all[i]=1})});var cols=Object.keys(all).sort();
@@ -475,9 +547,9 @@ function barChart(host,rows,o){ /* rows=[{label,value,color}] */
     ((o.desc||o.refs||o.refsTxt)?'<div class="ch-f">'+(o.desc?'<b>Descripción:</b> '+esc(o.desc):'')+((o.refs||o.refsTxt)?' <b>Refs.:</b> '+(o.refs?chips(o.refs):'')+(o.refsTxt?' '+esc(o.refsTxt):''):'')+'</div>':'');
 }
 function listaEv(items,campo){return '<ul>'+(items||[]).map(function(x){return '<li>'+esc(x[campo||"texto"])+' '+nv(x.nivel)+' '+chips(x.evidencia)+(x.nota?'<br><small>'+lt(x.nota,110)+'</small>':'')+'</li>'}).join("")+'</ul>'}
-function vaciosHtml(a){return (a&&a.length)?'<div class="note bad"><b>VACÍO</b><ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join("")+'</ul></div>':''}
+function vaciosHtml(a){return (a&&a.length)?'<div class="note bad"><b>SIN DATOS PARA ARMARLO</b><ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join("")+'</ul></div>':''}
 
-function openHtml(h){var d=$("#drawer");d.innerHTML='<button class="x" aria-label="Cerrar">×</button>'+h;d.classList.add("on")}
+function openHtml(h){var d=$("#drawer");d.innerHTML='<button class="x" aria-label="Cerrar">×</button>'+h;drawerOn()}
 function wrapTxt(t,n){var w=String(t).split(" "),l=[],c="";w.forEach(function(x){if((c+" "+x).trim().length>n){l.push(c);c=x}else c=(c+" "+x).trim()});if(c)l.push(c);return l}
 
 function svgArbol(host,a){
@@ -506,7 +578,7 @@ function svgIshikawa(host,ish){
     g+='<line x1="'+(bx-step*0.35)+'" y1="'+by+'" x2="'+bx+'" y2="'+ey+'" stroke="var(--c1)" stroke-width="2"/><text x="'+(bx-step*0.35)+'" y="'+(up?by-6:by+14)+'" text-anchor="middle" style="fill:var(--c1);font-weight:700;font-size:13px">'+esc(c)+'</text>';
     (ish[c]||[]).slice(0,4).forEach(function(it,k){var ty=up?by+26+k*62:by-40-k*62,tx=bx-step*0.35+(bx-(bx-step*0.35))*((ty-by)/(ey-by));
       wrapTxt(it.texto,40).slice(0,4).forEach(function(l,j){g+='<text x="'+(tx-8)+'" y="'+(ty+j*12)+'" text-anchor="end" style="fill:'+(it.nivel==="EVIDENCIA"?"var(--ok)":"var(--warn)")+'">'+esc(l)+'</text>'})});
-    if(!(ish[c]||[]).length)g+='<text x="'+(bx-step*0.35)+'" y="'+(up?by+30:by-24)+'" text-anchor="middle" style="fill:var(--bad)">VACÍO</text>'});
+    if(!(ish[c]||[]).length)g+='<text x="'+(bx-step*0.35)+'" y="'+(up?by+30:by-24)+'" text-anchor="middle" style="fill:var(--bad)">SIN DATOS PARA ARMARLO</text>'});
   host.innerHTML='<div class="tw"><svg viewBox="0 0 '+W+' '+H+'" width="100%" style="min-width:1100px" role="img" aria-label="Diagrama de Ishikawa">'+g+'</svg></div><div style="font-size:12px;color:var(--mut)"><span style="color:var(--ok)">&#9632;</span> respaldo directo · <span style="color:var(--warn)">&#9632;</span> síntesis del equipo</div>';
 }
 
@@ -552,7 +624,7 @@ function vAcr(host){
   var r=D.caso.analisis.acr,h='<div class="card"><h2>Análisis de causa raíz genérico del modo de falla</h2><div class="note">No hay caso real: todas las causas figuran como <b>posibles</b>. Cada una indica qué evidencia del activo la confirmaría o la descartaría.</div><div class="tw"><table><tr><th>Id</th><th>Hipótesis</th><th>Estado</th><th>Qué la confirmaría o descartaría</th><th>Fuente</th></tr>'+
     (r.hipotesis||[]).map(function(x){return '<tr><td>'+esc(x.id)+'</td><td>'+esc(x.texto)+'<br>'+nv(x.nivel)+(x.nota?'<br><small>'+lt(x.nota,100)+'</small>':'')+'</td><td><span class="badge posible">'+esc(x.estado)+'</span></td><td>'+esc(x.prueba_para_confirmar||"")+'</td><td>'+chips(x.evidencia)+'</td></tr>'}).join("")+'</table></div></div>';
   var cats=D.caso.dossier?[]:Object.keys(r.ishikawa||{});
-  if(cats.length)h+='<div class="card"><h2>Diagrama de Ishikawa (6M)</h2><div class="grid">'+cats.map(function(c){return '<div class="kpi" style="min-height:90px"><b style="font-size:15px">'+esc(c)+'</b>'+((r.ishikawa[c]||[]).length?listaEv(r.ishikawa[c]):'<p><small>VACÍO: sin fuente leída</small></p>')+'</div>'}).join("")+'</div></div>';
+  if(cats.length)h+='<div class="card"><h2>Diagrama de Ishikawa (6M)</h2><div class="grid">'+cats.map(function(c){return '<div class="kpi" style="min-height:90px"><b style="font-size:15px">'+esc(c)+'</b>'+((r.ishikawa[c]||[]).length?listaEv(r.ishikawa[c]):'<p><small>SIN DATOS PARA ARMARLO: sin fuente leída</small></p>')+'</div>'}).join("")+'</div></div>';
   h+='<div class="card"><h2>Ensayos y verificaciones pertinentes</h2><div class="tw"><table><tr><th>Ensayo</th><th>Hipótesis</th><th>Fuente</th></tr>'+(r.ensayos||[]).map(function(e){return '<tr><td>'+esc(e.ensayo)+'</td><td>'+esc((e.para_hipotesis||[]).join(", "))+'</td><td>'+chips(e.evidencia)+'</td></tr>'}).join("")+'</table></div></div>'+vaciosHtml(r.vacios);
   host.innerHTML=h;
 }
@@ -586,7 +658,7 @@ function vHerr(host){
    '<label>Elementos rodantes <input type="number" id="hn" value="" placeholder="n"></label><label>Diámetro del elemento d (mm) <input type="number" id="hd"></label><label>Diámetro primitivo D (mm) <input type="number" id="hD"></label><label>Ángulo de contacto (°) <input type="number" id="ha" value="0"></label><label>Velocidad del eje (rpm) <input type="number" id="hr"></label><div id="hf"></div><div id="hs"></div></div>'+
    '<div class="card"><h2>Vida nominal L10</h2><div class="note">Relación estándar L10 = (C/P)^p millones de revoluciones (p = 3 en bolas, 10/3 en rodillos). La fuente registrada <button class="chip" data-ev="E-6002">E-6002</button> la menciona; su extracto registrado no la contiene y la edición de la norma no está verificada. Es solo la vida de fatiga bajo condiciones convencionales.</div>'+
    '<label>Capacidad dinámica C <input type="number" id="her-c"></label><label>Carga equivalente P <input type="number" id="her-p"></label><label>Tipo <select id="her-t"><option value="3">bolas (p=3)</option><option value="3.3333333">rodillos (p=10/3)</option></select></label><label>rpm <input type="number" id="her-n"></label><div id="her-o"></div><div id="her-g"></div><p style="font-size:12px;color:var(--mut)">Curva de la relación L10 = (C/P)^p en millones de revoluciones frente a P/C (relación pura; no son datos de ningún rodamiento).</p></div>'+
-   '<div class="card"><h2>Pareto de fallas con sus datos</h2><div class="note">El ranking de componentes y modos de la literatura es VACÍO. Si tiene conteos propios, ingréselos: «componente: cantidad», uno por línea.</div><textarea id="pa" rows="5" style="width:100%;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px" placeholder="chumacera: 12&#10;rodillo: 30"></textarea><div id="pg"></div></div>';
+   '<div class="card"><h2>Pareto de fallas con sus datos</h2><div class="note">El ranking de componentes y modos de la literatura es SIN DATOS PARA ARMARLO. Si tiene conteos propios, ingréselos: «componente: cantidad», uno por línea.</div><textarea id="pa" rows="5" style="width:100%;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px" placeholder="chumacera: 12&#10;rodillo: 30"></textarea><div id="pg"></div></div>';
   function fr(){var n=+$("#hn").value,d=+$("#hd").value,Dd=+$("#hD").value,a=(+$("#ha").value||0)*Math.PI/180,rpm=+$("#hr").value;
     if(!(n>0&&d>0&&Dd>0&&rpm>0&&d<Dd)){$("#hf").innerHTML='<p>Ingrese n, d, D y rpm (d menor que D).</p>';$("#hs").innerHTML="";return}
     var f=rpm/60,x=d/Dd*Math.cos(a),F={BPFO:n/2*f*(1-x),BPFI:n/2*f*(1+x),BSF:Dd/(2*d)*f*(1-x*x),FTF:f/2*(1-x),"1x":f};
@@ -629,15 +701,15 @@ function cadena(host){
   var c=D.caso,an=c.analisis||{},dz=c.dossier;
   function nEl(k){return dz&&dz.secciones[k]?(dz.secciones[k].elementos||[]).length:0}
   var pasos=[["Referencias",nEl("fenomenos")+nEl("mediciones")>0?"ok":"vac",nEl("fenomenos")+nEl("mediciones")+" con cita"],
-   ["Top de fallas",nEl("top_fallas")?"par":"vac",nEl("top_fallas")?"cita de segunda mano":"VACÍO"],
-   ["FMECA",an.fmeca?"par":"vac",an.fmeca?(an.fmeca.items.length+" modos; S-O-D sin puntuar"):"VACÍO"],
-   ["Árbol de fallas",an.arbol?"par":"vac",an.arbol?(an.arbol.nodos.length+" nodos; compuertas del equipo"):"VACÍO"],
-   ["Troubleshooting",nEl("troubleshooting")?"par":"vac",nEl("troubleshooting")?"técnicas sin alarmas":"VACÍO"],
-   ["Mant. predictivo (P-F)","vac","intervalo P-F: VACÍO"],
+   ["Top de fallas",nEl("top_fallas")?"par":"vac",nEl("top_fallas")?"cita de segunda mano":"SIN DATOS PARA ARMARLO"],
+   ["FMECA",an.fmeca?"par":"vac",an.fmeca?(an.fmeca.items.length+" modos; S-O-D sin puntuar"):"SIN DATOS PARA ARMARLO"],
+   ["Árbol de fallas",an.arbol?"par":"vac",an.arbol?(an.arbol.nodos.length+" nodos; compuertas del equipo"):"SIN DATOS PARA ARMARLO"],
+   ["Troubleshooting",nEl("troubleshooting")?"par":"vac",nEl("troubleshooting")?"técnicas sin alarmas":"SIN DATOS PARA ARMARLO"],
+   ["Mant. predictivo (P-F)","vac","intervalo P-F: SIN DATOS PARA ARMARLO"],
    ["Escenarios",c.simulador?"par":"vac","simulador didáctico"]];
   var col={ok:"var(--ok)",par:"var(--warn)",vac:"var(--bad)"},sv='';
   pasos.forEach(function(p,i){var x=i*158+4;sv+='<rect x="'+x+'" y="6" width="142" height="66" rx="14" fill="var(--panel)" stroke="'+col[p[1]]+'" stroke-width="2.5"/><circle cx="'+(x+16)+'" cy="22" r="5" fill="'+col[p[1]]+'"/><text x="'+(x+28)+'" y="26" style="fill:var(--ink);font-weight:700;font-size:12px">'+esc(p[0])+'</text>'+wrapTxt(p[2],25).slice(0,2).map(function(l,j){return '<text x="'+(x+12)+'" y="'+(46+j*13)+'">'+esc(l)+'</text>'}).join("")+(i<pasos.length-1?'<text x="'+(x+146)+'" y="42" style="fill:var(--mut);font-size:15px">›</text>':'')});
-  host.innerHTML='<div class="tw"><svg viewBox="0 0 1110 80" width="100%" style="min-width:860px">'+sv+'</svg></div><div class="leg"><span style="color:var(--ok)">&#9632;</span> con respaldo · <span style="color:var(--warn)">&#9632;</span> parcial · <span style="color:var(--bad)">&#9632;</span> VACÍO</div>';
+  host.innerHTML='<div class="tw"><svg viewBox="0 0 1110 80" width="100%" style="min-width:860px">'+sv+'</svg></div><div class="leg"><span style="color:var(--ok)">&#9632;</span> con respaldo · <span style="color:var(--warn)">&#9632;</span> parcial · <span style="color:var(--bad)">&#9632;</span> SIN DATOS PARA ARMARLO</div>';
 }
 function perfil(host){
   host.innerHTML='<div class="grid2"><div id="pf-n"></div><div id="pf-a"></div></div>';
@@ -649,12 +721,12 @@ function perfil(host){
 function docPorModo(host){
   var an=D.caso.analisis||{};if(!an.fmeca){host.innerHTML="";return}
   barChart(host,an.fmeca.items.map(function(m){var d={};m.evidencia.forEach(function(i){var e=EV[i];if(e&&(e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"))d[(e.referencia&&e.referencia.titulo)||i]=1});return{label:m.id+" "+m.modo,value:Object.keys(d).length,color:"var(--c5)"}}),
-   {titulo:"Respaldo documental por modo de falla",desc:"Documentos distintos leídos que respaldan cada modo. NO es prevalencia: mide cuánta evidencia hay, no con qué frecuencia ocurre; el ranking de frecuencias es VACÍO."});
+   {titulo:"Respaldo documental por modo de falla",desc:"Documentos distintos leídos que respaldan cada modo. NO es prevalencia: mide cuánta evidencia hay, no con qué frecuencia ocurre; el ranking de frecuencias es SIN DATOS PARA ARMARLO."});
 }
 function matrizEnsayos(host){
   var an=D.caso.analisis||{};if(!(an.acr&&an.acr.ensayos&&an.acr.hipotesis)){host.innerHTML="";return}
   var hs=an.acr.hipotesis.map(function(x){return x.id});
-  host.innerHTML='<div class="card"><h2>'+ic("matraz")+' Qué técnica ayuda a cada hipótesis</h2><div class="tw"><table><tr><th>Técnica</th>'+hs.map(function(x){return '<th>'+esc(x)+'</th>'}).join("")+'</tr>'+an.acr.ensayos.map(function(e){return '<tr><td>'+lt(e.ensayo,80)+' '+chips(e.evidencia)+'</td>'+hs.map(function(x){return (e.para_hipotesis||[]).indexOf(x)>=0?'<td style="background:var(--acc);text-align:center;color:#fff">●</td>':'<td></td>'}).join("")+'</tr>'}).join("")+'</table></div><p class="leg">Columnas sin punto: la evidencia leída no menciona técnica para esa hipótesis (VACÍO).</p></div>';
+  host.innerHTML='<div class="card"><h2>'+ic("matraz")+' Qué técnica ayuda a cada hipótesis</h2><div class="tw"><table><tr><th>Técnica</th>'+hs.map(function(x){return '<th>'+esc(x)+'</th>'}).join("")+'</tr>'+an.acr.ensayos.map(function(e){return '<tr><td>'+lt(e.ensayo,80)+' '+chips(e.evidencia)+'</td>'+hs.map(function(x){return (e.para_hipotesis||[]).indexOf(x)>=0?'<td style="background:var(--acc);text-align:center;color:#fff">●</td>':'<td></td>'}).join("")+'</tr>'}).join("")+'</table></div><p class="leg">Columnas sin punto: la evidencia leída no menciona técnica para esa hipótesis (SIN DATOS PARA ARMARLO).</p></div>';
 }
 function degr(host){
   var W2=840,st='';
@@ -665,27 +737,212 @@ function degr(host){
   st+='<text x="434" y="242" text-anchor="middle" style="fill:var(--bad);font-weight:700">ESQUEMA ILUSTRATIVO: sin escala ni datos · horizontal: tiempo (sin escala) · vertical: magnitud relativa</text>';
   host.innerHTML='<div class="chart"><div class="ch-h"><b>Degradación del rodamiento en cuatro etapas</b></div><svg viewBox="0 0 '+W2+' 256" width="100%" role="img" aria-label="Esquema cualitativo">'+st+'</svg><div class="ch-f"><b>Descripción:</b> esquema cualitativo; las curvas son ilustrativas y no hay duraciones. <b>Refs.:</b> '+chips(["E-8008","E-8003"])+'</div></div>';
 }
+/* ---------- v6: enlaces, tipos de fuente, ranking, referencias, réplicas ---------- */
+function lk(s){
+  return esc(s).replace(/(https?:\/\/[^\s<>"]*[^\s<>".,;:)\]])|\b(10\.\d{4,9}\/[^\s<>"]*[^\s<>".,;:)\]])|\barXiv:\s*(\d{4}\.\d{4,5}(?:v\d+)?)/gi,function(m,u,doi,ax){
+    var h=u||(doi?"https://doi.org/"+doi:"https://arxiv.org/abs/"+ax);
+    return '<a class="ext" href="'+h+'" target="_blank" rel="noopener noreferrer">'+m+'</a>'});
+}
+function urlsDe(e){var r=e.referencia||{},o=[];
+  function add(l,u){if(u&&/^https?:\/\//i.test(u)&&o.every(function(x){return x[1].toLowerCase()!==u.toLowerCase()}))o.push([l,u])}
+  if(r.doi)add("DOI","https://doi.org/"+String(r.doi).replace(/^https?:\/\/(dx\.)?doi\.org\//i,""));
+  if(r.url)add(/arxiv\.org/i.test(r.url)?"arXiv":"Fuente",r.url);
+  ((e.apa||"").match(/https?:\/\/[^\s]+[^\s.,;)]/g)||[]).forEach(function(u){add(/arxiv\.org/i.test(u)?"arXiv":/doi\.org/i.test(u)?"DOI":"Enlace",u)});
+  return o}
+function btns(e){return urlsDe(e).map(function(u){return '<a class="lnkb" href="'+esc(u[1])+'" target="_blank" rel="noopener noreferrer">'+ic("enlace",12)+esc(u[0])+' ↗</a>'}).join("")}
+var TIPOS={libro:["Libros","libro","var(--c4)"],paper:["Artículos arbitrados","doc","var(--c1)"],preprint:["Preprints, sin arbitraje","matraz","var(--c2)"],tesis:["Tesis y repositorios universitarios","tesis","var(--c3)"],norma:["Normas y guías","regla","var(--c5)"],reporte_tecnico:["Informes técnicos e información de empresas","edificio","var(--c6)"],repositorio:["Datos y repositorios","db","var(--mut)"],dato_usuario:["Datos aportados por la persona","guardar","var(--c4)"],otro:["Pistas de buscador, no leídas","lupa","var(--bad)"]};
+var ORD_T=["libro","paper","preprint","tesis","norma","reporte_tecnico","repositorio","dato_usuario","otro"];
+function tipoDe(e){return TIPOS[e.tipo]?e.tipo:"otro"}
+function sep(t,n){var T=TIPOS[t]||TIPOS.otro;return '<div class="sep" style="--tc:'+T[2]+'">'+ic(T[1],15)+'<span>'+T[0]+'</span><span class="n">'+n+'</span></div>'}
+function sdHtml(t,extra){return '<div class="sd"><b>SIN DATOS PARA ARMARLO</b>'+esc(t||"")+(extra?'<div style="margin-top:6px">'+extra+'</div>':'')+'</div>'}
+var _US=null;
+function usos(){if(_US)return _US;_US={};var s=JSON.stringify([D.caso.analisis,D.caso.dossier,D.caso.resumen,D.caso.replicas,D.caso.cifras]);(s.match(/E-\d{4}/g)||[]).forEach(function(i){_US[i]=(_US[i]||0)+1});return _US}
+function citasDe(){var m={};(D.caso.ranking||[]).forEach(function(r){if(r&&r.id&&r.citas!=null)m[r.id]=r});return m}
+
 function rankingFuentes(host,limit){
-  var LVN={"VERIFICADO-TEXTO":3,"VERIFICADO-ABSTRACT":2,"SOLO-SNIPPET":1,"NO-VERIFICADO":0,"DATO-USUARIO":3};
-  var rows=D.evidencia.map(function(e){var r=e.referencia||{};return{e:e,l:LVN[e.nivel_evidencia]||0,a:r.anio||0,q:e.revista_cuartil&&e.revista_cuartil.valor}}).sort(function(a,b){return b.l-a.l||b.a-a.a});
+  var LVN={"VERIFICADO-TEXTO":3,"VERIFICADO-ABSTRACT":2,"SOLO-SNIPPET":1,"NO-VERIFICADO":0,"DATO-USUARIO":3},U=usos(),C=citasDe(),nC=Object.keys(C).length;
+  var rows=D.evidencia.map(function(e){var r=e.referencia||{};return{e:e,l:LVN[e.nivel_evidencia]||0,a:r.anio||0,u:U[e.id]||0,q:e.revista_cuartil&&e.revista_cuartil.valor,c:C[e.id]?C[e.id].citas:null}});
   var nq=rows.filter(function(r){return r.q}).length;
-  host.innerHTML='<div class="card"><h2>'+ic("libro")+' Ranking de fuentes</h2><div class="note">Orden: nivel de lectura (texto, resumen, pista) y luego año más reciente. <b>Las citas y el cuartil Q1 o Q2 no se pudieron verificar</b> (Scopus y SCImago están bloqueados en este entorno), por eso hoy hay '+nq+' fuentes con cuartil verificado. Los filtros se activan solos cuando una fuente trae su cuartil con su fuente.</div>'+
-    '<label>Nivel <select id="rk-n"><option value="leidas">solo leídas (texto o resumen)</option><option value="todas">todas, con pistas</option></select></label><label>Cuartil <select id="rk-q"><option value="">todos</option><option value="12">Q1 o Q2 verificado</option><option value="0">sin verificar</option></select></label><label>Buscar <input type="text" id="rk-t" style="width:150px"></label><div class="tw"><table class="rank" id="rk-tb"></table></div></div>';
+  function ord(a,b){return b.l-a.l||(nC?(b.c||0)-(a.c||0):0)||b.u-a.u||b.a-a.a}
+  host.innerHTML=(limit?'':'<div class="card"><h2>'+ic("trofeo")+' Ranking de impacto verificable</h2><div class="note"><b>Citas y cuartil Q1 o Q2: SIN DATOS PARA ARMARLO.</b> Scopus, SCImago, Crossref y OpenAlex están bloqueados en este entorno'+(nC?', salvo '+nC+' fuente(s) con citas registradas por el agente rankeador':'')+'; por eso hay '+nq+' fuentes con cuartil verificado. El orden usa lo que sí se comprobó: nivel de lectura, veces que el análisis usó la fuente y año. <b>No es un ranking bibliográfico de impacto.</b></div><div id="rk-g"></div>')+
+    (limit?'':'<div class="tools"><label>Agrupar <select id="rk-a"><option value="tipo">por tipo de fuente</option><option value="no">lista única</option></select></label><label>Nivel <select id="rk-n"><option value="leidas">solo leídas (texto o resumen)</option><option value="todas">todas, con pistas</option></select></label><label>Cuartil <select id="rk-q"><option value="">todos</option><option value="12">Q1 o Q2 verificado</option><option value="0">sin verificar</option></select></label><label>Buscar <input type="text" id="rk-t" style="width:150px"></label></div>')+
+    '<div class="tw"><table class="rank" id="rk-tb"></table></div>'+(limit?'':'</div>');
   function draw(){
-    var n=$("#rk-n",host).value,q=$("#rk-q",host).value,t=($("#rk-t",host).value||"").toLowerCase(),k=0;
-    var f=rows.filter(function(r){return(n==="todas"||r.l>=2)&&(q===""||(q==="12"?(r.q===1||r.q===2):!r.q))&&((r.e.apa+" "+r.e.afirma).toLowerCase().indexOf(t)>=0)});
+    var g=limit?"no":$("#rk-a",host).value,n=limit?"leidas":$("#rk-n",host).value,q=limit?"":$("#rk-q",host).value,t=limit?"":($("#rk-t",host).value||"").toLowerCase(),k=0;
+    var f=rows.filter(function(r){return(n==="todas"||r.l>=2)&&(q===""||(q==="12"?(r.q===1||r.q===2):!r.q))&&((r.e.apa+" "+r.e.afirma).toLowerCase().indexOf(t)>=0)}).sort(ord);
     if(limit)f=f.slice(0,limit);
-    $("#rk-tb",host).innerHTML='<tr><th>#</th><th>Fuente</th><th>Qué respalda</th><th>Nivel</th><th>Cuartil</th><th></th></tr>'+f.map(function(r){k++;var e=r.e,ref=e.referencia||{};
-      return '<tr><td>'+k+'</td><td>'+esc((ref.autores||"").split(",")[0]||"s. a.")+' ('+esc(ref.anio||"s. f.")+')<br><small>'+esc((ref.titulo||"").slice(0,70))+'</small></td><td>'+lt(e.afirma,90)+'</td><td>'+lv(e.nivel_evidencia)+'</td><td>'+(r.q?'Q'+r.q:'<small>sin verificar</small>')+'</td><td><button class="chip" data-ev="'+esc(e.id)+'">'+esc(e.id)+'</button></td></tr>'}).join("");
+    function fila(r){k++;var e=r.e,ref=e.referencia||{};
+      return '<tr><td>'+k+'</td><td>'+esc((ref.autores||"").split(",")[0]||"s. a.")+' ('+esc(ref.anio||"s. f.")+')<br><small>'+esc((ref.titulo||"").slice(0,80))+'</small></td><td>'+lt(e.afirma,90)+'</td><td>'+lv(e.nivel_evidencia)+'</td><td title="Veces que el análisis cita esta fuente">'+r.u+'</td><td>'+(r.c!=null?esc(r.c):'<small>SIN DATOS PARA ARMARLO</small>')+'</td><td>'+(r.q?'Q'+r.q:'<small>sin verificar</small>')+'</td><td>'+btns(e)+'<button class="chip" data-ev="'+esc(e.id)+'">'+esc(e.id)+'</button></td></tr>'}
+    var h='<tr><th>#</th><th>Fuente</th><th>Qué respalda</th><th>Nivel</th><th>Usos</th><th>Citas</th><th>Cuartil</th><th>Abrir</th></tr>';
+    if(g==="tipo")ORD_T.forEach(function(t_){var s=f.filter(function(r){return tipoDe(r.e)===t_});if(!s.length)return;var T=TIPOS[t_];h+='<tr class="sepr" style="--tc:'+T[2]+'"><td colspan="8">'+ic(T[1],13)+' '+T[0]+' · '+s.length+'</td></tr>'+s.map(fila).join("")});
+    else h+=f.map(fila).join("");
+    $("#rk-tb",host).innerHTML=h;
+    if(!limit){var top=f.filter(function(r){return r.u>0}).sort(function(a,b){return b.u-a.u}).slice(0,8);
+      if(top.length)barChart($("#rk-g",host),top.map(function(r){var ref=r.e.referencia||{};return{label:r.e.id+" "+((ref.autores||"").split(",")[0]||"s. a.")+" "+(ref.anio||""),value:r.u,color:(TIPOS[tipoDe(r.e)]||TIPOS.otro)[2]}}),{titulo:"Fuentes más usadas por el análisis",desc:"Cuenta cuántas veces el análisis, el dossier y las réplicas citan la fuente. Mide uso interno, no impacto en la literatura."});else $("#rk-g",host).innerHTML=""}
   }
   host.addEventListener("input",draw);host.addEventListener("change",draw);draw();
+}
+
+function vReferencias(host){
+  host.innerHTML='<div class="card"><h2>'+ic("libro")+' Referencias en APA 7</h2><div class="note">Cada referencia lleva su enlace: DOI, arXiv o la dirección de la fuente; haga clic y se abre la página. Se agrupan por tipo de documento. Las <b>pistas de buscador</b> no se leyeron y no respaldan ninguna afirmación.</div>'+
+   '<div class="tools"><label>Mostrar <select id="rf-n"><option value="leidas">solo leídas</option><option value="todas">todas, con pistas</option></select></label><label>Buscar <input type="text" id="rf-t" style="width:200px"></label><button class="btn" id="rf-d">'+ic("bajar",14)+' Descargar APA (TXT)</button></div><div id="rf-l"></div></div>';
+  function draw(){
+    var n=$("#rf-n",host).value,t=($("#rf-t",host).value||"").toLowerCase(),h="",tot=0;
+    ORD_T.forEach(function(t_){
+      var s=D.evidencia.filter(function(e){return tipoDe(e)===t_&&(n==="todas"||e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"||e.nivel_evidencia==="DATO-USUARIO")&&(e.apa||"").toLowerCase().indexOf(t)>=0}).sort(function(a,b){return (a.apa||"").localeCompare(b.apa||"","es")});
+      if(!s.length)return;
+      var G=[],ix={};s.forEach(function(e){var k=e.apa||e.id;if(ix[k]==null){ix[k]=G.length;G.push({e:e,ids:[]})}G[ix[k]].ids.push(e.id)});tot+=G.length;
+      h+=sep(t_,G.length)+'<ul style="padding:0;margin:0">'+G.map(function(g){var e=g.e;return '<li class="apa">'+lk(e.apa)+'<span class="meta">'+lv(e.nivel_evidencia)+' '+btns(e)+(e.referencia&&e.referencia.pais?' <small>'+esc(e.referencia.pais)+'</small> ':' ')+'<small>'+g.ids.length+' extracto(s):</small> '+chips(g.ids.slice(0,12))+(g.ids.length>12?' <small>y '+(g.ids.length-12)+' más</small>':'')+'</span></li>'}).join("")+'</ul>'});
+    $("#rf-l",host).innerHTML=h||sdHtml("No hay referencias con ese filtro.");
+  }
+  host.addEventListener("input",draw);host.addEventListener("change",draw);$("#rf-d",host).onclick=function(){var r=DESCARGAS[3][2]();guardarArchivo(r[0],r[1])};draw();
+}
+
+function numv(x){return parseFloat(String(x).replace(/,/g,""))}
+function barIC(host,r){
+  var S=(r.series||[]).map(function(s){return{l:s.etiqueta,v:numv(s.valor),lo:s.ic?numv(s.ic[0]):null,hi:s.ic?numv(s.ic[1]):null}}).filter(function(s){return isFinite(s.v)});
+  if(!S.length){host.innerHTML=sdHtml("La réplica no trae series numéricas.");return}
+  var W=860,L=250,R=110,RH=34,T=16,B=40,H=T+B+S.length*RH,mx=Math.max.apply(0,S.map(function(s){return Math.max(s.v,s.hi||0)}))*1.08||1;
+  function X(v){return L+v/mx*(W-L-R)}
+  var g='';
+  for(var i=0;i<=4;i++){var v=mx*i/4;g+='<line x1="'+X(v)+'" x2="'+X(v)+'" y1="'+T+'" y2="'+(H-B)+'" stroke="var(--line)" stroke-dasharray="2 4"/><text x="'+X(v)+'" y="'+(H-B+15)+'" text-anchor="middle">'+fmt(v,2)+'</text>'}
+  g+='<text x="'+((L+W-R)/2)+'" y="'+(H-6)+'" text-anchor="middle" style="font-weight:500">'+esc(r.unidad||"")+'</text>';
+  S.forEach(function(s,k){var y=T+k*RH+RH/2,col=["var(--c1)","var(--c2)","var(--c3)","var(--c4)","var(--c5)","var(--c6)"][k%6];
+    g+='<text x="'+(L-10)+'" y="'+(y+4)+'" text-anchor="end" style="fill:var(--ink)">'+esc(s.l.length>40?s.l.slice(0,39)+"…":s.l)+'<title>'+esc(s.l)+'</title></text><rect x="'+L+'" y="'+(y-8)+'" width="'+Math.max(X(s.v)-L,1)+'" height="16" rx="4" fill="'+col+'" opacity=".78"/>';
+    if(s.lo!=null)g+='<line x1="'+X(s.lo)+'" x2="'+X(s.hi)+'" y1="'+y+'" y2="'+y+'" stroke="var(--ink)" stroke-width="1.3"/><line x1="'+X(s.lo)+'" x2="'+X(s.lo)+'" y1="'+(y-5)+'" y2="'+(y+5)+'" stroke="var(--ink)" stroke-width="1.3"/><line x1="'+X(s.hi)+'" x2="'+X(s.hi)+'" y1="'+(y-5)+'" y2="'+(y+5)+'" stroke="var(--ink)" stroke-width="1.3"/>';
+    g+='<text x="'+(X(Math.max(s.v,s.hi||0))+8)+'" y="'+(y+4)+'" style="fill:var(--ink);font-weight:500">'+fmt(s.v,2)+(s.lo!=null?' ['+fmt(s.lo,2)+' a '+fmt(s.hi,2)+']':'')+'</text>'});
+  host.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="'+esc(r.titulo)+'">'+g+'</svg>';
+}
+function tablaRep(host,r){
+  host.innerHTML='<div class="tw"><table><tr>'+(r.columnas||[]).map(function(c){return '<th>'+esc(c)+'</th>'}).join("")+'</tr>'+(r.filas||[]).map(function(f){return '<tr>'+f.map(function(c){return '<td>'+esc(c)+'</td>'}).join("")+'</tr>'}).join("")+'</table></div>'}
+function cardRep(r){
+  var d=document.createElement("div");d.className="chart";
+  d.innerHTML='<div class="ch-h"><b>'+esc(r.id)+' · '+esc(r.titulo)+'</b><span class="badge">'+(r.tipo==="tabla"?"tabla":r.tipo==="barras_ic"?"barras con IC 95 %":"barras")+'</span></div><div class="rp-b"></div>'+
+   '<div class="ch-f"><b>Réplica de:</b> '+lk(r.replica_de||"")+'<br><b>Condiciones:</b> '+lt(r.condiciones||"",160)+'<br><b>Límites:</b> '+lt(r.limites||"",160)+'<br><b>Refs.:</b> '+chips(r.evidencia)+'</div>';
+  var b=$(".rp-b",d);if(r.tipo==="tabla")tablaRep(b,r);else barIC(b,r);return d}
+function vReplicas(host){
+  var R=D.caso.replicas||[],C=D.caso.cifras||[];
+  if(!R.length&&!C.length){host.innerHTML='<div class="card"><h2>'+ic("faja")+' Réplicas y cifras</h2>'+sdHtml("Ninguna réplica de figura o tabla pasó la compuerta: cada número debe estar literal en el extracto de la fuente citada.")+'</div>';return}
+  var nb=R.filter(function(r){return r.tipo!=="tabla"}).length;
+  host.innerHTML='<div class="card"><h2>'+ic("faja")+' Réplicas de figuras y tablas de los textos leídos</h2><div class="note">Cada gráfica o tabla se reconstruye <b>solo con números que aparecen literales</b> en el extracto de la fuente citada; una compuerta retira lo que no cumple. Los valores son de bancos de ensayo, no de una chumacera de polea: léalos con sus condiciones y límites. Las figuras que son solo imagen quedan como SIN DATOS PARA ARMARLO.</div>'+
+   '<div class="grid"><div class="kpi"><span class="ico">'+ic("grafico",22)+'</span><div><b>'+nb+'</b><span>gráficas replicadas</span></div></div><div class="kpi"><span class="ico">'+ic("doc",22)+'</span><div><b>'+(R.length-nb)+'</b><span>tablas replicadas</span></div></div><div class="kpi"><span class="ico">'+ic("tuerca",22)+'</span><div><b>'+C.length+'</b><span>cifras con su condición</span></div></div></div>'+
+   '<div class="tools" style="margin-top:12px"><label>Mostrar <select id="rp-t"><option value="">gráficas y tablas</option><option value="g">solo gráficas</option><option value="t">solo tablas</option></select></label></div><div id="rp-l"></div></div>'+
+   '<div class="card"><h2>'+ic("tuerca")+' Cifras clave</h2><div class="tools"><label>Buscar <input type="text" id="cf-t" style="width:220px"></label></div><div class="tw"><table id="cf-tb"></table></div></div>';
+  function drawR(){var t=$("#rp-t",host).value,l=$("#rp-l",host);l.innerHTML="";var s=R.filter(function(r){return t===""||(t==="t")===(r.tipo==="tabla")});
+    if(!s.length)l.innerHTML=sdHtml("No hay réplicas de ese tipo.");s.forEach(function(r){l.appendChild(cardRep(r))})}
+  function drawC(){var q=($("#cf-t",host).value||"").toLowerCase();
+    $("#cf-tb",host).innerHTML='<tr><th>Id</th><th>Cifra</th><th>Qué mide</th><th>Condiciones</th><th>Fuente</th></tr>'+C.filter(function(c){return (c.mide+" "+c.condiciones+" "+c.valor).toLowerCase().indexOf(q)>=0}).map(function(c){return '<tr><td>'+esc(c.id)+'</td><td><b>'+esc(c.valor)+'</b> '+esc(c.unidad||"")+'</td><td>'+lt(c.mide,80)+'</td><td>'+lt(c.condiciones,100)+'</td><td>'+chips(c.evidencia)+'</td></tr>'}).join("")}
+  $("#rp-t",host).onchange=drawR;$("#cf-t",host).oninput=drawC;drawR();drawC();
+}
+
+/* ---------- v6: Ishikawa dinámico, cinco porqués, qué observar, índice, equipo, imprimir ---------- */
+var BCOL=["var(--c1)","var(--c2)","var(--c3)","var(--c4)","var(--c5)","var(--c6)"];
+function icoRama(c){var k=String(c).normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+  if(/ambi/.test(k))return"termo";if(/^maq/.test(k))return"engranaje";if(/^met/.test(k))return"ficha";if(/^mat/.test(k))return"gota";if(/^mano/.test(k))return"casco";if(/^med/.test(k))return"regla";return"tuerca"}
+function detalleIsh(c,x){return '<h3>'+ic(icoRama(c),18)+' '+esc(c)+'</h3><p>'+nv(x.nivel)+'</p><p><b>'+esc(x.texto)+'</b></p>'+
+  (x.mecanismo?'<p><b>Por qué podría ocurrir:</b> '+lk(x.mecanismo)+'</p>':'')+(x.verificar?'<p><b>Cómo verificarlo:</b> '+lk(x.verificar)+'</p>':'')+
+  (x.nota?'<div class="note">'+lk(x.nota)+'</div>':'')+'<p><b>Fuentes:</b> '+chips(x.evidencia)+'</p>'}
+function fishSVG(cats,ish,notas,st,efecto){
+  var PW=300,PH=44,STP=54,DX=120,CW=PW+DX+46,X0=16,n=1;
+  cats.forEach(function(c){var l=(ish[c]||[]).length+((notas[c]||!(ish[c]||[]).length)?1:0);n=Math.max(n,l)});
+  var BH=n*STP+72,my=BH+34,H=2*BH+68,cols=Math.ceil(cats.length/2),HX=X0+cols*CW+8,W=HX+250,g='';
+  function ok(x){return (!st.niv||x.nivel===st.niv)&&(!st.q||(x.texto+" "+(x.mecanismo||"")+" "+(x.verificar||"")).toLowerCase().indexOf(st.q)>=0)}
+  g+='<line x1="'+X0+'" y1="'+my+'" x2="'+HX+'" y2="'+my+'" stroke="var(--ink)" stroke-width="2.2"/>';
+  cats.forEach(function(c,i){
+    var top=i%2===0,col=Math.floor(i/2),bc=BCOL[i%6],xb=X0+PW+16+col*CW,y0=top?40:H-40,a=ish[c]||[],dir=top?1:-1;
+    g+='<line x1="'+xb+'" y1="'+y0+'" x2="'+(xb+DX)+'" y2="'+my+'" stroke="'+bc+'" stroke-width="1.7"/>';
+    var ly=top?4:H-34;
+    g+='<g class="pl" data-lab="'+i+'"><rect class="bg" x="'+(xb-62)+'" y="'+ly+'" width="190" height="30" rx="15" fill="'+bc+'" fill-opacity=".16" stroke="'+bc+'"/><svg class="ic" x="'+(xb-52)+'" y="'+(ly+6)+'" width="18" height="18" style="color:'+bc+'"><use href="#i-'+icoRama(c)+'"/></svg><text x="'+(xb-28)+'" y="'+(ly+19)+'" style="fill:var(--ink);font-weight:500;font-size:12.5px">'+esc(c)+' · '+a.length+'</text></g>';
+    function bx(y){return xb+Math.abs(y-y0)/Math.abs(my-y0)*DX}
+    a.forEach(function(x,k){
+      var y=y0+dir*(34+k*STP),b=bx(y),rx=b-12,lx=rx-PW,cl=x.nivel==="EVIDENCIA"?"var(--ok)":"var(--warn)",ls=wrapTxt(x.texto.replace(/\s*CONDICION A VERIFICAR\.?/i,""),50),t1=ls[0]||"",t2=ls[1]||"";if(ls.length>2)t2=t2.slice(0,Math.max(0,t2.length-3))+"…";
+      g+='<g class="pl'+(ok(x)?'':' dim')+'" data-c="'+i+'" data-i="'+k+'"><line x1="'+rx+'" y1="'+y+'" x2="'+b+'" y2="'+y+'" stroke="'+bc+'" stroke-width="1"/><rect class="bg" x="'+lx+'" y="'+(y-PH/2)+'" width="'+PW+'" height="'+PH+'" rx="10" fill="var(--panel)" stroke="var(--line)"/><rect x="'+lx+'" y="'+(y-PH/2)+'" width="4" height="'+PH+'" rx="2" fill="'+cl+'"/>'+
+        '<text x="'+(lx+13)+'" y="'+(y-(t2?4:-4))+'" style="fill:var(--ink);font-size:13px">'+esc(t1)+'</text>'+(t2?'<text x="'+(lx+13)+'" y="'+(y+11)+'" style="fill:var(--ink);font-size:13px">'+esc(t2)+'</text>':'')+'</g>'});
+    if(notas[c]||!a.length){var k2=a.length,y=y0+dir*(34+k2*STP),b=bx(y),rx=b-12,lx=rx-PW;
+      g+='<g class="pl" data-nota="'+i+'"><line x1="'+rx+'" y1="'+y+'" x2="'+b+'" y2="'+y+'" stroke="var(--bad)" stroke-dasharray="3 3"/><rect class="bg" x="'+lx+'" y="'+(y-PH/2)+'" width="'+PW+'" height="'+PH+'" rx="10" fill="var(--panel)" stroke="var(--bad)" stroke-dasharray="4 3"/><text x="'+(lx+12)+'" y="'+(y-3)+'" style="fill:var(--bad);font-weight:600;font-size:11px">SIN DATOS PARA ARMARLO'+(a.length?' (parcial)':'')+'</text><text x="'+(lx+12)+'" y="'+(y+12)+'" style="font-size:11px">Haga clic: qué datos faltan</text></g>'}
+  });
+  var ef=wrapTxt(efecto,26).slice(0,4);
+  g+='<polygon points="'+(HX-2)+','+(my-7)+' '+(HX+12)+','+my+' '+(HX-2)+','+(my+7)+'" fill="var(--ink)"/><rect x="'+(HX+12)+'" y="'+(my-48)+'" width="226" height="96" rx="16" fill="var(--acc2)" stroke="var(--acc)"/><svg class="ic" x="'+(HX+24)+'" y="'+(my-38)+'" width="18" height="18" style="color:var(--acc)"><use href="#i-alerta"/></svg><text x="'+(HX+48)+'" y="'+(my-25)+'" style="fill:var(--acc);font-weight:600;font-size:11px;letter-spacing:.08em">EFECTO</text>'+
+    ef.map(function(l,j){return '<text x="'+(HX+24)+'" y="'+(my-6+j*15)+'" style="fill:var(--ink);font-size:12.5px;font-weight:500">'+esc(l)+'</text>'}).join("");
+  return '<svg viewBox="0 0 '+W+' '+H+'" width="100%" style="min-width:1150px" role="img" aria-label="Diagrama de Ishikawa">'+g+'</svg>';
+}
+function vIshikawa(host){
+  var r=D.caso.analisis.acr,ish=r.ishikawa||{},notas=r.ishikawa_notas||{},cats=Object.keys(ish);
+  Object.keys(notas).forEach(function(k){if(cats.indexOf(k)<0)cats.push(k)});
+  var st={vista:(store("ish_v")||"dia"),niv:"",q:""},tot=0,ev=0,par=0;
+  cats.forEach(function(c){(ish[c]||[]).forEach(function(x){tot++;if(x.nivel==="EVIDENCIA")ev++});if(notas[c])par++});
+  var efecto="Falla de "+(D.caso.meta.activo||"el componente");
+  host.innerHTML='<div class="card"><h2>'+ic("pez")+' Diagrama de Ishikawa (6M)</h2><div class="note">Cada causa dice <b>por qué podría ocurrir</b> y <b>cómo verificarla</b>. Verde: respaldo directo de una fuente leída. Ámbar: síntesis del equipo con premisas citadas. Sin caso real ninguna causa está confirmada. Haga clic en una causa o en una rama.</div>'+
+   '<div class="grid" style="margin-bottom:12px"><div class="kpi"><span class="ico">'+ic("pez",22)+'</span><div><b>'+tot+'</b><span>causas en '+cats.length+' ramas</span></div></div><div class="kpi"><span class="ico">'+ic("escudo",22)+'</span><div><b>'+ev+'</b><span>con respaldo directo</span></div></div><div class="kpi"><span class="ico">'+ic("matraz",22)+'</span><div><b>'+(tot-ev)+'</b><span>síntesis del equipo</span></div></div><div class="kpi"><span class="ico">'+ic("alerta",22)+'</span><div><b>'+par+'</b><span>ramas con datos que faltan</span></div></div></div>'+
+   '<div class="tools"><div class="seg" role="group" aria-label="Vista"><button data-v="dia">'+ic("pez",14)+'Diagrama</button><button data-v="tar">'+ic("ficha",14)+'Tarjetas</button></div><label>Nivel <select id="ih-n"><option value="">todos</option><option value="EVIDENCIA">respaldo directo</option><option value="SINTESIS">síntesis</option></select></label><label>Buscar <input type="text" id="ih-q" style="width:190px" placeholder="p. ej. lubricante"></label><button class="btn" id="ih-a">'+ic("lupa",14)+' ampliar</button></div><div id="ih-v"></div>'+
+   '<div class="leg" style="margin-top:8px"><span style="color:var(--ok)">&#9632;</span> respaldo directo · <span style="color:var(--warn)">&#9632;</span> síntesis del equipo · <span style="color:var(--bad)">&#9632;</span> SIN DATOS PARA ARMARLO</div></div>';
+  function okI(x){return (!st.niv||x.nivel===st.niv)&&(!st.q||(x.texto+" "+(x.mecanismo||"")+" "+(x.verificar||"")).toLowerCase().indexOf(st.q)>=0)}
+  function draw(){
+    host.querySelectorAll(".seg button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.v===st.vista)});
+    var v=$("#ih-v",host);
+    if(st.vista==="dia")v.innerHTML='<div class="tw">'+fishSVG(cats,ish,notas,st,efecto)+'</div>';
+    else v.innerHTML='<div class="grid2">'+cats.map(function(c,i){var a=(ish[c]||[]).filter(okI);
+      return '<div class="kpi" style="display:block;border-top:3px solid '+BCOL[i%6]+'"><b style="font-size:15px">'+ic(icoRama(c),17)+' '+esc(c)+' <span class="badge">'+(ish[c]||[]).length+'</span></b>'+
+       a.map(function(x){return '<details style="margin:7px 0"><summary>'+esc(x.texto.replace(/\s*CONDICION A VERIFICAR\.?/i,""))+' '+nv(x.nivel)+'</summary><p><b>Por qué podría ocurrir:</b> '+lk(x.mecanismo||"")+'</p><p><b>Cómo verificarlo:</b> '+lk(x.verificar||"")+'</p>'+(x.nota?'<div class="note">'+lk(x.nota)+'</div>':'')+'<p>'+chips(x.evidencia)+'</p></details>'}).join("")+
+       (notas[c]||!(ish[c]||[]).length?sdHtml(notas[c]||"Sin fuente leída para esta rama."):'')+'</div>'}).join("")+'</div>';
+  }
+  host.addEventListener("click",function(e){
+    var b=e.target.closest(".seg button");if(b){st.vista=b.dataset.v;store("ish_v",st.vista);draw();return}
+    var p=e.target.closest(".pl");if(!p||!host.contains(p))return;
+    if(p.dataset.c!=null){var c=cats[+p.dataset.c];openHtml(detalleIsh(c,ish[c][+p.dataset.i]))}
+    else if(p.dataset.nota!=null){var c2=cats[+p.dataset.nota];openHtml('<h3>'+ic(icoRama(c2),18)+' '+esc(c2)+'</h3>'+sdHtml(notas[c2]||"Sin fuente leída para esta rama."))}
+    else if(p.dataset.lab!=null){var c3=cats[+p.dataset.lab],a=ish[c3]||[];openHtml('<h3>'+ic(icoRama(c3),18)+' '+esc(c3)+'</h3><p>'+a.length+' causa(s): '+a.filter(function(x){return x.nivel==="EVIDENCIA"}).length+' con respaldo directo.</p><ul>'+a.map(function(x){return '<li>'+esc(x.texto.slice(0,140))+' '+nv(x.nivel)+'</li>'}).join("")+'</ul>'+(notas[c3]?sdHtml(notas[c3]):''))}
+  });
+  $("#ih-a",host).onclick=function(){openModal(function(b){b.innerHTML='<div class="tw">'+fishSVG(cats,ish,notas,{niv:st.niv,q:st.q},efecto).replace('min-width:1150px','min-width:0')+'</div>';b.addEventListener("click",function(e){var p=e.target.closest(".pl");if(!p)return;closeModal();if(p.dataset.c!=null){var c=cats[+p.dataset.c];openHtml(detalleIsh(c,ish[c][+p.dataset.i]))}})},"Ishikawa: "+efecto)};
+  $("#ih-n",host).onchange=function(){st.niv=this.value;draw()};$("#ih-q",host).oninput=function(){st.q=this.value.trim().toLowerCase();draw()};draw();
+}
+function vPorques(host){
+  var P=(D.caso.analisis.porques||{}).items||[],hs={};((D.caso.analisis.acr||{}).hipotesis||[]).forEach(function(h){hs[h.id]=h});var sel=0;
+  host.innerHTML='<div class="card"><h2>'+ic("pregunta")+' Cinco porqués por hipótesis</h2><div class="note">Cada eslabón responde al anterior y lleva su fuente. El último es una <b>causa latente a confirmar</b> con registros del activo; ninguna cadena está confirmada porque no hay caso real.</div><div class="sub" id="pq-p"></div><div id="pq-c"></div></div>';
+  function draw(){
+    $("#pq-p",host).innerHTML=P.map(function(h,i){return '<button class="pill" data-i="'+i+'" aria-selected="'+(i===sel)+'">'+esc(h.causa)+'</button>'}).join("");
+    var h=P[sel];if(!h){$("#pq-c",host).innerHTML=sdHtml("Sin cadenas de porqués con respaldo.");return}
+    var H=hs[h.causa]||{},n=h.cadena.length;
+    $("#pq-c",host).innerHTML='<h3 style="margin:0 0 8px">'+esc(h.causa)+' · '+esc(h.titulo||H.texto||"")+' '+(H.estado?'<span class="badge posible">'+esc(H.estado)+'</span>':'')+'</h3>'+h.cadena.map(function(x,i){
+      var t=String(x.porque),q=t.indexOf("?"),pr=q>=0?t.slice(0,q+1):"",re=q>=0?t.slice(q+1).trim():t;
+      return '<div class="pq'+(i===n-1?' fin':'')+'"><span class="num">'+(i+1)+'</span><span class="qq">'+esc(pr)+'</span>'+lt(re,220)+'<div style="margin-top:4px">'+nv(x.nivel)+' '+chips(x.evidencia)+(i===n-1?' <span class="badge posible">causa latente a confirmar</span>':'')+'</div></div>'+(i<n-1?'<div class="pq-ar">&#8595;</div>':'')}).join("");
+  }
+  host.addEventListener("click",function(e){var b=e.target.closest("#pq-p .pill");if(b){sel=+b.dataset.i;draw()}});draw();
+}
+function vObservar(host){
+  var O=D.caso.analisis.observar||{},I=O.items||[],hs=[];I.forEach(function(x){if(hs.indexOf(x.hipotesis)<0)hs.push(x.hipotesis)});
+  host.innerHTML='<div class="card"><h2>'+ic("ojo")+' Qué observar para confirmar cada hipótesis</h2><div class="note">Síntoma que se vería en el activo y cómo medirlo. Los valores de referencia no se inventan: si ninguna fuente leída los da, la celda dice SIN DATOS PARA ARMARLO.</div><div class="tools"><label>Hipótesis <select id="ob-h"><option value="">todas</option>'+hs.map(function(h){return '<option>'+esc(h)+'</option>'}).join("")+'</select></label></div><div class="tw"><table id="ob-t"></table></div>'+(O.vacios&&O.vacios.length?vaciosHtml(O.vacios):'')+'</div>';
+  function draw(){var f=$("#ob-h",host).value;$("#ob-t",host).innerHTML='<tr><th>Hipótesis</th><th>Qué se observa</th><th>Cómo medirlo</th><th>Valor de referencia</th><th>Nivel</th><th>Fuente</th></tr>'+I.filter(function(x){return!f||x.hipotesis===f}).map(function(x){return '<tr><td>'+esc(x.hipotesis)+'</td><td>'+lt(x.sintoma,110)+'</td><td>'+lt(x.medicion,130)+'</td><td>'+(x.referencia?lt(x.referencia,90):'<small>SIN DATOS PARA ARMARLO</small>')+'</td><td>'+nv(x.nivel)+'</td><td>'+chips(x.evidencia)+'</td></tr>'}).join("")}
+  $("#ob-h",host).onchange=draw;draw();
+}
+var DZV={mediciones:["mon","deg"],fenomenos:["mod","hip"],top_fallas:["mod","fme"],fmeca:["mod","fme"],confiabilidad:["vyc","met"],punto_optimo:["vyc","cos"],lcc:["vyc","cos"],vida_util:["vyc","met"],ibr:["pla","vac"],ml:["mon","mod"],acr:["mod","ish"],troubleshooting:["mon","obs"],mpd_normas:["mon","est"],referencias:["ref",null]};
+var DZI={mediciones:"onda",fenomenos:"rodamiento",top_fallas:"vagoneta",fmeca:"ficha",confiabilidad:"pulso",punto_optimo:"engranaje",lcc:"camion",vida_util:"faja",ibr:"escudo",ml:"db",acr:"pez",troubleshooting:"herr",mpd_normas:"regla",referencias:"libro"};
+function indice14(host){
+  var dz=D.caso.dossier;
+  host.innerHTML=dz.orden.map(function(k,i){var s=dz.secciones[k]||{},n=(s.elementos||[]).length,go=DZV[k]||["evi","cob"],e=n||k==="referencias";
+    if(k==="referencias")n=D.evidencia.filter(function(x){return x.nivel_evidencia==="VERIFICADO-TEXTO"||x.nivel_evidencia==="VERIFICADO-ABSTRACT"}).length;
+    var dest=(!n)?["pla","vac"]:go;
+    return '<button class="'+(n?'':'vac')+'" data-go="'+dest[0]+'"'+(dest[1]?' data-sub="'+dest[1]+'"':'')+'>'+ic(DZI[k]||"doc",20)+'<span><b>'+(i+1)+'. '+esc(dz.titulos[k])+'</b><small>'+(n?'<span class="ok">'+n+(k==="referencias"?' fuentes leídas':' elemento(s) con fuente')+'</span>':'<span class="no">SIN DATOS PARA ARMARLO</span>')+'</small></span></button>'}).join("");
+}
+function vEquipo(host){
+  var T=D.caso.trazabilidad||[];
+  host.innerHTML='<div class="card"><h2>'+ic("equipo")+' Equipo de agentes: quién hizo qué en este caso</h2><div class="note">El líder entrega a cada agente un encargo con ocho bloques (ROL, TAREA, CONTEXTO, RAZONAMIENTO, CONDICIONES DE CIERRE, FEEDBACK, ALMACENAMIENTO Y MEMORIA, SALIDA) y recibe de vuelta su resultado. Esta lista solo incluye a quienes trabajaron de verdad en este caso.</div>'+
+   '<div class="grid2">'+T.map(function(a){return '<div class="kpi" style="display:block"><b style="font-size:14.5px">'+ic("equipo",16)+' '+esc(a.agente)+'</b><span style="font-size:12px"><i>'+esc(a.rol)+'</i></span><p style="margin:6px 0"><b>Hizo:</b> '+lt(a.hizo,150)+'</p><p style="margin:4px 0;font-size:12.5px"><b>Recibió:</b> '+esc(a.entrada)+'<br><b>Entregó:</b> '+esc(a.salida)+'</p><p style="margin:4px 0;font-size:12.5px"><b>Aprendió:</b> '+lt(a.aprendio,140)+'</p></div>'}).join("")+'</div></div>';
+}
+function imprimir(){
+  var cur=window.__cur||"res";document.body.classList.add("print-all");
+  try{VIEWS.forEach(function(v){window.__goto(v.id);document.querySelectorAll("#v-"+v.id+" .pill").forEach(function(b){b.click()})});window.__goto(cur)}catch(e){}
+  var fin=function(){document.body.classList.remove("print-all");window.removeEventListener("afterprint",fin)};window.addEventListener("afterprint",fin);
+  setTimeout(function(){try{window.print()}catch(e){}},250);
+  toast("Si no se abre la ventana de impresión, el visor la bloquea: descargue «Informe para imprimir (HTML)», ábralo en su navegador y use Ctrl+P.");
+  setTimeout(function(){document.body.classList.remove("print-all")},15000);
 }
 
 /* ---------- vistas del modo "modo de falla" ---------- */
 var SUBSEL={};
 function subtabs(host,key,items){
   host.innerHTML='<div class="sub" role="tablist">'+items.map(function(it){return '<button class="pill" data-sub="'+it.id+'" role="tab">'+(it.icon?ic(it.icon,15):'')+esc(it.label)+'</button>'}).join("")+'</div><div class="subpanes"></div>';
-  var panes=$(".subpanes",host);items.forEach(function(it){var p=document.createElement("div");p.className="subpane";p.dataset.sub=it.id;panes.appendChild(p)});
+  var panes=$(".subpanes",host);items.forEach(function(it){var p=document.createElement("div");p.className="subpane";p.dataset.sub=it.id;p.dataset.label=it.label;panes.appendChild(p)});
   function sel(id){host.querySelectorAll(".pill").forEach(function(b){b.setAttribute("aria-selected",b.dataset.sub===id)});
     host.querySelectorAll(".subpane").forEach(function(p){var on=p.dataset.sub===id;p.classList.toggle("on",on);if(on&&!p.dataset.done){p.dataset.done=1;items.forEach(function(it){if(it.id===id){try{it.fn(p)}catch(e){p.innerHTML='<div class="note bad">Error al dibujar: '+esc(e.message)+'</div>';window.__errores=(window.__errores||[]).concat(String(e))}}})}})}
   host.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".pill");if(b&&host.contains(b))sel(b.dataset.sub)});
@@ -695,14 +952,17 @@ function esencial(){return (D.caso.resumen.hallazgos||[]).filter(function(h){ret
 function vResumenN(host){
   var c=D.caso,an=c.analisis||{},leidas=D.evidencia.filter(function(e){return e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"}).length,dz=c.dossier,con=0,vac=0;
   dz.orden.forEach(function(k){if(k==="referencias")return;((dz.secciones[k]||{}).elementos||[]).length?con++:vac++});
-  host.innerHTML='<div class="hero"><h2>Resumen del dossier</h2><p>Qué se sabe, con qué respaldo y qué falta. Cada afirmación lleva su fuente; lo que no tiene evidencia leída queda VACÍO.</p><div class="grid">'+
+  host.innerHTML='<div class="hero"><h2>Resumen del dossier</h2><p>Qué se sabe, con qué respaldo y qué falta. Cada afirmación lleva su fuente; lo que no tiene evidencia leída queda SIN DATOS PARA ARMARLO.</p><div class="grid">'+
    '<div class="kpi"><span class="ico">'+ic("libro",22)+'</span><div><b>'+leidas+'</b><span>fuentes leídas (de '+D.evidencia.length+' registradas)</span></div></div>'+
    '<div class="kpi"><span class="ico">'+ic("escudo",22)+'</span><div><b>'+con+' de '+(con+vac)+'</b><span>secciones con evidencia</span></div></div>'+
-   '<div class="kpi"><span class="ico">'+ic("alerta",22)+'</span><div><b>'+vac+'</b><span>secciones VACÍO declarado</span></div></div>'+
-   '<div class="kpi"><span class="ico">'+ic("arbol",22)+'</span><div><b>'+((an.fmeca&&an.fmeca.items||[]).length)+'</b><span>modos de falla en el FMECA</span></div></div></div></div>'+
+   '<div class="kpi"><span class="ico">'+ic("alerta",22)+'</span><div><b>'+vac+'</b><span>secciones SIN DATOS PARA ARMARLO declarado</span></div></div>'+
+   '<div class="kpi"><span class="ico">'+ic("arbol",22)+'</span><div><b>'+((an.fmeca&&an.fmeca.items||[]).length)+'</b><span>modos de falla en el FMECA</span></div></div>'+
+   '<div class="kpi"><span class="ico">'+ic("faja",22)+'</span><div><b>'+((c.replicas||[]).length)+'</b><span>réplicas de figuras y tablas</span></div></div>'+
+   '<div class="kpi"><span class="ico">'+ic("vagoneta",22)+'</span><div><b>'+((c.cifras||[]).length)+'</b><span>cifras con su condición</span></div></div></div></div>'+
    '<div class="card"><h2>'+ic("brujula")+' Cadena RCM</h2><div id="rs-cad"></div></div>'+
+   '<div class="card"><h2>'+ic("casco")+' Las 14 secciones del dossier</h2><div class="idx" id="rs-idx"></div></div>'+
    '<div class="grid2"><div class="card"><h2>'+ic("doc")+' Lo esencial</h2><ul id="rs-es" style="padding-left:18px;margin:0"></ul></div><div class="card"><h2>'+ic("libro")+' Fuentes mejor respaldadas</h2><div id="rs-rk"></div><p><button class="btn" data-go="evi" data-sub="ran">Ver ranking completo</button></p></div></div>';
-  cadena($("#rs-cad",host));
+  cadena($("#rs-cad",host));indice14($("#rs-idx",host));
   $("#rs-es",host).innerHTML=esencial().map(function(h){var t=h.texto.replace(/\. Límite:.*$/,"");return '<li style="margin:0 0 8px">'+lt(t,150)+' '+chips(h.evidencia)+'</li>'}).join("");
   var tmp=document.createElement("div");rankingFuentes(tmp,5);var t=tmp.querySelector("#rk-tb");$("#rs-rk",host).innerHTML='<div class="tw"><table class="rank">'+t.innerHTML+'</table></div>'
 }
@@ -710,7 +970,9 @@ function vModos(host){
   var an=D.caso.analisis||{};
   var it=[];
   if(an.arbol)it.push({id:"arb",label:"Árbol de fallas",icon:"arbol",fn:function(p){p.innerHTML='<div class="card"><h2>'+ic("arbol")+' '+esc(an.arbol.evento_tope||"Árbol de fallas")+'</h2><div id="ma-d"></div><details style="margin-top:10px"><summary>Calculadora de probabilidades del evento tope</summary><div id="ma-c"></div></details></div>';svgArbol($("#ma-d",p),an.arbol);vArbol($("#ma-c",p))}});
-  if(an.acr&&an.acr.ishikawa)it.push({id:"ish",label:"Ishikawa",icon:"grafico",fn:function(p){p.innerHTML='<div class="card"><h2>'+ic("grafico")+' Diagrama de Ishikawa (6M)</h2><div id="mi-d"></div></div>';svgIshikawa($("#mi-d",p),an.acr.ishikawa)}});
+  if(an.acr&&an.acr.ishikawa)it.push({id:"ish",label:"Ishikawa",icon:"pez",fn:vIshikawa});
+  if(an.porques&&(an.porques.items||[]).length)it.push({id:"por",label:"5 porqués",icon:"pregunta",fn:vPorques});
+  if(an.observar&&(an.observar.items||[]).length)it.push({id:"obs",label:"Qué observar",icon:"ojo",fn:vObservar});
   if(an.fmeca)it.push({id:"fme",label:"FMECA",icon:"ficha",fn:function(p){vFmeca(p);var d=document.createElement("div");p.appendChild(d);docPorModo(d)}});
   if(an.acr)it.push({id:"hip",label:"Hipótesis y técnicas",icon:"matraz",fn:function(p){vAcr(p);var d=document.createElement("div");p.appendChild(d);matrizEnsayos(d)}});
   subtabs(host,"mod",it);
@@ -730,12 +992,15 @@ function vMonitoreo(host){
   subtabs(host,"mon",it);
 }
 function vEvidenciaN(host){
-  subtabs(host,"evi",[{id:"ran",label:"Ranking",icon:"libro",fn:function(p){rankingFuentes(p)}},{id:"cob",label:"Cobertura por sección",icon:"escudo",fn:vDossier},
-   {id:"per",label:"Perfil",icon:"grafico",fn:function(p){perfil(p)}},{id:"reg",label:"Registro completo",icon:"db",fn:vEvidencia}]);
+  var it=[{id:"ran",label:"Ranking de impacto",icon:"trofeo",fn:function(p){rankingFuentes(p)}}];
+  if((D.caso.replicas||[]).length||(D.caso.cifras||[]).length)it.push({id:"rep",label:"Réplicas y cifras",icon:"faja",fn:vReplicas});
+  subtabs(host,"evi",it.concat([{id:"cob",label:"Cobertura por sección",icon:"escudo",fn:vDossier},
+   {id:"per",label:"Perfil",icon:"grafico",fn:function(p){perfil(p)}},{id:"reg",label:"Registro completo",icon:"db",fn:vEvidencia}]));
 }
 function vPlanN(host){
   var it=[{id:"vac",label:"Vacíos y preguntas",icon:"alerta",fn:vRastro}];
   if((D.caso.plan||[]).length)it.push({id:"pla",label:"Plan de acción",icon:"ficha",fn:vPlan});
+  if((D.caso.trazabilidad||[]).length)it.push({id:"equ",label:"Equipo de agentes",icon:"equipo",fn:vEquipo});
   it.push({id:"his",label:"Historial",icon:"doc",fn:vHistorial});
   subtabs(host,"pla",it);
 }
@@ -754,7 +1019,10 @@ var DESCARGAS=[
  ["db","Datos del informe (JSON)",function(){return["datos-"+nombreBase()+".json",JSON.stringify({caso:D.caso,ajustes:D.ajustes,generado:D.generado},null,1)]}],
  ["libro","Registro de evidencia (CSV)",function(){return["evidencia-"+nombreBase()+".csv",csv([["id","nivel","tipo","autores","anio","titulo","fuente","doi","acceso","afirma","limites","cuartil"]].concat(D.evidencia.map(function(e){var r=e.referencia||{};return[e.id,e.nivel_evidencia,e.tipo,r.autores,r.anio,r.titulo,r.fuente,r.doi,e.acceso,e.afirma,e.limites,(e.revista_cuartil&&e.revista_cuartil.valor)?"Q"+e.revista_cuartil.valor:"sin verificar"]})))]}],
  ["doc","Referencias en APA 7 (TXT)",function(){return["referencias-"+nombreBase()+".txt",D.evidencia.filter(function(e){return e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"}).map(function(e){return e.apa}).sort().join("\n\n")]}],
- ["guardar","Mi sesión: puntajes y valores (JSON)",function(){return["sesion-"+nombreBase()+".json",JSON.stringify(sesion(),null,1)]}]
+ ["guardar","Mi sesión: puntajes y valores (JSON)",function(){return["sesion-"+nombreBase()+".json",JSON.stringify(sesion(),null,1)]}],
+ ["imprimir","Informe para imprimir (HTML)",function(){var c=document.documentElement.cloneNode(true);["#tabs","#main","#drawer","#mbody","#sres","#dmenu"].forEach(function(s){var e=c.querySelector(s);if(e)e.innerHTML=""});c.querySelector("body").setAttribute("data-imprimir","1");return["imprimir-"+nombreBase()+".html","<!doctype html>\n"+c.outerHTML]}],
+ ["faja","Réplicas y cifras (CSV)",function(){var rows=[["id","titulo","tipo","etiqueta_o_columna","valor_o_fila","ic_inferior","ic_superior","unidad","replica_de","evidencia"]];(D.caso.replicas||[]).forEach(function(r){if(r.tipo==="tabla"){rows.push([r.id,r.titulo,"tabla"].concat([(r.columnas||[]).join(" | ")]));(r.filas||[]).forEach(function(f){rows.push([r.id,r.titulo,"fila",f.join(" | ")])})}else(r.series||[]).forEach(function(s){rows.push([r.id,r.titulo,r.tipo,s.etiqueta,s.valor,s.ic?s.ic[0]:"",s.ic?s.ic[1]:"",r.unidad,r.replica_de,(r.evidencia||[]).join(" ")])})});(D.caso.cifras||[]).forEach(function(c){rows.push([c.id,c.mide,"cifra","",c.valor,"","",c.unidad,c.condiciones,(c.evidencia||[]).join(" ")])});return["replicas-"+nombreBase()+".csv",csv(rows)]}],
+ ["trofeo","Ranking de fuentes (CSV)",function(){var U=usos();return["ranking-"+nombreBase()+".csv",csv([["id","tipo","nivel","anio","autores","titulo","usos_en_el_analisis","citas"]].concat(D.evidencia.map(function(e){var r=e.referencia||{};return[e.id,e.tipo,e.nivel_evidencia,r.anio,r.autores,r.titulo,U[e.id]||0,"SIN DATOS PARA ARMARLO"]})))]}]
 ];
 function buildIndex(){
   var I=[],c=D.caso,an=c.analisis||{},dz=c.dossier;
@@ -767,7 +1035,11 @@ function buildIndex(){
   if(an.lcc)(an.lcc.elementos||[]).forEach(function(e){add("Costo",e.nombre+" "+(e.como_se_calcula||""),"vyc","cos")});
   if(an.vida)(an.vida.hallazgos||[]).forEach(function(h){add("Vida",h.texto,"vyc","met")});
   if(an.predictivo){(an.predictivo.hallazgos||[]).forEach(function(h){add("Predictivo",h.texto,"mon","est")});(an.predictivo.estrategia||[]).forEach(function(h){add("Estrategia",h.etapa+" "+h.accion,"mon","est")})}
-  if(dz)dz.orden.forEach(function(k){var s=dz.secciones[k]||{};(s.elementos||[]).forEach(function(e){add(dz.titulos[k],e.titulo,"evi","cob")});if(s.vacio)add("VACÍO "+dz.titulos[k],s.vacio,"pla","vac")});
+  if(dz)dz.orden.forEach(function(k){var s=dz.secciones[k]||{};(s.elementos||[]).forEach(function(e){add(dz.titulos[k],e.titulo,"evi","cob")});if(s.vacio)add("SIN DATOS PARA ARMARLO "+dz.titulos[k],s.vacio,"pla","vac")});
+  ((an.porques||{}).items||[]).forEach(function(h){h.cadena.forEach(function(x){add("5 porqués "+h.causa,x.porque,"mod","por")})});
+  ((an.observar||{}).items||[]).forEach(function(x){add("Qué observar "+x.hipotesis,x.sintoma+" "+x.medicion,"mod","obs")});
+  (c.replicas||[]).forEach(function(r){add("Réplica",r.id+" "+r.titulo+" "+(r.replica_de||""),"evi","rep")});
+  (c.cifras||[]).forEach(function(x){add("Cifra",x.valor+" "+(x.unidad||"")+" "+x.mide+" "+(x.condiciones||""),"evi","rep")});
   (c.vacios||[]).forEach(function(v){add("Vacío",v,dz?"pla":"ras",dz?"vac":null)});
   return I;
 }
@@ -779,8 +1051,8 @@ function boot(){
   var m=D.caso.meta;$("#ttl").innerHTML=esc(m.titulo)+'<small>'+esc([m.activo,m.origen_datos&&("datos: "+m.origen_datos)].filter(Boolean).join(" · "))+'</small>';
   var c=D.caso,an=c.analisis||{};
   if(c.dossier){
-    tab("res","Resumen",vResumenN,true,"brujula");tab("mod","Modos y causas",vModos,true,"arbol");tab("vyc","Vida y costos",vVidaCostos,true,"pulso");
-    tab("mon","Monitoreo y ML",vMonitoreo,true,"grafico");tab("evi","Evidencia",vEvidenciaN,true,"libro");tab("pla","Vacíos y plan",vPlanN,true,"ficha");
+    tab("res","Resumen",vResumenN,true,"casco");tab("mod","Modos y causas",vModos,true,"engranaje");tab("vyc","Vida y costos",vVidaCostos,true,"rodamiento");
+    tab("mon","Monitoreo y ML",vMonitoreo,true,"onda");tab("evi","Evidencia",vEvidenciaN,true,"microscopio");tab("ref","Referencias",vReferencias,true,"libro");tab("pla","Vacíos y plan",vPlanN,true,"pico");
   }else{
     tab("res","Resumen",vResumen,true,"brujula");tab("tl","Línea de tiempo",vTiempo,(c.linea_tiempo||[]).length>0,"doc");tab("sen","Señales",vSenales,(c.series||[]).length>0,"pulso");
     tab("cau","Causas y técnicas",vCausas,true,"arbol");tab("dat","Datos",vDatos,(c.tablas||[]).length>0,"db");tab("evi","Evidencia",vEvidencia,true,"libro");tab("vid","Vida",vVida,true,"pulso");
@@ -789,10 +1061,10 @@ function boot(){
   var tb=$("#tabs"),mn=$("#main");
   VIEWS.forEach(function(v){
     var b=document.createElement("button");b.innerHTML=ic(v.icon||"doc",18)+'<span>'+esc(v.label)+'</span>';b.setAttribute("role","tab");b.dataset.id=v.id;tb.appendChild(b);
-    var s=document.createElement("section");s.className="tab";s.id="v-"+v.id;mn.appendChild(s);b.onclick=function(){sel(v.id)};
+    var s=document.createElement("section");s.className="tab";s.id="v-"+v.id;s.dataset.label=v.label;mn.appendChild(s);b.onclick=function(){sel(v.id)};
   });
   var cur="res";
-  function sel(id,sub){cur=id;
+  function sel(id,sub){cur=id;window.__cur=id;
     VIEWS.forEach(function(v){var s=$("#v-"+v.id),b=$('[data-id='+v.id+']',tb),on=v.id===id;s.classList.toggle("on",on);b.setAttribute("aria-selected",on);
       if(on&&!s.dataset.done){s.dataset.done=1;try{v.fn(s)}catch(e){s.innerHTML='<div class="note bad">Error al dibujar esta vista: '+esc(e.message)+'</div>';window.__errores=(window.__errores||[]).concat(String(e))}}});
     if(sub&&SUBSEL[id])SUBSEL[id](sub);
@@ -805,6 +1077,8 @@ function boot(){
   var dm=$("#dmenu");dm.innerHTML=DESCARGAS.map(function(d,i){return '<button data-d="'+i+'">'+ic(d[0],16)+esc(d[1])+'</button>'}).join("");
   $("#b-desc").onclick=function(e){e.stopPropagation();dm.hidden=!dm.hidden};
   dm.onclick=function(e){var b=e.target.closest("button");if(!b)return;var r=DESCARGAS[+b.dataset.d][2]();guardarArchivo(r[0],r[1]);dm.hidden=true};
+  $("#b-imprimir").onclick=imprimir;$("#scrim").onclick=drawerOff;
+  if(document.body.dataset.imprimir==="1")setTimeout(imprimir,700);
   $("#b-guardar").onclick=function(){var r=DESCARGAS[4][2]();guardarArchivo(r[0],r[1])};
   $("#b-cargar").onclick=function(){$("#f-cargar").click()};
   $("#f-cargar").onchange=function(e){var f=e.target.files[0];if(!f)return;var rd=new FileReader();rd.onload=function(){try{var o=JSON.parse(rd.result);if(o.tipo!=="sesion-informe")throw 0;Object.keys(o.datos||{}).forEach(function(k){try{localStorage.setItem(k,o.datos[k])}catch(x){}});

@@ -9,7 +9,7 @@ este código y reporta n, método, intervalos y advertencias.
 ```bash
 cd tools/reliability
 pip install -r requirements.txt
-python -m pytest -q          # 151 pruebas (~25 s): kit, correcciones y reglas del equipo de agentes
+python -m pytest -q          # 152 pruebas (~25 s): kit, correcciones y reglas del equipo de agentes
 python examples/demo.py      # flujo completo con datos sintéticos (ILUSTRATIVOS)
 ```
 

@@ -1,0 +1,90 @@
+[
+ {
+  "agente": "reliability-engineer",
+  "rol": "Líder del equipo",
+  "hizo": "Clasificó la solicitud, repartió frentes con un encargo de ocho bloques a cada agente, integró resultados y aplicó las correcciones de la verificación.",
+  "entrada": "Solicitud de la persona (nombre del modo de falla)",
+  "salida": "Dossier, informe y registro de feedback",
+  "aprendio": "Reglas permanentes de la persona: nada inventado, APA 7, sin nombres de empresa, sin la palabra prohibida, SIN DATOS PARA ARMARLO."
+ },
+ {
+  "agente": "reliability-literature-researcher",
+  "rol": "Investigación y lectura de fuentes",
+  "hizo": "Cinco frentes de búsqueda y dos lectores de textos completos de preprints; registraron fuentes con extracto literal y localizador.",
+  "entrada": "Frente de búsqueda y rango de ids",
+  "salida": "Entradas del registro de evidencia, cifras y réplicas",
+  "aprendio": "El nivel de lectura se deriva del acceso; los números de réplicas deben aparecer literales en el extracto."
+ },
+ {
+  "agente": "reliability-standards-researcher",
+  "rol": "Normas y fuentes formales",
+  "hizo": "Buscó normas, tesis y repositorios; las normas sin edición verificada quedaron como NO-VERIFICADO.",
+  "entrada": "Modo de falla y componente",
+  "salida": "Entradas de normas y pistas",
+  "aprendio": "No se cita cláusula ni edición sin abrir el documento."
+ },
+ {
+  "agente": "reliability-dataset-scout",
+  "rol": "Datos abiertos de vida",
+  "hizo": "Buscó conjuntos abiertos con tiempos hasta la falla y censura.",
+  "entrada": "Componente",
+  "salida": "Lista de conjuntos con límites",
+  "aprendio": "Ningún conjunto abierto se ajusta como dato de la chumacera de polea."
+ },
+ {
+  "agente": "reliability-rca-investigator",
+  "rol": "Causa raíz",
+  "hizo": "Construyó hipótesis, árbol de fallas, Ishikawa de seis ramas, cadenas de cinco porqués y la tabla de qué observar.",
+  "entrada": "Registro de evidencia",
+  "salida": "acr, arbol, ishikawa, porques, observar",
+  "aprendio": "Sin caso real ninguna causa pasa de posible; lo no sustentado queda como SIN DATOS PARA ARMARLO."
+ },
+ {
+  "agente": "reliability-fmeca-rcm",
+  "rol": "FMECA y RCM",
+  "hizo": "Listó modos de falla con efectos, causas, detección y tarea; dejó S, O y D para quien los conozca.",
+  "entrada": "Registro y árbol",
+  "salida": "fmeca.json",
+  "aprendio": "Las escalas S-O-D no se inventan."
+ },
+ {
+  "agente": "reliability-life-analyst",
+  "rol": "Estadística de vida",
+  "hizo": "Decidió el método de vida admisible y declaró qué no se puede ajustar sin datos.",
+  "entrada": "Conjuntos abiertos y literatura",
+  "salida": "vida.json",
+  "aprendio": "Con un solo evento o sin datos no se ajusta ninguna distribución."
+ },
+ {
+  "agente": "reliability-predictive-analyst",
+  "rol": "Predictivo y ML",
+  "hizo": "Definió estrategia de monitoreo y riesgos de validación de modelos.",
+  "entrada": "Literatura leída",
+  "salida": "predictivo.json",
+  "aprendio": "Los resultados de banco no se trasladan como precisión de planta."
+ },
+ {
+  "agente": "reliability-economics-kpi",
+  "rol": "Economía",
+  "hizo": "Armó la estructura de costos y fórmulas del LCC sin cifras.",
+  "entrada": "Registro",
+  "salida": "lcc.json",
+  "aprendio": "Sin costos aportados o publicados el valor queda vacío."
+ },
+ {
+  "agente": "reliability-evidence-verifier",
+  "rol": "Verificación independiente",
+  "hizo": "Cuatro pasadas; sus hallazgos se corrigieron antes de entregar.",
+  "entrada": "Texto y fuentes, sin el razonamiento del autor",
+  "salida": "Lista de hallazgos",
+  "aprendio": "Las cifras sin extracto y las inferencias presentadas como evidencia se bajan de nivel."
+ },
+ {
+  "agente": "Ensamblador del kit",
+  "rol": "Ensamblado con compuertas",
+  "hizo": "Las compuertas del kit se ejecutan en el ensamblado, lo lanza el líder; los ajustes automáticos se listan en el informe. El agente integrador ya existe y se usará en el próximo caso.",
+  "entrada": "JSON de todos los agentes",
+  "salida": "informe.html",
+  "aprendio": "Cada elemento sin fuente válida se elimina y queda registrado."
+ }
+]

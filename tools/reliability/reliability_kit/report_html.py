@@ -190,6 +190,14 @@ def aplicar_compuertas_analisis(an: dict, ledger: Ledger) -> list[dict]:
         for cat, lst in list((r.get("ishikawa") or {}).items()):
             r["ishikawa"][cat] = _filtrar_items(lst, ledger, f"Ishikawa {cat}", aj, clave_id="texto")
         r["ensayos"] = _filtrar_items(r.get("ensayos"), ledger, "ensayo", aj, clave_id="ensayo")
+    pq = an.get("porques")
+    if pq:
+        for h in pq.get("items", []):
+            h["cadena"] = _filtrar_items(h.get("cadena"), ledger, f"5 porqués {h.get('causa', '')}", aj, clave_id="porque")
+        pq["items"] = [h for h in pq.get("items", []) if h.get("cadena")]
+    ob = an.get("observar")
+    if ob:
+        ob["items"] = _filtrar_items(ob.get("items"), ledger, "qué observar", aj, clave_id="hipotesis")
     l = an.get("lcc")
     if l:
         l["elementos"] = _filtrar_items(l.get("elementos"), ledger, "LCC", aj)

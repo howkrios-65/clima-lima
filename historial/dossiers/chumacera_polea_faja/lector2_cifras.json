@@ -1,0 +1,346 @@
+[
+ {
+  "id": "CF-01",
+  "valor": "1,720 y 1,797",
+  "unidad": "rpm",
+  "mide": "Velocidad del motor en el banco CWRU",
+  "condiciones": "Banco de laboratorio; Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora.",
+  "evidencia": [
+   "E-9450"
+  ]
+ },
+ {
+  "id": "CF-02",
+  "valor": "1,700 a 1,800",
+  "unidad": "rpm",
+  "mide": "Velocidad en el banco UORED-VAFCLS",
+  "condiciones": "Banco de laboratorio; Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora.",
+  "evidencia": [
+   "E-9450"
+  ]
+ },
+ {
+  "id": "CF-03",
+  "valor": "600 a 2,100",
+  "unidad": "rpm",
+  "mide": "Rango de velocidad del banco HUST",
+  "condiciones": "Banco de laboratorio; Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora.",
+  "evidencia": [
+   "E-9451"
+  ]
+ },
+ {
+  "id": "CF-04",
+  "valor": "600; 800; 1,000; 1,200; 1,400 y 1,600",
+  "unidad": "rpm",
+  "mide": "Velocidades del motor en el banco PADERBORN",
+  "condiciones": "Banco de laboratorio; Banco de laboratorio (rodamientos pequeños de bolas, cientos a miles de rpm); no comparable con una polea lenta de faja transportadora.",
+  "evidencia": [
+   "E-9451"
+  ]
+ },
+ {
+  "id": "CF-05",
+  "valor": "25,600",
+  "unidad": "Hz",
+  "mide": "Frecuencia de muestreo de HUST (la Tabla 1 del mismo paper lista 51.2 kHz)",
+  "condiciones": "Banco de laboratorio; discrepancia interna del paper entre texto y Tabla 1",
+  "evidencia": [
+   "E-9451",
+   "E-9452"
+  ]
+ },
+ {
+  "id": "CF-06",
+  "valor": "97.58",
+  "unidad": "% exactitud balanceada media",
+  "mide": "CWRU con pliegues por carga, afinado completo desde ImageNet",
+  "condiciones": "K = 4; banco de laboratorio a ~1,720 y 1,797 rpm; desviación 4.30 %",
+  "evidencia": [
+   "E-9456"
+  ]
+ },
+ {
+  "id": "CF-07",
+  "valor": "64.38",
+  "unidad": "% exactitud balanceada media",
+  "mide": "CWRU con pliegues por severidad de falla, afinado completo desde ImageNet",
+  "condiciones": "K = 4; desviación 21.39 %; banco de laboratorio",
+  "evidencia": [
+   "E-9457"
+  ]
+ },
+ {
+  "id": "CF-08",
+  "valor": "66.88",
+  "unidad": "% exactitud media",
+  "mide": "Mejor resultado por severidad (afinado parcial desde VibNet)",
+  "condiciones": "K = 4; F1 66.21 %; banco de laboratorio",
+  "evidencia": [
+   "E-9458"
+  ]
+ },
+ {
+  "id": "CF-09",
+  "valor": "280",
+  "unidad": "muestras",
+  "mide": "Muestras sanas en CWRU (frente a 1542 con falla de pista interna en la división por carga)",
+  "condiciones": "Conteo de segmentos de espectrograma; desbalance entre sano y con falla",
+  "evidencia": [
+   "E-9455"
+  ]
+ },
+ {
+  "id": "CF-10",
+  "valor": "680-2460",
+  "unidad": "rpm",
+  "mide": "Rango de velocidad variable del banco KAIST",
+  "condiciones": "Banco de laboratorio con defectos sembrados; velocidad mínima 680 rpm",
+  "evidencia": [
+   "E-9462"
+  ]
+ },
+ {
+  "id": "CF-11",
+  "valor": "21,000",
+  "unidad": "segmentos por clase",
+  "mide": "Segmentos de 2,000 muestras (0.1 s) por clase",
+  "condiciones": "Validación cruzada de 5 pliegues estratificados barajados",
+  "evidencia": [
+   "E-9463"
+  ]
+ },
+ {
+  "id": "CF-12",
+  "valor": "95.6",
+  "unidad": "% exactitud (pista interna, -5 dB)",
+  "mide": "Exactitud de la clase pista interna con ruido añadido de -5 dB (100 % sin ruido)",
+  "condiciones": "Banco de laboratorio; ruido blanco sintético; promedio de 5 pliegues",
+  "evidencia": [
+   "E-9464"
+  ]
+ },
+ {
+  "id": "CF-13",
+  "valor": "15.8",
+  "unidad": "puntos porcentuales",
+  "mide": "Ganancia máxima frente a PIResNet (compara promedio de 5 pliegues con los mejores resultados del rival)",
+  "condiciones": "Banco KAIST con velocidad variable",
+  "evidencia": [
+   "E-9464"
+  ]
+ },
+ {
+  "id": "CF-14",
+  "valor": "20.2",
+  "unidad": "ms por ventana de 0.1 s",
+  "mide": "Tiempo de inferencia promedio (desviación 0.36)",
+  "condiciones": "Computadora portátil con chip M1 Pro; no dispositivo de planta",
+  "evidencia": [
+   "E-9465"
+  ]
+ },
+ {
+  "id": "CF-15",
+  "valor": "558,660",
+  "unidad": "parámetros",
+  "mide": "Parámetros entrenables de la CNN",
+  "condiciones": "Banco KAIST",
+  "evidencia": [
+   "E-9465"
+  ]
+ },
+ {
+  "id": "CF-16",
+  "valor": "100.00",
+  "unidad": "% exactitud",
+  "mide": "CWRU, ensamble, tres de cuatro cargas retenidas",
+  "condiciones": "Solo resumen del autor; leave-one-condition-out; banco de laboratorio",
+  "evidencia": [
+   "E-9466"
+  ]
+ },
+ {
+  "id": "CF-17",
+  "valor": "92.27",
+  "unidad": "% exactitud",
+  "mide": "CWRU, ensamble, la cuarta carga retenida",
+  "condiciones": "Solo resumen del autor; banco de laboratorio",
+  "evidencia": [
+   "E-9466"
+  ]
+ },
+ {
+  "id": "CF-18",
+  "valor": "40.64",
+  "unidad": "% exactitud",
+  "mide": "JNU, ensamble, reteniendo 1000 rpm (por debajo de la clase mayoritaria)",
+  "condiciones": "Solo resumen del autor; banco JNU a 600-1000 rpm",
+  "evidencia": [
+   "E-9466"
+  ]
+ },
+ {
+  "id": "CF-19",
+  "valor": "57.91",
+  "unidad": "% exactitud",
+  "mide": "JNU, regresión logística, reteniendo 1000 rpm",
+  "condiciones": "Solo resumen del autor; banco JNU",
+  "evidencia": [
+   "E-9466"
+  ]
+ },
+ {
+  "id": "CF-20",
+  "valor": "0.29 frente a 0.36",
+  "unidad": "AURC",
+  "mide": "Divergencia de Jensen-Shannon entre modelos de tiempo y frecuencia frente a entropía de un modelo (partición estándar)",
+  "condiciones": "Solo resumen del autor; menor es mejor",
+  "evidencia": [
+   "E-9467"
+  ]
+ },
+ {
+  "id": "CF-21",
+  "valor": "72",
+  "unidad": "criticidad (conteo de detecciones)",
+  "mide": "Umbral de criticidad para declarar un evento (equivale a 12 horas seguidas con datos cada 10 minutos)",
+  "condiciones": "Aerogeneradores, SCADA cada 10 minutos; depende de la duración de la serie",
+  "evidencia": [
+   "E-9469",
+   "E-9472"
+  ]
+ },
+ {
+  "id": "CF-22",
+  "valor": "1, 1, 1 y 2",
+  "unidad": "pesos",
+  "mide": "Pesos del promedio de CARE (el 2 es de la exactitud sobre series normales)",
+  "condiciones": "Definición de la métrica",
+  "evidencia": [
+   "E-9470"
+  ]
+ },
+ {
+  "id": "CF-23",
+  "valor": "0.5",
+  "unidad": "puntaje CARE",
+  "mide": "Puntaje de una estrategia aleatoria; cota inferior a superar",
+  "condiciones": "Mini-benchmark en aerogeneradores",
+  "evidencia": [
+   "E-9473"
+  ]
+ },
+ {
+  "id": "CF-24",
+  "valor": "0.66",
+  "unidad": "puntaje CARE",
+  "mide": "Autoencoder con umbral calibrado en el mini-benchmark",
+  "condiciones": "Aerogeneradores; no es referencia para chumaceras",
+  "evidencia": [
+   "E-9473"
+  ]
+ },
+ {
+  "id": "CF-25",
+  "valor": "95",
+  "unidad": "series",
+  "mide": "Series del conjunto CARE (44 con evento y 51 normales, 89 años, 36 aerogeneradores)",
+  "condiciones": "SCADA de 10 minutos; 3 parques",
+  "evidencia": [
+   "E-9471"
+  ]
+ },
+ {
+  "id": "CF-26",
+  "valor": "262",
+  "unidad": "condiciones de trabajo",
+  "mide": "Condiciones reunidas en el conjunto MBHM de nueve bancos públicos",
+  "condiciones": "Misma carga, velocidad y sensor definen una condición",
+  "evidencia": [
+   "E-9474",
+   "E-9478"
+  ]
+ },
+ {
+  "id": "CF-27",
+  "valor": "90.22",
+  "unidad": "% exactitud",
+  "mide": "Cero disparos en JUST con canales de referencia y residuo (87.54 % sin ellos)",
+  "condiciones": "Entrenado sin JUST ni IMS (35 % de los datos); banco de laboratorio",
+  "evidencia": [
+   "E-9475"
+  ]
+ },
+ {
+  "id": "CF-28",
+  "valor": "98.52",
+  "unidad": "% exactitud",
+  "mide": "Cero disparos en IMS con canales de referencia y residuo (97.81 % sin ellos)",
+  "condiciones": "IMS desbalanceado, mayormente sano",
+  "evidencia": [
+   "E-9476"
+  ]
+ },
+ {
+  "id": "CF-29",
+  "valor": "61",
+  "unidad": "% de fallas severas de pista externa",
+  "mide": "Fallas severas clasificadas como moderadas sin los canales auxiliares",
+  "condiciones": "IMS, cero disparos",
+  "evidencia": [
+   "E-9476"
+  ]
+ },
+ {
+  "id": "CF-30",
+  "valor": "90.26 y 89.14",
+  "unidad": "% exactitud",
+  "mide": "Cero disparos sobre CWRU retirando CWRU (y CWRU y XJTU) del entrenamiento",
+  "condiciones": "Banco de laboratorio",
+  "evidencia": [
+   "E-9477"
+  ]
+ },
+ {
+  "id": "CF-31",
+  "valor": "1000",
+  "unidad": "días",
+  "mide": "Tope de la vida remanente (RUL) en las etiquetas",
+  "condiciones": "Etiquetas derivadas de registros de reparación; dispositivos industriales no rodamientos",
+  "evidencia": [
+   "E-9480"
+  ]
+ },
+ {
+  "id": "CF-32",
+  "valor": "85{:}15",
+  "unidad": "relación entrenamiento:prueba (el texto escribe 85{:}15)",
+  "mide": "Partición cronológica con descarte de ventanas que cruzan el límite",
+  "condiciones": "Datos de sensores de dos tipos de dispositivo",
+  "evidencia": [
+   "E-9480"
+  ]
+ },
+ {
+  "id": "CF-33",
+  "valor": "60 frente a 88",
+  "unidad": "MAE (unidad no rotulada)",
+  "mide": "Cabeza lineal sobre Chronos-2 congelado frente a la red convolucional temporal (TCN), dispositivo A",
+  "condiciones": "El texto no rotula la unidad; RUL en días",
+  "evidencia": [
+   "E-9481"
+  ]
+ },
+ {
+  "id": "CF-34",
+  "valor": "80",
+  "unidad": "pasos de contexto",
+  "mide": "Longitud de contexto a partir de la cual el rendimiento se satura",
+  "condiciones": "Dispositivo A, intervalo de 1 hora",
+  "evidencia": [
+   "E-9480",
+   "E-9481"
+  ]
+ }
+]

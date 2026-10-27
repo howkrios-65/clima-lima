@@ -1,0 +1,326 @@
+{
+ "items": [
+  {
+   "hipotesis": "H1",
+   "sintoma": "Lubricante retirado seco, endurecido, decolorado o con partículas",
+   "medicion": "Inspección del lubricante al desmontar y análisis de aceite o grasa (vibración, aceite y termografía combinados mejoran la confianza)",
+   "referencia": null,
+   "evidencia": [
+    "E-6004",
+    "E-8003"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H1",
+   "sintoma": "Soporte con temperatura más alta que soportes gemelos",
+   "medicion": "Termografía comparativa antes de la parada",
+   "referencia": null,
+   "evidencia": [
+    "E-8003",
+    "E-9302"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H1",
+   "sintoma": "Superficies de rodadura con desgaste o contacto metal-metal",
+   "medicion": "Inspección visual y con aumento de pistas y elementos rodantes",
+   "referencia": null,
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H1",
+   "sintoma": "Registros de engrase irregulares o ausentes",
+   "medicion": "Revisión del plan, producto, cantidad y frecuencia contra la recomendación del fabricante",
+   "referencia": null,
+   "evidencia": [
+    "E-6001",
+    "E-6004"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H2",
+   "sintoma": "Corrosión o picaduras en pistas y asientos",
+   "medicion": "Inspección visual y con aumento tras desmontar",
+   "referencia": null,
+   "evidencia": [
+    "E-6004",
+    "E-6002"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H2",
+   "sintoma": "Partículas o agua en el lubricante",
+   "medicion": "Análisis del lubricante retirado",
+   "referencia": null,
+   "evidencia": [
+    "E-6001",
+    "E-6004"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H2",
+   "sintoma": "Sellos o laberintos deteriorados o desplazados",
+   "medicion": "Inspección de sellos y retenes, y limpieza de puertos de engrase",
+   "referencia": null,
+   "evidencia": [
+    "E-6004",
+    "E-9301"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H2",
+   "sintoma": "Acumulación de polvo o humedad en el entorno del soporte (condición a verificar)",
+   "medicion": "Registro de estado de limpieza y práctica de lavado en la zona",
+   "referencia": null,
+   "evidencia": [
+    "E-9304"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H3",
+   "sintoma": "Desgaste asimétrico o huella de contacto desplazada en pista",
+   "medicion": "Inspección de pistas tras desmontar",
+   "referencia": null,
+   "evidencia": [
+    "E-6001",
+    "E-6002"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H3",
+   "sintoma": "Vibración elevada en las frecuencias del eje antes de aparecer frecuencias de defecto del rodamiento",
+   "medicion": "Espectro de baja frecuencia comparado con la envolvente",
+   "referencia": null,
+   "evidencia": [
+    "E-9305",
+    "E-8008"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H3",
+   "sintoma": "Soporte o eje fuera de posición de diseño",
+   "medicion": "Alineación de soportes y escuadra del eje con el método del fabricante; revisión de pernos y base",
+   "referencia": null,
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H4",
+   "sintoma": "Desgaste o deformación en la zona de carga de la pista",
+   "medicion": "Inspección de pistas y elementos rodantes tras desmontar",
+   "referencia": null,
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H4",
+   "sintoma": "Carga real superior a la de diseño",
+   "medicion": "Recalcular la reacción de la chumacera con tensiones reales de banda y compararla con la capacidad dinámica; la vida nominal depende de esa relación elevada a un exponente (E-6002)",
+   "referencia": null,
+   "evidencia": [
+    "E-6002",
+    "E-6003"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H4",
+   "sintoma": "Picos de corriente del motor en arranque con carga (condición a verificar)",
+   "medicion": "Registro de corriente del motor en arranques con carga y en régimen",
+   "referencia": null,
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H5",
+   "sintoma": "Sobrecalentamiento del soporte",
+   "medicion": "Termografía y revisión de coloración térmica en las pistas",
+   "referencia": null,
+   "evidencia": [
+    "E-6004",
+    "E-8003"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H5",
+   "sintoma": "Marcas de giro del anillo o fretting en el asiento",
+   "medicion": "Inspección del asiento del eje y del alojamiento",
+   "referencia": null,
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H5",
+   "sintoma": "Ajuste fuera de especificación",
+   "medicion": "Medir diámetros de eje y alojamiento y comparar con la tolerancia del fabricante del rodamiento",
+   "referencia": null,
+   "evidencia": [
+    "E-6002",
+    "E-6004"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H6",
+   "sintoma": "Marcas de impacto o carga indebida en pistas",
+   "medicion": "Inspección de pistas del rodamiento retirado",
+   "referencia": null,
+   "evidencia": [
+    "E-6004"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H6",
+   "sintoma": "Falla temprana tras un montaje reciente",
+   "medicion": "Fecha y registro de la última instalación frente al momento de la falla",
+   "referencia": null,
+   "evidencia": [
+    "E-6004",
+    "E-9301"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H6",
+   "sintoma": "Procedimiento, herramientas o verificación de montaje ausentes",
+   "medicion": "Revisar el procedimiento vigente y las herramientas de calado",
+   "referencia": null,
+   "evidencia": [
+    "E-6004"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H7",
+   "sintoma": "Descascarado subsuperficial en la pista",
+   "medicion": "Inspección y morfología del daño tras desmontar",
+   "referencia": null,
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H7",
+   "sintoma": "Horas de servicio cercanas o superiores a la vida nominal calculada con la carga real",
+   "medicion": "Comparar horas acumuladas con la vida nominal; la nominal básica es la que alcanza o supera el 90 % de la población",
+   "referencia": "Vida nominal básica: valor que el 90 % de una población de rodamientos idénticos alcanza o supera (E-6003).",
+   "evidencia": [
+    "E-6003"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H7",
+   "sintoma": "Frecuencias de defecto (BPFO, BPFI, BSF, FTF) y armónicos en el espectro de envolvente",
+   "medicion": "Análisis de envolvente sobre la banda elegida (kurtograma como apoyo)",
+   "referencia": null,
+   "evidencia": [
+    "E-8008",
+    "E-8006",
+    "E-8005"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H8",
+   "sintoma": "RMS o velocidad global estables mientras avanza el defecto",
+   "medicion": "Graficar RMS, velocidad, kurtosis y envolvente del historial",
+   "referencia": null,
+   "evidencia": [
+    "E-8001",
+    "E-8003"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H8",
+   "sintoma": "Kurtosis que baja al extenderse el defecto, leída como mejora",
+   "medicion": "Revisar la tendencia de kurtosis junto con envolvente",
+   "referencia": "Criterio citado en una revisión: kurtosis menor que 3 buen estado, mayor que 3 operación con restricciones, mayor que 5 inaceptable; los autores no hallaron sustento teórico ni empírico de estos límites y NO deben usarse como umbral (E-8001).",
+   "evidencia": [
+    "E-8001",
+    "E-8003"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H8",
+   "sintoma": "Defecto incipiente sin captar por banda de adquisición baja",
+   "medicion": "Revisar rango de frecuencias del sensor y si se aplicó envolvente en banda alta",
+   "referencia": "Los defectos incipientes excitan frecuencias propias típicamente en el rango de 10 kHz o más (E-9307). Fuente de banco, no de polea lenta.",
+   "evidencia": [
+    "E-9307",
+    "E-8006"
+   ],
+   "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H8",
+   "sintoma": "Umbrales de alarma sin calibrar con fallas del activo",
+   "medicion": "Rastrear el origen de cada umbral y su validación",
+   "referencia": null,
+   "evidencia": [
+    "E-9306",
+    "E-8001"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H9",
+   "sintoma": "Fretting en el asiento",
+   "medicion": "Examen visual y con aumento de asiento y anillo",
+   "referencia": null,
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H9",
+   "sintoma": "Corrosión superficial en pistas y elementos",
+   "medicion": "Inspección de pistas; cruzar con análisis de lubricante (contaminación, H2)",
+   "referencia": null,
+   "evidencia": [
+    "E-6002",
+    "E-6004"
+   ],
+   "nivel": "EVIDENCIA"
+  },
+  {
+   "hipotesis": "H9",
+   "sintoma": "Desgaste en elementos o asiento",
+   "medicion": "Inspección dimensional y visual de pistas, elementos y asiento",
+   "referencia": null,
+   "evidencia": [
+    "E-6002"
+   ],
+   "nivel": "EVIDENCIA"
+  }
+ ],
+ "vacios": [
+  "Valores de referencia (umbrales de temperatura, vibración, contaminación) : SIN DATOS PARA ARMARLO; se fijan con el fabricante o con datos del activo."
+ ]
+}
