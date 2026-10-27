@@ -4,65 +4,147 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>__TITULO__</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f6f7f9;--panel:#fff;--ink:#16202b;--mut:#5b6877;--line:#d9dee5;--acc:#1f5fbf;--ok:#1a7f4b;--warn:#a86400;--bad:#b3261e;--c1:#1f5fbf;--c2:#c2410c;--c3:#0f766e;--c4:#7c3aed;--soft:#eef2f7}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f141a;--panel:#171e26;--ink:#e6ebf1;--mut:#9aa7b6;--line:#2b3542;--acc:#6aa5f5;--ok:#4cc38a;--warn:#e0a04a;--bad:#f2766e;--c1:#6aa5f5;--c2:#f08a50;--c3:#3cc2b0;--c4:#b08af7;--soft:#1e2733}}
-:root[data-theme="dark"]{--bg:#0f141a;--panel:#171e26;--ink:#e6ebf1;--mut:#9aa7b6;--line:#2b3542;--acc:#6aa5f5;--ok:#4cc38a;--warn:#e0a04a;--bad:#f2766e;--c1:#6aa5f5;--c2:#f08a50;--c3:#3cc2b0;--c4:#b08af7;--soft:#1e2733}
+:root{--bg:#f2f7fc;--panel:#ffffff;--ink:#1e2b3a;--mut:#62758a;--line:#dbe6f1;--soft:#eaf2fa;--soft2:#f6f9fd;--acc:#4e8cc2;--acc2:#e3eef9;--ok:#4f9d75;--warn:#d99a42;--bad:#d96b72;--c1:#5b9bd5;--c2:#f2a65a;--c3:#7bbf8e;--c4:#b69bd6;--c5:#6cc3c3;--c6:#ecc96b;--shadow:0 1px 2px rgba(40,70,100,.06),0 8px 22px rgba(40,70,100,.07);--hero1:#d9eafa;--hero2:#efe6fa;--fb:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;--fh:"Manrope","Source Sans 3",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1824;--panel:#152233;--ink:#e5eef8;--mut:#94a9bf;--line:#243a52;--soft:#1b2c40;--soft2:#182738;--acc:#79b2e6;--acc2:#1c3350;--ok:#6cc08f;--warn:#e6b05a;--bad:#ea8a90;--c1:#79b2e6;--c2:#f4b676;--c3:#8fd0a0;--c4:#c8afe6;--c5:#86d3d3;--c6:#f0d583;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.28);--hero1:#18314d;--hero2:#2a2440;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1824;--panel:#152233;--ink:#e5eef8;--mut:#94a9bf;--line:#243a52;--soft:#1b2c40;--soft2:#182738;--acc:#79b2e6;--acc2:#1c3350;--ok:#6cc08f;--warn:#e6b05a;--bad:#ea8a90;--c1:#79b2e6;--c2:#f4b676;--c3:#8fd0a0;--c4:#c8afe6;--c5:#86d3d3;--c6:#f0d583;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.28);--hero1:#18314d;--hero2:#2a2440;color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-header{padding:16px;border-bottom:1px solid var(--line);background:var(--panel)}
-header h1{margin:0 0 4px;font-size:20px}
-header .sub{color:var(--mut);font-size:13px}
-.wrap{max-width:1150px;margin:0 auto;padding:0 16px}
-nav{position:sticky;top:0;z-index:5;background:var(--panel);border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap}
-nav button{border:0;background:none;color:var(--mut);padding:11px 13px;font:inherit;cursor:pointer;border-bottom:3px solid transparent}
-nav button[aria-selected=true]{color:var(--ink);border-color:var(--acc);font-weight:600}
-main{padding:16px 0 60px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--fb)}
+h1,h2,h3{font-family:var(--fh);letter-spacing:-.01em}
+.ic{vertical-align:-3px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#app{display:grid;grid-template-columns:232px minmax(0,1fr);min-height:100vh}
+#side{position:sticky;top:0;height:100vh;background:var(--panel);border-right:1px solid var(--line);padding:14px 10px;display:flex;flex-direction:column;gap:6px;overflow:auto}
+.brand{display:flex;gap:10px;align-items:center;padding:6px 8px 14px;font:700 15px var(--fh);color:var(--ink)}
+.brand i{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--c1),var(--c5));color:#fff}
+#tabs{display:flex;flex-direction:column;gap:3px}
+#tabs button{display:flex;gap:10px;align-items:center;border:0;background:none;color:var(--mut);padding:10px 12px;border-radius:10px;font:600 14px var(--fb);cursor:pointer;text-align:left}
+#tabs button:hover{background:var(--soft)}
+#tabs button[aria-selected=true]{background:var(--acc2);color:var(--ink)}
+#tabs button[aria-selected=true] .ic{color:var(--acc)}
+.side-f{margin-top:auto;font-size:12px;color:var(--mut);padding:8px}
+#top{position:sticky;top:env(safe-area-inset-top,0px);z-index:8;display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:10px max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+#top h1{margin:0;font-size:17px;flex:1 1 260px;min-width:0}
+#top h1 small{display:block;font:400 12px var(--fb);color:var(--mut)}
+.search{position:relative;flex:1 1 280px;max-width:460px}
+.search input[type=text]{width:100%;padding:9px 12px 9px 38px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--ink);font:inherit}
+.search .ic{position:absolute;left:11px;top:11px;color:var(--mut)}
+#sres{position:absolute;left:0;right:0;top:44px;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);max-height:60vh;overflow:auto;z-index:30}
+#sres a{display:block;padding:9px 12px;border-bottom:1px solid var(--line);cursor:pointer;font-size:13px}
+#sres a:hover{background:var(--soft)}#sres small{color:var(--mut);display:block}
+#sres mark{background:var(--c6);color:#000;border-radius:3px;padding:0 1px}
+.acts{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+.seg button{border:0;background:none;color:var(--mut);padding:7px 11px;font:600 13px var(--fb);cursor:pointer;display:flex;gap:6px;align-items:center}
+.seg button[aria-pressed=true]{background:var(--acc2);color:var(--ink)}
+.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:12px;padding:7px 12px;font:600 13px var(--fb);cursor:pointer;display:inline-flex;gap:7px;align-items:center}
+.btn:hover{background:var(--soft)}
+#dmenu{position:absolute;right:0;top:44px;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:6px;z-index:30;min-width:250px}
+#dmenu button{display:flex;gap:9px;width:100%;border:0;background:none;color:var(--ink);padding:9px 10px;border-radius:8px;font:500 14px var(--fb);cursor:pointer;text-align:left}
+#dmenu button:hover{background:var(--soft)}
+main{padding:18px max(16px,env(safe-area-inset-right,0px)) 70px max(16px,env(safe-area-inset-left,0px));max-width:1240px}
 section.tab{display:none}section.tab.on{display:block}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:0 0 14px}
-.card h2{margin:0 0 8px;font-size:17px}.card h3{margin:12px 0 6px;font-size:15px}
-.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-.kpi{background:var(--soft);border-radius:8px;padding:10px}
-.kpi b{display:block;font-size:22px}.kpi span{color:var(--mut);font-size:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;margin:0 0 16px;box-shadow:var(--shadow)}
+.card h2{margin:0 0 10px;font-size:17px;display:flex;gap:8px;align-items:center}.card h3{margin:12px 0 6px;font-size:14px}
+.hero{border-radius:20px;padding:22px;margin:0 0 16px;background:linear-gradient(120deg,var(--hero1),var(--hero2));border:1px solid var(--line)}
+.hero h2{margin:0 0 4px;font-size:22px}.hero p{margin:0 0 14px;color:var(--mut);max-width:70ch}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr))}
+.grid2{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr))}
+#app>div,main,.card,.hero,.chart{min-width:0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;gap:12px;align-items:center}
+.kpi .ico{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--acc2);color:var(--acc);flex:none}
+.kpi b{display:block;font:700 20px var(--fh);line-height:1.1;white-space:nowrap}.kpi span{color:var(--mut);font-size:12px;display:block}
+.hero .kpi{background:color-mix(in srgb,var(--panel) 80%,transparent)}
+.sub{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+.pill{border:1px solid var(--line);background:var(--panel);color:var(--mut);padding:7px 13px;border-radius:999px;font:600 13px var(--fb);cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.pill[aria-selected=true]{background:var(--acc);border-color:var(--acc);color:#fff}
+.subpane{display:none}.subpane.on{display:block}
 table{border-collapse:collapse;width:100%;font-size:13px}
-th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
-th{color:var(--mut);font-weight:600;background:var(--soft)}
-.tw{overflow-x:auto}
-.chip{display:inline-block;font-size:11px;padding:1px 6px;margin:0 2px;border-radius:10px;border:1px solid var(--acc);color:var(--acc);background:none;cursor:pointer;font-family:inherit}
-.lv{font-size:11px;padding:1px 6px;border-radius:4px;color:#fff;white-space:nowrap}
-.lv.t{background:var(--ok)}.lv.a{background:#4b8f6b}.lv.s{background:var(--warn)}.lv.n{background:var(--bad)}.lv.u{background:var(--c4)}
-.badge{font-size:12px;padding:1px 8px;border-radius:10px;border:1px solid var(--line);background:var(--soft)}
+th,td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{color:var(--mut);font-weight:600;background:var(--soft2);position:sticky;top:0}
+.tw{overflow-x:auto;border-radius:10px}
+.chip{white-space:nowrap;display:inline-block;font:600 11px var(--fb);padding:1px 7px;margin:1px 2px;border-radius:999px;border:1px solid color-mix(in srgb,var(--acc) 55%,transparent);color:var(--acc);background:var(--acc2);cursor:pointer}
+.lv{font:600 11px var(--fb);padding:2px 8px;border-radius:999px;color:#fff;white-space:nowrap}
+.lv.t{background:var(--ok)}.lv.a{background:#7fb69a}.lv.s{background:var(--warn)}.lv.n{background:var(--bad)}.lv.u{background:var(--c4)}
+.badge{font:600 12px var(--fb);padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--soft)}
 .badge.confirmada{border-color:var(--ok);color:var(--ok)}.badge.probable{border-color:var(--acc);color:var(--acc)}.badge.posible{border-color:var(--warn);color:var(--warn)}.badge.descartada{border-color:var(--bad);color:var(--bad)}
-.note{border-left:4px solid var(--warn);background:var(--soft);padding:8px 10px;border-radius:4px;margin:8px 0;font-size:13px}
-.note.bad{border-color:var(--bad)}.note.ok{border-color:var(--ok)}
+.note{border-radius:12px;background:var(--soft);padding:9px 12px;margin:8px 0;font-size:13px;border:1px solid var(--line)}
+.note.bad{background:color-mix(in srgb,var(--bad) 10%,var(--panel));border-color:color-mix(in srgb,var(--bad) 40%,var(--line))}
+.note.ok{background:color-mix(in srgb,var(--ok) 10%,var(--panel));border-color:color-mix(in srgb,var(--ok) 40%,var(--line))}
 label{font-size:13px;color:var(--mut);display:inline-block;margin:4px 12px 4px 0}
-input[type=range]{vertical-align:middle;width:150px}input[type=number],select{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:3px 6px;font:inherit;width:90px}
-select{width:auto}
-svg text{fill:var(--mut);font-size:11px}
+input[type=range]{vertical-align:middle;width:150px;accent-color:var(--acc)}
+input[type=number],input[type=text],select,textarea{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:5px 8px;font:inherit}
+input[type=number]{width:96px}
+.lt .mas{color:var(--acc);cursor:pointer;font-weight:600}
+svg text{fill:var(--mut);font:11px var(--fb)}
+.chart{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin:0 0 16px;box-shadow:var(--shadow)}
+.ch-h{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:4px}
+.ch-h b{font:700 14px var(--fh)}
+.ch-f{margin-top:6px;font-size:12px;color:var(--mut);background:var(--soft2);border-left:3px solid var(--c5);padding:6px 10px;border-radius:8px}
+.rd{font-size:12px;color:var(--mut);min-height:16px}
+.leg{font-size:12px;color:var(--mut)}
 .tl{border-left:2px solid var(--line);margin-left:6px;padding-left:14px}
 .tl .ev{position:relative;margin:0 0 10px}.tl .ev:before{content:"";position:absolute;left:-21px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--acc)}
 .tl .ev.ot:before{background:var(--c2)}.tl .ev.medicion:before{background:var(--c3)}.tl .ev.hito:before{background:var(--bad)}.tl .ev.accion:before{background:var(--ok)}.tl .ev.analisis:before{background:var(--c4)}
 .tl small{color:var(--mut)}
-#drawer{position:fixed;top:0;right:0;width:min(420px,100%);height:100%;background:var(--panel);border-left:1px solid var(--line);padding:14px;overflow:auto;transform:translateX(100%);transition:transform .2s;z-index:20}
-#drawer.on{transform:none;box-shadow:-4px 0 16px rgba(0,0,0,.25)}
-#drawer blockquote{margin:6px 0;padding:6px 10px;border-left:3px solid var(--acc);background:var(--soft);font-size:13px}
-.x{float:right;border:0;background:none;color:var(--ink);font-size:20px;cursor:pointer}
+#drawer{position:fixed;top:0;right:0;width:min(440px,100%);height:100%;background:var(--panel);border-left:1px solid var(--line);padding:16px;overflow:auto;transform:translateX(100%);transition:transform .2s;z-index:40}
+#drawer.on{transform:none;box-shadow:-8px 0 30px rgba(0,0,0,.2)}
+#drawer blockquote{margin:6px 0;padding:8px 12px;border-left:3px solid var(--acc);background:var(--soft);font-size:13px;border-radius:0 8px 8px 0}
+.x{float:right;border:0;background:var(--soft);color:var(--ink);font-size:18px;cursor:pointer;border-radius:8px;width:30px;height:30px}
+#modal{position:fixed;inset:0;background:rgba(15,30,50,.55);z-index:50;display:none;padding:3vh 3vw}
+#modal.on{display:block}
+#modal .box{background:var(--panel);border-radius:18px;height:100%;overflow:auto;padding:16px}
 .mat td.y{background:var(--acc);color:#fff;text-align:center}.mat td.nn{text-align:center;color:var(--mut)}
-.tb{display:flex;gap:8px;align-items:center;float:right}
-.tb button,.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:6px;padding:3px 9px;font:inherit;cursor:pointer}
-pre.code{background:var(--soft);padding:8px;border-radius:6px;overflow:auto;font-size:12px}
-@media print{nav,#drawer,.tb{display:none}section.tab{display:block!important}}
+pre.code{background:var(--soft);padding:8px;border-radius:8px;overflow:auto;font-size:12px}
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:12px;font-size:13px;z-index:60;display:none}
+details>summary{cursor:pointer;font-weight:600}
+.rank td:first-child{font:700 14px var(--fh);color:var(--acc);width:34px}
+@media (max-width:900px){#app{grid-template-columns:minmax(0,1fr)}body{overflow-x:hidden}#side{position:static;height:auto;flex-direction:row;align-items:center;overflow-x:auto;padding:8px;border-right:0;border-bottom:1px solid var(--line)}.brand{display:none}#tabs{flex-direction:row}#tabs button{white-space:nowrap}.side-f{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<header><div class="wrap">
-<div class="tb"><button id="thm" title="Cambiar tema">Tema</button><button onclick="window.print()">Imprimir</button></div>
-<h1 id="ttl"></h1><div class="sub" id="sub"></div>
-</div></header>
-<nav><div class="wrap" id="tabs" role="tablist"></div></nav>
-<main><div class="wrap" id="main"></div></main>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-lupa" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+<symbol id="i-libro" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+<symbol id="i-matraz" viewBox="0 0 24 24"><path d="M9 3h6"/><path d="M10 3v6L4 19a2 2 0 0 0 1.7 3h12.6A2 2 0 0 0 20 19l-6-10V3"/></symbol>
+<symbol id="i-herr" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+<symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
+<symbol id="i-grafico" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></symbol>
+<symbol id="i-arbol" viewBox="0 0 24 24"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></symbol>
+<symbol id="i-ficha" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></symbol>
+<symbol id="i-bajar" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+<symbol id="i-subir" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></symbol>
+<symbol id="i-guardar" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></symbol>
+<symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></symbol>
+<symbol id="i-luna" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+<symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+<symbol id="i-brujula" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+<symbol id="i-pulso" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+<symbol id="i-alerta" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+</defs></svg>
+
+<div id="app">
+<aside id="side" aria-label="Secciones"><div class="brand"><i><svg class="ic" width="20" height="20"><use href="#i-matraz"/></svg></i><span>Ingeniería de<br>confiabilidad</span></div>
+<nav id="tabs" role="tablist"></nav><div class="side-f">Todo lo que se afirma lleva su fuente. Lo que no tiene respaldo queda VACÍO.</div></aside>
+<div>
+<header id="top"><h1 id="ttl"></h1>
+<div class="search"><svg class="ic" width="18" height="18"><use href="#i-lupa"/></svg><input id="q" type="text" placeholder="Buscar en todo el informe" autocomplete="off" aria-label="Buscador general"><div id="sres" hidden></div></div>
+<div class="acts" style="position:relative"><div class="seg" role="group" aria-label="Tema"><button id="t-dia" aria-pressed="false"><svg class="ic" width="15" height="15"><use href="#i-sol"/></svg>Día</button><button id="t-noche" aria-pressed="false"><svg class="ic" width="15" height="15"><use href="#i-luna"/></svg>Noche</button></div>
+<button class="btn" id="b-guardar"><svg class="ic" width="15" height="15"><use href="#i-guardar"/></svg>Guardar</button>
+<button class="btn" id="b-cargar"><svg class="ic" width="15" height="15"><use href="#i-subir"/></svg>Cargar</button>
+<button class="btn" id="b-desc"><svg class="ic" width="15" height="15"><use href="#i-bajar"/></svg>Descargar</button>
+<div id="dmenu" hidden></div><input type="file" id="f-cargar" accept="application/json,.json" hidden></div>
+</header>
+<main id="main"></main>
+</div></div>
 <aside id="drawer" aria-label="Evidencia"></aside>
-<noscript>Este informe requiere JavaScript para mostrar sus tablas y gráficos.</noscript>
+<div id="modal"><div class="box"><button class="x" id="mclose" aria-label="Cerrar">×</button><h3 id="mtit"></h3><div id="mbody"></div></div></div>
+<div id="toast" role="status"></div>
+<noscript>Este informe requiere JavaScript.</noscript>
 <script>
 "use strict";
 var D=/*__INFORME_JSON__*/null;
@@ -91,34 +173,51 @@ document.addEventListener("click",function(ev){
 });
 document.addEventListener("keydown",function(e){if(e.key==="Escape")$("#drawer").classList.remove("on")});
 
+/* ---------- iconos, texto corto, modal, aviso ---------- */
+function ic(n,s){s=s||18;return '<svg class="ic" width="'+s+'" height="'+s+'" aria-hidden="true"><use href="#i-'+n+'"/></svg>'}
+function lt(t,n){t=String(t==null?"":t);n=n||120;if(t.length<=n+20)return esc(t);var c=t.lastIndexOf(" ",n);if(c<40)c=n;return '<span class="lt">'+esc(t.slice(0,c))+'… <a class="mas" role="button" tabindex="0">ver más</a><span class="rest" hidden>'+esc(t.slice(c))+'</span></span>'}
+function toast(m){var t=$("#toast");t.textContent=m;t.style.display="block";clearTimeout(toast._t);toast._t=setTimeout(function(){t.style.display="none"},2600)}
+function openModal(fn,title){$("#mtit").textContent=title||"";var b=$("#mbody");b.innerHTML="";$("#modal").classList.add("on");fn(b)}
+function closeModal(){$("#modal").classList.remove("on");$("#mbody").innerHTML="";Object.keys(CURSOR).forEach(function(k){if(/-big$/.test(k))delete CURSOR[k]})}
+document.addEventListener("click",function(e){var t=e.target;if(t.classList&&t.classList.contains("mas")){var r=t.parentNode.querySelector(".rest");if(r){r.hidden=false;t.remove()}}});
+
 /* ---------- gráfico de líneas SVG con cursor sincronizado ---------- */
-var CURSOR={};
+var CURSOR={},CID=0;
 function lineChart(host,o){
-  var W=760,H=o.h||210,m={l:46,r:12,t:10,b:24},x=o.x,ys=o.series;
-  var xs=x.map(function(v){return +v}),x0=Math.min.apply(0,xs),x1=Math.max.apply(0,xs);
-  var all=[];ys.forEach(function(s){s.y.forEach(function(v){if(isFinite(v))all.push(v)})});(o.hlines||[]).forEach(function(h){all.push(h.y)});
-  var y0=Math.min.apply(0,all),y1=Math.max.apply(0,all);if(y0===y1){y0-=1;y1+=1}var pad=(y1-y0)*.06;y0-=pad;y1+=pad;
+  var big=!!o.big,W=big?1300:840,H=big?(o.h?o.h*2.2:620):(o.h||270),m={l:62,r:20,t:22,b:o.xl?50:38},xs=o.x.map(Number),ys=o.series,id=++CID;
+  var x0=Math.min.apply(0,xs),x1=Math.max.apply(0,xs),all=[];
+  ys.forEach(function(s){s.y.forEach(function(v){if(isFinite(v))all.push(v)})});(o.hlines||[]).forEach(function(h){all.push(h.y)});
+  var y0=Math.min.apply(0,all),y1=Math.max.apply(0,all);if(o.y0!=null)y0=Math.min(y0,o.y0);if(y0===y1){y0-=1;y1+=1}var pad=(y1-y0)*.07;if(o.fixY){y0=o.fixY[0];y1=o.fixY[1]}else{y1+=pad;if(o.y0==null)y0-=pad}
   function X(v){return m.l+(v-x0)/((x1-x0)||1)*(W-m.l-m.r)}function Y(v){return H-m.b-(v-y0)/(y1-y0)*(H-m.t-m.b)}
-  var g='';for(var i=0;i<=4;i++){var yv=y0+(y1-y0)*i/4;g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+Y(yv)+'" y2="'+Y(yv)+'" stroke="var(--line)"/><text x="4" y="'+(Y(yv)+4)+'">'+fmt(yv,2)+'</text>'}
-  for(i=0;i<=4;i++){var xv=x0+(x1-x0)*i/4;g+='<text x="'+X(xv)+'" y="'+(H-6)+'" text-anchor="'+(i===4?'end':i===0?'start':'middle')+'">'+esc(o.xfmt?o.xfmt(xv):fmt(xv,1))+'</text>'}
-  (o.vlines||[]).forEach(function(v){g+='<line x1="'+X(v.x)+'" x2="'+X(v.x)+'" y1="'+m.t+'" y2="'+(H-m.b)+'" stroke="'+(v.c||"var(--bad)")+'" stroke-dasharray="4 3"/><text x="'+(X(v.x)>W-90?X(v.x)-3:X(v.x)+3)+'" y="'+(m.t+9)+'" text-anchor="'+(X(v.x)>W-90?'end':'start')+'">'+esc(v.label||"")+'</text>'});
-  (o.hlines||[]).forEach(function(h){g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+Y(h.y)+'" y2="'+Y(h.y)+'" stroke="'+(h.c||"var(--warn)")+'" stroke-dasharray="5 3"/><text x="'+(W-m.r-2)+'" y="'+(Y(h.y)-3)+'" text-anchor="end">'+esc(h.label||"")+'</text>'});
-  var cols=["var(--c1)","var(--c2)","var(--c3)","var(--c4)"];
-  ys.forEach(function(s,k){var d="",on=false;s.y.forEach(function(v,j){if(!isFinite(v)){on=false;return}d+=(on?"L":"M")+X(xs[j]).toFixed(1)+" "+Y(v).toFixed(1);on=true});g+='<path d="'+d+'" fill="none" stroke="'+cols[k%4]+'" stroke-width="1.6"/>'});
-  (o.marks||[]).forEach(function(p){g+='<circle cx="'+X(p.x)+'" cy="'+Y(p.y)+'" r="4" fill="var(--bad)"><title>'+esc(p.label||"")+'</title></circle>'});
-  var leg=ys.map(function(s,k){return '<span style="color:'+cols[k%4]+'">&#9632;</span> '+esc(s.name||"")}).join("  ");
-  host.innerHTML='<div style="font-size:12px;color:var(--mut)">'+leg+'</div><svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="'+esc(o.titulo||"gráfico")+'">'+g+
-   '<line class="cur" x1="0" x2="0" y1="'+m.t+'" y2="'+(H-m.b)+'" stroke="var(--ink)" opacity="0"/></svg><div class="rd" style="font-size:12px;color:var(--mut);min-height:16px"></div>';
-  var svg=$("svg",host),cur=$(".cur",svg),rd=$(".rd",host);
-  function show(xv,fromSelf){
+  var cols=["var(--c1)","var(--c2)","var(--c3)","var(--c4)"],g='<defs><linearGradient id="gr'+id+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+cols[0]+'" stop-opacity=".30"/><stop offset="1" stop-color="'+cols[0]+'" stop-opacity="0"/></linearGradient></defs>';
+  (o.zonas||[]).forEach(function(z){var a=X(Math.max(z.x0,x0)),b=X(Math.min(z.x1,x1));g+='<rect x="'+a+'" y="'+m.t+'" width="'+Math.max(b-a,1)+'" height="'+(H-m.t-m.b)+'" fill="'+(z.c||"var(--c3)")+'" opacity=".16"/><text x="'+(a+6)+'" y="'+(m.t+13)+'">'+esc(z.label||"")+'</text>'});
+  for(var i=0;i<=5;i++){var yv=y0+(y1-y0)*i/5;g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+Y(yv)+'" y2="'+Y(yv)+'" stroke="var(--line)" stroke-dasharray="3 4"/><text x="'+(m.l-8)+'" y="'+(Y(yv)+4)+'" text-anchor="end">'+fmt(yv,2)+'</text>'}
+  for(i=0;i<=5;i++){var xv=x0+(x1-x0)*i/5;g+='<text x="'+X(xv)+'" y="'+(H-m.b+18)+'" text-anchor="'+(i===5?'end':i===0?'start':'middle')+'">'+esc(o.xfmt?o.xfmt(xv):fmt(xv,1))+'</text>'}
+  if(o.xl)g+='<text x="'+((m.l+W-m.r)/2)+'" y="'+(H-6)+'" text-anchor="middle" style="font-weight:600">'+esc(o.xl)+'</text>';
+  if(o.yl)g+='<text transform="translate(14 '+((m.t+H-m.b)/2)+') rotate(-90)" text-anchor="middle" style="font-weight:600">'+esc(o.yl)+'</text>';
+  function d_(s){var d="",on=false;s.y.forEach(function(v,j){if(!isFinite(v)){on=false;return}d+=(on?"L":"M")+X(xs[j]).toFixed(1)+" "+Y(v).toFixed(1);on=true});return d}
+  var s0=ys[0];if(s0&&!o.noarea){var d0=d_(s0);g+='<path d="'+d0+' L'+X(xs[xs.length-1]).toFixed(1)+' '+Y(y0)+' L'+X(xs[0]).toFixed(1)+' '+Y(y0)+' Z" fill="url(#gr'+id+')"/>'}
+  ys.forEach(function(s,k){g+='<path d="'+d_(s)+'" fill="none" stroke="'+cols[k%4]+'" stroke-width="'+(big?3:2.4)+'" stroke-linejoin="round" stroke-linecap="round"/>'});
+  (o.vlines||[]).forEach(function(v,i){var vx=X(v.x),ty=m.t+14+(i%3)*17,lab=esc(v.label||""),w=lab.length*6.4+12,right=vx>W-120,rx=right?vx-w-4:vx+4;
+    g+='<line x1="'+vx+'" x2="'+vx+'" y1="'+m.t+'" y2="'+(H-m.b)+'" stroke="'+(v.c||"var(--bad)")+'" stroke-dasharray="5 4" stroke-width="1.6"/><rect x="'+rx+'" y="'+(ty-12)+'" width="'+w+'" height="17" rx="8" fill="'+(v.c||"var(--bad)")+'" opacity=".92"/><text x="'+(rx+w/2)+'" y="'+(ty)+'" text-anchor="middle" style="fill:#fff;font-weight:700">'+lab+'</text>'});
+  (o.hlines||[]).forEach(function(h){g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+Y(h.y)+'" y2="'+Y(h.y)+'" stroke="'+(h.c||"var(--warn)")+'" stroke-dasharray="6 4" stroke-width="1.6"/><text x="'+(W-m.r-4)+'" y="'+(Y(h.y)-5)+'" text-anchor="end" style="font-weight:600">'+esc(h.label||"")+'</text>'});
+  (o.marks||[]).forEach(function(p){g+='<circle cx="'+X(p.x)+'" cy="'+Y(p.y)+'" r="6" fill="var(--bad)" stroke="var(--panel)" stroke-width="2"><title>'+esc(p.label||"")+'</title></circle>'});
+  var leg=ys.length>1?ys.map(function(s,k){return '<span style="color:'+cols[k%4]+'">&#9632;</span> '+esc(s.name||"")}).join("  &nbsp; "):"";
+  host.className=(host.className||"").replace(/\bchart\b/,"")+(o.noframe||big?"":" chart");
+  host.innerHTML=(o.titulo&&!big?'<div class="ch-h"><b>'+esc(o.titulo)+'</b>'+(o.noexpand?'':'<button class="btn amp" aria-label="Ampliar gráfico">'+ic("lupa",14)+' ampliar</button>')+'</div>':'')+(leg?'<div class="leg">'+leg+'</div>':'')+
+    '<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="'+esc(o.titulo||"gráfico")+'">'+g+'<line class="cur" x1="0" x2="0" y1="'+m.t+'" y2="'+(H-m.b)+'" stroke="var(--ink)" opacity="0"/></svg><div class="rd"></div>'+
+    ((o.desc||o.refs||o.refsTxt)&&!big?'<div class="ch-f">'+(o.desc?'<b>Descripción:</b> '+esc(o.desc):'')+((o.refs||o.refsTxt)?' <b>Refs.:</b> '+(o.refs?chips(o.refs):'')+(o.refsTxt?' '+esc(o.refsTxt):''):'')+'</div>':'');
+  var svg=$("svg[role=img]",host),cur=$(".cur",svg),rd=$(".rd",host);
+  function show(xv){
     if(xv==null){cur.setAttribute("opacity",0);rd.textContent="";return}
     var j=0,b=1e99;xs.forEach(function(v,k){var dd=Math.abs(v-xv);if(dd<b){b=dd;j=k}});
-    cur.setAttribute("x1",X(xs[j]));cur.setAttribute("x2",X(xs[j]));cur.setAttribute("opacity",.6);
+    cur.setAttribute("x1",X(xs[j]));cur.setAttribute("x2",X(xs[j]));cur.setAttribute("opacity",.5);
     rd.textContent=(o.xfmt?o.xfmt(xs[j]):fmt(xs[j],1))+" · "+ys.map(function(s){return (s.name||"")+" = "+fmt(s.y[j],3)}).join(" · ");
   }
   svg.addEventListener("mousemove",function(e){var r=svg.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W,xv=x0+(px-m.l)/(W-m.l-m.r)*(x1-x0);Object.keys(CURSOR).forEach(function(k){CURSOR[k](xv)})});
   svg.addEventListener("mouseleave",function(){Object.keys(CURSOR).forEach(function(k){CURSOR[k](null)})});
-  CURSOR[o.key||host.id]=show;
+  CURSOR[(o.key||host.id||"c"+id)+(big?"-big":"")]=show;
+  var amp=$(".amp",host);if(amp)amp.onclick=function(){openModal(function(el){lineChart(el,Object.assign({},o,{big:true}))},o.titulo)};
 }
 function dnum(s){var t=Date.parse(s);return isNaN(t)?NaN:t/864e5}
 function dfmt(n){return new Date(n*864e5).toISOString().slice(0,10)}
@@ -175,7 +274,7 @@ function quant(a,q){if(!a.length)return NaN;var i=(a.length-1)*q,lo=Math.floor(i
 
 /* ---------- vistas ---------- */
 var VIEWS=[];
-function tab(id,label,fn,show){if(show===false)return;VIEWS.push({id:id,label:label,fn:fn})}
+function tab(id,label,fn,show,icon){if(show===false)return;VIEWS.push({id:id,label:label,fn:fn,icon:icon})}
 function mkCard(h,body){return '<div class="card"><h2>'+h+'</h2>'+body+'</div>'}
 
 function vResumen(host){
@@ -248,7 +347,7 @@ function vEvidencia(host){
   host.innerHTML='<div class="card"><h2>Registro de evidencia</h2><label>Nivel <select id="fn"><option value="">todos</option>'+Object.keys(LV).map(function(k){return '<option>'+k+'</option>'}).join("")+'</select></label><label>Buscar <input id="fe" type="text" style="width:180px"></label><div class="tw"><table id="te"></table></div></div>';
   function draw(){
     var n=$("#fn").value,q=($("#fe").value||"").toLowerCase();
-    $("#te").innerHTML='<tr><th>Id</th><th>Referencia (APA)</th><th>Nivel</th><th>Respalda</th></tr>'+D.evidencia.filter(function(e){return(!n||e.nivel_evidencia===n)&&((e.apa+" "+e.afirma).toLowerCase().indexOf(q)>=0)}).map(function(e){return '<tr><td><button class="chip" data-ev="'+esc(e.id)+'">'+esc(e.id)+'</button></td><td>'+esc(e.apa)+'</td><td>'+lv(e.nivel_evidencia)+'</td><td>'+esc(e.afirma)+'</td></tr>'}).join("");
+    $("#te").innerHTML='<tr><th>Id</th><th>Referencia (APA)</th><th>Nivel</th><th>Respalda</th></tr>'+D.evidencia.filter(function(e){return(!n||e.nivel_evidencia===n)&&((e.apa+" "+e.afirma).toLowerCase().indexOf(q)>=0)}).map(function(e){return '<tr><td><button class="chip" data-ev="'+esc(e.id)+'">'+esc(e.id)+'</button></td><td>'+lt(e.apa,150)+'</td><td>'+lv(e.nivel_evidencia)+'</td><td>'+lt(e.afirma,110)+'</td></tr>'}).join("");
   }
   host.addEventListener("input",draw);draw();
 }
@@ -352,11 +451,11 @@ function vSim(host){
     var B10=e*Math.pow(-Math.log(0.9),1/b),B50=e*Math.pow(Math.LN2,1/b),MT=e*gamma1(b),vm=[{x:B10,label:"B10",c:"var(--c1)"},{x:B50,label:"B50",c:"var(--ok)"},{x:MT,label:"MTTF",c:"var(--warn)"}].filter(function(m){return m.x<=ts});
     var Fv=R.map(function(r){return 1-r}),fv=T.map(function(t){return b/e*Math.pow(t/e,b-1)*Math.exp(-Math.pow(t/e,b))});
     $("#sz").innerHTML='<div class="note"><b>Forma de la tasa de falla con β = '+b+':</b> '+(b<0.95?'decreciente (mortalidad infantil o mezcla de modos).':b>1.05?'creciente (desgaste): el reemplazo preventivo puede tener sentido.':'aproximadamente constante (fallas aleatorias): reemplazar por edad no ayuda.')+' B10 = '+fmt(B10,0)+' h, B50 = '+fmt(B50,0)+' h, MTTF = '+fmt(MT,0)+' h (con sus valores).</div>';
-    lineChart($("#s1"),{x:T,series:[{name:"R(t) confiabilidad",y:R}],vlines:vm,titulo:"Confiabilidad",xfmt:function(v){return fmt(v,0)},key:"s1"});
-    lineChart($("#s4"),{x:T,series:[{name:"f(t) densidad de fallas",y:fv}],vlines:vm,titulo:"Densidad de fallas",xfmt:function(v){return fmt(v,0)},key:"s4"});
-    lineChart($("#s5"),{x:T,series:[{name:"F(t) probabilidad de falla",y:Fv}],vlines:vm,titulo:"Probabilidad de falla",xfmt:function(v){return fmt(v,0)},key:"s5"});
-    lineChart($("#s2"),{x:T,series:[{name:"h(t) tasa de falla",y:Hh}],titulo:"Tasa de falla",xfmt:function(v){return fmt(v,0)},key:"s2"});
-    lineChart($("#s3"),{x:T,series:[{name:"costo por hora C(T)",y:C}],vlines:interior?[{x:T[k],label:"óptimo",c:"var(--ok)"}]:[],hlines:[{y:rtf,label:"correr a la falla",c:"var(--warn)"}],titulo:"Costo por hora",xfmt:function(v){return fmt(v,0)},key:"s3"});
+    lineChart($("#s1"),{x:T,series:[{name:"R(t) confiabilidad",y:R}],vlines:vm,titulo:"R(t): confiabilidad",fixY:[0,1],xl:"horas de servicio",yl:"probabilidad de sobrevivir",desc:"Probabilidad de que el componente siga en servicio a cada edad, con los valores que usted eligió; se marcan B10, B50 y MTTF.",refsTxt:"relación estándar de la distribución Weibull; sin fuente en el registro (verificar en un texto de confiabilidad).",xfmt:function(v){return fmt(v,0)},key:"s1"});
+    lineChart($("#s4"),{x:T,series:[{name:"f(t) densidad de fallas",y:fv}],vlines:vm,titulo:"f(t): densidad de fallas",xl:"horas de servicio",yl:"fallas por hora",desc:"Cómo se reparten las fallas en el tiempo; el pico es la edad de falla más probable.",refsTxt:"relación estándar de Weibull; sin fuente en el registro.",xfmt:function(v){return fmt(v,0)},key:"s4"});
+    lineChart($("#s5"),{x:T,series:[{name:"F(t) probabilidad de falla",y:Fv}],vlines:vm,titulo:"F(t): probabilidad de falla",fixY:[0,1],xl:"horas de servicio",yl:"probabilidad acumulada",desc:"Probabilidad de haber fallado antes de cada edad. F = 1 menos R.",refsTxt:"relación estándar de Weibull; sin fuente en el registro.",xfmt:function(v){return fmt(v,0)},key:"s5"});
+    lineChart($("#s2"),{x:T,series:[{name:"h(t) tasa de falla",y:Hh}],titulo:"h(t): tasa de riesgo",xl:"horas de servicio",yl:"fallas por hora entre los que sobreviven",desc:"Con β mayor que 1 la tasa crece con la edad (desgaste): el reemplazo preventivo puede tener sentido.",refsTxt:"relación estándar de Weibull; sin fuente en el registro.",xfmt:function(v){return fmt(v,0)},key:"s2"});
+    lineChart($("#s3"),{x:T,series:[{name:"costo por hora C(T)",y:C}],vlines:interior?[{x:T[k],label:"óptimo",c:"var(--ok)"}]:[],zonas:interior?[{x0:T[k]*0.85,x1:T[k]*1.15,label:"zona óptima",c:"var(--c3)"}]:[],hlines:[{y:rtf,label:"correr a la falla",c:"var(--warn)"}],titulo:"Costo por hora frente a la edad de reemplazo",xl:"edad de reemplazo (h)",yl:"costo por hora (unidades relativas)",desc:"El mínimo marca la edad de reemplazo con menor costo por hora; la línea naranja es correr a la falla. Costos y parámetros los elige usted.",refsTxt:"modelo clásico de reemplazo por edad; costos sin fuente.",xfmt:function(v){return fmt(v,0)},key:"s3"});
   }
   function gamma1(b){var z=1+1/b,g=7,c=[0.99999999999980993,676.5203681218851,-1259.1392167224028,771.32342877765313,-176.61502916214059,12.507343278686905,-0.13857109526572012,9.9843695780195716e-6,1.5056327351493116e-7];
     function G(z){if(z<.5)return Math.PI/(Math.sin(Math.PI*z)*G(1-z));z-=1;var x=c[0];for(var i=1;i<g+2;i++)x+=c[i]/(z+i);var t=z+g+.5;return Math.sqrt(2*Math.PI)*Math.pow(t,z+.5)*Math.exp(-t)*x}return G(z)}
@@ -368,11 +467,14 @@ function vSim(host){
 function nv(n){return n==="EVIDENCIA"?'<span class="lv t">EVIDENCIA</span>':'<span class="lv s">SÍNTESIS</span>'}
 function store(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem("inf:"+k)||"null");localStorage.setItem("inf:"+k,JSON.stringify(v))}catch(e){return null}}
 function barChart(host,rows,o){ /* rows=[{label,value,color}] */
-  var W=760,rh=24,H=rows.length*rh+8,mx=Math.max.apply(0,rows.map(function(r){return r.value}))||1,g='';
-  rows.forEach(function(r,i){var y=i*rh+4,w=(W-260)*r.value/mx;g+='<text x="4" y="'+(y+14)+'">'+esc(String(r.label).slice(0,38))+'</text><rect x="250" y="'+y+'" width="'+Math.max(w,1)+'" height="16" fill="'+(r.color||"var(--c1)")+'"><title>'+esc(r.label)+': '+fmt(r.value,2)+'</title></rect><text x="'+(254+w)+'" y="'+(y+13)+'">'+fmt(r.value,0)+'</text>'});
-  host.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="'+esc(o&&o.titulo||"barras")+'">'+g+'</svg>';
+  o=o||{};var W=840,rh=28,H=rows.length*rh+10,mx=o.max||Math.max.apply(0,rows.map(function(r){return r.value}))||1,x0=300,g='';
+  rows.forEach(function(r,i){var y=i*rh+5,w=(W-x0-70)*r.value/mx,lab=String(r.label);
+    g+='<text x="'+(x0-10)+'" y="'+(y+15)+'" text-anchor="end" style="fill:var(--ink)">'+esc(lab.length>46?lab.slice(0,45)+"…":lab)+'<title>'+esc(lab)+'</title></text><rect x="'+x0+'" y="'+y+'" width="'+Math.max(w,2)+'" height="20" rx="6" fill="'+(r.color||"var(--c1)")+'" opacity=".88"><title>'+esc(lab)+': '+fmt(r.value,2)+'</title></rect><text x="'+(x0+Math.max(w,2)+7)+'" y="'+(y+15)+'" style="fill:var(--ink);font-weight:700">'+fmt(r.value,0)+'</text>'});
+  host.className=(host.className||"")+(o.noframe?"":" chart");
+  host.innerHTML=(o.titulo&&!o.noframe?'<div class="ch-h"><b>'+esc(o.titulo)+'</b></div>':'')+'<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="'+esc(o.titulo||"barras")+'">'+g+'</svg>'+
+    ((o.desc||o.refs||o.refsTxt)?'<div class="ch-f">'+(o.desc?'<b>Descripción:</b> '+esc(o.desc):'')+((o.refs||o.refsTxt)?' <b>Refs.:</b> '+(o.refs?chips(o.refs):'')+(o.refsTxt?' '+esc(o.refsTxt):''):'')+'</div>':'');
 }
-function listaEv(items,campo){return '<ul>'+(items||[]).map(function(x){return '<li>'+esc(x[campo||"texto"])+' '+nv(x.nivel)+' '+chips(x.evidencia)+(x.nota?'<br><small>'+esc(x.nota)+'</small>':'')+'</li>'}).join("")+'</ul>'}
+function listaEv(items,campo){return '<ul>'+(items||[]).map(function(x){return '<li>'+esc(x[campo||"texto"])+' '+nv(x.nivel)+' '+chips(x.evidencia)+(x.nota?'<br><small>'+lt(x.nota,110)+'</small>':'')+'</li>'}).join("")+'</ul>'}
 function vaciosHtml(a){return (a&&a.length)?'<div class="note bad"><b>VACÍO</b><ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join("")+'</ul></div>':''}
 
 function openHtml(h){var d=$("#drawer");d.innerHTML='<button class="x" aria-label="Cerrar">×</button>'+h;d.classList.add("on")}
@@ -380,19 +482,20 @@ function wrapTxt(t,n){var w=String(t).split(" "),l=[],c="";w.forEach(function(x)
 
 function svgArbol(host,a){
   var N={};a.nodos.forEach(function(n){N[n.id]=n});var isChild={};a.nodos.forEach(function(n){(n.hijos||[]).forEach(function(h){isChild[h]=1})});
-  var roots=a.nodos.filter(function(n){return!isChild[n.id]}),BW=186,BH=104,GX=14,GY=50,leaf=0,pos={},maxd=0;
+  var roots=a.nodos.filter(function(n){return!isChild[n.id]}),BW=250,BH=92,GX=64,GY=14,leaf=0,pos={},maxd=0;
   function lay(n,d){maxd=Math.max(maxd,d);var hs=(n.hijos||[]).map(function(h){return N[h]}).filter(Boolean);
-    if(!hs.length){pos[n.id]={x:leaf*(BW+GX),d:d};leaf++;return}
-    hs.forEach(function(h){lay(h,d+1)});var xs=hs.map(function(h){return pos[h.id].x});pos[n.id]={x:(Math.min.apply(0,xs)+Math.max.apply(0,xs))/2,d:d}}
+    if(!hs.length){pos[n.id]={y:leaf*(BH+GY),d:d};leaf++;return}
+    hs.forEach(function(h){lay(h,d+1)});var ys=hs.map(function(h){return pos[h.id].y});pos[n.id]={y:(Math.min.apply(0,ys)+Math.max.apply(0,ys))/2,d:d}}
   roots.forEach(function(r){lay(r,0)});
-  var W=Math.max(leaf,1)*(BW+GX)+20,H=(maxd+1)*(BH+GY)+10,g='';
-  a.nodos.forEach(function(n){var P=pos[n.id];if(!P)return;(n.hijos||[]).forEach(function(h){var Q=pos[h];if(!Q)return;
-    g+='<path d="M'+(P.x+BW/2+10)+' '+(P.d*(BH+GY)+BH+5)+' V'+(P.d*(BH+GY)+BH+GY/2)+' H'+(Q.x+BW/2+10)+' V'+(Q.d*(BH+GY)+5)+'" fill="none" stroke="var(--mut)"/>'})});
-  a.nodos.forEach(function(n){var P=pos[n.id];if(!P)return;var x=P.x+10,y=P.d*(BH+GY)+5,col=n.nivel==="EVIDENCIA"?"var(--ok)":"var(--warn)";
-    g+='<g class="nd" data-n="'+esc(n.id)+'" style="cursor:pointer"><rect x="'+x+'" y="'+y+'" width="'+BW+'" height="'+BH+'" rx="6" fill="var(--panel)" stroke="'+col+'" stroke-width="2"/>'+
-      wrapTxt(n.texto,31).slice(0,8).map(function(l,i){return '<text x="'+(x+6)+'" y="'+(y+14+i*12)+'" style="fill:var(--ink)">'+esc(l)+'</text>'}).join("")+
-      (n.hijos&&n.hijos.length?'<circle cx="'+(x+BW/2)+'" cy="'+(y+BH+14)+'" r="12" fill="var(--panel)" stroke="var(--mut)"/><text x="'+(x+BW/2)+'" y="'+(y+BH+18)+'" text-anchor="middle" style="fill:var(--ink)">'+esc(n.puerta)+'</text>':'')+'</g>'});
-  host.innerHTML='<div class="tw"><svg viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'" role="img" aria-label="Árbol de fallas">'+g+'</svg></div><div style="font-size:12px;color:var(--mut)"><span style="color:var(--ok)">&#9632;</span> respaldo directo de la evidencia · <span style="color:var(--warn)">&#9632;</span> síntesis del equipo · círculo = puerta lógica · pulse un nodo para ver sus fuentes</div>';
+  var W=(maxd+1)*(BW+GX)+10,H=Math.max(leaf,1)*(BH+GY)+10,g='';
+  function X(d){return d*(BW+GX)+6}
+  a.nodos.forEach(function(n){var P=pos[n.id];if(!P)return;(n.hijos||[]).forEach(function(h){var Q=pos[h];if(!Q)return;var x1=X(P.d)+BW,y1=P.y+BH/2+5,x2=X(Q.d),y2=Q.y+BH/2+5,mx=x1+GX/2;
+    g+='<path d="M'+x1+' '+y1+' H'+mx+' V'+y2+' H'+x2+'" fill="none" stroke="var(--mut)" stroke-width="1.5"/>'})});
+  a.nodos.forEach(function(n){var P=pos[n.id];if(!P)return;var x=X(P.d),y=P.y+5,col=n.nivel==="EVIDENCIA"?"var(--ok)":"var(--warn)";
+    g+='<g class="nd" data-n="'+esc(n.id)+'" style="cursor:pointer"><rect x="'+x+'" y="'+y+'" width="'+BW+'" height="'+BH+'" rx="12" fill="var(--panel)" stroke="'+col+'" stroke-width="2.2"/><rect x="'+x+'" y="'+y+'" width="6" height="'+BH+'" rx="3" fill="'+col+'"/>'+
+      wrapTxt(n.texto,38).slice(0,6).map(function(l,i){return '<text x="'+(x+14)+'" y="'+(y+17+i*14)+'" style="fill:var(--ink);font-size:12px">'+esc(l)+(i===5&&wrapTxt(n.texto,38).length>6?"…":"")+'</text>'}).join("")+
+      (n.hijos&&n.hijos.length?'<circle cx="'+(x+BW+GX/2)+'" cy="'+(P.y+BH/2+5)+'" r="13" fill="var(--panel)" stroke="var(--mut)"/><text x="'+(x+BW+GX/2)+'" y="'+(P.y+BH/2+9)+'" text-anchor="middle" style="fill:var(--ink);font-weight:700;font-size:10px">'+esc(n.puerta)+'</text>':'')+'</g>'});
+  host.innerHTML='<div class="tw"><svg viewBox="0 0 '+W+' '+H+'" width="100%" style="min-width:'+Math.min(W,1000)+'px" role="img" aria-label="Árbol de fallas">'+g+'</svg></div><div class="leg"><span style="color:var(--ok)">&#9632;</span> respaldo directo de la evidencia · <span style="color:var(--warn)">&#9632;</span> síntesis del equipo · círculo = puerta lógica · pulse un nodo para ver sus fuentes</div>';
   host.querySelectorAll(".nd").forEach(function(el){el.onclick=function(){var n=N[el.dataset.n];openHtml('<h3>'+esc(n.id)+' '+nv(n.nivel)+'</h3><p>'+esc(n.texto)+'</p><p>'+chips(n.evidencia)+'</p><p><small>'+esc(n.nota||"")+'</small></p>')}});
 }
 
@@ -407,43 +510,6 @@ function svgIshikawa(host,ish){
   host.innerHTML='<div class="tw"><svg viewBox="0 0 '+W+' '+H+'" width="100%" style="min-width:1100px" role="img" aria-label="Diagrama de Ishikawa">'+g+'</svg></div><div style="font-size:12px;color:var(--mut)"><span style="color:var(--ok)">&#9632;</span> respaldo directo · <span style="color:var(--warn)">&#9632;</span> síntesis del equipo</div>';
 }
 
-function vMapa(host){
-  var c=D.caso,an=c.analisis||{},dz=c.dossier,h='';
-  function nEl(k){return dz&&dz.secciones[k]?(dz.secciones[k].elementos||[]).length:0}
-  var pasos=[["Referencias",nEl("fenomenos")+nEl("mediciones")>0?"ok":"vac",nEl("fenomenos")+nEl("mediciones")+" elementos con cita"],
-   ["Top de fallas",nEl("top_fallas")?"par":"vac",nEl("top_fallas")?"solo cita de segunda mano":"VACÍO"],
-   ["FMECA",an.fmeca?"par":"vac",an.fmeca?(an.fmeca.items.length+" modos; S-O-D sin puntuar"):"VACÍO"],
-   ["Árbol de fallas",an.arbol?"par":"vac",an.arbol?(an.arbol.nodos.length+" nodos; compuertas del equipo"):"VACÍO"],
-   ["Troubleshooting",nEl("troubleshooting")?"par":"vac",nEl("troubleshooting")?"técnicas descritas; sin criterios de alarma":"VACÍO"],
-   ["Mant. predictivo (P-F)","vac","intervalo P-F: VACÍO"],
-   ["Escenarios",c.simulador?"par":"vac","simulador didáctico"]];
-  var col={ok:"var(--ok)",par:"var(--warn)",vac:"var(--bad)"},W=1100,sv='';
-  pasos.forEach(function(p,i){var x=i*155+4;sv+='<rect x="'+x+'" y="6" width="140" height="62" rx="10" fill="var(--panel)" stroke="'+col[p[1]]+'" stroke-width="3"/><text x="'+(x+70)+'" y="28" text-anchor="middle" style="fill:var(--ink);font-weight:700;font-size:12px">'+(i+1)+'. '+esc(p[0])+'</text>'+wrapTxt(p[2],24).slice(0,2).map(function(l,j){return '<text x="'+(x+70)+'" y="'+(44+j*12)+'" text-anchor="middle">'+esc(l)+'</text>'}).join("")+(i<pasos.length-1?'<text x="'+(x+147)+'" y="42" style="fill:var(--mut);font-size:16px">→</text>':'')});
-  h+='<div class="card"><h2>Cadena RCM: qué está respaldado y qué falta</h2><div class="tw"><svg viewBox="0 0 '+W+' 76" width="100%" style="min-width:900px">'+sv+'</svg></div><div style="font-size:12px;color:var(--mut)"><span style="color:var(--ok)">&#9632;</span> con respaldo · <span style="color:var(--warn)">&#9632;</span> parcial · <span style="color:var(--bad)">&#9632;</span> VACÍO</div></div>';
-  h+='<div class="card"><h2>Perfil de la evidencia leída</h2><div class="grid"><div><h3>Por nivel de lectura</h3><div id="pf-n"></div></div><div><h3>Por año de publicación (fuentes con año)</h3><div id="pf-a"></div></div></div><p style="font-size:12px;color:var(--mut)">Muestra con qué se construyó el informe (cuenta entradas del registro: un mismo documento puede tener varias). Las pistas SOLO-SNIPPET y NO-VERIFICADO no respaldan ninguna afirmación.</p></div>';
-  if(an.arbol)h+='<div class="card"><h2>Árbol de fallas</h2><div id="mp-arb"></div></div>';
-  if(an.acr&&an.acr.ishikawa)h+='<div class="card"><h2>Ishikawa (6M)</h2><div id="mp-ish"></div></div>';
-  if(an.acr&&an.acr.ensayos&&an.acr.hipotesis)h+='<div class="card"><h2>Qué ensayo o técnica ayuda a cada hipótesis</h2><div id="mp-hm"></div></div>';
-  if(an.fmeca)h+='<div class="card"><h2>Respaldo documental por modo de falla</h2><div class="note bad"><b>No es prevalencia.</b> Cuenta cuántos documentos distintos leídos (texto o resumen) respaldan cada modo; mide cuánta evidencia hay, no con qué frecuencia ocurre. El ranking de frecuencias es VACÍO.</div><div id="mp-doc"></div></div>';
-  h+='<div class="card"><h2>Esquema cualitativo de la degradación</h2><div id="mp-deg"></div></div>';
-  host.innerHTML=h;
-  (function(){var n={},y={};D.evidencia.forEach(function(e){n[e.nivel_evidencia]=(n[e.nivel_evidencia]||0)+1;var an_=e.referencia&&e.referencia.anio;if(an_&&(e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"))y[an_]=(y[an_]||0)+1});
-    var cl={"VERIFICADO-TEXTO":"var(--ok)","VERIFICADO-ABSTRACT":"#4b8f6b","SOLO-SNIPPET":"var(--warn)","NO-VERIFICADO":"var(--bad)","DATO-USUARIO":"var(--c4)"};
-    barChart($("#pf-n"),Object.keys(n).map(function(k){return{label:k,value:n[k],color:cl[k]}}),{titulo:"Por nivel"});
-    barChart($("#pf-a"),Object.keys(y).sort().map(function(k){return{label:k,value:y[k],color:"var(--c1)"}}),{titulo:"Por año"})})();
-  if(an.arbol)svgArbol($("#mp-arb"),an.arbol);
-  if(an.acr&&an.acr.ishikawa)svgIshikawa($("#mp-ish"),an.acr.ishikawa);
-  if(an.acr&&an.acr.ensayos&&an.acr.hipotesis){var hs=an.acr.hipotesis.map(function(x){return x.id}),t='<div class="tw"><table><tr><th>Ensayo o técnica</th>'+hs.map(function(x){return '<th>'+esc(x)+'</th>'}).join("")+'</tr>'+an.acr.ensayos.map(function(e){return '<tr><td>'+esc(e.ensayo.slice(0,90))+(e.ensayo.length>90?'…':'')+' '+chips(e.evidencia)+'</td>'+hs.map(function(x){return (e.para_hipotesis||[]).indexOf(x)>=0?'<td style="background:var(--acc);text-align:center;color:#fff">●</td>':'<td></td>'}).join("")+'</tr>'}).join("")+'</table></div><p style="font-size:12px;color:var(--mut)">Columnas sin punto: la evidencia leída no menciona ensayo para esa hipótesis (VACÍO).</p>';$("#mp-hm").innerHTML=t}
-  if(an.fmeca)barChart($("#mp-doc"),an.fmeca.items.map(function(m){var d={};m.evidencia.forEach(function(i){var e=EV[i];if(e&&(e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"))d[(e.referencia&&e.referencia.titulo)||i]=1});return{label:m.id+" "+m.modo,value:Object.keys(d).length,color:"var(--c3)"}}),{titulo:"Documentos distintos por modo"});
-  /* esquema de degradación (E-8008) y kurtosis no monótona (E-8003): curvas dibujadas a mano, sin escala */
-  var W2=760,H2=216,st='';var xs=[0,.25,.5,.75,1];
-  st+='<line x1="40" y1="170" x2="740" y2="170" stroke="var(--mut)"/><line x1="40" y1="10" x2="40" y2="170" stroke="var(--mut)"/><text x="390" y="206" text-anchor="middle" style="fill:var(--bad);font-weight:700">ESQUEMA ILUSTRATIVO: sin escala ni datos · eje horizontal: tiempo (sin escala) · eje vertical: magnitud relativa</text>';
-  [["1 ultrasónico",40],["2 resonancia natural",215],["3 frecuencias de defecto y armónicos",390],["4 ruido de fondo aleatorio",565]].forEach(function(e,i){st+='<rect x="'+e[1]+'" y="170" width="175" height="26" fill="var(--soft)" stroke="var(--line)"/><text x="'+(e[1]+87)+'" y="187" text-anchor="middle" style="fill:var(--ink)">'+esc(e[0])+'</text>'});
-  st+='<path d="M40 150 C120 148 160 60 300 40 C420 30 480 120 740 150" fill="none" stroke="var(--c2)" stroke-width="2.5"/><text x="300" y="32" text-anchor="middle" style="fill:var(--c2)">kurtosis: sube con el defecto incipiente y vuelve a lo normal al extenderse</text>';
-  st+='<path d="M40 160 C260 158 400 140 565 100" fill="none" stroke="var(--c1)" stroke-width="2.5"/><text x="400" y="132" style="fill:var(--c1)">energía de las frecuencias de defecto: crece hasta la etapa 3</text><text x="660" y="110" text-anchor="middle" style="fill:var(--mut)">etapa 4: sin tendencia respaldada</text>';
-  $("#mp-deg").innerHTML='<svg viewBox="0 0 '+W2+' '+H2+'" width="100%" role="img" aria-label="Esquema cualitativo">'+st+'</svg><div class="note">Esquema <b>cualitativo y sin escala</b>: no son datos ni mediciones y no hay duraciones. Las cuatro etapas vienen de <button class="chip" data-ev="E-8008">E-8008</button> y el comportamiento no monótono de la kurtosis de <button class="chip" data-ev="E-8003">E-8003</button>; la forma de las curvas es ilustrativa.</div>';
-}
-
 function vFmeca(host){
   var f=D.caso.analisis.fmeca,it=f.items||[],sv=store("fmeca")||{};
   host.innerHTML='<div class="card"><h2>FMECA y estrategia RCM preliminar</h2><p><b>Función:</b> '+esc(f.funcion||"")+'</p><div class="note">Los modos, causas y detección vienen de la evidencia o son síntesis con premisas citadas. <b>Severidad, ocurrencia y detección están vacías a propósito</b>: no hay datos del activo. Un experto puede puntuarlas (1 a 10) y el RPN y el ranking se calculan en el acto. El RPN tiene límites conocidos (la misma cifra puede mezclar riesgos muy distintos y S, O y D no son de escala de razón): úselo para ordenar la discusión, no como medida de riesgo; la escala debe calibrarse con el equipo. Los puntajes quedan solo en este navegador.</div><div class="tw"><table id="fm"></table></div></div>'+
@@ -452,7 +518,7 @@ function vFmeca(host){
     $("#fm").innerHTML='<tr><th>Id</th><th>Modo y mecanismo</th><th>Efectos</th><th>Causa</th><th>Detección</th><th>Tarea RCM propuesta</th><th>S</th><th>O</th><th>D</th><th>RPN</th></tr>'+it.map(function(m){
       var v=sv[m.id]||{},rp=(v.s&&v.o&&v.d)?v.s*v.o*v.d:null;
       var inp=function(k){return '<td><input type="number" min="1" max="10" data-id="'+esc(m.id)+'" data-k="'+k+'" value="'+(v[k]||"")+'" style="width:52px"></td>'};
-      return '<tr><td>'+esc(m.id)+'</td><td><b>'+esc(m.modo)+'</b><br><small>'+esc(m.mecanismo||"")+'</small><br>'+nv(m.nivel)+' '+chips(m.evidencia)+(m.nota?'<br><small>'+esc(m.nota)+'</small>':'')+'</td><td>'+esc(m.efecto_local||"")+'<br><small>'+esc(m.efecto_sistema||"")+'</small></td><td>'+esc(m.causa||"")+'</td><td>'+esc(m.deteccion||"")+'</td><td>'+esc(m.tarea_rcm||"")+'</td>'+inp("s")+inp("o")+inp("d")+'<td><b>'+(rp==null?'—':rp)+'</b></td></tr>'}).join("");
+      return '<tr><td>'+esc(m.id)+'</td><td><b>'+esc(m.modo)+'</b><br><small>'+esc(m.mecanismo||"")+'</small><br>'+nv(m.nivel)+' '+chips(m.evidencia)+(m.nota?'<br><small>'+lt(m.nota,100)+'</small>':'')+'</td><td>'+esc(m.efecto_local||"")+'<br><small>'+esc(m.efecto_sistema||"")+'</small></td><td>'+esc(m.causa||"")+'</td><td>'+esc(m.deteccion||"")+'</td><td>'+esc(m.tarea_rcm||"")+'</td>'+inp("s")+inp("o")+inp("d")+'<td><b>'+(rp==null?'—':rp)+'</b></td></tr>'}).join("");
     var rows=it.map(function(m){var v=sv[m.id]||{};return{label:m.id+" "+m.modo,value:(v.s&&v.o&&v.d)?v.s*v.o*v.d:0}}).filter(function(r){return r.value>0}).sort(function(a,b){return b.value-a.value});
     if(rows.length)barChart($("#fmr"),rows,{titulo:"RPN"});else $("#fmr").innerHTML='<p>Sin puntajes: ingrese S, O y D para ver el ranking.</p>';
   }
@@ -467,7 +533,7 @@ function vArbol(host){
   host.innerHTML='<div class="card"><h2>Árbol de fallas</h2><p><b>Evento tope:</b> '+esc(a.evento_tope||"")+'</p><div class="note">La estructura (puertas OR y AND) es una propuesta respaldada por la evidencia citada en cada nodo o por síntesis con premisas; no está probada con datos del activo. Las probabilidades de los eventos básicos están vacías: ingrese las que conozca (de 0 a 1) y se calcula la probabilidad del evento tope suponiendo eventos independientes. <b>La compuerta AND del evento tope y la agrupación de causas latentes son hipótesis del equipo</b>: el AND supone que la falla funcional exige además que el daño avance sin ser detectado ni atendido, lo que depende de si existe un programa de monitoreo; las causas latentes actúan como habilitador de las causas físicas, no como alternativa independiente.</div><button class="btn" id="arb-ex">Expandir todo</button> <button class="btn" id="arb-co">Contraer todo</button><div id="arb-tr"></div></div><div class="card"><h2>Probabilidad del evento tope</h2><div id="arb-pt"></div></div>'+vaciosHtml(a.vacios);
   function nodo(n,depth){
     var hs=(n.hijos||[]).map(function(h){return N[h]}).filter(Boolean),g=n.puerta;
-    var cab='<span class="badge '+(g==="AND"?'posible':g==="OR"?'probable':'')+'">'+esc(g)+'</span> '+esc(n.texto)+' '+nv(n.nivel)+' '+chips(n.evidencia)+(n.nota?'<br><small>'+esc(n.nota)+'</small>':'');
+    var cab='<span class="badge '+(g==="AND"?'posible':g==="OR"?'probable':'')+'">'+esc(g)+'</span> '+esc(n.texto)+' '+nv(n.nivel)+' '+chips(n.evidencia)+(n.nota?'<br><small>'+lt(n.nota,100)+'</small>':'');
     if(!hs.length)return '<li style="list-style:none;margin:4px 0">'+cab+' <label>p <input type="number" min="0" max="1" step="0.001" data-p="'+esc(n.id)+'" value="'+(pv[n.id]==null?"":pv[n.id])+'" style="width:70px"></label></li>';
     return '<li style="list-style:none;margin:4px 0"><details'+(depth<2?' open':'')+'><summary>'+cab+'</summary><ul style="border-left:2px solid var(--line);margin-left:6px;padding-left:12px">'+hs.map(function(h){return nodo(h,depth+1)}).join("")+'</ul></details></li>';
   }
@@ -484,9 +550,9 @@ function vArbol(host){
 
 function vAcr(host){
   var r=D.caso.analisis.acr,h='<div class="card"><h2>Análisis de causa raíz genérico del modo de falla</h2><div class="note">No hay caso real: todas las causas figuran como <b>posibles</b>. Cada una indica qué evidencia del activo la confirmaría o la descartaría.</div><div class="tw"><table><tr><th>Id</th><th>Hipótesis</th><th>Estado</th><th>Qué la confirmaría o descartaría</th><th>Fuente</th></tr>'+
-    (r.hipotesis||[]).map(function(x){return '<tr><td>'+esc(x.id)+'</td><td>'+esc(x.texto)+'<br>'+nv(x.nivel)+(x.nota?'<br><small>'+esc(x.nota)+'</small>':'')+'</td><td><span class="badge posible">'+esc(x.estado)+'</span></td><td>'+esc(x.prueba_para_confirmar||"")+'</td><td>'+chips(x.evidencia)+'</td></tr>'}).join("")+'</table></div></div>';
-  var cats=Object.keys(r.ishikawa||{});
-  h+='<div class="card"><h2>Diagrama de Ishikawa (6M)</h2><div class="grid">'+cats.map(function(c){return '<div class="kpi" style="min-height:90px"><b style="font-size:15px">'+esc(c)+'</b>'+((r.ishikawa[c]||[]).length?listaEv(r.ishikawa[c]):'<p><small>VACÍO: sin fuente leída</small></p>')+'</div>'}).join("")+'</div></div>';
+    (r.hipotesis||[]).map(function(x){return '<tr><td>'+esc(x.id)+'</td><td>'+esc(x.texto)+'<br>'+nv(x.nivel)+(x.nota?'<br><small>'+lt(x.nota,100)+'</small>':'')+'</td><td><span class="badge posible">'+esc(x.estado)+'</span></td><td>'+esc(x.prueba_para_confirmar||"")+'</td><td>'+chips(x.evidencia)+'</td></tr>'}).join("")+'</table></div></div>';
+  var cats=D.caso.dossier?[]:Object.keys(r.ishikawa||{});
+  if(cats.length)h+='<div class="card"><h2>Diagrama de Ishikawa (6M)</h2><div class="grid">'+cats.map(function(c){return '<div class="kpi" style="min-height:90px"><b style="font-size:15px">'+esc(c)+'</b>'+((r.ishikawa[c]||[]).length?listaEv(r.ishikawa[c]):'<p><small>VACÍO: sin fuente leída</small></p>')+'</div>'}).join("")+'</div></div>';
   h+='<div class="card"><h2>Ensayos y verificaciones pertinentes</h2><div class="tw"><table><tr><th>Ensayo</th><th>Hipótesis</th><th>Fuente</th></tr>'+(r.ensayos||[]).map(function(e){return '<tr><td>'+esc(e.ensayo)+'</td><td>'+esc((e.para_hipotesis||[]).join(", "))+'</td><td>'+chips(e.evidencia)+'</td></tr>'}).join("")+'</table></div></div>'+vaciosHtml(r.vacios);
   host.innerHTML=h;
 }
@@ -505,11 +571,11 @@ function vLcc(host){
   host.addEventListener("change",function(e){var t=e.target;if(t.dataset&&t.dataset.c){vals[t.dataset.c]=t.value===""?null:+t.value;store("lcc",vals);setTimeout(draw,0)}});host.addEventListener("input",ce);draw();ce();
 }
 
-function vVidaPred(host){
+function vVidaPred(host,which){
   var v=D.caso.analisis.vida||{},p=D.caso.analisis.predictivo||{},h='';
-  if(v.hallazgos){h+='<div class="card"><h2>Estadística de vida: qué dice la evidencia</h2>'+listaEv(v.hallazgos)+'</div>';
+  if(v.hallazgos&&which!=="pred"){h+='<div class="card"><h2>Estadística de vida: qué dice la evidencia</h2>'+listaEv(v.hallazgos)+'</div>';
     h+='<div class="card"><h2>Método según la situación</h2><div class="tw"><table><tr><th>Situación</th><th>Método</th><th>Por qué</th><th>Fuente</th></tr>'+(v.metodo_recomendado||[]).map(function(m){return '<tr><td>'+esc(m.situacion)+'</td><td>'+esc(m.metodo)+'</td><td>'+esc(m.porque||"")+' '+nv(m.nivel)+'</td><td>'+chips(m.evidencia)+'</td></tr>'}).join("")+'</table></div></div>'+vaciosHtml(v.vacios)}
-  if(p.hallazgos){h+='<div class="card"><h2>Mantenimiento predictivo: qué dice la evidencia</h2>'+listaEv(p.hallazgos)+'</div>';
+  if(p.hallazgos&&which!=="vida"){h+='<div class="card"><h2>Mantenimiento predictivo: qué dice la evidencia</h2>'+listaEv(p.hallazgos)+'</div>';
     h+='<div class="card"><h2>Estrategia por etapas</h2><ol>'+(p.estrategia||[]).map(function(e){return '<li><b>'+esc(e.etapa)+':</b> '+esc(e.accion)+'<br><small>Para avanzar: '+esc(e.condicion_para_avanzar||"")+'</small> '+nv(e.nivel)+' '+chips(e.evidencia)+'</li>'}).join("")+'</ol></div>';
     h+='<div class="card"><h2>Riesgos de validación</h2><ul>'+(p.riesgos_de_validacion||[]).map(function(e){return '<li>'+esc(e.riesgo)+' '+nv(e.nivel)+' '+chips(e.evidencia)+'</li>'}).join("")+'</ul></div>'+vaciosHtml(p.vacios)}
   host.innerHTML=h||"<p>Sin análisis cargado.</p>";
@@ -534,7 +600,7 @@ function vHerr(host){
     if(!rows.length){$("#pg").innerHTML="";return}var tot=rows.reduce(function(a,b){return a+b.value},0),ac=0;rows.forEach(function(r){ac+=r.value;r.label=r.label+" ("+fmt(100*ac/tot,0)+" % acum.)"});$("#pg").innerHTML='<div id="pgb"></div>';barChart($("#pgb"),rows,{titulo:"Pareto"})}
   function l10c(){var C=+$("#her-c").value,P=+$("#her-p").value,X=[],Y3=[],Y33=[],i;for(i=0;i<=45;i++){var r=0.05+i*0.01;X.push(r);Y3.push(Math.pow(1/r,3));Y33.push(Math.pow(1/r,10/3))}
     var mk=(C>0&&P>0)?[{x:P/C,y:Math.pow(C/P,+$("#her-t").value),label:"su caso"}]:[];if(mk.length&&(P/C<0.05||P/C>0.5))mk=[];
-    lineChart($("#her-g"),{x:X,series:[{name:"bolas (p=3)",y:Y3},{name:"rodillos (p=10/3)",y:Y33}],marks:mk,titulo:"L10 frente a P/C",xfmt:function(v){return fmt(v,2)},key:"herg"})}
+    lineChart($("#her-g"),{x:X,series:[{name:"bolas (p=3)",y:Y3},{name:"rodillos (p=10/3)",y:Y33}],marks:mk,titulo:"Vida nominal L10 frente a la relación de carga P/C",xl:"P/C (carga equivalente sobre capacidad dinámica)",yl:"L10 (millones de revoluciones)",desc:"A mayor carga relativa, la vida nominal cae de forma potencial (exponente 3 en bolas, 10/3 en rodillos).",refs:["E-6003"],refsTxt:"definición de L10; la fórmula no consta en el extracto: verificar en la norma.",xfmt:function(v){return fmt(v,2)},key:"herg"})}
   host.addEventListener("input",function(){fr();l10();pa();l10c()});fr();l10();l10c();
 }
 
@@ -557,46 +623,200 @@ function vRastro(host){
    mkCard("Reproducibilidad",'<p>Generado el '+esc(D.generado)+' con reliability_kit. Los números de vida se recalculan en el navegador y se contrastan con el kit de Python cuando hay valores de referencia. Todo el informe es un solo archivo sin peticiones externas.</p>'+(c.busqueda?'<pre class="code">'+esc(JSON.stringify(c.busqueda,null,1))+'</pre>':''));
 }
 
+
+/* ---------- piezas reutilizables ---------- */
+function cadena(host){
+  var c=D.caso,an=c.analisis||{},dz=c.dossier;
+  function nEl(k){return dz&&dz.secciones[k]?(dz.secciones[k].elementos||[]).length:0}
+  var pasos=[["Referencias",nEl("fenomenos")+nEl("mediciones")>0?"ok":"vac",nEl("fenomenos")+nEl("mediciones")+" con cita"],
+   ["Top de fallas",nEl("top_fallas")?"par":"vac",nEl("top_fallas")?"cita de segunda mano":"VACÍO"],
+   ["FMECA",an.fmeca?"par":"vac",an.fmeca?(an.fmeca.items.length+" modos; S-O-D sin puntuar"):"VACÍO"],
+   ["Árbol de fallas",an.arbol?"par":"vac",an.arbol?(an.arbol.nodos.length+" nodos; compuertas del equipo"):"VACÍO"],
+   ["Troubleshooting",nEl("troubleshooting")?"par":"vac",nEl("troubleshooting")?"técnicas sin alarmas":"VACÍO"],
+   ["Mant. predictivo (P-F)","vac","intervalo P-F: VACÍO"],
+   ["Escenarios",c.simulador?"par":"vac","simulador didáctico"]];
+  var col={ok:"var(--ok)",par:"var(--warn)",vac:"var(--bad)"},sv='';
+  pasos.forEach(function(p,i){var x=i*158+4;sv+='<rect x="'+x+'" y="6" width="142" height="66" rx="14" fill="var(--panel)" stroke="'+col[p[1]]+'" stroke-width="2.5"/><circle cx="'+(x+16)+'" cy="22" r="5" fill="'+col[p[1]]+'"/><text x="'+(x+28)+'" y="26" style="fill:var(--ink);font-weight:700;font-size:12px">'+esc(p[0])+'</text>'+wrapTxt(p[2],25).slice(0,2).map(function(l,j){return '<text x="'+(x+12)+'" y="'+(46+j*13)+'">'+esc(l)+'</text>'}).join("")+(i<pasos.length-1?'<text x="'+(x+146)+'" y="42" style="fill:var(--mut);font-size:15px">›</text>':'')});
+  host.innerHTML='<div class="tw"><svg viewBox="0 0 1110 80" width="100%" style="min-width:860px">'+sv+'</svg></div><div class="leg"><span style="color:var(--ok)">&#9632;</span> con respaldo · <span style="color:var(--warn)">&#9632;</span> parcial · <span style="color:var(--bad)">&#9632;</span> VACÍO</div>';
+}
+function perfil(host){
+  host.innerHTML='<div class="grid2"><div id="pf-n"></div><div id="pf-a"></div></div>';
+  var n={},y={};D.evidencia.forEach(function(e){n[e.nivel_evidencia]=(n[e.nivel_evidencia]||0)+1;var a=e.referencia&&e.referencia.anio;if(a&&(e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"))y[a]=(y[a]||0)+1});
+  var cl={"VERIFICADO-TEXTO":"var(--ok)","VERIFICADO-ABSTRACT":"var(--c3)","SOLO-SNIPPET":"var(--warn)","NO-VERIFICADO":"var(--bad)","DATO-USUARIO":"var(--c4)"};
+  barChart($("#pf-n",host),Object.keys(n).map(function(k){return{label:k,value:n[k],color:cl[k]}}),{titulo:"Entradas por nivel de lectura",desc:"Las pistas SOLO-SNIPPET y NO-VERIFICADO no respaldan ninguna afirmación."});
+  barChart($("#pf-a",host),Object.keys(y).sort().map(function(k){return{label:k,value:y[k],color:"var(--c1)"}}),{titulo:"Fuentes leídas por año",desc:"Cuenta entradas del registro; un mismo documento puede tener varias."});
+}
+function docPorModo(host){
+  var an=D.caso.analisis||{};if(!an.fmeca){host.innerHTML="";return}
+  barChart(host,an.fmeca.items.map(function(m){var d={};m.evidencia.forEach(function(i){var e=EV[i];if(e&&(e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"))d[(e.referencia&&e.referencia.titulo)||i]=1});return{label:m.id+" "+m.modo,value:Object.keys(d).length,color:"var(--c5)"}}),
+   {titulo:"Respaldo documental por modo de falla",desc:"Documentos distintos leídos que respaldan cada modo. NO es prevalencia: mide cuánta evidencia hay, no con qué frecuencia ocurre; el ranking de frecuencias es VACÍO."});
+}
+function matrizEnsayos(host){
+  var an=D.caso.analisis||{};if(!(an.acr&&an.acr.ensayos&&an.acr.hipotesis)){host.innerHTML="";return}
+  var hs=an.acr.hipotesis.map(function(x){return x.id});
+  host.innerHTML='<div class="card"><h2>'+ic("matraz")+' Qué técnica ayuda a cada hipótesis</h2><div class="tw"><table><tr><th>Técnica</th>'+hs.map(function(x){return '<th>'+esc(x)+'</th>'}).join("")+'</tr>'+an.acr.ensayos.map(function(e){return '<tr><td>'+lt(e.ensayo,80)+' '+chips(e.evidencia)+'</td>'+hs.map(function(x){return (e.para_hipotesis||[]).indexOf(x)>=0?'<td style="background:var(--acc);text-align:center;color:#fff">●</td>':'<td></td>'}).join("")+'</tr>'}).join("")+'</table></div><p class="leg">Columnas sin punto: la evidencia leída no menciona técnica para esa hipótesis (VACÍO).</p></div>';
+}
+function degr(host){
+  var W2=840,st='';
+  st+='<line x1="48" y1="190" x2="820" y2="190" stroke="var(--mut)"/><line x1="48" y1="14" x2="48" y2="190" stroke="var(--mut)"/>';
+  [["1 ultrasónico",48],["2 resonancia natural",240],["3 defecto y armónicos",432],["4 ruido aleatorio",624]].forEach(function(e,i){st+='<rect x="'+e[1]+'" y="190" width="188" height="28" fill="'+["var(--c1)","var(--c5)","var(--c3)","var(--c6)"][i]+'" opacity=".35"/><text x="'+(e[1]+94)+'" y="209" text-anchor="middle" style="fill:var(--ink);font-weight:600">'+esc(e[0])+'</text>'});
+  st+='<path d="M48 165 C140 163 190 70 330 44 C460 30 540 130 820 165" fill="none" stroke="var(--c2)" stroke-width="3"/><text x="330" y="34" text-anchor="middle" style="fill:var(--c2);font-weight:700">kurtosis: sube con el defecto incipiente y vuelve a lo normal al extenderse</text>';
+  st+='<path d="M48 178 C280 176 430 158 620 112" fill="none" stroke="var(--c1)" stroke-width="3"/><text x="430" y="150" style="fill:var(--c1);font-weight:700">energía en frecuencias de defecto: crece hasta la etapa 3</text><text x="725" y="110" text-anchor="middle">etapa 4: sin tendencia respaldada</text>';
+  st+='<text x="434" y="242" text-anchor="middle" style="fill:var(--bad);font-weight:700">ESQUEMA ILUSTRATIVO: sin escala ni datos · horizontal: tiempo (sin escala) · vertical: magnitud relativa</text>';
+  host.innerHTML='<div class="chart"><div class="ch-h"><b>Degradación del rodamiento en cuatro etapas</b></div><svg viewBox="0 0 '+W2+' 256" width="100%" role="img" aria-label="Esquema cualitativo">'+st+'</svg><div class="ch-f"><b>Descripción:</b> esquema cualitativo; las curvas son ilustrativas y no hay duraciones. <b>Refs.:</b> '+chips(["E-8008","E-8003"])+'</div></div>';
+}
+function rankingFuentes(host,limit){
+  var LVN={"VERIFICADO-TEXTO":3,"VERIFICADO-ABSTRACT":2,"SOLO-SNIPPET":1,"NO-VERIFICADO":0,"DATO-USUARIO":3};
+  var rows=D.evidencia.map(function(e){var r=e.referencia||{};return{e:e,l:LVN[e.nivel_evidencia]||0,a:r.anio||0,q:e.revista_cuartil&&e.revista_cuartil.valor}}).sort(function(a,b){return b.l-a.l||b.a-a.a});
+  var nq=rows.filter(function(r){return r.q}).length;
+  host.innerHTML='<div class="card"><h2>'+ic("libro")+' Ranking de fuentes</h2><div class="note">Orden: nivel de lectura (texto, resumen, pista) y luego año más reciente. <b>Las citas y el cuartil Q1 o Q2 no se pudieron verificar</b> (Scopus y SCImago están bloqueados en este entorno), por eso hoy hay '+nq+' fuentes con cuartil verificado. Los filtros se activan solos cuando una fuente trae su cuartil con su fuente.</div>'+
+    '<label>Nivel <select id="rk-n"><option value="leidas">solo leídas (texto o resumen)</option><option value="todas">todas, con pistas</option></select></label><label>Cuartil <select id="rk-q"><option value="">todos</option><option value="12">Q1 o Q2 verificado</option><option value="0">sin verificar</option></select></label><label>Buscar <input type="text" id="rk-t" style="width:150px"></label><div class="tw"><table class="rank" id="rk-tb"></table></div></div>';
+  function draw(){
+    var n=$("#rk-n",host).value,q=$("#rk-q",host).value,t=($("#rk-t",host).value||"").toLowerCase(),k=0;
+    var f=rows.filter(function(r){return(n==="todas"||r.l>=2)&&(q===""||(q==="12"?(r.q===1||r.q===2):!r.q))&&((r.e.apa+" "+r.e.afirma).toLowerCase().indexOf(t)>=0)});
+    if(limit)f=f.slice(0,limit);
+    $("#rk-tb",host).innerHTML='<tr><th>#</th><th>Fuente</th><th>Qué respalda</th><th>Nivel</th><th>Cuartil</th><th></th></tr>'+f.map(function(r){k++;var e=r.e,ref=e.referencia||{};
+      return '<tr><td>'+k+'</td><td>'+esc((ref.autores||"").split(",")[0]||"s. a.")+' ('+esc(ref.anio||"s. f.")+')<br><small>'+esc((ref.titulo||"").slice(0,70))+'</small></td><td>'+lt(e.afirma,90)+'</td><td>'+lv(e.nivel_evidencia)+'</td><td>'+(r.q?'Q'+r.q:'<small>sin verificar</small>')+'</td><td><button class="chip" data-ev="'+esc(e.id)+'">'+esc(e.id)+'</button></td></tr>'}).join("");
+  }
+  host.addEventListener("input",draw);host.addEventListener("change",draw);draw();
+}
+
+/* ---------- vistas del modo "modo de falla" ---------- */
+var SUBSEL={};
+function subtabs(host,key,items){
+  host.innerHTML='<div class="sub" role="tablist">'+items.map(function(it){return '<button class="pill" data-sub="'+it.id+'" role="tab">'+(it.icon?ic(it.icon,15):'')+esc(it.label)+'</button>'}).join("")+'</div><div class="subpanes"></div>';
+  var panes=$(".subpanes",host);items.forEach(function(it){var p=document.createElement("div");p.className="subpane";p.dataset.sub=it.id;panes.appendChild(p)});
+  function sel(id){host.querySelectorAll(".pill").forEach(function(b){b.setAttribute("aria-selected",b.dataset.sub===id)});
+    host.querySelectorAll(".subpane").forEach(function(p){var on=p.dataset.sub===id;p.classList.toggle("on",on);if(on&&!p.dataset.done){p.dataset.done=1;items.forEach(function(it){if(it.id===id){try{it.fn(p)}catch(e){p.innerHTML='<div class="note bad">Error al dibujar: '+esc(e.message)+'</div>';window.__errores=(window.__errores||[]).concat(String(e))}}})}})}
+  host.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".pill");if(b&&host.contains(b))sel(b.dataset.sub)});
+  SUBSEL[key]=sel;sel(items[0].id);
+}
+function esencial(){return (D.caso.resumen.hallazgos||[]).filter(function(h){return h.texto.indexOf("[Referencias]")!==0}).slice(0,6)}
+function vResumenN(host){
+  var c=D.caso,an=c.analisis||{},leidas=D.evidencia.filter(function(e){return e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"}).length,dz=c.dossier,con=0,vac=0;
+  dz.orden.forEach(function(k){if(k==="referencias")return;((dz.secciones[k]||{}).elementos||[]).length?con++:vac++});
+  host.innerHTML='<div class="hero"><h2>Resumen del dossier</h2><p>Qué se sabe, con qué respaldo y qué falta. Cada afirmación lleva su fuente; lo que no tiene evidencia leída queda VACÍO.</p><div class="grid">'+
+   '<div class="kpi"><span class="ico">'+ic("libro",22)+'</span><div><b>'+leidas+'</b><span>fuentes leídas (de '+D.evidencia.length+' registradas)</span></div></div>'+
+   '<div class="kpi"><span class="ico">'+ic("escudo",22)+'</span><div><b>'+con+' de '+(con+vac)+'</b><span>secciones con evidencia</span></div></div>'+
+   '<div class="kpi"><span class="ico">'+ic("alerta",22)+'</span><div><b>'+vac+'</b><span>secciones VACÍO declarado</span></div></div>'+
+   '<div class="kpi"><span class="ico">'+ic("arbol",22)+'</span><div><b>'+((an.fmeca&&an.fmeca.items||[]).length)+'</b><span>modos de falla en el FMECA</span></div></div></div></div>'+
+   '<div class="card"><h2>'+ic("brujula")+' Cadena RCM</h2><div id="rs-cad"></div></div>'+
+   '<div class="grid2"><div class="card"><h2>'+ic("doc")+' Lo esencial</h2><ul id="rs-es" style="padding-left:18px;margin:0"></ul></div><div class="card"><h2>'+ic("libro")+' Fuentes mejor respaldadas</h2><div id="rs-rk"></div><p><button class="btn" data-go="evi" data-sub="ran">Ver ranking completo</button></p></div></div>';
+  cadena($("#rs-cad",host));
+  $("#rs-es",host).innerHTML=esencial().map(function(h){var t=h.texto.replace(/\. Límite:.*$/,"");return '<li style="margin:0 0 8px">'+lt(t,150)+' '+chips(h.evidencia)+'</li>'}).join("");
+  var tmp=document.createElement("div");rankingFuentes(tmp,5);var t=tmp.querySelector("#rk-tb");$("#rs-rk",host).innerHTML='<div class="tw"><table class="rank">'+t.innerHTML+'</table></div>'
+}
+function vModos(host){
+  var an=D.caso.analisis||{};
+  var it=[];
+  if(an.arbol)it.push({id:"arb",label:"Árbol de fallas",icon:"arbol",fn:function(p){p.innerHTML='<div class="card"><h2>'+ic("arbol")+' '+esc(an.arbol.evento_tope||"Árbol de fallas")+'</h2><div id="ma-d"></div><details style="margin-top:10px"><summary>Calculadora de probabilidades del evento tope</summary><div id="ma-c"></div></details></div>';svgArbol($("#ma-d",p),an.arbol);vArbol($("#ma-c",p))}});
+  if(an.acr&&an.acr.ishikawa)it.push({id:"ish",label:"Ishikawa",icon:"grafico",fn:function(p){p.innerHTML='<div class="card"><h2>'+ic("grafico")+' Diagrama de Ishikawa (6M)</h2><div id="mi-d"></div></div>';svgIshikawa($("#mi-d",p),an.acr.ishikawa)}});
+  if(an.fmeca)it.push({id:"fme",label:"FMECA",icon:"ficha",fn:function(p){vFmeca(p);var d=document.createElement("div");p.appendChild(d);docPorModo(d)}});
+  if(an.acr)it.push({id:"hip",label:"Hipótesis y técnicas",icon:"matraz",fn:function(p){vAcr(p);var d=document.createElement("div");p.appendChild(d);matrizEnsayos(d)}});
+  subtabs(host,"mod",it);
+}
+function vVidaCostos(host){
+  var an=D.caso.analisis||{},it=[];
+  if(D.caso.simulador)it.push({id:"cur",label:"Curvas de vida",icon:"pulso",fn:vSim});
+  if(an.herramientas)it.push({id:"her",label:"L10 y frecuencias",icon:"herr",fn:vHerr});
+  if(an.lcc)it.push({id:"cos",label:"Costos",icon:"grafico",fn:vLcc});
+  if(an.vida)it.push({id:"met",label:"Método de vida",icon:"libro",fn:function(p){vVidaPred(p,"vida")}});
+  subtabs(host,"vyc",it);
+}
+function vMonitoreo(host){
+  var an=D.caso.analisis||{},it=[{id:"deg",label:"Degradación",icon:"pulso",fn:degr}];
+  if(an.predictivo)it.push({id:"est",label:"Estrategia y riesgos",icon:"ficha",fn:function(p){vVidaPred(p,"pred")}});
+  it.push({id:"mod",label:"Qué modelo usar",icon:"db",fn:vPredictivo});
+  subtabs(host,"mon",it);
+}
+function vEvidenciaN(host){
+  subtabs(host,"evi",[{id:"ran",label:"Ranking",icon:"libro",fn:function(p){rankingFuentes(p)}},{id:"cob",label:"Cobertura por sección",icon:"escudo",fn:vDossier},
+   {id:"per",label:"Perfil",icon:"grafico",fn:function(p){perfil(p)}},{id:"reg",label:"Registro completo",icon:"db",fn:vEvidencia}]);
+}
+function vPlanN(host){
+  var it=[{id:"vac",label:"Vacíos y preguntas",icon:"alerta",fn:vRastro}];
+  if((D.caso.plan||[]).length)it.push({id:"pla",label:"Plan de acción",icon:"ficha",fn:vPlan});
+  it.push({id:"his",label:"Historial",icon:"doc",fn:vHistorial});
+  subtabs(host,"pla",it);
+}
+
+/* ---------- descargas, guardado y buscador ---------- */
+function guardarArchivo(nombre,data){
+  var ok=function(){toast("Listo: "+nombre)},fb=function(){try{var b=new Blob([data],{type:"application/octet-stream"}),u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download=nombre;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(u);a.remove()},600);ok()}catch(e){toast("No se pudo guardar")}};
+  try{if(window.claude&&window.claude.use){window.claude.use("downloads").then(function(d){if(!d){fb();return}d.save({filename:nombre,data:data}).then(ok,function(e){if(!e||e.code!=="declined")toast("No se pudo guardar ("+((e&&e.code)||"error")+")")})},fb);return}}catch(e){}
+  fb();
+}
+function csv(rows){return rows.map(function(r){return r.map(function(x){x=String(x==null?"":x);return /[",\n]/.test(x)?'"'+x.replace(/"/g,'""')+'"':x}).join(",")}).join("\n")}
+function sesion(){var o={};try{for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k.indexOf("inf:")===0)o[k]=localStorage.getItem(k)}}catch(e){}return{tipo:"sesion-informe",titulo:D.caso.meta.titulo,fecha:new Date().toISOString().slice(0,10),datos:o}}
+function nombreBase(){return (D.caso.meta.titulo||"informe").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,50)}
+var DESCARGAS=[
+ ["doc","Informe completo (HTML)",function(){var c=document.documentElement.cloneNode(true);["#tabs","#main","#drawer","#mbody","#sres","#dmenu"].forEach(function(s){var e=c.querySelector(s);if(e)e.innerHTML=""});return["informe-"+nombreBase()+".html","<!doctype html>\n"+c.outerHTML]}],
+ ["db","Datos del informe (JSON)",function(){return["datos-"+nombreBase()+".json",JSON.stringify({caso:D.caso,ajustes:D.ajustes,generado:D.generado},null,1)]}],
+ ["libro","Registro de evidencia (CSV)",function(){return["evidencia-"+nombreBase()+".csv",csv([["id","nivel","tipo","autores","anio","titulo","fuente","doi","acceso","afirma","limites","cuartil"]].concat(D.evidencia.map(function(e){var r=e.referencia||{};return[e.id,e.nivel_evidencia,e.tipo,r.autores,r.anio,r.titulo,r.fuente,r.doi,e.acceso,e.afirma,e.limites,(e.revista_cuartil&&e.revista_cuartil.valor)?"Q"+e.revista_cuartil.valor:"sin verificar"]})))]}],
+ ["doc","Referencias en APA 7 (TXT)",function(){return["referencias-"+nombreBase()+".txt",D.evidencia.filter(function(e){return e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"}).map(function(e){return e.apa}).sort().join("\n\n")]}],
+ ["guardar","Mi sesión: puntajes y valores (JSON)",function(){return["sesion-"+nombreBase()+".json",JSON.stringify(sesion(),null,1)]}]
+];
+function buildIndex(){
+  var I=[],c=D.caso,an=c.analisis||{},dz=c.dossier;
+  function add(t,txt,tab,sub,ev){I.push({t:t,x:txt,tab:tab,sub:sub,ev:ev})}
+  D.evidencia.forEach(function(e){add("Fuente",e.apa+" "+e.afirma,dz?"evi":"evi",dz?"ran":null,e.id)});
+  (c.resumen.hallazgos||[]).forEach(function(h){add("Hallazgo",h.texto,"res")});
+  if(an.fmeca)an.fmeca.items.forEach(function(m){add("FMECA",m.id+" "+m.modo+" "+(m.mecanismo||"")+" "+(m.causa||""),"mod","fme")});
+  if(an.arbol)an.arbol.nodos.forEach(function(n){add("Árbol",n.texto,"mod","arb")});
+  if(an.acr){(an.acr.hipotesis||[]).forEach(function(h){add("Hipótesis",h.id+" "+h.texto,"mod","hip")});Object.keys(an.acr.ishikawa||{}).forEach(function(k){an.acr.ishikawa[k].forEach(function(x){add("Ishikawa "+k,x.texto,"mod","ish")})})}
+  if(an.lcc)(an.lcc.elementos||[]).forEach(function(e){add("Costo",e.nombre+" "+(e.como_se_calcula||""),"vyc","cos")});
+  if(an.vida)(an.vida.hallazgos||[]).forEach(function(h){add("Vida",h.texto,"vyc","met")});
+  if(an.predictivo){(an.predictivo.hallazgos||[]).forEach(function(h){add("Predictivo",h.texto,"mon","est")});(an.predictivo.estrategia||[]).forEach(function(h){add("Estrategia",h.etapa+" "+h.accion,"mon","est")})}
+  if(dz)dz.orden.forEach(function(k){var s=dz.secciones[k]||{};(s.elementos||[]).forEach(function(e){add(dz.titulos[k],e.titulo,"evi","cob")});if(s.vacio)add("VACÍO "+dz.titulos[k],s.vacio,"pla","vac")});
+  (c.vacios||[]).forEach(function(v){add("Vacío",v,dz?"pla":"ras",dz?"vac":null)});
+  return I;
+}
+
 /* ---------- arranque ---------- */
 function boot(){
   if(!D){document.body.innerHTML="<p style='padding:20px'>El informe no tiene datos incrustados.</p>";return}
   D.evidencia.forEach(function(e){EV[e.id]=e});
-  var m=D.caso.meta;$("#ttl").textContent=m.titulo;$("#sub").textContent=[m.activo,m.fecha_evento&&("evento "+m.fecha_evento),m.origen_datos&&("datos: "+m.origen_datos)].filter(Boolean).join(" · ");
-  var c=D.caso;
-  tab("res","Resumen",vResumen);
-  tab("tl","Línea de tiempo",vTiempo,(c.linea_tiempo||[]).length>0);
-  tab("sen","Señales",vSenales,(c.series||[]).length>0);
-  tab("cau","Causas y técnicas",vCausas);
-  tab("dos","Dossier",vDossier,!!c.dossier);
-  var an=c.analisis||{};
-  tab("map","Mapa visual",vMapa,!!(an.arbol||an.fmeca||an.acr));
-  tab("fme","FMECA",vFmeca,!!(an.fmeca&&an.fmeca.items&&an.fmeca.items.length));
-  tab("arb","Árbol de fallas",vArbol,!!(an.arbol&&an.arbol.nodos&&an.arbol.nodos.length));
-  tab("acr","ACR",vAcr,!!(an.acr&&an.acr.hipotesis&&an.acr.hipotesis.length));
-  tab("lcc","LCC",vLcc,!!(an.lcc&&an.lcc.elementos&&an.lcc.elementos.length));
-  tab("vpr","Vida y predictivo",vVidaPred,!!(an.vida||an.predictivo));
-  tab("her","Herramientas",vHerr,!!an.herramientas);
-  tab("sim","Simulador",vSim,!!c.simulador);
-  tab("dat","Datos",vDatos,(c.tablas||[]).length>0);
-  tab("evi","Evidencia",vEvidencia);
-  tab("vid","Vida",vVida);
-  tab("pre","Predictivo",vPredictivo);
-  tab("pla","Plan",vPlan,(c.plan||[]).length>0);
-  tab("his","Historial",vHistorial);
-  tab("ras","Rastro",vRastro);
-  var tb=$("#tabs"),mn=$("#main");
-  VIEWS.forEach(function(v,i){
-    var b=document.createElement("button");b.textContent=v.label;b.setAttribute("role","tab");b.dataset.id=v.id;tb.appendChild(b);
-    var s=document.createElement("section");s.className="tab";s.id="v-"+v.id;mn.appendChild(s);
-    b.onclick=function(){sel(v.id)};
-  });
-  function sel(id){
-    VIEWS.forEach(function(v){var s=$("#v-"+v.id),b=$('[data-id='+v.id+']',tb);var on=v.id===id;s.classList.toggle("on",on);b.setAttribute("aria-selected",on);
-      if(on&&!s.dataset.done){s.dataset.done=1;try{v.fn(s)}catch(e){s.innerHTML='<div class="note bad">Error al dibujar esta vista: '+esc(e.message)+'</div>';window.__errores=(window.__errores||[]).concat(String(e))}}});
-    try{history.replaceState(null,"","#"+id)}catch(e){}
+  var m=D.caso.meta;$("#ttl").innerHTML=esc(m.titulo)+'<small>'+esc([m.activo,m.origen_datos&&("datos: "+m.origen_datos)].filter(Boolean).join(" · "))+'</small>';
+  var c=D.caso,an=c.analisis||{};
+  if(c.dossier){
+    tab("res","Resumen",vResumenN,true,"brujula");tab("mod","Modos y causas",vModos,true,"arbol");tab("vyc","Vida y costos",vVidaCostos,true,"pulso");
+    tab("mon","Monitoreo y ML",vMonitoreo,true,"grafico");tab("evi","Evidencia",vEvidenciaN,true,"libro");tab("pla","Vacíos y plan",vPlanN,true,"ficha");
+  }else{
+    tab("res","Resumen",vResumen,true,"brujula");tab("tl","Línea de tiempo",vTiempo,(c.linea_tiempo||[]).length>0,"doc");tab("sen","Señales",vSenales,(c.series||[]).length>0,"pulso");
+    tab("cau","Causas y técnicas",vCausas,true,"arbol");tab("dat","Datos",vDatos,(c.tablas||[]).length>0,"db");tab("evi","Evidencia",vEvidencia,true,"libro");tab("vid","Vida",vVida,true,"pulso");
+    tab("pre","Predictivo",vPredictivo,true,"grafico");tab("pla","Plan",vPlan,(c.plan||[]).length>0,"ficha");tab("his","Historial",vHistorial,true,"doc");tab("ras","Vacíos y rastro",vRastro,true,"alerta");
   }
+  var tb=$("#tabs"),mn=$("#main");
+  VIEWS.forEach(function(v){
+    var b=document.createElement("button");b.innerHTML=ic(v.icon||"doc",18)+'<span>'+esc(v.label)+'</span>';b.setAttribute("role","tab");b.dataset.id=v.id;tb.appendChild(b);
+    var s=document.createElement("section");s.className="tab";s.id="v-"+v.id;mn.appendChild(s);b.onclick=function(){sel(v.id)};
+  });
+  var cur="res";
+  function sel(id,sub){cur=id;
+    VIEWS.forEach(function(v){var s=$("#v-"+v.id),b=$('[data-id='+v.id+']',tb),on=v.id===id;s.classList.toggle("on",on);b.setAttribute("aria-selected",on);
+      if(on&&!s.dataset.done){s.dataset.done=1;try{v.fn(s)}catch(e){s.innerHTML='<div class="note bad">Error al dibujar esta vista: '+esc(e.message)+'</div>';window.__errores=(window.__errores||[]).concat(String(e))}}});
+    if(sub&&SUBSEL[id])SUBSEL[id](sub);
+    try{history.replaceState(null,"","#"+id)}catch(e){}window.scrollTo(0,0)}
+  window.__goto=sel;
+  document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-go]");if(t)sel(t.dataset.go,t.dataset.sub)});
   var h=(location.hash||"").slice(1);sel(VIEWS.some(function(v){return v.id===h})?h:"res");
-  $("#thm").onclick=function(){var r=document.documentElement,d=r.dataset.theme==="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches);r.dataset.theme=d?"light":"dark"};
+  function tema(v){var r=document.documentElement;if(v)r.dataset.theme=v;var d=r.dataset.theme==="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches);$("#t-dia").setAttribute("aria-pressed",!d);$("#t-noche").setAttribute("aria-pressed",d)}
+  $("#t-dia").onclick=function(){tema("light")};$("#t-noche").onclick=function(){tema("dark")};tema();
+  var dm=$("#dmenu");dm.innerHTML=DESCARGAS.map(function(d,i){return '<button data-d="'+i+'">'+ic(d[0],16)+esc(d[1])+'</button>'}).join("");
+  $("#b-desc").onclick=function(e){e.stopPropagation();dm.hidden=!dm.hidden};
+  dm.onclick=function(e){var b=e.target.closest("button");if(!b)return;var r=DESCARGAS[+b.dataset.d][2]();guardarArchivo(r[0],r[1]);dm.hidden=true};
+  $("#b-guardar").onclick=function(){var r=DESCARGAS[4][2]();guardarArchivo(r[0],r[1])};
+  $("#b-cargar").onclick=function(){$("#f-cargar").click()};
+  $("#f-cargar").onchange=function(e){var f=e.target.files[0];if(!f)return;var rd=new FileReader();rd.onload=function(){try{var o=JSON.parse(rd.result);if(o.tipo!=="sesion-informe")throw 0;Object.keys(o.datos||{}).forEach(function(k){try{localStorage.setItem(k,o.datos[k])}catch(x){}});
+    VIEWS.forEach(function(v){var s=$("#v-"+v.id);s.dataset.done="";s.innerHTML=""});Object.keys(SUBSEL).forEach(function(k){delete SUBSEL[k]});sel(cur);toast("Sesión cargada")}catch(x){toast("El archivo no es una sesión de este informe")}};rd.readAsText(f);e.target.value=""};
+  document.addEventListener("click",function(e){if(!e.target.closest("#dmenu")&&e.target.id!=="b-desc"&&!e.target.closest("#b-desc"))dm.hidden=true;if(!e.target.closest(".search"))$("#sres").hidden=true});
+  var IDX=null,sr=$("#sres");
+  $("#q").addEventListener("input",function(){var q=this.value.trim().toLowerCase();if(!q){sr.hidden=true;return}IDX=IDX||buildIndex();var ws=q.split(/\s+/);
+    var res=IDX.filter(function(r){var s=r.x.toLowerCase();return ws.every(function(w){return s.indexOf(w)>=0})}).slice(0,14);
+    sr.innerHTML=res.length?res.map(function(r,i){var s=r.x,p=s.toLowerCase().indexOf(ws[0]),a=Math.max(0,p-40),snip=esc(s.slice(a,a+130));ws.forEach(function(w){snip=snip.replace(new RegExp("("+w.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","ig"),"<mark>$1</mark>")});return '<a data-i="'+i+'"><small>'+esc(r.t)+'</small>'+(a>0?"…":"")+snip+'…</a>'}).join(""):'<a><small>Sin resultados</small>No hay coincidencias para "'+esc(q)+'".</a>';
+    sr.hidden=false;sr._r=res});
+  sr.addEventListener("click",function(e){var a=e.target.closest("a[data-i]");if(!a)return;var r=sr._r[+a.dataset.i];sr.hidden=true;if(r.ev){sel(r.tab,r.sub);openEv(r.ev)}else sel(r.tab,r.sub)});
+  $("#mclose").onclick=closeModal;$("#modal").addEventListener("click",function(e){if(e.target.id==="modal")closeModal()});
   window.__listo=true;
 }
 boot();

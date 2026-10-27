@@ -105,7 +105,7 @@ def test_navegador_sin_errores_y_autoprueba():
 const {chromium}=require('playwright');
 (async()=>{const b=await chromium.launch();const p=await b.newPage();const errs=[];
 p.on('pageerror',e=>errs.push(String(e)));p.on('console',m=>{if(m.type()==='error')errs.push(m.text())});
-p.on('request',r=>{if(!r.url().startsWith('file:')&&!r.url().startsWith('data:'))errs.push('red:'+r.url())});
+p.on('request',r=>{const u=r.url();if(!u.startsWith('file:')&&!u.startsWith('data:')&&!u.startsWith('blob:')&&!/fonts\.(googleapis|gstatic)\.com/.test(u))errs.push('red:'+u)});
 await p.goto('file://'+process.argv[1]);
 const tabs=await p.$$eval('#tabs button',x=>x.map(y=>y.textContent));
 for(const t of tabs){await p.click('#tabs button:has-text("'+t+'")');}
@@ -139,8 +139,8 @@ def test_simulador_coincide_con_el_kit_y_dossier_se_dibuja():
     with tempfile.TemporaryDirectory() as d:
         out = Path(d) / "i.html"; rh.construir_informe(c, _ledger(), out)
         js = """const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const p=await b.newPage();const e=[];p.on('pageerror',x=>e.push(String(x)));
-await p.goto('file://'+process.argv[1]);await p.click('#tabs button:has-text("Simulador")');const k=await p.$eval('#sr .kpi b',x=>x.textContent);
-await p.click('#tabs button:has-text("Dossier")');const t=await p.textContent('#dzs');console.log(JSON.stringify({k,t,e}));await b.close()})()"""
+await p.goto('file://'+process.argv[1]);await p.click('#tabs button:has-text("Vida y costos")');const k=await p.$eval('#sr .kpi b',x=>x.textContent);
+await p.click('#tabs button:has-text("Evidencia")');await p.click('.pill:has-text("Cobertura")');const t=await p.textContent('#dzs');console.log(JSON.stringify({k,t,e}));await b.close()})()"""
         r = subprocess.run(["node", "-e", js, str(out)], capture_output=True, text=True, timeout=120)
         o = json.loads(r.stdout.strip().splitlines()[-1])
         ref = optimal_age_replacement(2, 10000, 1, 5)["optimal_age"]
@@ -169,3 +169,21 @@ def test_ensamblar_desde_carpeta(tmp_path):
     assert (tmp_path / "informe.html").exists()
     tipos = {a["tipo"] for a in r["ajustes"]}
     assert "probabilidad_retirada" in tipos and "item_eliminado" in tipos      # snippet no respalda; probabilidad sin fuente se retira
+
+
+@pytest.mark.skipif(not _node_ok(), reason="node o playwright no disponible")
+def test_buscador_tema_y_descargas():
+    c = _caso()
+    c["dossier"] = {"orden": ["a"], "titulos": {"a": "Sec A"}, "frentes": {"a": "x"},
+                    "secciones": {"a": {"elementos": [{"tipo": "afirmacion", "titulo": "kurtosis incipiente", "evidencia": ["E-0001"], "limite": "l"}]}}}
+    with tempfile.TemporaryDirectory() as d:
+        out = Path(d) / "i.html"; rh.construir_informe(c, _ledger(), out)
+        js = """const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const ctx=await b.newContext({acceptDownloads:true});const p=await ctx.newPage();const e=[];p.on('pageerror',x=>e.push(String(x)));
+await p.goto('file://'+process.argv[1]);await p.fill('#q','kurtosis');const n=(await p.$$('#sres a[data-i]')).length;
+await p.click('#t-noche');const th=await p.evaluate(()=>document.documentElement.dataset.theme);
+await p.click('#b-desc');const items=(await p.$$('#dmenu button')).length;
+const [dl]=await Promise.all([p.waitForEvent('download'),p.click('#dmenu button[data-d="2"]')]);const nombre=dl.suggestedFilename();
+console.log(JSON.stringify({n,th,items,nombre,e}));await b.close()})()"""
+        r = subprocess.run(["node", "-e", js, str(out)], capture_output=True, text=True, timeout=120)
+        o = json.loads(r.stdout.strip().splitlines()[-1])
+        assert o["n"] >= 1 and o["th"] == "dark" and o["items"] == 5 and o["nombre"].endswith(".csv") and o["e"] == [], o
