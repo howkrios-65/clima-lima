@@ -14,7 +14,7 @@ LEAD = "reliability-engineer"
 SPECIALISTS = {
     "reliability-data-auditor", "reliability-life-analyst", "reliability-rca-investigator", "reliability-fmeca-rcm",
     "reliability-predictive-analyst", "reliability-economics-kpi", "reliability-evidence-verifier",
-    "reliability-report-writer", "reliability-memory-curator", "reliability-literature-researcher", "reliability-case-historian",
+    "reliability-report-writer", "reliability-memory-curator", "reliability-literature-researcher", "reliability-case-historian", "reliability-dataset-scout", "reliability-standards-researcher",
 }
 VALID_TOOLS = {"Read", "Write", "Edit", "Glob", "Grep", "Bash", "WebSearch", "WebFetch", "Skill"}
 # Empresas y productos que no deben aparecer en agentes, base de conocimiento, catálogo ni kit
