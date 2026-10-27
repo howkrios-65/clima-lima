@@ -136,6 +136,80 @@ def aplicar_compuertas(caso: dict, ledger: Ledger) -> list[dict]:
     return ajustes
 
 
+def _filtrar_items(items, ledger, donde, ajustes, clave_id="id"):
+    """Quita ids de evidencia que no alcanzan VERIFICADO-ABSTRACT; un ítem sin ninguna fuente válida se elimina y queda listado."""
+    out = []
+    for it in items or []:
+        ids = it.get("evidencia") or []
+        ok = [i for i in ids if i in ledger.entradas and ledger.puede_afirmar([i], "VERIFICADO-ABSTRACT")[0]]
+        if len(ok) != len(ids):
+            ajustes.append({"donde": f"{donde} {it.get(clave_id, '')}".strip(), "tipo": "fuente_retirada",
+                            "detalle": f"se quitaron fuentes que no alcanzan VERIFICADO-ABSTRACT o no existen: {[i for i in ids if i not in ok]}"})
+        if not ok:
+            ajustes.append({"donde": f"{donde} {it.get(clave_id, '')}".strip(), "tipo": "item_eliminado", "detalle": "ítem sin ninguna fuente válida"})
+            continue
+        it["evidencia"] = ok
+        if it.get("nivel") not in ("EVIDENCIA", "SINTESIS"):
+            it["nivel"] = "SINTESIS"
+        out.append(it)
+    return out
+
+
+def aplicar_compuertas_analisis(an: dict, ledger: Ledger) -> list[dict]:
+    """Compuertas del análisis de ingeniería (FMECA, árbol, ACR, LCC, vida, predictivo)."""
+    aj: list[dict] = []
+    if not an:
+        return aj
+    f = an.get("fmeca")
+    if f:
+        f["items"] = _filtrar_items(f.get("items"), ledger, "FMECA", aj)
+        for it in f["items"]:
+            for k in ("severidad", "ocurrencia", "deteccion_puntaje"):
+                if it.get(k) is not None:
+                    aj.append({"donde": f"FMECA {it['id']}", "tipo": "puntaje_retirado", "detalle": f"{k} sin fuente: lo asigna un experto en la pestaña"})
+                    it[k] = None
+    a = an.get("arbol")
+    if a:
+        a["nodos"] = _filtrar_items(a.get("nodos"), ledger, "árbol", aj)
+        ids = {n["id"] for n in a["nodos"]}
+        for n in a["nodos"]:
+            n["hijos"] = [h for h in n.get("hijos", []) if h in ids]
+            if n.get("probabilidad") is not None:
+                aj.append({"donde": f"árbol {n['id']}", "tipo": "probabilidad_retirada", "detalle": "probabilidad sin fuente: la ingresa quien la conozca"})
+                n["probabilidad"] = None
+            if n.get("puerta") not in ("OR", "AND", "BASE"):
+                n["puerta"] = "BASE" if not n["hijos"] else "OR"
+    r = an.get("acr")
+    if r:
+        r["hipotesis"] = _filtrar_items(r.get("hipotesis"), ledger, "ACR hipótesis", aj)
+        for h in r["hipotesis"]:
+            if h.get("estado") != "posible":
+                aj.append({"donde": f"ACR {h['id']}", "tipo": "degradada", "de": h.get("estado"), "a": "posible",
+                           "detalle": "sin evidencia del propio caso ninguna causa pasa de posible"})
+                h["estado"] = "posible"
+        for cat, lst in list((r.get("ishikawa") or {}).items()):
+            r["ishikawa"][cat] = _filtrar_items(lst, ledger, f"Ishikawa {cat}", aj, clave_id="texto")
+        r["ensayos"] = _filtrar_items(r.get("ensayos"), ledger, "ensayo", aj, clave_id="ensayo")
+    l = an.get("lcc")
+    if l:
+        l["elementos"] = _filtrar_items(l.get("elementos"), ledger, "LCC", aj)
+        for e in l["elementos"]:
+            if e.get("valor") is not None:
+                aj.append({"donde": f"LCC {e['id']}", "tipo": "valor_retirado", "detalle": "costo sin fuente: lo ingresa la persona o se obtiene de una tesis o paper"})
+                e["valor"] = None
+        l["formulas"] = _filtrar_items(l.get("formulas"), ledger, "fórmula", aj, clave_id="nombre")
+    v = an.get("vida")
+    if v:
+        v["hallazgos"] = _filtrar_items(v.get("hallazgos"), ledger, "vida", aj)
+        v["metodo_recomendado"] = _filtrar_items(v.get("metodo_recomendado"), ledger, "método de vida", aj, clave_id="situacion")
+    pr = an.get("predictivo")
+    if pr:
+        pr["hallazgos"] = _filtrar_items(pr.get("hallazgos"), ledger, "predictivo", aj)
+        pr["estrategia"] = _filtrar_items(pr.get("estrategia"), ledger, "estrategia", aj, clave_id="etapa")
+        pr["riesgos_de_validacion"] = _filtrar_items(pr.get("riesgos_de_validacion"), ledger, "riesgo", aj, clave_id="riesgo")
+    return aj
+
+
 def construir_informe(caso: dict, ledger: Ledger, salida: str | Path | None = None) -> dict:
     """Devuelve {'html', 'ajustes', 'resumen_evidencia'} y, si se da `salida`, escribe el archivo HTML autocontenido."""
     c = json.loads(json.dumps(caso, default=str))        # copia profunda; no se modifica el caso del llamador
@@ -145,7 +219,7 @@ def construir_informe(caso: dict, ledger: Ledger, salida: str | Path | None = No
     c.setdefault("resumen", {"kpis": [], "hallazgos": []})
     if not c["meta"].get("titulo"):
         raise ValueError("meta.titulo es obligatorio")
-    ajustes = aplicar_compuertas(c, ledger)
+    ajustes = aplicar_compuertas(c, ledger) + aplicar_compuertas_analisis(c.get("analisis"), ledger)
     for t in c["tecnicas"]:
         t.setdefault("insumos", [])
     conv = convergencia(c["tecnicas"], c["raices"]) if c["tecnicas"] and c["raices"] else None

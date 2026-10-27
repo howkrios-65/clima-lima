@@ -359,6 +359,108 @@ function vSim(host){
   window.__sim=function(b,e,cp,cf){$("#sb").value=b;$("#se").value=e;$("#sp").value=cp;$("#sf").value=cf;run();return $("#sr").textContent};
 }
 
+/* ---------- análisis de ingeniería ---------- */
+function nv(n){return n==="EVIDENCIA"?'<span class="lv t">EVIDENCIA</span>':'<span class="lv s">SÍNTESIS</span>'}
+function store(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem("inf:"+k)||"null");localStorage.setItem("inf:"+k,JSON.stringify(v))}catch(e){return null}}
+function barChart(host,rows,o){ /* rows=[{label,value,color}] */
+  var W=760,rh=24,H=rows.length*rh+8,mx=Math.max.apply(0,rows.map(function(r){return r.value}))||1,g='';
+  rows.forEach(function(r,i){var y=i*rh+4,w=(W-260)*r.value/mx;g+='<text x="4" y="'+(y+14)+'">'+esc(String(r.label).slice(0,38))+'</text><rect x="250" y="'+y+'" width="'+Math.max(w,1)+'" height="16" fill="'+(r.color||"var(--c1)")+'"><title>'+esc(r.label)+': '+fmt(r.value,2)+'</title></rect><text x="'+(254+w)+'" y="'+(y+13)+'">'+fmt(r.value,0)+'</text>'});
+  host.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="'+esc(o&&o.titulo||"barras")+'">'+g+'</svg>';
+}
+function listaEv(items,campo){return '<ul>'+(items||[]).map(function(x){return '<li>'+esc(x[campo||"texto"])+' '+nv(x.nivel)+' '+chips(x.evidencia)+(x.nota?'<br><small>'+esc(x.nota)+'</small>':'')+'</li>'}).join("")+'</ul>'}
+function vaciosHtml(a){return (a&&a.length)?'<div class="note bad"><b>VACÍO</b><ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join("")+'</ul></div>':''}
+
+function vFmeca(host){
+  var f=D.caso.analisis.fmeca,it=f.items||[],sv=store("fmeca")||{};
+  host.innerHTML='<div class="card"><h2>FMECA y estrategia RCM preliminar</h2><p><b>Función:</b> '+esc(f.funcion||"")+'</p><div class="note">Los modos, causas y detección vienen de la evidencia o son síntesis con premisas citadas. <b>Severidad, ocurrencia y detección están vacías a propósito</b>: no hay datos del activo. Un experto puede puntuarlas (1 a 10) y el RPN y el ranking se calculan en el acto; el criterio y la escala deben calibrarse con el equipo. Los puntajes quedan solo en este navegador.</div><div class="tw"><table id="fm"></table></div></div>'+
+   '<div class="card"><h2>Ranking por RPN (solo modos puntuados)</h2><div id="fmr"></div></div>'+vaciosHtml(f.vacios);
+  function draw(){
+    $("#fm").innerHTML='<tr><th>Id</th><th>Modo y mecanismo</th><th>Efectos</th><th>Causa</th><th>Detección</th><th>Tarea RCM propuesta</th><th>S</th><th>O</th><th>D</th><th>RPN</th></tr>'+it.map(function(m){
+      var v=sv[m.id]||{},rp=(v.s&&v.o&&v.d)?v.s*v.o*v.d:null;
+      var inp=function(k){return '<td><input type="number" min="1" max="10" data-id="'+esc(m.id)+'" data-k="'+k+'" value="'+(v[k]||"")+'" style="width:52px"></td>'};
+      return '<tr><td>'+esc(m.id)+'</td><td><b>'+esc(m.modo)+'</b><br><small>'+esc(m.mecanismo||"")+'</small><br>'+nv(m.nivel)+' '+chips(m.evidencia)+(m.nota?'<br><small>'+esc(m.nota)+'</small>':'')+'</td><td>'+esc(m.efecto_local||"")+'<br><small>'+esc(m.efecto_sistema||"")+'</small></td><td>'+esc(m.causa||"")+'</td><td>'+esc(m.deteccion||"")+'</td><td>'+esc(m.tarea_rcm||"")+'</td>'+inp("s")+inp("o")+inp("d")+'<td><b>'+(rp==null?'—':rp)+'</b></td></tr>'}).join("");
+    var rows=it.map(function(m){var v=sv[m.id]||{};return{label:m.id+" "+m.modo,value:(v.s&&v.o&&v.d)?v.s*v.o*v.d:0}}).filter(function(r){return r.value>0}).sort(function(a,b){return b.value-a.value});
+    if(rows.length)barChart($("#fmr"),rows,{titulo:"RPN"});else $("#fmr").innerHTML='<p>Sin puntajes: ingrese S, O y D para ver el ranking.</p>';
+  }
+  host.addEventListener("change",function(e){var t=e.target;if(t.dataset&&t.dataset.k){var v=Math.max(1,Math.min(10,+t.value||0));sv[t.dataset.id]=sv[t.dataset.id]||{};sv[t.dataset.id][t.dataset.k]=v||undefined;store("fmeca",sv);draw()}});
+  draw();
+}
+
+function vArbol(host){
+  var a=D.caso.analisis.arbol,N={};a.nodos.forEach(function(n){N[n.id]=n});
+  var hijosDe={};a.nodos.forEach(function(n){(n.hijos||[]).forEach(function(h){hijosDe[h]=1})});
+  var raices=a.nodos.filter(function(n){return!hijosDe[n.id]}),pv=store("arbolp")||{};
+  host.innerHTML='<div class="card"><h2>Árbol de fallas</h2><p><b>Evento tope:</b> '+esc(a.evento_tope||"")+'</p><div class="note">La estructura (puertas OR y AND) es una propuesta respaldada por la evidencia citada en cada nodo o por síntesis con premisas; no está probada con datos del activo. Las probabilidades de los eventos básicos están vacías: ingrese las que conozca (de 0 a 1) y se calcula la probabilidad del evento tope suponiendo eventos independientes.</div><button class="btn" id="ex">Expandir todo</button> <button class="btn" id="co">Contraer todo</button><div id="tr"></div></div><div class="card"><h2>Probabilidad del evento tope</h2><div id="pt"></div></div>'+vaciosHtml(a.vacios);
+  function nodo(n,depth){
+    var hs=(n.hijos||[]).map(function(h){return N[h]}).filter(Boolean),g=n.puerta;
+    var cab='<span class="badge '+(g==="AND"?'posible':g==="OR"?'probable':'')+'">'+esc(g)+'</span> '+esc(n.texto)+' '+nv(n.nivel)+' '+chips(n.evidencia)+(n.nota?'<br><small>'+esc(n.nota)+'</small>':'');
+    if(!hs.length)return '<li style="list-style:none;margin:4px 0">'+cab+' <label>p <input type="number" min="0" max="1" step="0.001" data-p="'+esc(n.id)+'" value="'+(pv[n.id]==null?"":pv[n.id])+'" style="width:70px"></label></li>';
+    return '<li style="list-style:none;margin:4px 0"><details'+(depth<2?' open':'')+'><summary>'+cab+'</summary><ul style="border-left:2px solid var(--line);margin-left:6px;padding-left:12px">'+hs.map(function(h){return nodo(h,depth+1)}).join("")+'</ul></details></li>';
+  }
+  $("#tr").innerHTML='<ul style="padding:0">'+raices.map(function(r){return nodo(r,0)}).join("")+'</ul>';
+  function calc(n){var hs=(n.hijos||[]).map(function(h){return N[h]}).filter(Boolean);if(!hs.length){return{p:pv[n.id]==null||pv[n.id]===""?null:+pv[n.id],falta:(pv[n.id]==null||pv[n.id]==="")?1:0}}
+    var r=hs.map(calc),falta=r.reduce(function(x,y){return x+y.falta},0);if(falta)return{p:null,falta:falta};
+    var p=n.puerta==="AND"?r.reduce(function(x,y){return x*y.p},1):1-r.reduce(function(x,y){return x*(1-y.p)},1);return{p:p,falta:0}}
+  function out(){var tot=raices.map(calc),f=tot.reduce(function(x,y){return x+y.falta},0);
+    $("#pt").innerHTML=f?'<p>Faltan '+f+' probabilidad(es) de eventos básicos para calcular el evento tope.</p>':'<div class="grid">'+tot.map(function(t,i){return '<div class="kpi"><b>'+fmt(t.p,5)+'</b><span>P('+esc(raices[i].texto.slice(0,50))+')</span></div>'}).join("")+'</div><p style="font-size:12px;color:var(--mut)">Cálculo con las probabilidades que usted ingresó; no son datos de la evidencia.</p>'}
+  host.addEventListener("change",function(e){var t=e.target;if(t.dataset&&t.dataset.p){pv[t.dataset.p]=t.value===""?null:Math.max(0,Math.min(1,+t.value));store("arbolp",pv);out()}});
+  $("#ex").onclick=function(){host.querySelectorAll("details").forEach(function(d){d.open=true})};$("#co").onclick=function(){host.querySelectorAll("details").forEach(function(d){d.open=false})};
+  out();
+}
+
+function vAcr(host){
+  var r=D.caso.analisis.acr,h='<div class="card"><h2>Análisis de causa raíz genérico del modo de falla</h2><div class="note">No hay caso real: todas las causas figuran como <b>posibles</b>. Cada una indica qué evidencia del activo la confirmaría o la descartaría.</div><div class="tw"><table><tr><th>Id</th><th>Hipótesis</th><th>Estado</th><th>Qué la confirmaría o descartaría</th><th>Fuente</th></tr>'+
+    (r.hipotesis||[]).map(function(x){return '<tr><td>'+esc(x.id)+'</td><td>'+esc(x.texto)+'<br>'+nv(x.nivel)+(x.nota?'<br><small>'+esc(x.nota)+'</small>':'')+'</td><td><span class="badge posible">'+esc(x.estado)+'</span></td><td>'+esc(x.prueba_para_confirmar||"")+'</td><td>'+chips(x.evidencia)+'</td></tr>'}).join("")+'</table></div></div>';
+  var cats=Object.keys(r.ishikawa||{});
+  h+='<div class="card"><h2>Diagrama de Ishikawa (6M)</h2><div class="grid">'+cats.map(function(c){return '<div class="kpi" style="min-height:90px"><b style="font-size:15px">'+esc(c)+'</b>'+((r.ishikawa[c]||[]).length?listaEv(r.ishikawa[c]):'<p><small>VACÍO: sin fuente leída</small></p>')+'</div>'}).join("")+'</div></div>';
+  h+='<div class="card"><h2>Ensayos y verificaciones pertinentes</h2><div class="tw"><table><tr><th>Ensayo</th><th>Hipótesis</th><th>Fuente</th></tr>'+(r.ensayos||[]).map(function(e){return '<tr><td>'+esc(e.ensayo)+'</td><td>'+esc((e.para_hipotesis||[]).join(", "))+'</td><td>'+chips(e.evidencia)+'</td></tr>'}).join("")+'</table></div></div>'+vaciosHtml(r.vacios);
+  host.innerHTML=h;
+}
+
+function vLcc(host){
+  var l=D.caso.analisis.lcc,vals=store("lcc")||{};
+  host.innerHTML='<div class="card"><h2>Costo de ciclo de vida: estructura y calculadora</h2><div class="note">No hay costos con fuente leída para este modo de falla, por eso los valores están vacíos. Ingrese los costos (por año, en una misma moneda) de una tesis, un paper o su propia operación y se calcula el total y su composición. Se guardan solo en este navegador.</div><div class="tw"><table id="lc"></table></div><div id="lt"></div></div>'+
+   '<div class="card"><h2>Costo anual equivalente</h2><label>Tasa anual <input type="number" id="tr" step="0.01" placeholder="0.10"></label><label>Años <input type="number" id="ty" placeholder="10"></label><label>Valor presente neto <input type="number" id="tv"></label><div id="ce"></div></div>'+
+   '<div class="card"><h2>Fórmulas</h2><ul>'+(l.formulas||[]).map(function(f){return '<li><b>'+esc(f.nombre)+':</b> <code>'+esc(f.expresion)+'</code> '+chips(f.evidencia)+'</li>'}).join("")+'</ul></div>'+vaciosHtml(l.vacios);
+  function draw(){
+    $("#lc").innerHTML='<tr><th>Id</th><th>Elemento</th><th>Tipo</th><th>Cómo se calcula</th><th>Valor anual (usted)</th><th>Fuente</th></tr>'+l.elementos.map(function(e){return '<tr><td>'+esc(e.id)+'</td><td>'+esc(e.nombre)+'<br>'+nv(e.nivel)+(e.nota?'<br><small>'+esc(e.nota)+'</small>':'')+'</td><td>'+esc(e.tipo||"")+'</td><td>'+esc(e.como_se_calcula||"")+'</td><td><input type="number" min="0" data-c="'+esc(e.id)+'" value="'+(vals[e.id]==null?"":vals[e.id])+'" style="width:100px"></td><td>'+chips(e.evidencia)+'</td></tr>'}).join("");
+    var rows=l.elementos.map(function(e){return{label:e.nombre,value:+vals[e.id]||0}}).filter(function(r){return r.value>0}),tot=rows.reduce(function(a,b){return a+b.value},0);
+    $("#lt").innerHTML=rows.length?'<h3>Total anual: '+fmt(tot,2)+'</h3><div id="lb"></div>':'<p>Sin valores ingresados.</p>';if(rows.length)barChart($("#lb"),rows.sort(function(a,b){return b.value-a.value}),{titulo:"Composición"});
+  }
+  function ce(){var r=+$("#tr").value,n=+$("#ty").value,v=+$("#tv").value;$("#ce").innerHTML=(r>0&&n>0&&v)?'<div class="kpi"><b>'+fmt(v*r/(1-Math.pow(1+r,-n)),2)+'</b><span>costo anual equivalente = VPN · r / (1 − (1+r)^−n)</span></div>':'<p>Ingrese tasa, años y valor presente.</p>'}
+  host.addEventListener("change",function(e){var t=e.target;if(t.dataset&&t.dataset.c){vals[t.dataset.c]=t.value===""?null:+t.value;store("lcc",vals);draw()}});host.addEventListener("input",ce);draw();ce();
+}
+
+function vVidaPred(host){
+  var v=D.caso.analisis.vida||{},p=D.caso.analisis.predictivo||{},h='';
+  if(v.hallazgos){h+='<div class="card"><h2>Estadística de vida: qué dice la evidencia</h2>'+listaEv(v.hallazgos)+'</div>';
+    h+='<div class="card"><h2>Método según la situación</h2><div class="tw"><table><tr><th>Situación</th><th>Método</th><th>Por qué</th><th>Fuente</th></tr>'+(v.metodo_recomendado||[]).map(function(m){return '<tr><td>'+esc(m.situacion)+'</td><td>'+esc(m.metodo)+'</td><td>'+esc(m.porque||"")+'</td><td>'+chips(m.evidencia)+'</td></tr>'}).join("")+'</table></div></div>'+vaciosHtml(v.vacios)}
+  if(p.hallazgos){h+='<div class="card"><h2>Mantenimiento predictivo: qué dice la evidencia</h2>'+listaEv(p.hallazgos)+'</div>';
+    h+='<div class="card"><h2>Estrategia por etapas</h2><ol>'+(p.estrategia||[]).map(function(e){return '<li><b>'+esc(e.etapa)+':</b> '+esc(e.accion)+'<br><small>Para avanzar: '+esc(e.condicion_para_avanzar||"")+'</small> '+chips(e.evidencia)+'</li>'}).join("")+'</ol></div>';
+    h+='<div class="card"><h2>Riesgos de validación</h2><ul>'+(p.riesgos_de_validacion||[]).map(function(e){return '<li>'+esc(e.riesgo)+' '+chips(e.evidencia)+'</li>'}).join("")+'</ul></div>'+vaciosHtml(p.vacios)}
+  host.innerHTML=h||"<p>Sin análisis cargado.</p>";
+}
+
+function vHerr(host){
+  host.innerHTML='<div class="card"><h2>Frecuencias características del rodamiento</h2><div class="note">Cinemática estándar de rodamientos; la evidencia registrada (<button class="chip" data-ev="E-8008">E-8008</button>) cita las ecuaciones BPFO, BPFI, BSF y FTF, pero su extracto registrado no las contiene: verifíquelas en la fuente. Los datos geométricos son de su rodamiento (catálogo), no de la evidencia.</div>'+
+   '<label>Elementos rodantes <input type="number" id="hn" value="" placeholder="n"></label><label>Diámetro del elemento d (mm) <input type="number" id="hd"></label><label>Diámetro primitivo D (mm) <input type="number" id="hD"></label><label>Ángulo de contacto (°) <input type="number" id="ha" value="0"></label><label>Velocidad del eje (rpm) <input type="number" id="hr"></label><div id="hf"></div><div id="hs"></div></div>'+
+   '<div class="card"><h2>Vida nominal L10</h2><div class="note">Relación estándar L10 = (C/P)^p millones de revoluciones (p = 3 en bolas, 10/3 en rodillos). La fuente registrada <button class="chip" data-ev="E-6002">E-6002</button> la menciona; su extracto registrado no la contiene y la edición de la norma no está verificada. Es solo la vida de fatiga bajo condiciones convencionales.</div>'+
+   '<label>Capacidad dinámica C <input type="number" id="lc"></label><label>Carga equivalente P <input type="number" id="lp"></label><label>Tipo <select id="lt"><option value="3">bolas (p=3)</option><option value="3.3333333">rodillos (p=10/3)</option></select></label><label>rpm <input type="number" id="ln"></label><div id="lo"></div></div>'+
+   '<div class="card"><h2>Pareto de fallas con sus datos</h2><div class="note">El ranking de componentes y modos de la literatura es VACÍO. Si tiene conteos propios, ingréselos: «componente: cantidad», uno por línea.</div><textarea id="pa" rows="5" style="width:100%;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px" placeholder="chumacera: 12&#10;rodillo: 30"></textarea><div id="pg"></div></div>';
+  function fr(){var n=+$("#hn").value,d=+$("#hd").value,Dd=+$("#hD").value,a=(+$("#ha").value||0)*Math.PI/180,rpm=+$("#hr").value;
+    if(!(n>0&&d>0&&Dd>0&&rpm>0&&d<Dd)){$("#hf").innerHTML='<p>Ingrese n, d, D y rpm (d menor que D).</p>';$("#hs").innerHTML="";return}
+    var f=rpm/60,x=d/Dd*Math.cos(a),F={BPFO:n/2*f*(1-x),BPFI:n/2*f*(1+x),BSF:Dd/(2*d)*f*(1-x*x),FTF:f/2*(1-x),"1x":f};
+    $("#hf").innerHTML='<div class="grid">'+Object.keys(F).map(function(k){return '<div class="kpi"><b>'+fmt(F[k],2)+' Hz</b><span>'+k+'</span></div>'}).join("")+'</div>';
+    var W=760,H=150,mx=F.BPFI*3.2,s='<line x1="40" x2="'+(W-10)+'" y1="120" y2="120" stroke="var(--line)"/>',cols={BPFO:"var(--c2)",BPFI:"var(--c1)",BSF:"var(--c3)",FTF:"var(--c4)","1x":"var(--mut)"};
+    Object.keys(F).forEach(function(k){for(var h=1;h<=3;h++){var fx=F[k]*h;if(fx>mx)break;var x0=40+fx/mx*(W-50);s+='<line x1="'+x0+'" x2="'+x0+'" y1="'+(120-70/h)+'" y2="120" stroke="'+cols[k]+'" stroke-width="2"><title>'+k+' x'+h+' = '+fmt(fx,1)+' Hz</title></line>'+(h===1?'<text x="'+x0+'" y="'+(120-74)+'" text-anchor="middle" fill="'+cols[k]+'">'+k+'</text>':'')}});
+    for(var t=0;t<=4;t++){s+='<text x="'+(40+t/4*(W-50))+'" y="140" text-anchor="middle">'+fmt(mx*t/4,0)+' Hz</text>'}
+    $("#hs").innerHTML='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Marcadores de frecuencia">'+s+'</svg><p style="font-size:12px;color:var(--mut)">Marcadores cinemáticos (sin deslizamiento) y sus armónicos; no son un espectro medido.</p>'}
+  function l10(){var C=+$("#lc").value,P=+$("#lp").value,p=+$("#lt").value,n=+$("#ln").value;if(!(C>0&&P>0)){$("#lo").innerHTML="<p>Ingrese C y P.</p>";return}var L=Math.pow(C/P,p);$("#lo").innerHTML='<div class="grid"><div class="kpi"><b>'+fmt(L,2)+'</b><span>L10 (millones de revoluciones)</span></div>'+(n>0?'<div class="kpi"><b>'+fmt(L*1e6/(60*n),0)+'</b><span>L10h (horas) = L10·10^6/(60·n)</span></div>':'')+'</div>'}
+  function pa(){var rows=($("#pa").value||"").split("\n").map(function(l){var m=l.split(":");return{label:(m[0]||"").trim(),value:+(m[1]||"").trim()}}).filter(function(r){return r.label&&r.value>0}).sort(function(a,b){return b.value-a.value});
+    if(!rows.length){$("#pg").innerHTML="";return}var tot=rows.reduce(function(a,b){return a+b.value},0),ac=0;rows.forEach(function(r){ac+=r.value;r.label=r.label+" ("+fmt(100*ac/tot,0)+" % acum.)"});$("#pg").innerHTML='<div id="pgb"></div>';barChart($("#pgb"),rows,{titulo:"Pareto"})}
+  host.addEventListener("input",function(){fr();l10();pa()});fr();l10();
+}
+
 function vPlan(host){
   var p=D.caso.plan||[];
   host.innerHTML='<div class="card"><h2>Plan de acciones (CAPA)</h2><div class="tw"><table><tr><th>Id</th><th>Acción</th><th>Tipo</th><th>Causa</th><th>Responsable</th><th>Fecha</th><th>Verificación de eficacia</th><th>Fuente</th></tr>'+
@@ -389,6 +491,13 @@ function boot(){
   tab("sen","Señales",vSenales,(c.series||[]).length>0);
   tab("cau","Causas y técnicas",vCausas);
   tab("dos","Dossier",vDossier,!!c.dossier);
+  var an=c.analisis||{};
+  tab("fme","FMECA",vFmeca,!!(an.fmeca&&an.fmeca.items&&an.fmeca.items.length));
+  tab("arb","Árbol de fallas",vArbol,!!(an.arbol&&an.arbol.nodos&&an.arbol.nodos.length));
+  tab("acr","ACR",vAcr,!!(an.acr&&an.acr.hipotesis&&an.acr.hipotesis.length));
+  tab("lcc","LCC",vLcc,!!(an.lcc&&an.lcc.elementos&&an.lcc.elementos.length));
+  tab("vpr","Vida y predictivo",vVidaPred,!!(an.vida||an.predictivo));
+  tab("her","Herramientas",vHerr,!!an.herramientas);
   tab("sim","Simulador",vSim,!!c.simulador);
   tab("dat","Datos",vDatos,(c.tablas||[]).length>0);
   tab("evi","Evidencia",vEvidencia);
