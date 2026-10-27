@@ -155,3 +155,9 @@ zenodo.org
 ```
 Con ellos, el investigador puede buscar en bases de metadatos abiertas, resolver DOI, leer preprints y repositorios de tesis de
 las universidades y países nombrados, y comprobar cuartiles.
+
+## Prioridad geográfica indicada por la persona
+Chile, Perú, Australia, Estados Unidos, México, Brasil, Finlandia, Reino Unido, Suiza, Alemania y Canadá. Además de universidades de Estados Unidos
+(MIT, Harvard, Colorado School of Mines, Stanford) y todas las del Perú. Se incluyen tesis y libros de acceso libre. Scribd y redes sociales solo
+como pista: se registran como `solo_referencia` o `snippet` y nunca respaldan una cifra. Cada fuente registra su país solo si la fuente lo declara.
+Estado actual: la red del entorno bloquea casi todos estos repositorios; hasta que se habiliten los dominios, esta cobertura es VACÍO declarado.

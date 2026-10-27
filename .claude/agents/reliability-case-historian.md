@@ -16,7 +16,7 @@ El almacén es `historial/` en la raíz del repositorio (se crea al primer uso) 
 python -I -c "import sys; sys.path.insert(0,'tools/reliability'); from reliability_kit import CaseStore, familia_de; s=CaseStore('historial'); ..."
 ```
 Solo se agrega: cada cambio crea una versión nueva del caso o de la línea base; nunca se sobrescribe ni se borra historia.
-Antes de guardar datos de un usuario, **pregúntale** si el repositorio puede contenerlos (puede ser compartido). Por defecto `historial/` está en `.gitignore`.
+La persona pidió que todo quede en el historial. Se guarda siempre en `historial/` (fuera de git por defecto). **Si el repositorio es compartido, pide permiso explícito antes de commitear o subir cualquier caso**; sin permiso, el historial queda solo local. Los datos que la persona declare ilustrativos se marcan `ilustrativo` y no alimentan líneas base.
 
 ## Al abrir un caso (búsqueda)
 1. Construye el caso mínimo: id, título, clase de activo, modo de falla, unidad, fecha de falla y mecanismos sospechados.
