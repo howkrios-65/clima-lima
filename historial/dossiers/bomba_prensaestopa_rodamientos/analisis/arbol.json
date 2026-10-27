@@ -7,7 +7,8 @@
    "puerta": "OR",
    "hijos": [
     "N1",
-    "N19"
+    "N19",
+    "N23"
    ],
    "probabilidad": null,
    "nivel": "SINTESIS",
@@ -341,7 +342,7 @@
     "E-2700",
     "E-6004"
    ],
-   "nota": "Cadena secuencial; AND como forma lógica de eslabones que deben cumplirse todos y que se verifican uno a uno. La cadena completa no tiene fuente leída. Pistas por abrir: E-2500, E-2503, E-2504, E-2000. Si no se acepta el AND, se lista como OR de eslabones sueltos.",
+   "nota": "Cadena secuencial; AND como forma lógica de eslabones que deben cumplirse todos y que se verifican uno a uno. La cadena completa no tiene fuente leída. Pistas por abrir: E-2500, E-2503, E-2504, E-2000. Si no se acepta el AND, se lista como OR de eslabones sueltos. Falta el eslabón puente (la fuga llega al soporte): sin fuente leída; consta en los vacíos.",
    "clase": "fisica"
   },
   {
@@ -489,7 +490,7 @@
     "E-6004",
     "E-1203"
    ],
-   "nota": "E-6004 cita el sobrecalentamiento por ajustes inadecuados en alojamientos o ejes; E-1203 cita la temperatura de operación entre los factores de salud. Que el calor provenga del prensaestopa es SINTESIS.",
+   "nota": "E-6004 cita el sobrecalentamiento por ajustes inadecuados en alojamientos o ejes; E-1203 cita la temperatura de operación entre los factores de salud. Que el calor provenga del prensaestopa es SINTESIS. Solo el sobrecalentamiento como causa de falla figura en E-6004; que provenga del ajuste del prensaestopa es SINTESIS.",
    "clase": "fisica"
   },
   {
@@ -498,12 +499,12 @@
    "puerta": "BASE",
    "hijos": [],
    "probabilidad": null,
-   "nivel": "EVIDENCIA",
+   "nivel": "SINTESIS",
    "evidencia": [
     "E-6002",
     "E-1204"
    ],
-   "nota": "E-6002 lista las cargas excesivas; E-1204 es un banco acelerado. Que el prensaestopa la genere es SINTESIS.",
+   "nota": "E-6002 lista las cargas excesivas; E-1204 es un banco acelerado. Que el prensaestopa la genere es SINTESIS. La deflexión no consta en los extractos; es razonamiento del equipo.",
    "clase": "fisica"
   },
   {
@@ -562,7 +563,7 @@
  ],
  "vacios": [
   "No existe caso real ni datos de planta: todas las probabilidades son null y ninguna rama puede darse por confirmada.",
-  "Puertas: N0, N2, N4, N12, N15, N20, N32 y N38 son OR. Las puertas AND de N1, N27 y N28 son lectura del equipo y no tienen fuente leída; si el líder o el experto no las acepta, el árbol se limita a OR.",
+  "Puertas: N0, N2, N4, N12, N15, los modos propios de la bomba, N32 y N38 son OR. Las puertas AND de N1, N27 y N28 son lectura del equipo y no tienen fuente leída; si el líder o el experto no las acepta, el árbol se limita a OR.",
   "Eslabones puente de las rutas A y B (N31, N37, N38): SIN FUENTE LEIDA. Solo E-2700 respalda el mecanismo de la empaquetadura (N23, N30, N36). Pistas no leídas: E-2500, E-2502, E-2503, E-2504, E-2000, E-2001, E-2002, E-2003, E-2004.",
   "Modos propios de la bomba (sello mecánico, cavitación, recirculación, anillos de desgaste, golpe de ariete, eje y acople): SIN DATOS PARA ARMARLO.",
   "Fuentes de causas de rodamientos: bolas en fatiga de ciclos muy altos, aerogeneradores, un resumen sobre bombas y bancos de laboratorio; comparabilidad baja.",

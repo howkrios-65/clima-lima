@@ -9,6 +9,14 @@
  },
  {
   "agente": "reliability-literature-researcher",
+  "rol": "Frentes del caso previo (mecanismos, empaquetadura, monitoreo, ML y datos, normas y costos)",
+  "hizo": "Cinco frentes en paralelo: 80 entradas nuevas (E-2000 a E-2410, E-2430 a E-2445), 4 con lectura, todas de bancos de rodamientos; ninguna pista de prensaestopa leída.",
+  "entrada": "Frentes de búsqueda del primer dossier",
+  "salida": "registros y pistas",
+  "aprendio": "Las cifras de agua y de fuga de las pistas se contradicen y no se usan."
+ },
+ {
+  "agente": "reliability-literature-researcher",
   "rol": "Cadena prensaestopa a rodamiento",
   "hizo": "23 pistas de buscador (E-2500 a E-2522), ninguna leída.",
   "entrada": "Frente cadena",
@@ -68,7 +76,7 @@
   "rol": "Economía y KPIs",
   "hizo": "Estructura del costo de ciclo de vida, lista de costos a aportar y 8 KPIs, sin cifras.",
   "entrada": "Caso sin costos",
-  "salida": "economia_kpi.json",
+  "salida": "lcc_estructura, costos a aportar y KPIs (tablas del informe)",
   "aprendio": "Sin costos aportados no se calcula edad óptima ni VPN."
  }
 ]

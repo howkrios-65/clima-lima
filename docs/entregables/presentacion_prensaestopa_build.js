@@ -26,7 +26,7 @@ const cut=(t,n)=>{t=String(t).replace(/^[^?]*\?\s*/,'').replace(/^Posible respue
 /* 1 portada */
 sec('Inicio');
 {const s=pres.addSlide({masterName:'PORTADA',sectionTitle:SEC});
- s.addText('Rodamientos de bombas con prensaestopa',{x:0.8,y:1.9,w:11.5,h:1.5,fontFace:'Cambria',fontSize:44,bold:true,color:C.background1,margin:0,valign:'top',isTextBox:true});
+ s.addText('Paquete de rodamientos de bombas con prensaestopa',{x:0.8,y:1.9,w:11.5,h:1.5,fontFace:'Cambria',fontSize:44,bold:true,color:C.background1,margin:0,valign:'top',isTextBox:true});
  s.addText('Dossier de confiabilidad con evidencia científica: lo respaldado, lo que no se pudo leer y lo que falta',{x:0.8,y:3.6,w:11,h:0.9,fontSize:20,color:C.accent1,margin:0,isTextBox:true,valign:'top'});
  s.addText('HOWK RIOS - CONFIABILIDAD',{x:0.8,y:5.3,w:8,h:0.4,fontSize:16,bold:true,color:C.background1,charSpacing:3,margin:0,isTextBox:true});
  s.addText('Informe del 27 de octubre de 2026  |  Todo respaldado por fuente o declarado SIN DATOS PARA ARMARLO',{x:0.8,y:5.75,w:11.5,h:0.4,fontSize:12,color:C.accent5,margin:0,isTextBox:true});
@@ -41,16 +41,16 @@ sec('Inicio');
  s.addNotes('Mensaje principal: el análisis de rodamientos tiene respaldo; el prensaestopa solo tiene pistas de buscador.')}
 /* 3 acceso */
 sec('Alcance y método');
-{const s=S('Los cinco frentes de búsqueda encontraron pistas, pero casi ninguna fuente de prensaestopa se pudo leer','Resultados de los agentes de investigación; red bloqueada para revistas, repositorios y organismos');
+{const s=S('Los siete frentes de búsqueda encontraron pistas, pero solo un texto aportado por la persona trata el prensaestopa','Resultados de los agentes de investigación; red bloqueada para revistas, repositorios y organismos');
  const rows=[[hdr('Frente'),hdr('Entradas registradas'),hdr('Leídas con extracto'),hdr('Qué pasó')]];
- const nota={'Mecanismos y causas':'Solo pistas de buscador; ninguna cifra utilizable','Empaquetadura y contaminación':'11 pistas, ninguna leída; cifras de agua y fuga contradictorias','Monitoreo y diagnóstico':'Se leyeron bancos de rodamientos; agua y P-F solo pistas','ML, RUL y datos abiertos':'Bancos de rodamientos leídos; ninguno de bombas con prensaestopa','Normas, vida y costos':'Normas de empaquetadura y tesis solo en resúmenes'};
+ const nota={'Mecanismos y causas':'Solo pistas de buscador; ninguna cifra utilizable','Empaquetadura y contaminación':'11 pistas, ninguna leída; cifras de agua y fuga contradictorias','Monitoreo y diagnóstico':'Se leyeron bancos de rodamientos; agua y P-F solo pistas','ML, RUL y datos abiertos':'Bancos de rodamientos leídos; ninguno de bombas con prensaestopa','Normas, vida y costos':'Normas de empaquetadura y tesis solo en resúmenes','Cadena prensaestopa a rodamiento (nuevo)':'23 pistas; ninguna leída; peso de la causa contradictorio','Protección y detección (nuevo)':'28 pistas; sin umbrales ni ensayos leídos','Texto aportado por la persona':'Mecanismo del ajuste de la empaquetadura; fuente comercial'};
  Object.keys(D.frentes).forEach(k=>rows.push([cell(k,{bold:true}),cell(String(D.frentes[k].registradas)),cell(String(D.frentes[k].leidas)),cell(nota[k])]));
  s.addTable(rows,{x:0.5,y:1.4,w:12.3,colW:[3.0,2.2,2.2,4.9],border:{type:'solid',color:'DDE9EE',pt:0.75},fontFace:'Calibri',rowH:0.5});
- s.addText('Para compensar, se heredaron las 351 entradas del caso de la bomba centrífuga (rodamientos y vibración), que no tratan prensaestopa.',{x:0.5,y:5.7,w:12.3,h:0.7,fontSize:14,bold:true,color:C.text2,margin:0,isTextBox:true,valign:'top'});
+ s.addText('Para compensar, se heredaron las 351 entradas del caso de la bomba centrífuga (rodamientos y vibración), que no tratan prensaestopa.',{x:0.5,y:6.25,w:12.3,h:0.5,fontSize:13,bold:true,color:C.text2,margin:0,isTextBox:true,valign:'top'});
  s.addNotes('El conector de texto completo no tiene cuota hasta el 1 de noviembre de 2026.')}
 /* 4 método */
 {const s=S('Un equipo de 20 agentes con ficha de ocho bloques y compuertas de evidencia produce el dossier','Protocolo del equipo; kit de cálculo con pruebas automáticas');
- const pasos=[['1 Intake','La persona nombra el modo de falla'],['2 Búsqueda','5 frentes en paralelo'],['3 Lectura','Lectura de textos con extracto literal'],['4 Análisis','ACR, árbol, Ishikawa, FMECA, predictivo'],['5 Compuertas','Todo número debe estar literal en su fuente'],['6 Verificación','Verificador independiente'],['7 Entrega','HTML, mapa de agentes, presentación']];
+ const pasos=[['1 Intake','La persona nombra el modo de falla'],['2 Búsqueda','7 frentes en paralelo'],['3 Lectura','Lectura de textos con extracto literal'],['4 Análisis','ACR, árbol, Ishikawa, FMECA, predictivo'],['5 Compuertas','Todo número debe estar literal en su fuente'],['6 Verificación','Verificador independiente'],['7 Entrega','HTML, mapa de agentes, presentación']];
  pasos.forEach((p,i)=>{const x=0.5+i*1.78;s.addShape(pres.ShapeType.roundRect,{x,y:1.45,w:1.6,h:1.75,rectRadius:0.08,fill:{color:i%2?C.background2:C.accent1},line:{color:C.accent1,width:1},objectName:'paso '+p[0]});
   s.addText(p[0],{x:x+0.08,y:1.5,w:1.44,h:0.4,fontSize:13,bold:true,color:i%2?C.text1:C.background1,margin:0,isTextBox:true});
   s.addText(p[1],{x:x+0.08,y:1.92,w:1.44,h:1.25,fontSize:11,color:i%2?C.text1:C.background1,margin:0,isTextBox:true,valign:'top'});
@@ -130,6 +130,22 @@ sec('Monitoreo, datos y normas');
  const rows=[[hdr('Norma (según resumen)'),hdr('Uso y estado visto')],[cell('API 610 (12.ª ed., 2021) e ISO 13709',{bold:true}),cell('Bombas centrífugas; ya no son equivalentes')],[cell('EN 16752 e ISO 3069',{bold:true}),cell('Ensayo de empaquetaduras y cavidades; edición no verificada')],[cell('API 682 e ISO 21049',{bold:true}),cell('Sellos; estado en conflicto en ISO 21049')],[cell('ISO 20816-1 y -3; ANSI/HI 9.6.4',{bold:true}),cell('Vibración; ISO 10816-1 está retirada')],[cell('ISO 281 e ISO 15243',{bold:true}),cell('Vida L10 y modos de falla de rodamientos')],[cell('ISO 13373, 17359, 13379-1, 13381-1',{bold:true}),cell('Monitoreo, diagnóstico y pronóstico')],[cell('ISO 14224',{bold:true}),cell('Datos de falla (sector petróleo y gas)')],[cell('ANSI/HI 9.6.3 y 9.6.5',{bold:true}),cell('Márgenes de operación; edición en conflicto')]];
  s.addTable(rows,{x:6.3,y:1.4,w:6.5,colW:[2.9,3.6],border:{type:'solid',color:'DDE9EE',pt:0.75},fontFace:'Calibri',rowH:0.5});
  s.addNotes('No hay norma específica de aprendizaje automático para mantenimiento en lo visto.')}
+/* cadena */
+{const s=S('La cadena prensaestopa, fuga, agua y rodamiento se plantea en dos rutas; ningún eslabón puente tiene fuente leída','Análisis de causa raíz y FMECA del caso; hipótesis posibles, eslabones puente rotulados síntesis');
+ card(s,0.5,1.4,4.0,5.1,'Ruta A: agua',['Ajuste insuficiente del prensaestopa','Fuga hacia el soporte','Agua o contaminante en el lubricante','Pérdida de película, corrosión y fatiga del rodamiento'],C.accent1,{fs:15,hs:16});
+ card(s,4.7,1.4,4.0,5.1,'Ruta B: calor',['Apriete excesivo por reacción a la fuga','Se elimina el goteo: fricción y calor','Recalentamiento de eje y camisa','Carga térmica y deflexión sobre el rodamiento'],C.accent3,{fs:15,hs:16});
+ card(s,8.9,1.4,3.9,5.1,'Qué dice la evidencia',['Solo se leyó el mecanismo de la empaquetadura (texto aportado, comercial)','Las pistas dicen que la cadena existe, sin frecuencia ni tiempo a la falla','El peso de la contaminación va de 14 % a más de la mitad según la fuente: no se usa','Humanas y latentes: preguntas a verificar'],C.accent2,{fs:13,hs:15});
+ s.addNotes('El ajuste suele hacerse como respuesta a la fuga: sesgo de registro; hace falta la fecha para el orden temporal.')}
+/* datos */
+{const s=S('Con la tabla de datos correcta, el análisis de vida deja de estar vacío; con menos de 10 fallas por modo es exploratorio','Plantilla del auditor de datos; criterio del equipo, no norma');
+ const rows=[[hdr('Dato'),hdr('Por qué importa')],
+ [cell('Fecha de instalación y de salida, horas de operación, fecha de corte',{bold:true}),cell('Vida con censura por la derecha')],
+ [cell('Motivo de salida: falla, preventivo, causa ajena, sigue operando',{bold:true}),cell('Los preventivos son censura, no falla')],
+ [cell('Ajuste del prensaestopa con fecha y fuga observada con fecha',{bold:true}),cell('El ajuste debe preceder a la falla; se ajusta como respuesta a la fuga')],
+ [cell('Hallazgos al desmontar: agua, herrumbre, lubricante, camisa; con la opción no inspeccionado',{bold:true}),cell('Distingue la ruta A de la ruta B')],
+ [cell('Costos de empaquetadura, agua de sellado, camisa, rodamiento, parada',{bold:true}),cell('Punto óptimo solo con costos aportados')]];
+ s.addTable(rows,{x:0.5,y:1.4,w:12.3,colW:[6.6,5.7],border:{type:'solid',color:'DDE9EE',pt:0.75},fontFace:'Calibri',rowH:0.6});
+ s.addNotes('El kit no tiene regresión de Cox; la comparación de dos grupos se hace con Kaplan-Meier y log-rank.')}
 /* 14 brechas */
 {const s=S('Siete brechas impiden pasar de hipótesis a conclusiones; cada una indica qué la cerraría','Dossier del caso, secciones SIN DATOS PARA ARMARLO');
  const rows=[[hdr('Brecha'),hdr('Estado'),hdr('Qué la cerraría')],

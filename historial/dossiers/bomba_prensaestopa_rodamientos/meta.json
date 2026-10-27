@@ -1,7 +1,7 @@
 {
  "modo_falla": "falla del paquete de rodamientos de bombas con prensaestopa",
  "fecha": "2026-10-27",
- "version": 1,
+ "version": 2,
  "entradas_registro": 483,
  "omitidos": [
   [

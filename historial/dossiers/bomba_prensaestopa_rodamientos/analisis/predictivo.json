@@ -224,7 +224,7 @@
    "nota": "Solo resumen de un artículo de divulgación de 1988, sin base de datos ni tamaño de muestra; no trata prensaestopa. Respalda que la contaminación y el lubricante son candidatos plausibles, pero también que instalación, manejo y ajustes de alojamiento son causas alternativas: hay que registrarlos como confusores y no atribuir al prensaestopa lo que pueda ser montaje."
   },
   {
-   "id": "P23",
+   "id": "el hallazgo sobre la cadena completa (sin fuente; ver vacíos)",
    "texto": "La cadena completa de la hipótesis (ajuste insuficiente, fuga, agua en el soporte, falla del paquete de rodamientos) no tiene fuente leída: ninguna mide la relación entre el ajuste o el goteo del prensaestopa y la vida del paquete de rodamientos, ni entre agua en el lubricante y vibración o temperatura de la bomba. Cada eslabón está respaldado solo por el mecanismo de E-2700 (lado empaquetadura) y por la lista de causas de E-6004 (lado rodamiento).",
    "nivel": "SIN DATOS PARA ARMARLO",
    "evidencia": [],
@@ -241,7 +241,7 @@
    "nota": "E-9603 solo respalda la definición matemática (ejemplos médicos, sin datos de equipos). Que el repaquetado produzca mortalidad temprana en estas bombas es una posibilidad a contrastar con el parámetro de forma y su intervalo, no un hallazgo."
   },
   {
-   "id": "P25",
+   "id": "la simulación ilustrativa del kit (no es evidencia)",
    "texto": "Qué calcula el kit de confiabilidad y con cuántos eventos (simulación sintética del analista, semilla 20261027, escenario inventado de forma 1,5 y escala 1000, no son datos de bomba). Intervalo de la forma Weibull (razón límite superior sobre inferior, mediana de 200 repeticiones, sin censura): 4,3 con 5 fallas, 2,7 con 10 y 1,8 con 30, con cobertura empírica de 93 a 95 %. Prueba log-rank de dos grupos con razón de escalas 2 y censura en 1200: potencia 0,31 con 8,5 eventos en total (5 bombas por grupo), 0,56 con 17, 0,72 con 25 y 0,97 con 51 (300 repeticiones). El kit advierte resultado exploratorio con menos de 10 fallas, posible sesgo de la forma con menos de 30 y dependencia del modelo con más de 50 % de suspensiones; no implementa Cox ni riesgos competitivos.",
    "nivel": "SINTESIS",
    "evidencia": [],
@@ -311,7 +311,7 @@
   {
    "etapa": "5. Diagnóstico por reglas (tipo de defecto y causa probable)",
    "accion": "Envolvente y frecuencias características de rodamiento para tipo y ubicación (E-8001), contrastado con el hallazgo al desmontar del formato de la etapa 1; la causa probable (agua, lubricante, montaje, sobrecalentamiento) se asigna por inspección y no por el modelo. Un clasificador supervisado solo con fallas etiquetadas del propio activo o de la flota: los de banco no sustituyen (la exactitud cae al cambiar severidad o condición). Cavitación y recirculación: SIN DATOS PARA ARMARLO.",
-   "condicion_para_avanzar": "Diagnósticos contrastados con la inspección real. Para un clasificador aprendido: fallas etiquetadas por modo (menos de 10 por modo es exploratorio; 30 o más preferible, criterio del auditor), partición por bomba completa y por tiempo, y recall de la clase crítica superior al de las reglas.",
+   "condicion_para_avanzar": "Diagnósticos contrastados con la inspección real. Para un clasificador aprendido: fallas etiquetadas por modo (menos de 10 por modo es exploratorio; 30 o más preferible, criterio del equipo, no proviene de un id leído), partición por bomba completa y por tiempo, y recall de la clase crítica superior al de las reglas.",
    "nivel": "SINTESIS",
    "evidencia": [
     "E-8001",
@@ -322,8 +322,8 @@
   },
   {
    "etapa": "6. Supervivencia exploratoria y pronóstico, solo con tiempos hasta la falla propios",
-   "accion": "Cada paquete es una unidad con fecha de inicio, fecha de falla o de censura. Empezar por descriptivo: Kaplan-Meier (kaplan_meier y km_failure_quantile con su banda) y Weibull con fit_weibull_mle, con intervalo de la forma y advertencias del kit; la censura se trata como tal, nunca como RUL = 0. Comparar dos grupos con logrank_test (por ejemplo ajuste programado frente a ajuste solo por fuga, o goteo en una clase frente a otra) usando un análisis de punto fijo: el grupo se asigna por el estado en una fecha de corte y solo entran los paquetes aún en riesgo en esa fecha, para no premiar al grupo por haber sobrevivido hasta el ajuste. Qué se puede decir según el total de fallas del modo (kit y simulación sintética de P25): 0 fallas, Kaplan-Meier no está definida y solo hay cartas de control; 1 a 4, listar cronologías y no estimar; 5 a 9, Kaplan-Meier y Weibull rotulados exploratorios con intervalo muy ancho (razón del intervalo de la forma cercana a 4 con 5 fallas) y log-rank con potencia baja; 10 a 29, Weibull con el sesgo de la forma contrastado con bias_correct_beta y comparación de dos grupos solo para efectos grandes; 30 o más, resultado preferible, con intervalo de la forma por debajo de 2 en el escenario simulado. Los eventos se cuentan por modo (falla con agua en el soporte, sin agua, por montaje), no en total. Si una bomba acumula varios paquetes, usar audit_recurrent y, para tendencia entre intervenciones, la MCF o Crow-AMSAA multiunidad del kit en lugar de tratar cada paquete como independiente sin revisar la renovación. Cox con covariables no está implementado en el kit (el README remite a lifelines, no usado ni validado aquí) y ninguna covariable variable en el tiempo (goteo, temperatura) se maneja con Kaplan-Meier o log-rank; tampoco hay riesgos competitivos. Después de lo anterior, y con el gate cumplido, se puede evaluar CoxPH o bosque de supervivencia como candidatos de método; la RUL se entrega como distribución con calibración y cobertura por bomba.",
-   "condicion_para_avanzar": "Fallas por modo cumplidas (10 como mínimo para salir de exploratorio, 30 o más preferible, criterio del auditor), data_quality.audit sin banderas críticas, validación hacia adelante y en bombas reservadas, calibración y cobertura medidas, y aprobación humana para actuar. Intervalo entre primera detección y falla: VACÍO.",
+   "accion": "Cada paquete es una unidad con fecha de inicio, fecha de falla o de censura. Comparar dos grupos con logrank_test (por ejemplo ajuste programado frente a ajuste solo por fuga, o goteo en una clase frente a otra) usando un análisis de punto fijo: el grupo se asigna por el estado en una fecha de corte y solo entran los paquetes aún en riesgo en esa fecha, para no premiar al grupo por haber sobrevivido hasta el ajuste. Los eventos se cuentan por modo (falla con agua en el soporte, sin agua, por montaje), no en total. Si una bomba acumula varios paquetes, usar audit_recurrent y, para tendencia entre intervenciones, la MCF o Crow-AMSAA multiunidad del kit en lugar de tratar cada paquete como independiente sin revisar la renovación. Cox con covariables no está implementado en el kit (el README remite a lifelines, no usado ni validado aquí) y ninguna covariable variable en el tiempo (goteo, temperatura) se maneja con Kaplan-Meier o log-rank; tampoco hay riesgos competitivos. Después de lo anterior, y con el gate cumplido, se puede evaluar CoxPH o bosque de supervivencia como candidatos de método; la RUL se entrega como distribución con calibración y cobertura por bomba.",
+   "condicion_para_avanzar": "Fallas por modo cumplidas (10 como mínimo para salir de exploratorio, 30 o más preferible, criterio del equipo, no proviene de un id leído), data_quality.audit sin banderas críticas, validación hacia adelante y en bombas reservadas, calibración y cobertura medidas, y aprobación humana para actuar. Intervalo entre primera detección y falla: VACÍO.",
    "nivel": "SINTESIS",
    "evidencia": [
     "E-9205",
@@ -356,7 +356,7 @@
   },
   {
    "riesgo": "Sesgo de verificación: los hallazgos al desmontar (agua, corrosión) existen solo en los paquetes fallados, y el agua hallada puede ser consecuencia del desmontaje o del lavado y no la causa. Sin desmontar bombas sanas no hay tasa base de agua o corrosión. Controles: muestra de lubricante antes de abrir, formato fijo de hallazgos, desmontaje o muestreo de bombas sin falla, y causas alternativas (montaje, ajustes, lubricante) registradas aparte.",
-   "nivel": "EVIDENCIA",
+   "nivel": "SINTESIS",
    "evidencia": [
     "E-6004"
    ]
@@ -386,7 +386,7 @@
   },
   {
    "riesgo": "Efecto no monótono y confusión por temperatura: tanto el ajuste insuficiente como el excesivo dañan el empaque (E-2700), y el exceso recalienta. Un modelo lineal en el apriete, o una alarma de goteo de un solo lado, está mal especificado; y una temperatura alta del soporte no distingue rodamiento dañado de empaque sobreajustado.",
-   "nivel": "EVIDENCIA",
+   "nivel": "SINTESIS",
    "evidencia": [
     "E-2700"
    ]
@@ -523,11 +523,11 @@
  ],
  "vacios": [
   "Sin datos propios ni etiquetas: no se entrenó ni evaluó ningún modelo; todo desempeño en la bomba es VACÍO. Cierra: historial de fallas del paquete de rodamientos con fechas y modo, bitácora de ajustes y cambios de empaquetadura con su motivo, series de goteo, temperatura del soporte, vibración con envolvente y agua en el lubricante, y data_quality.audit sobre ellas.",
-  "Cadena fuga, agua en el soporte y falla del paquete: sin fuente leída (P23). Solo hay el mecanismo de la empaquetadura (E-2700, comercial) y la lista de causas de rodamientos de bomba (E-6004, resumen de 1988). Cierra: abrir las pistas SOLO-SNIPPET de agua en lubricante (E-2002, E-2003, E-2100 a E-2103, E-2210, E-2211) y de aislamiento del soporte (E-2108, E-2217) por su texto completo, y contrastar con datos propios.",
+  "Cadena fuga, agua en el soporte y falla del paquete: sin fuente leída (el hallazgo sobre la cadena completa (sin fuente; ver vacíos)). Solo hay el mecanismo de la empaquetadura (E-2700, comercial) y la lista de causas de rodamientos de bomba (E-6004, resumen de 1988). Cierra: abrir las pistas SOLO-SNIPPET de agua en lubricante (E-2002, E-2003, E-2100 a E-2103, E-2210, E-2211) y de aislamiento del soporte (E-2108, E-2217) por su texto completo, y contrastar con datos propios.",
   "Umbrales de goteo, de agua en el lubricante, de temperatura del soporte y de vibración para esta bomba: sin fuente leída. La cifra de goteo de E-2700 no trae diámetro, presión ni producto y no se adopta; los ppm de agua y los dB de ultrasonido de las pistas no se usan. Los de kurtosis 3 y 5 carecen de sustento (E-8001).",
   "Cavitación, recirculación, NPSH, sellos mecánicos y señales hidráulicas: SIN DATOS PARA ARMARLO. Cierra: abrir E-1704, E-1705 y E-1706 (dominios que no resuelven) y los resúmenes de buscador E-1105 a E-1108 y E-1115.",
   "Ninguna fuente leída trae tiempos hasta la falla de bombas, y los datos de bomba leídos son audio (E-1700 y E-1701). Cierra: texto completo de MIMII, origen y definición de label de los reempaquetados, y una base de desempeño y fallas de bombas (E-1116, sin leer).",
-  "Cantidad de mediciones de línea base, duración del piloto en sombra y número de eventos para pasar a un detector aprendido: sin cifra en las fuentes leídas. Para fallas por modo rige el criterio del auditor (menos de 10 exploratorio, 30 o más preferible), que no proviene de un id leído.",
+  "Cantidad de mediciones de línea base, duración del piloto en sombra y número de eventos para pasar a un detector aprendido: sin cifra en las fuentes leídas. Para fallas por modo rige el criterio del equipo, no proviene de un id leído (menos de 10 exploratorio, 30 o más preferible), que no proviene de un id leído.",
   "Intervalo entre la primera detección y la falla del paquete de rodamientos: ninguna fuente leída lo da (E-8008 es cualitativa; E-9205 está en minutos y banco acelerado). Cierra: estimarlo con datos propios.",
   "Horizonte H y costos de falso negativo y falso positivo: los define el negocio.",
   "Cox con covariables, Cox con covariables variables en el tiempo y riesgos competitivos: no están en el kit; lifelines se menciona en el README del kit y no se usó ni validó aquí. Cierra: decidir con el líder si se justifica instalarlo y validarlo cuando se cumpla el criterio de fallas.",

@@ -65,7 +65,7 @@
   },
   "fmeca": {
    "elementos": [],
-   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles. El análisis del equipo (síntesis) está en las pestañas Modos y causas y Vida y costos, con su nivel de evidencia."
   },
   "confiabilidad": {
    "elementos": [
@@ -204,7 +204,7 @@
   },
   "acr": {
    "elementos": [],
-   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles"
+   "vacio": "Sin hallazgo con respaldo leído para este modo de falla en las vías disponibles. El análisis del equipo (síntesis) está en las pestañas Modos y causas y Vida y costos, con su nivel de evidencia."
   },
   "troubleshooting": {
    "elementos": [

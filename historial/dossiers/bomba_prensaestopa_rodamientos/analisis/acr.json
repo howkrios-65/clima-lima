@@ -204,7 +204,7 @@
     },
     {
      "n": "A5",
-     "texto": "La contaminación produce corrosión de las pistas como causa de falla prematura de rodamientos de bolas de bombas.",
+     "texto": "La contaminación produce corrosión (E-6004; no especifica pistas ni agua) como causa de falla prematura de rodamientos de bolas de bombas.",
      "rotulo": "EVIDENCIA",
      "evidencia": [
       "E-6004"
@@ -249,7 +249,7 @@
      "evidencia": [
       "E-2700"
      ],
-     "cita": "Si se excede el ajuste, se elimina el goteo necesario (10-60 gotas/min), lo que destruye la película térmica, genera recalentamiento y termina por cristalizar el empaque.",
+     "cita": "Si se excede el ajuste, se elimina el goteo necesario (cifra de goteo del texto comercial; no se adopta), lo que destruye la película térmica, genera recalentamiento y termina por cristalizar el empaque.",
      "nota": "La cifra de goteo de E-2700 no se usa como umbral (sin diámetro, presión ni producto). Trata la empaquetadura, no el rodamiento."
     },
     {
@@ -633,7 +633,7 @@
   ],
   "Material": [
    {
-    "texto": "Lubricante degradado, inadecuado o incompatible, o contaminado con agua.",
+    "texto": "Lubricante degradado o inadecuado (falla de lubricante).",
     "mecanismo": "La falla de lubricante es causa de falla prematura de rodamientos de bombas (E-6004) y de daño de rodamientos (E-6002).",
     "verificar": "Muestra del lubricante retirado: aspecto, olor, partículas o agua; análisis de aceite o grasa.",
     "evidencia": [
@@ -642,6 +642,16 @@
     ],
     "nivel": "EVIDENCIA",
     "nota": "El agua no consta en el extracto; que el lubricante de este activo esté degradado es hipótesis."
+   },
+   {
+    "texto": "Lubricante contaminado con agua del prensaestopa (hipótesis).",
+    "mecanismo": "Razonamiento del equipo; ningún extracto leído nombra el agua.",
+    "verificar": "Muestra del lubricante retirado: aspecto, olor, partículas o agua; análisis de aceite o grasa.",
+    "evidencia": [
+     "E-2700"
+    ],
+    "nivel": "SINTESIS",
+    "nota": "E-2700 trata la empaquetadura y no menciona el soporte ni el agua en el lubricante."
    },
    {
     "texto": "Corrosión y desgaste de las superficies del rodamiento.",

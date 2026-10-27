@@ -20,7 +20,8 @@
    "evidencia": [
     "E-6004"
    ],
-   "nivel": "EVIDENCIA"
+   "nivel": "SINTESIS",
+   "nota": " El extracto respalda la causa, no el síntoma observable; este último es razonamiento del equipo."
   },
   {
    "hipotesis": "H12",
@@ -99,7 +100,8 @@
    "evidencia": [
     "E-2700"
    ],
-   "nivel": "EVIDENCIA"
+   "nivel": "SINTESIS",
+   "nota": " El extracto respalda la causa, no el síntoma observable; este último es razonamiento del equipo."
   },
   {
    "hipotesis": "H13",
@@ -132,7 +134,8 @@
    "evidencia": [
     "E-6004"
    ],
-   "nivel": "EVIDENCIA"
+   "nivel": "SINTESIS",
+   "nota": " El extracto respalda la causa, no el síntoma observable; este último es razonamiento del equipo."
   },
   {
    "hipotesis": "H13",

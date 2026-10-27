@@ -1,5 +1,5 @@
 {
- "funcion": "Sistema: paquete de rodamientos (rodamientos, lubricante y soporte) de una bomba centrífuga con prensaestopa. Función 1: soportar y ubicar el eje rotante de la bomba (E-1201, E-1205 ubican a los rodamientos en bombas), con la película de lubricante que separa los elementos rodantes (E-1203). Función 2 (síntesis): mantener el lubricante del soporte libre de agua de la fuga del prensaestopa mediante protección del soporte (deflector, laberinto, drenaje); es una función de protección posiblemente oculta, sin fuente leída. Estándar de desempeño cuantificado (vida requerida, temperatura y holgura admisibles, contenido de agua admisible en el lubricante, goteo aceptable): VACÍO, sin datos del activo ni fuente leída. Falla funcional total: el paquete de rodamientos no soporta el eje (agarrotamiento o destrucción). Falla funcional parcial: el paquete opera con ruido, vibración, juego, temperatura o lubricante fuera de lo aceptable (límites: VACÍO). Evento de falla bajo análisis: falla del paquete de rodamientos de la bomba con prensaestopa. Causa señalada por la persona (hipótesis, no confirmada): ajuste insuficiente del prensaestopa con fuga de agua hacia el soporte. Alcance: los modos de rodamiento heredados (FM1 a FM7) y los modos de la cadena prensaestopa a soporte (FM8 a FM14). De la cadena, solo FM8 y FM9 tienen una fuente leída (E-2700, texto comercial aportado por la persona, no arbitrado, que no menciona el rodamiento); FM10 a FM14 son SINTESIS con pistas de buscador sin respaldo. Los modos propios de la bomba (sellos mecánicos, cavitación, recirculación, anillos de desgaste, golpe de ariete) no tienen fuente leída y están en vacios.",
+ "funcion": "Sistema: paquete de rodamientos (rodamientos, lubricante y soporte) de una bomba centrífuga con prensaestopa. Función 1: soportar y ubicar el eje rotante de la bomba (E-1201, E-1205 ubican a los rodamientos en bombas), con la película de lubricante que separa los elementos rodantes (E-1203). Función 2 (síntesis): mantener el lubricante del soporte libre de agua de la fuga del prensaestopa mediante protección del soporte (deflector, laberinto, drenaje); es una función de protección posiblemente oculta, sin fuente leída. Estándar de desempeño cuantificado (vida requerida, temperatura y holgura admisibles, contenido de agua admisible en el lubricante, goteo aceptable): VACÍO, sin datos del activo ni fuente leída. Falla funcional total: el paquete de rodamientos no soporta el eje (agarrotamiento o destrucción). Falla funcional parcial: el paquete opera con ruido, vibración, juego, temperatura o lubricante fuera de lo aceptable (límites: VACÍO). Evento de falla bajo análisis: falla del paquete de rodamientos de la bomba con prensaestopa. Causa señalada por la persona (hipótesis, no confirmada): ajuste insuficiente del prensaestopa con fuga de agua hacia el soporte. Alcance: los modos de rodamiento heredados (FM1 a FM7) y los modos de la cadena prensaestopa a soporte (FM8 a el modo de protección del soporte (sin fuente; ver vacíos)). De la cadena, solo FM8 y FM9 tienen una fuente leída (E-2700, texto comercial aportado por la persona, no arbitrado, que no menciona el rodamiento); FM10 a el modo de protección del soporte (sin fuente; ver vacíos) son SINTESIS con pistas de buscador sin respaldo. Los modos propios de la bomba (sellos mecánicos, cavitación, recirculación, anillos de desgaste, golpe de ariete) no tienen fuente leída y están en vacios.",
  "items": [
   {
    "id": "FM1",
@@ -181,11 +181,11 @@
   },
   {
    "id": "FM8",
-   "modo": "Empaquetadura con ajuste insuficiente (fuga excesiva)",
+   "modo": "Empaquetadura con ajuste insuficiente (fuga)",
    "funcion": "Sellar el eje en la caja de empaquetadura con una fuga controlada (cifra de goteo aceptable: VACÍO, sin diámetro, presión ni producto; la cifra de E-2700 no se usa como umbral).",
    "falla_funcional": "Parcial: la empaquetadura sella con fuga superior a la aceptable (límite: VACÍO).",
    "mecanismo": "EVIDENCIA (E-2700, texto comercial): \"Si falta ajuste, el fluido 'lava' los lubricantes internos de la trenza, acelerando la falla.\" La fuente describe que el prensaestopa transfiere una fuerza axial que se convierte en expansión radial contra el eje. Que esa fuga llegue al soporte no consta en E-2700.",
-   "efecto_local": "Fuga abundante por la caja de empaquetadura y pérdida de lubricantes internos de la trenza, con falla acelerada de la empaquetadura (E-2700).",
+   "efecto_local": "Fuga por la caja de empaquetadura y pérdida de lubricantes internos de la trenza, con falla acelerada de la empaquetadura (E-2700).",
    "efecto_sistema": "Agua o producto sobre el área del soporte posible (síntesis, ver FM10); efecto en el sistema de bombeo: VACÍO.",
    "causa": "Falta de ajuste del prensaestopa (E-2700); cuándo y por qué se perdió el ajuste en el activo: VACÍO.",
    "estado_causa": "posible",
@@ -213,8 +213,8 @@
    "modo": "Empaquetadura con apriete excesivo (recalentamiento y cristalización)",
    "funcion": "Sellar el eje en la caja de empaquetadura con una fuga controlada (cifra de goteo aceptable: VACÍO, sin diámetro, presión ni producto; la cifra de E-2700 no se usa como umbral).",
    "falla_funcional": "Parcial o total: la empaquetadura deja de lubricarse, se recalienta y se endurece; el sellado ya no se controla (límites: VACÍO).",
-   "mecanismo": "EVIDENCIA (E-2700, texto comercial): \"Si se excede el ajuste, se elimina el goteo necesario (10-60 gotas/min), lo que destruye la película térmica, genera recalentamiento y termina por cristalizar el empaque.\" La cifra no trae diámetro de eje, presión ni producto y no se usa como umbral.",
-   "efecto_local": "Ausencia de goteo, recalentamiento de la empaquetadura y del área del eje, cristalización de la empaquetadura (E-2700). Daño al eje o a la camisa por fricción: síntesis, ver FM13.",
+   "mecanismo": "EVIDENCIA (E-2700, texto comercial): \"Si se excede el ajuste, se elimina el goteo necesario (la cifra de goteo del texto comercial (no se adopta)), lo que destruye la película térmica, genera recalentamiento y termina por cristalizar el empaque.\" La cifra no trae diámetro de eje, presión ni producto y no se usa como umbral.",
+   "efecto_local": "Ausencia de goteo, recalentamiento de la empaquetadura y del área del eje, cristalización de la empaquetadura (E-2700). Daño al eje o a la camisa por fricción: síntesis, ver el modo de desgaste de camisa (sin fuente; ver vacíos).",
    "efecto_sistema": "Una empaquetadura cristalizada y con fuga severa podría dejar entrar agua al soporte (pista E-2000, SOLO-SNIPPET, sin respaldo); efecto en el sistema: VACÍO.",
    "causa": "Sobreajuste del prensaestopa para frenar la fuga (síntesis: reacción a FM8; el activo no tiene historial que lo confirme).",
    "estado_causa": "posible",
@@ -244,7 +244,7 @@
    "mecanismo": "SIN RESPALDO LITERAL. Hipótesis del equipo: la fuga de la empaquetadura escurre a lo largo del eje hacia el soporte y entra por el sello del soporte. Consta en pista, sin respaldo: E-2000 (fuga severa, agua al soporte), E-2001 (drenaje bloqueado), E-2437, E-2603, E-2625.",
    "efecto_local": "Agua en el soporte; presencia y vía de ingreso no verificadas en el activo.",
    "efecto_sistema": "Falla prematura del paquete de rodamientos (ver FM11 y FM12); efecto en el sistema: VACÍO.",
-   "causa": "Fuga de FM8 o FM9 más protección insuficiente (FM14); la persona señala ajuste insuficiente con fuga hacia el soporte, no confirmado.",
+   "causa": "Fuga de FM8 o FM9 más protección insuficiente (el modo de protección del soporte (sin fuente; ver vacíos)); la persona señala ajuste insuficiente con fuga hacia el soporte, no confirmado.",
    "estado_causa": "posible",
    "deteccion": "Inspección del soporte por agua (mirilla, aceite lechoso, humedad, oxidación): consta en pista, sin respaldo (E-2211, E-2616 SOLO-SNIPPET); ninguna técnica tiene respaldo literal.",
    "control_sugerido": "Verificar en el activo si hay agua en el soporte y por dónde entra antes de decidir tareas.",
@@ -307,7 +307,7 @@
     "E-2439"
    ],
    "nota": "SINTESIS: E-1203 y E-6004 respaldan la película y la falla de lubricante en general; el agua como agente no consta en ningún extracto leído. Validar con experto del activo.",
-   "tarea_rcm": "En condición (análisis de lubricante) y, si el agua se confirma, protección (FM14) (consecuencia: A confirmar). El análisis de lubricante puede dar aviso antes del daño, pero P-F y límite de agua no tienen fuente leída. Si el agua es persistente, atacar el ingreso es preferible a drenar y reponer. Sin intervalo."
+   "tarea_rcm": "En condición (análisis de lubricante) y, si el agua se confirma, protección (el modo de protección del soporte (sin fuente; ver vacíos)) (consecuencia: A confirmar). El análisis de lubricante puede dar aviso antes del daño, pero P-F y límite de agua no tienen fuente leída. Si el agua es persistente, atacar el ingreso es preferible a drenar y reponer. Sin intervalo."
   },
   {
    "id": "FM12",
@@ -340,10 +340,10 @@
     "E-2211"
    ],
    "nota": "SINTESIS: la corrosión por contaminación tiene respaldo en E-6004 (solo resumen) sin nombrar agua; el efecto del agua en la fatiga solo está en pistas. Validar con experto del activo.",
-   "tarea_rcm": "En condición (vibración con envolvente, análisis de lubricante) y rediseño de la protección (consecuencia: A confirmar; operacional si detiene el bombeo (sin datos)). No se propone reemplazo por edad: no hay Weibull ni β > 1 (ver vacios). La detección en condición solo avisa del daño; la causa se ataca en FM10 y FM14. Sin intervalo."
+   "tarea_rcm": "En condición (vibración con envolvente, análisis de lubricante) y rediseño de la protección (consecuencia: A confirmar; operacional si detiene el bombeo (sin datos)). No se propone reemplazo por edad: no hay Weibull ni β > 1 (ver vacios). La detección en condición solo avisa del daño; la causa se ataca en FM10 y el modo de protección del soporte (sin fuente; ver vacíos). Sin intervalo."
   },
   {
-   "id": "FM13",
+   "id": "el modo de desgaste de camisa (sin fuente; ver vacíos)",
    "modo": "Desgaste de la camisa del eje",
    "funcion": "Proteger el eje en la zona de la empaquetadura con una superficie de desgaste reemplazable (estándar: VACÍO).",
    "falla_funcional": "La camisa o el eje se desgastan o rayan y la empaquetadura ya no sella con el ajuste normal.",
@@ -370,7 +370,7 @@
    "tarea_rcm": "En condición (inspección de la camisa) y restauración o reemplazo solo con edad de desgaste identificable (consecuencia: A confirmar). El desgaste es candidato a restauración o reemplazo programado solo con edad identificable (β > 1), no demostrada. Mientras tanto, inspección en condición al cambiar la empaquetadura. Sin intervalo."
   },
   {
-   "id": "FM14",
+   "id": "el modo de protección del soporte (sin fuente; ver vacíos)",
    "modo": "Protección del soporte inexistente o ineficaz (deflector, laberinto, drenaje)",
    "funcion": "Desviar y drenar el agua de fuga lejos del soporte de rodamientos (función de protección; estándar: VACÍO).",
    "falla_funcional": "La protección no desvía o no drena y el agua alcanza el sello del soporte (falla posiblemente oculta).",
@@ -415,10 +415,10 @@
   "Costos de falla, de tarea e indisponibilidad: VACÍO; la costo-efectividad de cada tarea queda sin evaluar.",
   "Transferencia de la detección: los estudios de vibración leídos son de banco o revisiones (E-8001, E-8003, E-8008); los ensayos de banco no cubren fallas progresivas de servicio prolongado (E-1305). Los datos de motor (E-1301, E-1304, E-1305) y de monitoreo del motor impulsor (E-1302) o acústico (E-1303) no son de bombas y no se usan como modos de la bomba.",
   "Estándar exigido (FMEA clásico, Action Priority o proceso RCM) sin definir por la persona. Registro knowledge/registro_normas.yaml consultado: IEC 60812 (ed. 2018, SOLO-SNIPPET), AIAG-VDA FMEA Handbook (2019, fuentes en conflicto, SOLO-SNIPPET, tablas no abiertas), ISO 281 (2007, enmienda en elaboración, SOLO-SNIPPET), ISO 4406 (2021, SOLO-SNIPPET): todos con edición no verificada. ISO 3069 y EN 16752 (empaquetaduras) aparecen solo como pistas E-2400 y E-2402 (SOLO-SNIPPET) y no están en el registro. Ninguna norma respalda este FMECA.",
-  "Cadena prensaestopa a soporte: solo FM8 y FM9 tienen fuente leída (E-2700), texto comercial no arbitrado aportado por la persona, que no menciona el rodamiento y cuya cifra de goteo no se usa. Eslabones sin fuente leída: fuga a soporte (FM10), agua que degrada película (FM11), agua que corroe o fatiga (FM12), desgaste de camisa (FM13), protección (FM14). Lectura que lo cierra: texto o abstract de E-2000, E-2001, E-2002, E-2003, E-2004, E-2108 (pistas) o de estudios arbitrados equivalentes.",
+  "Cadena prensaestopa a soporte: solo FM8 y FM9 tienen fuente leída (E-2700), texto comercial no arbitrado aportado por la persona, que no menciona el rodamiento y cuya cifra de goteo no se usa. Eslabones sin fuente leída: fuga a soporte (FM10), agua que degrada película (FM11), agua que corroe o fatiga (FM12), desgaste de camisa (el modo de desgaste de camisa (sin fuente; ver vacíos)), protección (el modo de protección del soporte (sin fuente; ver vacíos)). Lectura que lo cierra: texto o abstract de E-2000, E-2001, E-2002, E-2003, E-2004, E-2108 (pistas) o de estudios arbitrados equivalentes.",
   "Cifras de pérdida de vida por agua (E-2002, E-2003, E-2438, E-2439) y límites de agua en lubricante (E-2607, E-2608, E-2627): SOLO-SNIPPET o NO-VERIFICADO; no se citan como dato ni como umbral.",
   "Criterio de ajuste y goteo aceptable de la empaquetadura: sin fuente arbitrada ni del fabricante del activo; la cifra de E-2700 carece de diámetro, presión y producto.",
-  "Severidad, ocurrencia y detección de FM8 a FM14: SIN DATOS PARA ARMARLO. Faltan escalas calibradas, historial de órdenes de trabajo y un experto del activo. No se calcula RPN. Los modos heredados FM1 a FM7 mantienen null.",
+  "Severidad, ocurrencia y detección de FM8 a el modo de protección del soporte (sin fuente; ver vacíos): SIN DATOS PARA ARMARLO. Faltan escalas calibradas, historial de órdenes de trabajo y un experto del activo. No se calcula RPN. Los modos heredados FM1 a FM7 mantienen null.",
   "PM actuales cuestionables: no se aportó plan. Candidata a cuestionar cuando haya datos: el apriete periódico calendario del prensaestopa (¿previene la fuga o provoca FM9 por sobreajuste?) y la relubricación o cambio de lubricante sin análisis (¿introduce contaminación?). Sin historial no hay evidencia; lista de PM cuestionadas con evidencia: VACÍO.",
   "Historial del activo: fallas del paquete de rodamientos, hallazgos de agua en el soporte, análisis de falla de rodamientos retirados, estado de la camisa y configuración de protección (deflector, laberinto, drenaje): VACÍO. Sin ellos la causa señalada por la persona queda como hipótesis posible.",
   "Este FMECA es de escritorio basado en literatura de rodamientos en general, un resumen de 1988 sobre rodamientos de bombas (E-6004) y un texto comercial sobre empaquetadura (E-2700); no es evidencia de campo."
