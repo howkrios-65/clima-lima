@@ -43,8 +43,8 @@ svg text{fill:var(--mut);font-size:11px}
 .tl .ev{position:relative;margin:0 0 10px}.tl .ev:before{content:"";position:absolute;left:-21px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--acc)}
 .tl .ev.ot:before{background:var(--c2)}.tl .ev.medicion:before{background:var(--c3)}.tl .ev.hito:before{background:var(--bad)}.tl .ev.accion:before{background:var(--ok)}.tl .ev.analisis:before{background:var(--c4)}
 .tl small{color:var(--mut)}
-#drawer{position:fixed;top:0;right:0;width:min(420px,100%);height:100%;background:var(--panel);border-left:1px solid var(--line);box-shadow:-4px 0 16px rgba(0,0,0,.2);padding:14px;overflow:auto;transform:translateX(100%);transition:transform .2s;z-index:20}
-#drawer.on{transform:none}
+#drawer{position:fixed;top:0;right:0;width:min(420px,100%);height:100%;background:var(--panel);border-left:1px solid var(--line);padding:14px;overflow:auto;transform:translateX(100%);transition:transform .2s;z-index:20}
+#drawer.on{transform:none;box-shadow:-4px 0 16px rgba(0,0,0,.25)}
 #drawer blockquote{margin:6px 0;padding:6px 10px;border-left:3px solid var(--acc);background:var(--soft);font-size:13px}
 .x{float:right;border:0;background:none;color:var(--ink);font-size:20px;cursor:pointer}
 .mat td.y{background:var(--acc);color:#fff;text-align:center}.mat td.nn{text-align:center;color:var(--mut)}
@@ -100,8 +100,8 @@ function lineChart(host,o){
   var y0=Math.min.apply(0,all),y1=Math.max.apply(0,all);if(y0===y1){y0-=1;y1+=1}var pad=(y1-y0)*.06;y0-=pad;y1+=pad;
   function X(v){return m.l+(v-x0)/((x1-x0)||1)*(W-m.l-m.r)}function Y(v){return H-m.b-(v-y0)/(y1-y0)*(H-m.t-m.b)}
   var g='';for(var i=0;i<=4;i++){var yv=y0+(y1-y0)*i/4;g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+Y(yv)+'" y2="'+Y(yv)+'" stroke="var(--line)"/><text x="4" y="'+(Y(yv)+4)+'">'+fmt(yv,2)+'</text>'}
-  for(i=0;i<=4;i++){var xv=x0+(x1-x0)*i/4;g+='<text x="'+X(xv)+'" y="'+(H-6)+'" text-anchor="middle">'+esc(o.xfmt?o.xfmt(xv):fmt(xv,1))+'</text>'}
-  (o.vlines||[]).forEach(function(v){g+='<line x1="'+X(v.x)+'" x2="'+X(v.x)+'" y1="'+m.t+'" y2="'+(H-m.b)+'" stroke="'+(v.c||"var(--bad)")+'" stroke-dasharray="4 3"/><text x="'+(X(v.x)+3)+'" y="'+(m.t+9)+'">'+esc(v.label||"")+'</text>'});
+  for(i=0;i<=4;i++){var xv=x0+(x1-x0)*i/4;g+='<text x="'+X(xv)+'" y="'+(H-6)+'" text-anchor="'+(i===4?'end':i===0?'start':'middle')+'">'+esc(o.xfmt?o.xfmt(xv):fmt(xv,1))+'</text>'}
+  (o.vlines||[]).forEach(function(v){g+='<line x1="'+X(v.x)+'" x2="'+X(v.x)+'" y1="'+m.t+'" y2="'+(H-m.b)+'" stroke="'+(v.c||"var(--bad)")+'" stroke-dasharray="4 3"/><text x="'+(X(v.x)>W-90?X(v.x)-3:X(v.x)+3)+'" y="'+(m.t+9)+'" text-anchor="'+(X(v.x)>W-90?'end':'start')+'">'+esc(v.label||"")+'</text>'});
   (o.hlines||[]).forEach(function(h){g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+Y(h.y)+'" y2="'+Y(h.y)+'" stroke="'+(h.c||"var(--warn)")+'" stroke-dasharray="5 3"/><text x="'+(W-m.r-2)+'" y="'+(Y(h.y)-3)+'" text-anchor="end">'+esc(h.label||"")+'</text>'});
   var cols=["var(--c1)","var(--c2)","var(--c3)","var(--c4)"];
   ys.forEach(function(s,k){var d="",on=false;s.y.forEach(function(v,j){if(!isFinite(v)){on=false;return}d+=(on?"L":"M")+X(xs[j]).toFixed(1)+" "+Y(v).toFixed(1);on=true});g+='<path d="'+d+'" fill="none" stroke="'+cols[k%4]+'" stroke-width="1.6"/>'});
@@ -302,10 +302,15 @@ function vPredictivo(host){
   host.addEventListener("input",draw);draw();
 }
 
+function vDatos(host){
+  host.innerHTML=(D.caso.tablas||[]).map(function(t){return '<div class="card"><h2>'+esc(t.titulo)+' '+chips(t.evidencia)+'</h2><div class="tw"><table><tr>'+t.columnas.map(function(c){return '<th>'+esc(c)+'</th>'}).join("")+'</tr>'+
+    t.filas.map(function(r){return '<tr>'+r.map(function(x){return '<td>'+esc(x)+'</td>'}).join("")+'</tr>'}).join("")+'</table></div>'+(t.nota?'<p style="font-size:13px;color:var(--mut)">'+esc(t.nota)+'</p>':'')+'</div>'}).join("");
+}
+
 function vPlan(host){
   var p=D.caso.plan||[];
-  host.innerHTML='<div class="card"><h2>Plan de acciones (CAPA)</h2><div class="tw"><table><tr><th>Id</th><th>Acción</th><th>Tipo</th><th>Causa</th><th>Responsable</th><th>Verificación de eficacia</th><th>Fuente</th></tr>'+
-   p.map(function(a){return '<tr><td>'+esc(a.id)+'</td><td>'+esc(a.accion)+'</td><td>'+esc(a.tipo||"")+'</td><td>'+esc(a.causa||"")+'</td><td>'+esc(a.responsable||"por asignar")+'</td><td>'+esc(a.verificacion||"por definir")+'</td><td>'+chips(a.evidencia)+'</td></tr>'}).join("")+'</table></div></div>';
+  host.innerHTML='<div class="card"><h2>Plan de acciones (CAPA)</h2><div class="tw"><table><tr><th>Id</th><th>Acción</th><th>Tipo</th><th>Causa</th><th>Responsable</th><th>Fecha</th><th>Verificación de eficacia</th><th>Fuente</th></tr>'+
+   p.map(function(a){return '<tr><td>'+esc(a.id)+'</td><td>'+esc(a.accion)+'</td><td>'+esc(a.tipo||"")+'</td><td>'+esc(a.causa||"")+'</td><td>'+esc(a.responsable||"por asignar")+'</td><td>'+esc(a.fecha||"")+'</td><td>'+esc(a.verificacion||"por definir")+'</td><td>'+chips(a.evidencia)+'</td></tr>'}).join("")+'</table></div></div>';
 }
 
 function vHistorial(host){
@@ -331,6 +336,7 @@ function boot(){
   tab("tl","Línea de tiempo",vTiempo,(c.linea_tiempo||[]).length>0);
   tab("sen","Señales",vSenales,(c.series||[]).length>0);
   tab("cau","Causas y técnicas",vCausas);
+  tab("dat","Datos",vDatos,(c.tablas||[]).length>0);
   tab("evi","Evidencia",vEvidencia);
   tab("vid","Vida",vVida);
   tab("pre","Predictivo",vPredictivo);
