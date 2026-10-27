@@ -7,9 +7,9 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f2f7fc;--panel:#ffffff;--ink:#1e2b3a;--mut:#62758a;--line:#dbe6f1;--soft:#eaf2fa;--soft2:#f6f9fd;--acc:#4e8cc2;--acc2:#e3eef9;--ok:#4f9d75;--warn:#d99a42;--bad:#d96b72;--c1:#5b9bd5;--c2:#f2a65a;--c3:#7bbf8e;--c4:#b69bd6;--c5:#6cc3c3;--c6:#ecc96b;--shadow:0 1px 2px rgba(40,70,100,.06),0 8px 22px rgba(40,70,100,.07);--hero1:#d9eafa;--hero2:#efe6fa;--fb:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;--fh:"Manrope","Source Sans 3",system-ui,sans-serif}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1824;--panel:#152233;--ink:#e5eef8;--mut:#94a9bf;--line:#243a52;--soft:#1b2c40;--soft2:#182738;--acc:#79b2e6;--acc2:#1c3350;--ok:#6cc08f;--warn:#e6b05a;--bad:#ea8a90;--c1:#79b2e6;--c2:#f4b676;--c3:#8fd0a0;--c4:#c8afe6;--c5:#86d3d3;--c6:#f0d583;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.28);--hero1:#18314d;--hero2:#2a2440;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0e1824;--panel:#152233;--ink:#e5eef8;--mut:#94a9bf;--line:#243a52;--soft:#1b2c40;--soft2:#182738;--acc:#79b2e6;--acc2:#1c3350;--ok:#6cc08f;--warn:#e6b05a;--bad:#ea8a90;--c1:#79b2e6;--c2:#f4b676;--c3:#8fd0a0;--c4:#c8afe6;--c5:#86d3d3;--c6:#f0d583;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.28);--hero1:#18314d;--hero2:#2a2440;color-scheme:dark}
+:root{--bg:#f4f9fa;--panel:#ffffff;--ink:#1e2b3a;--mut:#62758a;--line:#dde9ee;--soft:#eaf3f5;--soft2:#f7fbfb;--acc:#5b9fcf;--acc2:#e4f0f8;--ok:#6fb98d;--warn:#e3b06c;--bad:#e08e8b;--c1:#7fb3da;--c2:#f0b784;--c3:#8ccaa0;--c4:#c8aad6;--c5:#86bcb6;--c6:#ecd27a;--shadow:0 1px 2px rgba(40,70,100,.06),0 8px 22px rgba(40,70,100,.07);--hero1:#d9eafa;--hero2:#efe6fa;--fb:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;--fh:"Manrope","Source Sans 3",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1b22;--panel:#152233;--ink:#e5eef8;--mut:#94a9bf;--line:#243b47;--soft:#1a2b35;--soft2:#172730;--acc:#86bde6;--acc2:#1d3647;--ok:#7ccb9a;--warn:#e8b97a;--bad:#ee9a97;--c1:#86bde6;--c2:#f4c08f;--c3:#98d6ab;--c4:#d2b9e0;--c5:#92cbc5;--c6:#f0d98a;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.28);--hero1:#18314d;--hero2:#2a2440;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1b22;--panel:#152233;--ink:#e5eef8;--mut:#94a9bf;--line:#243b47;--soft:#1a2b35;--soft2:#172730;--acc:#86bde6;--acc2:#1d3647;--ok:#7ccb9a;--warn:#e8b97a;--bad:#ee9a97;--c1:#86bde6;--c2:#f4c08f;--c3:#98d6ab;--c4:#d2b9e0;--c5:#92cbc5;--c6:#f0d98a;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.28);--hero1:#18314d;--hero2:#2a2440;color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--fb)}
 h1,h2,h3{font-family:var(--fh);letter-spacing:-.01em}
@@ -147,6 +147,30 @@ a.ext:hover{background:var(--acc2)}
  body.print-all .subpane:before{content:attr(data-label);display:block;font:600 14pt var(--fh);margin:12pt 0 4pt;color:#333}
  .tw{overflow:visible}
 }
+/* ---- v8: paleta baby Tableau con verde suave, visor, resumen, volver ---- */
+.cls{display:inline-block;font:500 10.5px var(--fb);padding:1px 8px;border-radius:999px;border:1px solid var(--cc);color:var(--ink);background:color-mix(in srgb,var(--cc) 22%,var(--panel));letter-spacing:.03em}
+.autor{display:block;font:500 11.5px var(--fh);letter-spacing:.14em;color:var(--acc);margin-top:2px;text-transform:uppercase}
+.abs{background:linear-gradient(180deg,color-mix(in srgb,var(--acc2) 55%,var(--panel)),var(--panel))}
+.abs-t{font:500 17px/1.3 var(--fh);margin:2px 0 2px}.abs-a{font:500 12px var(--fh);letter-spacing:.12em;color:var(--acc);margin:0 0 10px}
+.abs p{max-width:118ch;line-height:1.62}
+a.cita{color:var(--acc);cursor:pointer;border-bottom:1px dotted var(--acc);text-decoration:none}a.cita:hover{background:var(--acc2)}
+.vz{border:1px solid var(--line);border-radius:14px;background:var(--panel);overflow:hidden}
+.vz-bar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px 10px;border-bottom:1px solid var(--line);background:var(--soft2)}
+.vz-bar .btn{padding:4px 9px;font-size:12px;border-radius:9px}.vz-bar .btn[aria-pressed=true]{background:var(--acc2);border-color:var(--acc)}
+.vz-sp{flex:1}.vz-z{font:500 12px var(--fb);color:var(--mut);min-width:44px}
+.vz-port{position:relative;height:min(80vh,780px);overflow:hidden;touch-action:none;background:var(--panel)}.vz-port.gr{cursor:grabbing!important}
+.vz-st{transform-origin:0 0;position:absolute;left:0;top:0}
+.vz .leg{padding:6px 12px;border-top:1px solid var(--line)}
+.ch-h .cp{padding:2px 8px;font-size:11.5px;border-radius:8px;margin-left:auto}
+#back{position:fixed;left:max(16px,calc(232px + 16px));bottom:22px;z-index:20;display:none;box-shadow:var(--shadow)}
+#back.on{display:inline-flex}
+@media (max-width:900px){#back{left:16px}}
+.hero{background:linear-gradient(120deg,color-mix(in srgb,var(--c1) 22%,var(--panel)),color-mix(in srgb,var(--c3) 20%,var(--panel)))}
+.acts .seg{order:99;margin-left:6px}
+.pfg{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}.pfg>div:empty{display:none}
+.rc3{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));margin:0 0 14px}
+.rc3>div{border:1px solid var(--line);border-top:3px solid var(--cc);border-radius:12px;padding:10px 12px;background:var(--panel);font-size:13px}
+.rc3 b{display:block;font:500 12px var(--fh);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
 </style>
 </head>
 <body>
@@ -192,7 +216,22 @@ a.ext:hover{background:var(--acc2)}
 <symbol id="i-pregunta" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
 <symbol id="i-ojo" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></symbol>
 <symbol id="i-pez" viewBox="0 0 24 24"><path d="M2 12h17"/><path d="M19 12l3-3.5v7z"/><path d="M6 12L4 5.5M11 12L9 5.5M16 12l-2-6.5M6 12l-2 6.5M11 12l-2 6.5M16 12l-2 6.5"/></symbol>
-<symbol id="i-cerrar" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol></defs></svg>
+<symbol id="i-cerrar" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol><symbol id="i-mano" viewBox="0 0 24 24"><path d="M18 11V6a1.5 1.5 0 0 0-3 0v4"/><path d="M15 10V4.5a1.5 1.5 0 0 0-3 0V10"/><path d="M12 9.5V5a1.5 1.5 0 0 0-3 0v8"/><path d="M9 13l-1.6-2.2a1.5 1.5 0 0 0-2.4 1.8L8 18a5 5 0 0 0 4 2h2a5 5 0 0 0 5-5v-4a1.5 1.5 0 0 0-3 0"/></symbol>
+<symbol id="i-zmas" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></symbol>
+<symbol id="i-zmenos" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></symbol>
+<symbol id="i-ajustar" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M16 21h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></symbol>
+<symbol id="i-copiar" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+<symbol id="i-volver" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+<symbol id="i-reloj" viewBox="0 0 24 24"><path d="M5 22h14M5 2h14"/><path d="M17 22v-4.2a2 2 0 0 0-.6-1.4L12 12l-4.4 4.4a2 2 0 0 0-.6 1.4V22"/><path d="M7 2v4.2a2 2 0 0 0 .6 1.4L12 12l4.4-4.4a2 2 0 0 0 .6-1.4V2"/></symbol>
+<symbol id="i-mapa" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></symbol>
+<symbol id="i-banera" viewBox="0 0 24 24"><path d="M3 5c3 0 4 8 6 10s4 2 6 0 3-10 6-10"/><path d="M3 20h18"/></symbol>
+<symbol id="i-sensor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14"/></symbol>
+<symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></symbol>
+<symbol id="i-red" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6l3.2 4.6M7 18l3.2-4.6M14 11l3.3-3.7M14 13l3.3 3.7"/></symbol>
+<symbol id="i-calibre" viewBox="0 0 24 24"><path d="M3 21V9l3-3h15v5H9v10z"/><path d="M12 11v3M15 11v3M18 11v3"/></symbol>
+<symbol id="i-pareto" viewBox="0 0 24 24"><rect x="3" y="10" width="3.5" height="11"/><rect x="8.5" y="14" width="3.5" height="7"/><rect x="14" y="17" width="3.5" height="4"/><path d="M3 6c4 0 8 1 11 4s5 4 7 4"/></symbol>
+<symbol id="i-llave" viewBox="0 0 24 24"><path d="M3 21l8-8"/><path d="M14 4a4 4 0 1 0 6 6l-3-1-2-2z"/></symbol>
+</defs></svg>
 
 <div id="app">
 <aside id="side" aria-label="Secciones"><div class="brand"><i><svg class="ic" width="20" height="20"><use href="#i-pico"/></svg></i><span>Ingeniería de<br>confiabilidad</span></div>
@@ -200,15 +239,17 @@ a.ext:hover{background:var(--acc2)}
 <div>
 <header id="top"><h1 id="ttl"></h1>
 <div class="search"><svg class="ic" width="18" height="18"><use href="#i-lupa"/></svg><input id="q" type="text" placeholder="Buscar en todo el informe" autocomplete="off" aria-label="Buscador general"><div id="sres" hidden></div></div>
-<div class="acts" style="position:relative"><div class="seg" role="group" aria-label="Tema"><button id="t-dia" aria-pressed="false"><svg class="ic" width="15" height="15"><use href="#i-sol"/></svg>Día</button><button id="t-noche" aria-pressed="false"><svg class="ic" width="15" height="15"><use href="#i-luna"/></svg>Noche</button></div>
+<div class="acts" style="position:relative;margin-left:auto">
 <button class="btn" id="b-imprimir" title="Imprime todo el informe (si el visor lo bloquea, use Descargar > Informe para imprimir)"><svg class="ic" width="15" height="15"><use href="#i-imprimir"/></svg>Imprimir</button>
 <button class="btn" id="b-guardar" title="Guarda su sesión: puntajes del FMECA, probabilidades del árbol y valores que ingresó (archivo JSON)"><svg class="ic" width="15" height="15"><use href="#i-guardar"/></svg>Guardar</button>
 <button class="btn" id="b-cargar" title="Restaura una sesión guardada antes con «Guardar» (archivo JSON)"><svg class="ic" width="15" height="15"><use href="#i-subir"/></svg>Cargar</button>
 <button class="btn" id="b-desc" title="Informe completo, datos, referencias y tablas"><svg class="ic" width="15" height="15"><use href="#i-bajar"/></svg>Descargar</button>
+<div class="seg" role="group" aria-label="Tema"><button id="t-dia" aria-pressed="false"><svg class="ic" width="15" height="15"><use href="#i-sol"/></svg>Día</button><button id="t-noche" aria-pressed="false"><svg class="ic" width="15" height="15"><use href="#i-luna"/></svg>Noche</button></div>
 <div id="dmenu" hidden></div><input type="file" id="f-cargar" accept="application/json,.json" hidden></div>
 </header>
 <main id="main"></main>
 </div></div>
+<button class="btn" id="back" aria-label="Volver al resumen"><svg class="ic" width="15" height="15"><use href="#i-volver"/></svg> Volver al resumen</button>
 <div id="scrim"></div>
 <aside id="drawer" aria-label="Evidencia"></aside>
 <div id="modal"><div class="box"><button class="x" id="mclose" aria-label="Cerrar">×</button><h3 id="mtit"></h3><div id="mbody"></div></div></div>
@@ -356,7 +397,7 @@ function vResumen(host){
   h+='<div class="card"><h2>Indicadores</h2><div class="grid">'+(r.kpis||[]).map(function(k){return '<div class="kpi"><b>'+esc(k.valor)+'</b><span>'+esc(k.label)+'</span><div>'+chips(k.evidencia)+'</div></div>'}).join("")+
    '<div class="kpi"><b>'+re.total+'</b><span>fuentes en el registro</span></div></div></div>';
   h+=mkCard("Hallazgos",'<ol>'+(r.hallazgos||[]).map(function(x){return '<li>'+esc(x.texto)+' '+(x.sin_evidencia?'<span class="badge confirmada" style="border-color:var(--bad);color:var(--bad)">SIN EVIDENCIA</span>':chips(x.evidencia))+'</li>'}).join("")+'</ol>');
-  h+=mkCard("Hipótesis de causa",'<div class="tw"><table><tr><th>Id</th><th>Hipótesis</th><th>Estado</th><th>Evidencia del caso</th><th>Respaldo científico</th><th>Contradice</th></tr>'+
+  h+=mkCard("Hipótesis de causa",'<div class="tw"><table><tr><th>Id</th><th>Clase</th><th>Hipótesis</th><th>Estado</th><th>Evidencia del caso</th><th>Respaldo científico</th><th>Contradice</th></tr>'+
    (c.hipotesis||[]).map(function(x){return '<tr><td>'+esc(x.id)+'</td><td>'+esc(x.titulo)+'<br><small>'+esc(x.tipo||"")+'</small></td><td><span class="badge '+esc(x.estado)+'">'+esc(x.estado)+(x.degradada?' ↓':'')+'</span></td><td>'+chips(x.apoyo_caso)+'</td><td>'+chips(x.apoyo_literatura)+'</td><td>'+chips(x.contradice)+'</td></tr>'}).join("")+'</table></div>'+
    '<div class="note">Una causa solo figura como confirmada con evidencia del propio caso. La literatura respalda plausibilidad, no que haya ocurrido aquí.</div>');
   h+=mkCard("Calidad de la evidencia",'<div class="tw"><table><tr><th>Nivel</th><th>Fuentes</th></tr>'+Object.keys(re.por_nivel).map(function(k){return '<tr><td>'+lv(k)+'</td><td>'+re.por_nivel[k]+'</td></tr>'}).join("")+'</table></div><p style="font-size:13px;color:var(--mut)">Cuartil verificado: '+(Object.keys(re.cuartil_verificado).length?JSON.stringify(re.cuartil_verificado):"ninguno (no se pudo comprobar en esta ejecución)")+'. Fuentes sin país declarado no se cuentan por país.</p>');
@@ -605,7 +646,7 @@ function vArbol(host){
   host.innerHTML='<div class="card"><h2>Árbol de fallas</h2><p><b>Evento tope:</b> '+esc(a.evento_tope||"")+'</p><div class="note">La estructura (puertas OR y AND) es una propuesta respaldada por la evidencia citada en cada nodo o por síntesis con premisas; no está probada con datos del activo. Las probabilidades de los eventos básicos están vacías: ingrese las que conozca (de 0 a 1) y se calcula la probabilidad del evento tope suponiendo eventos independientes. <b>La compuerta AND del evento tope y la agrupación de causas latentes son hipótesis del equipo</b>: el AND supone que la falla funcional exige además que el daño avance sin ser detectado ni atendido, lo que depende de si existe un programa de monitoreo; las causas latentes actúan como habilitador de las causas físicas, no como alternativa independiente.</div><button class="btn" id="arb-ex">Expandir todo</button> <button class="btn" id="arb-co">Contraer todo</button><div id="arb-tr"></div></div><div class="card"><h2>Probabilidad del evento tope</h2><div id="arb-pt"></div></div>'+vaciosHtml(a.vacios);
   function nodo(n,depth){
     var hs=(n.hijos||[]).map(function(h){return N[h]}).filter(Boolean),g=n.puerta;
-    var cab='<span class="badge '+(g==="AND"?'posible':g==="OR"?'probable':'')+'">'+esc(g)+'</span> '+esc(n.texto)+' '+nv(n.nivel)+' '+chips(n.evidencia)+(n.nota?'<br><small>'+lt(n.nota,100)+'</small>':'');
+    var cab='<span class="badge '+(g==="AND"?'posible':g==="OR"?'probable':'')+'">'+esc(g)+'</span> '+esc(n.texto)+' '+claseTag(n.clase)+' '+nv(n.nivel)+' '+chips(n.evidencia)+(n.nota?'<br><small>'+lt(n.nota,100)+'</small>':'');
     if(!hs.length)return '<li style="list-style:none;margin:4px 0">'+cab+' <label>p <input type="number" min="0" max="1" step="0.001" data-p="'+esc(n.id)+'" value="'+(pv[n.id]==null?"":pv[n.id])+'" style="width:70px"></label></li>';
     return '<li style="list-style:none;margin:4px 0"><details'+(depth<2?' open':'')+'><summary>'+cab+'</summary><ul style="border-left:2px solid var(--line);margin-left:6px;padding-left:12px">'+hs.map(function(h){return nodo(h,depth+1)}).join("")+'</ul></details></li>';
   }
@@ -621,8 +662,8 @@ function vArbol(host){
 }
 
 function vAcr(host){
-  var r=D.caso.analisis.acr,h='<div class="card"><h2>Análisis de causa raíz genérico del modo de falla</h2><div class="note">No hay caso real: todas las causas figuran como <b>posibles</b>. Cada una indica qué evidencia del activo la confirmaría o la descartaría.</div><div class="tw"><table><tr><th>Id</th><th>Hipótesis</th><th>Estado</th><th>Qué la confirmaría o descartaría</th><th>Fuente</th></tr>'+
-    (r.hipotesis||[]).map(function(x){return '<tr><td>'+esc(x.id)+'</td><td>'+esc(x.texto)+'<br>'+nv(x.nivel)+(x.nota?'<br><small>'+lt(x.nota,100)+'</small>':'')+'</td><td><span class="badge posible">'+esc(x.estado)+'</span></td><td>'+esc(x.prueba_para_confirmar||"")+'</td><td>'+chips(x.evidencia)+'</td></tr>'}).join("")+'</table></div></div>';
+  var r=D.caso.analisis.acr,h='<div class="card"><h2>Análisis de causa raíz genérico del modo de falla</h2><div class="note">No hay caso real: todas las causas figuran como <b>posibles</b>. Cada una indica qué evidencia del activo la confirmaría o la descartaría.</div><div class="tw"><table><tr><th>Id</th><th>Hipótesis</th><th>Clase</th><th>Estado</th><th>Qué la confirmaría o descartaría</th><th>Fuente</th></tr>'+
+    (r.hipotesis||[]).map(function(x){return '<tr><td>'+esc(x.id)+'</td><td>'+esc(x.texto)+'<br>'+nv(x.nivel)+(x.nota?'<br><small>'+lt(x.nota,100)+'</small>':'')+'</td><td>'+claseTag(x.clase)+'</td><td><span class="badge posible">'+esc(x.estado)+'</span></td><td>'+esc(x.prueba_para_confirmar||"")+'</td><td>'+chips(x.evidencia)+'</td></tr>'}).join("")+'</table></div></div>';
   var cats=D.caso.dossier?[]:Object.keys(r.ishikawa||{});
   if(cats.length)h+='<div class="card"><h2>Diagrama de Ishikawa (6M)</h2><div class="grid">'+cats.map(function(c){return '<div class="kpi" style="min-height:90px"><b style="font-size:15px">'+esc(c)+'</b>'+((r.ishikawa[c]||[]).length?listaEv(r.ishikawa[c]):'<p><small>SIN DATOS PARA ARMARLO: sin fuente leída</small></p>')+'</div>'}).join("")+'</div></div>';
   h+='<div class="card"><h2>Ensayos y verificaciones pertinentes</h2><div class="tw"><table><tr><th>Ensayo</th><th>Hipótesis</th><th>Fuente</th></tr>'+(r.ensayos||[]).map(function(e){return '<tr><td>'+esc(e.ensayo)+'</td><td>'+esc((e.para_hipotesis||[]).join(", "))+'</td><td>'+chips(e.evidencia)+'</td></tr>'}).join("")+'</table></div></div>'+vaciosHtml(r.vacios);
@@ -711,13 +752,6 @@ function cadena(host){
   pasos.forEach(function(p,i){var x=i*158+4;sv+='<rect x="'+x+'" y="6" width="142" height="66" rx="14" fill="var(--panel)" stroke="'+col[p[1]]+'" stroke-width="2.5"/><circle cx="'+(x+16)+'" cy="22" r="5" fill="'+col[p[1]]+'"/><text x="'+(x+28)+'" y="26" style="fill:var(--ink);font-weight:700;font-size:12px">'+esc(p[0])+'</text>'+wrapTxt(p[2],25).slice(0,2).map(function(l,j){return '<text x="'+(x+12)+'" y="'+(46+j*13)+'">'+esc(l)+'</text>'}).join("")+(i<pasos.length-1?'<text x="'+(x+146)+'" y="42" style="fill:var(--mut);font-size:15px">›</text>':'')});
   host.innerHTML='<div class="tw"><svg viewBox="0 0 1110 80" width="100%" style="min-width:860px">'+sv+'</svg></div><div class="leg"><span style="color:var(--ok)">&#9632;</span> con respaldo · <span style="color:var(--warn)">&#9632;</span> parcial · <span style="color:var(--bad)">&#9632;</span> SIN DATOS PARA ARMARLO</div>';
 }
-function perfil(host){
-  host.innerHTML='<div class="grid2"><div id="pf-n"></div><div id="pf-a"></div></div>';
-  var n={},y={};D.evidencia.forEach(function(e){n[e.nivel_evidencia]=(n[e.nivel_evidencia]||0)+1;var a=e.referencia&&e.referencia.anio;if(a&&(e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"))y[a]=(y[a]||0)+1});
-  var cl={"VERIFICADO-TEXTO":"var(--ok)","VERIFICADO-ABSTRACT":"var(--c3)","SOLO-SNIPPET":"var(--warn)","NO-VERIFICADO":"var(--bad)","DATO-USUARIO":"var(--c4)"};
-  barChart($("#pf-n",host),Object.keys(n).map(function(k){return{label:k,value:n[k],color:cl[k]}}),{titulo:"Entradas por nivel de lectura",desc:"Las pistas SOLO-SNIPPET y NO-VERIFICADO no respaldan ninguna afirmación."});
-  barChart($("#pf-a",host),Object.keys(y).sort().map(function(k){return{label:k,value:y[k],color:"var(--c1)"}}),{titulo:"Fuentes leídas por año",desc:"Cuenta entradas del registro; un mismo documento puede tener varias."});
-}
 function docPorModo(host){
   var an=D.caso.analisis||{};if(!an.fmeca){host.innerHTML="";return}
   barChart(host,an.fmeca.items.map(function(m){var d={};m.evidencia.forEach(function(i){var e=EV[i];if(e&&(e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"))d[(e.referencia&&e.referencia.titulo)||i]=1});return{label:m.id+" "+m.modo,value:Object.keys(d).length,color:"var(--c5)"}}),
@@ -727,15 +761,6 @@ function matrizEnsayos(host){
   var an=D.caso.analisis||{};if(!(an.acr&&an.acr.ensayos&&an.acr.hipotesis)){host.innerHTML="";return}
   var hs=an.acr.hipotesis.map(function(x){return x.id});
   host.innerHTML='<div class="card"><h2>'+ic("matraz")+' Qué técnica ayuda a cada hipótesis</h2><div class="tw"><table><tr><th>Técnica</th>'+hs.map(function(x){return '<th>'+esc(x)+'</th>'}).join("")+'</tr>'+an.acr.ensayos.map(function(e){return '<tr><td>'+lt(e.ensayo,80)+' '+chips(e.evidencia)+'</td>'+hs.map(function(x){return (e.para_hipotesis||[]).indexOf(x)>=0?'<td style="background:var(--acc);text-align:center;color:#fff">●</td>':'<td></td>'}).join("")+'</tr>'}).join("")+'</table></div><p class="leg">Columnas sin punto: la evidencia leída no menciona técnica para esa hipótesis (SIN DATOS PARA ARMARLO).</p></div>';
-}
-function degr(host){
-  var W2=840,st='';
-  st+='<line x1="48" y1="190" x2="820" y2="190" stroke="var(--mut)"/><line x1="48" y1="14" x2="48" y2="190" stroke="var(--mut)"/>';
-  [["1 ultrasónico",48],["2 resonancia natural",240],["3 defecto y armónicos",432],["4 ruido aleatorio",624]].forEach(function(e,i){st+='<rect x="'+e[1]+'" y="190" width="188" height="28" fill="'+["var(--c1)","var(--c5)","var(--c3)","var(--c6)"][i]+'" opacity=".35"/><text x="'+(e[1]+94)+'" y="209" text-anchor="middle" style="fill:var(--ink);font-weight:600">'+esc(e[0])+'</text>'});
-  st+='<path d="M48 165 C140 163 190 70 330 44 C460 30 540 130 820 165" fill="none" stroke="var(--c2)" stroke-width="3"/><text x="330" y="34" text-anchor="middle" style="fill:var(--c2);font-weight:700">kurtosis: sube con el defecto incipiente y vuelve a lo normal al extenderse</text>';
-  st+='<path d="M48 178 C280 176 430 158 620 112" fill="none" stroke="var(--c1)" stroke-width="3"/><text x="430" y="150" style="fill:var(--c1);font-weight:700">energía en frecuencias de defecto: crece hasta la etapa 3</text><text x="725" y="110" text-anchor="middle">etapa 4: sin tendencia respaldada</text>';
-  st+='<text x="434" y="242" text-anchor="middle" style="fill:var(--bad);font-weight:700">ESQUEMA ILUSTRATIVO: sin escala ni datos · horizontal: tiempo (sin escala) · vertical: magnitud relativa</text>';
-  host.innerHTML='<div class="chart"><div class="ch-h"><b>Degradación del rodamiento en cuatro etapas</b></div><svg viewBox="0 0 '+W2+' 256" width="100%" role="img" aria-label="Esquema cualitativo">'+st+'</svg><div class="ch-f"><b>Descripción:</b> esquema cualitativo; las curvas son ilustrativas y no hay duraciones. <b>Refs.:</b> '+chips(["E-8008","E-8003"])+'</div></div>';
 }
 /* ---------- v6: enlaces, tipos de fuente, ranking, referencias, réplicas ---------- */
 function lk(s){
@@ -783,7 +808,7 @@ function rankingFuentes(host,limit){
   host.addEventListener("input",draw);host.addEventListener("change",draw);draw();
 }
 
-function vReferencias(host){
+function vRefLista(host){
   host.innerHTML='<div class="card"><h2>'+ic("libro")+' Referencias en APA 7</h2><div class="note">Cada referencia lleva su enlace: DOI, arXiv o la dirección de la fuente; haga clic y se abre la página. Se agrupan por tipo de documento. Las <b>pistas de buscador</b> no se leyeron y no respaldan ninguna afirmación.</div>'+
    '<div class="tools"><label>Mostrar <select id="rf-n"><option value="leidas">solo leídas</option><option value="todas">todas, con pistas</option></select></label><label>Buscar <input type="text" id="rf-t" style="width:200px"></label><button class="btn" id="rf-d">'+ic("bajar",14)+' Descargar APA (TXT)</button></div><div id="rf-l"></div></div>';
   function draw(){
@@ -820,21 +845,6 @@ function cardRep(r){
   d.innerHTML='<div class="ch-h"><b>'+esc(r.id)+' · '+esc(r.titulo)+'</b><span class="badge">'+(r.tipo==="tabla"?"tabla":r.tipo==="barras_ic"?"barras con IC 95 %":"barras")+'</span></div><div class="rp-b"></div>'+
    '<div class="ch-f"><b>Réplica de:</b> '+lk(r.replica_de||"")+'<br><b>Condiciones:</b> '+lt(r.condiciones||"",160)+'<br><b>Límites:</b> '+lt(r.limites||"",160)+'<br><b>Refs.:</b> '+chips(r.evidencia)+'</div>';
   var b=$(".rp-b",d);if(r.tipo==="tabla")tablaRep(b,r);else barIC(b,r);return d}
-function vReplicas(host){
-  var R=D.caso.replicas||[],C=D.caso.cifras||[];
-  if(!R.length&&!C.length){host.innerHTML='<div class="card"><h2>'+ic("faja")+' Réplicas y cifras</h2>'+sdHtml("Ninguna réplica de figura o tabla pasó la compuerta: cada número debe estar literal en el extracto de la fuente citada.")+'</div>';return}
-  var nb=R.filter(function(r){return r.tipo!=="tabla"}).length;
-  host.innerHTML='<div class="card"><h2>'+ic("faja")+' Réplicas de figuras y tablas de los textos leídos</h2><div class="note">Cada gráfica o tabla se reconstruye <b>solo con números que aparecen literales</b> en el extracto de la fuente citada; una compuerta retira lo que no cumple. Los valores son de bancos de ensayo, no de una chumacera de polea: léalos con sus condiciones y límites. Las figuras que son solo imagen quedan como SIN DATOS PARA ARMARLO.</div>'+
-   '<div class="grid"><div class="kpi"><span class="ico">'+ic("grafico",22)+'</span><div><b>'+nb+'</b><span>gráficas replicadas</span></div></div><div class="kpi"><span class="ico">'+ic("doc",22)+'</span><div><b>'+(R.length-nb)+'</b><span>tablas replicadas</span></div></div><div class="kpi"><span class="ico">'+ic("tuerca",22)+'</span><div><b>'+C.length+'</b><span>cifras con su condición</span></div></div></div>'+
-   '<div class="tools" style="margin-top:12px"><label>Mostrar <select id="rp-t"><option value="">gráficas y tablas</option><option value="g">solo gráficas</option><option value="t">solo tablas</option></select></label></div><div id="rp-l"></div></div>'+
-   '<div class="card"><h2>'+ic("tuerca")+' Cifras clave</h2><div class="tools"><label>Buscar <input type="text" id="cf-t" style="width:220px"></label></div><div class="tw"><table id="cf-tb"></table></div></div>';
-  function drawR(){var t=$("#rp-t",host).value,l=$("#rp-l",host);l.innerHTML="";var s=R.filter(function(r){return t===""||(t==="t")===(r.tipo==="tabla")});
-    if(!s.length)l.innerHTML=sdHtml("No hay réplicas de ese tipo.");s.forEach(function(r){l.appendChild(cardRep(r))})}
-  function drawC(){var q=($("#cf-t",host).value||"").toLowerCase();
-    $("#cf-tb",host).innerHTML='<tr><th>Id</th><th>Cifra</th><th>Qué mide</th><th>Condiciones</th><th>Fuente</th></tr>'+C.filter(function(c){return (c.mide+" "+c.condiciones+" "+c.valor).toLowerCase().indexOf(q)>=0}).map(function(c){return '<tr><td>'+esc(c.id)+'</td><td><b>'+esc(c.valor)+'</b> '+esc(c.unidad||"")+'</td><td>'+lt(c.mide,80)+'</td><td>'+lt(c.condiciones,100)+'</td><td>'+chips(c.evidencia)+'</td></tr>'}).join("")}
-  $("#rp-t",host).onchange=drawR;$("#cf-t",host).oninput=drawC;drawR();drawC();
-}
-
 /* ---------- v6: Ishikawa dinámico, cinco porqués, qué observar, índice, equipo, imprimir ---------- */
 var BCOL=["var(--c1)","var(--c2)","var(--c3)","var(--c4)","var(--c5)","var(--c6)"];
 function icoRama(c){var k=String(c).normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
@@ -864,7 +874,7 @@ function fishSVG(cats,ish,notas,st,efecto){
   var ef=wrapTxt(efecto,26).slice(0,4);
   g+='<polygon points="'+(HX-2)+','+(my-7)+' '+(HX+12)+','+my+' '+(HX-2)+','+(my+7)+'" fill="var(--ink)"/><rect x="'+(HX+12)+'" y="'+(my-48)+'" width="226" height="96" rx="16" fill="var(--acc2)" stroke="var(--acc)"/><svg class="ic" x="'+(HX+24)+'" y="'+(my-38)+'" width="18" height="18" style="color:var(--acc)"><use href="#i-alerta"/></svg><text x="'+(HX+48)+'" y="'+(my-25)+'" style="fill:var(--acc);font-weight:600;font-size:11px;letter-spacing:.08em">EFECTO</text>'+
     ef.map(function(l,j){return '<text x="'+(HX+24)+'" y="'+(my-6+j*15)+'" style="fill:var(--ink);font-size:12.5px;font-weight:500">'+esc(l)+'</text>'}).join("");
-  return '<svg viewBox="0 0 '+W+' '+H+'" width="100%" style="min-width:1150px" role="img" aria-label="Diagrama de Ishikawa">'+g+'</svg>';
+  return{svg:'<svg viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'" role="img" aria-label="Diagrama de Ishikawa">'+g+'</svg>',W:W,H:H};
 }
 function vIshikawa(host){
   var r=D.caso.analisis.acr,ish=r.ishikawa||{},notas=r.ishikawa_notas||{},cats=Object.keys(ish);
@@ -874,13 +884,13 @@ function vIshikawa(host){
   var efecto="Falla de "+(D.caso.meta.activo||"el componente");
   host.innerHTML='<div class="card"><h2>'+ic("pez")+' Diagrama de Ishikawa (6M)</h2><div class="note">Cada causa dice <b>por qué podría ocurrir</b> y <b>cómo verificarla</b>. Verde: respaldo directo de una fuente leída. Ámbar: síntesis del equipo con premisas citadas. Sin caso real ninguna causa está confirmada. Haga clic en una causa o en una rama.</div>'+
    '<div class="grid" style="margin-bottom:12px"><div class="kpi"><span class="ico">'+ic("pez",22)+'</span><div><b>'+tot+'</b><span>causas en '+cats.length+' ramas</span></div></div><div class="kpi"><span class="ico">'+ic("escudo",22)+'</span><div><b>'+ev+'</b><span>con respaldo directo</span></div></div><div class="kpi"><span class="ico">'+ic("matraz",22)+'</span><div><b>'+(tot-ev)+'</b><span>síntesis del equipo</span></div></div><div class="kpi"><span class="ico">'+ic("alerta",22)+'</span><div><b>'+par+'</b><span>ramas con datos que faltan</span></div></div></div>'+
-   '<div class="tools"><div class="seg" role="group" aria-label="Vista"><button data-v="dia">'+ic("pez",14)+'Diagrama</button><button data-v="tar">'+ic("ficha",14)+'Tarjetas</button></div><label>Nivel <select id="ih-n"><option value="">todos</option><option value="EVIDENCIA">respaldo directo</option><option value="SINTESIS">síntesis</option></select></label><label>Buscar <input type="text" id="ih-q" style="width:190px" placeholder="p. ej. lubricante"></label><button class="btn" id="ih-a">'+ic("lupa",14)+' ampliar</button></div><div id="ih-v"></div>'+
+   '<div class="tools"><div class="seg" role="group" aria-label="Vista"><button data-v="dia">'+ic("pez",14)+'Diagrama</button><button data-v="tar">'+ic("ficha",14)+'Tarjetas</button></div><label>Nivel <select id="ih-n"><option value="">todos</option><option value="EVIDENCIA">respaldo directo</option><option value="SINTESIS">síntesis</option></select></label><label>Buscar <input type="text" id="ih-q" style="width:190px" placeholder="p. ej. lubricante"></label></div><div id="ih-v"></div>'+
    '<div class="leg" style="margin-top:8px"><span style="color:var(--ok)">&#9632;</span> respaldo directo · <span style="color:var(--warn)">&#9632;</span> síntesis del equipo · <span style="color:var(--bad)">&#9632;</span> SIN DATOS PARA ARMARLO</div></div>';
   function okI(x){return (!st.niv||x.nivel===st.niv)&&(!st.q||(x.texto+" "+(x.mecanismo||"")+" "+(x.verificar||"")).toLowerCase().indexOf(st.q)>=0)}
   function draw(){
     host.querySelectorAll(".seg button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.v===st.vista)});
     var v=$("#ih-v",host);
-    if(st.vista==="dia")v.innerHTML='<div class="tw">'+fishSVG(cats,ish,notas,st,efecto)+'</div>';
+    if(st.vista==="dia"){var fr=fishSVG(cats,ish,notas,st,efecto);visor(v,{svg:fr.svg,W:fr.W,H:fr.H,nombre:"Ishikawa: "+efecto,leyenda:"Verde = respaldo directo · ámbar = síntesis del equipo · rojo discontinuo = SIN DATOS PARA ARMARLO · clic en una causa para ver cómo verificarla"})}
     else v.innerHTML='<div class="grid2">'+cats.map(function(c,i){var a=(ish[c]||[]).filter(okI);
       return '<div class="kpi" style="display:block;border-top:3px solid '+BCOL[i%6]+'"><b style="font-size:15px">'+ic(icoRama(c),17)+' '+esc(c)+' <span class="badge">'+(ish[c]||[]).length+'</span></b>'+
        a.map(function(x){return '<details style="margin:7px 0"><summary>'+esc(x.texto.replace(/\s*CONDICION A VERIFICAR\.?/i,""))+' '+nv(x.nivel)+'</summary><p><b>Por qué podría ocurrir:</b> '+lk(x.mecanismo||"")+'</p><p><b>Cómo verificarlo:</b> '+lk(x.verificar||"")+'</p>'+(x.nota?'<div class="note">'+lk(x.nota)+'</div>':'')+'<p>'+chips(x.evidencia)+'</p></details>'}).join("")+
@@ -893,19 +903,20 @@ function vIshikawa(host){
     else if(p.dataset.nota!=null){var c2=cats[+p.dataset.nota];openHtml('<h3>'+ic(icoRama(c2),18)+' '+esc(c2)+'</h3>'+sdHtml(notas[c2]||"Sin fuente leída para esta rama."))}
     else if(p.dataset.lab!=null){var c3=cats[+p.dataset.lab],a=ish[c3]||[];openHtml('<h3>'+ic(icoRama(c3),18)+' '+esc(c3)+'</h3><p>'+a.length+' causa(s): '+a.filter(function(x){return x.nivel==="EVIDENCIA"}).length+' con respaldo directo.</p><ul>'+a.map(function(x){return '<li>'+esc(x.texto.slice(0,140))+' '+nv(x.nivel)+'</li>'}).join("")+'</ul>'+(notas[c3]?sdHtml(notas[c3]):''))}
   });
-  $("#ih-a",host).onclick=function(){openModal(function(b){b.innerHTML='<div class="tw">'+fishSVG(cats,ish,notas,{niv:st.niv,q:st.q},efecto).replace('min-width:1150px','min-width:0')+'</div>';b.addEventListener("click",function(e){var p=e.target.closest(".pl");if(!p)return;closeModal();if(p.dataset.c!=null){var c=cats[+p.dataset.c];openHtml(detalleIsh(c,ish[c][+p.dataset.i]))}})},"Ishikawa: "+efecto)};
   $("#ih-n",host).onchange=function(){st.niv=this.value;draw()};$("#ih-q",host).oninput=function(){st.q=this.value.trim().toLowerCase();draw()};draw();
 }
 function vPorques(host){
   var P=(D.caso.analisis.porques||{}).items||[],hs={};((D.caso.analisis.acr||{}).hipotesis||[]).forEach(function(h){hs[h.id]=h});var sel=0;
-  host.innerHTML='<div class="card"><h2>'+ic("pregunta")+' Cinco porqués por hipótesis</h2><div class="note">Cada eslabón responde al anterior y lleva su fuente. El último es una <b>causa latente a confirmar</b> con registros del activo; ninguna cadena está confirmada porque no hay caso real.</div><div class="sub" id="pq-p"></div><div id="pq-c"></div></div>';
+  host.innerHTML='<div class="card"><h2>'+ic("pregunta")+' Cinco porqués por hipótesis</h2><div class="note">Cada eslabón responde al anterior y lleva su fuente. Los dos primeros explican la <b>causa física</b>, el tercero y el cuarto la <b>causa humana</b> (práctica o decisión) y el último la <b>causa latente</b> (del sistema de gestión). El último es una <b>causa latente a confirmar</b> con registros del activo; ninguna cadena está confirmada porque no hay caso real.</div><div class="sub" id="pq-p"></div><div id="pq-c"></div></div>';
   function draw(){
     $("#pq-p",host).innerHTML=P.map(function(h,i){return '<button class="pill" data-i="'+i+'" aria-selected="'+(i===sel)+'">'+esc(h.causa)+'</button>'}).join("");
     var h=P[sel];if(!h){$("#pq-c",host).innerHTML=sdHtml("Sin cadenas de porqués con respaldo.");return}
     var H=hs[h.causa]||{},n=h.cadena.length;
-    $("#pq-c",host).innerHTML='<h3 style="margin:0 0 8px">'+esc(h.causa)+' · '+esc(h.titulo||H.texto||"")+' '+(H.estado?'<span class="badge posible">'+esc(H.estado)+'</span>':'')+'</h3>'+h.cadena.map(function(x,i){
+    var cl=function(i){return i<2?"fisica":i<4?"humana":"latente"},cut=function(t){return String(t).replace(/^Posible respuesta[^:]*:\s*/,"").replace(/^¿[^?]*\?\s*/,"")},C=h.cadena;
+    var rc='<div class="rc3">'+[["fisica",1],["humana",2],["latente",C.length-1]].map(function(p){var x=C[Math.min(p[1],C.length-1)];return '<div style="--cc:'+CLASES[p[0]][1]+'"><b>Causa '+CLASES[p[0]][0].toLowerCase()+'</b>'+lt(cut(x.porque),170)+'</div>'}).join("")+'</div>';
+    $("#pq-c",host).innerHTML=rc+'<h3 style="margin:0 0 8px">'+esc(h.causa)+' · '+esc(h.titulo||H.texto||"")+' '+(H.estado?'<span class="badge posible">'+esc(H.estado)+'</span>':'')+'</h3>'+h.cadena.map(function(x,i){
       var t=String(x.porque),q=t.indexOf("?"),pr=q>=0?t.slice(0,q+1):"",re=q>=0?t.slice(q+1).trim():t;
-      return '<div class="pq'+(i===n-1?' fin':'')+'"><span class="num">'+(i+1)+'</span><span class="qq">'+esc(pr)+'</span>'+lt(re,220)+'<div style="margin-top:4px">'+nv(x.nivel)+' '+chips(x.evidencia)+(i===n-1?' <span class="badge posible">causa latente a confirmar</span>':'')+'</div></div>'+(i<n-1?'<div class="pq-ar">&#8595;</div>':'')}).join("");
+      return '<div class="pq'+(i===n-1?' fin':'')+'"><span class="num">'+(i+1)+'</span><span class="qq">'+esc(pr)+' '+claseTag(cl(i))+'</span>'+lt(re,220)+'<div style="margin-top:4px">'+nv(x.nivel)+' '+chips(x.evidencia)+(i===n-1?' <span class="badge posible">causa latente a confirmar</span>':'')+'</div></div>'+(i<n-1?'<div class="pq-ar">&#8595;</div>':'')}).join("");
   }
   host.addEventListener("click",function(e){var b=e.target.closest("#pq-p .pill");if(b){sel=+b.dataset.i;draw()}});draw();
 }
@@ -930,6 +941,8 @@ function vEquipo(host){
    '<div class="grid2">'+T.map(function(a){return '<div class="kpi" style="display:block"><b style="font-size:14.5px">'+ic("equipo",16)+' '+esc(a.agente)+'</b><span style="font-size:12px"><i>'+esc(a.rol)+'</i></span><p style="margin:6px 0"><b>Hizo:</b> '+lt(a.hizo,150)+'</p><p style="margin:4px 0;font-size:12.5px"><b>Recibió:</b> '+esc(a.entrada)+'<br><b>Entregó:</b> '+esc(a.salida)+'</p><p style="margin:4px 0;font-size:12.5px"><b>Aprendió:</b> '+lt(a.aprendio,140)+'</p></div>'}).join("")+'</div></div>';
 }
 function imprimir(){
+  var enMarco=false;try{enMarco=window.self!==window.top}catch(e){enMarco=true}
+  if(enMarco){var r=DESCARGAS[5][2]();guardarArchivo(r[0],r[1]);toast("El visor no permite imprimir aquí: se descargó el informe para imprimir. Ábralo en su navegador y se abrirá la impresión.");return}
   var cur=window.__cur||"res";document.body.classList.add("print-all");
   try{VIEWS.forEach(function(v){window.__goto(v.id);document.querySelectorAll("#v-"+v.id+" .pill").forEach(function(b){b.click()})});window.__goto(cur)}catch(e){}
   var fin=function(){document.body.classList.remove("print-all");window.removeEventListener("afterprint",fin)};window.addEventListener("afterprint",fin);
@@ -938,6 +951,303 @@ function imprimir(){
   setTimeout(function(){document.body.classList.remove("print-all")},15000);
 }
 
+/* ---------- v8: citas APA, visor con zoom y mano, impresión A4/A3, copiar, clases de causa ---------- */
+var CLASES={fisica:["Física","var(--c1)"],humana:["Humana","var(--c2)"],latente:["Latente","var(--c4)"]};
+function claseTag(c){var k=CLASES[c];return k?'<span class="cls" style="--cc:'+k[1]+'">'+k[0]+'</span>':''}
+function apellidos(a){var r=[],re=/(?:^|,\s*|&\s*|y\s+)([A-ZÁÉÍÓÚÑ][^,&]*?),\s*(?:[A-ZÁÉÍÓÚÑ]\.[\s\-]*)+/g,m;a=String(a||"");while((m=re.exec(a)))r.push(m[1].trim());
+  if(!r.length&&a)r.push(a.split(",")[0].replace(/\(.*$/,"").trim());return r}
+function citaDe(e){var r=e.referencia||{},ap=apellidos(r.autores),y=r.anio||"s. f.",n=ap.length,t;
+  if(!n)t=(r.titulo||"Sin autor").split(" ").slice(0,3).join(" ");else if(n===1)t=ap[0];else if(n===2)t=ap[0]+" y "+ap[1];else t=ap[0]+" et al.";return[t,y]}
+function citar(ids){var g=[],seen={};(ids||[]).forEach(function(i){var e=EV[i];if(!e)return;var c=citaDe(e),k=c[0]+"|"+c[1];if(seen[k]){seen[k].ids.push(i);return}seen[k]={c:c,ids:[i]};g.push(seen[k])});
+  return '('+g.map(function(x){return '<a class="cita" data-ev="'+esc(x.ids[0])+'">'+esc(x.c[0]+", "+x.c[1])+'</a>'}).join("; ")+')'}
+function conCitas(t){return esc(t).replace(/\{((?:E-\d{4}(?:,\s*)?)+)\}/g,function(m,ids){return citar(ids.split(/,\s*/))})}
+function vAbstract(host){
+  var A=D.caso.abstract;if(!A||!(A.parrafos||[]).length){host.innerHTML="";return}
+  var refs={},lst=[];(A.parrafos||[]).forEach(function(p){(p.match(/E-\d{4}/g)||[]).forEach(function(i){var e=EV[i];if(!e)return;if(!refs[e.apa]){refs[e.apa]=1;lst.push(e)}})});
+  lst.sort(function(a,b){return (a.apa||"").localeCompare(b.apa||"","es")});
+  host.innerHTML='<div class="card abs"><h2>'+ic("libro")+' Resumen (abstract)</h2><div class="abs-t">'+esc(A.titulo||"")+'</div><div class="abs-a">'+esc(A.autor||"HOWK RIOS - CONFIABILIDAD")+'</div>'+
+   A.parrafos.map(function(p){var m=/^([A-ZÁÉÍÓÚ][^.]{2,48})\.\s+/.exec(p);return '<p>'+(m?'<b>'+esc(m[1])+'.</b> '+conCitas(p.slice(m[0].length)):conCitas(p))+'</p>'}).join("")+
+   (A.palabras_clave?'<p><b>Palabras clave:</b> <i>'+esc(A.palabras_clave.join(", "))+'</i></p>':'')+
+   (A.criterio?'<div class="note">'+esc(A.criterio)+'</div>':'')+
+   '<details><summary>Referencias del resumen (APA 7), '+lst.length+' documentos</summary><ul style="padding:0;margin:8px 0 0">'+lst.map(function(e){return '<li class="apa">'+lk(e.apa)+'<span class="meta">'+btns(e)+'</span></li>'}).join("")+'</ul></details></div>';
+}
+/* ----- copiar y exportar ----- */
+function svgListo(svg){
+  var c=svg.cloneNode(true),cs=getComputedStyle(document.documentElement);
+  var vb=(svg.getAttribute("viewBox")||"").split(/\s+/).map(Number);
+  c.setAttribute("xmlns","http://www.w3.org/2000/svg");if(vb.length===4){c.setAttribute("width",vb[2]);c.setAttribute("height",vb[3])}
+  c.removeAttribute("style");
+  var s=new XMLSerializer().serializeToString(c).replace(/var\(--([a-z0-9]+)\)/g,function(m,n){return (cs.getPropertyValue("--"+n)||"#444").trim()});
+  var bg=(cs.getPropertyValue("--panel")||"#fff").trim(),mut=(cs.getPropertyValue("--mut")||"#555").trim(),ink=(cs.getPropertyValue("--ink")||"#222").trim();
+  s=s.replace(/^(<svg[^>]*>)/,'$1<style>text{fill:'+mut+';font:11px "Source Sans 3",Arial,sans-serif}</style><rect width="100%" height="100%" fill="'+bg+'"/>');
+  return{svg:s,w:vb[2]||800,h:vb[3]||600,ink:ink}}
+function svgAPng(svg,cb){var o=svgListo(svg),img=new Image(),k=2;
+  img.onload=function(){var cv=document.createElement("canvas");cv.width=o.w*k;cv.height=o.h*k;var x=cv.getContext("2d");x.scale(k,k);x.drawImage(img,0,0,o.w,o.h);cv.toBlob(function(b){cb(b)},"image/png")};
+  img.onerror=function(){cb(null)};img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(o.svg)}
+function copiarTexto(t,msg){try{navigator.clipboard.writeText(t).then(function(){toast(msg||"Copiado")},function(){fallbackCopy(t,msg)})}catch(e){fallbackCopy(t,msg)}}
+function fallbackCopy(t,msg){var a=document.createElement("textarea");a.value=t;a.style.cssText="position:fixed;opacity:0";document.body.appendChild(a);a.select();var ok=false;try{ok=document.execCommand("copy")}catch(e){}a.remove();toast(ok?(msg||"Copiado"):"No se pudo copiar: use Descargar")}
+function copiarGrafico(box){
+  var svg=box.querySelector("svg[role=img]")||box.querySelector("svg:not(.ic)");
+  if(!svg){var tb=box.querySelector("table");if(tb){copiarTexto(Array.prototype.map.call(tb.rows,function(r){return Array.prototype.map.call(r.cells,function(c){return c.textContent.trim()}).join("\t")}).join("\n"),"Tabla copiada");return}toast("Nada que copiar");return}
+  svgAPng(svg,function(b){
+    if(b&&window.ClipboardItem&&navigator.clipboard&&navigator.clipboard.write){navigator.clipboard.write([new ClipboardItem({"image/png":b})]).then(function(){toast("Gráfico copiado como imagen")},function(){copiarTexto(svgListo(svg).svg,"Gráfico copiado como código SVG")})}
+    else copiarTexto(svgListo(svg).svg,"Gráfico copiado como código SVG (el navegador no permite imagen)")})}
+function decorar(){document.querySelectorAll("#main .chart:not([data-cp])").forEach(function(c){c.dataset.cp=1;
+  if(!c.querySelector("svg,table"))return;var h=c.querySelector(".ch-h");if(!h){h=document.createElement("div");h.className="ch-h";h.innerHTML="<span></span>";c.insertBefore(h,c.firstChild)}
+  var b=document.createElement("button");b.className="btn cp";b.title="Copiar gráfico";b.setAttribute("aria-label","Copiar gráfico");b.innerHTML=ic("copiar",14)+" copiar";h.appendChild(b)})}
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".cp");if(b)copiarGrafico(b.closest(".chart,.vz")||b.parentNode)});
+/* ----- impresión A4 y A3 de un diagrama ----- */
+function docImprimible(o,papel){
+  var s=svgListo(o.svg),or=s.w>=s.h?"landscape":"portrait",f=new Date().toISOString().slice(0,10);
+  return '<!doctype html><html lang="es"><head><meta charset="utf-8"><title>'+esc(o.nombre)+'</title><style>@page{size:'+papel+' '+or+';margin:10mm}html,body{margin:0;background:#fff;color:#222;font-family:"Source Sans 3",Arial,sans-serif}h1{font:500 15pt Arial,sans-serif;margin:0 0 2mm}.s{font-size:9pt;color:#555;margin:0 0 4mm}svg{width:100%;height:auto;display:block}.f{font-size:8.5pt;color:#555;margin-top:3mm}</style></head><body><h1>'+esc(o.nombre)+'</h1><p class="s">'+esc(D.caso.meta.titulo||"")+' · HOWK RIOS - CONFIABILIDAD · '+f+' · papel '+papel+' '+(or==="landscape"?"horizontal":"vertical")+'</p>'+s.svg+'<div class="f">'+esc(o.leyenda||"")+'</div><script>onload=function(){setTimeout(function(){window.print()},400)}<\/script></body></html>'}
+function imprimirDiagrama(o,papel){
+  var h=docImprimible(o,papel),w=null;try{w=window.open("","_blank")}catch(e){}
+  if(w){w.document.open();w.document.write(h);w.document.close();return}
+  guardarArchivo("imprimir-"+o.nombre.toLowerCase().replace(/[^a-z0-9]+/g,"-")+"-"+papel+".html",h);
+  toast("El visor no permite imprimir aquí: se descargó un archivo. Ábralo en su navegador y se abrirá la impresión en "+papel+".")}
+/* ----- visor con zoom, mano y pantalla completa ----- */
+function visor(host,o){
+  host.innerHTML='<div class="vz"><div class="vz-bar"><button class="btn" data-a="mano" aria-pressed="true" title="Mover con la mano (arrastrar)">'+ic("mano",15)+'Mano</button><button class="btn" data-a="mas" title="Acercar">'+ic("zmas",15)+'</button><button class="btn" data-a="menos" title="Alejar">'+ic("zmenos",15)+'</button><button class="btn" data-a="aj" title="Ajustar al ancho">'+ic("ajustar",15)+'Ajustar</button><button class="btn" data-a="cien" title="Tamaño real">100 %</button><span class="vz-z" title="Zoom actual"></span>'+
+   '<span class="vz-sp"></span><button class="btn" data-a="a4" title="Imprimir en A4">'+ic("imprimir",15)+'A4</button><button class="btn" data-a="a3" title="Imprimir en A3">'+ic("imprimir",15)+'A3</button><button class="btn" data-a="svg" title="Descargar como SVG">'+ic("bajar",15)+'SVG</button><button class="btn cp" title="Copiar como imagen">'+ic("copiar",15)+'Copiar</button><button class="btn" data-a="full" title="Pantalla completa">'+ic("lupa",15)+'Ampliar</button></div>'+
+   '<div class="vz-port" tabindex="0"><div class="vz-st" style="width:'+o.W+'px;height:'+o.H+'px">'+o.svg+'</div></div><div class="leg">'+(o.leyenda||"")+' · Ctrl + rueda = zoom · arrastre para mover</div></div>';
+  var P=$(".vz-port",host),S=$(".vz-st",host),z=$(".vz-z",host),k=1,x=0,y=0,mano=true,mv=false,sx,sy,ox,oy;
+  function ap(){S.style.transform="translate("+x+"px,"+y+"px) scale("+k+")";z.textContent=Math.round(k*100)+" %"}
+  function aj(){var pw=P.clientWidth||900,ph=P.clientHeight||600;k=Math.min((pw-16)/o.W,o.fitAlto?(ph-8)/o.H:9);k=Math.max(.15,Math.min(k,1.6));x=(pw-o.W*k)/2;y=o.H*k<ph?(ph-o.H*k)/2:8;ap()}
+  function zoom(f,cx,cy){var pw=P.clientWidth,ph=P.clientHeight;cx=cx==null?pw/2:cx;cy=cy==null?ph/2:cy;var nk=Math.max(.12,Math.min(4,k*f));x=cx-(cx-x)*nk/k;y=cy-(cy-y)*nk/k;k=nk;ap()}
+  P.addEventListener("pointerdown",function(e){if(!mano||e.button!==0)return;mv=false;sx=e.clientX;sy=e.clientY;ox=x;oy=y;P.classList.add("gr");
+    var mvF=function(ev){var dx=ev.clientX-sx,dy=ev.clientY-sy;if(Math.abs(dx)+Math.abs(dy)>4)mv=true;x=ox+dx;y=oy+dy;ap()},up=function(){P.classList.remove("gr");window.removeEventListener("pointermove",mvF);window.removeEventListener("pointerup",up);window.removeEventListener("pointercancel",up)};
+    window.addEventListener("pointermove",mvF);window.addEventListener("pointerup",up);window.addEventListener("pointercancel",up)});
+  P.addEventListener("click",function(e){if(mv){e.stopPropagation();e.preventDefault();mv=false}},true);
+  P.addEventListener("wheel",function(e){if(!(e.ctrlKey||e.metaKey))return;e.preventDefault();var r=P.getBoundingClientRect();zoom(e.deltaY<0?1.12:1/1.12,e.clientX-r.left,e.clientY-r.top)},{passive:false});
+  host.querySelector(".vz-bar").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var a=b.dataset.a;
+    if(a==="mano"){mano=!mano;b.setAttribute("aria-pressed",mano);P.style.cursor=mano?"grab":"default"}
+    else if(a==="mas")zoom(1.25);else if(a==="menos")zoom(1/1.25);else if(a==="aj")aj();else if(a==="cien"){k=1;x=0;y=0;ap()}
+    else if(a==="a4"||a==="a3")imprimirDiagrama(o,a.toUpperCase());
+    else if(a==="svg"){var s=svgListo($("svg[role=img]",S));guardarArchivo(o.nombre.toLowerCase().replace(/[^a-z0-9]+/g,"-")+".svg",s.svg)}
+    else if(a==="full"){openModal(function(m){visor(m,Object.assign({},o,{full:true}))},o.nombre)}});
+  if(o.alClick)S.addEventListener("click",o.alClick);
+  P.style.cursor="grab";if(o.full){P.style.height="calc(94vh - 130px)"}
+  requestAnimationFrame(function(){aj()});
+}
+/* ----- árbol de fallas: diseño compacto con clases de causa ----- */
+function arbolSVG(a){
+  var N={};a.nodos.forEach(function(n){N[n.id]=n});var isC={};a.nodos.forEach(function(n){(n.hijos||[]).forEach(function(h){isC[h]=1})});
+  var roots=a.nodos.filter(function(n){return!isC[n.id]}),BW=270,BH=70,GX=70,GY=8,leaf=0,pos={},maxd=0;
+  function lay(n,d){maxd=Math.max(maxd,d);var hs=(n.hijos||[]).map(function(h){return N[h]}).filter(Boolean);
+    if(!hs.length){pos[n.id]={y:leaf*(BH+GY),d:d};leaf++;return}hs.forEach(function(h){lay(h,d+1)});var ys=hs.map(function(h){return pos[h.id].y});pos[n.id]={y:(Math.min.apply(0,ys)+Math.max.apply(0,ys))/2,d:d}}
+  roots.forEach(function(r){lay(r,0)});
+  var W=(maxd+1)*(BW+GX)-GX+20,H=Math.max(leaf,1)*(BH+GY)+46,g='';
+  function X(d){return d*(BW+GX)+10}
+  a.nodos.forEach(function(n){var P=pos[n.id];if(!P)return;(n.hijos||[]).forEach(function(h){var Q=pos[h];if(!Q)return;var x1=X(P.d)+BW,y1=P.y+BH/2+30,x2=X(Q.d),y2=Q.y+BH/2+30,mx=x1+GX/2;
+    g+='<path d="M'+x1+' '+y1+' H'+mx+' V'+y2+' H'+x2+'" fill="none" stroke="var(--mut)" stroke-width="1" opacity=".7"/>'})});
+  a.nodos.forEach(function(n){var P=pos[n.id];if(!P)return;var x=X(P.d),y=P.y+30,k=CLASES[n.clase],col=k?k[1]:"var(--mut)",dash=n.nivel==="EVIDENCIA"?"":' stroke-dasharray="5 3"',ls=wrapTxt(n.texto,44);
+    g+='<g class="nd" data-n="'+esc(n.id)+'" style="cursor:pointer"><rect x="'+x+'" y="'+y+'" width="'+BW+'" height="'+BH+'" rx="9" fill="var(--panel)" stroke="'+col+'" stroke-width="1.3"'+dash+'/><rect x="'+x+'" y="'+y+'" width="'+BW+'" height="17" rx="9" fill="'+col+'" fill-opacity=".18"/><rect x="'+x+'" y="'+(y+9)+'" width="'+BW+'" height="8" fill="'+col+'" fill-opacity=".18"/>'+
+      '<text x="'+(x+9)+'" y="'+(y+12.5)+'" style="fill:var(--ink);font-size:10px;font-weight:600;letter-spacing:.05em">'+esc(n.id)+(k?' · '+k[0].toUpperCase():'')+' · '+(n.nivel==="EVIDENCIA"?'RESPALDO':'SÍNTESIS')+'</text>'+
+      ls.slice(0,3).map(function(l,i){return '<text x="'+(x+9)+'" y="'+(y+31+i*13.5)+'" style="fill:var(--ink);font-size:11.5px">'+esc(l)+(i===2&&ls.length>3?"…":"")+'</text>'}).join("")+
+      (n.hijos&&n.hijos.length?'<circle cx="'+(x+BW+GX/2)+'" cy="'+(P.y+BH/2+30)+'" r="12" fill="var(--panel)" stroke="var(--mut)"/><text x="'+(x+BW+GX/2)+'" y="'+(P.y+BH/2+33.5)+'" text-anchor="middle" style="fill:var(--ink);font-weight:600;font-size:9.5px">'+esc(n.puerta)+'</text>':'')+'</g>'});
+  g+='<g transform="translate(10 6)">'+Object.keys(CLASES).map(function(c,i){return '<rect x="'+(i*104)+'" y="3" width="11" height="11" rx="3" fill="'+CLASES[c][1]+'" fill-opacity=".5" stroke="'+CLASES[c][1]+'"/><text x="'+(i*104+16)+'" y="12.5" style="fill:var(--ink);font-size:11px">Causa '+CLASES[c][0].toLowerCase()+'</text>'}).join("")+'<rect x="330" y="3" width="26" height="11" rx="3" fill="none" stroke="var(--mut)"/><text x="362" y="12.5" style="font-size:11px">respaldo directo</text><rect x="462" y="3" width="26" height="11" rx="3" fill="none" stroke="var(--mut)" stroke-dasharray="5 3"/><text x="494" y="12.5" style="font-size:11px">síntesis del equipo</text></g>';
+  return{svg:'<svg viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'" role="img" aria-label="Árbol de fallas">'+g+'</svg>',W:W,H:H,N:N}}
+function dibujarArbol(host,a){
+  var r=arbolSVG(a),N=r.N;
+  visor(host,{svg:r.svg,W:r.W,H:r.H,nombre:"Árbol de fallas: "+(a.evento_tope||"").slice(0,70),leyenda:"Color del borde = clase de causa (física, humana, latente) · borde continuo = respaldo directo · discontinuo = síntesis del equipo · círculo = puerta lógica · clic en un nodo para ver sus fuentes",
+    alClick:function(e){var g=e.target.closest(".nd");if(!g)return;var n=N[g.dataset.n];openHtml('<h3>'+esc(n.id)+' '+nv(n.nivel)+' '+claseTag(n.clase)+'</h3><p>'+esc(n.texto)+'</p><p>'+chips(n.evidencia)+'</p><p><small>'+lk(n.nota||"")+'</small></p>')}});
+}
+/* ----- degradación del rodamiento: ventanas de detección por etapa ----- */
+function degr(host){
+  var W=1100,H=560,L=190,R=30,T=46,B=120,pw=W-L-R,ph=H-T-B,g='',ST=[["1","Ultrasónica","Frecuencias ultrasónicas solo con sensores especializados; sin defectos visibles",["E-8008"]],["2","Resonancia natural","Señales alineadas con la resonancia de las piezas; primeras señales de defecto en inspección",["E-8008"]],["3","Frecuencias de defecto","BPFO, BPFI, BSF y FTF con armónicos modulados por la velocidad del eje: el defecto se extiende",["E-8008"]],["4","Etapa final","Precede a la falla total; ruido de fondo aleatorio",["E-8008"]]];
+  function X(f){return L+f*pw}function Y(f){return T+(1-f)*ph}
+  var cols=["var(--c1)","var(--c3)","var(--c2)","var(--c4)"];
+  ST.forEach(function(s,i){var a=X(i/4),b=X((i+1)/4);g+='<rect x="'+a+'" y="'+T+'" width="'+(b-a)+'" height="'+ph+'" fill="'+cols[i]+'" fill-opacity=".10"/><text x="'+(a+8)+'" y="'+(T-24)+'" style="fill:var(--ink);font-size:12px;font-weight:600">Etapa '+s[0]+' · '+s[1]+'</text>'+wrapTxt(s[2],34).slice(0,3).map(function(l,j){return '<text x="'+(a+8)+'" y="'+(T-11+j*0)+'" style="display:none">'+esc(l)+'</text>'}).join("")});
+  for(var i=0;i<=4;i++)g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(i/4)+'" y2="'+Y(i/4)+'" stroke="var(--line)" stroke-dasharray="2 5"/>';
+  g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(0)+'" y2="'+Y(0)+'" stroke="var(--mut)" stroke-width=".8"/><line x1="'+L+'" x2="'+L+'" y1="'+T+'" y2="'+Y(0)+'" stroke="var(--mut)" stroke-width=".8"/>';
+  g+='<text transform="translate(18 '+(T+ph/2)+') rotate(-90)" text-anchor="middle">magnitud relativa del indicador (esquema sin escala)</text><text x="'+(L+pw/2)+'" y="'+(T+ph+20)+'" text-anchor="middle">tiempo hasta la falla (esquema sin escala) →</text>';
+  function curva(pts,col,dash,w){var d="M"+pts.map(function(p){return X(p[0]).toFixed(1)+" "+Y(p[1]).toFixed(1)}).join(" L");return '<path d="'+d+'" fill="none" stroke="'+col+'" stroke-width="'+(w||1.6)+'" stroke-linecap="round" stroke-linejoin="round"'+(dash?' stroke-dasharray="'+dash+'"':'')+'/>'}
+  function suave(f){var p=[];for(var t=0;t<=1.0001;t+=.02)p.push([t,f(t)]);return p}
+  g+=curva(suave(function(t){return .08+.78*Math.exp(-Math.pow((t-.3)/.14,2))+.06*t}),"var(--c2)","",1.8);
+  g+=curva(suave(function(t){return .06+.86/(1+Math.exp(-(t-.62)*9))*(t<.9?1:1-(t-.9)*1.6)}),"var(--c1)","",1.8);
+  g+=curva(suave(function(t){return .08+.1*t+.55*Math.pow(Math.max(0,t-.72)/.28,2)}),"var(--mut)","6 4",1.5);
+  g+=curva(suave(function(t){return .1+.62*Math.exp(-Math.pow((t-.1)/.16,2))+.1*Math.exp(-Math.pow((t-.35)/.1,2))}),"var(--c3)","",1.5);
+  var lab=[["Kurtosis: sube con el defecto incipiente y vuelve a lo normal al extenderse","var(--c2)",X(.36),Y(.88),"E-8003"],["Energía en frecuencias de defecto (envolvente): crece hasta la etapa 3","var(--c1)",X(.64),Y(.95)-6,"E-8008"],["RMS y velocidad global: poco sensibles al inicio (síntesis)","var(--mut)",X(.76),Y(.56)+18,"E-8001"],["Banda de alta frecuencia sobre 10 kHz: el defecto incipiente excita las frecuencias propias","var(--c3)",X(.02),Y(.86)-4,"E-9307"]];
+  lab.forEach(function(l,i){var ls=wrapTxt(l[0],i===0?30:34);ls.forEach(function(t,j){g+='<text x="'+(i===1?l[2]-ls[0].length*2.4:l[2]+6)+'" y="'+(l[3]+j*13)+'" style="fill:'+l[1]+';font-size:11.5px;font-weight:600;paint-order:stroke;stroke:var(--panel);stroke-width:4px;stroke-linejoin:round">'+esc(t)+'</text>'})});
+  var rows=[["Ultrasonido y alta frecuencia","var(--c3)",0,.5,"E-9307, E-8008"],["Kurtosis","var(--c2)",0,.5,"E-8003"],["Envolvente (banda impulsiva)","var(--c1)",.18,.78,"E-8001, E-9307"],["Espectro de velocidad y RMS","var(--mut)",.62,1,"E-8001 (síntesis)"],["Aceite, temperatura y termografía","var(--c5)",null,null,"SIN DATOS de etapa: solo mejoran la confianza combinados (E-8003)"]];
+  rows.forEach(function(r,i){var y=T+ph+34+i*17;g+='<text x="'+(L-8)+'" y="'+(y+9)+'" text-anchor="end" style="fill:var(--ink);font-size:11px">'+esc(r[0])+'</text>';
+    if(r[2]==null)g+='<text x="'+(L+8)+'" y="'+(y+9)+'" style="fill:var(--bad);font-size:10.5px">'+esc(r[4])+'</text>';
+    else g+='<rect x="'+X(r[2])+'" y="'+y+'" width="'+(X(r[3])-X(r[2]))+'" height="11" rx="5.5" fill="'+r[1]+'" fill-opacity=".55"/>'+(r[3]>=.95?'<text x="'+(X(r[2])-6)+'" y="'+(y+9)+'" text-anchor="end" style="font-size:10px">'+esc(r[4])+'</text>':'<text x="'+(X(r[3])+6)+'" y="'+(y+9)+'" style="font-size:10px">'+esc(r[4])+'</text>')});
+  g+='<text x="'+(L)+'" y="'+(T+ph+22+0)+'" style="display:none"></text><text x="'+(W-R)+'" y="'+(H-4)+'" text-anchor="end" style="fill:var(--bad);font-size:10.5px">Intervalo P-F y duración de cada etapa: SIN DATOS PARA ARMARLO · esquema cualitativo, sin escala</text>';
+  host.innerHTML='<div class="chart"><div class="ch-h"><b>Degradación del rodamiento y ventanas de detección por técnica</b></div><svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Degradación del rodamiento">'+g+'</svg>'+
+   '<div class="ch-f"><b>Descripción:</b> las cuatro etapas son las que describe la fuente por contenido espectral; las barras inferiores muestran en qué etapas cada técnica tiene respaldo de ver el defecto. Línea continua: respaldo directo. Línea discontinua: síntesis del equipo. Ninguna curva trae datos: son esquemas cualitativos. <b>Refs.:</b> '+chips(["E-8008","E-8003","E-8001","E-9307"])+'</div></div>';
+}
+
+/* ---------- v8: perfil de la evidencia con estadística ---------- */
+function donut(host,rows,o){
+  var W=520,H=290,cx=135,cy=150,R=104,r=66,tot=rows.reduce(function(s,x){return s+x.value},0)||1,a=-Math.PI/2,g='';
+  rows.forEach(function(x){if(!x.value)return;var b=a+x.value/tot*2*Math.PI,l=(b-a)>Math.PI?1:0,P=function(rad,t){return[cx+rad*Math.cos(t),cy+rad*Math.sin(t)]},p0=P(R,a),p1=P(R,b-.0001),q1=P(r,b-.0001),q0=P(r,a);
+    g+='<path d="M'+p0[0].toFixed(1)+' '+p0[1].toFixed(1)+' A'+R+' '+R+' 0 '+l+' 1 '+p1[0].toFixed(1)+' '+p1[1].toFixed(1)+' L'+q1[0].toFixed(1)+' '+q1[1].toFixed(1)+' A'+r+' '+r+' 0 '+l+' 0 '+q0[0].toFixed(1)+' '+q0[1].toFixed(1)+'Z" fill="'+x.color+'" fill-opacity=".85" stroke="var(--panel)" stroke-width="1.5"><title>'+esc(x.label)+': '+x.value+'</title></path>';a=b});
+  g+='<text x="'+cx+'" y="'+(cy-2)+'" text-anchor="middle" style="fill:var(--ink);font-size:26px;font-weight:500">'+tot+'</text><text x="'+cx+'" y="'+(cy+16)+'" text-anchor="middle">'+esc(o.centro||"")+'</text>';
+  rows.forEach(function(x,i){var y=46+i*34;g+='<rect x="285" y="'+(y-10)+'" width="12" height="12" rx="3" fill="'+x.color+'" fill-opacity=".85"/><text x="305" y="'+y+'" style="fill:var(--ink);font-size:12.5px">'+esc(x.label)+'</text><text x="305" y="'+(y+14)+'" style="font-size:11px">'+x.value+' · '+Math.round(x.value/tot*100)+' %</text>'});
+  host.className=(host.className||"")+" chart";
+  host.innerHTML='<div class="ch-h"><b>'+esc(o.titulo)+'</b></div><svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="'+esc(o.titulo)+'">'+g+'</svg>'+(o.desc?'<div class="ch-f"><b>Descripción:</b> '+esc(o.desc)+'</div>':'');
+}
+function stackCol(host,o){
+  var W=840,H=300,L=44,R=10,T=14,B=46,pw=W-L-R,ph=H-T-B,n=o.labels.length,tot=o.labels.map(function(_,i){return o.series.reduce(function(s,x){return s+(x.values[i]||0)},0)}),mx=Math.max.apply(0,tot)||1,bw=Math.min(46,pw/n*.62),g='';
+  function Y(v){return T+ph-v/mx*ph}
+  for(var i=0;i<=4;i++){var v=mx*i/4;g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(v)+'" y2="'+Y(v)+'" stroke="var(--line)" stroke-dasharray="2 5"/><text x="'+(L-6)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+Math.round(v)+'</text>'}
+  o.labels.forEach(function(lb,i){var cx=L+pw*(i+.5)/n,y=T+ph;o.series.forEach(function(s){var v=s.values[i]||0;if(!v)return;var h=v/mx*ph;y-=h;g+='<rect x="'+(cx-bw/2)+'" y="'+y+'" width="'+bw+'" height="'+h+'" fill="'+s.color+'" fill-opacity=".85" stroke="var(--panel)" stroke-width=".8"><title>'+esc(lb)+' · '+esc(s.name)+': '+v+'</title></rect>'});
+    g+='<text x="'+cx+'" y="'+(T+ph+16)+'" text-anchor="middle">'+esc(lb)+'</text><text x="'+cx+'" y="'+(Y(tot[i])-5)+'" text-anchor="middle" style="fill:var(--ink);font-weight:600">'+tot[i]+'</text>'});
+  var lx=L;o.series.forEach(function(s){g+='<rect x="'+lx+'" y="'+(H-14)+'" width="10" height="10" rx="3" fill="'+s.color+'" fill-opacity=".85"/><text x="'+(lx+15)+'" y="'+(H-5)+'">'+esc(s.name)+'</text>';lx+=s.name.length*6.2+34});
+  host.className=(host.className||"")+" chart";
+  host.innerHTML='<div class="ch-h"><b>'+esc(o.titulo)+'</b></div><svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="'+esc(o.titulo)+'">'+g+'</svg>'+(o.desc?'<div class="ch-f"><b>Descripción:</b> '+esc(o.desc)+'</div>':'');
+}
+function perfil(host){
+  var E=D.evidencia,leida=function(e){return e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"},docs={};
+  E.forEach(function(e){var k=e.apa||e.id;(docs[k]=docs[k]||{e:e,n:0,leida:false});docs[k].n++;if(leida(e))docs[k].leida=true});
+  var DL=Object.keys(docs).map(function(k){return docs[k]}),dleidas=DL.filter(function(d){return d.leida}),anios=dleidas.map(function(d){return d.e.referencia&&d.e.referencia.anio}).filter(Boolean).sort(function(a,b){return a-b});
+  var med=anios.length?anios[Math.floor(anios.length/2)]:null,paises={},pk={};
+  dleidas.forEach(function(d){var p=d.e.referencia&&d.e.referencia.pais;if(!p)return;String(p).replace(/\(.*?\)/g,"").split(/;|,| y /).forEach(function(x){x=x.trim();if(!x)return;var k=x.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();pk[k]=pk[k]||x;paises[k]=(paises[k]||0)+1})});
+  var sinPais=dleidas.filter(function(d){return!(d.e.referencia&&d.e.referencia.pais)}).length;
+  host.innerHTML='<div class="grid" style="margin-bottom:14px"><div class="kpi"><span class="ico">'+ic("microscopio",22)+'</span><div><b>'+dleidas.length+'</b><span>documentos leídos de '+DL.length+'</span></div></div><div class="kpi"><span class="ico">'+ic("libro",22)+'</span><div><b>'+E.filter(leida).length+'</b><span>extractos literales con localizador</span></div></div><div class="kpi"><span class="ico">'+ic("reloj",22)+'</span><div><b>'+(med||"n/d")+'</b><span>año mediano de lo leído</span></div></div><div class="kpi"><span class="ico">'+ic("mapa",22)+'</span><div><b>'+Object.keys(paises).length+'</b><span>países declarados ('+sinPais+' documentos sin país)</span></div></div></div>'+
+   '<div class="pfg"><div id="pf-1"></div><div id="pf-2"></div><div id="pf-3"></div><div id="pf-4"></div><div id="pf-5"></div><div id="pf-6"></div></div>';
+  var n={};E.forEach(function(e){n[e.nivel_evidencia]=(n[e.nivel_evidencia]||0)+1});
+  var cl={"VERIFICADO-TEXTO":"var(--c3)","VERIFICADO-ABSTRACT":"var(--c5)","SOLO-SNIPPET":"var(--c6)","NO-VERIFICADO":"var(--bad)","DATO-USUARIO":"var(--c4)"};
+  donut($("#pf-1",host),Object.keys(n).map(function(k){return{label:k,value:n[k],color:cl[k]}}),{titulo:"Registro por nivel de lectura",centro:"entradas",desc:"El nivel se deriva del acceso real. Las pistas SOLO-SNIPPET y NO-VERIFICADO no respaldan ninguna afirmación."});
+  var tp={};dleidas.forEach(function(d){var t=tipoDe(d.e);tp[t]=(tp[t]||0)+1});
+  barChart($("#pf-2",host),ORD_T.filter(function(t){return tp[t]}).map(function(t){return{label:TIPOS[t][0],value:tp[t],color:TIPOS[t][2]}}),{titulo:"Documentos leídos por tipo de fuente",desc:"Cuenta documentos distintos, no extractos. Los libros y las tesis siguen pendientes de lectura de texto completo."});
+  var ys=anios.filter(function(a,i){return anios.indexOf(a)===i}),tps=ORD_T.filter(function(t){return tp[t]});
+  stackCol($("#pf-3",host),{titulo:"Documentos leídos por año y tipo",labels:ys.map(String),series:tps.map(function(t){return{name:TIPOS[t][0].split(",")[0],color:TIPOS[t][2],values:ys.map(function(y){return dleidas.filter(function(d){return tipoDe(d.e)===t&&d.e.referencia.anio===y}).length})}}),desc:"Mediana "+med+". Una lectura sesgada a preprints recientes: faltan fuentes clásicas de texto completo."});
+  barChart($("#pf-4",host),Object.keys(paises).sort(function(a,b){return paises[b]-paises[a]}).slice(0,10).map(function(k){return{label:pk[k],value:paises[k],color:"var(--c5)"}}),{titulo:"País declarado de los documentos leídos",desc:"Solo cuenta lo que el documento declara; "+sinPais+" documentos no traen país y no se estima."});
+  var dz=D.caso.dossier;if(dz)barChart($("#pf-5",host),dz.orden.map(function(k){var s=dz.secciones[k]||{},d={};(s.elementos||[]).forEach(function(el){el.evidencia.forEach(function(i){var e=EV[i];if(e)d[e.apa||i]=1})});return{label:dz.titulos[k],value:Object.keys(d).length,color:Object.keys(d).length?"var(--c1)":"var(--bad)"}}),{titulo:"Documentos distintos que respaldan cada sección",desc:"Las secciones en rojo con 0 quedan SIN DATOS PARA ARMARLO."});
+  barChart($("#pf-6",host),dleidas.sort(function(a,b){return b.n-a.n}).slice(0,10).map(function(d){var r=d.e.referencia||{};return{label:(apellidos(r.autores)[0]||"s. a.")+" "+(r.anio||"")+" · "+((r.titulo||"").slice(0,26)),value:d.n,color:"var(--c4)"}}),{titulo:"Profundidad de lectura: extractos por documento",desc:"Los documentos con más extractos se leyeron de principio a fin y alimentan las réplicas."});
+}
+
+/* ---------- v8: réplicas por impacto, bañera, simulador RUL, sensores, laboratorio ML, normas, top y recomendaciones ---------- */
+function impactoRep(r){var t=r.titulo||"";return r.tipo==="barras_ic"?0:r.tipo==="barras"?1:/MAE|exactitud|AUC|CARE|CRA|Score|RMSE|F1|calibr|error|accuracy/i.test(t)?2:3}
+function vReplicas(host,filtro,tit){
+  var R0=(D.caso.replicas||[]).map(function(r,i){return{r:r,i:i}}),C=D.caso.cifras||[];
+  if(filtro)R0=R0.filter(function(x){return filtro(x.r)});
+  R0.sort(function(a,b){return impactoRep(a.r)-impactoRep(b.r)||a.i-b.i});var R=R0.map(function(x){return x.r});
+  if(!R.length){host.innerHTML='<div class="card"><h2>'+ic("faja")+' '+esc(tit||"Réplicas y cifras")+'</h2>'+sdHtml("Ninguna réplica de figura o tabla pasó la compuerta para este tema: cada número debe estar literal en el extracto de la fuente citada.")+'</div>';return}
+  var nb=R.filter(function(r){return r.tipo!=="tabla"}).length;
+  host.innerHTML='<div class="card"><h2>'+ic("faja")+' '+esc(tit||"Réplicas de figuras y tablas de los textos leídos")+'</h2><div class="note">Cada gráfica o tabla se reconstruye <b>solo con números que aparecen literales</b> en el extracto de la fuente citada; una compuerta retira lo que no cumple. Orden: de <b>mayor a menor impacto</b> (gráficas con intervalo, luego gráficas de resultados, luego tablas de resultados y al final tablas de condiciones y muestreo). Es un criterio del equipo: las citas de cada fuente son SIN DATOS PARA ARMARLO. Los valores son de bancos de ensayo, no de una chumacera de polea.</div>'+
+   '<div class="grid"><div class="kpi"><span class="ico">'+ic("grafico",22)+'</span><div><b>'+nb+'</b><span>gráficas replicadas</span></div></div><div class="kpi"><span class="ico">'+ic("doc",22)+'</span><div><b>'+(R.length-nb)+'</b><span>tablas replicadas</span></div></div>'+(filtro?'':'<div class="kpi"><span class="ico">'+ic("tuerca",22)+'</span><div><b>'+C.length+'</b><span>cifras con su condición</span></div></div>')+'</div>'+
+   '<div class="tools" style="margin-top:12px"><label>Mostrar <select id="rp-t"><option value="">gráficas y tablas</option><option value="g">solo gráficas</option><option value="t">solo tablas</option></select></label></div><div id="rp-l"></div></div>'+
+   (filtro?'':'<div class="card"><h2>'+ic("tuerca")+' Cifras clave</h2><div class="tools"><label>Buscar <input type="text" id="cf-t" style="width:220px"></label></div><div class="tw"><table id="cf-tb"></table></div></div>');
+  function drawR(){var t=$("#rp-t",host).value,l=$("#rp-l",host);l.innerHTML="";var s=R.filter(function(r){return t===""||(t==="t")===(r.tipo==="tabla")});
+    if(!s.length)l.innerHTML=sdHtml("No hay réplicas de ese tipo.");s.forEach(function(r){l.appendChild(cardRep(r))})}
+  function drawC(){var q=($("#cf-t",host).value||"").toLowerCase();
+    $("#cf-tb",host).innerHTML='<tr><th>Id</th><th>Cifra</th><th>Qué mide</th><th>Condiciones</th><th>Fuente</th></tr>'+C.filter(function(c){return (c.mide+" "+c.condiciones+" "+c.valor).toLowerCase().indexOf(q)>=0}).map(function(c){return '<tr><td>'+esc(c.id)+'</td><td><b>'+esc(c.valor)+'</b> '+esc(c.unidad||"")+'</td><td>'+lt(c.mide,80)+'</td><td>'+lt(c.condiciones,100)+'</td><td>'+chips(c.evidencia)+'</td></tr>'}).join("")}
+  $("#rp-t",host).onchange=drawR;if(!filtro)$("#cf-t",host).oninput=drawC;drawR();if(!filtro)drawC();
+}
+function vModelosML(host){vReplicas(host,function(r){return /MAE|exactitud|AUC|CARE|CRA|Score|RMSE|F1|calibr|error|accuracy|barras/i.test((r.titulo||"")+" "+r.tipo)&&r.tipo!=="tabla"||/MAE|exactitud|AUC|CARE|CRA|Score|RMSE|F1|calibr|accuracy|detector/i.test(r.titulo||"")},"Modelos de aprendizaje automático: resultados publicados replicados")}
+function vDatosVida(host){vReplicas(host,function(r){return /condicion|fin de registro|vida|L10|tiempo|rodamientos|registros|muestreo|duracion/i.test((r.titulo||"")+" "+(r.condiciones||""))&&!/MAE|exactitud|AUC/i.test(r.titulo||"")},"Datos de vida y de ensayo publicados, con su referencia")}
+/* ----- curva de la bañera ----- */
+function vBanera(host){
+  var P={b1:.5,e1:2500,e2:20000,b3:3.5,e3:9000,T:15000},S=[["b1","β de la mortalidad infantil",.2,.95,.05],["e1","η de la mortalidad infantil (h)",500,8000,100],["e2","η del azar, tasa constante (h)",3000,60000,500],["b3","β del desgaste",1.5,8,.1],["e3","η del desgaste (h)",2000,30000,250],["T","horizonte mostrado (h)",3000,40000,500]];
+  host.innerHTML='<div class="card"><h2>'+ic("banera")+' Curva de la bañera: simulador de tasa de falla</h2><div class="note"><b>SIMULACIÓN pedagógica.</b> Los valores iniciales son ilustrativos y <b>no son datos de la chumacera ni de una fuente</b>: ninguna fuente leída publica parámetros Weibull de chumaceras de polea (SIN DATOS PARA ARMARLO). Sirve para ver cómo la forma β cambia la estrategia. La definición de forma de bañera (baja, valle plano y sube) y la familia Weibull con riesgo decreciente, constante o creciente están en '+chips(["E-9601","E-9602","E-9603"])+'.</div>'+
+   '<div class="tools">'+S.map(function(c){return '<label>'+c[1]+' <input type="range" data-k="'+c[0]+'" min="'+c[2]+'" max="'+c[3]+'" step="'+c[4]+'" value="'+P[c[0]]+'"><b class="rv" data-r="'+c[0]+'"></b></label>'}).join("")+'<button class="btn" id="bn-r">Restablecer</button></div><div id="bn-g"></div><div id="bn-t"></div></div>';
+  function hz(t,b,e){return b/e*Math.pow(t/e,b-1)}
+  function draw(){
+    S.forEach(function(c){$('[data-r="'+c[0]+'"]',host).textContent=P[c[0]]});
+    var N=240,xs=[],h1=[],h2=[],h3=[],ht=[],lam=1/P.e2,t0=P.T/N,K=1000;
+    for(var i=0;i<=N;i++){var t=Math.max(t0*i,t0*.5);xs.push(t0*i);var a=hz(t,P.b1,P.e1),b=lam,c=hz(t,P.b3,P.e3);h1.push(a*K);h2.push(b*K);h3.push(c*K);ht.push((a+b+c)*K)}
+    var mn=Math.min.apply(0,ht),ymax=Math.max(mn*7,Math.max.apply(0,ht.slice(Math.floor(N*.06)))*1.05),cl=function(v){return Math.min(v,ymax)};
+    var ta=P.e1*Math.pow(lam*P.e1/P.b1,1/(P.b1-1)),tb=P.e3*Math.pow(lam*P.e3/P.b3,1/(P.b3-1)),zon=[];
+    if(ta>0&&ta<P.T)zon.push({x0:0,x1:Math.min(ta,P.T),label:"mortalidad infantil",c:"var(--c2)"});
+    if(tb>ta)zon.push({x0:Math.min(ta,P.T),x1:Math.min(tb,P.T),label:"tasa casi constante",c:"var(--c3)"});
+    if(tb<P.T)zon.push({x0:tb,x1:P.T,label:"desgaste",c:"var(--c4)"});
+    lineChart($("#bn-g",host),{x:xs,series:[{name:"total",y:ht.map(cl)},{name:"mortalidad infantil",y:h1.map(cl)},{name:"azar",y:h2.map(cl)},{name:"desgaste",y:h3.map(cl)}],zonas:zon,fixY:[0,ymax],titulo:"Tasa de falla h(t) = suma de tres riesgos Weibull",xl:"tiempo de operación (h)",yl:"tasa de falla (por 1000 h)",noarea:false,desc:"Curva de simulación, no de datos. Con β menor que 1 la tasa baja con la edad; con β igual a 1 es constante; con β mayor que 1 sube. La curva total (azul) toma forma de bañera cuando se suman las tres."});
+    var b10=P.e3*Math.pow(-Math.log(.9),1/P.b3);
+    $("#bn-t",host).innerHTML='<div class="grid"><div class="kpi"><span class="ico">'+ic("banera",22)+'</span><div><b>'+(isFinite(ta)?Math.round(ta):"n/d")+' h</b><span>fin aproximado de la mortalidad infantil</span></div></div><div class="kpi"><span class="ico">'+ic("reloj",22)+'</span><div><b>'+(isFinite(tb)?Math.round(tb):"n/d")+' h</b><span>inicio aproximado del desgaste</span></div></div><div class="kpi"><span class="ico">'+ic("rodamiento",22)+'</span><div><b>'+Math.round(b10)+' h</b><span>B10 del solo desgaste (simulación)</span></div></div></div>'+
+     '<div class="note">'+(P.b3>1?'<b>Concepto:</b> con β de desgaste mayor que 1 el reemplazo preventivo por edad puede tener sentido solo si el costo de la falla supera el del reemplazo y el intervalo cae antes del desgaste; el costo es SIN DATOS PARA ARMARLO en este caso.':'<b>Concepto:</b> con β menor o igual que 1 el reemplazo por edad no reduce fallas; conviene atender causas de arranque, instalación y monitoreo por condición.')+' Ver el cálculo de reemplazo en la pestaña Vida y costos.</div>';
+  }
+  host.addEventListener("input",function(e){var k=e.target.dataset&&e.target.dataset.k;if(!k)return;P[k]=+e.target.value;draw()});
+  $("#bn-r",host).onclick=function(){P={b1:.5,e1:2500,e2:20000,b3:3.5,e3:9000,T:15000};S.forEach(function(c){$('[data-k="'+c[0]+'"]',host).value=P[c[0]]});draw()};draw();
+}
+/* ----- simulador de vida útil remanente ----- */
+function rngSemilla(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function vSimRUL(host){
+  var P={T:1000,p:2.5,s:.04,W:25,m:"exp",sem:7,k:62,H:15},C=[["T","vida total simulada (h)",300,3000,50],["p","aceleración del daño (1 = lineal)",1,4,.1],["s","ruido del indicador (σ)",0,.15,.005],["W","ventana de ajuste (% de la vida)",8,50,1],["H","horizonte de alarma (% de la vida)",5,40,1],["k","instante de evaluación (% de la vida)",30,95,1]];
+  host.innerHTML='<div class="card"><h2>'+ic("reloj")+' Simulador de vida útil remanente (RUL)</h2><div class="note"><b>SIMULACIÓN pedagógica con datos generados en el navegador</b>: no usa datos del activo ni reproduce un modelo de las fuentes. Muestra cómo el ruido, la forma del daño y la ventana cambian el error de un pronóstico simple. Los resultados publicados con datos reales (RULSurv, CARLE, entre otros) están en <a class="ext" data-go="mon" data-sub="mlr" style="cursor:pointer">Modelos ML</a> y en Réplicas y cifras. Un banco acelerado no representa una polea lenta de faja.</div>'+
+   '<div class="tools">'+C.map(function(c){return '<label>'+c[1]+' <input type="range" data-k="'+c[0]+'" min="'+c[2]+'" max="'+c[3]+'" step="'+c[4]+'" value="'+P[c[0]]+'"><b class="rv" data-r="'+c[0]+'"></b></label>'}).join("")+
+   '<label>Modelo <select id="sr-m"><option value="exp">exponencial sobre ln(indicador)</option><option value="lin">lineal</option></select></label><button class="btn" id="sr-n">Nuevos datos</button></div><div id="sr-a"></div><div id="sr-b"></div><div id="sr-c"></div></div>';
+  function gauss(r){var u=1-r(),v=r();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)}
+  function ajuste(ts,xs,modo){var n=ts.length,y=modo==="exp"?xs.map(function(v){return Math.log(Math.max(v,.02))}):xs,mt=0,my=0,i;for(i=0;i<n;i++){mt+=ts[i];my+=y[i]}mt/=n;my/=n;var sxx=0,sxy=0;for(i=0;i<n;i++){sxx+=(ts[i]-mt)*(ts[i]-mt);sxy+=(ts[i]-mt)*(y[i]-my)}var b=sxx?sxy/sxx:0,a=my-b*mt;return{a:a,b:b,modo:modo}}
+  function tf(f){if(f.b<=1e-9)return null;return f.modo==="exp"?(0-f.a)/f.b:(1-f.a)/f.b}
+  function draw(){
+    C.forEach(function(c){var u=c[0]==="W"||c[0]==="H"||c[0]==="k"?" %":"";$('[data-r="'+c[0]+'"]',host).textContent=P[c[0]]+u});
+    var N=200,dt=P.T*1.25/N,r=rngSemilla(P.sem*9973),ts=[],xt=[],xo=[];
+    for(var i=0;i<=N;i++){var t=i*dt;ts.push(t);var v=0.05+0.95*Math.pow(t/P.T,P.p);xt.push(v);xo.push(Math.max(.01,v+P.s*gauss(r)))}
+    var Wn=Math.max(5,Math.round(P.W/100*P.T/dt)),rh=[],rt=[],lo=[],hi=[],ok=0,tot=0,ae=0,alarm=null,hh=P.H/100*P.T;
+    for(i=0;i<=N;i++){var tr=P.T-ts[i];if(tr<0){rh.push(NaN);rt.push(NaN);lo.push(NaN);hi.push(NaN);continue}rt.push(tr);lo.push(tr*.8);hi.push(tr*1.2);
+      if(i<Wn){rh.push(NaN);continue}var f=ajuste(ts.slice(i-Wn+1,i+1),xo.slice(i-Wn+1,i+1),P.m),t1=tf(f),est=t1==null?NaN:Math.max(0,t1-ts[i]);rh.push(est);
+      if(ts[i]>=.5*P.T&&isFinite(est)){tot++;ae+=Math.abs(est-tr);if(Math.abs(est-tr)<=.2*tr)ok++}
+      if(alarm==null&&isFinite(est)&&est<=hh&&ts[i]<P.T)alarm=ts[i]}
+    var ik=Math.min(N,Math.round(P.k/100*P.T/dt)),fk=ik>=Wn?ajuste(ts.slice(ik-Wn+1,ik+1),xo.slice(ik-Wn+1,ik+1),P.m):null,tk=fk?tf(fk):null,fit=ts.map(function(t,j){if(!fk||j<ik-Wn+1||tk==null||t>tk+dt)return NaN;return P.m==="exp"?Math.exp(fk.a+fk.b*t):fk.a+fk.b*t});
+    lineChart($("#sr-a",host),{x:ts,series:[{name:"indicador observado",y:xo},{name:"daño real (sin ruido)",y:xt},{name:"ajuste en el instante elegido",y:fit}],hlines:[{y:1,label:"umbral de falla",c:"var(--bad)"}],vlines:[{x:ts[ik],label:"ahora",c:"var(--c1)"},{x:P.T,label:"falla real",c:"var(--bad)"}].concat(tk!=null&&isFinite(tk)&&tk<ts[N]?[{x:tk,label:"falla pronosticada",c:"var(--c2)"}]:[]),fixY:[0,1.35],titulo:"Indicador de salud sintético y ajuste en una ventana móvil",xl:"tiempo (h)",yl:"indicador (1 = umbral)",desc:"Datos generados con semilla "+P.sem+". El pronóstico es la intersección del ajuste con el umbral; es un método deliberadamente simple."});
+    lineChart($("#sr-b",host),{x:ts,series:[{name:"RUL pronosticada",y:rh},{name:"RUL real",y:rt},{name:"banda +20 %",y:hi},{name:"banda −20 %",y:lo}],titulo:"RUL pronosticada frente a la real",xl:"tiempo (h)",yl:"vida remanente (h)",noarea:true,vlines:alarm!=null?[{x:alarm,label:"alarma",c:"var(--c2)"}]:[],desc:"Entre las dos líneas de banda el error es menor que 20 % de la RUL real (criterio del simulador). Con ruido alto o ventana corta el pronóstico oscila."});
+    $("#sr-c",host).innerHTML='<div class="grid"><div class="kpi"><span class="ico">'+ic("pareto",22)+'</span><div><b>'+(tot?fmt(ae/tot,1):"n/d")+' h</b><span>error absoluto medio de la RUL, segunda mitad de la vida</span></div></div><div class="kpi"><span class="ico">'+ic("escudo",22)+'</span><div><b>'+(tot?Math.round(ok/tot*100)+" %":"n/d")+'</b><span>de los pronósticos dentro de ±20 % de la RUL real</span></div></div><div class="kpi"><span class="ico">'+ic("alerta",22)+'</span><div><b>'+(alarm!=null?fmt(P.T-alarm,0)+" h":"sin alarma")+'</b><span>anticipación de la primera alarma antes de la falla real</span></div></div></div>';
+  }
+  host.addEventListener("input",function(e){var k=e.target.dataset&&e.target.dataset.k;if(k){P[k]=+e.target.value;draw()}else if(e.target.id==="sr-m"){P.m=e.target.value;draw()}});
+  $("#sr-n",host).onclick=function(){P.sem=1+Math.floor(Math.random()*9999);draw()};draw();
+}
+/* ----- sensores y técnicas ----- */
+function vSensores(host){
+  var S=D.caso.sensores||[];
+  host.innerHTML='<div class="card"><h2>'+ic("sensor")+' Sensores y técnicas predictivas con resultado publicado</h2><div class="note">Solo se listan técnicas con un resultado en el texto leído y sus condiciones. <b>Ninguna fuente recomienda un sensor para chumaceras de polea</b>: lo que sigue es lo publicado en otros activos o bancos, para que una persona decida qué evaluar. Costos, alcance inalámbrico y vida de batería: SIN DATOS PARA ARMARLO.</div>'+
+   '<div class="tw"><table><tr><th>Técnica o sensor</th><th>Qué mide</th><th>Resultado publicado</th><th>Condiciones</th><th>Límites</th><th>Fuente</th></tr>'+S.map(function(x){return '<tr><td><b>'+lt(x.tecnica_o_sensor,90)+'</b></td><td>'+lt(x.que_mide,90)+'</td><td>'+lt(x.resultado_publicado,120)+'</td><td>'+lt(x.condiciones,100)+'</td><td>'+lt(x.limites,100)+'</td><td>'+chips(x.evidencia)+'</td></tr>'}).join("")+'</table></div></div>'+
+   '<div class="card"><h2>'+ic("calibre")+' Qué más podría evaluarse y qué falta para decidirlo</h2><div class="tw"><table><tr><th>Técnica</th><th>Respaldo leído</th><th>Qué falta (SIN DATOS PARA ARMARLO)</th></tr>'+
+   [["Ultrasonido y alta frecuencia (sobre 10 kHz)","El defecto incipiente excita frecuencias propias desde unos 10 kHz y la etapa ultrasónica solo se ve con sensores especializados",["E-9307","E-8008"],"Alcance y costo del sensor en una polea lenta; umbrales"],["Envolvente y kurtosis","Sensibles al defecto incipiente; la kurtosis vuelve a lo normal al extenderse el daño",["E-8003","E-8001"],"Umbrales sustentados; calibración con fallas del propio activo"],["Aceite o grasa, temperatura y termografía combinados con vibración","Combinar técnicas mejora la confianza del diagnóstico",["E-8003"],"Qué etapa detecta cada una y con qué anticipación"],["Sensado acústico por micrófono","Un autoencoder con micrófono logró AUC publicado en una cepilladora industrial; en bancos de rodamientos el AUC fue bajo",["E-9515","E-9506"],"Ningún resultado en poleas de faja ni en ambiente minero"],["Vibración inalámbrica de bajo costo y diagnóstico embebido","Una CNN pequeña corrió en un microcontrolador con exactitud publicada en un banco",["E-9520"],"Alcance, consumo y vida de batería en terreno"]].map(function(r){return '<tr><td><b>'+esc(r[0])+'</b></td><td>'+esc(r[1])+' '+chips(r[2])+'</td><td>'+esc(r[3])+'</td></tr>'}).join("")+'</table></div></div>';
+}
+/* ----- laboratorio de modelos (material aportado por la persona) ----- */
+function vLabML(host){
+  var L=D.caso.ml_lab;if(!L||!(L.modelos||[]).length){host.innerHTML=sdHtml("Sin catálogo de modelos cargado.");return}
+  var f={et:"any",se:"any",pr:"any",pa:"any"},ct=L.selector.controles;
+  function opts(n,k){return Object.keys(ct[n]).map(function(v){return '<option value="'+v+'">'+esc(ct[n][v])+'</option>'}).join("")}
+  host.innerHTML='<div class="card"><h2>'+ic("chip")+' Laboratorio de modelos para mantenimiento predictivo</h2><div class="note"><b>Material aportado por la persona, pedagógico: no es evidencia científica.</b> Resume '+L.modelos.length+' modelos (clasificación de fallas y detección de anomalías), cuándo usarlos y qué vigilar. No sustituye la validación con datos reales. Para esta chumacera <b>no hay datos propios ni etiquetas</b>, así que por las reglas del selector corresponden los modelos de detección de anomalías; los resultados publicados con acústica y vibración están en '+chips(["E-9506","E-9515","E-9503"])+'.</div>'+
+   '<div class="tools"><label>Etiquetas de falla <select data-f="et">'+opts("Etiquetas de falla")+'</select></label><label>Tipo de señal <select data-f="se">'+opts("Tipo de señal")+'</select></label><label>Prioridad <select data-f="pr">'+opts("Prioridad")+'</select></label><label>Patrón esperado <select data-f="pa">'+opts("Patrón esperado")+'</select></label><button class="btn" id="lm-r">Restablecer</button></div><div id="lm-l"></div></div>'+
+   '<div class="card"><h2>'+ic("alerta")+' Advertencias de validación</h2><ul>'+(L.advertencias.textos||[]).map(function(t){return '<li>'+esc(t)+'</li>'}).join("")+'</ul></div>';
+  function pasa(m){var cls=/Clasificaci/.test(m.sesion);if(f.et==="yes"&&!cls)return false;if((f.et==="few"||f.et==="no")&&cls)return false;var a=m.etiquetas_ajuste_selector||[];return["se","pr","pa"].every(function(k){return f[k]==="any"||a.indexOf(f[k])>=0})}
+  function draw(){var ms=L.modelos.filter(pasa),sc=function(m){var p=m.puntajes_comparador||{};return f.pr==="interpret"?p.interpretabilidad||0:f.pr==="performance"?p.no_lineal||0:f.pr==="fast"?p.velocidad||0:(p.interpretabilidad||0)+(p.no_lineal||0)+(p.velocidad||0)+(p.pocos_datos||0)};ms.sort(function(a,b){return sc(b)-sc(a)});
+    $("#lm-l",host).innerHTML=ms.length?'<p><b>'+ms.length+' modelo(s) compatible(s)</b>; los 5 primeros son los sugeridos por el selector.</p>'+ms.map(function(m,i){return '<details'+(i<2?' open':'')+' style="margin:6px 0"><summary><b>'+(i<5?'★ ':'')+esc(m.modelo)+'</b> <span class="badge">'+esc(m.sesion.replace(/^Sesión \d · /,""))+'</span> <small>'+esc(m.resumen||m.que_hace||"")+'</small></summary><p><b>Cuándo usarlo:</b> '+esc(m.cuando_usarlo)+'</p><p><b>Métrica a vigilar:</b> '+esc(m.metrica)+'</p><p><b>Evítelo si:</b> '+esc(m.evitar_si)+'</p><p><small>'+Object.keys(m.datos||{}).map(function(k){return '<b>'+esc(k)+':</b> '+esc(m.datos[k])}).join(" · ")+'</small></p></details>'}).join(""):sdHtml("Ningún modelo del catálogo cumple esa combinación (así funciona el selector del material aportado).")}
+  host.addEventListener("change",function(e){var k=e.target.dataset&&e.target.dataset.f;if(k){f[k]=e.target.value;draw()}});
+  $("#lm-r",host).onclick=function(){f={et:"any",se:"any",pr:"any",pa:"any"};host.querySelectorAll("select[data-f]").forEach(function(s){s.value="any"});draw()};
+  f.et="no";$('select[data-f="et"]',host).value="no";draw();
+}
+/* ----- normas técnicas ----- */
+var TEMAS={pred:["Predictivo y vibración",/vibraci|monitoreo|condici|diagn/i],rul:["Pronóstico (RUL)",/pron[oó]stico|RUL|prognos/i],ml:["Aprendizaje automático y gemelos digitales",/aprendizaje|IA|gemelo|digital|inteligencia/i],rod:["Rodamientos, lubricación y fluidos",/rodamiento|lubric|fluido|aceite|grasa|vida nominal/i],tra:["Transportadores de banda",/transportador|banda|rodillo/i],dat:["Datos de falla y gestión de activos",/datos de falla|activos|mantenimiento|taxonom|confiabilidad|RCM/i]};
+function vNormas(host){
+  var N=D.caso.normas||[],SD=D.caso.normas_sin_datos||[];
+  if(!N.length){host.innerHTML='<div class="card"><h2>'+ic("regla")+' Normas técnicas</h2>'+sdHtml("Sin normas registradas.")+'</div>';return}
+  var orgs=[];N.forEach(function(n){if(orgs.indexOf(n.organismo)<0)orgs.push(n.organismo)});
+  host.innerHTML='<div class="card"><h2>'+ic("regla")+' Normas técnicas aplicables al monitoreo, el pronóstico y el aprendizaje automático</h2><div class="note"><b>Todas están en SOLO-SNIPPET:</b> se vieron en resúmenes de buscador y ninguna página oficial se pudo abrir desde este entorno. Edición y estado son los que mostraba el resumen; antes de citarlas, una persona debe abrir la página del organismo. <b>No hay una norma específica de aprendizaje automático para mantenimiento</b> en lo visto: solo marcos generales (gestión de IA y gemelos digitales).</div>'+
+   '<div class="grid"><div class="kpi"><span class="ico">'+ic("regla",22)+'</span><div><b>'+N.length+'</b><span>normas y guías con estado visto</span></div></div><div class="kpi"><span class="ico">'+ic("edificio",22)+'</span><div><b>'+orgs.length+'</b><span>organismos con resultados</span></div></div><div class="kpi"><span class="ico">'+ic("alerta",22)+'</span><div><b>'+SD.length+'</b><span>búsquedas SIN DATOS PARA ARMARLO</span></div></div></div>'+
+   '<div class="tools" style="margin-top:12px"><label>Organismo <select id="nm-o"><option value="">todos</option>'+orgs.map(function(o){return '<option>'+esc(o)+'</option>'}).join("")+'</select></label><label>Tema <select id="nm-t"><option value="">todos</option>'+Object.keys(TEMAS).map(function(k){return '<option value="'+k+'">'+TEMAS[k][0]+'</option>'}).join("")+'</select></label><label>Buscar <input type="text" id="nm-q" style="width:170px"></label></div><div class="tw"><table id="nm-tb"></table></div></div>'+
+   '<div class="card"><h2>'+ic("alerta")+' Organismos y normas sin resultado</h2><div class="tw"><table><tr><th>Organismo</th><th>Búsqueda</th><th>Estado</th><th>Motivo</th></tr>'+SD.map(function(x){return '<tr><td>'+esc(x.organismo)+'</td><td>'+esc(x.codigo)+'</td><td><small>SIN DATOS PARA ARMARLO</small></td><td>'+esc(x.motivo||"")+'</td></tr>'}).join("")+'</table></div></div>';
+  function draw(){var o=$("#nm-o",host).value,t=$("#nm-t",host).value,q=($("#nm-q",host).value||"").toLowerCase(),h='<tr><th>Código</th><th>Título y uso en el caso</th><th>Edición vista</th><th>Estado visto</th><th>Relaciones</th><th>Abrir</th></tr>';
+    orgs.forEach(function(g){if(o&&o!==g)return;var s=N.filter(function(n){return n.organismo===g&&(!t||TEMAS[t][1].test(n.titulo+" "+n.uso_en_el_caso))&&((n.codigo+" "+n.titulo+" "+n.uso_en_el_caso).toLowerCase().indexOf(q)>=0)});if(!s.length)return;
+      h+='<tr class="sepr" style="--tc:var(--c5)"><td colspan="6">'+ic("edificio",13)+' '+esc(g)+' · '+s.length+'</td></tr>'+s.map(function(n){var ret=/retirad/i.test(n.estado_visto);return '<tr><td><b>'+esc(n.codigo)+'</b></td><td>'+lt(n.titulo,80)+'<br><small>'+lt(n.uso_en_el_caso,120)+'</small></td><td>'+esc(n.edicion_vista||"no verificada")+'</td><td>'+(ret?'<span class="badge descartada">':'<span class="badge">')+lt(n.estado_visto,90)+'</span></td><td><small>'+lt(n.relaciones||"",110)+'</small></td><td>'+(n.url?'<a class="lnkb" href="'+esc(n.url)+'" target="_blank" rel="noopener noreferrer">'+ic("enlace",12)+'ver ↗</a>':'')+chips(n.evidencia||[])+'</td></tr>'}).join("")});
+    $("#nm-tb",host).innerHTML=h}
+  host.addEventListener("input",draw);host.addEventListener("change",draw);draw();
+}
+/* ----- top de fallas y recomendaciones ----- */
+function vTop(host){
+  var an=D.caso.analisis||{},H=(an.acr||{}).hipotesis||[],T=D.caso.topfallas||[],dz=D.caso.dossier;
+  var rows=H.map(function(h){var d={};h.evidencia.forEach(function(i){var e=EV[i];if(e)d[e.apa||i]=1});return{label:h.id+" "+h.texto.slice(0,60),value:Object.keys(d).length,color:(CLASES[h.clase]||["","var(--mut)"])[1]}}).sort(function(a,b){return b.value-a.value});
+  host.innerHTML='<div class="card"><h2>'+ic("pareto")+' Top de fallas y causas</h2><div class="note"><b>No existe en lo leído un ranking de frecuencias por componente o modo de falla de chumaceras de polea:</b> SIN DATOS PARA ARMARLO. Lo que sí hay es (1) cifras de segunda mano que conviene tratar con cuidado y (2) cuántos documentos distintos respaldan cada causa. Esto último mide cuánta evidencia hay, <b>no con qué frecuencia ocurre</b>.</div><div id="tp-g"></div>'+
+   '<h3>Cifras publicadas sobre fallas, con su condición</h3><div class="tw"><table><tr><th>Componente o modo</th><th>Medida</th><th>Valor</th><th>Población</th><th>Año</th><th>Límites</th><th>Fuente</th></tr>'+
+   ((dz&&dz.secciones.top_fallas&&dz.secciones.top_fallas.elementos)||[]).map(function(e){return '<tr><td colspan="4">'+lt(e.titulo,200)+'</td><td></td><td>'+lt(e.limite||"",100)+'</td><td>'+chips(e.evidencia)+'</td></tr>'}).join("")+
+   T.map(function(x){return '<tr><td>'+lt(x.componente_o_modo,60)+'</td><td>'+lt(x.medida,50)+'</td><td>'+lt(x.valor,90)+'</td><td>'+lt(x.base_de_datos_o_poblacion,80)+'</td><td>'+esc(x.anio||"")+'</td><td>'+lt(x.limites||"",90)+'</td><td>'+chips(x.evidencia)+'</td></tr>'}).join("")+'</table></div>'+
+   '<div style="margin-top:12px">'+sdHtml("Fuentes con conteos por componente de transportadores que aún no se pudieron leer (están como pistas): una revisión de fallas de rodamientos de rodillos, una tesis sobre rodamientos de rodillos locos en minas y un conjunto de datos de averías de transportadores en minas subterráneas. Con acceso a esos textos se armaría el top real.")+'</div></div>';
+  barChart($("#tp-g",host),rows,{titulo:"Documentos distintos que respaldan cada hipótesis de causa (color = clase)",desc:"Azul: causa física. Naranja: causa humana. Lila: causa latente. Mide respaldo documental, no frecuencia de ocurrencia."});
+}
+function vRecom(host){
+  var an=D.caso.analisis||{},F=(an.fmeca||{}).items||[],E=(an.predictivo||{}).estrategia||[];
+  host.innerHTML='<div class="card"><h2>'+ic("llave")+' Recomendaciones y estrategias de mejora</h2><div class="note">Son <b>propuestas del equipo (síntesis)</b> a partir de lo leído, no resultados validados en el activo. Cada una lleva sus fuentes y su condición para avanzar; los valores numéricos (umbrales, intervalos, costos) son SIN DATOS PARA ARMARLO hasta tener datos propios.</div>'+
+   '<h3>1. Corregir las causas (de la tabla FMECA)</h3><div class="tw"><table><tr><th>Modo</th><th>Tarea de mantenimiento propuesta</th><th>Nivel</th><th>Fuente</th></tr>'+F.map(function(m){return '<tr><td><b>'+esc(m.id)+'</b> '+lt(m.modo,60)+'</td><td>'+lt(m.tarea_rcm||"SIN DATOS PARA ARMARLO",220)+'</td><td>'+nv(m.nivel)+'</td><td>'+chips(m.evidencia)+'</td></tr>'}).join("")+'</table></div>'+
+   '<h3>2. Detectar a tiempo y pronosticar (estrategia por etapas)</h3>'+E.map(function(x){return '<div class="pq" style="padding-left:14px"><span class="qq">'+esc(x.etapa)+'</span>'+lt(x.accion,300)+'<div style="margin-top:4px"><small><b>Para avanzar:</b> '+lt(x.condicion_para_avanzar||"",200)+'</small></div><div style="margin-top:4px">'+nv(x.nivel||"SINTESIS")+' '+chips(x.evidencia)+'</div></div>'}).join("")+
+   '<h3>3. Qué sensores y modelos evaluar</h3><p>Ver <a class="ext" data-go="mon" data-sub="sen" style="cursor:pointer">Sensores y técnicas</a>, <a class="ext" data-go="mon" data-sub="mlr" style="cursor:pointer">Modelos ML</a> y el <a class="ext" data-go="mon" data-sub="lab" style="cursor:pointer">laboratorio de modelos</a>.</p></div>';
+}
+
+function vReferencias(host){subtabs(host,"ref",[{id:"apa",label:"Referencias APA 7",icon:"libro",fn:vRefLista},{id:"nor",label:"Normas técnicas",icon:"regla",fn:vNormas}])}
 /* ---------- vistas del modo "modo de falla" ---------- */
 var SUBSEL={};
 function subtabs(host,key,items){
@@ -952,7 +1262,7 @@ function esencial(){return (D.caso.resumen.hallazgos||[]).filter(function(h){ret
 function vResumenN(host){
   var c=D.caso,an=c.analisis||{},leidas=D.evidencia.filter(function(e){return e.nivel_evidencia==="VERIFICADO-TEXTO"||e.nivel_evidencia==="VERIFICADO-ABSTRACT"}).length,dz=c.dossier,con=0,vac=0;
   dz.orden.forEach(function(k){if(k==="referencias")return;((dz.secciones[k]||{}).elementos||[]).length?con++:vac++});
-  host.innerHTML='<div class="hero"><h2>Resumen del dossier</h2><p>Qué se sabe, con qué respaldo y qué falta. Cada afirmación lleva su fuente; lo que no tiene evidencia leída queda SIN DATOS PARA ARMARLO.</p><div class="grid">'+
+  host.innerHTML='<div id="rs-abs"></div><div class="hero"><h2>Resumen del dossier</h2><p>Qué se sabe, con qué respaldo y qué falta. Cada afirmación lleva su fuente; lo que no tiene evidencia leída queda SIN DATOS PARA ARMARLO.</p><div class="grid">'+
    '<div class="kpi"><span class="ico">'+ic("libro",22)+'</span><div><b>'+leidas+'</b><span>fuentes leídas (de '+D.evidencia.length+' registradas)</span></div></div>'+
    '<div class="kpi"><span class="ico">'+ic("escudo",22)+'</span><div><b>'+con+' de '+(con+vac)+'</b><span>secciones con evidencia</span></div></div>'+
    '<div class="kpi"><span class="ico">'+ic("alerta",22)+'</span><div><b>'+vac+'</b><span>secciones SIN DATOS PARA ARMARLO declarado</span></div></div>'+
@@ -962,19 +1272,20 @@ function vResumenN(host){
    '<div class="card"><h2>'+ic("brujula")+' Cadena RCM</h2><div id="rs-cad"></div></div>'+
    '<div class="card"><h2>'+ic("casco")+' Las 14 secciones del dossier</h2><div class="idx" id="rs-idx"></div></div>'+
    '<div class="grid2"><div class="card"><h2>'+ic("doc")+' Lo esencial</h2><ul id="rs-es" style="padding-left:18px;margin:0"></ul></div><div class="card"><h2>'+ic("libro")+' Fuentes mejor respaldadas</h2><div id="rs-rk"></div><p><button class="btn" data-go="evi" data-sub="ran">Ver ranking completo</button></p></div></div>';
-  cadena($("#rs-cad",host));indice14($("#rs-idx",host));
+  vAbstract($("#rs-abs",host));cadena($("#rs-cad",host));indice14($("#rs-idx",host));
   $("#rs-es",host).innerHTML=esencial().map(function(h){var t=h.texto.replace(/\. Límite:.*$/,"");return '<li style="margin:0 0 8px">'+lt(t,150)+' '+chips(h.evidencia)+'</li>'}).join("");
   var tmp=document.createElement("div");rankingFuentes(tmp,5);var t=tmp.querySelector("#rk-tb");$("#rs-rk",host).innerHTML='<div class="tw"><table class="rank">'+t.innerHTML+'</table></div>'
 }
 function vModos(host){
-  var an=D.caso.analisis||{};
-  var it=[];
-  if(an.arbol)it.push({id:"arb",label:"Árbol de fallas",icon:"arbol",fn:function(p){p.innerHTML='<div class="card"><h2>'+ic("arbol")+' '+esc(an.arbol.evento_tope||"Árbol de fallas")+'</h2><div id="ma-d"></div><details style="margin-top:10px"><summary>Calculadora de probabilidades del evento tope</summary><div id="ma-c"></div></details></div>';svgArbol($("#ma-d",p),an.arbol);vArbol($("#ma-c",p))}});
+  var an=D.caso.analisis||{},it=[];
+  if(an.fmeca)it.push({id:"top",label:"Top de fallas",icon:"pareto",fn:vTop});
+  if(an.arbol)it.push({id:"arb",label:"Árbol de fallas",icon:"arbol",fn:function(p){p.innerHTML='<div class="card"><h2>'+ic("arbol")+' '+esc(an.arbol.evento_tope||"Árbol de fallas")+'</h2><div id="ma-d"></div><details style="margin-top:10px"><summary>Calculadora de probabilidades del evento tope</summary><div id="ma-c"></div></details></div>';dibujarArbol($("#ma-d",p),an.arbol);vArbol($("#ma-c",p))}});
   if(an.acr&&an.acr.ishikawa)it.push({id:"ish",label:"Ishikawa",icon:"pez",fn:vIshikawa});
   if(an.porques&&(an.porques.items||[]).length)it.push({id:"por",label:"5 porqués",icon:"pregunta",fn:vPorques});
   if(an.observar&&(an.observar.items||[]).length)it.push({id:"obs",label:"Qué observar",icon:"ojo",fn:vObservar});
   if(an.fmeca)it.push({id:"fme",label:"FMECA",icon:"ficha",fn:function(p){vFmeca(p);var d=document.createElement("div");p.appendChild(d);docPorModo(d)}});
   if(an.acr)it.push({id:"hip",label:"Hipótesis y técnicas",icon:"matraz",fn:function(p){vAcr(p);var d=document.createElement("div");p.appendChild(d);matrizEnsayos(d)}});
+  if(an.fmeca)it.push({id:"rec",label:"Recomendaciones",icon:"llave",fn:vRecom});
   subtabs(host,"mod",it);
 }
 function vVidaCostos(host){
@@ -983,10 +1294,13 @@ function vVidaCostos(host){
   if(an.herramientas)it.push({id:"her",label:"L10 y frecuencias",icon:"herr",fn:vHerr});
   if(an.lcc)it.push({id:"cos",label:"Costos",icon:"grafico",fn:vLcc});
   if(an.vida)it.push({id:"met",label:"Método de vida",icon:"libro",fn:function(p){vVidaPred(p,"vida")}});
+  if((D.caso.replicas||[]).length)it.push({id:"dat",label:"Datos publicados",icon:"db",fn:vDatosVida});
   subtabs(host,"vyc",it);
 }
 function vMonitoreo(host){
-  var an=D.caso.analisis||{},it=[{id:"deg",label:"Degradación",icon:"pulso",fn:degr}];
+  var an=D.caso.analisis||{},it=[{id:"deg",label:"Degradación",icon:"onda",fn:degr},{id:"ban",label:"Curva de la bañera",icon:"banera",fn:vBanera},{id:"rul",label:"Simulador RUL",icon:"reloj",fn:vSimRUL},{id:"sen",label:"Sensores y técnicas",icon:"sensor",fn:vSensores}];
+  if((D.caso.replicas||[]).length)it.push({id:"mlr",label:"Modelos ML",icon:"red",fn:vModelosML});
+  if(D.caso.ml_lab)it.push({id:"lab",label:"Laboratorio ML",icon:"chip",fn:vLabML});
   if(an.predictivo)it.push({id:"est",label:"Estrategia y riesgos",icon:"ficha",fn:function(p){vVidaPred(p,"pred")}});
   it.push({id:"mod",label:"Qué modelo usar",icon:"db",fn:vPredictivo});
   subtabs(host,"mon",it);
@@ -1038,6 +1352,8 @@ function buildIndex(){
   if(dz)dz.orden.forEach(function(k){var s=dz.secciones[k]||{};(s.elementos||[]).forEach(function(e){add(dz.titulos[k],e.titulo,"evi","cob")});if(s.vacio)add("SIN DATOS PARA ARMARLO "+dz.titulos[k],s.vacio,"pla","vac")});
   ((an.porques||{}).items||[]).forEach(function(h){h.cadena.forEach(function(x){add("5 porqués "+h.causa,x.porque,"mod","por")})});
   ((an.observar||{}).items||[]).forEach(function(x){add("Qué observar "+x.hipotesis,x.sintoma+" "+x.medicion,"mod","obs")});
+  (c.normas||[]).forEach(function(n){add("Norma",n.codigo+" "+n.titulo+" "+n.uso_en_el_caso,"ref","nor")});
+  (c.sensores||[]).forEach(function(x){add("Sensor o técnica",x.tecnica_o_sensor+" "+x.que_mide+" "+x.resultado_publicado,"mon","sen")});
   (c.replicas||[]).forEach(function(r){add("Réplica",r.id+" "+r.titulo+" "+(r.replica_de||""),"evi","rep")});
   (c.cifras||[]).forEach(function(x){add("Cifra",x.valor+" "+(x.unidad||"")+" "+x.mide+" "+(x.condiciones||""),"evi","rep")});
   (c.vacios||[]).forEach(function(v){add("Vacío",v,dz?"pla":"ras",dz?"vac":null)});
@@ -1048,7 +1364,7 @@ function buildIndex(){
 function boot(){
   if(!D){document.body.innerHTML="<p style='padding:20px'>El informe no tiene datos incrustados.</p>";return}
   D.evidencia.forEach(function(e){EV[e.id]=e});
-  var m=D.caso.meta;$("#ttl").innerHTML=esc(m.titulo)+'<small>'+esc([m.activo,m.origen_datos&&("datos: "+m.origen_datos)].filter(Boolean).join(" · "))+'</small>';
+  var m=D.caso.meta;$("#ttl").innerHTML=esc(m.titulo)+'<span class="autor">HOWK RIOS - CONFIABILIDAD</span><small>'+esc([m.activo,m.origen_datos&&("datos: "+m.origen_datos)].filter(Boolean).join(" · "))+'</small>';
   var c=D.caso,an=c.analisis||{};
   if(c.dossier){
     tab("res","Resumen",vResumenN,true,"casco");tab("mod","Modos y causas",vModos,true,"engranaje");tab("vyc","Vida y costos",vVidaCostos,true,"rodamiento");
@@ -1064,13 +1380,14 @@ function boot(){
     var s=document.createElement("section");s.className="tab";s.id="v-"+v.id;s.dataset.label=v.label;mn.appendChild(s);b.onclick=function(){sel(v.id)};
   });
   var cur="res";
-  function sel(id,sub){cur=id;window.__cur=id;
+  function sel(id,sub,keep){cur=id;window.__cur=id;if(!keep)$("#back").classList.remove("on");
     VIEWS.forEach(function(v){var s=$("#v-"+v.id),b=$('[data-id='+v.id+']',tb),on=v.id===id;s.classList.toggle("on",on);b.setAttribute("aria-selected",on);
       if(on&&!s.dataset.done){s.dataset.done=1;try{v.fn(s)}catch(e){s.innerHTML='<div class="note bad">Error al dibujar esta vista: '+esc(e.message)+'</div>';window.__errores=(window.__errores||[]).concat(String(e))}}});
     if(sub&&SUBSEL[id])SUBSEL[id](sub);
     try{history.replaceState(null,"","#"+id)}catch(e){}window.scrollTo(0,0)}
   window.__goto=sel;
-  document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-go]");if(t)sel(t.dataset.go,t.dataset.sub)});
+  document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-go]");if(!t)return;var vuelve=!!t.closest(".idx")||t.dataset.back==="1";sel(t.dataset.go,t.dataset.sub,vuelve);if(vuelve)$("#back").classList.add("on")});
+  $("#back").onclick=function(){sel("res");window.scrollTo(0,0)};
   var h=(location.hash||"").slice(1);sel(VIEWS.some(function(v){return v.id===h})?h:"res");
   function tema(v){var r=document.documentElement;if(v)r.dataset.theme=v;var d=r.dataset.theme==="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches);$("#t-dia").setAttribute("aria-pressed",!d);$("#t-noche").setAttribute("aria-pressed",d)}
   $("#t-dia").onclick=function(){tema("light")};$("#t-noche").onclick=function(){tema("dark")};tema();
@@ -1091,6 +1408,7 @@ function boot(){
     sr.hidden=false;sr._r=res});
   sr.addEventListener("click",function(e){var a=e.target.closest("a[data-i]");if(!a)return;var r=sr._r[+a.dataset.i];sr.hidden=true;if(r.ev){sel(r.tab,r.sub);openEv(r.ev)}else sel(r.tab,r.sub)});
   $("#mclose").onclick=closeModal;$("#modal").addEventListener("click",function(e){if(e.target.id==="modal")closeModal()});
+  var mo=null;try{mo=new MutationObserver(function(){clearTimeout(decorar._t);decorar._t=setTimeout(decorar,60)});mo.observe($("#main"),{childList:true,subtree:true})}catch(e){}decorar();
   window.__listo=true;
 }
 boot();

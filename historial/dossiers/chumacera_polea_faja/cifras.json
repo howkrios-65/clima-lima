@@ -1,6 +1,6 @@
 [
  {
-  "id": "C1",
+  "id": "1-C1",
   "valor": "14.7",
   "unidad": "min",
   "mide": "MAE de CoxPH (tiempo a la falla)",
@@ -11,7 +11,7 @@
   ]
  },
  {
-  "id": "C2",
+  "id": "1-C2",
   "valor": "13.6-15.8",
   "unidad": "min",
   "mide": "IC 95 % del MAE de CoxPH",
@@ -21,7 +21,7 @@
   ]
  },
  {
-  "id": "C3",
+  "id": "1-C3",
   "valor": "12.6",
   "unidad": "min",
   "mide": "MAE de Random Survival Forests",
@@ -32,7 +32,7 @@
   ]
  },
  {
-  "id": "C4",
+  "id": "1-C4",
   "valor": "11.8-13.4",
   "unidad": "min",
   "mide": "IC 95 % del MAE de Random Survival Forests",
@@ -42,7 +42,7 @@
   ]
  },
  {
-  "id": "C5",
+  "id": "1-C5",
   "valor": "18.5",
   "unidad": "min",
   "mide": "MAE de LASSO (sin soporte de censura)",
@@ -53,7 +53,7 @@
   ]
  },
  {
-  "id": "C6",
+  "id": "1-C6",
   "valor": "17.4-19.6",
   "unidad": "min",
   "mide": "IC 95 % del MAE de LASSO",
@@ -63,7 +63,7 @@
   ]
  },
  {
-  "id": "C7",
+  "id": "1-C7",
   "valor": "0.7586",
   "unidad": "adimensional",
   "mide": "CRA medio de RULSurv sobre los 5 rodamientos de C1",
@@ -73,7 +73,7 @@
   ]
  },
  {
-  "id": "C8",
+  "id": "1-C8",
   "valor": "2100",
   "unidad": "rpm",
   "mide": "Velocidad de giro, C1",
@@ -83,7 +83,7 @@
   ]
  },
  {
-  "id": "C9",
+  "id": "1-C9",
   "valor": "2250",
   "unidad": "rpm",
   "mide": "Velocidad de giro, C2",
@@ -93,7 +93,7 @@
   ]
  },
  {
-  "id": "C10",
+  "id": "1-C10",
   "valor": "2400",
   "unidad": "rpm",
   "mide": "Velocidad de giro, C3",
@@ -103,7 +103,7 @@
   ]
  },
  {
-  "id": "C11",
+  "id": "1-C11",
   "valor": "12.0",
   "unidad": "kN",
   "mide": "Carga radial, C1",
@@ -113,7 +113,7 @@
   ]
  },
  {
-  "id": "C12",
+  "id": "1-C12",
   "valor": "11.0",
   "unidad": "kN",
   "mide": "Carga radial, C2",
@@ -123,7 +123,7 @@
   ]
  },
  {
-  "id": "C13",
+  "id": "1-C13",
   "valor": "10.0",
   "unidad": "kN",
   "mide": "Carga radial, C3",
@@ -133,7 +133,7 @@
   ]
  },
  {
-  "id": "C14",
+  "id": "1-C14",
   "valor": "9.6",
   "unidad": "h",
   "mide": "L10h calculada, C1",
@@ -143,7 +143,7 @@
   ]
  },
  {
-  "id": "C15",
+  "id": "1-C15",
   "valor": "11.7",
   "unidad": "h",
   "mide": "L10h calculada, C2",
@@ -153,7 +153,7 @@
   ]
  },
  {
-  "id": "C16",
+  "id": "1-C16",
   "valor": "14.6",
   "unidad": "h",
   "mide": "L10h calculada, C3",
@@ -163,7 +163,7 @@
   ]
  },
  {
-  "id": "C17",
+  "id": "1-C17",
   "valor": "15",
   "unidad": "rodamientos",
   "mide": "Total de rodamientos de bolas ensayados",
@@ -173,7 +173,7 @@
   ]
  },
  {
-  "id": "C18",
+  "id": "1-C18",
   "valor": "12.82",
   "unidad": "kN",
   "mide": "Capacidad de carga dinamica del rodamiento LDK UER204",
@@ -183,7 +183,7 @@
   ]
  },
  {
-  "id": "C19",
+  "id": "1-C19",
   "valor": "25.6",
   "unidad": "kHz",
   "mide": "Frecuencia de muestreo de vibracion",
@@ -193,7 +193,7 @@
   ]
  },
  {
-  "id": "C20",
+  "id": "1-C20",
   "valor": "635",
   "unidad": "muestras",
   "mide": "Tamano del conjunto supervisado C1",
@@ -207,7 +207,7 @@
   ]
  },
  {
-  "id": "C21",
+  "id": "1-C21",
   "valor": "1586",
   "unidad": "muestras",
   "mide": "Tamano del conjunto supervisado C2",
@@ -221,7 +221,7 @@
   ]
  },
  {
-  "id": "C22",
+  "id": "1-C22",
   "valor": "4930",
   "unidad": "muestras",
   "mide": "Tamano del conjunto supervisado C3",
@@ -235,7 +235,7 @@
   ]
  },
  {
-  "id": "C23",
+  "id": "1-C23",
   "valor": "42.6",
   "unidad": "%",
   "mide": "Diferencia media entre el evento detectado y el fin de registro, carga alta (C1)",
@@ -245,7 +245,7 @@
   ]
  },
  {
-  "id": "C24",
+  "id": "1-C24",
   "valor": "48.7",
   "unidad": "%",
   "mide": "Diferencia media evento-fin de registro, carga media (C2)",
@@ -255,7 +255,7 @@
   ]
  },
  {
-  "id": "C25",
+  "id": "1-C25",
   "valor": "56.9",
   "unidad": "%",
   "mide": "Diferencia media evento-fin de registro, carga baja (C3)",
@@ -265,7 +265,7 @@
   ]
  },
  {
-  "id": "C26",
+  "id": "1-C26",
   "valor": "2537",
   "unidad": "min",
   "mide": "Mayor fin de registro (rodamiento 3_1, C3)",
@@ -275,7 +275,7 @@
   ]
  },
  {
-  "id": "C27",
+  "id": "1-C27",
   "valor": "41",
   "unidad": "min",
   "mide": "Menor fin de registro de C2 (rodamiento 2_4)",
@@ -285,7 +285,7 @@
   ]
  },
  {
-  "id": "C28",
+  "id": "1-C28",
   "valor": "51",
   "unidad": "min",
   "mide": "Fin de registro del rodamiento 1_5 (C1)",
@@ -295,7 +295,7 @@
   ]
  },
  {
-  "id": "C29",
+  "id": "1-C29",
   "valor": "600",
   "unidad": "s",
   "mide": "Duracion de la ventana del detector de eventos",
@@ -305,7 +305,7 @@
   ]
  },
  {
-  "id": "C30",
+  "id": "1-C30",
   "valor": "98.8",
   "unidad": "min",
   "mide": "MAEH de RSF, DC3 (carga baja), 25 % de censura",
@@ -315,7 +315,7 @@
   ]
  },
  {
-  "id": "C31",
+  "id": "1-C31",
   "valor": "31.5",
   "unidad": "min",
   "mide": "MAE verdadero de RSF, DC2, 25 % de censura",
@@ -325,7 +325,7 @@
   ]
  },
  {
-  "id": "C32",
+  "id": "1-C32",
   "valor": "105.3",
   "unidad": "min",
   "mide": "MAE verdadero de RSF, DC3, 25 % de censura",
@@ -335,7 +335,7 @@
   ]
  },
  {
-  "id": "C33",
+  "id": "1-C33",
   "valor": "183.7",
   "unidad": "min",
   "mide": "MAE verdadero de CoxPH, DC3, 25 % de censura",
@@ -345,7 +345,7 @@
   ]
  },
  {
-  "id": "C34",
+  "id": "1-C34",
   "valor": "0.2803",
   "unidad": "RUL normalizada",
   "mide": "MAE de CARLE entrenado en PRONOSTIA y probado en XJTU-SY con alineacion CORAL",
@@ -355,7 +355,7 @@
   ]
  },
  {
-  "id": "C35",
+  "id": "1-C35",
   "valor": "0.2919",
   "unidad": "RUL normalizada",
   "mide": "MAE de CARLE sin alineacion de dominio",
@@ -365,7 +365,7 @@
   ]
  },
  {
-  "id": "C36",
+  "id": "1-C36",
   "valor": "0.04087",
   "unidad": "RUL normalizada",
   "mide": "MAE de CARLE, XJTU-SY rodamiento 3, 35 Hz y 12 kN (condicion de entrenamiento)",
@@ -376,7 +376,7 @@
   ]
  },
  {
-  "id": "C37",
+  "id": "1-C37",
   "valor": "0.15631",
   "unidad": "RUL normalizada",
   "mide": "MAE de CARLE, XJTU-SY rodamiento 3, 40 Hz y 10 kN (condicion no vista)",
@@ -387,7 +387,7 @@
   ]
  },
  {
-  "id": "CF-01",
+  "id": "2-CF-01",
   "valor": "1,720 y 1,797",
   "unidad": "rpm",
   "mide": "Velocidad del motor en el banco CWRU",
@@ -397,7 +397,7 @@
   ]
  },
  {
-  "id": "CF-02",
+  "id": "2-CF-02",
   "valor": "1,700 a 1,800",
   "unidad": "rpm",
   "mide": "Velocidad en el banco UORED-VAFCLS",
@@ -407,7 +407,7 @@
   ]
  },
  {
-  "id": "CF-03",
+  "id": "2-CF-03",
   "valor": "600 a 2,100",
   "unidad": "rpm",
   "mide": "Rango de velocidad del banco HUST",
@@ -417,7 +417,7 @@
   ]
  },
  {
-  "id": "CF-04",
+  "id": "2-CF-04",
   "valor": "600; 800; 1,000; 1,200; 1,400 y 1,600",
   "unidad": "rpm",
   "mide": "Velocidades del motor en el banco PADERBORN",
@@ -427,7 +427,7 @@
   ]
  },
  {
-  "id": "CF-05",
+  "id": "2-CF-05",
   "valor": "25,600",
   "unidad": "Hz",
   "mide": "Frecuencia de muestreo de HUST (la Tabla 1 del mismo paper lista 51.2 kHz)",
@@ -438,7 +438,7 @@
   ]
  },
  {
-  "id": "CF-06",
+  "id": "2-CF-06",
   "valor": "97.58",
   "unidad": "% exactitud balanceada media",
   "mide": "CWRU con pliegues por carga, afinado completo desde ImageNet",
@@ -448,7 +448,7 @@
   ]
  },
  {
-  "id": "CF-07",
+  "id": "2-CF-07",
   "valor": "64.38",
   "unidad": "% exactitud balanceada media",
   "mide": "CWRU con pliegues por severidad de falla, afinado completo desde ImageNet",
@@ -458,7 +458,7 @@
   ]
  },
  {
-  "id": "CF-08",
+  "id": "2-CF-08",
   "valor": "66.88",
   "unidad": "% exactitud media",
   "mide": "Mejor resultado por severidad (afinado parcial desde VibNet)",
@@ -468,7 +468,7 @@
   ]
  },
  {
-  "id": "CF-09",
+  "id": "2-CF-09",
   "valor": "280",
   "unidad": "muestras",
   "mide": "Muestras sanas en CWRU (frente a 1542 con falla de pista interna en la división por carga)",
@@ -478,7 +478,7 @@
   ]
  },
  {
-  "id": "CF-10",
+  "id": "2-CF-10",
   "valor": "680-2460",
   "unidad": "rpm",
   "mide": "Rango de velocidad variable del banco KAIST",
@@ -488,7 +488,7 @@
   ]
  },
  {
-  "id": "CF-11",
+  "id": "2-CF-11",
   "valor": "21,000",
   "unidad": "segmentos por clase",
   "mide": "Segmentos de 2,000 muestras (0.1 s) por clase",
@@ -498,7 +498,7 @@
   ]
  },
  {
-  "id": "CF-12",
+  "id": "2-CF-12",
   "valor": "95.6",
   "unidad": "% exactitud (pista interna, -5 dB)",
   "mide": "Exactitud de la clase pista interna con ruido añadido de -5 dB (100 % sin ruido)",
@@ -508,7 +508,7 @@
   ]
  },
  {
-  "id": "CF-13",
+  "id": "2-CF-13",
   "valor": "15.8",
   "unidad": "puntos porcentuales",
   "mide": "Ganancia máxima frente a PIResNet (compara promedio de 5 pliegues con los mejores resultados del rival)",
@@ -518,7 +518,7 @@
   ]
  },
  {
-  "id": "CF-14",
+  "id": "2-CF-14",
   "valor": "20.2",
   "unidad": "ms por ventana de 0.1 s",
   "mide": "Tiempo de inferencia promedio (desviación 0.36)",
@@ -528,7 +528,7 @@
   ]
  },
  {
-  "id": "CF-15",
+  "id": "2-CF-15",
   "valor": "558,660",
   "unidad": "parámetros",
   "mide": "Parámetros entrenables de la CNN",
@@ -538,7 +538,7 @@
   ]
  },
  {
-  "id": "CF-16",
+  "id": "2-CF-16",
   "valor": "100.00",
   "unidad": "% exactitud",
   "mide": "CWRU, ensamble, tres de cuatro cargas retenidas",
@@ -548,7 +548,7 @@
   ]
  },
  {
-  "id": "CF-17",
+  "id": "2-CF-17",
   "valor": "92.27",
   "unidad": "% exactitud",
   "mide": "CWRU, ensamble, la cuarta carga retenida",
@@ -558,7 +558,7 @@
   ]
  },
  {
-  "id": "CF-18",
+  "id": "2-CF-18",
   "valor": "40.64",
   "unidad": "% exactitud",
   "mide": "JNU, ensamble, reteniendo 1000 rpm (por debajo de la clase mayoritaria)",
@@ -568,7 +568,7 @@
   ]
  },
  {
-  "id": "CF-19",
+  "id": "2-CF-19",
   "valor": "57.91",
   "unidad": "% exactitud",
   "mide": "JNU, regresión logística, reteniendo 1000 rpm",
@@ -578,7 +578,7 @@
   ]
  },
  {
-  "id": "CF-20",
+  "id": "2-CF-20",
   "valor": "0.29 frente a 0.36",
   "unidad": "AURC",
   "mide": "AURC de la fusión por divergencia de Jensen-Shannon de los modelos de tiempo y frecuencia, frente a la entropía de un modelo (partición estándar)",
@@ -588,7 +588,7 @@
   ]
  },
  {
-  "id": "CF-21",
+  "id": "2-CF-21",
   "valor": "72",
   "unidad": "criticidad (conteo de detecciones)",
   "mide": "Umbral de criticidad para declarar un evento (equivale a 12 horas seguidas con datos cada 10 minutos)",
@@ -599,7 +599,7 @@
   ]
  },
  {
-  "id": "CF-22",
+  "id": "2-CF-22",
   "valor": "1, 1, 1 y 2",
   "unidad": "pesos",
   "mide": "Pesos del promedio de CARE (el 2 es de la exactitud sobre series normales)",
@@ -609,7 +609,7 @@
   ]
  },
  {
-  "id": "CF-23",
+  "id": "2-CF-23",
   "valor": "0.5",
   "unidad": "puntaje CARE",
   "mide": "Puntaje de una estrategia aleatoria; cota inferior a superar",
@@ -619,7 +619,7 @@
   ]
  },
  {
-  "id": "CF-24",
+  "id": "2-CF-24",
   "valor": "0.66",
   "unidad": "puntaje CARE",
   "mide": "Autoencoder con umbral calibrado en el mini-benchmark",
@@ -629,7 +629,7 @@
   ]
  },
  {
-  "id": "CF-25",
+  "id": "2-CF-25",
   "valor": "95",
   "unidad": "series",
   "mide": "Series del conjunto CARE (44 con evento y 51 normales, 89 años, 36 aerogeneradores)",
@@ -639,7 +639,7 @@
   ]
  },
  {
-  "id": "CF-26",
+  "id": "2-CF-26",
   "valor": "262",
   "unidad": "condiciones de trabajo",
   "mide": "Condiciones reunidas en el conjunto MBHM de nueve bancos públicos",
@@ -650,7 +650,7 @@
   ]
  },
  {
-  "id": "CF-27",
+  "id": "2-CF-27",
   "valor": "90.22",
   "unidad": "% exactitud",
   "mide": "Cero disparos en JUST con canales de referencia y residuo (87.54 % sin ellos)",
@@ -660,7 +660,7 @@
   ]
  },
  {
-  "id": "CF-28",
+  "id": "2-CF-28",
   "valor": "98.52",
   "unidad": "% exactitud",
   "mide": "Cero disparos en IMS con canales de referencia y residuo (97.81 % sin ellos)",
@@ -670,7 +670,7 @@
   ]
  },
  {
-  "id": "CF-29",
+  "id": "2-CF-29",
   "valor": "61",
   "unidad": "% de fallas severas de pista externa",
   "mide": "Fallas severas clasificadas como moderadas sin los canales auxiliares",
@@ -680,7 +680,7 @@
   ]
  },
  {
-  "id": "CF-30",
+  "id": "2-CF-30",
   "valor": "90.26 y 89.14",
   "unidad": "% exactitud",
   "mide": "Cero disparos sobre CWRU retirando CWRU (y CWRU y XJTU) del entrenamiento",
@@ -690,7 +690,7 @@
   ]
  },
  {
-  "id": "CF-31",
+  "id": "2-CF-31",
   "valor": "1000",
   "unidad": "días",
   "mide": "Tope de la vida remanente (RUL) en las etiquetas",
@@ -700,7 +700,7 @@
   ]
  },
  {
-  "id": "CF-32",
+  "id": "2-CF-32",
   "valor": "85{:}15",
   "unidad": "relación entrenamiento:prueba (el texto escribe 85{:}15)",
   "mide": "Partición cronológica con descarte de ventanas que cruzan el límite",
@@ -710,7 +710,7 @@
   ]
  },
  {
-  "id": "CF-33",
+  "id": "2-CF-33",
   "valor": "60 frente a 88",
   "unidad": "MAE (unidad no rotulada)",
   "mide": "Cabeza lineal sobre Chronos-2 congelado frente a la red convolucional temporal (TCN), dispositivo A",
@@ -720,7 +720,7 @@
   ]
  },
  {
-  "id": "CF-34",
+  "id": "2-CF-34",
   "valor": "80",
   "unidad": "pasos de contexto",
   "mide": "Longitud de contexto a partir de la cual el rendimiento se satura",
@@ -728,6 +728,907 @@
   "evidencia": [
    "E-9480",
    "E-9481"
+  ]
+ },
+ {
+  "id": "A-C1",
+  "valor": "78.665",
+  "unidad": "%",
+  "mide": "exactitud de CNN sin ampliar datos",
+  "condiciones": "Banco CWRU, 50 muestras por condicion de entrenamiento, epoca 100, TSDM arXiv 2312.07981",
+  "evidencia": [
+   "E-9503"
+  ]
+ },
+ {
+  "id": "A-C2",
+  "valor": "94.033",
+  "unidad": "%",
+  "mide": "exactitud de CNN ampliada con TSDM",
+  "condiciones": "Banco CWRU, 50 muestras por condicion de entrenamiento, epoca 100, TSDM arXiv 2312.07981",
+  "evidencia": [
+   "E-9503"
+  ]
+ },
+ {
+  "id": "A-C3",
+  "valor": "56.262",
+  "unidad": "%",
+  "mide": "exactitud de RNN-LSTM sin ampliar datos",
+  "condiciones": "Banco CWRU, 50 muestras por condicion de entrenamiento, epoca 100, TSDM arXiv 2312.07981",
+  "evidencia": [
+   "E-9503"
+  ]
+ },
+ {
+  "id": "A-C4",
+  "valor": "88.642",
+  "unidad": "%",
+  "mide": "exactitud de RNN-LSTM ampliada con TSDM",
+  "condiciones": "Banco CWRU, 50 muestras por condicion de entrenamiento, epoca 100, TSDM arXiv 2312.07981",
+  "evidencia": [
+   "E-9503"
+  ]
+ },
+ {
+  "id": "A-C5",
+  "valor": "60.557",
+  "unidad": "%",
+  "mide": "exactitud del transformador TST sin ampliar datos",
+  "condiciones": "Banco CWRU, 50 muestras por condicion de entrenamiento, epoca 100, TSDM arXiv 2312.07981",
+  "evidencia": [
+   "E-9503"
+  ]
+ },
+ {
+  "id": "A-C6",
+  "valor": "72.192",
+  "unidad": "%",
+  "mide": "exactitud del transformador TST ampliada con TSDM",
+  "condiciones": "Banco CWRU, 50 muestras por condicion de entrenamiento, epoca 100, TSDM arXiv 2312.07981",
+  "evidencia": [
+   "E-9503"
+  ]
+ },
+ {
+  "id": "A-C7",
+  "valor": "32.380",
+  "unidad": "%",
+  "mide": "mejora maxima de exactitud con TSDM (RNN-LSTM, primer banco)",
+  "condiciones": "Banco CWRU, 50 muestras por condicion de entrenamiento, epoca 100, TSDM arXiv 2312.07981",
+  "evidencia": [
+   "E-9501",
+   "E-9503"
+  ]
+ },
+ {
+  "id": "A-C8",
+  "valor": "18.355",
+  "unidad": "%",
+  "mide": "mejora maxima de exactitud con TSDM (segundo banco; tabla no leida)",
+  "condiciones": "Resumen de arXiv 2312.07981; el conjunto no se leyo en el cuerpo",
+  "evidencia": [
+   "E-9501"
+  ]
+ },
+ {
+  "id": "A-C9",
+  "valor": "9.298",
+  "unidad": "%",
+  "mide": "mejora maxima de exactitud con TSDM (tercer banco; tabla no leida)",
+  "condiciones": "Resumen de arXiv 2312.07981; el conjunto no se leyo en el cuerpo",
+  "evidencia": [
+   "E-9501"
+  ]
+ },
+ {
+  "id": "A-C10",
+  "valor": "50",
+  "unidad": "muestras",
+  "mide": "muestras de entrenamiento por condicion (pocos datos de falla)",
+  "condiciones": "CWRU, arXiv 2312.07981",
+  "evidencia": [
+   "E-9502"
+  ]
+ },
+ {
+  "id": "A-C11",
+  "valor": "200",
+  "unidad": "muestras",
+  "mide": "total de muestras de entrenamiento pequeno",
+  "condiciones": "CWRU, 4 condiciones, arXiv 2312.07981",
+  "evidencia": [
+   "E-9502"
+  ]
+ },
+ {
+  "id": "A-C12",
+  "valor": "1200",
+  "unidad": "muestras",
+  "mide": "total de muestras de prueba",
+  "condiciones": "CWRU, 4 condiciones x 300, arXiv 2312.07981",
+  "evidencia": [
+   "E-9502"
+  ]
+ },
+ {
+  "id": "A-C13",
+  "valor": "65.92",
+  "unidad": "%",
+  "mide": "AUC fuente, autoencoder simple",
+  "condiciones": "DCASE 2023 T2, maquina 'bearing' de laboratorio, entrenamiento solo con sonido normal, promedio de 5 corridas, arXiv 2305.07828",
+  "evidencia": [
+   "E-9506"
+  ]
+ },
+ {
+  "id": "A-C14",
+  "valor": "55.75",
+  "unidad": "%",
+  "mide": "AUC objetivo, autoencoder simple",
+  "condiciones": "DCASE 2023 T2, maquina 'bearing' de laboratorio, entrenamiento solo con sonido normal, promedio de 5 corridas, arXiv 2305.07828",
+  "evidencia": [
+   "E-9506"
+  ]
+ },
+ {
+  "id": "A-C15",
+  "valor": "50.42",
+  "unidad": "%",
+  "mide": "pAUC, autoencoder simple",
+  "condiciones": "DCASE 2023 T2, maquina 'bearing' de laboratorio, entrenamiento solo con sonido normal, promedio de 5 corridas, arXiv 2305.07828",
+  "evidencia": [
+   "E-9506"
+  ]
+ },
+ {
+  "id": "A-C16",
+  "valor": "65.16",
+  "unidad": "%",
+  "mide": "AUC fuente, Mahalanobis selectivo",
+  "condiciones": "DCASE 2023 T2, maquina 'bearing' de laboratorio, entrenamiento solo con sonido normal, promedio de 5 corridas, arXiv 2305.07828",
+  "evidencia": [
+   "E-9506"
+  ]
+ },
+ {
+  "id": "A-C17",
+  "valor": "55.28",
+  "unidad": "%",
+  "mide": "AUC objetivo, Mahalanobis selectivo",
+  "condiciones": "DCASE 2023 T2, maquina 'bearing' de laboratorio, entrenamiento solo con sonido normal, promedio de 5 corridas, arXiv 2305.07828",
+  "evidencia": [
+   "E-9506"
+  ]
+ },
+ {
+  "id": "A-C18",
+  "valor": "51.37",
+  "unidad": "%",
+  "mide": "pAUC, Mahalanobis selectivo",
+  "condiciones": "DCASE 2023 T2, maquina 'bearing' de laboratorio, entrenamiento solo con sonido normal, promedio de 5 corridas, arXiv 2305.07828",
+  "evidencia": [
+   "E-9506"
+  ]
+ },
+ {
+  "id": "A-C19",
+  "valor": "990",
+  "unidad": "clips",
+  "mide": "clips normales del dominio fuente para entrenar (por seccion)",
+  "condiciones": "DCASE 2023 T2, arXiv 2305.07828",
+  "evidencia": [
+   "E-9505"
+  ]
+ },
+ {
+  "id": "A-C20",
+  "valor": "10",
+  "unidad": "clips",
+  "mide": "clips normales del dominio objetivo para entrenar (por seccion)",
+  "condiciones": "DCASE 2023 T2, arXiv 2305.07828",
+  "evidencia": [
+   "E-9505"
+  ]
+ },
+ {
+  "id": "A-C21",
+  "valor": "86",
+  "unidad": "envios",
+  "mide": "envios recibidos en el reto",
+  "condiciones": "DCASE 2023 T2, arXiv 2305.07828",
+  "evidencia": [
+   "E-9504"
+  ]
+ },
+ {
+  "id": "A-C22",
+  "valor": "23",
+  "unidad": "equipos",
+  "mide": "equipos participantes",
+  "condiciones": "DCASE 2023 T2, arXiv 2305.07828",
+  "evidencia": [
+   "E-9504"
+  ]
+ },
+ {
+  "id": "A-C23",
+  "valor": "0.7479",
+  "unidad": "adimensional",
+  "mide": "AUC fuente del autoencoder base",
+  "condiciones": "DCASE2022 T2 con requisito first-shot, maquina 'bearing', promedio de 3 semillas, arXiv 2303.00455",
+  "evidencia": [
+   "E-9510"
+  ]
+ },
+ {
+  "id": "A-C24",
+  "valor": "0.5621",
+  "unidad": "adimensional",
+  "mide": "AUC objetivo del autoencoder base",
+  "condiciones": "DCASE2022 T2 con requisito first-shot, maquina 'bearing', promedio de 3 semillas, arXiv 2303.00455",
+  "evidencia": [
+   "E-9510"
+  ]
+ },
+ {
+  "id": "A-C25",
+  "valor": "0.7195",
+  "unidad": "adimensional",
+  "mide": "AUC fuente de Mahalanobis selectivo",
+  "condiciones": "DCASE2022 T2 con requisito first-shot, maquina 'bearing', promedio de 3 semillas, arXiv 2303.00455",
+  "evidencia": [
+   "E-9510"
+  ]
+ },
+ {
+  "id": "A-C26",
+  "valor": "0.6280",
+  "unidad": "adimensional",
+  "mide": "AUC objetivo de Mahalanobis selectivo",
+  "condiciones": "DCASE2022 T2 con requisito first-shot, maquina 'bearing', promedio de 3 semillas, arXiv 2303.00455",
+  "evidencia": [
+   "E-9510"
+  ]
+ },
+ {
+  "id": "A-C27",
+  "valor": "0.7190",
+  "unidad": "adimensional",
+  "mide": "AUC fuente del primer lugar DCASE2022 (conjunto masivo)",
+  "condiciones": "DCASE2022 T2 con requisito first-shot, maquina 'bearing', promedio de 3 semillas, arXiv 2303.00455",
+  "evidencia": [
+   "E-9510"
+  ]
+ },
+ {
+  "id": "A-C28",
+  "valor": "0.6827",
+  "unidad": "adimensional",
+  "mide": "AUC objetivo del primer lugar DCASE2022 (conjunto masivo)",
+  "condiciones": "DCASE2022 T2 con requisito first-shot, maquina 'bearing', promedio de 3 semillas, arXiv 2303.00455",
+  "evidencia": [
+   "E-9510"
+  ]
+ },
+ {
+  "id": "A-C29",
+  "valor": "0.518",
+  "unidad": "adimensional",
+  "mide": "AUC del bosque de aislamiento",
+  "condiciones": "Sonido de cepilladora de madera en aserradero real, microfono ICP 377A21 a 20 kHz, evaluacion con 105 anomalias, arXiv 2501.04819",
+  "evidencia": [
+   "E-9515"
+  ]
+ },
+ {
+  "id": "A-C30",
+  "valor": "0.520",
+  "unidad": "adimensional",
+  "mide": "AUC de la linea base DCASE",
+  "condiciones": "Sonido de cepilladora de madera en aserradero real, microfono ICP 377A21 a 20 kHz, evaluacion con 105 anomalias, arXiv 2501.04819",
+  "evidencia": [
+   "E-9515"
+  ]
+ },
+ {
+  "id": "A-C31",
+  "valor": "0.683",
+  "unidad": "adimensional",
+  "mide": "AUC de la SVM de una clase",
+  "condiciones": "Sonido de cepilladora de madera en aserradero real, microfono ICP 377A21 a 20 kHz, evaluacion con 105 anomalias, arXiv 2501.04819",
+  "evidencia": [
+   "E-9515"
+  ]
+ },
+ {
+  "id": "A-C32",
+  "valor": "0.798",
+  "unidad": "adimensional",
+  "mide": "AUC del CAE publicado",
+  "condiciones": "Sonido de cepilladora de madera en aserradero real, microfono ICP 377A21 a 20 kHz, evaluacion con 105 anomalias, arXiv 2501.04819",
+  "evidencia": [
+   "E-9515"
+  ]
+ },
+ {
+  "id": "A-C33",
+  "valor": "0.846",
+  "unidad": "adimensional",
+  "mide": "AUC del Skip-CAE",
+  "condiciones": "Sonido de cepilladora de madera en aserradero real, microfono ICP 377A21 a 20 kHz, evaluacion con 105 anomalias, arXiv 2501.04819",
+  "evidencia": [
+   "E-9515"
+  ]
+ },
+ {
+  "id": "A-C34",
+  "valor": "0.875",
+  "unidad": "adimensional",
+  "mide": "AUC del Skip-CAE-Transformer",
+  "condiciones": "Sonido de cepilladora de madera en aserradero real, microfono ICP 377A21 a 20 kHz, evaluacion con 105 anomalias, arXiv 2501.04819",
+  "evidencia": [
+   "E-9515"
+  ]
+ },
+ {
+  "id": "A-C35",
+  "valor": "105",
+  "unidad": "anomalias",
+  "mide": "anomalias en el conjunto de evaluacion",
+  "condiciones": "cepilladora real, arXiv 2501.04819",
+  "evidencia": [
+   "E-9514"
+  ]
+ },
+ {
+  "id": "A-C36",
+  "valor": "7,562",
+  "unidad": "grabaciones",
+  "mide": "grabaciones de 10 s del conjunto",
+  "condiciones": "cepilladora real, arXiv 2501.04819",
+  "evidencia": [
+   "E-9514"
+  ]
+ },
+ {
+  "id": "A-C37",
+  "valor": "20",
+  "unidad": "kHz",
+  "mide": "frecuencia de muestreo del microfono",
+  "condiciones": "cepilladora real, arXiv 2501.04819",
+  "evidencia": [
+   "E-9514"
+  ]
+ },
+ {
+  "id": "A-C38",
+  "valor": "21",
+  "unidad": "h",
+  "mide": "duracion aproximada de las grabaciones",
+  "condiciones": "cepilladora real, arXiv 2501.04819",
+  "evidencia": [
+   "E-9514"
+  ]
+ },
+ {
+  "id": "A-C39",
+  "valor": "2.2",
+  "unidad": "puntos porcentuales",
+  "mide": "ventaja en exactitud de TF-CNN frente a PIResNet con senal limpia",
+  "condiciones": "Banco KAIST, velocidad variable, 5-fold, TF-CNN arXiv 2401.01172",
+  "evidencia": [
+   "E-9518"
+  ]
+ },
+ {
+  "id": "A-C40",
+  "valor": "1.6",
+  "unidad": "puntos porcentuales",
+  "mide": "ventaja en exactitud de TF-CNN frente a T-CNN con senal limpia",
+  "condiciones": "Banco KAIST, velocidad variable, 5-fold, TF-CNN arXiv 2401.01172",
+  "evidencia": [
+   "E-9518"
+  ]
+ },
+ {
+  "id": "A-C41",
+  "valor": "19",
+  "unidad": "%",
+  "mide": "ventaja aproximada frente a PIResNet con ruido de -5 dB",
+  "condiciones": "Banco KAIST, velocidad variable, 5-fold, TF-CNN arXiv 2401.01172",
+  "evidencia": [
+   "E-9518"
+  ]
+ },
+ {
+  "id": "A-C42",
+  "valor": "15",
+  "unidad": "%",
+  "mide": "ventaja aproximada frente a T-CNN con ruido de -5 dB",
+  "condiciones": "Banco KAIST, velocidad variable, 5-fold, TF-CNN arXiv 2401.01172",
+  "evidencia": [
+   "E-9518"
+  ]
+ },
+ {
+  "id": "A-C43",
+  "valor": "1,200",
+  "unidad": "RPM",
+  "mide": "velocidad por debajo de la cual se concentran los errores de clasificacion",
+  "condiciones": "Banco KAIST, velocidad variable, 5-fold, TF-CNN arXiv 2401.01172",
+  "evidencia": [
+   "E-9519"
+  ]
+ },
+ {
+  "id": "A-C44",
+  "valor": "70",
+  "unidad": "%",
+  "mide": "parte de los errores de la clase normal que ocurren por debajo de 1,200 RPM",
+  "condiciones": "Banco KAIST, velocidad variable, 5-fold, TF-CNN arXiv 2401.01172",
+  "evidencia": [
+   "E-9519"
+  ]
+ },
+ {
+  "id": "A-C45",
+  "valor": "25.6",
+  "unidad": "kHz",
+  "mide": "frecuencia de muestreo de los acelerometros del banco",
+  "condiciones": "Banco KAIST, velocidad variable, 5-fold, TF-CNN arXiv 2401.01172",
+  "evidencia": [
+   "E-9517"
+  ]
+ },
+ {
+  "id": "A-C46",
+  "valor": "35",
+  "unidad": "min",
+  "mide": "datos por clase del banco",
+  "condiciones": "Banco KAIST, velocidad variable, 5-fold, TF-CNN arXiv 2401.01172",
+  "evidencia": [
+   "E-9517"
+  ]
+ },
+ {
+  "id": "A-C47",
+  "valor": "98.9",
+  "unidad": "%",
+  "mide": "exactitud de la CNN optimizada",
+  "condiciones": "Banco CWRU, 10 clases, 1797 rpm, 12 kHz, CNN en STM32H743VI, arXiv 2304.09100",
+  "evidencia": [
+   "E-9520"
+  ]
+ },
+ {
+  "id": "A-C48",
+  "valor": "19",
+  "unidad": "ms",
+  "mide": "tiempo de cada diagnostico en el microcontrolador",
+  "condiciones": "Banco CWRU, 10 clases, 1797 rpm, 12 kHz, CNN en STM32H743VI, arXiv 2304.09100",
+  "evidencia": [
+   "E-9520"
+  ]
+ },
+ {
+  "id": "A-C49",
+  "valor": "142.15",
+  "unidad": "KB",
+  "mide": "memoria FLASH del modelo",
+  "condiciones": "Banco CWRU, 10 clases, 1797 rpm, 12 kHz, CNN en STM32H743VI, arXiv 2304.09100",
+  "evidencia": [
+   "E-9521"
+  ]
+ },
+ {
+  "id": "A-C50",
+  "valor": "11.32",
+  "unidad": "KB",
+  "mide": "memoria RAM del modelo",
+  "condiciones": "Banco CWRU, 10 clases, 1797 rpm, 12 kHz, CNN en STM32H743VI, arXiv 2304.09100",
+  "evidencia": [
+   "E-9521"
+  ]
+ },
+ {
+  "id": "A-C51",
+  "valor": "36,390",
+  "unidad": "parametros",
+  "mide": "parametros del modelo optimizado",
+  "condiciones": "Banco CWRU, 10 clases, 1797 rpm, 12 kHz, CNN en STM32H743VI, arXiv 2304.09100",
+  "evidencia": [
+   "E-9521"
+  ]
+ },
+ {
+  "id": "A-C52",
+  "valor": "0.9890",
+  "unidad": "adimensional",
+  "mide": "mejor exactitud del modelo optimizado",
+  "condiciones": "Banco CWRU, 10 clases, 1797 rpm, 12 kHz, CNN en STM32H743VI, arXiv 2304.09100",
+  "evidencia": [
+   "E-9521"
+  ]
+ },
+ {
+  "id": "A-C53",
+  "valor": "13.9",
+  "unidad": "%",
+  "mide": "reduccion del error de ciclo de vida (5 vecinos) en rodamientos por preentrenamiento multidominio",
+  "condiciones": "Preentrenamiento CORD con XJTU-SY y otros conjuntos, RUL normalizada, arXiv 2609.39784",
+  "evidencia": [
+   "E-9523"
+  ]
+ },
+ {
+  "id": "A-C54",
+  "valor": ".1463",
+  "unidad": "RMSE (RUL normalizada)",
+  "mide": "RMSE desde cero en turbofan U11 con 10 % de etiquetas (no es rodamiento)",
+  "condiciones": "N-CMAPSS U11, 400 actualizaciones, arXiv 2609.39784",
+  "evidencia": [
+   "E-9525"
+  ]
+ },
+ {
+  "id": "A-C55",
+  "valor": ".1374",
+  "unidad": "RMSE (RUL normalizada)",
+  "mide": "RMSE preentrenado en turbofan U11 con 10 % de etiquetas (no es rodamiento)",
+  "condiciones": "N-CMAPSS U11, 400 actualizaciones, arXiv 2609.39784",
+  "evidencia": [
+   "E-9525"
+  ]
+ },
+ {
+  "id": "B-C1",
+  "valor": "1",
+  "unidad": "",
+  "mide": "valor de kappa de la familia APGW que corresponde a la distribucion Weibull",
+  "condiciones": "Articulo estadistico de metodos (Burke, Jones y Noufaily, arXiv:1901.03212), Tabla 2; sin datos de ningun equipo",
+  "evidencia": [
+   "E-9603"
+  ]
+ },
+ {
+  "id": "B-C2",
+  "valor": "377",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B01",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B01",
+  "evidencia": [
+   "E-9605"
+  ]
+ },
+ {
+  "id": "B-C3",
+  "valor": "1116",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B02",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B02",
+  "evidencia": [
+   "E-9605"
+  ]
+ },
+ {
+  "id": "B-C4",
+  "valor": "614",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B03",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B03",
+  "evidencia": [
+   "E-9605"
+  ]
+ },
+ {
+  "id": "B-C5",
+  "valor": "1114",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B04",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B04",
+  "evidencia": [
+   "E-9605"
+  ]
+ },
+ {
+  "id": "B-C6",
+  "valor": "572",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B05",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B05",
+  "evidencia": [
+   "E-9606"
+  ]
+ },
+ {
+  "id": "B-C7",
+  "valor": "12965",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B06",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B06",
+  "evidencia": [
+   "E-9606"
+  ]
+ },
+ {
+  "id": "B-C8",
+  "valor": "6393",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B07",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B07",
+  "evidencia": [
+   "E-9606"
+  ]
+ },
+ {
+  "id": "B-C9",
+  "valor": "1827",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B08",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B08",
+  "evidencia": [
+   "E-9606"
+  ]
+ },
+ {
+  "id": "B-C10",
+  "valor": "1813",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B09",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B09",
+  "evidencia": [
+   "E-9607"
+  ]
+ },
+ {
+  "id": "B-C11",
+  "valor": "3224",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B10",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B10",
+  "evidencia": [
+   "E-9607"
+  ]
+ },
+ {
+  "id": "B-C12",
+  "valor": "1953",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B11",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B11",
+  "evidencia": [
+   "E-9607"
+  ]
+ },
+ {
+  "id": "B-C13",
+  "valor": "767",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B12",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B12",
+  "evidencia": [
+   "E-9607"
+  ]
+ },
+ {
+  "id": "B-C14",
+  "valor": "19417",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B13",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B13",
+  "evidencia": [
+   "E-9608"
+  ]
+ },
+ {
+  "id": "B-C15",
+  "valor": "12317",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B14",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B14",
+  "evidencia": [
+   "E-9608"
+  ]
+ },
+ {
+  "id": "B-C16",
+  "valor": "22567",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B15",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B15",
+  "evidencia": [
+   "E-9608"
+  ]
+ },
+ {
+  "id": "B-C17",
+  "valor": "5891",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B16",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B16",
+  "evidencia": [
+   "E-9609"
+  ]
+ },
+ {
+  "id": "B-C18",
+  "valor": "2733",
+  "unidad": "registros",
+  "mide": "registros de vibracion (campo records de meta.json) del rodamiento B17",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); rodamiento B17",
+  "evidencia": [
+   "E-9609"
+  ]
+ },
+ {
+  "id": "B-C19",
+  "valor": "128000",
+  "unidad": "Hz",
+  "mide": "frecuencia de muestreo de la vibracion, rodamiento B01",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); meta.json de B01",
+  "evidencia": [
+   "E-9611"
+  ]
+ },
+ {
+  "id": "B-C20",
+  "valor": "204800",
+  "unidad": "muestras",
+  "mide": "muestras por registro de vibracion, rodamiento B01",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); meta.json de B01",
+  "evidencia": [
+   "E-9611"
+  ]
+ },
+ {
+  "id": "B-C21",
+  "valor": "10.0",
+  "unidad": "g/V",
+  "mide": "factor de conversion g por voltio (g_per_volt), rodamiento B01",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); meta.json de B01",
+  "evidencia": [
+   "E-9611"
+  ]
+ },
+ {
+  "id": "B-C22",
+  "valor": "2500",
+  "unidad": "N",
+  "mide": "carga estatica fijada (setStatLoad) en la primera fila del log de B01 y B06",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); primera fila del log de condiciones",
+  "evidencia": [
+   "E-9610"
+  ]
+ },
+ {
+  "id": "B-C23",
+  "valor": "750",
+  "unidad": "rpm",
+  "mide": "velocidad fijada (setSpeed) en la primera fila del log de B01 y B06",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); primera fila del log de condiciones",
+  "evidencia": [
+   "E-9610"
+  ]
+ },
+ {
+  "id": "B-C24",
+  "valor": "80",
+  "unidad": "ejemplos",
+  "mide": "ejemplos de la particion test1",
+  "condiciones": "Subconjunto en Hugging Face (alidi) del conjunto run-to-failure de UNSW; ensayos 1 y 3, aceleracion horizontal; defecto sembrado tipo BPFO",
+  "evidencia": [
+   "E-9612"
+  ]
+ },
+ {
+  "id": "B-C25",
+  "valor": "79",
+  "unidad": "ejemplos",
+  "mide": "ejemplos de la particion test3",
+  "condiciones": "Subconjunto en Hugging Face (alidi) del conjunto run-to-failure de UNSW; ensayos 1 y 3, aceleracion horizontal; defecto sembrado tipo BPFO",
+  "evidencia": [
+   "E-9612"
+  ]
+ },
+ {
+  "id": "B-C26",
+  "valor": "51200",
+  "unidad": "Hz",
+  "mide": "frecuencia de muestreo",
+  "condiciones": "Subconjunto en Hugging Face (alidi) del conjunto run-to-failure de UNSW; ensayos 1 y 3, aceleracion horizontal; defecto sembrado tipo BPFO",
+  "evidencia": [
+   "E-9612"
+  ]
+ },
+ {
+  "id": "B-C27",
+  "valor": "6.0",
+  "unidad": "Hz",
+  "mide": "velocidad de giro",
+  "condiciones": "Subconjunto en Hugging Face (alidi) del conjunto run-to-failure de UNSW; ensayos 1 y 3, aceleracion horizontal; defecto sembrado tipo BPFO",
+  "evidencia": [
+   "E-9612"
+  ]
+ },
+ {
+  "id": "B-C28",
+  "valor": "10.5",
+  "unidad": "kN",
+  "mide": "carga radial",
+  "condiciones": "Subconjunto en Hugging Face (alidi) del conjunto run-to-failure de UNSW; ensayos 1 y 3, aceleracion horizontal; defecto sembrado tipo BPFO",
+  "evidencia": [
+   "E-9612"
+  ]
+ },
+ {
+  "id": "B-C29",
+  "valor": "1.0",
+  "unidad": "mm",
+  "mide": "tamano de defecto (uno de los dos ensayos)",
+  "condiciones": "Subconjunto en Hugging Face (alidi) del conjunto run-to-failure de UNSW; ensayos 1 y 3, aceleracion horizontal; defecto sembrado tipo BPFO",
+  "evidencia": [
+   "E-9612"
+  ]
+ },
+ {
+  "id": "B-C30",
+  "valor": "0.5",
+  "unidad": "mm",
+  "mide": "tamano de defecto (el otro ensayo)",
+  "condiciones": "Subconjunto en Hugging Face (alidi) del conjunto run-to-failure de UNSW; ensayos 1 y 3, aceleracion horizontal; defecto sembrado tipo BPFO",
+  "evidencia": [
+   "E-9612"
+  ]
+ },
+ {
+  "id": "B-C31",
+  "valor": "282",
+  "unidad": "corridas",
+  "mide": "corridas de ensayo del conjunto",
+  "condiciones": "Conjunto de diagnostico de motor asincrono de 2.2 kW con fallas sembradas (Chen et al., arXiv:2601.02278); no contiene tiempos hasta la falla",
+  "evidencia": [
+   "E-9613"
+  ]
+ },
+ {
+  "id": "B-C32",
+  "valor": "90",
+  "unidad": "s",
+  "mide": "duracion de cada corrida",
+  "condiciones": "Conjunto de diagnostico de motor asincrono de 2.2 kW con fallas sembradas (Chen et al., arXiv:2601.02278); no contiene tiempos hasta la falla",
+  "evidencia": [
+   "E-9613"
+  ]
+ },
+ {
+  "id": "B-C33",
+  "valor": "24",
+  "unidad": "tipos",
+  "mide": "tipos de falla del conjunto",
+  "condiciones": "Conjunto de diagnostico de motor asincrono de 2.2 kW con fallas sembradas (Chen et al., arXiv:2601.02278); no contiene tiempos hasta la falla",
+  "evidencia": [
+   "E-9613"
+  ]
+ },
+ {
+  "id": "B-C34",
+  "valor": "12.8",
+  "unidad": "kHz",
+  "mide": "frecuencia de muestreo",
+  "condiciones": "Conjunto de diagnostico de motor asincrono de 2.2 kW con fallas sembradas (Chen et al., arXiv:2601.02278); no contiene tiempos hasta la falla",
+  "evidencia": [
+   "E-9613"
+  ]
+ },
+ {
+  "id": "B-C35",
+  "valor": "2.2",
+  "unidad": "kW",
+  "mide": "potencia del motor del banco",
+  "condiciones": "Conjunto de diagnostico de motor asincrono de 2.2 kW con fallas sembradas (Chen et al., arXiv:2601.02278); no contiene tiempos hasta la falla",
+  "evidencia": [
+   "E-9613"
   ]
  }
 ]

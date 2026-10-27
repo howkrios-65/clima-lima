@@ -1,0 +1,108 @@
+[
+ {
+  "tecnica_o_sensor": "Microfono ICP (sensado acustico) con autoencoder convolucional con conexiones de salto y transformador, entrenado solo con sonido normal",
+  "que_mide": "Sonido aereo de una cepilladora de madera en un aserradero; anomalias de tablero roto, atascado o desigual",
+  "resultado_publicado": "AUC 0.846 (Skip-CAE) y 0.875 (Skip-CAE-Transformer) frente a 0.518 del bosque de aislamiento, 0.520 de la linea base DCASE y 0.683 de la SVM de una clase",
+  "condiciones": "Aserradero real, 7,562 grabaciones de 10 s a 20 kHz, 105 anomalias en la evaluacion",
+  "limites": "No es rodamiento ni faja transportadora; un solo conjunto de dos dias; alguna anomalia puede no estar etiquetada; sin intervalos",
+  "evidencia": [
+   "E-9512",
+   "E-9514",
+   "E-9515",
+   "E-9516"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Lista de sensores usados para monitorear maquinaria de madera: potencia, acelerometros, desplazamiento, temperatura, emision acustica, ultrasonido aereo y microfonos",
+  "que_mide": "Condicion de equipo de procesamiento de madera (el texto enumera los medios; no los compara)",
+  "resultado_publicado": "Sin cifras. Los autores senalan que los microfonos son menos invasivos y que el ruido de fabrica puede enmascarar sonidos anormales",
+  "condiciones": "Antecedentes de un articulo sobre cepilladoras de madera",
+  "limites": "El texto no recomienda un sensor para chumaceras ni da resultados por sensor; es una enumeracion de antecedentes",
+  "evidencia": [
+   "E-9513"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Deteccion de anomalias sonoras no supervisada: autoencoder de espectrograma log-mel (con distancia de Mahalanobis selectiva) entrenado solo con sonido normal",
+  "que_mide": "Sonido de maquinas de laboratorio mezclado con ruido de fabrica, incluida una maquina 'bearing'",
+  "resultado_publicado": "Maquina bearing: AUC 65.92 % fuente y 55.75 % objetivo (autoencoder simple); 65.16 % y 55.28 % (Mahalanobis selectivo). En DCASE2022: AUC 0.7479 y 0.5621 (autoencoder base), 0.7195 y 0.6280 (Mahalanobis selectivo)",
+  "condiciones": "990 clips normales de dominio fuente y 10 de dominio objetivo para entrenar, sin clips anomalos; 16 kHz",
+  "limites": "Banco de laboratorio con ruido anadido; AUC cercano a 50 % es casi azar; no es chumacera de faja",
+  "evidencia": [
+   "E-9505",
+   "E-9506",
+   "E-9509",
+   "E-9510",
+   "E-9511"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Sobremuestreo (SMOTE), Mixup, clasificadores de atributos con modelos preentrenados y kNN en deteccion de anomalias sonoras",
+  "que_mide": "Mejora de la deteccion con pocas muestras del dominio objetivo",
+  "resultado_publicado": "Segun el analisis de 86 envios de 23 equipos, estas tecnicas fueron las claves para superar las lineas base; el texto no da la magnitud por tecnica",
+  "condiciones": "DCASE 2023 T2, maquinas nuevas, un solo grupo por tipo de maquina",
+  "limites": "Sin cifras por tecnica; sonido de laboratorio; en el dominio objetivo el AUC bajo en la mayoria de equipos",
+  "evidencia": [
+   "E-9504",
+   "E-9507",
+   "E-9508"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Ampliacion de datos de vibracion con un modelo de difusion (TSDM) para diagnostico con pocas muestras de falla",
+  "que_mide": "Exactitud de clasificacion de fallas de rodamiento con 50 muestras por condicion",
+  "resultado_publicado": "CWRU: CNN 78.665 % a 94.033 %; RNN-LSTM 56.262 % a 88.642 %; TST 60.557 % a 72.192 %. El resumen cita mejoras maximas de 32.380 %, 18.355 % y 9.298 % en tres bancos",
+  "condiciones": "CWRU, 200 muestras de entrenamiento y 1200 de prueba, epoca 100, 50 repeticiones",
+  "limites": "Banco de laboratorio, clasificacion y no RUL; la parte de XJTU y el tercer banco no se leyeron (la conversion se corta); el resumen y la Seccion 5.1 deben cotejarse",
+  "evidencia": [
+   "E-9501",
+   "E-9502",
+   "E-9503"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Red convolucional sobre distribucion cuadratica tiempo-frecuencia (TF-CNN) con dos acelerometros",
+  "que_mide": "Vibracion de rodamiento con velocidad variable y ruido anadido (5, 0 y -5 dB)",
+  "resultado_publicado": "Ventaja sobre PIResNet y T-CNN de 2.2 y 1.6 puntos de exactitud con senal limpia y de cerca de 19 % y 15 % con -5 dB; errores concentrados por debajo de 1,200 RPM (70 % de los de la clase normal)",
+  "condiciones": "Banco KAIST, 25.6 kHz, 35 minutos por clase, 5-fold",
+  "limites": "Clasificacion en banco; la Tabla I no se pudo leer (SIN DATOS PARA ARMARLO); no se estudian velocidades de polea de faja",
+  "evidencia": [
+   "E-9517",
+   "E-9518",
+   "E-9519"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "CNN ligera ejecutada en microcontrolador STM32H743VI (diagnostico en el borde)",
+  "que_mide": "Clasificacion de 10 estados de falla de rodamiento en CWRU",
+  "resultado_publicado": "Exactitud 98.9 %; 19 ms por diagnostico; 142.15 KB de FLASH y 11.32 KB de RAM; 36,390 parametros",
+  "condiciones": "CWRU, 1797 rpm, 12 kHz, datos enviados por puerto serie desde un PC, pantalla TFT-LCD",
+  "limites": "Banco con ruido bajo; no hay sensor ni radio inalambrica en el ensayo; no es chumacera de faja",
+  "evidencia": [
+   "E-9520",
+   "E-9521"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Fusion de vibracion, temperatura y ruido con sensores IoT de bajo costo y aprendizaje automatico de bajo costo computacional",
+  "que_mide": "Anomalias en motores de induccion (bombas, compresores, ventiladores)",
+  "resultado_publicado": "SIN DATOS PARA ARMARLO: solo se leyo el resumen y no trae cifras",
+  "condiciones": "Datos propios de motores de induccion; FFT, wavelet y binning como preprocesamiento (segun el resumen)",
+  "limites": "Texto completo no disponible en el lector; motores, no chumaceras de faja",
+  "evidencia": [
+   "E-9522"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Preentrenamiento multidominio de representaciones de degradacion (CORD) con adaptacion congelada o ajustada",
+  "que_mide": "RUL normalizada de rodamientos (XJTU-SY), baterias y herramientas de corte con 10 %, 20 % y 100 % de etiquetas",
+  "resultado_publicado": "Error de ciclo de vida de rodamientos 13.9 % menor que con preentrenamiento de un solo dominio; el beneficio es mayor con pocas etiquetas. RMSE de rodamientos: SIN DATOS PARA ARMARLO (tablas en imagen)",
+  "condiciones": "19 conjuntos de preentrenamiento, cinco semillas",
+  "limites": "No es dato de campo; las tablas de rodamientos salieron como imagen",
+  "evidencia": [
+   "E-9523",
+   "E-9524",
+   "E-9525"
+  ]
+ }
+]

@@ -1,0 +1,1445 @@
+{
+ "fuente": "reliabilit_ia_ml_visual_lab_v2_ampliado.html (Reliabilit-IA · ML Visual Lab v2)",
+ "estatus": "material aportado por la persona (pedagógico); no es evidencia científica",
+ "conteo": {
+  "total": 29,
+  "por_sesion": {
+   "Sesión 1 · Clasificación de Fallas": 15,
+   "Sesión 2 · Detección de Anomalías": 14
+  }
+ },
+ "modelos": [
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "logreg",
+   "modelo": "Regresión Logística",
+   "resumen": "Baseline probabilístico e interpretable",
+   "que_hace": "Baseline probabilístico e interpretable",
+   "cuando_usarlo": "Buena primera opción cuando necesitas explicar el efecto de cada variable y obtener probabilidades calibrables.",
+   "datos": {
+    "Datos": "Escalados ayudan",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Baja",
+    "Salida": "Probabilidad"
+   },
+   "metrica": "Precision, Recall de falla, F1, PR-AUC, ROC-AUC, calibración.",
+   "evitar_si": "Evítala como modelo único si la relación entre variables y falla es fuertemente no lineal y no haces ingeniería de características.",
+   "familia": "Supervisado / Tabular / Interpretable",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "tabular",
+    "interpret",
+    "fast"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 5,
+    "no_lineal": 1,
+    "velocidad": 5,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Threshold",
+     "min": 0.3,
+     "max": 0.8,
+     "paso": 0.05,
+     "valor_inicial": 0.5
+    },
+    {
+     "nombre": "Regularización",
+     "min": 0.1,
+     "max": 3,
+     "paso": 0.1,
+     "valor_inicial": 1
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "lda",
+   "modelo": "LDA / QDA",
+   "resumen": "Fronteras basadas en distribuciones",
+   "que_hace": "Fronteras basadas en distribuciones",
+   "cuando_usarlo": "Útiles cuando las clases tienen estructuras aproximadamente gaussianas; LDA comparte covarianza y QDA permite una por clase.",
+   "datos": {
+    "Datos": "Tabulares",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Baja-media",
+    "Salida": "Clase/probabilidad"
+   },
+   "metrica": "Recall, F1, PR-AUC y matriz de confusión por modo de falla.",
+   "evitar_si": "Pierden robustez con supuestos distributivos muy incumplidos o demasiadas variables respecto al número de muestras.",
+   "familia": "Supervisado / Estadístico / Interpretable",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "tabular",
+    "interpret"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 4,
+    "no_lineal": 2,
+    "velocidad": 5,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Curvatura QDA",
+     "min": 0,
+     "max": 1,
+     "paso": 0.1,
+     "valor_inicial": 0.5
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "nb",
+   "modelo": "Naive Bayes",
+   "resumen": "Probabilidades con independencia condicional",
+   "que_hace": "Probabilidades con independencia condicional",
+   "cuando_usarlo": "Buen baseline cuando hay muchas variables y necesitas entrenamiento/inferencia muy rápidos.",
+   "datos": {
+    "Datos": "Tabulares",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Muy baja",
+    "Salida": "Probabilidad"
+   },
+   "metrica": "Recall, Precision, F1 y calibración de probabilidades.",
+   "evitar_si": "Puede degradarse si las variables están fuertemente correlacionadas y el supuesto de independencia es pobre.",
+   "familia": "Supervisado / Probabilístico / Muy rápido",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "tabular",
+    "fast"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 4,
+    "no_lineal": 1,
+    "velocidad": 5,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Suavizado",
+     "min": 0.1,
+     "max": 3,
+     "paso": 0.1,
+     "valor_inicial": 1
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "knn",
+   "modelo": "K-Nearest Neighbors",
+   "resumen": "Predicción por vecinos similares",
+   "que_hace": "Predicción por vecinos similares",
+   "cuando_usarlo": "Didáctico y útil cuando equipos con estados similares tienden a compartir el mismo modo de falla.",
+   "datos": {
+    "Datos": "Escalado crítico",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Inferencia alta",
+    "Salida": "Voto"
+   },
+   "metrica": "Recall, F1 y análisis del desempeño por K.",
+   "evitar_si": "Sufre en alta dimensionalidad, grandes volúmenes y variables sin escalar.",
+   "familia": "Supervisado / Distancias / No paramétrico",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "tabular"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 4,
+    "no_lineal": 3,
+    "velocidad": 2,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "K vecinos",
+     "min": 1,
+     "max": 21,
+     "paso": 2,
+     "valor_inicial": 5
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "tree",
+   "modelo": "Árbol de Decisión",
+   "resumen": "Reglas if/else fáciles de explicar",
+   "que_hace": "Reglas if/else fáciles de explicar",
+   "cuando_usarlo": "Excelente para talleres y reglas operacionales; permite explicar umbrales de temperatura, vibración o carga.",
+   "datos": {
+    "Datos": "No exige escalado",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Baja",
+    "Salida": "Reglas"
+   },
+   "metrica": "Recall, F1, PR-AUC y profundidad/complejidad del árbol.",
+   "evitar_si": "Un solo árbol puede sobreajustar y ser inestable ante pequeños cambios del dataset.",
+   "familia": "Supervisado / Reglas / Interpretable",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "tabular",
+    "interpret"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 5,
+    "no_lineal": 3,
+    "velocidad": 5,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Profundidad",
+     "min": 1,
+     "max": 7,
+     "paso": 1,
+     "valor_inicial": 3
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "rf",
+   "modelo": "Random Forest",
+   "resumen": "Muchos árboles votando",
+   "que_hace": "Muchos árboles votando",
+   "cuando_usarlo": "Muy buen modelo general para datos tabulares de mantenimiento, relaciones no lineales e interacciones.",
+   "datos": {
+    "Datos": "Tabulares",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Media",
+    "Salida": "Voto/prob."
+   },
+   "metrica": "Recall, F1, PR-AUC, OOB score, importancia/permutación de variables.",
+   "evitar_si": "Menos interpretable que un árbol; modelos muy grandes consumen memoria y pueden ocultar drift.",
+   "familia": "Supervisado / Bagging / Robusto",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "tabular",
+    "performance"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 3,
+    "no_lineal": 4,
+    "velocidad": 3,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Árboles visibles",
+     "min": 3,
+     "max": 19,
+     "paso": 2,
+     "valor_inicial": 9
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "extra",
+   "modelo": "Extra Trees",
+   "resumen": "Árboles aún más aleatorizados",
+   "que_hace": "Árboles aún más aleatorizados",
+   "cuando_usarlo": "Alternativa potente a Random Forest cuando quieres más aleatoriedad y entrenamiento rápido en datos tabulares.",
+   "datos": {
+    "Datos": "Tabulares",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Media",
+    "Salida": "Ensamble"
+   },
+   "metrica": "Recall, F1, PR-AUC e importancia por permutación.",
+   "evitar_si": "Puede aumentar sesgo en algunos problemas y sigue siendo menos interpretable que modelos simples.",
+   "familia": "Supervisado / Ensamble / Muy aleatorio",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "tabular",
+    "performance"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 3,
+    "no_lineal": 4,
+    "velocidad": 4,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Árboles visibles",
+     "min": 3,
+     "max": 19,
+     "paso": 2,
+     "valor_inicial": 11
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "svm",
+   "modelo": "SVM",
+   "resumen": "Margen máximo; kernels opcionales",
+   "que_hace": "Margen máximo; kernels opcionales",
+   "cuando_usarlo": "Útil con datasets medianos, fronteras complejas y muchas variables; kernel RBF puede capturar no linealidad.",
+   "datos": {
+    "Datos": "Escalado crítico",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Media-alta",
+    "Salida": "Margen"
+   },
+   "metrica": "Recall, F1, PR-AUC; si necesitas probabilidades, revisar calibración.",
+   "evitar_si": "Puede ser costoso con datasets muy grandes y requiere escalado/ajuste cuidadoso de C y gamma.",
+   "familia": "Supervisado / Margen / Kernel",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "tabular",
+    "highdim"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 2,
+    "no_lineal": 4,
+    "velocidad": 2,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Margen",
+     "min": 18,
+     "max": 70,
+     "paso": 4,
+     "valor_inicial": 40
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "gb",
+   "modelo": "Gradient Boosting",
+   "resumen": "Corrige errores secuencialmente",
+   "que_hace": "Corrige errores secuencialmente",
+   "cuando_usarlo": "Muy competitivo en datos tabulares cuando las relaciones son no lineales y buscas alta capacidad predictiva.",
+   "datos": {
+    "Datos": "Tabulares",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Media",
+    "Salida": "Score/prob."
+   },
+   "metrica": "PR-AUC, Recall, F1, curvas de aprendizaje y SHAP/permutación.",
+   "evitar_si": "Puede sobreajustar sin regularización; requiere tuning más cuidadoso que modelos baseline.",
+   "familia": "Supervisado / Boosting / No lineal",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "tabular",
+    "performance"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 2,
+    "no_lineal": 5,
+    "velocidad": 3,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Rondas",
+     "min": 2,
+     "max": 12,
+     "paso": 1,
+     "valor_inicial": 6
+    },
+    {
+     "nombre": "Learning rate",
+     "min": 0.05,
+     "max": 0.4,
+     "paso": 0.05,
+     "valor_inicial": 0.1
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "xgb",
+   "modelo": "XGBoost",
+   "resumen": "Boosting regularizado y optimizado",
+   "que_hace": "Boosting regularizado y optimizado",
+   "cuando_usarlo": "Frecuentemente fuerte en mantenimiento tabular con variables heterogéneas, missing values controlados e interacciones.",
+   "datos": {
+    "Datos": "Tabulares",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Media-alta",
+    "Salida": "Score/prob."
+   },
+   "metrica": "PR-AUC, Recall, F1, coste esperado y explicabilidad SHAP.",
+   "evitar_si": "No asumas que siempre ganará: requiere tuning, validación temporal y control de leakage.",
+   "familia": "Supervisado / Boosting / Tabular",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "tabular",
+    "performance",
+    "highdim"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 2,
+    "no_lineal": 5,
+    "velocidad": 3,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Rondas",
+     "min": 2,
+     "max": 14,
+     "paso": 1,
+     "valor_inicial": 7
+    },
+    {
+     "nombre": "Regularización",
+     "min": 0.1,
+     "max": 3,
+     "paso": 0.1,
+     "valor_inicial": 1
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "lightgbm",
+   "modelo": "LightGBM",
+   "resumen": "Boosting eficiente con árboles por hojas",
+   "que_hace": "Boosting eficiente con árboles por hojas",
+   "cuando_usarlo": "Conveniente cuando hay muchas filas/variables y necesitas acelerar entrenamiento sin renunciar a alta capacidad.",
+   "datos": {
+    "Datos": "Tabulares grandes",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Media-alta",
+    "Salida": "Score/prob."
+   },
+   "metrica": "PR-AUC, Recall, F1, coste y estabilidad entre folds temporales.",
+   "evitar_si": "Con datasets pequeños puede sobreajustar si no controlas hojas, profundidad y min_data_in_leaf.",
+   "familia": "Supervisado / Boosting / Escalable",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "tabular",
+    "performance",
+    "highdim",
+    "fast"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 2,
+    "no_lineal": 5,
+    "velocidad": 5,
+    "pocos_datos": 2
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Hojas visuales",
+     "min": 3,
+     "max": 15,
+     "paso": 2,
+     "valor_inicial": 7
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "catboost",
+   "modelo": "CatBoost",
+   "resumen": "Boosting con categóricas bien manejadas",
+   "que_hace": "Boosting con categóricas bien manejadas",
+   "cuando_usarlo": "Interesante si mezclas variables numéricas con categóricas como familia de equipo, fabricante, turno o tipo de operación.",
+   "datos": {
+    "Datos": "Numéricas+categóricas",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Media-alta",
+    "Salida": "Score/prob."
+   },
+   "metrica": "PR-AUC, Recall, F1, coste por falsa negativa y SHAP.",
+   "evitar_si": "Puede ser excesivo si todas las variables son simples y un modelo más interpretable cumple el objetivo.",
+   "familia": "Supervisado / Boosting / Categóricas",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "tabular",
+    "performance"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 2,
+    "no_lineal": 5,
+    "velocidad": 3,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Iteraciones visuales",
+     "min": 2,
+     "max": 12,
+     "paso": 1,
+     "valor_inicial": 6
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "mlp",
+   "modelo": "Red Neuronal MLP",
+   "resumen": "Capas densas para relaciones complejas",
+   "que_hace": "Capas densas para relaciones complejas",
+   "cuando_usarlo": "Puede ser útil con suficientes datos y relaciones complejas entre variables de condición.",
+   "datos": {
+    "Datos": "Escalado importante",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Alta",
+    "Salida": "Probabilidades"
+   },
+   "metrica": "PR-AUC, Recall, F1, calibración, curvas train/validation.",
+   "evitar_si": "Con pocos datos tabulares suele ser más difícil de ajustar y explicar que ensembles de árboles.",
+   "familia": "Supervisado / Deep Learning / No lineal",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "tabular",
+    "performance"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 1,
+    "no_lineal": 5,
+    "velocidad": 2,
+    "pocos_datos": 2
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Neuronas ocultas",
+     "min": 3,
+     "max": 12,
+     "paso": 1,
+     "valor_inicial": 7
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "cnn1d",
+   "modelo": "CNN 1D",
+   "resumen": "Patrones locales en señales de sensores",
+   "que_hace": "Patrones locales en señales de sensores",
+   "cuando_usarlo": "Adecuada para vibración, corriente o acústica cuando la forma local de la señal contiene firmas de falla.",
+   "datos": {
+    "Datos": "Ventanas de señal",
+    "Fallas": "Etiquetas necesarias",
+    "Complejidad": "Alta",
+    "Salida": "Clase"
+   },
+   "metrica": "Recall por modo de falla, F1 macro, PR-AUC, matriz de confusión por equipo.",
+   "evitar_si": "Necesita ventanas bien construidas, suficientes ejemplos y cuidado con leakage entre ventanas del mismo evento.",
+   "familia": "Supervisado / Series temporales / Deep Learning",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "timeseries",
+    "performance",
+    "sequence"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 1,
+    "no_lineal": 5,
+    "velocidad": 2,
+    "pocos_datos": 1
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Kernel visual",
+     "min": 3,
+     "max": 15,
+     "paso": 2,
+     "valor_inicial": 5
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 1 · Clasificación de Fallas",
+   "id": "lstm",
+   "modelo": "LSTM / GRU",
+   "resumen": "Dependencias temporales largas",
+   "que_hace": "Dependencias temporales largas",
+   "cuando_usarlo": "Útil si la evolución temporal previa a la falla importa más que una fotografía instantánea del equipo.",
+   "datos": {
+    "Datos": "Secuencias",
+    "Fallas": "Etiquetas temporales",
+    "Complejidad": "Alta",
+    "Salida": "Clase/secuencia"
+   },
+   "metrica": "Recall por evento, lead time, F1, PR-AUC y evaluación temporal.",
+   "evitar_si": "Más costosa y sensible al diseño de ventanas; no siempre supera a features temporales + boosting.",
+   "familia": "Supervisado / Series temporales / Secuencial",
+   "etiquetas_ajuste_selector": [
+    "yes",
+    "timeseries",
+    "performance",
+    "sequence"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 1,
+    "no_lineal": 5,
+    "velocidad": 1,
+    "pocos_datos": 1
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Memoria visual",
+     "min": 3,
+     "max": 12,
+     "paso": 1,
+     "valor_inicial": 6
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "zscore",
+   "modelo": "Z-Score / IQR / MAD",
+   "resumen": "Reglas estadísticas univariadas",
+   "que_hace": "Reglas estadísticas univariadas",
+   "cuando_usarlo": "Excelente baseline para variables individuales con límites relativamente estables; MAD es más robusto a outliers.",
+   "datos": {
+    "Etiquetas": "No requeridas",
+    "Escala": "Univariada",
+    "Complejidad": "Muy baja",
+    "Salida": "Desviación"
+   },
+   "metrica": "Tasa de alertas, precision/recall si hay eventos, alertas por hora y validación experta.",
+   "evitar_si": "No detecta bien anomalías multivariadas ni interacciones complejas entre sensores.",
+   "familia": "No supervisado / Estadístico / Baseline",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "tabular",
+    "fast",
+    "global"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 5,
+    "no_lineal": 1,
+    "velocidad": 5,
+    "pocos_datos": 5
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Umbral σ",
+     "min": 2,
+     "max": 5,
+     "paso": 0.25,
+     "valor_inicial": 3
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "mahal",
+   "modelo": "Distancia de Mahalanobis",
+   "resumen": "Rareza multivariada con covarianza",
+   "que_hace": "Rareza multivariada con covarianza",
+   "cuando_usarlo": "Útil cuando sensores correlacionados forman una nube aproximadamente elíptica y una observación se aleja en conjunto.",
+   "datos": {
+    "Etiquetas": "No requeridas",
+    "Escala": "Global",
+    "Complejidad": "Baja",
+    "Salida": "Distancia"
+   },
+   "metrica": "Distancia, percentil/umbral, tasa de alertas y validación con eventos.",
+   "evitar_si": "Sensible a covarianza mal estimada, distribuciones no gaussianas y alta dimensionalidad con pocas muestras.",
+   "familia": "No supervisado / Multivariado / Estadístico",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "tabular",
+    "global"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 4,
+    "no_lineal": 1,
+    "velocidad": 5,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Umbral",
+     "min": 2,
+     "max": 6,
+     "paso": 0.25,
+     "valor_inicial": 3.5
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "pca",
+   "modelo": "PCA · T² / SPE-Q",
+   "resumen": "Subespacio normal + error residual",
+   "que_hace": "Subespacio normal + error residual",
+   "cuando_usarlo": "Clásico en monitoreo multivariado: T² detecta desviaciones dentro del subespacio y SPE/Q mide error fuera del subespacio.",
+   "datos": {
+    "Etiquetas": "No requeridas",
+    "Escala": "Global",
+    "Complejidad": "Media",
+    "Salida": "T² + SPE"
+   },
+   "metrica": "T², SPE/Q, contribution plots y tasa de alertas por régimen.",
+   "evitar_si": "Captura relaciones lineales; puede perder anomalías no lineales y requiere selección adecuada de componentes.",
+   "familia": "No supervisado / Alta dimensionalidad / Multivariado",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "highdim",
+    "global"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 4,
+    "no_lineal": 1,
+    "velocidad": 5,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Componentes",
+     "min": 1,
+     "max": 8,
+     "paso": 1,
+     "valor_inicial": 2
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "kmeans",
+   "modelo": "K-Means + distancia",
+   "resumen": "Rareza respecto al centroide",
+   "que_hace": "Rareza respecto al centroide",
+   "cuando_usarlo": "Práctico cuando existen regímenes operativos claros y quieres medir distancia al patrón típico de cada régimen.",
+   "datos": {
+    "Etiquetas": "No requeridas",
+    "Escala": "Por cluster",
+    "Complejidad": "Baja",
+    "Salida": "Distancia"
+   },
+   "metrica": "Distancia al centroide, percentil por cluster y estabilidad de clusters.",
+   "evitar_si": "Clusters esféricos y K fijo; sensible al escalado y a formas de cluster complejas.",
+   "familia": "No supervisado / Clustering / Regímenes",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "tabular",
+    "cluster"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 4,
+    "no_lineal": 2,
+    "velocidad": 5,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Clusters",
+     "min": 2,
+     "max": 6,
+     "paso": 1,
+     "valor_inicial": 3
+    },
+    {
+     "nombre": "Umbral distancia",
+     "min": 30,
+     "max": 100,
+     "paso": 5,
+     "valor_inicial": 65
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "dbscan",
+   "modelo": "DBSCAN",
+   "resumen": "Densidad + ruido sin fijar K",
+   "que_hace": "Densidad + ruido sin fijar K",
+   "cuando_usarlo": "Útil para descubrir zonas densas de operación y marcar puntos aislados como ruido, incluso con clusters no esféricos.",
+   "datos": {
+    "Etiquetas": "No requeridas",
+    "Escala": "Local",
+    "Complejidad": "Media",
+    "Salida": "Cluster/ruido"
+   },
+   "metrica": "Número de puntos ruido, estabilidad ante eps/min_samples y validación experta.",
+   "evitar_si": "Un único eps puede fallar cuando las densidades cambian mucho y la dimensionalidad es alta.",
+   "familia": "No supervisado / Densidad / Ruido",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "tabular",
+    "cluster",
+    "local"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 4,
+    "no_lineal": 4,
+    "velocidad": 3,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "eps visual",
+     "min": 18,
+     "max": 60,
+     "paso": 3,
+     "valor_inicial": 34
+    },
+    {
+     "nombre": "min_samples",
+     "min": 3,
+     "max": 15,
+     "paso": 1,
+     "valor_inicial": 5
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "hdbscan",
+   "modelo": "HDBSCAN",
+   "resumen": "Densidad variable y clusters persistentes",
+   "que_hace": "Densidad variable y clusters persistentes",
+   "cuando_usarlo": "Más flexible que DBSCAN cuando los regímenes tienen densidades distintas y quieres puntuaciones de outlier.",
+   "datos": {
+    "Etiquetas": "No requeridas",
+    "Escala": "Local",
+    "Complejidad": "Media",
+    "Salida": "Cluster+score"
+   },
+   "metrica": "Outlier score, estabilidad de clusters y alertas revisadas.",
+   "evitar_si": "Más complejo de explicar y requiere revisar estabilidad/selección de clusters.",
+   "familia": "No supervisado / Densidad / Clusters variables",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "tabular",
+    "cluster",
+    "local"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 3,
+    "no_lineal": 5,
+    "velocidad": 3,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Tamaño mín. cluster",
+     "min": 4,
+     "max": 20,
+     "paso": 1,
+     "valor_inicial": 8
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "iforest",
+   "modelo": "Isolation Forest",
+   "resumen": "Aísla rarezas con cortes aleatorios",
+   "que_hace": "Aísla rarezas con cortes aleatorios",
+   "cuando_usarlo": "Muy buena opción general para anomalías en datos tabulares, especialmente con pocas fallas y relaciones complejas.",
+   "datos": {
+    "Etiquetas": "No requeridas",
+    "Escala": "Global",
+    "Complejidad": "Media",
+    "Salida": "Anomaly score"
+   },
+   "metrica": "Anomaly score, precision/recall si hay fallas, alertas por día, lead time.",
+   "evitar_si": "No modela explícitamente secuencia temporal; el threshold y contamination deben validarse con contexto operativo.",
+   "familia": "No supervisado / Árboles / Anomaly score",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "tabular",
+    "highdim",
+    "global",
+    "fast"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 3,
+    "no_lineal": 4,
+    "velocidad": 5,
+    "pocos_datos": 5
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Árboles",
+     "min": 50,
+     "max": 500,
+     "paso": 50,
+     "valor_inicial": 200
+    },
+    {
+     "nombre": "Contamination",
+     "min": 0.01,
+     "max": 0.15,
+     "paso": 0.01,
+     "valor_inicial": 0.05
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "lof",
+   "modelo": "Local Outlier Factor",
+   "resumen": "Densidad relativa frente a vecinos",
+   "que_hace": "Densidad relativa frente a vecinos",
+   "cuando_usarlo": "Muy útil cuando una observación es extraña respecto a su vecindario aunque no sea extrema globalmente.",
+   "datos": {
+    "Etiquetas": "No requeridas",
+    "Escala": "Local",
+    "Complejidad": "Media",
+    "Salida": "LOF score"
+   },
+   "metrica": "LOF score, precision/recall si hay etiquetas parciales y estabilidad por K.",
+   "evitar_si": "Costoso en datasets grandes y sensible a escala/número de vecinos.",
+   "familia": "No supervisado / Densidad local / Outliers",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "tabular",
+    "local"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 4,
+    "no_lineal": 4,
+    "velocidad": 2,
+    "pocos_datos": 5
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Vecinos",
+     "min": 5,
+     "max": 40,
+     "paso": 5,
+     "valor_inicial": 20
+    },
+    {
+     "nombre": "Umbral LOF",
+     "min": 1,
+     "max": 2.5,
+     "paso": 0.1,
+     "valor_inicial": 1.5
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "ocsvm",
+   "modelo": "One-Class SVM",
+   "resumen": "Frontera alrededor de la normalidad",
+   "que_hace": "Frontera alrededor de la normalidad",
+   "cuando_usarlo": "Adecuada cuando tienes principalmente datos sanos y quieres aprender una frontera flexible de operación normal.",
+   "datos": {
+    "Etiquetas": "Normalidad suficiente",
+    "Escala": "Global",
+    "Complejidad": "Media-alta",
+    "Salida": "Decision score"
+   },
+   "metrica": "Decision function, tasa de alertas, precision/recall con eventos y sensibilidad al umbral.",
+   "evitar_si": "Escala mal a grandes datasets y es sensible a nu/gamma y al escalado.",
+   "familia": "Semi/no supervisado / Kernel / Frontera",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "tabular",
+    "highdim",
+    "global"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 2,
+    "no_lineal": 5,
+    "velocidad": 2,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "ν",
+     "min": 0.01,
+     "max": 0.3,
+     "paso": 0.01,
+     "valor_inicial": 0.08
+    },
+    {
+     "nombre": "Curvatura",
+     "min": 0.2,
+     "max": 1,
+     "paso": 0.1,
+     "valor_inicial": 0.6
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "elliptic",
+   "modelo": "Elliptic Envelope / MCD",
+   "resumen": "Covarianza robusta para nube elíptica",
+   "que_hace": "Covarianza robusta para nube elíptica",
+   "cuando_usarlo": "Interesante cuando la operación normal es aproximadamente gaussiana y quieres robustez frente a una fracción de outliers.",
+   "datos": {
+    "Etiquetas": "No requeridas",
+    "Escala": "Global",
+    "Complejidad": "Baja",
+    "Salida": "Distancia robusta"
+   },
+   "metrica": "Distancia robusta, tasa de outliers y revisión por régimen.",
+   "evitar_si": "No sirve bien para fronteras multimodales o altamente no lineales.",
+   "familia": "No supervisado / Robusto / Gaussiano",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "tabular",
+    "global"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 4,
+    "no_lineal": 1,
+    "velocidad": 4,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Contamination",
+     "min": 0.01,
+     "max": 0.2,
+     "paso": 0.01,
+     "valor_inicial": 0.05
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "autoencoder",
+   "modelo": "Autoencoder",
+   "resumen": "Error de reconstrucción",
+   "que_hace": "Error de reconstrucción",
+   "cuando_usarlo": "Potente para aprender normalidad no lineal con muchas variables cuando dispones de bastante historial sano.",
+   "datos": {
+    "Etiquetas": "No requeridas",
+    "Escala": "Global",
+    "Complejidad": "Alta",
+    "Salida": "Error reconstrucción"
+   },
+   "metrica": "Reconstruction error, threshold por validación, precision/recall, contribution por feature.",
+   "evitar_si": "Requiere más datos/tuning; el error de reconstrucción no siempre es interpretable por sí solo.",
+   "familia": "No supervisado / Deep Learning / No lineal",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "tabular",
+    "highdim",
+    "performance"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 2,
+    "no_lineal": 5,
+    "velocidad": 1,
+    "pocos_datos": 2
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Cuello de botella",
+     "min": 2,
+     "max": 8,
+     "paso": 1,
+     "valor_inicial": 3
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "vae",
+   "modelo": "Variational Autoencoder",
+   "resumen": "Latente probabilístico + reconstrucción",
+   "que_hace": "Latente probabilístico + reconstrucción",
+   "cuando_usarlo": "Útil cuando quieres un espacio latente probabilístico y modelar incertidumbre además de reconstrucción.",
+   "datos": {
+    "Etiquetas": "No requeridas",
+    "Escala": "Global",
+    "Complejidad": "Muy alta",
+    "Salida": "Score probabilístico"
+   },
+   "metrica": "Reconstruction loss, KL, anomaly score combinado y validación por eventos.",
+   "evitar_si": "Más complejo de ajustar e interpretar que un autoencoder básico; no es primera opción para un baseline.",
+   "familia": "No supervisado / Deep Learning / Probabilístico",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "highdim",
+    "performance"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 1,
+    "no_lineal": 5,
+    "velocidad": 1,
+    "pocos_datos": 1
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Dimensión latente",
+     "min": 2,
+     "max": 8,
+     "paso": 1,
+     "valor_inicial": 3
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "lstmae",
+   "modelo": "LSTM Autoencoder",
+   "resumen": "Reconstrucción de secuencias",
+   "que_hace": "Reconstrucción de secuencias",
+   "cuando_usarlo": "Adecuado cuando la anomalía depende del patrón temporal completo y tienes historial de secuencias normales.",
+   "datos": {
+    "Etiquetas": "No requeridas",
+    "Escala": "Secuencia",
+    "Complejidad": "Muy alta",
+    "Salida": "Error temporal"
+   },
+   "metrica": "Error por ventana, lead time, recall por evento, alertas/hora y estabilidad temporal.",
+   "evitar_si": "Ventanas, normalización, drift y costo de entrenamiento requieren mucha atención.",
+   "familia": "No supervisado / Series temporales / Deep Learning",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "timeseries",
+    "sequence",
+    "performance"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 1,
+    "no_lineal": 5,
+    "velocidad": 1,
+    "pocos_datos": 1
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Longitud ventana",
+     "min": 10,
+     "max": 80,
+     "paso": 5,
+     "valor_inicial": 30
+    }
+   ]
+  },
+  {
+   "sesion": "Sesión 2 · Detección de Anomalías",
+   "id": "forecast",
+   "modelo": "Residual de Forecasting",
+   "resumen": "Predicción esperada vs señal real",
+   "que_hace": "Predicción esperada vs señal real",
+   "cuando_usarlo": "Muy intuitivo para mantenimiento: pronosticas el comportamiento normal y alertas cuando el residual supera un umbral.",
+   "datos": {
+    "Etiquetas": "No imprescindibles",
+    "Escala": "Temporal",
+    "Complejidad": "Variable",
+    "Salida": "Residual"
+   },
+   "metrica": "Residual normalizado, cobertura, lead time, alertas por día y recall por evento.",
+   "evitar_si": "Si el modelo de forecasting es pobre, confundirás error de pronóstico con anomalía.",
+   "familia": "Semi/no supervisado / Series temporales / Residual",
+   "etiquetas_ajuste_selector": [
+    "no",
+    "few",
+    "timeseries",
+    "sequence"
+   ],
+   "puntajes_comparador": {
+    "interpretabilidad": 5,
+    "no_lineal": 4,
+    "velocidad": 3,
+    "pocos_datos": 4
+   },
+   "parametros_visuales": [
+    {
+     "nombre": "Ventana",
+     "min": 8,
+     "max": 50,
+     "paso": 2,
+     "valor_inicial": 20
+    },
+    {
+     "nombre": "Umbral residual",
+     "min": 1,
+     "max": 4,
+     "paso": 0.25,
+     "valor_inicial": 2.5
+    }
+   ]
+  }
+ ],
+ "selector": {
+  "origen": "Panel «¿Qué modelo conviene explorar primero?» (material aportado por la persona, pedagógico; no es evidencia científica).",
+  "texto_panel": "Selecciona el contexto del problema y el laboratorio filtrará modelos compatibles.",
+  "controles": {
+   "Etiquetas de falla": {
+    "any": "No importa",
+    "yes": "Sí, tengo clases/etiquetas",
+    "few": "Muy pocas fallas etiquetadas",
+    "no": "No tengo etiquetas"
+   },
+   "Tipo de señal": {
+    "any": "Cualquiera",
+    "tabular": "Variables tabulares",
+    "timeseries": "Serie temporal / sensores",
+    "highdim": "Muchas variables"
+   },
+   "Prioridad": {
+    "any": "Equilibrada",
+    "interpret": "Interpretabilidad",
+    "performance": "Capacidad no lineal",
+    "fast": "Entrenamiento simple"
+   },
+   "Patrón esperado": {
+    "any": "No lo sé",
+    "global": "Anomalía global",
+    "local": "Anomalía local",
+    "cluster": "Regímenes operativos",
+    "sequence": "Dependencia temporal"
+   }
+  },
+  "reglas_filtro": [
+   "Se ignoran los controles en «any». Si todos están en «any», no se filtra nada.",
+   "Los controles activos se combinan con Y lógico: el modelo debe cumplir todos.",
+   "Etiquetas = «Sí, tengo clases/etiquetas»: solo pasan los modelos de la Sesión 1 (Clasificación de Fallas); en la Sesión 2 no pasa ninguno.",
+   "Etiquetas = «Muy pocas fallas etiquetadas» o «No tengo etiquetas»: en la Sesión 2 pasan todos los modelos en este criterio; en la Sesión 1 no pasa ninguno, porque ningún modelo de clasificación declara esos valores.",
+   "Tipo de señal, Prioridad y Patrón: el modelo pasa si su lista de ajuste contiene el valor elegido (tabular, timeseries, highdim, interpret, performance, fast, global, local, cluster, sequence).",
+   "El filtro actúa sobre la sesión (pestaña) activa; hay además un buscador por nombre.",
+   "Si ningún modelo cumple todo, el panel muestra: «No hay modelos que cumplan todos los filtros. Prueba flexibilizar una condición.»"
+  ],
+  "orden_sugerencias": {
+   "regla": "Entre los modelos compatibles se ordenan de mayor a menor por un puntaje del comparador y se muestran como máximo 5 con la etiqueta «Explora:».",
+   "clave_orden": {
+    "Interpretabilidad": "interpretabilidad",
+    "Capacidad no lineal": "no lineal",
+    "Entrenamiento simple": "velocidad",
+    "Equilibrada (o cualquier otro valor)": "pocos datos"
+   }
+  },
+  "modelos_por_valor": {
+   "Sesión 1 · Clasificación de Fallas": {
+    "Etiquetas de falla = yes": [
+     "Regresión Logística",
+     "LDA / QDA",
+     "Naive Bayes",
+     "K-Nearest Neighbors",
+     "Árbol de Decisión",
+     "Random Forest",
+     "Extra Trees",
+     "SVM",
+     "Gradient Boosting",
+     "XGBoost",
+     "LightGBM",
+     "CatBoost",
+     "Red Neuronal MLP",
+     "CNN 1D",
+     "LSTM / GRU"
+    ],
+    "Etiquetas de falla = few": [],
+    "Etiquetas de falla = no": [],
+    "Tipo de señal = tabular": [
+     "Regresión Logística",
+     "LDA / QDA",
+     "Naive Bayes",
+     "K-Nearest Neighbors",
+     "Árbol de Decisión",
+     "Random Forest",
+     "Extra Trees",
+     "SVM",
+     "Gradient Boosting",
+     "XGBoost",
+     "LightGBM",
+     "CatBoost",
+     "Red Neuronal MLP"
+    ],
+    "Tipo de señal = timeseries": [
+     "CNN 1D",
+     "LSTM / GRU"
+    ],
+    "Tipo de señal = highdim": [
+     "SVM",
+     "XGBoost",
+     "LightGBM"
+    ],
+    "Prioridad = interpret": [
+     "Regresión Logística",
+     "LDA / QDA",
+     "Árbol de Decisión"
+    ],
+    "Prioridad = performance": [
+     "Random Forest",
+     "Extra Trees",
+     "Gradient Boosting",
+     "XGBoost",
+     "LightGBM",
+     "CatBoost",
+     "Red Neuronal MLP",
+     "CNN 1D",
+     "LSTM / GRU"
+    ],
+    "Prioridad = fast": [
+     "Regresión Logística",
+     "Naive Bayes",
+     "LightGBM"
+    ],
+    "Patrón esperado = global": [],
+    "Patrón esperado = local": [],
+    "Patrón esperado = cluster": [],
+    "Patrón esperado = sequence": [
+     "CNN 1D",
+     "LSTM / GRU"
+    ]
+   },
+   "Sesión 2 · Detección de Anomalías": {
+    "Etiquetas de falla = yes": [],
+    "Etiquetas de falla = few": [
+     "Z-Score / IQR / MAD",
+     "Distancia de Mahalanobis",
+     "PCA · T² / SPE-Q",
+     "K-Means + distancia",
+     "DBSCAN",
+     "HDBSCAN",
+     "Isolation Forest",
+     "Local Outlier Factor",
+     "One-Class SVM",
+     "Elliptic Envelope / MCD",
+     "Autoencoder",
+     "Variational Autoencoder",
+     "LSTM Autoencoder",
+     "Residual de Forecasting"
+    ],
+    "Etiquetas de falla = no": [
+     "Z-Score / IQR / MAD",
+     "Distancia de Mahalanobis",
+     "PCA · T² / SPE-Q",
+     "K-Means + distancia",
+     "DBSCAN",
+     "HDBSCAN",
+     "Isolation Forest",
+     "Local Outlier Factor",
+     "One-Class SVM",
+     "Elliptic Envelope / MCD",
+     "Autoencoder",
+     "Variational Autoencoder",
+     "LSTM Autoencoder",
+     "Residual de Forecasting"
+    ],
+    "Tipo de señal = tabular": [
+     "Z-Score / IQR / MAD",
+     "Distancia de Mahalanobis",
+     "K-Means + distancia",
+     "DBSCAN",
+     "HDBSCAN",
+     "Isolation Forest",
+     "Local Outlier Factor",
+     "One-Class SVM",
+     "Elliptic Envelope / MCD",
+     "Autoencoder"
+    ],
+    "Tipo de señal = timeseries": [
+     "LSTM Autoencoder",
+     "Residual de Forecasting"
+    ],
+    "Tipo de señal = highdim": [
+     "PCA · T² / SPE-Q",
+     "Isolation Forest",
+     "One-Class SVM",
+     "Autoencoder",
+     "Variational Autoencoder"
+    ],
+    "Prioridad = interpret": [],
+    "Prioridad = performance": [
+     "Autoencoder",
+     "Variational Autoencoder",
+     "LSTM Autoencoder"
+    ],
+    "Prioridad = fast": [
+     "Z-Score / IQR / MAD",
+     "Isolation Forest"
+    ],
+    "Patrón esperado = global": [
+     "Z-Score / IQR / MAD",
+     "Distancia de Mahalanobis",
+     "PCA · T² / SPE-Q",
+     "Isolation Forest",
+     "One-Class SVM",
+     "Elliptic Envelope / MCD"
+    ],
+    "Patrón esperado = local": [
+     "DBSCAN",
+     "HDBSCAN",
+     "Local Outlier Factor"
+    ],
+    "Patrón esperado = cluster": [
+     "K-Means + distancia",
+     "DBSCAN",
+     "HDBSCAN"
+    ],
+    "Patrón esperado = sequence": [
+     "LSTM Autoencoder",
+     "Residual de Forecasting"
+    ]
+   }
+  },
+  "pipelines": {
+   "Sesión 1 · Clasificación de Fallas": [
+    "Datos de sensores",
+    "EDA",
+    "Feature engineering",
+    "Split por tiempo/equipo",
+    "Balanceo",
+    "Entrenamiento",
+    "Validación",
+    "Métricas",
+    "Despliegue"
+   ],
+   "Sesión 2 · Detección de Anomalías": [
+    "Datos sanos/mistos",
+    "EDA",
+    "Escalado robusto",
+    "Modelo de normalidad",
+    "Anomaly score",
+    "Umbral",
+    "Consenso",
+    "Revisión experta"
+   ]
+  },
+  "comparador": {
+   "texto": "Compara tres alternativas por criterios pedagógicos generales, no por accuracy inventada.",
+   "criterios": [
+    "Interpret.",
+    "No lineal",
+    "Velocidad",
+    "Pocos datos"
+   ],
+   "escala": "0 a 5 (se muestra n/5)"
+  }
+ },
+ "advertencias": {
+  "origen": "Nota «Importante» al pie del archivo (material aportado por la persona).",
+  "textos": [
+   "Las visualizaciones no sustituyen validación con datos reales.",
+   "Separar por tiempo/equipo.",
+   "Evitar fuga de información.",
+   "Controlar desbalance.",
+   "Evaluar coste de falsos negativos.",
+   "Revisar drift.",
+   "Para anomalías, las métricas requieren etiquetas parciales, revisión experta o evaluación basada en eventos."
+  ],
+  "otras_menciones_en_modelos": [
+   "Las animaciones son conceptuales: sirven para comprender el comportamiento antes de pasar al entrenamiento real en Python.",
+   "XGBoost: no asumir que siempre ganará; requiere tuning, validación temporal y control de leakage.",
+   "CNN 1D: ventanas bien construidas y cuidado con leakage entre ventanas del mismo evento.",
+   "LSTM / GRU: sensible al diseño de ventanas; no siempre supera a features temporales + boosting.",
+   "Random Forest: modelos muy grandes consumen memoria y pueden ocultar drift.",
+   "LSTM Autoencoder: ventanas, normalización, drift y costo de entrenamiento requieren mucha atención.",
+   "Isolation Forest: threshold y contamination deben validarse con contexto operativo.",
+   "Pie del comparador y métricas: sin cifras de accuracy; los puntajes son pedagógicos."
+  ]
+ }
+}

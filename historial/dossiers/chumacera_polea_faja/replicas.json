@@ -1,6 +1,6 @@
 [
  {
-  "id": "R1",
+  "id": "1-R1",
   "titulo": "MAE del tiempo a la falla con IC 95 %, banco XJTU-SY, C1, 25 % de censura",
   "tipo": "barras_ic",
   "unidad": "min",
@@ -38,7 +38,7 @@
   ]
  },
  {
-  "id": "R2",
+  "id": "1-R2",
   "titulo": "Condiciones de operacion del banco XJTU-SY",
   "tipo": "tabla",
   "unidad": "",
@@ -80,7 +80,7 @@
   ]
  },
  {
-  "id": "R3",
+  "id": "1-R3",
   "titulo": "Propiedades del rodamiento LDK UER204",
   "tipo": "tabla",
   "unidad": "",
@@ -126,7 +126,7 @@
   ]
  },
  {
-  "id": "R4",
+  "id": "1-R4",
   "titulo": "Tiempo de evento detectado frente al fin de registro por rodamiento",
   "tipo": "tabla",
   "unidad": "min",
@@ -269,7 +269,7 @@
   ]
  },
  {
-  "id": "R5",
+  "id": "1-R5",
   "titulo": "MAE verdadero por modelo y nivel de censura, C1 (carga alta)",
   "tipo": "tabla",
   "unidad": "min",
@@ -325,7 +325,7 @@
   ]
  },
  {
-  "id": "R6",
+  "id": "1-R6",
   "titulo": "MAE verdadero por modelo y nivel de censura, C2 (carga media)",
   "tipo": "tabla",
   "unidad": "min",
@@ -381,7 +381,7 @@
   ]
  },
  {
-  "id": "R7",
+  "id": "1-R7",
   "titulo": "MAE verdadero por modelo y nivel de censura, C3 (carga baja)",
   "tipo": "tabla",
   "unidad": "min",
@@ -437,7 +437,7 @@
   ]
  },
  {
-  "id": "R8",
+  "id": "1-R8",
   "titulo": "MAE verdadero con 25 % de censura, C1 (carga alta)",
   "tipo": "barras",
   "unidad": "min",
@@ -475,7 +475,7 @@
   ]
  },
  {
-  "id": "R9",
+  "id": "1-R9",
   "titulo": "MAE verdadero con 25 % de censura, C2 (carga media)",
   "tipo": "barras",
   "unidad": "min",
@@ -513,7 +513,7 @@
   ]
  },
  {
-  "id": "R10",
+  "id": "1-R10",
   "titulo": "MAE verdadero con 25 % de censura, C3 (carga baja)",
   "tipo": "barras",
   "unidad": "min",
@@ -551,7 +551,7 @@
   ]
  },
  {
-  "id": "R11",
+  "id": "1-R11",
   "titulo": "Error absoluto medio (MAEH, MAEM, MAEPO) bajo censura, C1 (carga alta)",
   "tipo": "tabla",
   "unidad": "min",
@@ -638,7 +638,7 @@
   ]
  },
  {
-  "id": "R12",
+  "id": "1-R12",
   "titulo": "Error absoluto medio (MAEH, MAEM, MAEPO) bajo censura, C2 (carga media)",
   "tipo": "tabla",
   "unidad": "min",
@@ -725,7 +725,7 @@
   ]
  },
  {
-  "id": "R13",
+  "id": "1-R13",
   "titulo": "Error absoluto medio (MAEH, MAEM, MAEPO) bajo censura, C3 (carga baja)",
   "tipo": "tabla",
   "unidad": "min",
@@ -812,7 +812,7 @@
   ]
  },
  {
-  "id": "R14",
+  "id": "1-R14",
   "titulo": "Diferencia eMAE respecto del MAE verdadero, C1 (carga alta)",
   "tipo": "tabla",
   "unidad": "min",
@@ -898,7 +898,7 @@
   ]
  },
  {
-  "id": "R15",
+  "id": "1-R15",
   "titulo": "Diferencia eMAE respecto del MAE verdadero, C2 (carga media)",
   "tipo": "tabla",
   "unidad": "min",
@@ -985,7 +985,7 @@
   ]
  },
  {
-  "id": "R16",
+  "id": "1-R16",
   "titulo": "Diferencia eMAE respecto del MAE verdadero, C3 (carga baja)",
   "tipo": "tabla",
   "unidad": "min",
@@ -1072,7 +1072,7 @@
   ]
  },
  {
-  "id": "R17",
+  "id": "1-R17",
   "titulo": "Calibracion D y C (particiones calibradas de 5)",
   "tipo": "tabla",
   "unidad": "particiones de 5",
@@ -1246,7 +1246,7 @@
   ]
  },
  {
-  "id": "R18",
+  "id": "1-R18",
   "titulo": "CRA por rodamiento: RVM, DBN, PF, EKF, Hybrid y RULSurv",
   "tipo": "tabla",
   "unidad": "CRA (adimensional; 1 = exacto)",
@@ -1406,7 +1406,7 @@
   ]
  },
  {
-  "id": "R19",
+  "id": "1-R19",
   "titulo": "CARLE frente a CNN-LSTM, CABiLSTM y MSIDIN, rodamiento 3, XJTU-SY",
   "tipo": "tabla",
   "unidad": "RUL normalizada (MSE, MAE) y Score",
@@ -1480,7 +1480,7 @@
   ]
  },
  {
-  "id": "R20",
+  "id": "1-R20",
   "titulo": "Ablacion de CARLE, rodamiento 3, XJTU-SY",
   "tipo": "tabla",
   "unidad": "RUL normalizada (MSE, MAE) y Score",
@@ -1554,7 +1554,7 @@
   ]
  },
  {
-  "id": "R21",
+  "id": "1-R21",
   "titulo": "CARLE entre dominios (PRONOSTIA a XJTU-SY): MAE",
   "tipo": "barras",
   "unidad": "RUL normalizada",
@@ -1576,7 +1576,7 @@
   ]
  },
  {
-  "id": "R-01",
+  "id": "2-R-01",
   "titulo": "Bancos públicos de rodamientos: muestreo, duración y velocidad",
   "tipo": "tabla",
   "unidad": "Hz; s; rpm",
@@ -1628,7 +1628,7 @@
   ]
  },
  {
-  "id": "R-02",
+  "id": "2-R-02",
   "titulo": "Parámetros de preprocesamiento a espectrograma por banco",
   "tipo": "tabla",
   "unidad": "muestras; kHz",
@@ -1672,7 +1672,7 @@
   ]
  },
  {
-  "id": "R-03",
+  "id": "2-R-03",
   "titulo": "Muestras por estado del rodamiento (totales)",
   "tipo": "tabla",
   "unidad": "segmentos",
@@ -1728,7 +1728,7 @@
   ]
  },
  {
-  "id": "R-04",
+  "id": "2-R-04",
   "titulo": "Resultados de transferencia en CWRU: partición por carga y por severidad",
   "tipo": "tabla",
   "unidad": "% (media y desviación estándar entre 4 pliegues)",
@@ -1834,7 +1834,7 @@
   ]
  },
  {
-  "id": "R-05",
+  "id": "2-R-05",
   "titulo": "Exactitud balanceada media en CWRU con pliegues por carga",
   "tipo": "barras",
   "unidad": "% exactitud balanceada media (K = 4)",
@@ -1869,7 +1869,7 @@
   ]
  },
  {
-  "id": "R-06",
+  "id": "2-R-06",
   "titulo": "Exactitud balanceada media en CWRU con pliegues por severidad de falla",
   "tipo": "barras",
   "unidad": "% exactitud balanceada media (K = 4)",
@@ -1905,7 +1905,7 @@
   ]
  },
  {
-  "id": "R-07",
+  "id": "2-R-07",
   "titulo": "Banco KAIST y protocolo de validación del diagnóstico con velocidad variable",
   "tipo": "tabla",
   "unidad": "según fila",
@@ -1964,7 +1964,7 @@
   ]
  },
  {
-  "id": "R-08",
+  "id": "2-R-08",
   "titulo": "Exactitud de la clase pista interna: señal limpia y ruido de -5 dB",
   "tipo": "barras",
   "unidad": "% exactitud",
@@ -1986,7 +1986,7 @@
   ]
  },
  {
-  "id": "R-09",
+  "id": "2-R-09",
   "titulo": "Exactitud al retener una condición completa (CWRU y JNU)",
   "tipo": "barras",
   "unidad": "% exactitud",
@@ -2016,7 +2016,7 @@
   ]
  },
  {
-  "id": "R-10",
+  "id": "2-R-10",
   "titulo": "Componentes del puntaje CARE",
   "tipo": "tabla",
   "unidad": "según fila",
@@ -2069,7 +2069,7 @@
   ]
  },
  {
-  "id": "R-11",
+  "id": "2-R-11",
   "titulo": "Composición del conjunto de datos CARE",
   "tipo": "tabla",
   "unidad": "conteo",
@@ -2132,7 +2132,7 @@
   ]
  },
  {
-  "id": "R-12",
+  "id": "2-R-12",
   "titulo": "Puntaje CARE del mini-benchmark",
   "tipo": "barras",
   "unidad": "puntaje CARE (0 a 1)",
@@ -2162,7 +2162,7 @@
   ]
  },
  {
-  "id": "R-13",
+  "id": "2-R-13",
   "titulo": "Bancos de MBHM: muestreo, condiciones, fallas y tiempo",
   "tipo": "tabla",
   "unidad": "kHz; conteo; s",
@@ -2253,7 +2253,7 @@
   ]
  },
  {
-  "id": "R-14",
+  "id": "2-R-14",
   "titulo": "Exactitud cero disparos en bancos no vistos",
   "tipo": "barras",
   "unidad": "% exactitud",
@@ -2293,7 +2293,7 @@
   ]
  },
  {
-  "id": "R-15",
+  "id": "2-R-15",
   "titulo": "Error de pronóstico de vida remanente: cabeza lineal sobre Chronos-2 frente a TCN",
   "tipo": "barras",
   "unidad": "MAE (el texto no rotula la unidad; la RUL está en días)",
@@ -2312,6 +2312,691 @@
     "etiqueta": "TCN",
     "valor": "88"
    }
+  ]
+ },
+ {
+  "id": "A-R1",
+  "titulo": "Exactitud de prueba en CWRU con pocos datos: modelos con y sin ampliacion de datos",
+  "tipo": "tabla",
+  "unidad": "%",
+  "condiciones": "Banco CWRU, 50 muestras por condicion de entrenamiento, epoca 100, TSDM arXiv 2312.07981",
+  "replica_de": "Tabla 6 de arXiv 2312.07981",
+  "evidencia": [
+   "E-9503"
+  ],
+  "limites": "Datos de banco o de laboratorio; no es una chumacera de polea de faja ni dato de campo; valores no transferibles. Clasificacion de falla, no RUL.",
+  "columnas": [
+   "Modelo",
+   "Sin ampliar",
+   "VQ-VAE",
+   "TimeGAN",
+   "Diffwave",
+   "TSDM",
+   "Mejora TSDM"
+  ],
+  "filas": [
+   [
+    "CNN",
+    "78.665",
+    "79.708",
+    "80.375",
+    "81.330",
+    "94.033",
+    "15.368"
+   ],
+   [
+    "RNN-LSTM",
+    "56.262",
+    "60.917",
+    "60.967",
+    "62.683",
+    "88.642",
+    "32.380"
+   ],
+   [
+    "TST",
+    "60.557",
+    "61.038",
+    "61.333",
+    "62.330",
+    "72.192",
+    "11.635"
+   ]
+  ]
+ },
+ {
+  "id": "A-R2",
+  "titulo": "AUC y pAUC de la maquina 'bearing' con linea base no supervisada (DCASE 2023 T2)",
+  "tipo": "tabla",
+  "unidad": "%",
+  "condiciones": "DCASE 2023 T2, maquina 'bearing' de laboratorio, entrenamiento solo con sonido normal, promedio de 5 corridas, arXiv 2305.07828",
+  "replica_de": "Tablas 1 y 2 de arXiv 2305.07828 (fila bearing)",
+  "evidencia": [
+   "E-9506"
+  ],
+  "limites": "Datos de banco o de laboratorio; no es una chumacera de polea de faja ni dato de campo; valores no transferibles. Sonido de laboratorio mezclado con ruido; AUC cercano a 50 % es casi azar.",
+  "columnas": [
+   "Modo",
+   "AUC fuente [%]",
+   "AUC objetivo [%]",
+   "pAUC [%]"
+  ],
+  "filas": [
+   [
+    "Autoencoder simple",
+    "65.92",
+    "55.75",
+    "50.42"
+   ],
+   [
+    "Mahalanobis selectivo",
+    "65.16",
+    "55.28",
+    "51.37"
+   ]
+  ]
+ },
+ {
+  "id": "A-R3",
+  "titulo": "AUC y pAUC de la maquina 'bearing' en DCASE2022 T2 con detectores first-shot",
+  "tipo": "tabla",
+  "unidad": "adimensional",
+  "condiciones": "DCASE2022 T2 con requisito first-shot, maquina 'bearing', promedio de 3 semillas, arXiv 2303.00455",
+  "replica_de": "Tabla I (columna bearing) de arXiv 2303.00455",
+  "evidencia": [
+   "E-9510"
+  ],
+  "limites": "Datos de banco o de laboratorio; no es una chumacera de polea de faja ni dato de campo; valores no transferibles.",
+  "columnas": [
+   "Sistema",
+   "AUC fuente",
+   "AUC objetivo",
+   "pAUC"
+  ],
+  "filas": [
+   [
+    "Autoencoder first-shot",
+    "0.7479",
+    "0.5621",
+    "0.5474"
+   ],
+   [
+    "Mahalanobis selectivo",
+    "0.7195",
+    "0.6280",
+    "0.5763"
+   ],
+   [
+    "Linea base DCASE2022 AE",
+    "0.7271",
+    "0.5384",
+    "0.5563"
+   ],
+   [
+    "Linea base DCASE2022 MobileNetV2",
+    "0.6067",
+    "0.5460",
+    "0.5091"
+   ],
+   [
+    "Primer lugar DCASE2022 (conjunto masivo)",
+    "0.7190",
+    "0.6827",
+    "0.6885"
+   ]
+  ]
+ },
+ {
+  "id": "A-R4",
+  "titulo": "AUC de detectores de anomalias acusticos en una cepilladora de madera real",
+  "tipo": "barras",
+  "unidad": "adimensional",
+  "condiciones": "Sonido de cepilladora de madera en aserradero real, microfono ICP 377A21 a 20 kHz, evaluacion con 105 anomalias, arXiv 2501.04819",
+  "replica_de": "Seccion V-A de arXiv 2501.04819 (Fig. 3)",
+  "evidencia": [
+   "E-9515"
+  ],
+  "limites": "Sonido de una cepilladora de aserradero, no de una chumacera de faja; un solo conjunto de evaluacion de dos dias sin intervalos.",
+  "series": [
+   {
+    "etiqueta": "Bosque de aislamiento",
+    "valor": "0.518"
+   },
+   {
+    "etiqueta": "Linea base DCASE",
+    "valor": "0.520"
+   },
+   {
+    "etiqueta": "SVM de una clase",
+    "valor": "0.683"
+   },
+   {
+    "etiqueta": "CAE publicado (Duman et al.)",
+    "valor": "0.798"
+   },
+   {
+    "etiqueta": "Skip-CAE",
+    "valor": "0.846"
+   },
+   {
+    "etiqueta": "Skip-CAE-Transformer",
+    "valor": "0.875"
+   }
+  ]
+ },
+ {
+  "id": "A-R5",
+  "titulo": "AUC y pAUC por tipo de anomalia en la cepilladora",
+  "tipo": "tabla",
+  "unidad": "adimensional",
+  "condiciones": "Sonido de cepilladora de madera en aserradero real, microfono ICP 377A21 a 20 kHz, evaluacion con 105 anomalias, arXiv 2501.04819",
+  "replica_de": "Tabla II de arXiv 2501.04819",
+  "evidencia": [
+   "E-9516"
+  ],
+  "limites": "Sonido de una cepilladora de aserradero, no de una chumacera de faja; pocas anomalias por tipo.",
+  "columnas": [
+   "Modelo",
+   "Roto AUC",
+   "Roto pAUC",
+   "Atascado AUC",
+   "Atascado pAUC",
+   "Grueso o desigual AUC",
+   "Grueso o desigual pAUC"
+  ],
+  "filas": [
+   [
+    "Skip-CAE-Transformer",
+    "0.743",
+    "0.677",
+    "0.778",
+    "0.744",
+    "0.921",
+    "0.807"
+   ],
+   [
+    "Skip-CAE",
+    "0.777",
+    "0.618",
+    "0.723",
+    "0.729",
+    "0.900",
+    "0.820"
+   ],
+   [
+    "CAE de Duman et al.",
+    "0.757",
+    "0.644",
+    "0.639",
+    "0.676",
+    "0.864",
+    "0.742"
+   ],
+   [
+    "OneClassSVM",
+    "0.558",
+    "0.509",
+    "0.707",
+    "0.519",
+    "0.681",
+    "0.515"
+   ],
+   [
+    "Linea base DCASE",
+    "0.441",
+    "0.474",
+    "0.620",
+    "0.480",
+    "0.484",
+    "0.476"
+   ],
+   [
+    "Isolation Forest",
+    "0.437",
+    "0.474",
+    "0.613",
+    "0.474",
+    "0.485",
+    "0.474"
+   ]
+  ]
+ },
+ {
+  "id": "A-R6",
+  "titulo": "Comparacion de cuatro CNN para diagnostico de rodamientos en CWRU",
+  "tipo": "tabla",
+  "unidad": "adimensional",
+  "condiciones": "Banco CWRU, 10 clases, 1797 rpm, 12 kHz, CNN en STM32H743VI, arXiv 2304.09100",
+  "replica_de": "Tabla IV de arXiv 2304.09100",
+  "evidencia": [
+   "E-9521"
+  ],
+  "limites": "Datos de banco o de laboratorio; no es una chumacera de polea de faja ni dato de campo; valores no transferibles. Clasificacion de 10 clases con datos enviados desde un PC por puerto serie.",
+  "columnas": [
+   "Modelo",
+   "Parametros",
+   "Entrenamiento por ronda [s]",
+   "Mejor exactitud"
+  ],
+  "filas": [
+   [
+    "Modelo base",
+    "55,690",
+    "2.2",
+    "0.9528"
+   ],
+   [
+    "Modelo Tanh",
+    "55,690",
+    "2.2",
+    "0.9765"
+   ],
+   [
+    "Modelo ReduceLR",
+    "55,690",
+    "2.3",
+    "0.9477"
+   ],
+   [
+    "Modelo optimizado",
+    "36,390",
+    "2.0",
+    "0.9890"
+   ]
+  ]
+ },
+ {
+  "id": "A-R7",
+  "titulo": "Recursos del modelo CNN en el microcontrolador STM32H743VI",
+  "tipo": "tabla",
+  "unidad": "",
+  "condiciones": "Banco CWRU, 10 clases, 1797 rpm, 12 kHz, CNN en STM32H743VI, arXiv 2304.09100",
+  "replica_de": "Tabla III de arXiv 2304.09100",
+  "evidencia": [
+   "E-9521"
+  ],
+  "limites": "Datos de banco o de laboratorio; no es una chumacera de polea de faja ni dato de campo; valores no transferibles.",
+  "columnas": [
+   "Indice",
+   "Valor"
+  ],
+  "filas": [
+   [
+    "MACC",
+    "1238380"
+   ],
+   [
+    "FLASH [KB]",
+    "142.15"
+   ],
+   [
+    "RAM [KB]",
+    "11.32"
+   ]
+  ]
+ },
+ {
+  "id": "B-R1",
+  "titulo": "Formas de la funcion de riesgo de la familia PGW segun gamma y kappa*gamma (definicion de la forma down-then-up o banera)",
+  "tipo": "tabla",
+  "unidad": "",
+  "condiciones": "Familia de distribuciones PGW; definicion matematica, no datos de campo",
+  "replica_de": "Tabla 1 de Burke, Jones y Noufaily (arXiv:1901.03212)",
+  "evidencia": [
+   "E-9602"
+  ],
+  "limites": "Articulo estadistico de metodos (Burke, Jones y Noufaily, arXiv:1901.03212) con ejemplos medicos; solo respalda definiciones de forma del riesgo, no tasas de falla de ningun equipo.",
+  "columnas": [
+   "gamma",
+   "kappa*gamma",
+   "forma del riesgo"
+  ],
+  "filas": [
+   [
+    "1",
+    "1",
+    "constant"
+   ],
+   [
+    "<=1",
+    "<=1",
+    "decreasing"
+   ],
+   [
+    "<=1",
+    ">=1",
+    "down-then-up"
+   ],
+   [
+    ">=1",
+    "<=1",
+    "up-then-down"
+   ],
+   [
+    ">=1",
+    ">=1",
+    "increasing"
+   ]
+  ]
+ },
+ {
+  "id": "B-R2",
+  "titulo": "Casos kappa=1 (Weibull) y kappa=2 de la familia APGW: formas posibles del riesgo",
+  "tipo": "tabla",
+  "unidad": "",
+  "condiciones": "Familia APGW; definicion matematica, no datos de campo",
+  "replica_de": "Tabla 2 de Burke, Jones y Noufaily (arXiv:1901.03212), filas kappa=1 y kappa=2",
+  "evidencia": [
+   "E-9603"
+  ],
+  "limites": "Articulo estadistico de metodos (Burke, Jones y Noufaily, arXiv:1901.03212) con ejemplos medicos; solo respalda definiciones de forma del riesgo, no tasas de falla de ningun equipo.",
+  "columnas": [
+   "kappa",
+   "H_A",
+   "formas del riesgo",
+   "distribucion"
+  ],
+  "filas": [
+   [
+    "1",
+    "t^gamma",
+    "decreasing, constant, increasing",
+    "Weibull (gamma = 1 da la exponencial)"
+   ],
+   [
+    "2",
+    "t^gamma + (1/6) t^(2 gamma)",
+    "decreasing, down-then-up, increasing",
+    "gamma = 1 da riesgo lineal"
+   ]
+  ]
+ },
+ {
+  "id": "B-R3",
+  "titulo": "Paderborn LDM: registros de vibracion y primera y ultima marca de tiempo del log, por rodamiento (B01 a B17)",
+  "tipo": "tabla",
+  "unidad": "",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777)",
+  "replica_de": "Campo records de meta.json y filas primera y ultima de <B>_operatingConditions.csv de cada rodamiento",
+  "evidencia": [
+   "E-9605",
+   "E-9606",
+   "E-9607",
+   "E-9608",
+   "E-9609"
+  ],
+  "limites": "Ensayo de banco; el README no declara criterio de fin de ensayo ni hora de falla; el intervalo entre marcas de tiempo es el del log de condiciones, no una vida declarada; no es dato de campo ni de una chumacera de polea.",
+  "columnas": [
+   "Rodamiento",
+   "Registros",
+   "Primera marca de tiempo",
+   "Ultima marca de tiempo"
+  ],
+  "filas": [
+   [
+    "B01",
+    "377",
+    "19-Oct-2021 08:46:54",
+    "19-Oct-2021 10:59:32"
+   ],
+   [
+    "B02",
+    "1116",
+    "25-Oct-2021 08:59:35",
+    "25-Oct-2021 14:36:36"
+   ],
+   [
+    "B03",
+    "614",
+    "05-Nov-2021 15:10:43",
+    "05-Nov-2021 18:23:40"
+   ],
+   [
+    "B04",
+    "1114",
+    "17-Nov-2021 12:45:09",
+    "17-Nov-2021 18:26:58"
+   ],
+   [
+    "B05",
+    "572",
+    "22-Nov-2021 11:06:32",
+    "22-Nov-2021 13:59:49"
+   ],
+   [
+    "B06",
+    "12965",
+    "25-Nov-2021 09:53:21",
+    "28-Nov-2021 04:20:35"
+   ],
+   [
+    "B07",
+    "6393",
+    "31-Jan-2022 12:36:13",
+    "03-Feb-2022 08:14:36"
+   ],
+   [
+    "B08",
+    "1827",
+    "04-Feb-2022 14:43:30",
+    "05-Feb-2022 01:20:58"
+   ],
+   [
+    "B09",
+    "1813",
+    "18-Feb-2022 15:51:44",
+    "19-Feb-2022 03:59:44"
+   ],
+   [
+    "B10",
+    "3224",
+    "04-Mar-2022 14:21:51",
+    "05-Mar-2022 09:21:36"
+   ],
+   [
+    "B11",
+    "1953",
+    "17-Aug-2022 09:26:32",
+    "17-Aug-2022 18:17:01"
+   ],
+   [
+    "B12",
+    "767",
+    "24-Aug-2022 08:49:23",
+    "24-Aug-2022 11:22:23"
+   ],
+   [
+    "B13",
+    "19417",
+    "09-Sep-2022 12:21:13",
+    "12-Sep-2022 05:56:26"
+   ],
+   [
+    "B14",
+    "12317",
+    "23-Sep-2022 12:43:11",
+    "30-Sep-2022 20:29:52"
+   ],
+   [
+    "B15",
+    "22567",
+    "14-Oct-2022 14:53:44",
+    "17-Oct-2022 18:54:10"
+   ],
+   [
+    "B16",
+    "5891",
+    "28-Oct-2022 09:53:01",
+    "29-Oct-2022 05:35:43"
+   ],
+   [
+    "B17",
+    "2733",
+    "04-Nov-2022 09:02:50",
+    "05-Nov-2022 01:28:31"
+   ]
+  ]
+ },
+ {
+  "id": "B-R4",
+  "titulo": "Paderborn LDM: registros de vibracion por rodamiento",
+  "tipo": "barras",
+  "unidad": "registros",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777)",
+  "replica_de": "Campo records de meta.json de cada rodamiento",
+  "evidencia": [
+   "E-9605",
+   "E-9606",
+   "E-9607",
+   "E-9608",
+   "E-9609"
+  ],
+  "limites": "Ensayo de banco; el README no declara criterio de fin de ensayo ni hora de falla; el intervalo entre marcas de tiempo es el del log de condiciones, no una vida declarada; no es dato de campo ni de una chumacera de polea. El numero de registros es un indicador del tamano del ensayo, no de la vida.",
+  "series": [
+   {
+    "etiqueta": "B01",
+    "valor": "377"
+   },
+   {
+    "etiqueta": "B02",
+    "valor": "1116"
+   },
+   {
+    "etiqueta": "B03",
+    "valor": "614"
+   },
+   {
+    "etiqueta": "B04",
+    "valor": "1114"
+   },
+   {
+    "etiqueta": "B05",
+    "valor": "572"
+   },
+   {
+    "etiqueta": "B06",
+    "valor": "12965"
+   },
+   {
+    "etiqueta": "B07",
+    "valor": "6393"
+   },
+   {
+    "etiqueta": "B08",
+    "valor": "1827"
+   },
+   {
+    "etiqueta": "B09",
+    "valor": "1813"
+   },
+   {
+    "etiqueta": "B10",
+    "valor": "3224"
+   },
+   {
+    "etiqueta": "B11",
+    "valor": "1953"
+   },
+   {
+    "etiqueta": "B12",
+    "valor": "767"
+   },
+   {
+    "etiqueta": "B13",
+    "valor": "19417"
+   },
+   {
+    "etiqueta": "B14",
+    "valor": "12317"
+   },
+   {
+    "etiqueta": "B15",
+    "valor": "22567"
+   },
+   {
+    "etiqueta": "B16",
+    "valor": "5891"
+   },
+   {
+    "etiqueta": "B17",
+    "valor": "2733"
+   }
+  ]
+ },
+ {
+  "id": "B-R5",
+  "titulo": "Paderborn LDM: primera fila del log de condiciones (carga dinamica y estatica fijadas, velocidad fijada)",
+  "tipo": "tabla",
+  "unidad": "N y rpm",
+  "condiciones": "Paderborn LDM, ensayo de banco de rodamientos de bolas con carga y velocidad variables (conjunto run-to-failure publicado; reempaquetado en Hugging Face por Nounours777); solo 5 de 17 rodamientos leidos",
+  "replica_de": "Primera fila de <B>_operatingConditions.csv de B01, B06, B11, B14 y B17",
+  "evidencia": [
+   "E-9610"
+  ],
+  "limites": "Ensayo de banco; el README no declara criterio de fin de ensayo ni hora de falla; el intervalo entre marcas de tiempo es el del log de condiciones, no una vida declarada; no es dato de campo ni de una chumacera de polea. Es una muestra del log, no la condicion nominal.",
+  "columnas": [
+   "Rodamiento",
+   "setDynLoad [N]",
+   "setStatLoad [N]",
+   "setSpeed [rpm]"
+  ],
+  "filas": [
+   [
+    "B01",
+    "0",
+    "2500",
+    "750"
+   ],
+   [
+    "B06",
+    "0",
+    "2500",
+    "750"
+   ],
+   [
+    "B11",
+    "1000",
+    "3000",
+    "2477.66842367181"
+   ],
+   [
+    "B14",
+    "801.589453034805",
+    "2500",
+    "2700"
+   ],
+   [
+    "B17",
+    "1500",
+    "2405.79193707562",
+    "2700"
+   ]
+  ]
+ },
+ {
+  "id": "B-R6",
+  "titulo": "Subconjunto UNSW run-to-failure (alidi): ejemplos por particion",
+  "tipo": "tabla",
+  "unidad": "ejemplos",
+  "condiciones": "Subconjunto en Hugging Face (alidi) del conjunto run-to-failure de UNSW; ensayos 1 y 3, aceleracion horizontal; defecto sembrado tipo BPFO",
+  "replica_de": "Tarjeta del conjunto, bloque dataset_info",
+  "evidencia": [
+   "E-9612"
+  ],
+  "limites": "Subconjunto de terceros con defecto sembrado; la tarjeta no da tiempos de falla; no es dato de campo.",
+  "columnas": [
+   "Particion",
+   "Ejemplos"
+  ],
+  "filas": [
+   [
+    "test1",
+    "80"
+   ],
+   [
+    "test3",
+    "79"
+   ]
   ]
  }
 ]

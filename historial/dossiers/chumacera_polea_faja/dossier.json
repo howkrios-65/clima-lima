@@ -132,6 +132,16 @@
       "E-7003"
      ],
      "limite": "Con 2 fallas Weibull es inviable. Solo sirven como contraste metodológico"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Una distribución con forma de bañera baja, tiene un valle plano y vuelve a subir; la familia Weibull puede dar riesgo decreciente, constante o creciente según su parámetro de forma",
+     "evidencia": [
+      "E-9601",
+      "E-9602",
+      "E-9603"
+     ],
+     "limite": "Definición estadística de un artículo ajeno al mantenimiento; no da parámetros de rodamientos ni de poleas"
     }
    ],
    "nota": "Parámetros Weibull publicados verificados y datos de campo de chumaceras de polea: VACÍO. No se ajusta ningún Weibull."
@@ -219,6 +229,23 @@
       "E-8011"
      ],
      "limite": "Solo resumen e inicio"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Un autoencoder convolucional con micrófono, entrenado solo con sonido normal, obtuvo AUC de 0,875 en una cepilladora industrial frente a 0,518 del bosque de aislamiento; en la máquina de rodamientos de un desafío de detección acústica el AUC fue de 65,92 % con un autoencoder simple",
+     "evidencia": [
+      "E-9515",
+      "E-9506"
+     ],
+     "limite": "Cepilladora y banco de laboratorio: no son una polea de faja; sin intervalos de confianza"
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "La ampliación de datos con un modelo de difusión elevó la exactitud de una CNN en CWRU de 78,665 % a 94,033 % y la de una RNN-LSTM de 56,262 % a 88,642 %",
+     "evidencia": [
+      "E-9503"
+     ],
+     "limite": "Clasificación en banco, no vida remanente; resultados de un solo conjunto leído"
     }
    ],
    "nota": "Estudios de campo con partición por activo: VACÍO."
@@ -251,7 +278,8 @@
   },
   "mpd_normas": {
    "elementos": [],
-   "vacio": "Ninguna norma se leyó: las 15 candidatas (ISO 281, 15243, 20816-3, 13373, 18436-2, 5048, DIN 22101, ISO 113, CEMA 7, API 580 y 581, SAE JA1011) están solo como resúmenes de buscador y se listan aparte como pistas con estado NO-VERIFICADO."
+   "vacio": "Ninguna norma se leyó: las 15 candidatas (ISO 281, 15243, 20816-3, 13373, 18436-2, 5048, DIN 22101, ISO 113, CEMA 7, API 580 y 581, SAE JA1011) están solo como resúmenes de buscador y se listan aparte como pistas con estado NO-VERIFICADO.",
+   "nota": "Se identificaron 43 normas y guías solo en resúmenes de buscador (SOLO-SNIPPET): ver la pestaña Referencias, Normas técnicas. Ninguna se verificó en la página oficial."
   },
   "referencias": {
    "elementos": [

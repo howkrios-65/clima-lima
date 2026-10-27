@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa del equipo de confiabilidad</title>
+<meta name="description" content="Organigrama interactivo del equipo de veinte agentes de confiabilidad para el caso chumacera de polea de faja transportadora.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f9fd; --bg2:#eaf3fb; --card:#ffffff; --ink:#243b53; --ink2:#4f677d; --mute:#7a90a4; --line:#c9dcec; --edge:#9ebfdd;
+  --b1:#8fb8de; --b2:#5b9bd5; --b3:#3a78b0; --bsoft:#eef5fb;
+  --g1:#9fd3b5; --g2:#6cc08f; --g3:#3a935f; --gsoft:#eef8f2;
+  --p1:#f2c7a0; --p3:#b9733a; --psoft:#fdf4ec;
+  --s1:#ecd9a8; --s3:#8f7a2a; --ssoft:#fbf7e9;
+  --pill:#ffffff; --shadow:0 1px 2px rgba(60,100,140,.06),0 8px 24px rgba(60,100,140,.07);
+  --serif:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif; --sans:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0e1822; --bg2:#13212e; --card:#152635; --ink:#e4eef8; --ink2:#aac0d3; --mute:#7f97ab; --line:#2a4258; --edge:#3d6585;
+  --b1:#3f6d96; --b2:#6aa6dc; --b3:#9cc8ee; --bsoft:#132434;
+  --g1:#3b6f55; --g2:#5fb583; --g3:#8fd6ab; --gsoft:#12281f;
+  --p1:#7d5f43; --p3:#f0b98a; --psoft:#2a2019;
+  --s1:#74673a; --s3:#e2cf8f; --ssoft:#26220f;
+  --pill:#152635; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);}}
+:root[data-theme="dark"]{--bg:#0e1822; --bg2:#13212e; --card:#152635; --ink:#e4eef8; --ink2:#aac0d3; --mute:#7f97ab; --line:#2a4258; --edge:#3d6585;
+  --b1:#3f6d96; --b2:#6aa6dc; --b3:#9cc8ee; --bsoft:#132434;
+  --g1:#3b6f55; --g2:#5fb583; --g3:#8fd6ab; --gsoft:#12281f;
+  --p1:#7d5f43; --p3:#f0b98a; --psoft:#2a2019;
+  --s1:#74673a; --s3:#e2cf8f; --ssoft:#26220f;
+  --pill:#152635; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.5;transition:background .25s,color .25s}
+button{font:inherit;color:inherit;cursor:pointer}
+code{font-family:var(--mono);font-size:.86em;background:var(--bsoft);border:1px solid var(--line);border-radius:4px;padding:0 .3em}
+.skip{position:absolute;left:-999px}
+/* barra superior */
+.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;height:52px;padding:0 16px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;font-family:var(--serif);font-weight:500;font-size:14px;letter-spacing:.01em;white-space:nowrap}
+.brand svg{width:20px;height:20px;color:var(--b2)}
+.tabs{display:flex;gap:4px;margin-left:10px}
+.tab{background:none;border:0;border-bottom:1px solid transparent;padding:14px 10px 13px;font-family:var(--serif);font-weight:400;font-size:13.5px;color:var(--ink2);transition:color .2s,border-color .2s}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--b3);border-bottom-color:var(--b2);font-weight:500}
+.spacer{flex:1}
+.iconbtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink2);transition:border-color .2s,color .2s}
+.iconbtn:hover{border-color:var(--b2);color:var(--b3)}
+.iconbtn svg{width:17px;height:17px}
+#themeBtn .moon{display:none}
+:root[data-theme="dark"] #themeBtn .sun{display:none}
+:root[data-theme="dark"] #themeBtn .moon{display:block}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) #themeBtn .sun{display:none}:root:not([data-theme="light"]) #themeBtn .moon{display:block}}
+/* título */
+.hero{max-width:1640px;margin:0 auto;padding:22px 16px 6px}
+.eyebrow{font-family:var(--serif);font-weight:400;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+h1{margin:4px 0 0;font-family:var(--serif);font-weight:300;font-size:clamp(22px,3.4vw,34px);line-height:1.15;letter-spacing:-.01em}
+.author{margin-top:6px;font-family:var(--serif);font-weight:500;font-size:11.5px;letter-spacing:.2em;color:var(--b3)}
+.lead{max-width:880px;margin:10px 0 0;color:var(--ink2);font-weight:300;font-size:15.5px}
+/* controles */
+.panelwrap{max-width:1640px;margin:0 auto;padding:10px 16px 40px;display:flex;flex-direction:column}
+.controls{order:1}.progresswrap{order:2}.explain{order:3}.legend{order:4}.viewport{order:5}
+.controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px 8px;padding:12px 0 8px}
+.btn{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 14px;border-radius:9px;border:1px solid var(--line);background:var(--card);font-family:var(--serif);font-weight:400;font-size:13px;color:var(--ink);transition:background .2s,border-color .2s,color .2s}
+.btn:hover{border-color:var(--b2)}
+.btn svg{width:15px;height:15px}
+.btn.primary{background:var(--b2);border-color:var(--b2);color:#fff;font-weight:500}
+.btn.primary:hover{background:var(--b3);border-color:var(--b3)}
+.btn.sq{width:36px;padding:0;justify-content:center}
+.btn[aria-pressed="true"]{background:var(--bsoft);border-color:var(--b2);color:var(--b3);font-weight:500}
+.btn.speed[aria-pressed="true"]{background:var(--b2);border-color:var(--b2);color:#fff}
+.lbl{font-family:var(--serif);font-weight:300;font-size:12.5px;color:var(--mute);margin:0 2px 0 8px}
+.zoomgrp{margin-left:auto;display:flex;gap:6px}
+.progresswrap{display:flex;align-items:center;gap:12px;margin:2px 0 10px}
+.stepno{font-family:var(--serif);font-weight:400;font-size:12.5px;color:var(--ink2);white-space:nowrap;min-width:86px}
+.bar{flex:1;height:3px;border-radius:3px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--b1),var(--b2));border-radius:3px}
+.explain{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:var(--shadow);min-height:112px}
+.explain h2{margin:0;font-family:var(--serif);font-weight:500;font-size:15.5px;color:var(--b3)}
+.explain p{margin:4px 0 0;font-size:15px;font-weight:300;color:var(--ink)}
+.explain .real{margin-top:6px;font-size:14px;color:var(--ink2);padding-left:10px;border-left:1px solid var(--g2)}
+.explain .who{display:flex;flex-wrap:wrap;gap:5px;align-content:flex-start;max-width:340px;justify-content:flex-end}
+.chip{font-family:var(--serif);font-weight:400;font-size:11px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--bsoft);color:var(--b3)}
+.flowlist{margin:6px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:2px 18px;font-size:13.5px;color:var(--ink2)}
+.flowlist b{font-family:var(--serif);font-weight:500;color:var(--b3);margin-right:6px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:12px 2px 8px;font-size:13px;color:var(--ink2);font-weight:300;align-items:center}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.dot.on{background:var(--g2)} .dot.off{background:#b9c6d2}
+.hint{margin-left:auto;font-family:var(--serif);font-size:12px;color:var(--b3)}
+/* lienzo */
+.viewport{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:radial-gradient(1200px 500px at 50% 0%,var(--bsoft),transparent 70%),var(--card);touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+.viewport.grabbing{cursor:grabbing}
+.stage{position:absolute;left:0;top:0;width:1600px;height:1170px;transform-origin:0 0;will-change:transform}
+.stage.anim{transition:transform .6s cubic-bezier(.3,.7,.2,1)}
+svg.wires{position:absolute;left:0;top:0;width:1600px;height:1170px;pointer-events:none;overflow:visible}
+.wire{fill:none;stroke:var(--edge);stroke-width:1;stroke-dasharray:2 4;stroke-linecap:round;transition:opacity .35s,stroke .35s,stroke-width .35s}
+.wire.blue{stroke:var(--b1)} .wire.green{stroke:var(--g2)} .wire.peach{stroke:var(--p1)} .wire.sand{stroke:#cdb671}
+.wire.is-dim{opacity:.18}
+.wire.is-done{stroke-dasharray:none;opacity:.8}
+.wire.is-on{stroke-width:1.6;stroke-dasharray:3 5;opacity:1;animation:flow 1.1s linear infinite}
+.wire.blue.is-on{stroke:var(--b2)} .wire.green.is-on{stroke:var(--g3)} .wire.peach.is-on{stroke:var(--p3)} .wire.sand.is-on{stroke:var(--s3)}
+@keyframes flow{to{stroke-dashoffset:-16}}
+@media (prefers-reduced-motion:reduce){.wire.is-on{animation:none}.stage.anim{transition:none}}
+.mk{transition:opacity .35s}
+.pill{position:absolute;transform:translate(-50%,-50%);padding:1px 9px;border-radius:999px;border:1px solid var(--line);background:var(--pill);font-family:var(--serif);font-weight:400;font-size:10.5px;line-height:17px;color:var(--ink2);white-space:nowrap;transition:opacity .35s,border-color .35s,color .35s,background .35s;pointer-events:none}
+.pill.is-dim{opacity:.22}
+.pill.is-on{border-color:var(--b2);color:var(--b3);background:var(--bsoft);font-weight:500}
+.pill.green.is-on{border-color:var(--g2);color:var(--g3);background:var(--gsoft)}
+.pill.peach.is-on{border-color:var(--p1);color:var(--p3);background:var(--psoft)}
+.pill.sand.is-on{border-color:var(--s1);color:var(--s3);background:var(--ssoft)}
+/* grupos */
+.group{position:absolute;border:1px solid var(--line);border-radius:14px;transition:opacity .35s}
+.group h3{margin:0;position:absolute;left:0;right:0;top:8px;text-align:center;font-family:var(--serif);font-weight:500;font-size:13px;letter-spacing:.01em}
+.group.A{background:linear-gradient(var(--bsoft),transparent 80%);border-color:var(--b1)} .group.A h3{color:var(--b3)}
+.group.B{background:linear-gradient(var(--gsoft),transparent 80%);border-color:var(--g1)} .group.B h3{color:var(--g3)}
+.group.C{background:linear-gradient(var(--psoft),transparent 80%);border-color:var(--p1)} .group.C h3{color:var(--p3)}
+.group.D{background:linear-gradient(var(--ssoft),transparent 80%);border-color:var(--s1)} .group.D h3{color:var(--s3)}
+.group .note{position:absolute;left:14px;right:14px;bottom:12px;font-size:12px;font-weight:300;color:var(--ink2);text-align:center;font-style:italic}
+/* tarjetas */
+.card{position:absolute;display:block;text-align:left;padding:9px 11px 8px;border-radius:10px;border:1px solid var(--line);background:var(--card);box-shadow:0 1px 2px rgba(60,100,140,.05);transition:opacity .35s,border-color .3s,box-shadow .3s,transform .3s,background .3s;overflow:hidden}
+.card:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(60,100,140,.12)}
+.card:focus-visible{outline:2px solid var(--b2);outline-offset:2px}
+.card .hd{display:flex;align-items:center;gap:8px}
+.card .ic{flex:none;width:22px;height:22px}
+.card .ic svg{width:22px;height:22px;display:block}
+.card .nm{font-family:var(--serif);font-weight:500;font-size:13px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.card .fn{margin-top:3px;font-size:12.5px;font-weight:400;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .io{margin-top:3px;font-size:11.5px;font-weight:300;color:var(--ink2);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .io b{font-family:var(--serif);font-weight:500;font-size:10px;letter-spacing:.06em;text-transform:uppercase;margin-right:5px;color:var(--mute)}
+.card .st{position:absolute;right:8px;top:8px;width:7px;height:7px;border-radius:50%;background:#b9c6d2}
+.card.worked .st{background:var(--g2)}
+.card .chips{position:absolute;right:7px;bottom:6px;display:none;gap:3px}
+.card .chips i{font-style:normal;font-family:var(--serif);font-size:9.5px;font-weight:500;line-height:14px;min-width:15px;text-align:center;border-radius:8px;background:var(--bsoft);color:var(--b3);border:1px solid var(--b1)}
+.full .card .chips{display:flex}
+.card.A{border-color:var(--b1)} .card.A .ic{color:var(--b2)}
+.card.B{border-color:var(--g1)} .card.B .ic{color:var(--g3)}
+.card.C{border-color:var(--p1)} .card.C .ic{color:var(--p3)}
+.card.D{border-color:var(--s1)} .card.D .ic{color:var(--s3)}
+.card.In{border-color:var(--b2);background:var(--bsoft)} .card.In .ic{color:var(--b3)}
+.card.Side{border-style:dashed;border-color:var(--p1);background:var(--psoft)} .card.Side .ic{color:var(--p3)}
+.card.core{border:1.4px solid var(--b2);background:linear-gradient(135deg,var(--bsoft),var(--card));box-shadow:0 0 0 5px color-mix(in srgb,var(--b1) 22%,transparent),var(--shadow)}
+.card.core .nm{font-size:15px;font-weight:500;letter-spacing:.02em}
+.card.core .ic,.card.core .ic svg{width:30px;height:30px;color:var(--b3)}
+.card.core .fn{font-size:13px}
+.card.is-dim{opacity:.3}
+.card.is-done{background:var(--bsoft);border-color:var(--b1)}
+.card.is-on{border-color:var(--b2);box-shadow:0 0 0 3px color-mix(in srgb,var(--b2) 28%,transparent),0 6px 18px rgba(60,100,140,.18);transform:translateY(-2px);background:var(--card)}
+.card.sel{outline:1.5px solid var(--b2);outline-offset:2px}
+/* carpetas */
+.fcap{position:absolute;left:0;width:1600px;text-align:center;pointer-events:none;font-family:var(--serif);font-weight:400;font-size:12.5px;color:var(--ink2)}
+.folder{position:absolute;padding:15px 12px 8px;border:1px solid var(--b1);border-radius:3px 10px 10px 10px;background:var(--card);transition:opacity .35s,box-shadow .35s,border-color .35s,background .35s}
+.folder:before{content:"";position:absolute;left:-1px;top:-11px;width:78px;height:11px;border:1px solid var(--b1);border-bottom:0;border-radius:8px 8px 0 0;background:var(--card);transition:inherit}
+.folder .fno{position:absolute;left:8px;top:-9px;font-family:var(--serif);font-size:8.5px;font-weight:500;color:var(--mute)}
+.folder b{display:block;font-family:var(--serif);font-weight:500;font-size:12.5px;line-height:1.2;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.folder span{display:block;margin-top:4px;font-size:11.5px;font-weight:300;color:var(--ink2);line-height:1.3}
+.folder.is-dim{opacity:.3}
+.folder.is-on{border-color:var(--b2);background:var(--bsoft);box-shadow:0 0 0 3px color-mix(in srgb,var(--b2) 25%,transparent)}
+.folder.is-on:before{background:var(--bsoft);border-color:var(--b2)}
+/* panel lateral */
+.backdrop{position:fixed;inset:0;z-index:40;background:rgba(20,40,60,.28);opacity:0;pointer-events:none;transition:opacity .25s}
+.backdrop.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;z-index:41;top:0;right:0;bottom:0;width:min(520px,100vw);background:var(--bg);border-left:1px solid var(--line);box-shadow:-12px 0 40px rgba(20,40,60,.18);transform:translateX(102%);transition:transform .3s cubic-bezier(.3,.7,.2,1);display:flex;flex-direction:column}
+.drawer.open{transform:none}
+.drawer header{display:flex;align-items:flex-start;gap:12px;padding:18px 18px 14px;border-bottom:1px solid var(--line);background:var(--card)}
+.drawer .big{flex:none;width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:var(--bsoft);border:1px solid var(--b1);color:var(--b3)}
+.drawer .big svg{width:24px;height:24px}
+.drawer h2{margin:0;font-family:var(--serif);font-weight:500;font-size:16.5px;line-height:1.2;word-break:break-word}
+.drawer .sub{font-size:13px;color:var(--ink2);font-weight:300;margin-top:2px}
+.badge{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-family:var(--serif);font-size:11.5px;padding:2px 10px;border-radius:999px;border:1px solid var(--line)}
+.badge.yes{background:var(--gsoft);border-color:var(--g1);color:var(--g3)}
+.badge.no{background:var(--bsoft);color:var(--ink2)}
+.drawer .x{margin-left:auto;flex:none}
+.dbody{flex:1;overflow:auto;padding:16px 18px 40px;-webkit-overflow-scrolling:touch}
+.dbody h4{margin:22px 0 8px;font-family:var(--serif);font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.dbody h4:first-child{margin-top:0}
+.sentence{font-size:17px;font-weight:300;line-height:1.45;color:var(--ink);padding-left:12px;border-left:2px solid var(--b2)}
+.trio{display:grid;gap:8px}
+.mini{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 12px}
+.mini b{display:block;font-family:var(--serif);font-weight:500;font-size:12.5px;color:var(--b3);margin-bottom:4px}
+.mini ul{margin:0;padding-left:16px;font-size:14px;font-weight:300}
+.mini li{margin:2px 0}
+.mini .cn{display:flex;flex-wrap:wrap;gap:5px}
+.block{display:grid;grid-template-columns:28px 1fr;gap:2px 10px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);margin-bottom:8px}
+.block .n{grid-row:span 2;width:24px;height:24px;border-radius:50%;background:var(--bsoft);border:1px solid var(--b1);font-family:var(--serif);font-weight:500;font-size:11.5px;display:flex;align-items:center;justify-content:center;color:var(--b3)}
+.block .t{font-family:var(--serif);font-weight:500;font-size:13px}
+.block .t small{font-weight:300;color:var(--mute);margin-left:6px;font-size:11.5px}
+.block .q{font-size:12.5px;color:var(--mute);font-weight:300;font-style:italic}
+.block .v{grid-column:2;font-size:14.5px;font-weight:300;margin-top:3px}
+.case{border:1px solid var(--g1);background:var(--gsoft);border-radius:10px;padding:10px 12px}
+.case dl{margin:0;display:grid;grid-template-columns:86px 1fr;gap:6px 10px;font-size:14px;font-weight:300}
+.case dt{font-family:var(--serif);font-weight:500;font-size:12px;color:var(--g3)}
+.case dd{margin:0}
+.nocase{border:1px dashed var(--line);border-radius:10px;padding:10px 12px;font-size:14px;color:var(--ink2);font-weight:300;background:var(--card)}
+.src{margin-top:18px;font-size:12px;color:var(--mute);font-weight:300}
+/* comandos */
+.cmdwrap{max-width:1000px;margin:0 auto;padding:18px 16px 60px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:30px}
+.toc{position:sticky;top:70px;align-self:start;max-height:calc(100vh - 90px);overflow:auto;font-size:13.5px;font-family:var(--serif);font-weight:300}
+.toc a{display:block;padding:4px 0 4px 10px;color:var(--ink2);text-decoration:none;border-left:1px solid var(--line)}
+.toc a:hover{color:var(--b3);border-left-color:var(--b2)}
+.guide h1{font-size:28px;margin:6px 0 10px}
+.guide h2{margin:36px 0 8px;padding-top:8px;font-family:var(--serif);font-weight:500;font-size:21px;color:var(--b3);border-top:1px solid var(--line);scroll-margin-top:70px}
+.guide h3{margin:24px 0 6px;font-family:var(--serif);font-weight:500;font-size:16px;scroll-margin-top:70px}
+.guide p,.guide li{font-weight:300;font-size:16px}
+.guide li{margin:4px 0}
+.guide strong{font-weight:500}
+.guide .tw{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.guide table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+.guide th{font-family:var(--serif);font-weight:500;text-align:left;padding:8px 10px;background:var(--bsoft);color:var(--b3);border-bottom:1px solid var(--line);white-space:nowrap}
+.guide td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top;font-weight:300}
+.guide tr:last-child td{border-bottom:0}
+.guide pre{position:relative;margin:10px 0;padding:12px 14px;border:1px solid var(--line);border-left:2px solid var(--b2);border-radius:8px;background:var(--bsoft);overflow-x:auto;font-size:13.5px;line-height:1.5}
+.guide pre code{background:none;border:0;padding:0;font-size:inherit}
+.copy{position:absolute;right:8px;top:8px;font-family:var(--serif);font-size:11px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink2)}
+.copy:hover{border-color:var(--b2);color:var(--b3)}
+footer{max-width:1640px;margin:0 auto;padding:0 16px 30px;font-size:12.5px;color:var(--mute);font-weight:300}
+[hidden]{display:none!important}
+@media (max-width:820px){
+  .tabs{margin-left:2px}.brand span{display:none}
+  .explain{grid-template-columns:1fr}.explain .who{justify-content:flex-start;max-width:none}
+  .zoomgrp{margin-left:0}
+  .lead{display:none}.hero{padding-bottom:0}
+  .viewport{order:3}.explain{order:4;margin-top:10px;min-height:0;padding:12px 14px}.legend{order:5}
+  .explain p{font-size:14px}.explain .real{font-size:13px}.flowlist{grid-template-columns:1fr 1fr;font-size:12.5px}
+  .cmdwrap{grid-template-columns:1fr}.toc{display:none}
+  .hint{margin-left:0;width:100%}
+  .drawer{width:100vw}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="topbar">
+  <div class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg><span>Equipo de confiabilidad</span></div>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tab-map" aria-selected="true" aria-controls="view-map">Organigrama</button>
+    <button class="tab" role="tab" id="tab-cmd" aria-selected="false" aria-controls="view-cmd">Comandos</button>
+  </div>
+  <div class="spacer"></div>
+  <button class="iconbtn" id="themeBtn" aria-label="Cambiar entre modo día y noche" title="Modo día y noche">
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+  </button>
+</div>
+
+<main id="main">
+<section id="view-map" role="tabpanel" aria-labelledby="tab-map">
+  <div class="hero">
+    <div class="eyebrow">Mapa del equipo · caso real</div>
+    <h1>Chumacera de polea de faja transportadora</h1>
+    <div class="author">HOWK RIOS - CONFIABILIDAD</div>
+    <p class="lead">Veinte agentes trabajan juntos: un estratega que reparte y decide, y diecinueve especialistas. Pulsa Reproducir para ver el flujo real del caso paso a paso, o haz doble clic en una tarjeta para abrir su ficha.</p>
+  </div>
+  <div class="panelwrap">
+    <div class="controls" role="toolbar" aria-label="Controles de la reproducción">
+      <button class="btn primary" id="playBtn" aria-label="Reproducir"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg><span id="playTxt">Reproducir</span></button>
+      <button class="btn sq" id="prevBtn" aria-label="Paso anterior" title="Paso anterior"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+      <button class="btn sq" id="nextBtn" aria-label="Paso siguiente" title="Paso siguiente"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+      <button class="btn sq" id="resetBtn" aria-label="Reiniciar" title="Reiniciar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></button>
+      <span class="lbl">Velocidad:</span>
+      <button class="btn speed" data-speed="1" aria-pressed="true">1x</button>
+      <button class="btn speed" data-speed="0.5" aria-pressed="false">0.5x</button>
+      <button class="btn speed" data-speed="0.25" aria-pressed="false">0.25x</button>
+      <button class="btn" id="repeatBtn" aria-pressed="false">Repetir</button>
+      <button class="btn" id="fullBtn" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 7.5c4 0 3 9 8 9"/></svg>Ver flujo completo</button>
+      <div class="zoomgrp">
+        <button class="btn sq" id="zoomOut" aria-label="Alejar" title="Alejar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+        <button class="btn sq" id="zoomFit" aria-label="Ajustar al ancho" title="Ajustar al ancho"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+        <button class="btn sq" id="zoomIn" aria-label="Acercar" title="Acercar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M12 5v14"/></svg></button>
+      </div>
+    </div>
+    <div class="progresswrap"><span class="stepno" id="stepNo">Flujo completo</span><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barBox"><i id="barFill"></i></div></div>
+    <div class="explain" id="explain" aria-live="polite">
+      <div><h2 id="exTitle"></h2><p id="exTxt"></p><div class="real" id="exReal" hidden></div><ul class="flowlist" id="exList" hidden></ul></div>
+      <div class="who" id="exWho"></div>
+    </div>
+    <div class="legend">
+      <span><i class="dot on"></i>Figura en la trazabilidad de este caso</span>
+      <span><i class="dot off"></i>No figura en este caso</span>
+      <span><svg width="34" height="8"><line x1="1" y1="4" x2="33" y2="4" stroke="var(--b2)" stroke-dasharray="2 4" stroke-linecap="round"/></svg>Dato que viaja</span>
+      <span class="hint" id="hint">Doble clic en una tarjeta para abrir su ficha</span>
+    </div>
+    <div class="viewport full" id="viewport" aria-label="Organigrama del equipo de confiabilidad">
+      <div class="stage" id="stage"></div>
+    </div>
+  </div>
+</section>
+
+<section id="view-cmd" role="tabpanel" aria-labelledby="tab-cmd" hidden>
+  <div class="cmdwrap">
+    <nav class="toc" id="toc" aria-label="Contenido de la guía"></nav>
+    <article class="guide" id="guide">
+<h1>Guía de comandos y uso del equipo de confiabilidad</h1>
+<p>Esta guía explica cómo manejar el equipo de veinte agentes (un estratega y diecinueve especialistas) y empieza por lo que más se usa: los comandos que se escriben con una barra (<code>/...</code>). Todo lo que aquí se afirma sale de los archivos del repositorio: <code>.claude/commands/</code>, <code>.claude/agents/reliability-*.md</code>, <code>knowledge/protocolo_agentes.md</code>, <code>knowledge/protocolo_dossier_modo_falla.md</code>, <code>tools/reliability/README.md</code> y el caso real <code>historial/dossiers/chumacera_polea_faja/</code>. El mapa interactivo del equipo está en <code>docs/agentes/mapa_agentes.html</code>.</p>
+<h2>1. Los comandos (<code>/...</code>)</h2>
+<p>El proyecto define dos comandos. Los dos arrancan al mismo estratega (<code>reliability-engineer</code>); lo que cambia es el tipo de trabajo que se le encarga.</p>
+<div class="tw"><table><thead><tr><th>Comando</th><th>Para qué sirve</th><th>Qué escribes después</th><th>Qué obtienes</th></tr></thead><tbody><tr><td><code>/modo-de-falla</code></td><td>Investigar a nivel mundial un modo de falla de un componente y armar el dossier con evidencia</td><td>El componente y su modo de falla</td><td>Un dossier con sus secciones, cada elemento con su fuente o declarado VACÍO, y un informe HTML verificado</td></tr><tr><td><code>/confiabilidad</code></td><td>Atender cualquier solicitud de confiabilidad con el equipo completo</td><td>El activo, la falla, los datos o el análisis que necesitas</td><td>Preguntas de intake, trabajo repartido entre especialistas y un informe verificado</td></tr></tbody></table></div>
+<h3>1.1 <code>/modo-de-falla</code></h3>
+<p><strong>Sintaxis</strong></p>
+<pre><code>/modo-de-falla &lt;componente y modo de falla&gt;</code></pre>
+<p><strong>Ejemplo real (el caso ya trabajado en este repositorio)</strong></p>
+<pre><code>/modo-de-falla chumacera de polea de faja transportadora</code></pre>
+<p><strong>Cómo pedir un modo de falla nuevo.</strong> Escribe el componente y, si lo conoces, el modo de falla, en una sola frase. No hace falta aportar datos de planta. Ejemplos de redacción:</p>
+<pre><code>/modo-de-falla rodamiento del motor de una bomba centrífuga, falla por fatiga
+/modo-de-falla sello mecánico de una bomba de pulpa, fuga por desgaste
+/modo-de-falla rodillo de carga de faja transportadora, atascamiento</code></pre>
+<p>Estos tres ejemplos son solo formas de redactar el encargo; el equipo investigará desde cero cada uno y no reutilizará cifras de otro caso.</p>
+<p><strong>Qué hace el comando</strong>, según su archivo <code>.claude/commands/modo-de-falla.md</code>:</p>
+<ol><li>Usa al agente <code>reliability-engineer</code> como estratega.</li><li>Sigue el protocolo <code>knowledge/protocolo_dossier_modo_falla.md</code>.</li><li>Aplica estas reglas: nada sin fuente; los datos ilustrativos no cuentan; los cálculos los hace el kit; un investigador por frente, en paralelo, respetando la cuota del conector de artículos; el dossier se valida con <code>validar_dossier</code>; verificación independiente antes de entregar; preguntas finales a la persona.</li></ol>
+<p><strong>Secciones del dossier</strong> (catálogo del protocolo): mediciones y curvas; diagnóstico y troubleshooting; fenómenos físicos; vida útil y obsolescencia; top de fallas; FMECA y RCM; causa raíz; confiabilidad (Weibull y vida); punto óptimo; costo-riesgo y LCC; inspección basada en riesgo; mantenimiento predictivo y normas; modelos de aprendizaje automático y profundo; referencias.</p>
+<h3>1.2 <code>/confiabilidad</code></h3>
+<p><strong>Sintaxis</strong></p>
+<pre><code>/confiabilidad &lt;lo que necesitas&gt;</code></pre>
+<p><strong>Ejemplos</strong></p>
+<pre><code>/confiabilidad Tengo 70 ventiladores, 12 fallaron y el resto sigue operando; ¿hay desgaste?
+/confiabilidad Audita este historial de órdenes de trabajo antes de que analicemos nada
+/confiabilidad Verifica este informe antes de enviarlo</code></pre>
+<p>Los tres ejemplos vienen del README del equipo (<code>docs/agentes/README.md</code>).</p>
+<p><strong>Qué hace el comando</strong>, según <code>.claude/commands/confiabilidad.md</code>:</p>
+<ol><li>Usa al estratega para clasificar la solicitud.</li><li>Hace las preguntas de intake que cambien la decisión: máximo 5, cada una con una opción por defecto.</li><li>Delega en los especialistas que correspondan.</li><li>Entrega un informe verificado por <code>reliability-evidence-verifier</code>.</li><li>Si lo escribes <strong>sin texto</strong>, muestra el catálogo del equipo en una tabla corta (agente, para qué sirve, cuándo usarlo) y te pregunta qué quieres hacer.</li></ol>
+<h3>1.3 Cuál elegir</h3>
+<div class="tw"><table><thead><tr><th>Situación</th><th>Comando</th></tr></thead><tbody><tr><td>Quiero saber todo lo que el mundo sabe sobre cómo falla un componente</td><td><code>/modo-de-falla</code></td></tr><tr><td>Tengo datos propios (órdenes de trabajo, tiempos hasta la falla, sensores) y una pregunta</td><td><code>/confiabilidad</code></td></tr><tr><td>Quiero que revisen un informe o los resultados de otra herramienta</td><td><code>/confiabilidad</code> (el estratega usa al verificador)</td></tr><tr><td>No sé qué agente necesito</td><td><code>/confiabilidad</code> sin texto, para ver el catálogo</td></tr></tbody></table></div>
+<h3>1.4 Otras formas de entrar</h3>
+<p>El README del equipo indica dos entradas más, sin comando:</p>
+<ul><li><strong>El estratega como asistente principal</strong>, para que te pregunte directamente en la conversación: <code>claude --agent reliability-engineer</code>.</li><li><strong>Directo a un especialista</strong>, nombrándolo en una frase: <code>usa el agente reliability-life-analyst con estos datos: ...</code>.</li></ul>
+<h3>1.5 Qué te preguntarán</h3>
+<p>Las preguntas de intake dependen del tipo de solicitud (tabla del README del equipo):</p>
+<div class="tw"><table><thead><tr><th>Solicitud</th><th>Preguntas típicas</th></tr></thead><tbody><tr><td>Datos</td><td>Activo y función; unidad de tiempo real; qué es una falla y qué un reemplazo preventivo; si todas las unidades empiezan nuevas; cuántas siguen operando</td></tr><tr><td>Causa raíz</td><td>Evento y activo; impacto; evidencia preservada y quién la custodia; eventos similares; uso del análisis (aprendizaje, no culpa)</td></tr><tr><td>FMECA y RCM</td><td>Alcance; contexto operacional; estándar exigido; escalas vigentes; participantes</td></tr><tr><td>Predictivo</td><td>Qué síntoma precede la falla; horizonte; costo de falso negativo y de falso positivo; qué acción dispara una alerta; activos para reservar</td></tr><tr><td>Economía y KPIs</td><td>Tasa de descuento; costos de falla y de intervención; demanda y plazo de reposición; definición local de cada KPI; decisión que dispara cada KPI</td></tr></tbody></table></div>
+<p>Regla común: máximo 5 preguntas por ronda, cada una con opción por defecto; lo reversible se asume y se declara.</p>
+<h2>2. Los agentes que puedes invocar por nombre</h2>
+<p>Son veinte. Todos comparten una ficha de ocho bloques (ROL, TAREA, CONTEXTO, RAZONAMIENTO, CIERRE, FEEDBACK, ALMACENAMIENTO, SALIDA) y una línea de conexión: reciben un BRIEF del líder, devuelven su salida al líder y reportan qué aprendieron. En el mapa interactivo, un doble clic sobre cualquier tarjeta abre su ficha completa.</p>
+<h3>2.1 Quién hace qué y cuándo usarlo</h3>
+<div class="tw"><table><thead><tr><th>Agente</th><th>Función</th><th>Úsalo cuando</th><th>Entrega</th><th>Permisos de sus herramientas</th></tr></thead><tbody><tr><td><code>reliability-engineer</code></td><td>Estratega y único interlocutor de la persona</td><td>Siempre es la puerta de entrada</td><td>Informe HTML, tabla de quién hizo qué, resumen de hasta 10 líneas con vacíos y preguntas</td><td>Lee, escribe, edita, ejecuta código, busca en la web y coordina a los otros diecinueve</td></tr><tr><td><code>reliability-case-historian</code></td><td>Memoria de casos: recurrencia y línea base</td><td>Al abrir un caso (buscar si ya ocurrió) y al cerrarlo (guardarlo)</td><td>Ruta y versión del caso, coincidencias con su razón, estado de la línea base</td><td>Lee, escribe, edita, ejecuta</td></tr><tr><td><code>reliability-literature-researcher</code></td><td>Investigador científico: papers, tesis, libros y normas</td><td>Falla nueva; una instancia por frente de búsqueda</td><td>Lista JSON de entradas del registro de evidencia, tabla de fuentes con nivel y límites, lagunas</td><td>Lee, escribe, ejecuta, busca en la web y usa el conector de artículos con cuota</td></tr><tr><td><code>reliability-standards-researcher</code></td><td>Normas, guías, tesis, libros y clases abiertas</td><td>Dossier por modo de falla</td><td>Tablas de normas y fuentes con referencia APA 7 y enlace; pendientes de adquisición</td><td>Lee, escribe, ejecuta, busca en la web, conector con cuota</td></tr><tr><td><code>reliability-dataset-scout</code></td><td>Datos públicos de fallas y vida</td><td>Dossier por modo de falla</td><td>Tabla de conjuntos (origen, licencia, n, fallas, censura, comparabilidad, límites)</td><td>Lee, escribe, ejecuta, busca en la web, conector con cuota</td></tr><tr><td><code>reliability-paper-analyst</code></td><td>Lectura profunda de papers y libros</td><td>Hay papers priorizados para extraer tablas, parámetros y condiciones de ensayo</td><td>Entradas del registro, lista <code>cifras</code>, reporte de fuentes y lagunas</td><td>Lee, escribe, ejecuta, busca en la web</td></tr><tr><td><code>reliability-citation-ranker</code></td><td>Ranking por citas y cuartil de revista</td><td>Hay que priorizar qué leer</td><td>Tabla id, citas, fuente del conteo, fecha, cuartil y fuente; si no hay acceso, SIN DATOS PARA ARMARLO</td><td>Lee, escribe, ejecuta, busca en la web</td></tr><tr><td><code>reliability-data-auditor</code></td><td>Calidad de datos de mantenimiento</td><td>Tienes órdenes de trabajo, fallas o sensores reales</td><td>Tabla de calidad, reglas con conteos, definición de falla y censura, veredicto por análisis</td><td>Lee y ejecuta</td></tr><tr><td><code>reliability-life-analyst</code></td><td>Estadística de vida (Weibull, supervivencia, reparables)</td><td>Tienes tiempos hasta la falla, censura o una flota</td><td>JSON <code>vida</code> con hallazgos, método por situación y vacíos; figuras con n, método y fuente</td><td>Lee y ejecuta</td></tr><tr><td><code>reliability-rca-investigator</code></td><td>Causa raíz: Ishikawa, 5 porqués, árbol de fallas</td><td>Hay una falla ocurrida o un modo de falla por explicar</td><td>Bloques JSON <code>acr</code>, <code>arbol</code>, <code>porques</code>, <code>observar</code></td><td>Lee y busca en la web (sin escritura)</td></tr><tr><td><code>reliability-fmeca-rcm</code></td><td>FMEA/FMECA, criticidad y estrategia RCM</td><td>Defines mantenimiento, intervalos o tareas</td><td>JSON <code>fmeca</code> con modos, tarea RCM por consecuencia y vacíos</td><td>Lee, ejecuta, busca en la web</td></tr><tr><td><code>reliability-predictive-analyst</code></td><td>Predictivo, aprendizaje automático, RUL y visión por computadora</td><td>Tienes un modelo, un RUL o anomalías por evaluar</td><td>JSON <code>predictivo</code> con hallazgos, estrategia y riesgos de validación</td><td>Lee, ejecuta, busca en la web</td></tr><tr><td><code>reliability-economics-kpi</code></td><td>Economía de la confiabilidad, repuestos y KPIs</td><td>Se justifica una decisión o se arma un tablero</td><td>JSON <code>lcc</code> con elementos, fórmulas, parámetros requeridos y vacíos</td><td>Lee y ejecuta</td></tr><tr><td><code>reliability-replicator</code></td><td>Réplica de figuras, tablas y estadísticas publicadas</td><td>Hay cifras extraídas de papers</td><td>Lista de réplicas con series, evidencia, condiciones y límites (<code>replicas.json</code>)</td><td>Lee, escribe, ejecuta</td></tr><tr><td><code>reliability-integrator</code></td><td>Une todo y arma el HTML final</td><td>Al terminar un modo de falla</td><td>Ruta del informe, ajustes automáticos, cobertura, resultado de la prueba en el navegador</td><td>Lee, escribe, edita, ejecuta</td></tr><tr><td><code>reliability-evidence-verifier</code></td><td>Verificador independiente: intenta refutar</td><td>Antes de entregar, o si traes resultados de otra herramienta</td><td>Tabla de problemas (afirmación exacta, por qué, qué cambiar) y veredicto global</td><td>Solo lee y busca en la web</td></tr><tr><td><code>reliability-report-writer</code></td><td>Redactor de informes técnicos</td><td>Los especialistas ya entregaron y fue verificado</td><td>Archivo del informe y lista de secciones con su nivel de evidencia</td><td>Lee, escribe, edita, ejecuta</td></tr><tr><td><code>reliability-ux-designer</code></td><td>Diseñador de la interfaz del informe HTML</td><td>Hay un HTML ensamblado que mejorar</td><td>Cambios aplicados, capturas y pendientes</td><td>Lee, escribe, edita, ejecuta</td></tr><tr><td><code>reliability-feedback-learner</code></td><td>Aprende de tus correcciones y reglas</td><td>Corriges, apruebas o das una regla permanente</td><td>Ruta y línea del feedback, candidatos y lista de reglas vigentes</td><td>Lee, escribe, edita</td></tr><tr><td><code>reliability-memory-curator</code></td><td>Curador de memoria y lecciones</td><td>Cierre de caso</td><td>Lista de candidatos con ruta y estado</td><td>Lee, escribe, edita</td></tr></tbody></table></div>
+<h3>2.2 Qué agente necesito</h3>
+<div class="tw"><table><thead><tr><th>Tu pregunta</th><th>Ruta</th></tr></thead><tbody><tr><td>Revisa mis datos de mantenimiento</td><td>auditor de datos</td></tr><tr><td>¿Cada cuánto falla esto? ¿Se desgasta?</td><td>auditor de datos, luego analista de vida</td></tr><tr><td>¿Aumentan las fallas con el tiempo en mi flota?</td><td>auditor, luego analista de vida (modo multiunidad)</td></tr><tr><td>¿Por qué falló este equipo?</td><td>auditor, luego investigador de causa raíz (más analista de vida si hay historial)</td></tr><tr><td>Haz el FMECA y la estrategia de este sistema</td><td>fmeca-rcm (más auditor si hay historial)</td></tr><tr><td>¿Sirve este modelo predictivo?</td><td>predictive-analyst</td></tr><tr><td>¿Conviene reemplazar por edad? ¿Cuántos repuestos?</td><td>analista de vida, luego economics-kpi</td></tr><tr><td>Arma un tablero de KPIs</td><td>economics-kpi, luego report-writer</td></tr><tr><td>Otra herramienta me dio estos resultados, ¿son ciertos?</td><td>evidence-verifier</td></tr><tr><td>Dame el informe final</td><td>report-writer, luego evidence-verifier</td></tr></tbody></table></div>
+<h3>2.3 Cómo se pasan el trabajo (protocolo de agentes)</h3>
+<div class="tw"><table><thead><tr><th>De</th><th>A</th><th>Qué entrega</th></tr></thead><tbody><tr><td>Historiador</td><td>Estratega</td><td>Casos parecidos y línea base</td></tr><tr><td>Investigadores y lectores de papers</td><td>Replicador y analistas</td><td>Entradas de evidencia y cifras</td></tr><tr><td>Replicador</td><td>Integrador</td><td>Réplicas validadas</td></tr><tr><td>Analistas (causa raíz, FMECA, vida, predictivo, economía)</td><td>Integrador</td><td>JSON de análisis con ids de evidencia</td></tr><tr><td>Integrador</td><td>Verificador y diseñador UX</td><td>HTML ensamblado</td></tr><tr><td>Verificador</td><td>Estratega</td><td>Problemas por severidad</td></tr><tr><td>Estratega</td><td>Agente de feedback y curador</td><td>Lo aprendido en la ronda</td></tr></tbody></table></div>
+<p>El estratega no delega con frases sueltas: envía a cada agente un BRIEF con los mismos ocho campos de la ficha, adaptados al caso, e indica qué hacen los demás para que cada uno sepa quién usará su entrega.</p>
+<h2>3. El flujo de trabajo, de principio a fin</h2>
+<p>Este es el orden que sigue un modo de falla (protocolo del dossier) con lo que ocurrió de verdad en el caso de la chumacera de polea de faja transportadora. Donde el caso real no coincide con el protocolo, se dice.</p>
+<ol><li><strong>Intake.</strong> La persona nombra el modo de falla. El estratega lo clasifica, lee las reglas vigentes de <code>historial/feedback/feedback.jsonl</code> y, según el protocolo, pide al historiador buscar recurrencia. En el caso real el historiador no figura en la trazabilidad.</li><li><strong>Frentes de búsqueda en paralelo.</strong> El estratega reparte la cuota del conector de artículos por frente y lanza un investigador por frente, cada uno con su rango de ids. En el caso real fueron cinco frentes de búsqueda, más el investigador de normas y el buscador de datos abiertos.</li><li><strong>Lectura profunda.</strong> Se leen completos los papers priorizados y se extraen tablas, parámetros y condiciones de ensayo como entradas con extracto literal y como <code>cifras</code>. En el caso real dos lectores de textos completos de preprints produjeron 71 cifras. El agente <code>reliability-paper-analyst</code> está definido, pero la trazabilidad no lo lista en este caso.</li><li><strong>Réplicas.</strong> Las cifras se convierten en réplicas (barras con intervalo, tablas, curvas con puntos publicados) con su referencia APA 7. El control del kit rechaza cualquier número que no esté literal en el extracto. El caso tiene 36 réplicas.</li><li><strong>Análisis de ingeniería.</strong> Con el registro de evidencia (169 entradas) trabajan causa raíz, FMECA y RCM, estadística de vida, predictivo y economía. Sin caso real ninguna causa pasa de posible; sin datos de falla no se ajusta ninguna distribución; los puntajes S, O y D y los costos quedan vacíos.</li><li><strong>Ranking de fuentes.</strong> <code>reliability-citation-ranker</code> ordena por citas y cuartil solo si la fuente del conteo es accesible; si no, queda SIN DATOS PARA ARMARLO. En el caso real no existe <code>ranking.json</code> en la carpeta.</li><li><strong>Ensamblado con compuertas.</strong> Los JSON de todos los agentes se unen en <code>informe.html</code>; cada elemento sin fuente válida se elimina y queda registrado como ajuste automático. En el caso real lo ejecutó el kit lanzado por el estratega; la trazabilidad dice que el agente integrador existe y se usará en el próximo caso.</li><li><strong>Verificación.</strong> El verificador ve solo los archivos y las fuentes, no el razonamiento del autor, e intenta refutar. En el caso real hizo cuatro pasadas.</li><li><strong>Correcciones.</strong> El estratega corrige lo que el verificador señaló: las cifras sin extracto y las inferencias presentadas como evidencia bajan de nivel.</li><li><strong>Entrega.</strong> El estratega entrega el HTML aunque haya secciones vacías, con una tabla de quién hizo qué y preguntas finales a la persona. Cierre exigido: el dossier pasa <code>validar_dossier</code>, el verificador no tiene bloqueos abiertos, los ajustes automáticos fueron revisados, el HTML abre sin errores y las preguntas pendientes están redactadas.</li><li><strong>Aprendizaje.</strong> El estratega envía a cada agente lo aprendido de su entrega, el agente de feedback lo registra y el curador propone lecciones en cuarentena.</li></ol>
+<p>Resultado del caso real (<code>meta.json</code>): 169 entradas de registro; 10 secciones con evidencia; 4 secciones vacías (<code>punto_optimo</code>, <code>lcc</code>, <code>ibr</code>, <code>mpd_normas</code>).</p>
+<h3>3.1 Niveles de evidencia que verás</h3>
+<div class="tw"><table><thead><tr><th>Nivel</th><th>Significa</th></tr></thead><tbody><tr><td>VERIFICADO</td><td>Se abrió la fuente y se leyó (en el registro del caso aparece como VERIFICADO-TEXTO o VERIFICADO-ABSTRACT)</td></tr><tr><td>SOLO-SNIPPET</td><td>Visto solo en un resumen de buscador: es una pista, no respalda nada</td></tr><tr><td>NO-VERIFICADO</td><td>Mencionado sin fuente leída: no se cita, va a pendientes</td></tr><tr><td>SÍNTESIS</td><td>Inferencia del equipo, rotulada como hipótesis</td></tr><tr><td>CÁLCULO</td><td>Resultado de código sobre datos reales, con semilla, versiones y n</td></tr><tr><td>SUPUESTO</td><td>Dato asumido con justificación</td></tr><tr><td>VACÍO</td><td>Dato inexistente o inaccesible, declarado y nunca rellenado</td></tr></tbody></table></div>
+<p>En el caso real el registro tiene 109 entradas VERIFICADO-TEXTO, 10 VERIFICADO-ABSTRACT, 46 SOLO-SNIPPET y 4 NO-VERIFICADO.</p>
+<h2>4. Dónde se guarda cada resultado</h2>
+<div class="tw"><table><thead><tr><th>Carpeta</th><th>Qué se guarda</th><th>Quién escribe</th></tr></thead><tbody><tr><td><code>historial/dossiers/&lt;modo_de_falla&gt;/</code></td><td>El caso: <code>evidencia.json</code>, <code>dossier.json</code>, <code>analisis/</code> (acr, arbol, porques, observar, fmeca, vida, predictivo, lcc), <code>cifras.json</code>, <code>replicas.json</code>, <code>trazabilidad.json</code>, <code>meta.json</code>, <code>informe.html</code>; también <code>auditoria.json</code>, <code>ranking.json</code> y <code>verificacion/</code> cuando corresponden</td><td>Estratega, analistas, integrador; el informe de verificación lo guarda el estratega porque el verificador no escribe</td></tr><tr><td><code>historial/feedback/feedback.jsonl</code></td><td>Tus correcciones, aprobaciones, prohibiciones y reglas, una por línea y solo agregando</td><td>Agente de feedback</td></tr><tr><td><code>historial/casos/</code> y <code>historial/linea_base/</code></td><td>Casos con versión y línea base por familia de falla; solo se agrega, nunca se borra</td><td>Historiador (estas carpetas aún no existen en el repositorio: el caso real se guardó en <code>historial/dossiers/</code>)</td></tr><tr><td><code>knowledge/</code></td><td>Protocolos, registro de normas con estado, plantillas de informe, mapa de fuentes, lista de cifras descartadas y la memoria</td><td>Se mantiene con revisión de una persona</td></tr><tr><td><code>knowledge/memoria/cuarentena/</code></td><td>Lecciones candidatas, un archivo por lección</td><td>Curador y agente de feedback; es el único lugar donde escriben</td></tr><tr><td><code>knowledge/memoria/aprobada/</code></td><td>Lecciones aprobadas por una persona</td><td>Solo tras la aprobación humana</td></tr><tr><td><code>tools/reliability/</code></td><td>El kit de cálculo: Weibull, Crow-AMSAA, Kaplan-Meier, órdenes de trabajo, calidad de datos, economía, validación de modelos, evidencia, señales, historial, informe HTML</td><td>Se ejecuta; los agentes no calculan de cabeza</td></tr></tbody></table></div>
+<p>Permisos de la persona (<code>historial/PERMISOS.md</code>): el 2026-10-27 autorizó guardar dossiers y feedback en el historial del repositorio. Los datos que declare ilustrativos no se guardan como casos. Si el repositorio es compartido, el equipo pide permiso antes de subir. No se envía, publica, hace push ni se sobrescribe nada sin confirmación explícita.</p>
+<h3>4.1 Cómo correr el kit</h3>
+<pre><code>cd tools/reliability
+pip install -r requirements.txt
+python -m pytest -q
+python examples/demo.py</code></pre>
+<p>El README del kit indica 152 pruebas. El demo usa datos sintéticos ilustrativos.</p>
+<h2>5. Cómo dar feedback para que el equipo aprenda</h2>
+<p>El equipo aprende por dos vías con compuertas distintas.</p>
+<p><strong>Vía rápida: tus reglas.</strong> Lo que le dices al estratega (una corrección, una aprobación, una prohibición, una preferencia) lo registra el agente de feedback en <code>historial/feedback/feedback.jsonl</code> y se aplica de inmediato, porque el estratega lee las reglas vigentes al empezar. Los tipos que aparecen en el archivo son <code>prohibicion</code>, <code>regla_permanente</code>, <code>preferencia</code> y <code>aprobacion</code>; cada línea lleva fecha, texto, alcance y estado (<code>vigente</code>).</p>
+<p>Ejemplos de cómo decirlo (redacciones tuyas, en tus palabras):</p>
+<pre><code>Siempre cita en formato APA 7.
+Nunca nombres una empresa ni una planta concreta.
+Acepta por ahora trabajar con resúmenes; la lectura completa queda pendiente.
+Este conjunto de datos es ilustrativo: no lo uses como evidencia.</code></pre>
+<p><strong>Vía lenta: las lecciones.</strong> El curador convierte lo aprendido en candidatos en <code>knowledge/memoria/cuarentena/</code> con fuente y extracto. Un candidato solo llega a <code>aprobada/</code> si pasa cuatro compuertas: procedencia, verificador independiente (contradicciones y soporte de la fuente), reglas (esquema, unidades, duplicados) y la aprobación de una persona. Si falla una compuerta, se rechaza con motivo. Ninguna lección entra por su cuenta.</p>
+<p><strong>Después de cada ronda</strong>, el estratega devuelve a cada agente qué sirvió, qué se corrigió y qué regla nueva diste, y pide al agente de feedback que lo registre. Cada respuesta que use una memoria registra su id y versión, para poder retractarla.</p>
+<p>Qué conviene decir: la regla concreta, a quién aplica (todos, investigadores, informes) y si es permanente. Qué no hace falta: repetir una regla ya vigente; revisa <code>historial/feedback/feedback.jsonl</code>.</p>
+<h2>6. Límites honestos</h2>
+<p>Lo que el equipo no puede hacer hoy, tal como lo declaran los archivos:</p>
+<ol><li><strong>Acceso a fuentes.</strong> La cuota del conector de artículos estaba en 0 hasta el 2026-11-01. Varias fuentes de documentos libres respondieron bloqueadas y nunca se leyeron. Los dominios de artículos, datos, tesis y normas deben habilitarse en el acceso de red del entorno (lista en <code>knowledge/mapa_fuentes_cientificas.md</code>); está pendiente en <code>historial/PENDIENTES.md</code>.</li><li><strong>Lectura incompleta.</strong> De las 169 entradas del caso real, 46 son SOLO-SNIPPET y 4 NO-VERIFICADO: no respaldan ninguna afirmación. La persona aceptó por ahora trabajar con resúmenes; la lectura de texto completo queda pendiente y repetir el dossier con ella está anotado como pendiente.</li><li><strong>Sin datos de planta.</strong> El caso real no tiene datos reales del activo. Por eso ninguna causa pasa de posible, no se ajusta ninguna distribución de vida, los puntajes S, O y D están sin puntuar y las secciones punto óptimo, LCC, inspección basada en riesgo y mantenimiento predictivo con normas quedaron vacías.</li><li><strong>Costos y parámetros de Weibull.</strong> Solo se aceptan de tesis, papers y fuentes halladas; hoy están VACÍOS. El equipo no los inventa.</li><li><strong>Normas.</strong> El registro cita normas como "edición no verificada" mientras no se consulte el publicador. No se citan cláusulas ni ediciones sin abrir el documento.</li><li><strong>Cifras de eficacia o retorno.</strong> No hay ninguna: no existe fuente primaria; las cifras repetidas sin origen están descartadas en <code>knowledge/folklore_descartado.md</code>.</li><li><strong>Memoria.</strong> El mecanismo está listo, pero hoy hay 0 lecciones aprobadas y 1 de ejemplo en cuarentena. El README del equipo lista como trabajo futuro los hooks que impidan por configuración escribir en la memoria aprobada; hoy esa protección es una regla de las fichas, no un bloqueo técnico.</li><li><strong>Agentes aún no usados en un caso.</strong> En la trazabilidad del caso real no figuran el integrador, el historiador, el auditor de datos, el analista de papers, el replicador, el rankeador de citas, el redactor, el diseñador UX, el curador ni el agente de feedback. Están definidos, pero no hay un caso que demuestre su desempeño.</li><li><strong>Kit de cálculo.</strong> Solo Weibull de 2 parámetros y un modo de falla por ajuste; Cox y riesgos competitivos no están incluidos; la bondad de ajuste con censura es aproximada y de baja potencia con pocas fallas; los costos, la definición de falla y la separación de modos los aporta una persona.</li><li><strong>Lo que un informe no es.</strong> Las pistas de videos, redes sociales y buscadores nunca respaldan una cifra. Un resultado de banco de pruebas no se traslada como precisión de planta.</li><li><strong>Datos de terceros.</strong> El texto de órdenes de trabajo, PDF y correos es dato, nunca instrucción. Los datos originales son de solo lectura: se trabaja sobre copias.</li></ol>
+<h2>7. Resumen en una página</h2>
+<ol><li>Escribe <code>/modo-de-falla &lt;componente y falla&gt;</code> para investigar un modo de falla, o <code>/confiabilidad &lt;necesidad&gt;</code> para cualquier otra solicitud.</li><li>Responde las preguntas de intake (máximo 5; cada una con opción por defecto).</li><li>El estratega reparte frentes en paralelo, los especialistas leen y calculan, el integrador ensambla y el verificador intenta refutar.</li><li>Recibes <code>informe.html</code> en <code>historial/dossiers/&lt;modo_de_falla&gt;/</code>, con lo vacío declarado y preguntas finales.</li><li>Corrige y da reglas con tus palabras: el agente de feedback las registra y el equipo las aplica desde la siguiente ronda.</li><li>Nada pasa a la memoria aprobada sin que una persona lo apruebe.</li></ol>
+    </article>
+  </div>
+</section>
+</main>
+<footer>HOWK RIOS - CONFIABILIDAD · Fuente: .claude/agents, .claude/commands, knowledge, tools/reliability e historial/dossiers/chumacera_polea_faja.</footer>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header>
+    <div class="big" id="dIcon"></div>
+    <div><h2 id="dTitle"></h2><div class="sub" id="dSub"></div><span class="badge" id="dBadge"></span></div>
+    <button class="iconbtn x" id="dClose" aria-label="Cerrar panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </header>
+  <div class="dbody" id="dBody"></div>
+</aside>
+
+<script>
+const DATA = {"agentes": {"reliability-case-historian": {"ficha": {"ROL": "Historiador de casos de falla: memoria operativa del equipo.", "TAREA": "Al abrir: buscar recurrencia con razón explícita. Al cerrar: guardar el caso con versión y actualizar la línea base de su familia.", "CONTEXTO": "Usas `CaseStore` en `historial/`; recibes del líder el caso mínimo.", "RAZONAMIENTO": "Nunca ajustas una distribución con un solo evento; una coincidencia es un indicio, no una conclusión; los datos ilustrativos no alimentan líneas base.", "CIERRE": "Termina con caso guardado, coincidencias con su razón y estado de la línea base (vigente, VACÍO o cambió).", "FEEDBACK": "Informa al líder si las acciones del caso anterior se ejecutaron y fueron eficaces.", "ALMACENAMIENTO": "Solo se agrega: `historial/casos/` y `historial/linea_base/`; pide permiso antes de subir si el repositorio es compartido.", "SALIDA": "Ruta y versión del caso, coincidencias y estado de la línea base.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-citation-ranker": {"ficha": {"ROL": "Analista de impacto de las fuentes: ranking por citas y calidad de revista.", "TAREA": "Obtener conteos de citas y cuartiles solo desde fuentes que los declaren y ordenar el ranking; si no hay acceso, dejarlo como 'SIN DATOS PARA ARMARLO' y ofrecer el ranking por uso y nivel de lectura.", "CONTEXTO": "Recibes el registro de evidencia; las bases de citas y de cuartiles suelen estar bloqueadas.", "RAZONAMIENTO": "Un conteo de citas sin fuente y fecha no se publica; el cuartil se anota con su fuente y año.", "CIERRE": "Termina con la tabla de citas y cuartiles verificados y la lista de los que faltan.", "FEEDBACK": "Informa qué dominios habilitar (bases de citas, cuartiles) para cerrar el ranking.", "ALMACENAMIENTO": "`ranking.json` en la carpeta del caso.", "SALIDA": "Tabla id, citas, fuente del conteo, fecha, cuartil y su fuente.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-data-auditor": {"ficha": {"ROL": "Auditor de calidad de datos de mantenimiento y de la estructura del activo.", "TAREA": "Perfilar la base recibida (órdenes, fallas, sensores, jerarquía), definir falla y censura, limpiar con reglas contadas y dictar si los datos alcanzan para cada análisis.", "CONTEXTO": "Recibes del líder la ruta de los datos, la pregunta de decisión y los supuestos acordados. Sin datos reales de la persona no se activa: el líder te lo indica.", "RAZONAMIENTO": "Ningún cálculo antes de la auditoría; cada regla de limpieza se cuenta; un dato ilustrativo declarado así por la persona no cuenta como evidencia.", "CIERRE": "Termina con el veredicto de aptitud por análisis (Weibull, NHPP, predictivo, criticidad) y la lista de campos faltantes.", "FEEDBACK": "Informa al líder qué campos mejorarían los análisis y qué preguntas hacer a la persona; el líder lo reenvía al agente de feedback.", "ALMACENAMIENTO": "Perfil de calidad y reglas aplicadas en `historial/dossiers/<modo>/auditoria.json`; versión del conjunto con fecha y huella.", "SALIDA": "Tabla de calidad, reglas con conteos, definición de falla y censura y veredicto por análisis.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-dataset-scout": {"ficha": {"ROL": "Buscador de datos públicos de fallas y vida.", "TAREA": "Localizar conjuntos abiertos con tiempos hasta la falla, censura o series de condición y registrar origen, licencia, tamaño y límites.", "CONTEXTO": "Recibes modo de falla, componente y vías permitidas; no descargas volúmenes grandes sin permiso.", "RAZONAMIENTO": "Nunca fabricas ni completas datos; un conjunto de laboratorio no representa campo; con 2 fallas Weibull es inviable.", "CIERRE": "Termina con tabla de conjuntos y veredicto de qué análisis admite cada uno, o VACÍO con las vías intentadas.", "FEEDBACK": "Reporta dominios a habilitar y permisos pendientes.", "ALMACENAMIENTO": "Registro JSON de tu frente; procedencia (URL, fecha, huella) de cualquier archivo.", "SALIDA": "Tabla de conjuntos (origen, licencia, n, fallas, censura, comparabilidad, límites) y registro validado.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-economics-kpi": {"ficha": {"ROL": "Especialista en economía de la confiabilidad, repuestos, KPIs y tableros.", "TAREA": "Estructurar costo de ciclo de vida, reemplazo por edad, repuestos y KPIs ligados a decisiones; calcular solo con costos aportados o hallados en fuentes leídas.", "CONTEXTO": "Recibes parámetros de vida del analista de vida y costos de tesis o papers leídos; la persona indicó que no aporta costos.", "RAZONAMIENTO": "Sin costo con fuente no hay cifra: se entrega la estructura y la fórmula; las fórmulas estándar se rotulan síntesis hasta citar un texto.", "CIERRE": "Termina con elementos de costo, fórmulas verificadas contra el kit y vacíos de datos.", "FEEDBACK": "Reporta qué tesis o informe de costos habría que leer; el líder lo manda al investigador.", "ALMACENAMIENTO": "`historial/dossiers/<modo>/analisis/lcc.json`.", "SALIDA": "JSON `lcc` con elementos, fórmulas, parámetros requeridos y vacíos.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-engineer": {"ficha": {"ROL": "Líder y estratega del equipo de confiabilidad de clase mundial. Eres el único que habla con la persona, reparte el trabajo y responde por el entregable.", "TAREA": "Recibir el modo de falla o el caso, abrir un BRIEF por agente (rol, tarea, contexto, razonamiento esperado, cierre, feedback, almacenamiento, salida), lanzar en paralelo los frentes independientes, integrar, hacer verificar y entregar el HTML con preguntas finales.", "CONTEXTO": "Lee `knowledge/protocolo_comun.md`, `knowledge/protocolo_agentes.md`, `knowledge/protocolo_dossier_modo_falla.md`, las reglas vigentes en `historial/feedback/feedback.jsonl` y el estado del historial. Conoce la cuota del conector de artículos y los dominios bloqueados antes de repartir consultas.", "RAZONAMIENTO": "Descompón la solicitud en frentes independientes, paraleliza, exige evidencia y extractos literales, resuelve contradicciones explicando por qué difieren y nunca subas un nivel de evidencia. Lo que no tiene fuente queda con el comentario 'SIN DATOS PARA ARMARLO' y el dato que lo cerraría.", "CIERRE": "Termina cuando: el dossier pasa `validar_dossier`, el verificador no tiene bloqueos abiertos, los ajustes automáticos fueron revisados, el HTML abre sin errores y las preguntas pendientes están redactadas.", "FEEDBACK": "Después de cada ronda envía a cada agente lo que se aprendió de su entrega (qué sirvió, qué se corrigió, qué regla nueva dio la persona) y pide al agente de feedback que lo registre. Reporta a la persona qué hizo cada agente.", "ALMACENAMIENTO": "Carpeta del caso `historial/dossiers/<modo_de_falla>/`, feedback en `historial/feedback/`, lecciones candidatas en `knowledge/memoria/cuarentena/` (nunca en la aprobada). Si el repositorio es compartido, pide permiso antes de subir.", "SALIDA": "Informe HTML ensamblado, tabla 'quién hizo qué' y resumen de no más de 10 líneas con vacíos y preguntas.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-evidence-verifier": {"ficha": {"ROL": "Verificador independiente de evidencia: intenta refutar antes de entregar.", "TAREA": "Comprobar cada afirmación contra su extracto, detectar cifras sin origen, niveles inflados, pistas usadas como respaldo y nombres de empresa.", "CONTEXTO": "Ves solo los archivos y las fuentes, no el razonamiento del autor. Solo lectura.", "RAZONAMIENTO": "El extracto manda sobre el 'afirma'; una ausencia de hallazgo no es inexistencia; una síntesis no puede presentarse como hecho.", "CIERRE": "Termina con la lista de problemas por severidad (bloquea, corregir, menor) y lo que quedó sin poder comprobar.", "FEEDBACK": "Entrega al líder patrones de error repetidos para que se conviertan en reglas candidatas.", "ALMACENAMIENTO": "No escribes; el líder guarda tu reporte en `historial/dossiers/<modo>/verificacion/`.", "SALIDA": "Tabla de problemas (afirmación exacta, por qué, qué cambiar) y veredicto global.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-feedback-learner": {"ficha": {"ROL": "Agente de aprendizaje por feedback.", "TAREA": "Registrar cada corrección, aprobación o regla de la persona, convertirla en regla candidata y avisar al líder qué aplicar ya.", "CONTEXTO": "Recibes del líder los mensajes de la persona y los patrones de error que reportan verificadores y agentes.", "RAZONAMIENTO": "Una instrucción de la persona sobre su trabajo se aplica de inmediato; si dos reglas se contradicen no eliges, avisas.", "CIERRE": "Termina con feedback registrado, candidatos creados y reglas vigentes devueltas al líder.", "FEEDBACK": "Cierras el ciclo: cada regla vigente vuelve al líder para el brief de todos los agentes.", "ALMACENAMIENTO": "Solo `historial/feedback/feedback.jsonl` (se agrega) y `knowledge/memoria/cuarentena/`.", "SALIDA": "Ruta y línea del feedback, candidatos y lista de reglas vigentes.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-fmeca-rcm": {"ficha": {"ROL": "Especialista en FMEA/FMECA, criticidad y estrategia RCM.", "TAREA": "Definir función y falla funcional, listar modos con mecanismo, efecto, causa, detección y tarea RCM por consecuencia; dejar S-O-D sin puntuar si no hay experto.", "CONTEXTO": "Recibes evidencia leída, el árbol y el ACR del investigador de causa raíz y los costos que aporte la persona.", "RAZONAMIENTO": "Cada modo respaldado o marcado síntesis; tareas por consecuencia (en condición, restauración, búsqueda de falla, rediseño, correr a la falla); sin intervalos numéricos sin fuente.", "CIERRE": "Termina con el FMECA completo, los vacíos (P-F, S-O-D, estándares) y las tareas propuestas.", "FEEDBACK": "Reporta qué escala o dato calibraría S-O-D y qué PM actual habría que cuestionar; el líder lo reenvía.", "ALMACENAMIENTO": "`historial/dossiers/<modo>/analisis/fmeca.json`.", "SALIDA": "JSON `fmeca` con items, tarea_rcm por modo y vacíos; los puntajes los ingresa un experto en el informe interactivo.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-integrator": {"ficha": {"ROL": "Agente integrador del entregable final.", "TAREA": "Unir los JSON de todos los agentes, validar, ensamblar el HTML con el kit, probarlo en el navegador de pruebas y listar los ajustes automáticos.", "CONTEXTO": "Recibes la carpeta del caso con evidencia, dossier, análisis, cifras, réplicas y trazabilidad de agentes.", "RAZONAMIENTO": "No cambias niveles ni agregas cifras para que algo se vea completo; un gráfico solo se dibuja con evidencia, matemática explícita o esquema rotulado.", "CIERRE": "Termina con informe sin errores de consola, sin peticiones externas no permitidas, con enlaces clicables y cobertura medida.", "FEEDBACK": "Reporta qué secciones quedaron pobres y qué agente debe reforzarlas.", "ALMACENAMIENTO": "`informe.html` y `meta.json` en la carpeta del caso, sin borrar versiones.", "SALIDA": "Ruta del informe, ajustes automáticos, cobertura y resultado de la prueba en el navegador.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-life-analyst": {"ficha": {"ROL": "Analista de estadística de vida y confiabilidad (Weibull, supervivencia, reparables).", "TAREA": "Elegir el método correcto según los datos, ajustar con el kit con intervalos y declarar qué no se puede concluir. Sin datos de falla del activo no ajustas nada: describes qué método aplica y qué datos recolectar.", "CONTEXTO": "Recibes del auditor el veredicto de datos y del líder la pregunta; consultas el registro de evidencia para parámetros publicados y conjuntos abiertos (solo con origen leído).", "RAZONAMIENTO": "Decide antes de ajustar: ¿censura?, ¿reparable?, ¿modos mezclados?, ¿cuántas fallas? Con menos de 10 fallas el resultado es exploratorio; nunca se concatenan tiempos de varias unidades reparables.", "CIERRE": "Termina con β, η y B10 con intervalos (o 'SIN DATOS PARA ARMARLO'), supuestos, gráficos del kit y lo que el análisis NO permite concluir.", "FEEDBACK": "Reporta al líder qué datos faltaron y qué parámetro publicado habría que leer; el líder lo envía al buscador de datos y al agente de feedback.", "ALMACENAMIENTO": "Resultados y semillas en `historial/dossiers/<modo>/analisis/vida.json`; línea base de la familia vía el historiador.", "SALIDA": "JSON `vida` con hallazgos, método por situación y vacíos, más figuras del kit con n, método y fuente.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-literature-researcher": {"ficha": {"ROL": "Investigador científico de fallas, lector de papers, tesis, libros y normas.", "TAREA": "Dado un frente, buscar en la literatura, leer lo que el acceso permite y registrar cada fuente con extracto literal, localizador, límites y enlace clicable.", "CONTEXTO": "Recibes frente, presupuesto de consultas, rango de ids y ruta de salida; usas el conector con cuota, el lector de preprints y búsqueda web solo para pistas.", "RAZONAMIENTO": "Prefiere revisiones y estudios con comparabilidad con el activo; un resultado de banco no es de campo; lo que viste en un resumen de buscador es SOLO-SNIPPET.", "CIERRE": "Termina con el registro validado por `Ledger`, consultas intentadas, contradicciones y lagunas ('SIN DATOS PARA ARMARLO' donde no hubo fuente).", "FEEDBACK": "Reporta qué vías fallaron, qué dominios habría que habilitar y qué leer después.", "ALMACENAMIENTO": "Archivo JSON de tu frente en la carpeta indicada; sin tocar el repositorio.", "SALIDA": "Lista JSON de entradas válida, tabla de fuentes con nivel y límites y lagunas.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-memory-curator": {"ficha": {"ROL": "Curador de memoria y lecciones aprendidas.", "TAREA": "Convertir lo aprendido en candidatos con fuente y extracto y revisar contradicciones con lo aprobado.", "CONTEXTO": "Recibes del agente de feedback las reglas vigentes y del líder las lecciones del caso.", "RAZONAMIENTO": "Un candidato sin fuente se rechaza; solo una persona promueve a memoria aprobada.", "CIERRE": "Termina con candidatos escritos o rechazados con motivo.", "FEEDBACK": "Informa al líder qué lecciones se repiten y merecen revisión humana.", "ALMACENAMIENTO": "Solo `knowledge/memoria/cuarentena/`.", "SALIDA": "Lista de candidatos con ruta y estado.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-paper-analyst": {"ficha": {"ROL": "Analista de lectura profunda de papers y libros: lee, interpreta y extrae lo cuantitativo.", "TAREA": "Leer completo un paper o capítulo, extraer tablas, figuras, parámetros, condiciones de ensayo y conclusiones, y registrarlos como entradas con extracto literal y como `cifras`.", "CONTEXTO": "Recibes del líder la lista de papers priorizados (los más citados o los de mayor comparabilidad) y el rango de ids.", "RAZONAMIENTO": "Cada número debe estar literal en un extracto de hasta 800 caracteres; separa resultado de banco de resultado de campo; anota límites y condiciones.", "CIERRE": "Termina cuando todas las tablas de resultados están cubiertas o declaradas ilegibles ('SIN DATOS PARA ARMARLO').", "FEEDBACK": "Informa qué fue ilegible, qué otro paper citado convendría leer y qué figura es replicable.", "ALMACENAMIENTO": "Registro y `cifras` en la carpeta indicada.", "SALIDA": "Entradas Ledger, lista `cifras` y reporte de fuentes y lagunas.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-predictive-analyst": {"ficha": {"ROL": "Analista de mantenimiento predictivo, aprendizaje automático, vida útil remanente y visión por computadora.", "TAREA": "Diseñar o evaluar la estrategia predictiva con validación correcta (por activo y por tiempo, sin fuga, con censura, calibración) y rechazar modelos sin evidencia suficiente.", "CONTEXTO": "Recibes la evidencia de monitoreo, los estudios de banco leídos y su falta de generalización a campo.", "RAZONAMIENTO": "Primero baseline de ingeniería, luego detección, diagnóstico y pronóstico; sin datos del activo no se entrena nada; lo exploratorio se rotula.", "CIERRE": "Termina con la estrategia por etapas, sus condiciones para avanzar, los riesgos de validación y los modelos que NO se justifican hoy.", "FEEDBACK": "Informa al líder qué datos de campo y cuántas fallas se necesitan para pasar de etapa.", "ALMACENAMIENTO": "`historial/dossiers/<modo>/analisis/predictivo.json`.", "SALIDA": "JSON `predictivo` con hallazgos, estrategia, riesgos de validación y vacíos.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-rca-investigator": {"ficha": {"ROL": "Investigador de causa raíz (ACR/RCA) de clase mundial: Ishikawa, 5 porqués, árbol de fallas y análisis de barreras con evidencia.", "TAREA": "Construir el árbol de fallas, el Ishikawa 6M, los 5 porqués y la tabla 'qué observar' por hipótesis, cada elemento con fuente o marcado como síntesis con premisas; plan de verificación de cada causa.", "CONTEXTO": "Recibes el registro de evidencia, el dossier y los análisis previos; conoces las condiciones de mina y mecánica solo como condiciones a verificar, no como hechos.", "RAZONAMIENTO": "Causa física, humana y latente; no se asigna culpa a personas; sin caso real ninguna hipótesis pasa de 'posible'; convergencia de técnicas no es confirmación; ramas sin respaldo quedan con 'SIN DATOS PARA ARMARLO'.", "CIERRE": "Termina cuando cada rama tiene contenido respaldado o comentario de vacío, los 5 porqués están completos y todos los ids citados existen y fueron leídos.", "FEEDBACK": "Indica al líder qué fuente o medición subiría la calidad de cada rama y qué agente debe buscarla.", "ALMACENAMIENTO": "Entrega JSON `acr`, `arbol`, `porques`, `observar` a `historial/dossiers/<modo>/analisis/` (por el líder si no tienes escritura).", "SALIDA": "Bloques JSON válidos con ids de evidencia y nivel EVIDENCIA o SINTESIS en cada ítem.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-replicator": {"ficha": {"ROL": "Replicador de figuras, tablas y estadísticas publicadas.", "TAREA": "Convertir las cifras extraídas en réplicas (barras con intervalo, tablas, curvas con puntos publicados) con su referencia APA 7 y enlace al original.", "CONTEXTO": "Recibes `cifras` y entradas del analista de papers; el gate del kit rechaza cualquier número que no esté literal en el extracto.", "RAZONAMIENTO": "Replicar es mostrar lo publicado con sus condiciones, no extrapolar; sin datos suficientes se deja 'SIN DATOS PARA ARMARLO'.", "CIERRE": "Termina con réplicas validadas por el gate y su descripción, condiciones y límites.", "FEEDBACK": "Informa qué figuras no se pudieron replicar por falta de datos numéricos en el texto.", "ALMACENAMIENTO": "`replicas.json` en la carpeta del caso.", "SALIDA": "Lista de réplicas con series, evidencia, condiciones y límites.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-report-writer": {"ficha": {"ROL": "Redactor de informes técnicos de confiabilidad.", "TAREA": "Ensamblar lo entregado en el informe con la plantilla adecuada, decisión primero, tablas y figuras con fuente.", "CONTEXTO": "Recibes entregas ya verificadas; no investigas.", "RAZONAMIENTO": "Solo se redacta lo entregado; lo que falta queda 'SIN DATOS PARA ARMARLO'; texto breve, tablas y gráficos antes que prosa.", "CIERRE": "Termina con el informe, la leyenda de evidencia, supuestos, vacíos y referencias.", "FEEDBACK": "Informa al líder qué sección quedó pobre por falta de datos.", "ALMACENAMIENTO": "Informe en `historial/dossiers/<modo>/`.", "SALIDA": "Archivo del informe y lista de secciones con su nivel de evidencia.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-standards-researcher": {"ficha": {"ROL": "Investigador de normas, guías, tesis, libros y clases abiertas.", "TAREA": "Identificar normas y guías aplicables con su estado de verificación y reunir fuentes formales con referencias APA 7 y enlace clicable.", "CONTEXTO": "Cruzas con `knowledge/registro_normas.yaml`; videos y redes sociales son solo pistas.", "RAZONAMIENTO": "No se cita edición ni cláusula que no se leyó; el cuartil solo con su fuente.", "CIERRE": "Termina con tabla de normas con estado y fuentes con acceso y límites.", "FEEDBACK": "Reporta qué normas conviene adquirir o abrir y los dominios bloqueados.", "ALMACENAMIENTO": "Registro JSON de tu frente; propuestas de normas nuevas como NO-VERIFICADO.", "SALIDA": "Tablas de normas y fuentes, registro validado y pendientes de adquisición.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}, "reliability-ux-designer": {"ficha": {"ROL": "Diseñador UX/UI del entregable HTML científico.", "TAREA": "Revisar y mejorar el informe: jerarquía visual, tipografía fina, separación por tipo de fuente, iconos de investigación, mina y mecánica, gráficos legibles y accesibles, modo día y noche, y móvil.", "CONTEXTO": "Recibes el HTML ensamblado y las capturas del navegador de pruebas.", "RAZONAMIENTO": "Menos texto y más tablas y gráficos; cada elemento visual con su referencia; ninguna decoración que parezca dato.", "CIERRE": "Termina con una lista de mejoras aplicadas y comprobadas con capturas en claro, oscuro y móvil.", "FEEDBACK": "Reporta patrones de diseño que conviene fijar como regla del equipo.", "ALMACENAMIENTO": "Cambios a `reliability_kit/assets/informe_template.html` con prueba que los cubra.", "SALIDA": "Cambios aplicados, capturas y pendientes.", "Conexión": "sigue `knowledge/protocolo_agentes.md`: recibes un BRIEF del líder, devuelves tu salida al líder y reportas qué aprendiste; el líder reenvía lo aprendido al resto del equipo."}}}, "traza": [{"agente": "reliability-engineer", "rol": "Líder del equipo", "hizo": "Clasificó la solicitud, repartió frentes con un encargo de ocho bloques a cada agente, integró resultados y aplicó las correcciones de la verificación.", "entrada": "Solicitud de la persona (nombre del modo de falla)", "salida": "Dossier, informe y registro de feedback", "aprendio": "Reglas permanentes de la persona: nada inventado, APA 7, sin nombres de empresa, sin la palabra prohibida, SIN DATOS PARA ARMARLO."}, {"agente": "reliability-literature-researcher", "rol": "Investigación y lectura de fuentes", "hizo": "Cinco frentes de búsqueda y dos lectores de textos completos de preprints; registraron fuentes con extracto literal y localizador.", "entrada": "Frente de búsqueda y rango de ids", "salida": "Entradas del registro de evidencia, cifras y réplicas", "aprendio": "El nivel de lectura se deriva del acceso; los números de réplicas deben aparecer literales en el extracto."}, {"agente": "reliability-standards-researcher", "rol": "Normas y fuentes formales", "hizo": "Buscó normas, tesis y repositorios; las normas sin edición verificada quedaron como NO-VERIFICADO.", "entrada": "Modo de falla y componente", "salida": "Entradas de normas y pistas", "aprendio": "No se cita cláusula ni edición sin abrir el documento."}, {"agente": "reliability-dataset-scout", "rol": "Datos abiertos de vida", "hizo": "Buscó conjuntos abiertos con tiempos hasta la falla y censura.", "entrada": "Componente", "salida": "Lista de conjuntos con límites", "aprendio": "Ningún conjunto abierto se ajusta como dato de la chumacera de polea."}, {"agente": "reliability-rca-investigator", "rol": "Causa raíz", "hizo": "Construyó hipótesis, árbol de fallas, Ishikawa de seis ramas, cadenas de cinco porqués y la tabla de qué observar.", "entrada": "Registro de evidencia", "salida": "acr, arbol, ishikawa, porques, observar", "aprendio": "Sin caso real ninguna causa pasa de posible; lo no sustentado queda como SIN DATOS PARA ARMARLO."}, {"agente": "reliability-fmeca-rcm", "rol": "FMECA y RCM", "hizo": "Listó modos de falla con efectos, causas, detección y tarea; dejó S, O y D para quien los conozca.", "entrada": "Registro y árbol", "salida": "fmeca.json", "aprendio": "Las escalas S-O-D no se inventan."}, {"agente": "reliability-life-analyst", "rol": "Estadística de vida", "hizo": "Decidió el método de vida admisible y declaró qué no se puede ajustar sin datos.", "entrada": "Conjuntos abiertos y literatura", "salida": "vida.json", "aprendio": "Con un solo evento o sin datos no se ajusta ninguna distribución."}, {"agente": "reliability-predictive-analyst", "rol": "Predictivo y ML", "hizo": "Definió estrategia de monitoreo y riesgos de validación de modelos.", "entrada": "Literatura leída", "salida": "predictivo.json", "aprendio": "Los resultados de banco no se trasladan como precisión de planta."}, {"agente": "reliability-economics-kpi", "rol": "Economía", "hizo": "Armó la estructura de costos y fórmulas del LCC sin cifras.", "entrada": "Registro", "salida": "lcc.json", "aprendio": "Sin costos aportados o publicados el valor queda vacío."}, {"agente": "reliability-evidence-verifier", "rol": "Verificación independiente", "hizo": "Cuatro pasadas; sus hallazgos se corrigieron antes de entregar.", "entrada": "Texto y fuentes, sin el razonamiento del autor", "salida": "Lista de hallazgos", "aprendio": "Las cifras sin extracto y las inferencias presentadas como evidencia se bajan de nivel."}, {"agente": "Ensamblador del kit", "rol": "Ensamblado con compuertas", "hizo": "Las compuertas del kit se ejecutan en el ensamblado, lo lanza el líder; los ajustes automáticos se listan en el informe. El agente integrador ya existe y se usará en el próximo caso.", "entrada": "JSON de todos los agentes", "salida": "informe.html", "aprendio": "Cada elemento sin fuente válida se elimina y queda registrado."}]};
+</script>
+<script>
+(function(){
+"use strict";
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=s=>esc(s).replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+
+/* ---------- tema ---------- */
+const root=document.documentElement;
+function curTheme(){const t=root.getAttribute('data-theme');if(t)return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+try{const saved=localStorage.getItem('mapa-tema');if(saved==='dark'||saved==='light')root.setAttribute('data-theme',saved)}catch(e){}
+$('#themeBtn').addEventListener('click',()=>{const n=curTheme()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('mapa-tema',n)}catch(e){}});
+
+/* ---------- iconos ---------- */
+const IC={
+eng:'<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/>',
+hist:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/>',
+lit:'<path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2z"/><path d="M22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/>',
+std:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/>',
+dat:'<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>',
+pap:'<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5"/><path d="M14 3l5 5v3"/><circle cx="16" cy="17" r="3"/><path d="M18.2 19.2L21 22"/>',
+aud:'<rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6v2H9z"/><path d="M9 13l2 2 4-4"/>',
+life:'<path d="M3 20h18M3 20V4"/><path d="M5 18C8 3 12 3 20 17"/>',
+rca:'<circle cx="12" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M12 7v4M12 11H6v6M12 11h6v6"/>',
+fmeca:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/>',
+pred:'<path d="M3 12h4l2-6 4 12 2-6h6"/>',
+eco:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M12 12h2M8 16h2M12 16h2"/>',
+repl:'<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/>',
+rank:'<path d="M5 21V11M12 21V4M19 21v-7M3 21h18"/>',
+integ:'<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
+verif:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M8 11l2 2 4-4"/>',
+writer:'<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h6"/>',
+ux:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/>',
+feed:'<path d="M21 12a8 8 0 0 1-11.5 7.2L4 21l1.8-5.4A8 8 0 1 1 21 12z"/><path d="M9 12l2 2 4-4"/>',
+cur:'<path d="M12 21v-8"/><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z"/><path d="M12 15c0-3-2-5-6-5 0 3 2 5 6 5z"/>',
+in_modo:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".8"/>',
+in_datos:'<ellipse cx="12" cy="6" rx="7" ry="2.6"/><path d="M5 6v6c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V6"/><path d="M5 12v5c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-5"/>',
+in_corr:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>',
+persona:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/>',
+entrega:'<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 15l2 2 4-4"/>'
+};
+const svg=(k,extra='')=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" '+extra+' aria-hidden="true">'+(IC[k]||IC.eng)+'</svg>';
+
+/* ---------- datos del equipo ---------- */
+const FULL={eng:'reliability-engineer',hist:'reliability-case-historian',lit:'reliability-literature-researcher',std:'reliability-standards-researcher',dat:'reliability-dataset-scout',pap:'reliability-paper-analyst',aud:'reliability-data-auditor',life:'reliability-life-analyst',rca:'reliability-rca-investigator',fmeca:'reliability-fmeca-rcm',pred:'reliability-predictive-analyst',eco:'reliability-economics-kpi',repl:'reliability-replicator',rank:'reliability-citation-ranker',integ:'reliability-integrator',verif:'reliability-evidence-verifier',writer:'reliability-report-writer',ux:'reliability-ux-designer',cur:'reliability-memory-curator',feed:'reliability-feedback-learner'};
+const SHORT=k=>FULL[k].replace('reliability-','');
+const A=[ /* id, grupo, funcion, entra, sale */
+['lit','A','Lee papers, tesis, libros, normas','frente y rango de ids','entradas de evidencia'],
+['std','A','Normas, guías y clases abiertas','modo de falla','normas y fuentes formales'],
+['dat','A','Datos públicos de vida y falla','componente','conjuntos con límites'],
+['pap','A','Lectura profunda de papers','papers priorizados','entradas y cifras'],
+['aud','B','Calidad de datos de mantenimiento','datos de la persona','veredicto de aptitud'],
+['life','B','Weibull, supervivencia, reparables','veredicto y pregunta','vida.json'],
+['rca','B','Causa raíz con evidencia','registro de evidencia','acr, árbol, porqués'],
+['fmeca','B','FMECA, criticidad y estrategia RCM','árbol y ACR','fmeca.json'],
+['pred','B','Predictivo, ML, RUL y visión','evidencia de monitoreo','predictivo.json'],
+['eco','B','Costos, repuestos y KPIs','parámetros de vida','lcc.json'],
+['repl','B','Réplica de figuras y tablas','cifras','replicas.json'],
+['rank','B','Ranking por citas y cuartil','registro de evidencia','ranking.json'],
+['integ','C','Une todo y arma el HTML final','carpeta del caso','informe.html'],
+['verif','C','Intenta refutar antes de entregar','informe y fuentes','hallazgos por severidad'],
+['writer','C','Redacta el informe técnico','entregas verificadas','informe'],
+['ux','C','Diseño del informe HTML','HTML y capturas','mejoras de plantilla'],
+['hist','D','Memoria de casos y línea base','caso mínimo','casos parecidos, línea base'],
+['cur','D','Convierte lo aprendido en lecciones','lecciones y reglas','candidatos en cuarentena'],
+['feed','D','Aprende de tus correcciones','mensajes de la persona','reglas candidatas']
+];
+const GROUPS={
+ A:{t:'A · Investigación y lectura',x:16,w:286},
+ B:{t:'B · Análisis de ingeniería',x:352,w:560},
+ C:{t:'C · Entrega y calidad',x:962,w:286},
+ D:{t:'D · Memoria y aprendizaje',x:1298,w:286}
+};
+const GY=360, GH=468, CW=262, CH=96;
+const GNAME={A:'Investigación y lectura',B:'Análisis de ingeniería',C:'Entrega y calidad',D:'Memoria y aprendizaje'};
+const TRAZA={}; DATA.traza.forEach(t=>{TRAZA[t.agente]=t});
+const FOLDERS=[
+ ['fo_know','knowledge','protocolos, registro de normas con estado, plantillas, mapa de fuentes'],
+ ['fo_kit','tools/reliability','kit de cálculo: Weibull, Crow-AMSAA, Kaplan-Meier, economía, informe HTML'],
+ ['fo_doss','historial/dossiers','el caso: evidencia, dossier, análisis, cifras, réplicas, trazabilidad, informe.html'],
+ ['fo_casos','historial/casos y linea_base','casos con versión y línea base por familia (solo se agrega)'],
+ ['fo_feed','historial/feedback','feedback.jsonl: reglas, correcciones y aprobaciones (solo se agrega)'],
+ ['fo_cuar','knowledge/memoria/cuarentena','lecciones candidatas; a la aprobada solo pasan con una persona']
+];
+
+/* conexiones para el panel (protocolo_agentes y bloque CONTEXTO de cada ficha) */
+const CONN={
+eng:{rec:[['la persona','modo de falla, datos opcionales y correcciones'],['verificador','hallazgos por severidad'],['cada especialista','su entrega']],ent:[['cada agente','un BRIEF con los ocho campos'],['agente de feedback y curador','lo aprendido en la ronda'],['la persona','informe HTML, quién hizo qué, preguntas finales']],con:['hist','lit','std','dat','pap','aud','life','rca','fmeca','pred','eco','repl','rank','integ','verif','writer','ux','cur','feed']},
+hist:{rec:[['estratega','caso mínimo']],ent:[['estratega','casos parecidos y línea base']],con:['eng','life']},
+lit:{rec:[['estratega','frente, presupuesto de consultas, rango de ids y ruta de salida']],ent:[['replicador y analistas','entradas de evidencia'],['estratega','tabla de fuentes con nivel y límites, lagunas']],con:['eng','pap','repl','rca','life']},
+std:{rec:[['estratega','modo de falla y componente']],ent:[['estratega','tablas de normas y fuentes, registro validado, pendientes de adquisición']],con:['eng','lit','fmeca']},
+dat:{rec:[['estratega','modo de falla, componente y vías permitidas']],ent:[['analista de vida','conjuntos abiertos con límites'],['estratega','tabla de conjuntos y registro validado']],con:['eng','life']},
+pap:{rec:[['estratega','lista de papers priorizados y rango de ids']],ent:[['replicador','entradas y lista cifras'],['estratega','reporte de fuentes y lagunas']],con:['eng','repl','lit','rank']},
+aud:{rec:[['estratega','ruta de los datos, pregunta de decisión y supuestos']],ent:[['analista de vida y estratega','veredicto de aptitud por análisis']],con:['eng','life']},
+life:{rec:[['auditor de datos','veredicto de datos'],['estratega','la pregunta'],['registro de evidencia','parámetros publicados y conjuntos abiertos']],ent:[['integrador','JSON vida'],['analista de economía','parámetros de vida']],con:['aud','dat','eco','integ','eng']},
+rca:{rec:[['estratega','registro de evidencia, dossier y análisis previos']],ent:[['integrador','JSON acr, arbol, porques, observar'],['analista FMECA','árbol y ACR']],con:['eng','fmeca','integ']},
+fmeca:{rec:[['investigador de causa raíz','árbol y ACR'],['estratega','evidencia leída y costos que aporte la persona']],ent:[['integrador','JSON fmeca']],con:['rca','eng','integ']},
+pred:{rec:[['estratega','evidencia de monitoreo y estudios de banco leídos']],ent:[['integrador','JSON predictivo']],con:['eng','integ']},
+eco:{rec:[['analista de vida','parámetros de vida'],['estratega','costos de tesis o papers leídos']],ent:[['integrador','JSON lcc']],con:['life','eng','integ']},
+repl:{rec:[['analista de papers','cifras y entradas']],ent:[['integrador','réplicas validadas']],con:['pap','integ','eng']},
+rank:{rec:[['estratega','registro de evidencia']],ent:[['estratega','tabla id, citas, fuente del conteo, cuartil']],con:['eng','pap']},
+integ:{rec:[['estratega','carpeta del caso: evidencia, dossier, análisis, cifras, réplicas y trazabilidad'],['analistas y replicador','JSON y réplicas']],ent:[['verificador y diseñador UX','HTML ensamblado'],['estratega','ruta del informe, ajustes automáticos, cobertura']],con:['verif','ux','repl','life','rca','fmeca','pred','eco','eng']},
+verif:{rec:[['integrador','HTML ensamblado'],['estratega','solo archivos y fuentes, sin el razonamiento del autor']],ent:[['estratega','problemas por severidad y veredicto global']],con:['integ','eng']},
+writer:{rec:[['estratega','entregas ya verificadas']],ent:[['estratega','archivo del informe y secciones con su nivel de evidencia']],con:['eng','verif']},
+ux:{rec:[['integrador','HTML ensamblado'],['estratega','capturas del navegador de pruebas']],ent:[['estratega','cambios aplicados, capturas y pendientes']],con:['integ','eng']},
+cur:{rec:[['agente de feedback','reglas vigentes'],['estratega','lecciones del caso']],ent:[['estratega','lista de candidatos con ruta y estado']],con:['feed','eng']},
+feed:{rec:[['estratega','mensajes de la persona y patrones de error que reportan los verificadores']],ent:[['estratega','ruta y línea del feedback, candidatos y reglas vigentes'],['curador','reglas vigentes']],con:['eng','cur']}
+};
+
+const BLOCKS=[
+ ['ROL','Rol','¿Quién es este agente?'],
+ ['TAREA','Tarea','¿Qué hace exactamente?'],
+ ['CONTEXTO','Contexto','¿Qué recibe y qué consulta?'],
+ ['RAZONAMIENTO','Razonamiento','¿Cómo decide?'],
+ ['CIERRE','Condiciones de cierre','¿Cuándo da su trabajo por terminado?'],
+ ['FEEDBACK','Feedback','¿Qué reporta y cómo aprende?'],
+ ['ALMACENAMIENTO','Almacenamiento y memoria','¿Dónde guarda lo que produce?'],
+ ['SALIDA','Salida','¿Qué entrega y en qué formato?']
+];
+
+/* ---------- posiciones ---------- */
+const R={}; // rectángulos por id
+const stage=$('#stage');
+let html='';
+const wiresSvg='<svg class="wires" id="wires" viewBox="0 0 1600 1170" aria-hidden="true"><defs>'+
+ ['blue:#5b9bd5','green:#6cc08f','peach:#d9a273','sand:#c1a85b'].map(s=>{const [n,c]=s.split(':');return '<marker id="mk-'+n+'" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1.5L8.5 5L1 8.5" fill="none" stroke="'+c+'" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></marker>'}).join('')+
+ '</defs><g id="wireG"></g></svg>';
+stage.insertAdjacentHTML('beforeend',wiresSvg);
+
+function addGroup(k){const g=GROUPS[k];R['g'+k]={x:g.x,y:GY,w:g.w,h:GH};
+ const note=k==='D'?'<div class="note">Nada pasa a la memoria aprobada sin que una persona lo apruebe.</div>':'';
+ stage.insertAdjacentHTML('beforeend','<div class="group '+k+'" data-id="g'+k+'" style="left:'+g.x+'px;top:'+GY+'px;width:'+g.w+'px;height:'+GH+'px"><h3>'+g.t+'</h3>'+note+'</div>');}
+['A','B','C','D'].forEach(addGroup);
+
+function cardHTML(id,cls,nm,fn,ent,sal,x,y,w,h,worked,icon,stepsAttr){
+ R[id]={x,y,w,h};
+ return '<button class="card '+cls+(worked?' worked':'')+'" data-id="'+id+'" style="left:'+x+'px;top:'+y+'px;width:'+w+'px;height:'+h+'px" aria-label="'+esc(nm)+'. '+esc(fn)+'. Doble clic para abrir su ficha.">'+
+ '<span class="st" title="'+(worked?'Figura en la trazabilidad de este caso':'No figura en este caso')+'"></span>'+
+ '<span class="hd"><span class="ic">'+svg(icon)+'</span><span class="nm">'+esc(nm)+'</span></span>'+
+ '<div class="fn">'+esc(fn)+'</div>'+
+ (ent?'<div class="io"><b>Entra</b>'+esc(ent)+'</div>':'')+(sal?'<div class="io"><b>Sale</b>'+esc(sal)+'</div>':'')+
+ '<span class="chips"></span></button>';}
+
+// posiciones de tarjetas de agentes
+const slot={A:0,B:0,C:0,D:0};
+A.forEach(a=>{
+ const [id,g,fn,ent,sal]=a; const G=GROUPS[g]; let x,y,i=slot[g]++;
+ if(g==='B'){const col=Math.floor(i/4),row=i%4;x=G.x+12+col*(CW+12);y=GY+44+row*106}
+ else{x=G.x+12;y=GY+44+i*106}
+ const name=FULL[id]; const worked=!!TRAZA[name];
+ html+=cardHTML(id,g,SHORT(id),fn,ent,sal,x,y,CW,CH,worked,id);
+});
+// estratega
+html+=cardHTML('eng','core','ESTRATEGA · reliability-engineer','Reparte el trabajo, integra y decide','modo de falla de la persona','informe, tabla quién hizo qué',620,150,360,84,true,'eng').replace('<div class="io"><b>Entra</b>modo de falla de la persona</div><div class="io"><b>Sale</b>informe, tabla quién hizo qué</div>','<div class="io"><b>Entra</b>modo de falla · <b>Sale</b>informe verificado</div>');
+// entradas
+html+=cardHTML('in_modo','In','Modo de falla','La persona nombra el componente',null,null,400,14,250,66,false,'in_modo').replace(/<span class="st"[^>]*><\/span>/,'');
+html+=cardHTML('in_datos','In','Datos (opcionales)','Órdenes, tiempos de falla, costos',null,null,675,14,250,66,false,'in_datos').replace(/<span class="st"[^>]*><\/span>/,'');
+html+=cardHTML('in_corr','In','Correcciones y reglas','Lo que la persona corrige o aprueba',null,null,950,14,250,66,false,'in_corr').replace(/<span class="st"[^>]*><\/span>/,'');
+// nodos laterales
+html+=cardHTML('persona','Side','La persona','Responde preguntas, decide',null,null,250,165,240,54,false,'persona').replace(/<span class="st"[^>]*><\/span>/,'');
+html+=cardHTML('entrega','Side','Informe entregado','informe.html del caso',null,null,1110,165,240,54,false,'entrega').replace(/<span class="st"[^>]*><\/span>/,'');
+// carpetas
+const FY=1054,FH=96,FW=242;
+FOLDERS.forEach((f,i)=>{const x=16+i*264;R[f[0]]={x,y:FY,w:FW,h:FH};
+ html+='<div class="folder" data-id="'+f[0]+'" style="left:'+x+'px;top:'+FY+'px;width:'+FW+'px;height:'+FH+'px"><span class="fno">0'+(i+1)+'</span><b title="'+esc(f[1])+'">'+esc(f[1])+'</b><span>'+esc(f[2])+'</span></div>';});
+html+='<div class="fcap" style="top:1020px"><span style="background:var(--card);padding:0 12px">Carpetas del sistema · lo que se guarda en cada una</span></div>';
+stage.insertAdjacentHTML('beforeend',html);
+
+/* ---------- cables ---------- */
+const P=(id,side,f=.5)=>{const r=R[id];return side==='T'?[r.x+r.w*f,r.y]:side==='B'?[r.x+r.w*f,r.y+r.h]:side==='L'?[r.x,r.y+r.h*f]:[r.x+r.w,r.y+r.h*f]};
+const gx=k=>R['g'+k].x+R['g'+k].w/2;
+const BUS=292, RET=326, GB=GY+GH;
+const E=[
+ {id:'e_modo',c:'blue',l:'modo de falla',pts:()=>{const a=P('in_modo','B',.5),b=P('eng','T',.2);return[a,[a[0],112],[b[0],112],b]},lt:.5},
+ {id:'e_datos',c:'blue',l:'datos',pts:()=>[P('in_datos','B'),P('eng','T',.5)],lt:.5},
+ {id:'e_corr',c:'sand',l:'correcciones',pts:()=>{const a=P('in_corr','B',.5),b=P('eng','T',.8);return[a,[a[0],112],[b[0],112],b]},lt:.5},
+ {id:'e_pers',c:'peach',l:'preguntas finales',pts:()=>[P('eng','L',.5),P('persona','R',.5)],lt:.5},
+ {id:'e_entr',c:'peach',l:'informe.html',pts:()=>[P('eng','R',.5),P('entrega','L',.5)],lt:.5},
+ {id:'enc_A',c:'blue',l:'encargo',pts:()=>{const a=P('eng','B',.39);return[a,[a[0],BUS],[gx('A'),BUS],[gx('A'),GY]]},lt:.86},
+ {id:'enc_B',c:'blue',l:'encargo',pts:()=>{const a=P('eng','B',.39);return[a,[a[0],BUS],[gx('B'),BUS],[gx('B'),GY]]},lt:.8},
+ {id:'enc_C',c:'blue',l:null,pts:()=>{const a=P('eng','B',.39);return[a,[a[0],BUS],[gx('C'),BUS],[gx('C'),GY]]},lt:.5},
+ {id:'enc_D',c:'sand',l:'lecciones',pts:()=>{const a=P('eng','B',.39);return[a,[a[0],BUS],[gx('D'),BUS],[gx('D'),GY]]},lt:.9},
+ {id:'e_hall',c:'peach',l:'hallazgos',pts:()=>{const b=P('eng','B',.62),a=[R.gC.x+R.gC.w*.78,GY];return[a,[a[0],RET],[b[0],RET],b]},lt:.34},
+ {id:'f_evid',c:'green',l:'evidencia.json',pts:()=>{const a=[R.gA.x+R.gA.w*.3,GB],b=[R.gB.x+R.gB.w*.15,GB];return[a,[a[0],GB+24],[b[0],GB+24],b]},lt:.5},
+ {id:'f_cifras',c:'green',l:'cifras',pts:()=>{const a=[R.gA.x+R.gA.w*.62,GB],b=[R.gB.x+R.gB.w*.7,GB];return[a,[a[0],GB+46],[b[0],GB+46],b]},lt:.5},
+ {id:'f_anal',c:'green',l:'análisis JSON',pts:()=>{const a=[R.gB.x+R.gB.w*.34,GB],b=[R.gC.x+R.gC.w*.3,GB];return[a,[a[0],GB+68],[b[0],GB+68],b]},lt:.5},
+ {id:'f_repl',c:'green',l:'réplicas',pts:()=>{const a=[R.gB.x+R.gB.w*.86,GB],b=[R.gC.x+R.gC.w*.6,GB];return[a,[a[0],GB+90],[b[0],GB+90],b]},lt:.5},
+ {id:'g_kit',c:'blue',l:'cálculos',pts:()=>{const x=R.fo_kit.x+R.fo_kit.w*.5;return[[x,GB],[x,FY]]},lt:.78},
+ {id:'g_know',c:'blue',l:'protocolos',pts:()=>{const x=R.fo_know.x+R.fo_know.w*.5;return[[x,FY],[x,GB]]},lt:.78},
+ {id:'g_doss',c:'peach',l:'informe.html',pts:()=>{const a=[R.gC.x+R.gC.w*.12,GB],b=[R.fo_doss.x+R.fo_doss.w*.5,FY];return[a,[a[0],GB+112],[b[0],GB+112],b]},lt:.7},
+ {id:'g_casos',c:'sand',l:'caso',pts:()=>{const a=[R.gD.x+R.gD.w*.1,GB],b=[R.fo_casos.x+R.fo_casos.w*.5,FY];return[a,[a[0],GB+134],[b[0],GB+134],b]},lt:.62},
+ {id:'g_feed',c:'sand',l:'feedback',pts:()=>{const a=[R.gD.x+R.gD.w*.5,GB],b=[R.fo_feed.x+R.fo_feed.w*.5,FY];return[a,[a[0],GB+156],[b[0],GB+156],b]},lt:.3},
+ {id:'g_cuar',c:'sand',l:'lecciones',pts:()=>{const x=R.fo_cuar.x+R.fo_cuar.w*.5;return[[x,GB],[x,FY]]},lt:.45}
+];
+function pathD(pts,r){let d='M'+pts[0][0]+' '+pts[0][1];for(let i=1;i<pts.length-1;i++){const p=pts[i-1],c=pts[i],n=pts[i+1];
+ const v1=[c[0]-p[0],c[1]-p[1]],v2=[n[0]-c[0],n[1]-c[1]];const l1=Math.hypot(...v1),l2=Math.hypot(...v2);const rr=Math.min(r,l1/2,l2/2);
+ const a=[c[0]-v1[0]/l1*rr,c[1]-v1[1]/l1*rr],b=[c[0]+v2[0]/l2*rr,c[1]+v2[1]/l2*rr];d+=' L'+a[0]+' '+a[1]+' Q'+c[0]+' '+c[1]+' '+b[0]+' '+b[1];}
+ const e=pts[pts.length-1];return d+' L'+e[0]+' '+e[1]}
+function pointAt(pts,t){let tot=0;const ls=[];for(let i=1;i<pts.length;i++){const l=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);ls.push(l);tot+=l}
+ let want=tot*t;for(let i=0;i<ls.length;i++){if(want<=ls[i]){const k=want/ls[i];return[pts[i][0]+(pts[i+1][0]-pts[i][0])*k,pts[i][1]+(pts[i+1][1]-pts[i][1])*k]}want-=ls[i]}return pts[pts.length-1]}
+const wireG=$('#wireG'); const NS='http://www.w3.org/2000/svg';
+E.forEach(e=>{const pts=e.pts();const p=document.createElementNS(NS,'path');p.setAttribute('d',pathD(pts,9));p.setAttribute('class','wire '+e.c);p.setAttribute('marker-end','url(#mk-'+e.c+')');p.dataset.id=e.id;wireG.appendChild(p);e.el=p;
+ if(e.l){const q=pointAt(pts,e.lt);const s=document.createElement('span');s.className='pill '+e.c;s.textContent=e.l;s.style.left=q[0]+'px';s.style.top=q[1]+'px';s.dataset.id=e.id;stage.appendChild(s);e.pill=s}});
+
+/* ---------- pasos ---------- */
+const STEPS=[
+{t:'Intake: la persona nombra el modo de falla',
+ x:'La persona escribe /modo-de-falla con el componente y su modo de falla. El estratega lo clasifica, lee las reglas vigentes de historial/feedback y, según el protocolo, pide al historiador buscar si el caso ya ocurrió. Los datos de planta son opcionales: este caso no tiene datos reales del activo.',
+ r:'En el caso real el historiador no figura en trazabilidad.json; el estratega abrió el caso con las reglas de feedback.',
+ n:['in_modo','in_datos','eng','hist'],f:[],e:['e_modo','e_datos','enc_D']},
+{t:'Frentes de búsqueda en paralelo',
+ x:'El estratega reparte la cuota del conector de artículos por frente y lanza un investigador por frente, cada uno con un encargo de ocho bloques y su rango de ids. Las normas y los datos abiertos se buscan al mismo tiempo. Cada fuente se registra con extracto literal, localizador y límites.',
+ r:'Cinco frentes de búsqueda, más el investigador de normas y el buscador de datos abiertos. El registro llegó a 169 entradas.',
+ n:['eng','lit','std','dat'],f:['fo_doss','fo_know'],e:['enc_A','g_know']},
+{t:'Lectura profunda',
+ x:'Los papers más útiles se leen completos para extraer tablas, figuras, parámetros y condiciones de ensayo. Cada dato pasa a la lista de cifras junto con su extracto literal.',
+ r:'Dos lectores de textos completos de preprints produjeron 71 cifras. El agente analista de papers está definido, pero la trazabilidad no lo lista en este caso.',
+ n:['lit','pap'],f:['fo_doss'],e:['f_evid']},
+{t:'Réplicas de figuras y tablas',
+ x:'Las cifras se convierten en réplicas: barras con intervalo, tablas y curvas con los puntos publicados, cada una con su referencia APA 7 y enlace al original. El control del kit rechaza cualquier número que no esté literal en el extracto.',
+ r:'36 réplicas en replicas.json.',
+ n:['pap','repl'],f:['fo_doss'],e:['f_cifras']},
+{t:'Análisis de ingeniería',
+ x:'Los especialistas analizan lo hallado: causa raíz (árbol, Ishikawa, cinco porqués), FMECA con tareas RCM, estadística de vida, estrategia predictiva y estructura de costos. Los números los calcula el kit. Lo que no tiene respaldo queda como SIN DATOS PARA ARMARLO.',
+ r:'Sin caso real ninguna causa pasa de posible; los puntajes S, O y D, los costos y los parámetros de Weibull quedaron vacíos. El auditor de datos solo se activa con datos reales de la persona.',
+ n:['rca','fmeca','life','pred','eco'],f:['fo_kit','fo_doss'],e:['enc_B','g_kit']},
+{t:'Ranking de fuentes',
+ x:'El rankeador ordena las fuentes por citas y cuartil de revista solo con conteos que la fuente declare. Si las bases están bloqueadas queda SIN DATOS PARA ARMARLO y se ofrece el orden por uso y nivel de lectura.',
+ r:'En la carpeta del caso no existe ranking.json: este paso no se ejecutó.',
+ n:['rank'],f:[],e:[]},
+{t:'Ensamblado con compuertas',
+ x:'El integrador une los JSON de todos los agentes, valida y arma informe.html con las compuertas del kit. Cada elemento sin fuente válida se elimina y queda registrado como ajuste automático.',
+ r:'Lo ejecutó el kit lanzado por el estratega; según la trazabilidad, el agente integrador se usará en el próximo caso. Resultado: 10 secciones con evidencia y 4 vacías.',
+ n:['integ','repl','life','rca','fmeca','pred','eco'],f:['fo_doss'],e:['enc_C','f_anal','f_repl','g_doss']},
+{t:'Verificación independiente',
+ x:'El verificador ve solo los archivos y las fuentes, no el razonamiento del autor, e intenta refutar: cifras sin origen, niveles inflados, pistas usadas como respaldo y nombres de empresa. Devuelve al estratega una tabla de problemas por severidad.',
+ r:'Cuatro pasadas de verificación.',
+ n:['verif','integ'],f:[],e:['e_hall']},
+{t:'Correcciones',
+ x:'El estratega aplica lo que señaló la verificación antes de entregar: las cifras sin extracto y las inferencias presentadas como evidencia bajan de nivel, y cada elemento sin fuente válida se elimina y queda registrado.',
+ r:'Los hallazgos de las cuatro pasadas se corrigieron antes de entregar.',
+ n:['verif','eng','in_corr'],f:[],e:['e_hall','e_corr']},
+{t:'Entrega',
+ x:'El estratega entrega el informe HTML aunque haya secciones vacías, con la tabla de quién hizo qué y un resumen de hasta 10 líneas con los vacíos y las preguntas finales para la persona.',
+ r:'Informe en historial/dossiers/chumacera_polea_faja/informe.html.',
+ n:['eng','persona','entrega'],f:['fo_doss'],e:['e_entr','e_pers','g_doss']},
+{t:'Aprendizaje',
+ x:'El estratega envía a cada agente lo aprendido de su entrega y el agente de feedback lo registra. El curador propone lecciones a la cuarentena y solo una persona las aprueba; el historiador guarda el caso.',
+ r:'historial/feedback tiene 10 entradas; en la memoria hay 0 lecciones aprobadas y 1 de ejemplo en cuarentena.',
+ n:['eng','feed','cur','hist'],f:['fo_feed','fo_cuar','fo_casos'],e:['enc_D','g_feed','g_cuar','g_casos']}
+];
+// chips de pasos en cada tarjeta (modo flujo completo)
+const stepsOf={};STEPS.forEach((s,i)=>s.n.forEach(id=>{(stepsOf[id]=stepsOf[id]||[]).push(i+1)}));
+$$('.card').forEach(c=>{const st=stepsOf[c.dataset.id];if(st){c.querySelector('.chips').innerHTML=st.map(n=>'<i>'+n+'</i>').join('')}});
+
+const nameOf=id=>FULL[id]?SHORT(id):({in_modo:'modo de falla',in_datos:'datos',in_corr:'correcciones',persona:'la persona',entrega:'informe'}[id]||id);
+
+/* ---------- estado de reproducción ---------- */
+const st={step:-1,full:true,playing:false,speed:1,repeat:false,t0:0,elapsed:0,timer:null};
+const BASE=4800;
+const vp=$('#viewport');
+function applyState(){
+ const all=[...$$('.card'),...$$('.group'),...$$('.folder')];
+ const wires=E.map(e=>e.el), pills=E.filter(e=>e.pill).map(e=>e.pill);
+ const clear=el=>el.classList.remove('is-on','is-done','is-dim');
+ all.forEach(clear);wires.forEach(clear);pills.forEach(clear);
+ vp.classList.toggle('full',st.full||st.step<0);
+ if(st.full||st.step<0){return}
+ const cur=STEPS[st.step];
+ const doneN=new Set(),doneE=new Set(),doneF=new Set();
+ for(let i=0;i<st.step;i++){STEPS[i].n.forEach(x=>doneN.add(x));STEPS[i].e.forEach(x=>doneE.add(x));STEPS[i].f.forEach(x=>doneF.add(x))}
+ $$('.card').forEach(c=>{const id=c.dataset.id;if(cur.n.includes(id))c.classList.add('is-on');else if(doneN.has(id))c.classList.add('is-done');else c.classList.add('is-dim')});
+ $$('.folder').forEach(c=>{const id=c.dataset.id;if(cur.f.includes(id))c.classList.add('is-on');else if(doneF.has(id)){}else c.classList.add('is-dim')});
+ $$('.group').forEach(g=>{g.style.opacity=''});
+ E.forEach(e=>{const cls=cur.e.includes(e.id)?'is-on':doneE.has(e.id)?'is-done':'is-dim';e.el.classList.add(cls);if(e.pill)e.pill.classList.add(cls==='is-done'?'is-dim':cls)});
+}
+function renderText(){
+ const t=$('#exTitle'),x=$('#exTxt'),r=$('#exReal'),l=$('#exList'),w=$('#exWho');
+ if(st.full||st.step<0){
+  t.textContent=st.full?'El flujo completo, de principio a fin':'Listo para reproducir';
+  x.textContent=st.full?'Los números sobre cada tarjeta indican en qué pasos participa. Reproduce el flujo para verlo iluminarse paso a paso, o haz doble clic en una tarjeta para leer su ficha.':'Pulsa Reproducir para recorrer el flujo real del caso. Cada paso ilumina a los agentes que participan y los datos que viajan entre ellos.';
+  r.hidden=true;l.hidden=!st.full;w.innerHTML='';
+  l.innerHTML=STEPS.map((s,i)=>'<li><b>'+(i+1)+'</b>'+esc(s.t)+'</li>').join('');
+  $('#stepNo').textContent=st.full?'Flujo completo':'Paso 0 de '+STEPS.length;
+  setBar(0);return}
+ const s=STEPS[st.step];t.textContent=(st.step+1)+'. '+s.t;x.textContent=s.x;r.hidden=false;r.textContent='En este caso: '+s.r;l.hidden=true;
+ w.innerHTML=s.n.map(id=>'<span class="chip">'+esc(nameOf(id))+'</span>').join('');
+ $('#stepNo').textContent='Paso '+(st.step+1)+' de '+STEPS.length;
+}
+function setBar(p){p=Math.max(0,Math.min(1,p));$('#barFill').style.width=(p*100).toFixed(1)+'%';$('#barBox').setAttribute('aria-valuenow',Math.round(p*100))}
+function go(i){st.step=i;st.full=false;st.elapsed=0;st.t0=performance.now();applyState();renderText();syncBtns();focusActive();setBar(i/STEPS.length)}
+function showFull(){stop();st.full=true;st.step=-1;st.elapsed=0;applyState();renderText();syncBtns();fitView(true)}
+function syncBtns(){
+ $('#playTxt').textContent=st.playing?'Pausar':'Reproducir';
+ $('#playBtn').firstElementChild.innerHTML=st.playing?'<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>':'<path d="M7 4.5v15l12-7.5z"/>';
+ $('#fullBtn').setAttribute('aria-pressed',String(st.full));
+ $('#repeatBtn').setAttribute('aria-pressed',String(st.repeat));
+ $$('.speed').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.speed===st.speed)));
+}
+function dur(){return BASE/st.speed}
+function tick(){
+ if(!st.playing)return;
+ const now=performance.now();const el=st.elapsed+(now-st.t0);
+ setBar((st.step+Math.min(1,el/dur()))/STEPS.length);
+ if(el>=dur()){
+  if(st.step<STEPS.length-1){go(st.step+1)}
+  else if(st.repeat){go(0)}
+  else{setBar(1);stop();}
+ }
+}
+function play(){
+ if(st.full||st.step<0||(st.step===STEPS.length-1&&st.elapsed>=dur())){go(0)}
+ else{st.t0=performance.now()}
+ st.playing=true;clearInterval(st.timer);st.timer=setInterval(tick,60);syncBtns();
+}
+function stop(){if(st.playing){st.elapsed+=performance.now()-st.t0}st.playing=false;clearInterval(st.timer);syncBtns()}
+$('#playBtn').addEventListener('click',()=>{st.playing?stop():play()});
+$('#prevBtn').addEventListener('click',()=>{stop();go(st.step<=0?0:st.step-1)});
+$('#nextBtn').addEventListener('click',()=>{stop();go(st.step<0?0:Math.min(STEPS.length-1,st.step+1))});
+$('#resetBtn').addEventListener('click',()=>{stop();st.full=false;st.step=-1;applyState();renderText();syncBtns();fitView(true)});
+$('#fullBtn').addEventListener('click',showFull);
+$('#repeatBtn').addEventListener('click',()=>{st.repeat=!st.repeat;syncBtns()});
+$$('.speed').forEach(b=>b.addEventListener('click',()=>{const was=st.playing;if(was){st.elapsed+=performance.now()-st.t0;st.t0=performance.now()}st.speed=+b.dataset.speed;syncBtns()}));
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'&&drawerOpen){closeDrawer();return}
+ if(drawerOpen||/^(INPUT|TEXTAREA)$/.test((e.target.tagName||'')))return;
+ if(!$('#view-map').hidden){if(e.key==='ArrowRight'){$('#nextBtn').click()}else if(e.key==='ArrowLeft'){$('#prevBtn').click()}else if(e.key===' '&&e.target===document.body){e.preventDefault();$('#playBtn').click()}}
+});
+
+/* ---------- zoom y mano ---------- */
+const W=1600,H=1170;
+const view={s:1,x:0,y:0,fit:1};
+function vpSize(){return{w:vp.clientWidth,h:vp.clientHeight}}
+function applyView(anim){stage.classList.toggle('anim',!!anim);stage.style.transform='translate('+view.x.toFixed(1)+'px,'+view.y.toFixed(1)+'px) scale('+view.s.toFixed(4)+')'}
+function clampView(){const z=vpSize();const sw=W*view.s,sh=H*view.s;
+ view.x=sw<=z.w?(z.w-sw)/2:Math.min(0,Math.max(z.w-sw,view.x));
+ view.y=sh<=z.h?0:Math.min(0,Math.max(z.h-sh,view.y))}
+function layoutViewport(){
+ const narrow=window.innerWidth<=820;
+ const avail=vp.clientWidth||vp.parentElement.clientWidth;
+ view.fit=Math.min(1.15,avail/W);
+ vp.style.height=narrow?Math.round(Math.min(window.innerHeight*.58,620))+'px':Math.round(H*view.fit)+'px';
+}
+function fitView(anim){
+ layoutViewport();const narrow=window.innerWidth<=820;const z=vpSize();
+ if(narrow){view.s=.62;view.x=z.w/2-800*view.s;view.y=-6*view.s;clampView()}
+ else{view.s=view.fit;view.x=0;view.y=0;clampView()}
+ applyView(anim)}
+function zoomAt(f,cx,cy,anim){const ns=Math.max(.25,Math.min(2.2,view.s*f));const k=ns/view.s;view.x=cx-(cx-view.x)*k;view.y=cy-(cy-view.y)*k;view.s=ns;clampView();applyView(anim)}
+$('#zoomIn').addEventListener('click',()=>{const z=vpSize();zoomAt(1.25,z.w/2,z.h/2,true)});
+$('#zoomOut').addEventListener('click',()=>{const z=vpSize();zoomAt(.8,z.w/2,z.h/2,true)});
+$('#zoomFit').addEventListener('click',()=>fitView(true));
+vp.addEventListener('wheel',e=>{if(!(e.ctrlKey||e.metaKey))return;e.preventDefault();const r=vp.getBoundingClientRect();zoomAt(e.deltaY<0?1.12:.89,e.clientX-r.left,e.clientY-r.top,false)},{passive:false});
+const ptrs=new Map();let pan=null,pinch=null,moved=false;
+vp.addEventListener('pointerdown',e=>{
+ ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});moved=false;
+ if(ptrs.size===1){pan={x:e.clientX,y:e.clientY,vx:view.x,vy:view.y}}
+ else if(ptrs.size===2){const [a,b]=[...ptrs.values()];pinch={d:Math.hypot(a.x-b.x,a.y-b.y),s:view.s};pan=null}
+});
+vp.addEventListener('pointermove',e=>{
+ if(!ptrs.has(e.pointerId))return;ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
+ if(pinch&&ptrs.size>=2){const [a,b]=[...ptrs.values()];const d=Math.hypot(a.x-b.x,a.y-b.y);const r=vp.getBoundingClientRect();const cx=(a.x+b.x)/2-r.left,cy=(a.y+b.y)/2-r.top;zoomAt((pinch.s*d/pinch.d)/view.s,cx,cy,false);moved=true;return}
+ if(pan){const dx=e.clientX-pan.x,dy=e.clientY-pan.y;
+  if(!moved&&Math.hypot(dx,dy)>6){moved=true;try{vp.setPointerCapture(e.pointerId)}catch(_){}vp.classList.add('grabbing')}
+  if(moved){view.x=pan.vx+dx;view.y=pan.vy+dy;clampView();applyView(false)}}
+});
+function endPtr(e){ptrs.delete(e.pointerId);if(ptrs.size<2)pinch=null;if(ptrs.size===0){pan=null;vp.classList.remove('grabbing');setTimeout(()=>{moved=false},0)}else if(ptrs.size===1){const [p]=[...ptrs.values()];pan={x:p.x,y:p.y,vx:view.x,vy:view.y}}}
+vp.addEventListener('pointerup',endPtr);vp.addEventListener('pointercancel',endPtr);
+function focusActive(){
+ if(st.full||st.step<0)return;const z=vpSize();
+ if(W*view.s<=z.w+2&&H*view.s<=z.h+2)return;
+ const ids=STEPS[st.step].n.filter(id=>R[id]);if(!ids.length)return;
+ let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;ids.forEach(id=>{const r=R[id];x0=Math.min(x0,r.x);y0=Math.min(y0,r.y);x1=Math.max(x1,r.x+r.w);y1=Math.max(y1,r.y+r.h)});
+ const cx=(x0+x1)/2,cy=(y0+y1)/2;view.x=z.w/2-cx*view.s;view.y=z.h/2-cy*view.s;clampView();applyView(true)}
+window.addEventListener('resize',()=>{const narrow=window.innerWidth<=820;layoutViewport();if(!narrow||view.s<view.fit){fitView(false)}else{clampView();applyView(false)}});
+
+/* ---------- selección y panel ---------- */
+let drawerOpen=false,lastFocus=null,lastClick={id:null,t:0};
+const dr=$('#drawer'),bd=$('#backdrop');
+function pretty(id){return FULL[id]?FULL[id]:nameOf(id)}
+function selectCard(id){
+ $$('.card.sel').forEach(c=>c.classList.remove('sel'));const c=$('.card[data-id="'+id+'"]');if(c)c.classList.add('sel');
+ const a=A.find(x=>x[0]===id);const h=$('#hint');
+ if(a){h.textContent=SHORT(id)+': '+a[2]+'. Doble clic para abrir su ficha.'}else if(id==='eng'){h.textContent='Estratega: reparte el trabajo, integra y decide. Doble clic para abrir su ficha.'}else{h.textContent='Doble clic en una tarjeta de agente para abrir su ficha'}
+}
+function openDrawer(id){
+ const full=FULL[id];if(!full)return;
+ const ag=DATA.agentes[full];const f=ag.ficha;const tz=TRAZA[full];const grp=(A.find(x=>x[0]===id)||[])[1];
+ const worked=!!tz;
+ $('#dIcon').innerHTML=svg(id);
+ $('#dTitle').textContent=full;
+ $('#dSub').textContent=id==='eng'?'Estratega del equipo · habla con la persona':'Grupo '+grp+' · '+GNAME[grp];
+ const bg=$('#dBadge');bg.className='badge '+(worked?'yes':'no');bg.innerHTML='<i class="dot '+(worked?'on':'off')+'"></i>'+(worked?'Trabajó en este caso':'No trabajó en este caso');
+ const cn=CONN[id];
+ let h='';
+ h+='<h4>En una frase</h4><div class="sentence">'+fmt(f.ROL)+'</div>';
+ h+='<h4>De un vistazo</h4><div class="trio">'+
+  '<div class="mini"><b>Qué recibe</b><ul>'+cn.rec.map(r=>'<li><strong>'+esc(r[0])+':</strong> '+esc(r[1])+'</li>').join('')+'</ul></div>'+
+  '<div class="mini"><b>Qué entrega</b><ul>'+cn.ent.map(r=>'<li><strong>'+esc(r[0])+':</strong> '+esc(r[1])+'</li>').join('')+'</ul></div>'+
+  '<div class="mini"><b>Con quién se conecta</b><div class="cn">'+cn.con.map(k=>'<span class="chip">'+esc(SHORT(k))+'</span>').join('')+'</div></div>'+
+  '<div class="mini"><b>Qué guarda y dónde</b><div style="font-size:14px;font-weight:300">'+fmt(f.ALMACENAMIENTO)+'</div></div></div>';
+ h+='<h4>Qué aprendió en este caso</h4>';
+ if(tz){h+='<div class="case"><dl><dt>Qué hizo</dt><dd>'+esc(tz.hizo)+'</dd><dt>Recibió</dt><dd>'+esc(tz.entrada)+'</dd><dt>Entregó</dt><dd>'+esc(tz.salida)+'</dd><dt>Aprendió</dt><dd>'+esc(tz.aprendio)+'</dd></div></div>'}
+ else{h+='<div class="nocase">No trabajó en este caso: no figura en <code>trazabilidad.json</code>.'+(id==='integ'?' La trazabilidad indica que las compuertas del kit se ejecutaron en el ensamblado lanzado por el estratega, y que el agente integrador ya existe y se usará en el próximo caso.':'')+'</div>'}
+ h+='<h4>La ficha de ocho bloques</h4>';
+ BLOCKS.forEach((b,i)=>{h+='<div class="block"><span class="n">'+(i+1)+'</span><div class="t">'+b[1]+'<small>'+b[2]+'</small></div><div class="v">'+fmt(f[b[0]])+'</div></div>'});
+ h+='<h4>Conexión</h4><div class="nocase">'+fmt(f['Conexión'])+'</div>';
+ h+='<div class="src">Texto de la ficha tomado de .claude/agents/'+esc(full)+'.md</div>';
+ $('#dBody').innerHTML=h;$('#dBody').scrollTop=0;
+ lastFocus=document.activeElement;
+ dr.classList.add('open');bd.classList.add('open');dr.setAttribute('aria-hidden','false');drawerOpen=true;
+ setTimeout(()=>$('#dClose').focus({preventScroll:true}),30);
+}
+function closeDrawer(){if(!drawerOpen)return;dr.classList.remove('open');bd.classList.remove('open');dr.setAttribute('aria-hidden','true');drawerOpen=false;if(lastFocus&&lastFocus.focus)try{lastFocus.focus({preventScroll:true})}catch(e){}}
+bd.addEventListener('click',closeDrawer);$('#dClose').addEventListener('click',closeDrawer);
+stage.addEventListener('click',e=>{
+ if(moved)return;const c=e.target.closest('.card');if(!c)return;const id=c.dataset.id;const now=Date.now();
+ selectCard(id);
+ if(lastClick.id===id&&now-lastClick.t<420){lastClick={id:null,t:0};if(FULL[id])openDrawer(id)}else lastClick={id,t:now};
+});
+stage.addEventListener('dblclick',e=>{const c=e.target.closest('.card');if(c&&FULL[c.dataset.id]&&!drawerOpen)openDrawer(c.dataset.id)});
+stage.addEventListener('keydown',e=>{if(e.key==='Enter'){const c=e.target.closest('.card');if(c&&FULL[c.dataset.id]){e.preventDefault();openDrawer(c.dataset.id)}}});
+
+/* ---------- pestañas ---------- */
+function showTab(which){
+ const map=which==='map';
+ $('#view-map').hidden=!map;$('#view-cmd').hidden=map;
+ $('#tab-map').setAttribute('aria-selected',String(map));$('#tab-cmd').setAttribute('aria-selected',String(!map));
+ if(map){setTimeout(()=>{layoutViewport();fitView(false)},0)}else{stop();window.scrollTo(0,0)}
+ try{history.replaceState(null,'',map?location.pathname+location.search:'#comandos')}catch(e){}
+}
+$('#tab-map').addEventListener('click',()=>showTab('map'));$('#tab-cmd').addEventListener('click',()=>showTab('cmd'));
+
+/* guía: tabla de contenido y botones de copiar */
+(function(){
+ const g=$('#guide');const toc=$('#toc');let n=0;
+ $$('h2',g).forEach(h=>{h.id='s'+(++n);const a=document.createElement('a');a.href='#'+h.id;a.textContent=h.textContent;a.addEventListener('click',ev=>{ev.preventDefault();h.scrollIntoView({behavior:'smooth',block:'start'})});toc.appendChild(a)});
+ $$('pre',g).forEach(p=>{const b=document.createElement('button');b.className='copy';b.type='button';b.textContent='Copiar';b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(p.innerText.replace(/Copiar$/,'').trim());b.textContent='Copiado'}catch(e){b.textContent='No se pudo'}setTimeout(()=>b.textContent='Copiar',1400)});p.appendChild(b)});
+})();
+
+/* ---------- arranque ---------- */
+layoutViewport();fitView(false);applyState();renderText();syncBtns();
+if(location.hash==='#comandos')showTab('cmd');
+window.__mapa={st,go,STEPS,openDrawer,closeDrawer};
+})();
+</script>
+</body>
+</html>

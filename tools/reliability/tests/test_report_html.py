@@ -181,7 +181,7 @@ def test_buscador_tema_y_descargas():
         out = Path(d) / "i.html"; rh.construir_informe(c, _ledger(), out)
         js = """const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const ctx=await b.newContext({acceptDownloads:true});const p=await ctx.newPage();const e=[];p.on('pageerror',x=>e.push(String(x)));
 await p.goto('file://'+process.argv[1]);await p.fill('#q','kurtosis');const n=(await p.$$('#sres a[data-i]')).length;
-await p.click('#t-noche');const th=await p.evaluate(()=>document.documentElement.dataset.theme);
+await p.click('#ttl');await p.click('#t-noche');const th=await p.evaluate(()=>document.documentElement.dataset.theme);
 await p.click('#b-desc');const items=(await p.$$('#dmenu button')).length;
 const [dl]=await Promise.all([p.waitForEvent('download'),p.click('#dmenu button[data-d="2"]')]);const nombre=dl.suggestedFilename();
 console.log(JSON.stringify({n,th,items,nombre,e}));await b.close()})()"""
@@ -218,9 +218,20 @@ const links=await p.$$eval('#v-ref a[href^="https://"]',x=>x.length);
 const bad=await p.$$eval('a.ext,a.lnkb',x=>x.filter(y=>y.target!=='_blank'||!/noopener/.test(y.rel)).length);
 await p.click('#tabs button:has-text("Evidencia")');await p.click('.pill:has-text("Réplicas")');const gr=(await p.$$('#v-evi .chart svg')).length;
 await p.evaluate(()=>{window.__imp=0;window.print=()=>{window.__imp++}});await p.click('#b-imprimir');await p.waitForTimeout(600);const imp=await p.evaluate(()=>window.__imp);
-console.log(JSON.stringify({tabs,pills,notas,a,c,links,bad,gr,imp,e}));await b.close()})()"""
+await p.click('#tabs button:has-text("Resumen")');const citas=(await p.$$('#rs-abs a.cita')).length;const docs=await p.$$eval('#rs-abs details li',x=>x.length);
+await p.click('.idx button >> nth=3');await p.waitForTimeout(200);const volver=await p.evaluate(()=>document.querySelector('#back').classList.contains('on'));await p.click('#back');
+await p.click('#tabs button:has-text("Modos y causas")');await p.click('.pill:has-text("Árbol de fallas")');const zoom=(await p.$$('.vz-bar button')).length;const clases=(await p.$$('.vz .nd')).length;
+await p.click('.pill:has-text("5 porqués")');const rc=(await p.$$('.rc3 > div')).length;
+await p.click('#tabs button:has-text("Monitoreo y ML")');for(const l of ['Curva de la bañera','Simulador RUL','Sensores y técnicas','Modelos ML','Laboratorio ML'])await p.click('.pill:has-text("'+l+'")');
+const copiar=(await p.$$('#main .cp')).length;
+await p.click('#tabs button:has-text("Referencias")');await p.click('.pill:has-text("Normas técnicas")');const normas=(await p.$$('#nm-tb tr:not(.sepr)')).length;
+const autor=await p.$eval('.autor',x=>x.textContent);const orden=await p.evaluate(()=>{const a=document.querySelector('.acts').lastElementChild;return a.className});
+console.log(JSON.stringify({tabs,pills,notas,a,c,links,bad,gr,imp,citas,docs,volver,zoom,clases,rc,copiar,normas,autor,orden,e}));await b.close()})()"""
     r = subprocess.run(["node", "-e", js, str(html)], capture_output=True, text=True, timeout=180)
     o = json.loads(r.stdout.strip().splitlines()[-1])
     assert "Referencias" in o["tabs"] and o["pills"] >= 20 and o["notas"] == 3, o
     assert o["a"] is True and o["c"] is False, o          # el panel se cierra al hacer clic afuera
     assert o["links"] > 20 and o["bad"] == 0 and o["gr"] >= 10 and o["imp"] == 1 and o["e"] == [], o
+    assert o["citas"] >= 6 and o["docs"] >= 6 and o["volver"] is True, o            # resumen tipo abstract con APA y botón de regreso
+    assert o["zoom"] >= 8 and o["clases"] >= 10 and o["rc"] == 3 and o["copiar"] >= 3 and o["normas"] >= 30, o
+    assert o["autor"] == "HOWK RIOS - CONFIABILIDAD", o

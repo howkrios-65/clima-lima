@@ -1,0 +1,26 @@
+[
+ {
+  "componente_o_modo": "Dano de rodamiento (entre las fallas comunes de un motor asincrono)",
+  "medida": "enumeracion cualitativa, sin frecuencia ni porcentaje",
+  "valor": "Common failures include inter-turn short circuits in stator windings, broken rotor bars, bearing damage, air gap eccentricity, and rotor imbalance",
+  "base_de_datos_o_poblacion": "Motor asincrono trifasico en empresas industriales y mineras (texto de contexto de un articulo de datos, sin muestra)",
+  "anio": 2026,
+  "condiciones": "Afirmacion de la introduccion del articulo, con referencias de los autores; no es un conteo",
+  "limites": "Cualitativa; sin conteos ni porcentajes; motor de 2.2 kW, no chumacera de polea de faja",
+  "evidencia": [
+   "E-9614"
+  ]
+ },
+ {
+  "componente_o_modo": "Dano simultaneo de pista interna y pista externa de rodamiento",
+  "medida": "frecuencia relativa (cualitativa)",
+  "valor": "rare",
+  "base_de_datos_o_poblacion": "'field data' no identificado por los autores",
+  "anio": 2026,
+  "condiciones": "Frase de justificacion del diseno experimental; los autores no dan fuente ni cifra en esa frase",
+  "limites": "Cualitativa y sin cita en la frase; no es un conteo; texto en ingles 'rare'",
+  "evidencia": [
+   "E-9614"
+  ]
+ }
+]
