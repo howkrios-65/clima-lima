@@ -103,7 +103,7 @@ def test_no_section_sign_anywhere():
 
 def test_no_company_or_product_names_in_agents_knowledge_docs_and_kit():
     offenders = []
-    skip = {Path(__file__).resolve()}
+    skip = {Path(__file__).resolve(), (ROOT / ".claude" / "hooks" / "chequeo.py").resolve()}   # el hook necesita la lista de nombres para vigilarlos
     for p in text_files(".claude", "knowledge", "docs/agentes", "tools/reliability"):
         if p.resolve() in skip:
             continue

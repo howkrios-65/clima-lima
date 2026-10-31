@@ -3,10 +3,37 @@
 Todos los agentes del equipo trabajan para una confiabilidad de clase mundial y comparten la misma estructura de instrucciones. Nada se inventa: lo que no tiene evidencia científica se deja con el comentario **SIN DATOS PARA ARMARLO** y el dato que lo cerraría.
 
 ## 1. Estructura de cada agente
-Cada agente tiene una ficha con ocho bloques: **ROL** (quién es), **TAREA** (qué hace), **CONTEXTO** (qué recibe y de quién), **RAZONAMIENTO** (cómo decide), **CIERRE** (cuándo termina), **FEEDBACK** (qué reporta y a quién), **ALMACENAMIENTO** (qué guarda y dónde, memoria) y **SALIDA** (formato y destinatario).
+La ficha de cada agente tiene **10 bloques fijos y 2 operativos**. Los bloques son los mismos que usa el BRIEF del líder (sección 2), de modo que lo estable vive en el archivo del agente y lo propio de cada caso llega en el BRIEF.
+| # | Bloque | Qué contiene en el archivo del agente |
+|---|---|---|
+| 1 | Rol y nivel | Perfil que asume y profundidad |
+| 2 | Contexto | De quién recibe y qué conoce del equipo |
+| 3 | Objetivo y decisión | Qué decisión o entrega sirve su trabajo |
+| 4 | Insumos | Qué necesita y qué calidad mínima; si falta, lo dice y no rellena |
+| 5 | Tarea | Verbos, alcance y lo que queda fuera |
+| 6 | Método y estándares | Norma o método, con estado de verificación |
+| 7 | Honestidad | Una línea a `protocolo_comun.md` más lo propio del agente |
+| 8 | Formato de salida | Archivo, estructura y destinatario |
+| 9 | Calidad | Qué autoverifica antes de entregar |
+| 10 | Restricciones y dudas | Qué hace ante vacíos: preguntar (máximo 5) o asumir y declarar |
+| 11 | Feedback (operativo) | Qué reporta al líder para que el equipo aprenda |
+| 12 | Almacenamiento (operativo) | Qué guarda y dónde |
 
 ## 2. El brief del líder
-El líder no delega con frases sueltas: envía a cada agente un BRIEF con los mismos ocho campos, adaptados al caso: rol que asume, tarea concreta, archivos y reglas del contexto, razonamiento esperado, condiciones de cierre, a quién y qué reportar, dónde guardar y formato de la salida. Indica además qué hacen los demás agentes, para que cada uno sepa quién usará su entrega.
+El líder no delega con frases sueltas: cada encargo usa esta plantilla, adaptada al caso. Se omite lo que ya dice el archivo del agente y se cita `protocolo_comun.md` en lugar de repetir las reglas.
+```
+1 ROL Y NIVEL:      perfil y profundidad (solo si cambia respecto del archivo del agente)
+2 CONTEXTO:         caso, activo o modo de falla, versión del dossier, qué hicieron los demás agentes
+3 OBJETIVO:         qué decisión o entrega sirve esto y quién la usará
+4 INSUMOS:          rutas exactas de archivos y su calidad (leídos, solo pista, sin datos); acceso real de red
+5 TAREA:            verbos, alcance y lo que queda fuera; rango de ids si aplica
+6 MÉTODO:           norma o método; moldes de formato a copiar (ruta)
+7 HONESTIDAD:       "reglas de protocolo_comun" + lo específico del caso (por ejemplo, ids que no respaldan)
+8 FORMATO:          rutas de salida, archivos JSON y si el agente puede escribir o devuelve el contenido en el mensaje
+9 CALIDAD:          qué debe autoverificar (literalidad del extracto, ids existentes, sin cifras sin fuente)
+10 RESTRICCIONES:   plazo, confidencialidad y qué hacer si falta información
+```
+Indica además qué hacen los demás agentes, para que cada uno sepa quién usará su entrega. Una regla práctica: si el agente no tiene la herramienta Write, el campo 8 debe pedir el contenido en el mensaje final.
 
 ## 3. Conexión entre agentes
 | De | A | Qué entrega |

@@ -1,6 +1,6 @@
 # Equipo de agentes de confiabilidad
 
-Veinte agentes que trabajan juntos: **un líder estratega** y **diecinueve especialistas** que hacen cada parte del trabajo. Todos siguen la misma ficha de ocho bloques (ROL, TAREA, CONTEXTO, RAZONAMIENTO, CONDICIONES DE CIERRE, FEEDBACK, ALMACENAMIENTO Y MEMORIA, SALIDA), definida en `knowledge/protocolo_agentes.md`. Los agentes nuevos son el analista de papers (`reliability-paper-analyst`), el replicador de figuras y tablas (`reliability-replicator`), el rankeador de citas (`reliability-citation-ranker`) y el diseñador de la interfaz (`reliability-ux-designer`).
+Veinte agentes que trabajan juntos: **un líder estratega** y **diecinueve especialistas** que hacen cada parte del trabajo. Todos siguen una ficha definida en `knowledge/protocolo_agentes.md`: el verificador, el FMECA y el auditor de datos ya usan la ficha de 10 bloques más 2 operativos (rol y nivel, contexto, objetivo y decisión, insumos, tarea, método, honestidad, formato, calidad, restricciones; feedback y almacenamiento); los otros 17 conservan la ficha de ocho bloques hasta cerrar el piloto. Los agentes nuevos son el analista de papers (`reliability-paper-analyst`), el replicador de figuras y tablas (`reliability-replicator`), el rankeador de citas (`reliability-citation-ranker`) y el diseñador de la interfaz (`reliability-ux-designer`).
 Se apoyan en un kit de cálculo probado (`tools/reliability`) y en una base de conocimiento común (`knowledge/`).
 Su regla de oro es no inventar nada: cada cifra es un cálculo, una cita abierta o un vacío declarado.
 
