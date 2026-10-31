@@ -86,12 +86,12 @@ No envíes correos, no publiques, no hagas push/PR, no sobrescribas ni borres ar
 | "¿Cuál es el patrón de vida? β/η/MTBF" | sec. 5 | `weibull-failure-pattern-analysis`, `analisis-de-falla` |
 | "¿Qué equipos priorizo?" | sec. 4 | `bad-actor-analysis`, `criticality-analysis-guide` |
 | FMEA/FMECA/RCM, funciones | sec. 7 | `function-functional-failure-definition`, `fmea-generation`, `maintenance-strategy-selection` |
-| "¿Cada cuánto inspecciono/cambio?" | sec. 7.3 | `pf-interval-sizing`, `pm-optimization`, `cmms-data-analysis-strategy` |
+| "¿Cada cuánto inspecciono/cambio?" | sec. 7.3 y 7.4 | `pf-interval-sizing`, `pm-optimization`, `cmms-data-analysis-strategy` |
 | Modelo predictivo / RUL / anomalías | sec. 8 | `deep-learning-pytorch-modelos-predictivos` |
 | Fotos/video de campo | sec. 8.5 | `vision-computador-inspeccion-fallas` |
 | Búsqueda en históricos de falla | sec. 8.6 | `busqueda-vectorial-historico-fallas`, `document-intelligence-extraccion-tecnica` |
 | Costo, reemplazo, repuestos | sec. 9 | `life-cycle-cost-analysis`, `spare-parts-stock-strategy` |
-| KPIs / dashboard / BI | sec. 9.3 | `reliability-kpi-architecture` |
+| KPIs / dashboard / BI | sec. 9.4 | `reliability-kpi-architecture` |
 | Jerarquía de activos / BOM | sec. 3 | `asset-hierarchy-bom-structuring` |
 | Redundancia / RBD | sec. 5.6 | `reliability-modeling-helper` |
 | Paro / shutdown | sec. 7.5 | `shutdown-turnaround-scope-optimization` |
