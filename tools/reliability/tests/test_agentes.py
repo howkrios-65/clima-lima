@@ -88,7 +88,7 @@ def test_kit_functions_cited_by_agents_exist():
              "compare_models_verdict", "bias_correct_beta", "gof_censored_bootstrap", "weibull_beta_ci_lr",
              "weibull_b_life_ci_lr", "km_failure_quantile", "weibull_bootstrap_ci", "optimal_age_replacement", "npv",
              "eac", "inherent_availability", "audit_recurrent"}
-    text = "\n".join(p.read_text(encoding="utf-8") for p in agent_files())
+    text = "\n".join(p.read_text(encoding="utf-8") for p in agent_files()) + (KNOW / "metodos_lider.md").read_text(encoding="utf-8")
     for fn in cited:
         assert hasattr(reliability_kit, fn), fn
         assert fn in text, f"{fn} ya no lo cita ningún agente"

@@ -15,7 +15,7 @@ python examples/demo.py      # flujo completo con datos sintéticos (ILUSTRATIVO
 
 ## Módulos
 
-| Módulo | Qué hace | Cuándo (árbol sec. 5.1 del agente) |
+| Módulo | Qué hace | Cuándo (árbol sec. 5.1 de `knowledge/metodos_lider.md`) |
 |---|---|---|
 | `weibull` | MLE 2P con censura por derecha; IC de β y de **B-life por razón de verosimilitud**; IC bootstrap; **corrección de sesgo de β** (`bias_correct_beta`); rangos de Johnson/Bernard + RRX; Weibull/lognormal/exponencial por AIC con **veredicto de empate** (`compare_models_verdict`); **bondad de ajuste con censura** (`gof_censored_bootstrap`, aproximada); `interpret_beta` que respeta el IC. Avisos de sesgo con r<30 y de censura >50 % | Ítems **no reparables** (un modo de falla por ajuste) |
 | `nhpp` | Crow-AMSAA de una unidad (β insesgado, IC exacto χ²) y **multi-unidad con T_k distintos** (`fit_crow_amsaa_multi`: modelo condicional o λ común), Laplace de una unidad y **agrupada**, **prueba de heterogeneidad entre unidades**, GOF Cramér-von Mises MC, **MCF con IC de Lawless-Nadeau** | Ítems **reparables** con posible tendencia |
