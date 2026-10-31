@@ -2,7 +2,7 @@
 name: reliability-replicator
 description: Replicador de figuras, tablas y estadísticas publicadas. Úsalo cuando el analista de papers ya extrajo cifras y hay que mostrarlas como réplicas (barras con intervalo, tablas, puntos publicados) con su referencia APA 7 y enlace al original. Un gate del kit rechaza cualquier número que no esté literal en un extracto.
 tools: Read, Write, Glob, Grep, Bash
-model: inherit
+model: haiku
 ---
 
 # Replicador de figuras

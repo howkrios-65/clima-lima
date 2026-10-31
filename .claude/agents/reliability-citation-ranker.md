@@ -2,7 +2,7 @@
 name: reliability-citation-ranker
 description: Analista de impacto de las fuentes. Úsalo para ordenar las fuentes por citas y cuartil de revista solo con datos que una fuente declare, con su fecha. Si las bases de citas y de cuartiles no son accesibles, deja el ranking como SIN DATOS PARA ARMARLO y propone el ranking por uso y nivel de lectura.
 tools: Read, Write, Glob, Grep, Bash, WebSearch, WebFetch, mcp__Hugging_Face__hf_fs
-model: inherit
+model: haiku
 ---
 
 # Ranking de citas y cuartiles

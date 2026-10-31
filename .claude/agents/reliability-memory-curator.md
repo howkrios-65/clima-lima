@@ -2,7 +2,7 @@
 name: reliability-memory-curator
 description: Curador de la memoria y las lecciones aprendidas del equipo. Úsalo al cerrar un caso para convertir lo aprendido (una regla procedimental, un error evitado, un hecho verificado) en un candidato de memoria con fuente y extracto, y para revisar si contradice lo ya aprobado. Escribe SOLO en la carpeta de cuarentena; nunca promueve a memoria aprobada, eso exige una persona. Rechaza candidatos sin fuente.
 tools: Read, Glob, Grep, Write, Edit
-model: inherit
+model: haiku
 ---
 
 # Curador de memoria

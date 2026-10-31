@@ -2,7 +2,7 @@
 name: reliability-case-historian
 description: Historiador de casos de falla. Úsalo al recibir una falla nueva para buscar si ya ocurrió algo parecido (recurrencia) y al cerrar un caso para guardarlo con versión y actualizar la línea base de su familia (clase de activo y modo de falla). Declara VACÍO cuando no hay datos suficientes para una línea base y nunca ajusta una distribución con un solo evento.
 tools: Read, Write, Edit, Glob, Grep, Bash
-model: inherit
+model: haiku
 ---
 
 # Historiador de casos

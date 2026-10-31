@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[3]
 AGENTS = ROOT / ".claude" / "agents"
 KNOW = ROOT / "knowledge"
 LEAD = "reliability-engineer"
+MODELO_LIGERO = {"reliability-case-historian", "reliability-memory-curator", "reliability-citation-ranker", "reliability-replicator"}
 SPECIALISTS = {
     "reliability-data-auditor", "reliability-life-analyst", "reliability-rca-investigator", "reliability-fmeca-rcm",
     "reliability-predictive-analyst", "reliability-economics-kpi", "reliability-evidence-verifier",
@@ -47,7 +48,8 @@ def test_ten_agents_present_and_headers_valid():
         fm, body, _ = split(p)
         assert fm["name"] == p.stem, p.name
         assert fm["description"] and "\n" not in fm["description"].strip()
-        assert fm["model"] == "inherit"
+        # Modelo ligero solo en agentes mecánicos que pasaron la prueba con errores sembrados; el resto hereda el de la sesión.
+        assert fm["model"] == ("haiku" if p.stem in MODELO_LIGERO else "inherit"), p.name
         names.add(fm["name"])
     assert names == SPECIALISTS | {LEAD}
 

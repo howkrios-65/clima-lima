@@ -54,3 +54,6 @@ Carpeta del caso: `historial/dossiers/<modo_de_falla>/` (evidencia, dossier, an�
 
 ## 6. Condiciones de cierre del trabajo
 Dossier validado, verificación independiente sin bloqueos, ajustes automáticos revisados, HTML sin errores, enlaces clicables, y preguntas finales a la persona.
+
+## 7. Modelo por agente
+Los 16 agentes de juicio (líder, auditor, vida, causa raíz, FMECA, predictivo, economía, verificador, literatura, datos, normas, analista de papers, redactor, integrador, feedback y diseño) heredan el modelo de la sesión. Cuatro agentes mecánicos usan el modelo ligero: historiador, curador de memoria, rankeador de citas y replicador. Pasaron una prueba con errores sembrados (rechazar cifras que no están literales en el extracto, no inventar citas ni cuartiles, no promover memoria sin persona, declarar línea base VACÍO). Es una prueba pequeña, no una medición de tokens ni de calidad en casos reales: se revisa con la prueba en sesión nueva (`docs/agentes/prueba_sesion_nueva.md`), y volver a heredar es cambiar una línea del archivo del agente.
