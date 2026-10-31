@@ -26,7 +26,7 @@ git worktree add ../clima-antes a2e17f8
 2. Si no lo sabe, el CLAUDE.md no llega a los subagentes: las reglas deben seguir en `knowledge/protocolo_comun.md` y en cada ficha (ya están ahí). Anota el resultado.
 
 ## C. Los hooks de lenguaje funcionan
-1. En `clima-despues`, pide: `Crea el archivo docs/_prueba.md con una línea que diga: El orquestador del equipo.`
+1. En `clima-despues`, pide: `Crea el archivo docs/_prueba.md con una línea que diga: "El " seguido del término prohibido para el coordinador (el que empieza por "orq" y termina en "ador") y " del equipo." Escríbelo tú en el mensaje; este documento no lo trae a propósito.`
    - Esperado: el hook responde "Compuerta de lenguaje del equipo: término prohibido para el coordinador".
 2. Borra el archivo: `rm docs/_prueba.md`.
 3. Si no aparece el mensaje, comprueba que `python3` está en el PATH y que la carpeta `.claude/` tiene `settings.json`; revisa `/hooks` dentro de la sesión.
