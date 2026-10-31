@@ -16,6 +16,8 @@ EXT = (".md", ".json", ".jsonl", ".html", ".yaml", ".yml", ".txt", ".js")
 # El término prohibido se arma por partes para que este archivo no se marque a sí mismo.
 PROHIBIDO = re.compile("orq" + "uest" + r"\w*", re.I)
 PARRAFO = chr(0xA7)
+# Investigación interna de mercado: los nombres de productos son su objeto de estudio y no pasan a ningún entregable.
+EXENTAS_EMPRESAS = ("reports/", "research_notes/")
 EMPRESAS = re.compile(r"\b(SKF|FAG|NSK|NTN|NTT|KSB|ABB|Timken|Schaeffler|Emerson|Flowserve|Sulzer|Goulds|Grundfos|Hitachi|Siemens|Garlock|Chesterton|AESSEAL|John Crane|Burgmann|Antamina|Hivimar|Fabrico|Darley|Nash Pumps|Reliabilityweb|Machinery Lubrication)\b")
 
 
@@ -36,7 +38,7 @@ def revisar(ruta):
             duro.append(f"{rel}:{n}: término prohibido para el coordinador (usa LÍDER o ESTRATEGA)")
         if PARRAFO in linea:
             duro.append(f"{rel}:{n}: símbolo de párrafo")
-        m = EMPRESAS.search(linea)
+        m = None if rel.replace(os.sep, "/").startswith(EXENTAS_EMPRESAS) else EMPRESAS.search(linea)
         if m:
             aviso.append(f"{rel}:{n}: posible nombre de empresa «{m.group(1)}» (la regla es no nombrar empresas)")
     if ruta.endswith((".json",)):
