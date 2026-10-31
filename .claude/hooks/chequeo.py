@@ -49,12 +49,20 @@ def revisar(ruta):
     return duro, aviso
 
 
+def hay_git():
+    return subprocess.run(["git", "-C", RAIZ, "rev-parse", "--git-dir"], capture_output=True, text=True).returncode == 0
+
+
 def cambiados():
+    if not hay_git():       # copia sin historial: se revisa todo
+        return versionados()
     out = subprocess.run(["git", "-C", RAIZ, "status", "--porcelain"], capture_output=True, text=True).stdout
     return [os.path.join(RAIZ, l[3:].strip().strip('"')) for l in out.splitlines() if len(l) > 3]
 
 
 def versionados():
+    if not hay_git():
+        return [os.path.join(d, f) for d, ds, fs in os.walk(RAIZ) if ".git" not in d.split(os.sep) and "node_modules" not in d for f in fs]
     out = subprocess.run(["git", "-C", RAIZ, "ls-files"], capture_output=True, text=True).stdout
     return [os.path.join(RAIZ, l) for l in out.splitlines()]
 

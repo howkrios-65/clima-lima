@@ -1,18 +1,20 @@
 # Equipo de confiabilidad: copia completa para uso sin conexión
 
-Fecha de la copia: 2026-10-27. Autor: HOWK RIOS - CONFIABILIDAD.
+Fecha de la copia: 2026-10-31 (reemplaza a la del 2026-10-27, que quedó desactualizada). Autor: HOWK RIOS - CONFIABILIDAD.
 
 ## Qué hay en este zip
 | Carpeta | Contenido |
 |---|---|
-| `repo/` | El repositorio completo (con `.git` y su historial). Rama de trabajo: `ccr-ab924d1a-kte866`. |
-| `repo/.claude/agents/` | Los 20 agentes (cada uno es un archivo de texto con su ficha de ocho bloques). |
+| `repo/` | El repositorio completo, sin la carpeta `.git` (el historial de git vive en GitHub, rama `ccr-ab924d1a-kte866`; esta copia es solo el contenido actual). |
+| `repo/.claude/agents/` | Los 20 agentes (cada uno es un archivo de texto con su ficha de 10 bloques más 2 operativos; cuatro usan el modelo ligero). |
 | `repo/.claude/commands/` | Los comandos `/confiabilidad` y `/modo-de-falla`. |
-| `repo/knowledge/` | Protocolos, registro de normas, referencia de ML y reglas. |
-| `repo/tools/reliability/` | El kit de cálculo en Python (Weibull, Kaplan-Meier, Crow-AMSAA, economía, informe HTML) y sus 152 pruebas. |
+| `repo/CLAUDE.md` | Reglas permanentes y mapa del equipo, que Claude Code lee al abrir la carpeta. |
+| `repo/.claude/settings.json` y `repo/.claude/hooks/chequeo.py` | Compuertas automáticas de lenguaje (término prohibido, símbolo de párrafo, JSON inválido, nombres de empresa). Funcionan sin conexión con Python. |
+| `repo/knowledge/` | Protocolos, registro de normas, referencia de ML, reglas y `metodos_lider.md` (métodos de las secciones 3 a 9 del líder). |
+| `repo/tools/reliability/` | El kit de cálculo en Python (Weibull, Kaplan-Meier, Crow-AMSAA, economía, informe HTML) y sus 153 pruebas. |
 | `repo/historial/dossiers/` | Los tres casos: `chumacera_polea_faja`, `bomba_centrifuga`, `bomba_prensaestopa_rodamientos` (informe.html, evidencia.json, dossier.json, analisis/*, cifras, normas, abstract, trazabilidad). |
 | `repo/historial/feedback/feedback.jsonl` | Reglas y correcciones aprendidas (candidatas en cuarentena). |
-| `repo/docs/agentes/` | Mapas interactivos de agentes (HTML), guía de comandos y README. |
+| `repo/docs/agentes/` | Mapas interactivos de agentes (HTML), guía de comandos, README y `prueba_sesion_nueva.md` (pasos para comprobar fichas, CLAUDE.md, hooks y tokens). |
 | `repo/docs/entregables/` | Las tres presentaciones (.pptx) y los scripts que las generan. |
 | `trabajo_intermedio/` | Archivos de trabajo de la sesión: registros de evidencia por frente, análisis de cada versión, scripts de ensamblado de cada caso (`modo_chumacera`, `modo_bomba`, `modo_prensa`), generadores de mapas y presentaciones, capturas de verificación. No incluye las descargas de conjuntos de datos públicos ni `node_modules`. |
 
@@ -20,6 +22,13 @@ Fecha de la copia: 2026-10-27. Autor: HOWK RIOS - CONFIABILIDAD.
 1. Este zip: `entrega_offline/clima_lima_offline.zip` dentro del repositorio de la sesión (`/home/user/clima-lima/entrega_offline/`) y subido a la rama `ccr-ab924d1a-kte866` del repositorio `howkrios-65/clima-lima` en GitHub.
 2. El repositorio completo, sin el zip, está en esa misma rama de GitHub. Con conexión, `git clone` y `git checkout ccr-ab924d1a-kte866`.
 3. El informe del caso de la chumacera y el de la bomba con prensaestopa están publicados como artefactos privados (enlaces en la conversación). Cópialos aparte: dependen de tu cuenta.
+
+## Qué cambió desde la copia del 2026-10-27
+- CLAUDE.md, hooks de lenguaje y fichas de 10 bloques más 2 operativos en los 20 agentes.
+- Líder recortado (sus métodos pasaron a `knowledge/metodos_lider.md`).
+- Tres mapas interactivos con la ficha nueva; modelo ligero en cuatro agentes mecánicos.
+- Notas de mercado conservadas como investigación interna (`research_notes/LEEME.md`).
+- Dossiers de bomba centrífuga y chumacera sin nombres de empresa en sus metadatos.
 
 ## Qué funciona sin conexión
 - Abrir cualquier `.html` con el navegador: informes (`repo/historial/dossiers/*/informe.html`) y mapas (`repo/docs/agentes/*.html`). Son un solo archivo. Los informes cargan una fuente de Google Fonts si hay conexión; sin ella usan una de reserva.
@@ -29,7 +38,7 @@ Fecha de la copia: 2026-10-27. Autor: HOWK RIOS - CONFIABILIDAD.
   cd repo/tools/reliability
   python -m venv .venv && source .venv/bin/activate      # en Windows: .venv\Scripts\activate
   pip install numpy scipy pandas matplotlib pytest        # una sola vez, requiere conexión; después queda local
-  python -m pytest -q                                     # deben pasar 152 pruebas
+  python -m pytest -q                                     # deben pasar 153 pruebas
   ```
   Con tus datos (tabla de rodamientos instalados, fechas, horas, motivo de salida) puedes usar `reliability_kit` desde Python: `fit_weibull_mle`, `kaplan_meier`, `logrank_test`, `fit_crow_amsaa`, `pareto`, `audit`, funciones de `economics.py`. El auditor de datos dejó la plantilla de columnas en el informe del caso de prensaestopa (pestaña Datos).
 - Regenerar un informe a partir de sus JSON: los scripts `trabajo_intermedio/modo_*/build_*.py` usan rutas absolutas de la sesión (`/tmp/claude-0/.../scratchpad/` y `/home/user/clima-lima/`). Cambia esas rutas a las de tu equipo (están en las primeras líneas) y ejecútalos con `python`.
