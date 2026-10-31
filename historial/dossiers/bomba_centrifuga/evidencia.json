@@ -206,7 +206,7 @@
   "fecha_acceso": "2026-10-27",
   "referencia": {
    "titulo": "Pump Bearing Distress & Seal Failure: New Statistics on the Value of Bearing Housing Protection",
-   "fuente": "Reliabilityweb (artículo de portal técnico, según el buscador)",
+   "fuente": "revista técnica de confiabilidad (artículo de portal técnico, según el buscador)",
    "url": "https://reliabilityweb.com/articles/entry/pump_bearing_distress_seal_failure_new_statistics_on_the_value_of_bear"
   },
   "extracto": "(resumen del buscador, no cita literal) un análisis de 11 000 fallas de sellos en 148 plantas atribuyó 13 % a falta de mantenimiento correctivo y preventivo de los rodamientos de la bomba; usuarios y fabricantes estiman que 33 % de todas las fallas de bombas son por daño de rodamientos.",
@@ -844,10 +844,10 @@
   "via": "websearch",
   "fecha_acceso": "2026-10-27",
   "referencia": {
-   "autores": "KSB (lexico del fabricante)",
+   "autores": "fabricante de bombas (lexico del fabricante)",
    "anio": null,
    "titulo": "Cavitation (Centrifugal pump lexicon)",
-   "fuente": "Lexico de bombas centrifugas, KSB",
+   "fuente": "Lexico de bombas centrifugas, fabricante de bombas",
    "url": "https://www.ksb.com/en-global/centrifugal-pump-lexicon/article/cavitation-1117364"
   },
   "extracto": "",
@@ -5858,7 +5858,7 @@
    "fuente": "arXiv 2305.07828",
    "url": "https://arxiv.org/abs/2305.07828",
    "pais": "Japon",
-   "institucion": "Hitachi, Ltd.; Doshisha University; NTT Corporation; Google (segun la cabecera del preprint)"
+   "institucion": "empresa industrial; Doshisha University; empresa de telecomunicaciones; empresa tecnológica (segun la cabecera del preprint)"
   },
   "extracto": "However, collecting normal and anomalous data as the development dataset can be infeasible in practice. In 2023 Task 2, we focus on solving the first-shot problem, which is the challenge of training a model on a completely novel machine type. ... Analysis of 86 submissions from 23 teams revealed that the keys to outperform baselines were: 1) sampling techniques for dealing with class imbalances across different domains and attributes, 2) generation of synthetic samples for robust detection, and 3) use of multiple large pre-trained models to extract meaningful embeddings for the anomaly detector.",
   "localizador": "Resumen (Abstract) (hf://papers/2305.07828/paper.md)",
@@ -5881,7 +5881,7 @@
    "fuente": "arXiv 2305.07828",
    "url": "https://arxiv.org/abs/2305.07828",
    "pais": "Japon",
-   "institucion": "Hitachi, Ltd.; Doshisha University; NTT Corporation; Google (segun la cabecera del preprint)"
+   "institucion": "empresa industrial; Doshisha University; empresa de telecomunicaciones; empresa tecnológica (segun la cabecera del preprint)"
   },
   "extracto": "Each recording is a single-channel audio with a duration of 6 to 18 s and a sampling rate of 16 kHz. We mixed machine sounds recorded at laboratories and environmental noise samples recorded at factories and in the suburbs to create each sample in the dataset. ... Each section provides (i) 990 normal clips from a source domain for training, (ii) 10 normal clips from a target domain for training, and (iii) 100 normal clips and 100 anomalous clips from both domains for the test.",
   "localizador": "Seccion 3.1 (hf://papers/2305.07828/paper.md)",
@@ -5904,7 +5904,7 @@
    "fuente": "arXiv 2305.07828",
    "url": "https://arxiv.org/abs/2305.07828",
    "pais": "Japon",
-   "institucion": "Hitachi, Ltd.; Doshisha University; NTT Corporation; Google (segun la cabecera del preprint)"
+   "institucion": "empresa industrial; Doshisha University; empresa de telecomunicaciones; empresa tecnológica (segun la cabecera del preprint)"
   },
   "extracto": "Table 1: Results with Simple Autoencoder mode. Columns: Machine type | Section | AUC [%] Source | AUC [%] Target | pAUC [%]. bearing 00 65.92 ± 0.73 55.75 ± 0.76 50.42 ± 0.79. Table 2: Results with Selective Mahalanobis mode. bearing 00 65.16 ± 0.76 55.28 ± 0.57 51.37 ± 0.81. The results are average of five independent runs.",
   "localizador": "Tablas 1 y 2, Seccion 3.3 (hf://papers/2305.07828/paper.md)",
@@ -5927,7 +5927,7 @@
    "fuente": "arXiv 2305.07828",
    "url": "https://arxiv.org/abs/2305.07828",
    "pais": "Japon",
-   "institucion": "Hitachi, Ltd.; Doshisha University; NTT Corporation; Google (segun la cabecera del preprint)"
+   "institucion": "empresa industrial; Doshisha University; empresa de telecomunicaciones; empresa tecnológica (segun la cabecera del preprint)"
   },
   "extracto": "We received 86 submissions from 23 teams. Eleven teams outperformed the simple Autoencoder baseline, and eight teams outperformed the selective Mahalanobis baseline. ... However, Figure 3 reveals that the target-domain AUCs were lower in the evaluation dataset for most teams. This underscores the difficulty of dealing with domain shifts for novel machine types.",
   "localizador": "Seccion 4 (hf://papers/2305.07828/paper.md)",
@@ -5950,7 +5950,7 @@
    "fuente": "arXiv 2305.07828",
    "url": "https://arxiv.org/abs/2305.07828",
    "pais": "Japon",
-   "institucion": "Hitachi, Ltd.; Doshisha University; NTT Corporation; Google (segun la cabecera del preprint)"
+   "institucion": "empresa industrial; Doshisha University; empresa de telecomunicaciones; empresa tecnológica (segun la cabecera del preprint)"
   },
   "extracto": "The 6th team duplicated samples from classes with fewer samples, while the 1st and 2nd teams oversampled target-domain data using SMOTE. ... The 1st, 4th, 5th, 10th, and 19th teams employed Mixup including its variants, and obtained higher source-domain AUCs. ... For the outlier detector, k-nearest neighbors algorithm (kNN) was used by most of the teams.",
   "localizador": "Seccion 4, apartados a a c (hf://papers/2305.07828/paper.md)",
@@ -5973,7 +5973,7 @@
    "fuente": "arXiv 2303.00455",
    "url": "https://arxiv.org/abs/2303.00455",
    "pais": "Japon",
-   "institucion": "NTT Corporation"
+   "institucion": "empresa de telecomunicaciones"
   },
   "extracto": "There are 990 files given as training data for the source domain, and only 10 are given for training the target domain. All files contain 10 s of normal machine operating sound. No anomalous sound sample is given. This task condition reflects an application scenario in which there are several operating modes but a limited number of recordings is available for training.",
   "localizador": "Seccion II-B (hf://papers/2303.00455/paper.md)",
@@ -5996,7 +5996,7 @@
    "fuente": "arXiv 2303.00455",
    "url": "https://arxiv.org/abs/2303.00455",
    "pais": "Japon",
-   "institucion": "NTT Corporation"
+   "institucion": "empresa de telecomunicaciones"
   },
   "extracto": "TABLE I (columna 'bearing', promedio de 3 semillas, AUC fuente / AUC objetivo / pAUC): First-shot compliant baseline AE 0.7479 / 0.5621 / 0.5474; Selective Mahalanobis AE 0.7195 / 0.6280 / 0.5763; DCASE2022T2 baseline AE 0.7271 / 0.5384 / 0.5563; DCASE2022T2 baseline MobileNetV2 0.6067 / 0.5460 / 0.5091; DCASE2022T2 Top 1 (massive ensemble, not First-shot compliant) 0.7190 / 0.6827 / 0.6885.",
   "localizador": "Tabla I (columna bearing) (hf://papers/2303.00455/paper.md)",
@@ -6019,7 +6019,7 @@
    "fuente": "arXiv 2303.00455",
    "url": "https://arxiv.org/abs/2303.00455",
    "pais": "Japon",
-   "institucion": "NTT Corporation"
+   "institucion": "empresa de telecomunicaciones"
   },
   "extracto": "It is trained with given normal training data only. ... It is also shown that the performances of those baseline AEs are not comparable to the first-place winner of the DCASE2022T2 that utilized the machine-type dependent hyperparameter tuning and massive tool ensemble.",
   "localizador": "Seccion V (Conclusion) (hf://papers/2303.00455/paper.md)",
@@ -7253,9 +7253,9 @@
   },
   "extracto": null,
   "localizador": "resumen del buscador (WebSearch); la página no se abrió: WebFetch devolvió ENOTFOUND para iso.org, evs.ee y webstore.ansi.org",
-  "afirma": "Según el resumen: edición 5.ª ed. 2014 (activa según un listado, superada según otro); 6.ª ed. 2025 solo en un artículo de tercero; estado: CONFLICTO: edición vigente no confirmada; sin página de API vista. Uso: Especificación de compra de sistemas de protección de maquinaria (no certificación de producto, según Emerson).",
+  "afirma": "Según el resumen: edición 5.ª ed. 2014 (activa según un listado, superada según otro); 6.ª ed. 2025 solo en un artículo de tercero; estado: CONFLICTO: edición vigente no confirmada; sin página de API vista. Uso: Especificación de compra de sistemas de protección de maquinaria (no certificación de producto, según un proveedor de instrumentación).",
   "limites": "Solo resumen de buscador con listados de terceros; no se leyó el texto ni la página oficial; no respalda cláusulas, valores ni fórmulas. Edición y estado por confirmar en el publicador. Fuente heredada del caso anterior (rodamientos o máquinas rotativas); se usa por analogía con los rodamientos de la bomba.",
-  "aplica_a": "Especificación de compra de sistemas de protección de maquinaria (no certificación de producto, según Emerson)",
+  "aplica_a": "Especificación de compra de sistemas de protección de maquinaria (no certificación de producto, según un proveedor de instrumentación)",
   "revista_cuartil": null,
   "nivel_evidencia": "SOLO-SNIPPET"
  },

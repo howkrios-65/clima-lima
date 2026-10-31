@@ -134,3 +134,19 @@ def test_memory_gates_hold():
         for field in ("id:", "fuente:", "extracto:", "estado:", "propuesto_por:", "revisar_antes_de:"):
             assert field in t, (p.name, field)
         assert "estado: propuesta" in t or "estado: retractada" in t, p.name
+
+
+FICHA = ["ROL Y NIVEL", "CONTEXTO", "OBJETIVO Y DECISIÓN", "INSUMOS", "TAREA", "MÉTODO Y ESTÁNDARES", "HONESTIDAD",
+         "FORMATO DE SALIDA", "CALIDAD", "RESTRICCIONES Y DUDAS", "FEEDBACK", "ALMACENAMIENTO"]
+
+
+def test_ficha_de_10_bloques_mas_2_operativos_en_los_20_agentes():
+    import re
+    for p in agent_files():
+        t = p.read_text(encoding="utf-8")
+        a = t.index("## FICHA DEL AGENTE")
+        bloque = t[a:a + 6000]
+        titulos = re.findall(r"^(\d+)\. \*\*([^:*]+):\*\*", bloque, re.M)[:12]
+        assert [n for n, _ in titulos] == [str(i) for i in range(1, 13)], p.name
+        assert [x for _, x in titulos] == FICHA, p.name
+        assert "knowledge/protocolo_comun.md" in bloque, f"{p.name}: el bloque de honestidad debe apuntar al protocolo común"

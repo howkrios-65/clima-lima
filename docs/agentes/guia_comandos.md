@@ -101,7 +101,7 @@ Regla común: máximo 5 preguntas por ronda, cada una con opción por defecto; l
 
 ## 2. Los agentes que puedes invocar por nombre
 
-Son veinte. Tres ya usan la ficha de 10 bloques más 2 operativos y diecisiete la de ocho bloques (ROL, TAREA, CONTEXTO, RAZONAMIENTO, CIERRE, FEEDBACK, ALMACENAMIENTO, SALIDA); todos comparten esta conexión: reciben un BRIEF del líder, devuelven su salida al líder y reportan qué aprendieron. En el mapa interactivo, un doble clic sobre cualquier tarjeta abre su ficha completa.
+Son veinte. Todos comparten una ficha de 10 bloques más 2 operativos (rol y nivel, contexto, objetivo y decisión, insumos, tarea, método y estándares, honestidad, formato de salida, calidad, restricciones y dudas, feedback, almacenamiento) y esta conexión: reciben un BRIEF del líder, devuelven su salida al líder y reportan qué aprendieron. En el mapa interactivo, un doble clic sobre cualquier tarjeta abre su ficha completa.
 
 ### 2.1 Quién hace qué y cuándo usarlo
 
