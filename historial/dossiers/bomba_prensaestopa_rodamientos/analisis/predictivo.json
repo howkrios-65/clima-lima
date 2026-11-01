@@ -200,7 +200,7 @@
   },
   {
    "id": "P20",
-   "texto": "Cavitación, recirculación, NPSH, sellos mecánicos, desgaste del impulsor y señales hidráulicas: SIN DATOS PARA ARMARLO. En la bomba con prensaestopa se suman: umbral de goteo aceptable, relación entre goteo y agua en el soporte, valor de alarma de agua en el lubricante, valor de alarma de temperatura del soporte, estado de drenaje y vida del paquete de rodamientos según el ajuste. Ninguna fuente leída (VERIFICADO-TEXTO o VERIFICADO-ABSTRACT) los trae.",
+   "texto": "Cavitación, recirculación, NPSH, sellos mecánicos, desgaste del impulsor y señales hidráulicas: SIN DATOS PARA ARMARLO. En la bomba con prensaestopa siguen sin respaldo: valor de alarma de agua en el soporte o en el lubricante, valor de alarma de temperatura del soporte, relación entre goteo y agua en el soporte, y vida del paquete de rodamientos según el ajuste. Sobre el goteo aceptable existen dos listas de revista profesional (E-2840, E-2824) con cifras que no coinciden entre sí y sin ensayo (ver P26); no se adoptan como umbral ni como etiqueta.",
    "nivel": "SIN DATOS PARA ARMARLO",
    "evidencia": [],
    "nota": "Pistas SOLO-SNIPPET o NO-VERIFICADO, sin respaldo hasta abrirlas y que NO aportan umbrales ni cifras (los ppm de agua y los dB de ultrasonido de los buscadores no se usan): agua en lubricante y vida del rodamiento E-2002, E-2003, E-2005, E-2100 a E-2103, E-2210, E-2211, E-2438, E-2439, E-2440; ajuste de goteo y empaquetadura E-2000, E-2001, E-2104 a E-2106, E-2110, E-2215, E-2216, E-2441, E-2443; aislamiento del soporte y drenaje E-2108, E-2217; bomba E-1704 a E-1706, E-1105 a E-1108, E-1115."
@@ -224,11 +224,17 @@
    "nota": "Solo resumen de un artículo de divulgación de 1988, sin base de datos ni tamaño de muestra; no trata prensaestopa. Respalda que la contaminación y el lubricante son candidatos plausibles, pero también que instalación, manejo y ajustes de alojamiento son causas alternativas: hay que registrarlos como confusores y no atribuir al prensaestopa lo que pueda ser montaje."
   },
   {
-   "id": "el hallazgo sobre la cadena completa (sin fuente; ver vacíos)",
-   "texto": "La cadena completa de la hipótesis (ajuste insuficiente, fuga, agua en el soporte, falla del paquete de rodamientos) no tiene fuente leída: ninguna mide la relación entre el ajuste o el goteo del prensaestopa y la vida del paquete de rodamientos, ni entre agua en el lubricante y vibración o temperatura de la bomba. Cada eslabón está respaldado solo por el mecanismo de E-2700 (lado empaquetadura) y por la lista de causas de E-6004 (lado rodamiento).",
+   "id": "P23",
+   "texto": "La cadena completa de la hipótesis (ajuste insuficiente, fuga, agua en el soporte, falla del paquete de rodamientos) sigue sin una fuente leída que la mida de punta a punta. Respaldo parcial por eslabón: el mecanismo 'fuga hacia el soporte con drenaje tapado, protector retirado o juntas alineadas, contaminación del aceite y corrosión del rodamiento' está descrito en E-2820 (P25); el mecanismo del ajuste con dos extremos dañinos en E-2700 y en E-2840 y E-2824 (P21, P26); la lista de causas de rodamientos en E-6004 (P22). Sin fuente: la relación entre el ajuste o el goteo y la vida del paquete de rodamientos, y la relación entre agua en el lubricante y vibración o temperatura de la bomba.",
    "nivel": "SIN DATOS PARA ARMARLO",
-   "evidencia": [],
-   "nota": "Los eslabones fuga hacia agua en el soporte y agua en el soporte hacia falla son hipótesis a contrastar con datos propios. Las pistas sobre agua en lubricante son SOLO-SNIPPET o NO-VERIFICADO y no se usan para cifras."
+   "evidencia": [
+    "E-2820",
+    "E-2700",
+    "E-2840",
+    "E-2824",
+    "E-6004"
+   ],
+   "nota": "Los eslabones ajuste insuficiente hacia fuga y agua en el soporte hacia falla son hipótesis a contrastar con datos propios; E-2820 es descripción de mecanismo sin frecuencia. Las pistas sobre agua en lubricante son SOLO-SNIPPET o NO-VERIFICADO y no se usan para cifras."
   },
   {
    "id": "P24",
@@ -241,11 +247,73 @@
    "nota": "E-9603 solo respalda la definición matemática (ejemplos médicos, sin datos de equipos). Que el repaquetado produzca mortalidad temprana en estas bombas es una posibilidad a contrastar con el parámetro de forma y su intervalo, no un hallazgo."
   },
   {
-   "id": "la simulación ilustrativa del kit (no es evidencia)",
-   "texto": "Qué calcula el kit de confiabilidad y con cuántos eventos (simulación sintética del analista, semilla 20261027, escenario inventado de forma 1,5 y escala 1000, no son datos de bomba). Intervalo de la forma Weibull (razón límite superior sobre inferior, mediana de 200 repeticiones, sin censura): 4,3 con 5 fallas, 2,7 con 10 y 1,8 con 30, con cobertura empírica de 93 a 95 %. Prueba log-rank de dos grupos con razón de escalas 2 y censura en 1200: potencia 0,31 con 8,5 eventos en total (5 bombas por grupo), 0,56 con 17, 0,72 con 25 y 0,97 con 51 (300 repeticiones). El kit advierte resultado exploratorio con menos de 10 fallas, posible sesgo de la forma con menos de 30 y dependencia del modelo con más de 50 % de suspensiones; no implementa Cox ni riesgos competitivos.",
+   "id": "P25",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2820"
+   ],
+   "texto": "Una revista técnica del sector agua describe, como mecanismo, que si una caja de empaquetadura con drenaje en el soporte de rodamientos tiene el drenaje tapado, el líquido que fuga de la caja se acumula en los soportes, contamina el aceite y con el tiempo corroe los rodamientos. La misma fuente cita otras dos condiciones que llevan el líquido a los rodamientos: retirar el protector de agua (water shield) o alinear todas las juntas de los anillos de empaquetadura.",
+   "nota": "Comparabilidad: alta en el mecanismo (empaquetadura, drenaje del soporte, rodamientos), baja en rigor: lista de consejos en tono de 'cómo matar una bomba', un pasaje del artículo, sin datos, muestra, cantidad de agua ni tiempo hasta la falla; habla de aceite, no de grasa. Cierra solo el eslabón 'fuga, agua en el soporte, rodamiento' como descripción de mecanismo, no como frecuencia. No dice que el ajuste insuficiente sea la causa: las condiciones citadas son drenaje tapado, protector retirado y juntas alineadas. Consecuencia de diseño (SINTESIS): drenaje, protector y posición de las juntas son confusores o co-causas y se registran como estado, no se suponen en buen estado. Sin contradicción en las fuentes leídas."
+  },
+  {
+   "id": "P26",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2840",
+    "E-2824"
+   ],
+   "texto": "Dos listas de mantenimiento de revistas profesionales coinciden en que el goteo del prensaestopa tiene dos extremos de problema. Una (E-2824) dice que el goteo inadecuado o excesivo son señales de problema y que no se deben sobreapretar los pernos del prensaestopa. La otra (E-2840) dice que la fuga lubrica el eje, que se debe reajustar cuando la fuga es excesiva, que el agua de fuga debe estar fría al tacto y el prensaestopa no debe calentarse, y que una empaquetadura demasiado apretada se calienta, se expande y termina quemando o rayando la camisa.",
+   "nota": "Contradicción: ambas dan una cifra de goteo (rango en una, valor aproximado en la otra, variable según el tamaño de la bomba en E-2840) y no coinciden entre sí; ninguna aporta ensayo, diámetro de eje, presión ni producto, por lo que no se adopta ninguna como umbral ni etiqueta. Son revistas profesionales de listas de buena práctica, un pasaje cada una, no artículos completos. E-2840 no atribuye la fuga al soporte. Coincide con P21 en que el efecto del ajuste tiene dos extremos (el sobreapriete es la causa opuesta a la investigada). Consecuencia (SINTESIS): la temperatura del prensaestopa y la del soporte se leen juntas con el estado de goteo."
+  },
+  {
+   "id": "P27",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2840"
+   ],
+   "texto": "E-2840 afirma, en su parte de rodamientos, que una proporción muy pequeña de agua en el aceite (expresada como una gota en un cuarto de galón de aceite) basta para romper la lubricación.",
+   "nota": "Cifra de revista profesional sin método, sin fuente primaria en el pasaje y sin atribuirla al prensaestopa (limites del registro). No se adopta como umbral ni como alarma ni se traduce a unidades de laboratorio. Comparabilidad: baja; sirve solo de motivo para medir agua en el lubricante, no de criterio de decisión."
+  },
+  {
+   "id": "P28",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2880",
+    "E-2886",
+    "E-2892"
+   ],
+   "texto": "Sobre qué señal detecta antes: en una introducción (E-2880) los autores afirman que, con fallas tempranas del rodamiento como desgaste normal, picaduras o descascarado, su temperatura interna casi no cambia y no se pueden detectar con exactitud, que la emisión acústica tiene una relación señal-ruido no alta y que la vibración se vuelve anormal cuando el rodamiento falla. Otra introducción (E-2886) cita resultados publicados según los cuales el sensor de emisión acústica fue más sensible que el de vibración en rodamientos de baja velocidad. Una tercera (E-2892) lista temperatura, análisis de aceite y vibración como métodos y dice que la vibración es el más usado.",
+   "nota": "Contradicción parcial sobre la emisión acústica: E-2880 la califica de baja relación señal-ruido y E-2886 la da más sensible que la vibración a baja velocidad; las condiciones no son las mismas y ninguna aporta datos propios en el pasaje ni cifras. Son afirmaciones de introducción apoyadas en terceros no leídos, de rodamientos en general, no de bombas ni de agua en el lubricante. Comparabilidad: baja. Que 'más usado' no es 'más sensible' es lectura del analista. Inferencia (SINTESIS): la temperatura del soporte es una variable de contexto y de confusión y no un aviso temprano por sí sola (E-2880 habla de temperatura interna; que la del soporte se comporte igual no consta en ninguna fuente leída). La velocidad de la bomba es VACÍO, así que no se sabe si aplica la sensibilidad a baja velocidad."
+  },
+  {
+   "id": "P29",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2884",
+    "E-2885",
+    "E-2888",
+    "E-2887"
+   ],
+   "texto": "Sobre medir agua en el aceite: en un estudio de laboratorio con sensores ultrasónicos, de capacitancia e inductancia, algunos métodos mostraron promesa (promise) para caracterizar cambios de viscosidad y de contenido de ácido o agua en el aceite (E-2884, solo resumen). Un resumen de 1996 dice que detectar cambios en la dieléctrica del lubricante da información sobre el desgaste por partículas y sobre la influencia de contaminantes sólidos y líquidos (E-2885, sin nombrar agua). Otra introducción distingue el agua disuelta y emulsionada (contaminación química) del agua libre (física) (E-2888), y otra clasifica la contaminación por agua como una de las tres formas básicas de degradación del aceite junto con partículas y oxidación (E-2887).",
+   "nota": "Ninguna da sensibilidad, nivel de agua detectable, umbral ni plazo; los cuatro son resumen o introducción, en banco o en otros equipos (aceite hidráulico, multiplicadora de aerogenerador), sin rodamiento ni bomba. 'Promesa' no es desempeño. Comparabilidad: baja. Contrapunto: E-2880 dice que el análisis de aceite se usa poco por costo, poca oportunidad e influencia de partículas ajenas (la crítica se refiere a partículas de desgaste, no al agua). Consecuencia (SINTESIS): el muestreo de laboratorio de la etapa 3 debe declarar qué forma de agua mide (libre, emulsionada o disuelta) y los sensores en línea de capacitancia o ultrasonido quedan como opción exploratoria sin justificación hoy."
+  },
+  {
+   "id": "P30",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2889",
+    "E-2890",
+    "E-2891"
+   ],
+   "texto": "Contexto de causas y manifestación: los autores de E-2889 afirman que la sobrecarga, la lubricación inadecuada o el sellado ineficaz alteran el comportamiento dinámico y pueden causar paros y accidentes; los de E-2890 recogen que más del 50 % de las fallas de cojinetes se atribuye a impurezas en el suministro de lubricante (cifra citada, no medida por ellos); los de E-2891 clasifican en bombas los problemas mecánicos como consumo excesivo de potencia o dificultades en las cámaras de sello o en los rodamientos, con vibración, ruido o rotura como manifestación.",
+   "nota": "Los tres son afirmaciones de introducción con terceros no leídos y sin plazos. E-2890 es de cojinetes de deslizamiento y partículas sólidas, no rodamientos con agua; su cifra de segunda mano es de un orden distinto a la de E-6004 (P22, 90 % de fallas prematuras de rodamientos de bolas en bombas, resumen de 1988) y ninguna se adopta como tasa para esta bomba. Comparabilidad: baja (E-2891 media-baja, es de bombas). Respaldan que sello y lubricante son candidatos, no la cadena del caso."
+  },
+  {
+   "id": "P31",
    "nivel": "SINTESIS",
    "evidencia": [],
-   "nota": "Script: /tmp/claude-0/-home-user-clima-lima/5d78240e-f4f2-5b7a-9ab4-8fd5b0b1815f/scratchpad/modo_prensa/analisis_v2/sim_capacidad.py (numpy 2.5.3, scipy 1.18.1). Ilustra la capacidad del kit, no el desempeño en campo: con efecto menor que el simulado o con más censura la potencia es menor. La regla del auditor (menos de 10 fallas exploratorio, 30 o más preferible) es criterio del equipo y coincide con las advertencias del código del kit; no proviene de un id leído."
+   "texto": "Criterio de eventos del equipo: menos de 10 fallas por modo se rotula exploratorio y 30 o más es preferible. Las cifras de la simulación sintética del kit que figuraban en la versión 3 (intervalo de forma Weibull, potencia del log-rank) se retiraron de la guía de decisión: son ilustrativas y no son datos de bomba. Del kit solo se conserva la advertencia de su código de que hay resultado exploratorio con pocos eventos y dependencia del modelo con muchas suspensiones, y que no implementa Cox ni riesgos competitivos.",
+   "nota": "Criterio del equipo, no proviene de un id leído. El script de la simulación queda en analisis_v2 como registro, sin uso para decidir."
   }
  ],
  "estrategia": [
@@ -263,20 +331,27 @@
   },
   {
    "etapa": "1. Registro con fecha, sin sensores (primero, es lo más barato)",
-   "accion": "Registrar por bomba, con fecha y responsable: (a) goteo del prensaestopa en una escala ordinal fija, medida con el mismo método y a calendario fijo (no solo cuando alguien ve la fuga), con la clase 'sin goteo' como categoría propia porque el exceso de ajuste también es dañino (E-2700); (b) cada ajuste del prensaestopa con campo obligatorio de motivo (programado o por fuga) y estado de goteo antes y después; (c) cada cambio de empaquetadura y de camisa; (d) estado del drenaje del soporte (libre, obstruido, con líquido) y si hay salpicadura o agua de lavado sobre el soporte; (e) hallazgos al desmontar con un formato fijo (agua o emulsión en el lubricante, corrosión, marcas de pista, estado de sellos del soporte), tanto en bombas falladas como en toda bomba que se abra por otra razón; (f) causas alternativas del lado rodamiento: montaje, ajustes de alojamiento y eje, lubricante usado (E-6004). No se fija ningún valor de goteo como umbral.",
+   "accion": "Registrar por bomba, con fecha y responsable: (a) goteo del prensaestopa en una escala ordinal fija, medida con el mismo método y a calendario fijo (no solo cuando alguien ve la fuga), con la clase 'sin goteo' como categoría propia porque el exceso de ajuste también es dañino (E-2700); (b) cada ajuste del prensaestopa con campo obligatorio de motivo (programado o por fuga) y estado de goteo antes y después; (c) cada cambio de empaquetadura y de camisa; (d) estado del drenaje del soporte (libre, obstruido, con líquido), presencia del protector de agua, posición de las juntas de los anillos de empaquetadura y si hay salpicadura o agua de lavado sobre el soporte (condiciones citadas en E-2820; su detalle está en la etapa 3b); (e) hallazgos al desmontar con un formato fijo (agua o emulsión en el lubricante, corrosión, marcas de pista, estado de sellos del soporte), tanto en bombas falladas como en toda bomba que se abra por otra razón; (f) causas alternativas del lado rodamiento: montaje, ajustes de alojamiento y eje, lubricante usado (E-6004). No se fija ningún valor de goteo como umbral. Además, temperatura del prensaestopa al tacto o con termómetro de contacto, registrada con el goteo, porque ambos extremos del ajuste son dañinos (E-2840, E-2824). Ningún valor de goteo de las revistas se adopta.",
    "condicion_para_avanzar": "Registro operando con calendario fijo en las bombas del alcance, con al menos una lectura repetida por bomba y revisada la calidad con data_quality.audit (campos críticos, fechas invertidas, duplicados). Duración y número de lecturas: VACÍO (sin fuente leída).",
    "nivel": "SINTESIS",
    "evidencia": [
     "E-2700",
-    "E-6004"
+    "E-6004",
+    "E-2820",
+    "E-2840",
+    "E-2824"
    ]
   },
   {
    "etapa": "2. Línea base por bomba y posición: temperatura del soporte y vibración con envolvente",
-   "accion": "Con cada bomba en buen estado, y por punto de operación, medir en puntos y orientaciones fijados y marcados: temperatura del soporte (junto con temperatura ambiente y del fluido bombeado, para no confundir) y vibración con RMS y espectro de envolvente. Línea base propia con signals.linea_base (mediana y MAD de una ventana de al menos 5 puntos válidos, mínimo del código del kit) y carta de control o CUSUM sobre la desviación. No usar kurtosis 3 y 5 como alarma (E-8001) ni asumir que la kurtosis baja es rodamiento sano (E-8003). La envolvente se usa por su sensibilidad y por permitir identificar tipo y ubicación del defecto (E-8001). La temperatura puede subir por el rodamiento o por el calor de un empaque sobreajustado: se interpreta junto con el estado de goteo, no sola. Umbrales como desviación de la línea base, aprobados por un experto; ningún valor absoluto de temperatura o vibración se toma de las pistas.",
+   "accion": "Con cada bomba en buen estado, y por punto de operación, medir en puntos y orientaciones fijados y marcados: temperatura del soporte (junto con temperatura ambiente y del fluido bombeado, para no confundir) y vibración con RMS y espectro de envolvente. Línea base propia con signals.linea_base (mediana y MAD de una ventana de al menos 5 puntos válidos, mínimo del código del kit) y carta de control o CUSUM sobre la desviación. No usar kurtosis 3 y 5 como alarma (E-8001) ni asumir que la kurtosis baja es rodamiento sano (E-8003). La envolvente se usa por su sensibilidad y por permitir identificar tipo y ubicación del defecto (E-8001). La temperatura puede subir por el rodamiento o por el calor de un empaque sobreajustado: se interpreta junto con el estado de goteo, no sola. Umbrales como desviación de la línea base, aprobados por un experto; ningún valor absoluto de temperatura o vibración se toma de las pistas. Sobre la jerarquía de señales (SINTESIS): la envolvente de vibración es la señal principal; la temperatura del soporte es de contexto y de confusión, no aviso temprano por sí sola, porque una fuente afirma que la temperatura interna casi no cambia con fallas tempranas (E-2880); la emisión acústica, el ultrasonido y los sensores de capacitancia no se compran ni se instalan hoy: sus fuentes se contradicen (E-2880 frente a E-2886) o solo dicen 'promesa' sin umbral (E-2884). Si se desea compararlos, es un ensayo exploratorio en sombra frente a la envolvente, con los mismos eventos de referencia.",
    "condicion_para_avanzar": "Línea base por bomba y posición con mediciones repetidas del activo sano, repetibilidad del punto verificada (mismo operador y distinto operador) y criterio de desviación aprobado por una persona. Cantidad de puntos más allá de 5 y periodo: VACÍO.",
    "nivel": "SINTESIS",
    "evidencia": [
+    "E-2880",
+    "E-2884",
+    "E-2886",
+    "E-2892",
     "E-8001",
     "E-8003",
     "E-9479",
@@ -285,11 +360,26 @@
   },
   {
    "etapa": "3. Análisis de agua en el lubricante e inspección de drenaje",
-   "accion": "Muestrear el lubricante del soporte en servicio, antes de abrir el soporte, a intervalos fijos y tras cada episodio de fuga o lavado; ensayar con un laboratorio y método definidos por un experto y registrar el resultado con su incertidumbre. Incluir bombas sin fuga como referencia: sin ellas no hay tasa base. Al inicio el agua es covariable y marcador de evento, no criterio de alarma; no se adopta ningún valor de agua de las pistas (SOLO-SNIPPET). El drenaje se inspecciona en la misma visita que el goteo.",
+   "accion": "Muestrear el lubricante del soporte en servicio, antes de abrir el soporte, a intervalos fijos y tras cada episodio de fuga o lavado; ensayar con un laboratorio y método definidos por un experto, declarando qué forma de agua mide (libre, emulsionada o disuelta; E-2888) y registrar el resultado con su incertidumbre. Incluir bombas sin fuga como referencia: sin ellas no hay tasa base. Al inicio el agua es covariable y marcador de evento, no criterio de alarma; no se adopta ningún valor de agua, ni el de E-2840 (sin método) ni los de las pistas SOLO-SNIPPET. Los sensores en línea de capacitancia, inductancia, dieléctricos o ultrasónicos (E-2884, E-2885) solo tienen resumen o introducción sin umbral y no se justifican hoy. El análisis de aceite tiene la crítica de costo, poca oportunidad y partículas ajenas (E-2880), por lo que se usa para tasa base y confirmación, no como alerta temprana.",
    "condicion_para_avanzar": "Método de ensayo y frecuencia aprobados; resultados de bombas sin fuga y con fuga disponibles. Valor de alarma de agua: VACÍO hasta contar con fuente leída o con datos propios que lo respalden.",
    "nivel": "SINTESIS",
    "evidencia": [
-    "E-6004"
+    "E-6004",
+    "E-2840",
+    "E-2884",
+    "E-2885",
+    "E-2888",
+    "E-2887",
+    "E-2880"
+   ]
+  },
+  {
+   "etapa": "3b. Revisión del drenaje, del protector de agua y de las juntas de los anillos",
+   "accion": "En cada visita de goteo: verificar que el drenaje del soporte esté libre, que el protector de agua esté colocado y, al reempaquetar, que las juntas de los anillos no queden alineadas; registrar el estado con fecha y foto si hay protocolo de captura. Es una condición a registrar y a corregir por mantenimiento, no una variable a modelar mientras no haya eventos: E-2820 describe que drenaje tapado, protector retirado o juntas alineadas llevan el líquido a los rodamientos, pero sin datos de frecuencia.",
+   "condicion_para_avanzar": "Estado del drenaje, del protector y de las juntas registrado en toda visita y en todo desmontaje, con revisión de calidad de los datos. Cuántas visitas y qué proporción de bombas con drenaje tapado: VACÍO. Se pasa a usarlas como covariables solo con eventos suficientes por modo (criterio del equipo).",
+   "nivel": "SINTESIS",
+   "evidencia": [
+    "E-2820"
    ]
   },
   {
@@ -344,6 +434,13 @@
     "E-9479",
     "E-9433"
    ]
+  },
+  {
+   "etapa": "Nota sobre el orden y la elección",
+   "accion": "El orden de las etapas (definición, registro con fecha, línea base de temperatura y vibración con envolvente, agua en lubricante, revisión de drenaje y protector, sombra, diagnóstico, supervivencia, operación) y la elección de qué medir primero es SINTESIS del analista, por costo, reversibilidad y porque ninguna fuente leída fija un orden, un plazo o un umbral. Es reversible: puede reordenarse si el experto del activo o el negocio lo piden.",
+   "condicion_para_avanzar": "Aprobación del experto del activo y del líder.",
+   "nivel": "SINTESIS",
+   "evidencia": []
   }
  ],
  "riesgos_de_validacion": [
@@ -519,12 +616,45 @@
     "E-9525",
     "E-9523"
    ]
+  },
+  {
+   "riesgo": "Fuentes de detección en conflicto y de introducción: la emisión acústica es de baja relación señal-ruido en una fuente y más sensible que la vibración a baja velocidad en otra; la temperatura casi no cambia con fallas tempranas. Ninguna trae datos propios, plazos ni umbrales, y son de rodamientos en general. Elegir sensor por estas frases sería decidir sin evidencia.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2880",
+    "E-2886",
+    "E-2892"
+   ]
+  },
+  {
+   "riesgo": "Mecanismo sin frecuencia: E-2820 describe cómo el agua llega al soporte, pero no cuántas bombas lo sufren ni en cuánto tiempo. Atribuir al ajuste insuficiente lo que puede venir de drenaje tapado, protector retirado o juntas alineadas (confusores) sesgaría cualquier comparación por grupos; deben registrarse como covariables.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2820",
+    "E-6004"
+   ]
+  },
+  {
+   "riesgo": "Cifras de revista adoptadas como umbral: el goteo aceptable difiere entre dos listas de revista (E-2840, E-2824) y la cifra de agua en aceite de E-2840 no tiene método ni fuente primaria. Usarlas como etiqueta o alarma propagaría un valor sin base experimental al modelo.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2840",
+    "E-2824"
+   ]
+  },
+  {
+   "riesgo": "Sensores de agua en aceite sin desempeño cuantificado: 'promesa' en laboratorio (E-2884) y principio dieléctrico sin sensibilidad (E-2885). Comprar o entrenar sobre ellos antes de medir con laboratorio y bombas de referencia no tiene respaldo.",
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2884",
+    "E-2885"
+   ]
   }
  ],
  "vacios": [
   "Sin datos propios ni etiquetas: no se entrenó ni evaluó ningún modelo; todo desempeño en la bomba es VACÍO. Cierra: historial de fallas del paquete de rodamientos con fechas y modo, bitácora de ajustes y cambios de empaquetadura con su motivo, series de goteo, temperatura del soporte, vibración con envolvente y agua en el lubricante, y data_quality.audit sobre ellas.",
-  "Cadena fuga, agua en el soporte y falla del paquete: sin fuente leída (el hallazgo sobre la cadena completa (sin fuente; ver vacíos)). Solo hay el mecanismo de la empaquetadura (E-2700, comercial) y la lista de causas de rodamientos de bomba (E-6004, resumen de 1988). Cierra: abrir las pistas SOLO-SNIPPET de agua en lubricante (E-2002, E-2003, E-2100 a E-2103, E-2210, E-2211) y de aislamiento del soporte (E-2108, E-2217) por su texto completo, y contrastar con datos propios.",
-  "Umbrales de goteo, de agua en el lubricante, de temperatura del soporte y de vibración para esta bomba: sin fuente leída. La cifra de goteo de E-2700 no trae diámetro, presión ni producto y no se adopta; los ppm de agua y los dB de ultrasonido de las pistas no se usan. Los de kurtosis 3 y 5 carecen de sustento (E-8001).",
+  "Cadena ajuste insuficiente, fuga, agua en el soporte y falla del paquete: el mecanismo fuga hacia el soporte, contaminación del aceite y corrosión está descrito (E-2820, lista de consejos, sin datos), pero ninguna fuente mide la relación entre el ajuste o el goteo y la vida del paquete, ni entre agua en el lubricante y vibración o temperatura. Cierra: datos propios con fallas fechadas y, de las pistas SOLO-SNIPPET, el texto completo de las de agua en lubricante.",
+  "Umbrales de goteo, de agua en el soporte o en el lubricante, de temperatura del soporte y de vibración para esta bomba: sin fuente que los respalde. Dos listas de revista dan cifras de goteo que no coinciden y una cifra de agua en aceite sin método (E-2840, E-2824); no se adoptan. Los de kurtosis 3 y 5 carecen de sustento (E-8001). Cierra: línea base propia y criterio de un experto.",
   "Cavitación, recirculación, NPSH, sellos mecánicos y señales hidráulicas: SIN DATOS PARA ARMARLO. Cierra: abrir E-1704, E-1705 y E-1706 (dominios que no resuelven) y los resúmenes de buscador E-1105 a E-1108 y E-1115.",
   "Ninguna fuente leída trae tiempos hasta la falla de bombas, y los datos de bomba leídos son audio (E-1700 y E-1701). Cierra: texto completo de MIMII, origen y definición de label de los reempaquetados, y una base de desempeño y fallas de bombas (E-1116, sin leer).",
   "Cantidad de mediciones de línea base, duración del piloto en sombra y número de eventos para pasar a un detector aprendido: sin cifra en las fuentes leídas. Para fallas por modo rige el criterio del equipo, no proviene de un id leído (menos de 10 exploratorio, 30 o más preferible), que no proviene de un id leído.",
@@ -536,6 +666,10 @@
   "Modelos fundacionales, modelos de lenguaje y gemelos digitales: sin evidencia en bombas (E-9481 es de telecomunicaciones; las tablas de E-9481, E-9523 y E-9524 no se recuperaron). Ningún porcentaje de reducción de paradas.",
   "Visión por computadora (fugas, goteo, corrosión del soporte): sin fuente leída para bombas. Si se usa, exige protocolo de captura (luz, ángulo, distancia), anotación con acuerdo entre anotadores, partición por bomba o sesión y conjunto de campo aparte.",
   "Fuentes SOLO-SNIPPET y NO-VERIFICADO (E-1704 a E-1706, E-1105 a E-1108, E-1115, E-1116, E-2000 a E-2110, E-2210 a E-2218, E-2430 a E-2445) sin abrir: pistas pendientes, no respaldan nada.",
-  "Modelos NO justificados hoy, por falta de fallas etiquetadas propias, de partición validada por bomba y de superación demostrada del baseline: (a) supervivencia con covariables, Cox y bosque de supervivencia: sin fallas con fecha por modo no hay qué ajustar, Cox no está en el kit y el único respaldo (E-9205, E-9431) es de un banco con censura simulada, error en minutos y cinco rodamientos por condición; (b) cualquier aprendizaje supervisado (clasificador de causa, de riesgo en horizonte H, RUL): con menos de 10 fallas por modo es exploratorio y las exactitudes de banco no generalizan (E-9457, E-9466); (c) redes profundas o CNN de diagnóstico y RUL con aprendizaje profundo entrenada en banco (E-9444); (d) transferencia directa de modelos o umbrales de banco a la bomba; (e) detector de anomalías con alarma automática sin piloto en sombra (E-9506, E-9515); (f) modelos fundacionales o de lenguaje como sustituto de datos propios (E-9481, E-9525); (g) kurtosis 3 y 5 como etiqueta o alarma (E-8001); (h) cualquier regla que fije un goteo o un ajuste objetivo con la cifra de un blog comercial. Lo que sí procede hoy: etapas 0 y 1, la 2 y la 3 al disponer de mediciones, y la 4 en sombra."
+  "Modelos NO justificados hoy, por falta de fallas etiquetadas propias, de partición validada por bomba y de superación demostrada del baseline: (a) supervivencia con covariables, Cox y bosque de supervivencia: sin fallas con fecha por modo no hay qué ajustar, Cox no está en el kit y el único respaldo (E-9205, E-9431) es de un banco con censura simulada, error en minutos y cinco rodamientos por condición; (b) cualquier aprendizaje supervisado (clasificador de causa, de riesgo en horizonte H, RUL): con menos de 10 fallas por modo es exploratorio y las exactitudes de banco no generalizan (E-9457, E-9466); (c) redes profundas o CNN de diagnóstico y RUL con aprendizaje profundo entrenada en banco (E-9444); (d) transferencia directa de modelos o umbrales de banco a la bomba; (e) detector de anomalías con alarma automática sin piloto en sombra (E-9506, E-9515); (f) modelos fundacionales o de lenguaje como sustituto de datos propios (E-9481, E-9525); (g) kurtosis 3 y 5 como etiqueta o alarma (E-8001); (i) sensores en línea de agua en aceite, emisión acústica o ultrasonido como base de alarma (E-2880, E-2886, E-2884); (j) cualquier alarma de agua o de goteo con la cifra de una revista (E-2840, E-2824); (h) cualquier regla que fije un goteo o un ajuste objetivo con la cifra de un blog comercial. Lo que sí procede hoy: etapas 0, 1 y 3b, la 2 y la 3 al disponer de mediciones, y la 4 en sombra.",
+  "Plazo entre el primer cambio detectable de cada señal (envolvente, temperatura, agua en el aceite) y la falla: ninguna fuente leída lo da; E-2880, E-2886 y E-2892 comparan señales sin plazos ni cifras. Cierra: estimarlo con datos propios.",
+  "Emisión acústica, ultrasonido y sensores de capacitancia para esta bomba: fuentes contradictorias o solo con 'promesa' (E-2880, E-2886, E-2884); velocidad de la bomba VACÍO. Cierra: ensayo exploratorio en sombra con datos propios.",
+  "Frecuencia con que el drenaje tapado, el protector retirado o las juntas alineadas explican la contaminación del soporte en esta flota: sin fuente (E-2820 describe mecanismo). Cierra: registro de la etapa 3b.",
+  "Texto completo de los artículos de E-2820, E-2840, E-2824, E-2880, E-2884 a E-2892: solo se leyeron pasajes devueltos por el conector; no se descarta que el resto del texto matice o contradiga."
  ]
 }

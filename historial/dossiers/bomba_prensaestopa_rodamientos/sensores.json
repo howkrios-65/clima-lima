@@ -74,6 +74,69 @@
   ]
  },
  {
+  "tecnica_o_sensor": "Temperatura del rodamiento",
+  "que_mide": "Temperatura interna o de la caja del rodamiento",
+  "resultado_publicado": "Los autores afirman que con fallas tempranas casi no cambia",
+  "condiciones": "Afirmación de introducción, rodamientos en general",
+  "limites": "Sin dato propio ni umbral; fuente de terceros no leída",
+  "evidencia": [
+   "E-2880"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Análisis de aceite (partículas de desgaste)",
+  "que_mide": "Tamaño, forma, número y composición de partículas en el aceite",
+  "resultado_publicado": "Limitado por costo, poca oportunidad y partículas ajenas",
+  "condiciones": "Afirmación de introducción",
+  "limites": "No trata agua ni intervalos de muestreo",
+  "evidencia": [
+   "E-2880"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Emisión acústica",
+  "que_mide": "Ondas de esfuerzo del rodamiento",
+  "resultado_publicado": "Más sensible que la vibración en baja velocidad según resultados publicados citados; baja relación señal-ruido y sensible al ruido según otros autores",
+  "condiciones": "Afirmaciones de introducción; contradicción entre E-2880 y E-2886",
+  "limites": "Sin cifras; no trata agua en el lubricante",
+  "evidencia": [
+   "E-2880",
+   "E-2886"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Vibración",
+  "que_mide": "Aceleración del soporte del rodamiento",
+  "resultado_publicado": "Técnica más usada; sensor barato y resultados confiables según los autores",
+  "condiciones": "Afirmación de introducción",
+  "limites": "Sin anticipación cuantificada ni causa (agua)",
+  "evidencia": [
+   "E-2880",
+   "E-2892"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Capacitancia, inductancia y ultrasonido en aceite",
+  "que_mide": "Viscosidad, partículas y contenido de ácido o agua del aceite",
+  "resultado_publicado": "Algunos métodos mostraron potencial para caracterizar viscosidad y contenido de ácido o agua",
+  "condiciones": "Banco de laboratorio; solo resumen",
+  "limites": "Sin nivel de agua detectable ni umbral",
+  "evidencia": [
+   "E-2884"
+  ]
+ },
+ {
+  "tecnica_o_sensor": "Sensor dieléctrico del lubricante",
+  "que_mide": "Cambios dieléctricos por partículas de desgaste y contaminantes sólidos o líquidos",
+  "resultado_publicado": "Da información de desgaste y de contaminantes según el resumen",
+  "condiciones": "Pruebas controladas de 1996; solo resumen",
+  "limites": "No nombra agua; sin sensibilidad",
+  "evidencia": [
+   "E-2885",
+   "E-2887"
+  ]
+ },
+ {
   "tecnica_o_sensor": "Vibracion triaxial (acelerometro) y corrientes de fase del motor",
   "que_mide": "Aceleracion en el extremo de accionamiento del motor y corrientes trifasicas, en sincronia con par y fase clave",
   "resultado_publicado": "Los autores afirman que vibracion y corriente son indicadores efectivos de la salud del motor",

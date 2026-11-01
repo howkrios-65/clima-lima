@@ -1,8 +1,8 @@
 {
  "modo_falla": "falla del paquete de rodamientos de bombas con prensaestopa",
- "fecha": "2026-10-27",
- "version": 2,
- "entradas_registro": 483,
+ "fecha": "2026-11-01",
+ "version": 3,
+ "entradas_registro": 516,
  "omitidos": [
   [
    "Datos de bombas heredables del caso anterior",
@@ -29,36 +29,36 @@
    "evidencia no leída o inexistente"
   ],
   [
-   "proteccion_elementos.json",
-   "sección inválida"
+   "Los resumenes de buscador describen laberintos y aisladores ",
+   "evidencia no leída o inexistente"
   ],
   [
-   "proteccion_elementos.json",
-   "sección inválida"
+   "Respiraderos y lubricadores de nivel constante ventilados co",
+   "evidencia no leída o inexistente"
   ],
   [
-   "proteccion_elementos.json",
-   "sección inválida"
+   "Analisis de aceite con agua por Karl Fischer, con interferen",
+   "evidencia no leída o inexistente"
   ],
   [
-   "proteccion_elementos.json",
-   "sección inválida"
+   "Ultrasonido: aumentos en dB sobre linea base propuestos por ",
+   "evidencia no leída o inexistente"
   ],
   [
-   "proteccion_elementos.json",
-   "sección inválida"
+   "Normas de metodo de agua (ISO 12937, ASTM D6304) y clasifica",
+   "evidencia no leída o inexistente"
   ],
   [
-   "proteccion_elementos.json",
-   "sección inválida"
+   "Referencias practicas de ppm: la FAQ de la asociacion de bom",
+   "evidencia no leída o inexistente"
   ],
   [
-   "proteccion_elementos.json",
-   "sección inválida"
+   "SIN DATOS PARA ARMARLO: eficacia medida de deflector o sling",
+   "evidencia no leída o inexistente"
   ],
   [
-   "proteccion_elementos.json",
-   "sección inválida"
+   "SIN DATOS PARA ARMARLO: umbrales leidos de agua en ppm, hume",
+   "evidencia no leída o inexistente"
   ],
   [
    "Comparacion empaquetadura frente a sello mecanico: pistas de",
@@ -73,7 +73,15 @@
    "sección inválida"
   ],
   [
-   "Candidatos de diagnostico de bomba centrifuga no verificados",
+   "SIN DATOS PARA ARMARLO: reparto de causas de falla de rodami",
+   "evidencia no leída o inexistente"
+  ],
+  [
+   "SIN DATOS PARA ARMARLO: ensayo o estudio de campo de ingreso",
+   "evidencia no leída o inexistente"
+  ],
+  [
+   "SIN DATOS PARA ARMARLO: ensayo comparativo de laberinto, ais",
    "evidencia no leída o inexistente"
   ]
  ],

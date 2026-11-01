@@ -3,25 +3,54 @@
   {
    "hipotesis": "H12",
    "discrimina": "A",
-   "sintoma": "Agua, emulsión o aspecto lechoso en el lubricante retirado (aceite turbio, grasa blanda o con gotas).",
-   "medicion": "Inspección al desmontar y determinación de agua en el lubricante (técnica a definir con el laboratorio).",
-   "referencia": null,
+   "sintoma": "Agua o emulsión en el lubricante retirado del soporte.",
+   "medicion": "Inspección al desmontar (aspecto turbio, grasa blanda o con gotas: razonamiento del equipo) y determinación de agua en el lubricante (técnica a definir con el laboratorio; definir si mide agua disuelta, emulsionada o libre).",
+   "referencia": "El líquido de fuga del prensaestopa contamina el aceite del soporte (E-2820); se forma emulsión que perjudica la película EHD (E-2827); el agua puede estar disuelta, emulsionada o libre (E-2888). Sin umbral de agua.",
    "evidencia": [
-    "E-1203"
+    "E-2820",
+    "E-2827",
+    "E-2888"
    ],
-   "nivel": "SINTESIS"
+   "nivel": "EVIDENCIA",
+   "nota": "Revista técnica (aceite) y análisis de falla de turbinas dentales; comparabilidad baja. El aspecto visual es razonamiento del equipo. Las cifras de 0,1 % de agua de E-2840 no se adoptan."
   },
   {
    "hipotesis": "H12",
    "discrimina": "A",
-   "sintoma": "Herrumbre, corrosión o picaduras en las pistas y elementos rodantes, con patrón repetido a la separación de los elementos rodantes.",
-   "medicion": "Inspección visual y con aumento de las pistas tras desmontar (el patrón es razonamiento del equipo).",
-   "referencia": "Corrosión causada por contaminación como origen de falla prematura de rodamientos de bolas de bombas (E-6004).",
+   "sintoma": "Corrosión de contacto en los puntos donde los elementos rodantes quedan apoyados con el rodamiento detenido, en pistas y elementos rodantes.",
+   "medicion": "Inspección visual y con aumento de las pistas tras desmontar; el patrón repetido a la separación de los elementos rodantes es razonamiento del equipo.",
+   "referencia": "El agua retenida en el aceite es muy corrosiva con el rodamiento detenido y en los contactos entre componentes (E-2827); el líquido de fuga del prensaestopa termina corroyendo los rodamientos (E-2820); corrosión causada por contaminación como origen de falla prematura de rodamientos de bolas de bombas (E-6004).",
    "evidencia": [
+    "E-2827",
+    "E-2820",
     "E-6004"
    ],
-   "nivel": "SINTESIS",
-   "nota": " El extracto respalda la causa, no el síntoma observable; este último es razonamiento del equipo."
+   "nivel": "EVIDENCIA",
+   "nota": "E-2827 es de turbinas dentales (comparabilidad muy baja); E-2820 es una lista de consejos sin datos. Cada observación sola es compatible con H2."
+  },
+  {
+   "hipotesis": "H12",
+   "discrimina": "A",
+   "sintoma": "Picaduras someras o desgaste gris con indicios de fatiga con corrosión.",
+   "medicion": "Inspección con aumento y, si se justifica, microscopía del laboratorio (técnica a definir).",
+   "referencia": "El desgaste gris, es decir picaduras someras, apunta a fatiga con corrosión como mecanismo de falla superficial; el lubricante contaminado es una falla de origen superficial de importancia práctica (E-2826).",
+   "evidencia": [
+    "E-2826"
+   ],
+   "nivel": "EVIDENCIA",
+   "nota": "Solo resumen del autor (VERIFICADO-ABSTRACT); no dice que el contaminante sea agua ni trata bombas. Compatible con H2 y con otras causas de contaminación."
+  },
+  {
+   "hipotesis": "H12",
+   "discrimina": "A",
+   "sintoma": "Superficie corroída con grietas y descascarado progresivo.",
+   "medicion": "Morfología del daño tras desmontar.",
+   "referencia": "Un esfuerzo cíclico agrieta con más facilidad una superficie corroída, sobre todo sin protección de película, y el daño progresa a descascarado (E-2827).",
+   "evidencia": [
+    "E-2827"
+   ],
+   "nivel": "EVIDENCIA",
+   "nota": "Turbinas dentales con vapor de autoclave; comparabilidad muy baja."
   },
   {
    "hipotesis": "H12",
@@ -32,7 +61,8 @@
    "evidencia": [
     "E-1203"
    ],
-   "nivel": "SINTESIS"
+   "nivel": "SINTESIS",
+   "nota": "E-2820 y E-2827 hablan de aceite, no de grasa: el síntoma en grasa es razonamiento del equipo."
   },
   {
    "hipotesis": "H12",
@@ -48,82 +78,145 @@
   {
    "hipotesis": "H12",
    "discrimina": "A",
-   "sintoma": "Goteo continuo o chorro por el prensaestopa antes de la parada; empaquetadura retirada blanda, lavada o sin lubricante.",
-   "medicion": "Registro de ronda y estado de la empaquetadura retirada.",
-   "referencia": "Con falta de ajuste el fluido lava los lubricantes internos de la trenza (E-2700).",
+   "sintoma": "Fuga excesiva del prensaestopa antes de la parada.",
+   "medicion": "Registro de ronda; sin cifra de goteo de referencia (las de revistas se contradicen).",
+   "referencia": "La fuga excesiva o insuficiente son señales de problema (E-2824); cuando la fuga es excesiva toca reajustar la empaquetadura (E-2840).",
    "evidencia": [
-    "E-2700"
+    "E-2824",
+    "E-2840"
    ],
-   "nivel": "SINTESIS"
+   "nivel": "EVIDENCIA",
+   "nota": "Criterio de revista técnica, sin ensayo ni cantidad en volumen. No relaciona la fuga con el ingreso al soporte."
   },
   {
    "hipotesis": "H12",
    "discrimina": "A",
-   "sintoma": "Drenaje de la caja o bandeja bloqueado, con agua acumulada o huellas de agua en el soporte (óxido en la carcasa, restos de humedad).",
-   "medicion": "Inspeccionar el drenaje y el recorrido del agua hacia el soporte.",
-   "referencia": null,
+   "sintoma": "Empaquetadura retirada blanda, lavada o sin lubricante.",
+   "medicion": "Estado de la empaquetadura retirada.",
+   "referencia": "Con falta de ajuste el fluido lava los lubricantes internos de la trenza (E-2700); la presión y el calor de fricción exprimen el lubricante y la trenza se desgasta contra el eje (E-2845).",
    "evidencia": [
-    "E-6004"
+    "E-2700",
+    "E-2845"
    ],
-   "nivel": "SINTESIS"
+   "nivel": "SINTESIS",
+   "nota": "El extracto respalda la causa, no el aspecto observable de la trenza retirada; este último es razonamiento del equipo."
+  },
+  {
+   "hipotesis": "H12",
+   "discrimina": "A",
+   "sintoma": "Drenaje del soporte (o de la caja o bandeja) tapado, con líquido acumulado en el soporte y aceite contaminado.",
+   "medicion": "Inspeccionar el drenaje y el recorrido del líquido hacia el soporte.",
+   "referencia": "Con el drenaje tapado, el líquido que fuga del prensaestopa se junta en el soporte, contamina el aceite y termina corroyendo los rodamientos (E-2820).",
+   "evidencia": [
+    "E-2820"
+   ],
+   "nivel": "EVIDENCIA",
+   "nota": "Revista técnica, lista de consejos, sin datos de frecuencia, cantidad ni tiempo. Las huellas de óxido en la carcasa son razonamiento del equipo."
+  },
+  {
+   "hipotesis": "H12",
+   "discrimina": "A",
+   "sintoma": "Protector de agua retirado o juntas de los anillos de empaquetadura alineadas.",
+   "medicion": "Presencia del protector y posición de las juntas de cada anillo en la empaquetadura retirada.",
+   "referencia": "Retirar el protector de agua o alinear las juntas de los anillos deja que el líquido atraviese la caja y ahogue los rodamientos (E-2820).",
+   "evidencia": [
+    "E-2820"
+   ],
+   "nivel": "EVIDENCIA",
+   "nota": "Misma fuente y límites que la fila anterior."
   },
   {
    "hipotesis": "H12",
    "discrimina": "A",
    "sintoma": "Retenes, deflectores o tapas del soporte deteriorados, desplazados o ausentes.",
    "medicion": "Inspección de las barreras del alojamiento.",
-   "referencia": null,
+   "referencia": "El sellado ineficaz figura entre las causas de falla de rodamientos (E-2889); el agua que fuga de un sello destruye con facilidad el rodamiento siguiente en lavadoras (E-2860).",
    "evidencia": [
     "E-6004",
-    "E-1201"
+    "E-1201",
+    "E-2889",
+    "E-2860"
    ],
-   "nivel": "SINTESIS"
+   "nivel": "SINTESIS",
+   "nota": "El efecto general consta; que retenes o deflectores concretos de un soporte de bomba fallen no tiene fuente."
   },
   {
    "hipotesis": "H12",
    "discrimina": "A",
    "sintoma": "Temperatura del soporte estable, sin tendencia creciente, mientras el lubricante muestra agua.",
    "medicion": "Tendencia de temperatura comparada con la línea base del propio activo.",
-   "referencia": null,
+   "referencia": "La temperatura interna casi no cambia con fallas tempranas del rodamiento (E-2880).",
    "evidencia": [
     "E-1201",
-    "E-6004"
-   ],
-   "nivel": "SINTESIS"
-  },
-  {
-   "hipotesis": "H13",
-   "discrimina": "B",
-   "sintoma": "Sin goteo o con goteo mínimo en el prensaestopa antes de la parada; empaquetadura retirada dura, quebradiza, oscurecida o cristalizada.",
-   "medicion": "Registro de ronda y examen de la empaquetadura retirada.",
-   "referencia": "Con exceso de ajuste se elimina el goteo, hay recalentamiento y el empaque cristaliza (E-2700).",
-   "evidencia": [
-    "E-2700"
+    "E-6004",
+    "E-2880"
    ],
    "nivel": "SINTESIS",
-   "nota": " El extracto respalda la causa, no el síntoma observable; este último es razonamiento del equipo."
+   "nota": "Una temperatura estable no descarta una falla temprana (E-2880, afirmación de introducción)."
   },
   {
    "hipotesis": "H13",
    "discrimina": "B",
-   "sintoma": "Camisa del eje con surco, rayado, coloración azul o desgaste en la zona de empaquetadura.",
-   "medicion": "Inspección visual y rugosidad de la camisa; medición de excentricidad del eje (razonamiento del equipo).",
-   "referencia": null,
+   "sintoma": "Sin goteo en el prensaestopa antes de la parada.",
+   "medicion": "Registro de ronda; comprobar si hay goteo continuo.",
+   "referencia": "Si no gotea, el prensaestopa está demasiado apretado u otro problema que debe investigarse (E-2848); una bomba con empaquetadura debe gotear de forma continua tras ajustarse (E-2823).",
    "evidencia": [
-    "E-2700"
+    "E-2848",
+    "E-2823"
    ],
-   "nivel": "SINTESIS"
+   "nivel": "EVIDENCIA",
+   "nota": "Criterios de revista sin cifras; 'otros problemas' impide leer la ausencia de goteo como prueba de sobreapriete."
+  },
+  {
+   "hipotesis": "H13",
+   "discrimina": "B",
+   "sintoma": "Empaquetadura retirada cristalizada o quemada.",
+   "medicion": "Examen de la empaquetadura retirada (dureza, color, quebradiza u oscurecida: razonamiento del equipo).",
+   "referencia": "Con exceso de ajuste se elimina el goteo, hay recalentamiento y el empaque cristaliza (E-2700); la expansión por temperatura lleva al quemado de la empaquetadura (E-2846).",
+   "evidencia": [
+    "E-2700",
+    "E-2846"
+   ],
+   "nivel": "EVIDENCIA",
+   "nota": "Texto comercial y estudio de compresor alternativo (comparabilidad baja); sin cifras."
+  },
+  {
+   "hipotesis": "H13",
+   "discrimina": "B",
+   "sintoma": "Camisa del eje rayada o quemada en la zona de empaquetadura.",
+   "medicion": "Inspección visual y rugosidad de la camisa; medición de excentricidad del eje (razonamiento del equipo).",
+   "referencia": "Si la empaquetadura está demasiado apretada se calienta, se expande y termina quemando o rayando la camisa (E-2840).",
+   "evidencia": [
+    "E-2840"
+   ],
+   "nivel": "EVIDENCIA",
+   "nota": "Revista profesional, sin ensayo. La coloración azul o la huella térmica específica no constan en el extracto."
+  },
+  {
+   "hipotesis": "H13",
+   "discrimina": "B",
+   "sintoma": "Prensaestopa caliente al tacto o agua de fuga que no está fría.",
+   "medicion": "Comprobación al tacto y, si se dispone, termografía o medición de contacto, comparada con el histórico del propio activo.",
+   "referencia": "El agua de fuga debe estar fría al tacto y el prensaestopa no debe calentarse (E-2840).",
+   "evidencia": [
+    "E-2840"
+   ],
+   "nivel": "EVIDENCIA",
+   "nota": "Criterio cualitativo de revista, sin temperatura de referencia."
   },
   {
    "hipotesis": "H13",
    "discrimina": "B",
    "sintoma": "Soporte con temperatura que sube y no se estabiliza, o más caliente del lado del prensaestopa.",
    "medicion": "Termografía o medición de contacto comparada con el histórico del propio activo y con el otro lado del soporte.",
-   "referencia": null,
+   "referencia": "La temperatura de operación afecta la salud del rodamiento (E-1203); el exceso de lubricante también sobrecalienta el rodamiento (E-2830).",
    "evidencia": [
-    "E-1203"
+    "E-1203",
+    "E-2830",
+    "E-2880"
    ],
-   "nivel": "SINTESIS"
+   "nivel": "SINTESIS",
+   "nota": "El puente calor del prensaestopa a soporte no tiene fuente. Confundidores: sobrelubricación (E-2830); y la temperatura casi no cambia con fallas tempranas (E-2880)."
   },
   {
    "hipotesis": "H13",
@@ -135,7 +228,7 @@
     "E-6004"
    ],
    "nivel": "SINTESIS",
-   "nota": " El extracto respalda la causa, no el síntoma observable; este último es razonamiento del equipo."
+   "nota": "El extracto respalda la causa, no el síntoma observable; este último es razonamiento del equipo. Compatible también con sobrelubricación (E-2830), H4 y H6."
   },
   {
    "hipotesis": "H13",
@@ -146,7 +239,8 @@
    "evidencia": [
     "E-6002"
    ],
-   "nivel": "SINTESIS"
+   "nivel": "SINTESIS",
+   "nota": "Ninguna fuente leída liga el prensaestopa con deflexión ni carga en el rodamiento."
   },
   {
    "hipotesis": "H13",
@@ -159,6 +253,30 @@
     "E-2700"
    ],
    "nivel": "SINTESIS"
+  },
+  {
+   "hipotesis": "H13",
+   "discrimina": "ambas",
+   "sintoma": "Camisa desgastada con fuga que crece tras apretar (posible secuencia ruta B seguida de ruta A).",
+   "medicion": "Estado de la camisa y línea de tiempo de ajustes y fuga con el historial de órdenes.",
+   "referencia": "Las camisas desgastadas se reemplazan para reducir la fuga y el desgaste de sellos y empaquetadura (E-2847).",
+   "evidencia": [
+    "E-2847"
+   ],
+   "nivel": "EVIDENCIA",
+   "nota": "Opinión técnica cualitativa de revista; la secuencia B seguida de A es lectura del equipo."
+  },
+  {
+   "hipotesis": "H1",
+   "discrimina": "B",
+   "sintoma": "Exceso de lubricante en el soporte con sobrecalentamiento (causa alterna a la ruta B).",
+   "medicion": "Cantidad de lubricante aplicada y presente frente a la recomendación del fabricante; registro de engrase.",
+   "referencia": "Un técnico puede sobrelubricar los rodamientos y hacer que se sobrecalienten (E-2830).",
+   "evidencia": [
+    "E-2830"
+   ],
+   "nivel": "EVIDENCIA",
+   "nota": "Opinión experta de revista, sin datos; no trata agua ni prensaestopa."
   },
   {
    "hipotesis": "H12",
@@ -177,22 +295,27 @@
    "discrimina": "ambas",
    "sintoma": "Ausencia de rutina de inspección de fuga, criterio de ajuste o registro del último ajuste.",
    "medicion": "Revisar rutas de ronda, instrucción de ajuste y órdenes del activo.",
-   "referencia": null,
+   "referencia": "Práctica de referencia en revistas: revisión periódica del ajuste y goteo continuo (E-2823); inspección semanal de la fuga con ajuste (E-2824).",
    "evidencia": [
-    "E-2700"
+    "E-2700",
+    "E-2823",
+    "E-2824"
    ],
-   "nivel": "SINTESIS"
+   "nivel": "SINTESIS",
+   "nota": "La referencia es EVIDENCIA de revista; su ausencia en el activo es hipótesis."
   },
   {
    "hipotesis": "H14",
    "discrimina": "ambas",
-   "sintoma": "Plan de mantenimiento sin tarea sobre el drenaje, los retenes del soporte o la camisa.",
+   "sintoma": "Plan de mantenimiento sin tarea sobre el drenaje, el protector de agua, los retenes del soporte o la camisa.",
    "medicion": "Revisar el plan y el historial de órdenes.",
-   "referencia": null,
+   "referencia": "El estado del drenaje y del protector decide si el líquido de fuga llega al soporte (E-2820).",
    "evidencia": [
-    "E-6004"
+    "E-6004",
+    "E-2820"
    ],
-   "nivel": "SINTESIS"
+   "nivel": "SINTESIS",
+   "nota": "El efecto físico consta; que el plan no las incluya es hipótesis."
   },
   {
    "hipotesis": "H1",
@@ -248,22 +371,26 @@
   },
   {
    "hipotesis": "H2",
-   "sintoma": "Partículas o agua en el lubricante (el agua no consta en E-6004 ni E-1201; razonamiento del equipo)",
+   "sintoma": "Agua o partículas en el lubricante",
    "medicion": "Análisis del lubricante retirado",
-   "referencia": null,
+   "referencia": "El agua dispersa en el aceite degrada aditivos y aumenta el desgaste (E-2800); la contaminación por agua reduce significativamente la vida del rodamiento (E-2801).",
    "evidencia": [
+    "E-2800",
+    "E-2801",
     "E-6004",
     "E-1201"
    ],
-   "nivel": "SINTESIS"
+   "nivel": "EVIDENCIA",
+   "nota": "Introducciones de artículos que citan literatura previa; sin cifras. Las partículas constan en E-1201 y E-6004 solo como contaminación en general."
   },
   {
    "hipotesis": "H2",
    "sintoma": "Barreras del alojamiento deterioradas o desplazadas",
    "medicion": "Inspección de retenes y tapas, y limpieza de puertos de engrase",
-   "referencia": null,
+   "referencia": "El sellado ineficaz figura entre las causas de falla (E-2889).",
    "evidencia": [
-    "E-6004"
+    "E-6004",
+    "E-2889"
    ],
    "nivel": "SINTESIS"
   },
@@ -415,6 +542,28 @@
   },
   {
    "hipotesis": "H9",
+   "sintoma": "Temperatura del soporte sin cambio pese a un defecto temprano del rodamiento",
+   "medicion": "Cruzar temperatura con vibración y análisis de lubricante en el historial",
+   "referencia": "Con fallas tempranas como desgaste, picaduras y descascarado, la temperatura interna casi no cambia (E-2880).",
+   "evidencia": [
+    "E-2880"
+   ],
+   "nivel": "EVIDENCIA",
+   "nota": "Afirmación de introducción, sin dato propio ni umbral; E-2886 (también de introducción) da mayor sensibilidad a la emisión acústica que a la vibración a baja velocidad: las fuentes no coinciden en sensibilidad relativa."
+  },
+  {
+   "hipotesis": "H9",
+   "sintoma": "Vibración, ruido o rotura como manifestación de dificultades en sello o rodamientos de la bomba",
+   "medicion": "Historial de vibración y ruido de la bomba antes de la parada",
+   "referencia": "Las dificultades mecánicas en las cámaras de sello o en los rodamientos se manifiestan con vibración, ruido o rotura (E-2891).",
+   "evidencia": [
+    "E-2891"
+   ],
+   "nivel": "EVIDENCIA",
+   "nota": "Afirmación de introducción atribuida a otros autores; sin plazos ni detectabilidad."
+  },
+  {
+   "hipotesis": "H9",
    "sintoma": "Umbrales de alarma sin calibrar con fallas del activo",
    "medicion": "Rastrear el origen de cada umbral y su validación (medición: razonamiento del equipo)",
    "referencia": null,
@@ -459,31 +608,38 @@
  ],
  "discriminacion": [
   {
-   "observacion": "Agua o emulsión en el lubricante + corrosión en pistas + grasa lavada + goteo continuo + drenaje bloqueado",
+   "observacion": "Agua o emulsión en el lubricante + corrosión de contacto en pistas + fuga excesiva antes de la parada + drenaje tapado, protector retirado o juntas alineadas",
    "orienta_a": "Ruta A (H12)",
-   "nota": "Cada observación sola es compatible con H2; la combinación con el estado del prensaestopa es lo que orienta. SINTESIS."
+   "nota": "Cada observación sola es compatible con H2; la combinación con el estado del prensaestopa y del drenaje es lo que orienta. Los pasos agua, corrosión y drenaje tienen respaldo cualitativo de revista (E-2820, E-2827); la combinación como causa de este caso es SINTESIS."
   },
   {
-   "observacion": "Sin goteo + trenza cristalizada o dura + camisa con huella térmica + soporte con temperatura creciente + grasa quemada + huella de carga",
+   "observacion": "Sin goteo + trenza cristalizada o quemada + camisa rayada o quemada + prensaestopa caliente + soporte con temperatura creciente + grasa quemada + huella de carga",
    "orienta_a": "Ruta B (H13)",
-   "nota": "Cada observación sola es compatible con H1, H4 o H6. SINTESIS."
+   "nota": "Cada observación sola es compatible con H1 (incluida la sobrelubricación, E-2830), H4 o H6. Hasta la camisa hay respaldo cualitativo (E-2840, E-2848); el tramo soporte con temperatura creciente, grasa quemada y huella de carga no tiene fuente que lo ligue al prensaestopa. SINTESIS."
   },
   {
    "observacion": "Lubricante sin agua, pistas sin corrosión ni señales térmicas, y empaquetadura y camisa en buen estado",
    "orienta_a": "Ni A ni B: pasar a H1, H3, H4, H5, H6, H7",
-   "nota": "Descarta el prensaestopa como vía solo si el drenaje y las barreras también estaban sanos."
+   "nota": "Descarta el prensaestopa como vía solo si el drenaje, el protector y las barreras también estaban sanos."
   },
   {
    "observacion": "Agua y señales térmicas a la vez",
-   "orienta_a": "Ambas rutas o secuencia (por ejemplo ajuste excesivo seguido de desajuste y fuga)",
-   "nota": "Reconstruir la línea de tiempo de ajustes con el historial de órdenes."
+   "orienta_a": "Ambas rutas o secuencia (por ejemplo ajuste excesivo seguido de camisa dañada y fuga, o desajuste y fuga seguidos de reapriete)",
+   "nota": "Reconstruir la línea de tiempo de ajustes con el historial de órdenes. Hay respaldo cualitativo de que el sobreapriete daña la camisa (E-2840) y de que la camisa desgastada aumenta la fuga (E-2847); la secuencia como tal es lectura del equipo."
+  },
+  {
+   "observacion": "Soporte caliente con exceso de lubricante, sin agua ni camisa dañada",
+   "orienta_a": "H1 (sobrelubricación, E-2830) y no ruta B",
+   "nota": "Opinión experta de revista, sin datos."
   }
  ],
  "vacios": [
-  "Valores de referencia (umbrales de temperatura, vibración, corriente, contaminación, goteo, caudal, presión y NPSH): SIN DATOS PARA ARMARLO; se fijan con el fabricante o con datos del activo. La cifra de goteo de E-2700 no se usa como umbral.",
-  "Síntomas de la ruta A y B más allá del mecanismo de la empaquetadura (E-2700) y de las causas generales de rodamientos (E-6004): sin fuente leída. Pistas por abrir: E-2500, E-2502, E-2503, E-2504, E-2000, E-2001, E-2002, E-2003, E-2004; E-2005 sin verificar.",
+  "Valores de referencia (umbrales de temperatura, vibración, corriente, contaminación, goteo, caudal, presión y NPSH): SIN DATOS PARA ARMARLO; se fijan con el fabricante o con datos del activo. Las cifras de gotas por minuto de E-2840 y E-2824 difieren entre sí, la de 0,1 % de agua de E-2840 no tiene método ni fuente primaria, y el criterio de goteo de E-2700 no trae diámetro, presión ni producto: ninguna se adopta como umbral.",
+  "Síntomas de la ruta A y B que ahora tienen respaldo cualitativo de revista o introducción (sin datos): agua o emulsión en el lubricante, corrosión de contacto, descascarado desde superficie corroída, fuga excesiva, drenaje tapado, protector retirado, camisa rayada o quemada, trenza cristalizada o quemada, prensaestopa caliente, ausencia de goteo. SIN FUENTE: aspecto de la grasa afectada por agua, patrón de huella exacto, cantidad de agua, tiempo a la falla y el síntoma del soporte (temperatura creciente, grasa quemada, huella de carga) como consecuencia del prensaestopa. Pistas por abrir: E-2500, E-2502, E-2503, E-2504, E-2000, E-2001, E-2002, E-2003, E-2004; E-2005 sin verificar.",
+  "Detección: lo leído es cualitativo y se contradice en parte (temperatura insensible a fallas tempranas, E-2880; emisión acústica más sensible que vibración a baja velocidad, E-2886); sensores de agua en aceite (E-2884, E-2885) sin umbral. No hay fuente sobre cuán pronto se detecta el agua en el soporte de una bomba.",
   "Qué observar para cavitación, recirculación, sellos mecánicos, anillos de desgaste, golpe de ariete y fatiga de eje: SIN DATOS PARA ARMARLO. Pistas no leídas: E-1104 a E-1113, E-1315, E-1212, E-1213.",
   "Síntomas de desalineación propios de bomba en el espectro: SIN DATOS PARA ARMARLO. Pistas no leídas: E-1110, E-1111.",
-  "Técnicas post mortem del rodamiento y normas de ensayo aplicables: sin fuente leída ni consulta del registro de normas en este análisis."
+  "Técnicas post mortem del rodamiento y normas de ensayo aplicables: sin fuente leída ni consulta del registro de normas en este análisis.",
+  "Todos los pasajes de la ronda de Wiley son fragmentos o resúmenes, no artículos completos; E-2820, E-2823, E-2824, E-2840 y E-2848 son de revistas técnicas del sector agua (experiencia profesional sin datos ni ensayo)."
  ]
 }

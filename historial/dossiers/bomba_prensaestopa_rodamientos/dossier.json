@@ -22,6 +22,27 @@
     },
     {
      "tipo": "afirmacion",
+     "titulo": "Para detección temprana, la literatura leída ubica la temperatura como tardía, el análisis de aceite como costoso y poco oportuno, la emisión acústica como sensible pero ruidosa y la vibración como la más usada; todo en afirmaciones de introducción sin umbrales ni plazos",
+     "evidencia": [
+      "E-2880",
+      "E-2886",
+      "E-2892"
+     ],
+     "limite": "Pasajes del conector de Wiley (no artículos completos); afirmaciones de los autores citando a terceros; rodamientos en general, sin agua en el lubricante ni prensaestopa; no se halló dato de anticipación (P-F)."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Sensores de capacitancia, ultrasonido y dieléctricos para contaminantes líquidos del aceite muestran potencial en banco, sin sensibilidad al agua ni umbral leído",
+     "evidencia": [
+      "E-2884",
+      "E-2885",
+      "E-2887",
+      "E-2888"
+     ],
+     "limite": "Solo resumen o introducción; aceites de banco, sin rodamiento ni bomba; ninguno mide agua en soporte con grasa."
+    },
+    {
+     "tipo": "afirmacion",
      "titulo": "Vibracion triaxial y corrientes de fase del motor adquiridas en sincronia",
      "evidencia": [
       "E-1301"
@@ -47,6 +68,140 @@
       "E-2700"
      ],
      "limite": "Fuente comercial aportada por la persona; describe la empaquetadura, no el rodamiento; sin umbral usable de goteo."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Literatura de Wiley leida: el agua en el lubricante degrada aditivos y pelicula y se asocia con menor vida, pero los pasajes son contexto o fluidos acuosos; ninguno cuantifica la perdida de vida por pocos por ciento de agua en aceite o grasa de rodamientos",
+     "evidencia": [
+      "E-2800",
+      "E-2801",
+      "E-2804",
+      "E-2805",
+      "E-2827"
+     ],
+     "limite": "Pasajes, no articulos completos; afirmaciones secundarias de introduccion sin cifra de vida; fluidos de base agua no equivalen a contaminacion. Las cifras de reduccion de vida de la literatura clasica de banco no aparecieron en estos pasajes."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "El hidrogeno reduce la fatiga del acero de rodamientos (cerca de 20 % a 10^9 ciclos con carga electroquimica) y el agua figura como una de varias causas propuestas de grietas blancas; las fuentes de hidrogeno en servicio citadas son sobre todo la descomposicion del lubricante",
+     "evidencia": [
+      "E-2807",
+      "E-2808",
+      "E-2802",
+      "E-2803",
+      "E-2801"
+     ],
+     "limite": "Eslabon agua a hidrogeno a vida de rodamiento de bomba no cuantificado en ningun pasaje; grietas blancas estudiadas en aerogeneradores y bancos, no en bombas con prensaestopa."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Una revista tecnica para servicios de agua cita 0,1 % de agua en aceite como suficiente para romper la lubricacion y la condensacion por enfriamiento externo como via de oxido, sin fuente primaria",
+     "evidencia": [
+      "E-2840"
+     ],
+     "limite": "Divulgacion sin metodo; no es umbral ni evidencia de vida."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Un articulo de revista tecnica describe la via prensaestopa a soporte (drenaje del soporte tapado, protector de agua retirado, juntas del empaque alineadas) con contaminacion del aceite y corrosion del rodamiento; sin datos ni muestra",
+     "evidencia": [
+      "E-2820"
+     ],
+     "limite": "Fragmento de texto de divulgacion; mecanismo, no frecuencia; aceite, no grasa."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Guias tecnicas piden fuga continua en el prensaestopa y apriete gradual: aprox. 60 gotas/min (una fuente) o 20 a 60 gotas/min (otra); ninguna con base experimental",
+     "evidencia": [
+      "E-2840",
+      "E-2823",
+      "E-2824"
+     ],
+     "limite": "Revistas tecnicas del sector agua; cifras sin fuente en el pasaje; no relacionan el ajuste con agua en el soporte."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Una revista tecnica da 0,1 % de agua en aceite como suficiente para romper la lubricacion y senala la condensacion por enfriamiento externo del soporte; otros textos leidos confirman solo cualitativamente que el agua reduce la vida",
+     "evidencia": [
+      "E-2840",
+      "E-2801",
+      "E-2827"
+     ],
+     "limite": "Cifra sin fuente, en aceite; E-2828 es de segunda mano; E-2827 es de rodamientos dentales."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Causas genericas de falla de rodamientos (lubricacion inadecuada, sellado ineficaz, contaminante) en una revision y un analisis de falla; sin reparto de causas con base leida",
+     "evidencia": [
+      "E-2826",
+      "E-2830"
+     ],
+     "limite": "No son de bombas (salvo E-2830, opinion); sin porcentajes ni muestra."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Criterio de fuga y ajuste del prensaestopa en bombas de agua: goteo controlado (unas 20 a 60 gotas/min o alrededor de 60 gotas/min segun la fuente), prensaestopa no caliente, reajuste cuando la fuga es excesiva, sin sobreapretar",
+     "evidencia": [
+      "E-2840",
+      "E-2824",
+      "E-2848",
+      "E-2845"
+     ],
+     "limite": "Fragmentos de articulos de revista profesional de servicios de agua; criterios de buena practica sin ensayo; los dos rangos de gotas por minuto difieren y no se explica por que; no es de bomba con la geometria del activo."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Sobreapriete como mecanismo contrario: calor, expansion, quemado o rayado de la camisa; lubricante exprimido de la empaquetadura con el uso",
+     "evidencia": [
+      "E-2840",
+      "E-2845",
+      "E-2846"
+     ],
+     "limite": "Cualitativo; E-2846 es compresor alternativo y la frase es de terceros; no mide desgaste de camisa en bomba."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Fuga del prensaestopa hacia el soporte: acumulacion, contaminacion del aceite y corrosion de rodamientos si se tapa el drenaje, falta el protector o las juntas estan alineadas; 0,1 % de agua en aceite como regla practica de ruptura de lubricacion",
+     "evidencia": [
+      "E-2820",
+      "E-2840"
+     ],
+     "limite": "Experiencia de revista profesional, sin caso medido; la cifra de 0,1 % no se atribuye a una fuente primaria en el pasaje."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Retén de labio: un sello rotativo dañado solo evita en parte la entrada de contaminantes y la grasa puede actuar como barrera adicional al agua (afirmacion de introduccion, sin ensayo de ingreso de agua en soporte de bomba)",
+     "evidencia": [
+      "E-2860"
+     ],
+     "limite": "FRAGMENTO de un articulo de lubricidad de grasa; no mide estanqueidad al agua; ejemplo de lavadoras."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Laberinto: la holgura gobierna el sellado, con riesgo de roce si es demasiado pequeña; estudios hallados son de fuga de aceite hacia afuera en reductores, no de ingreso de agua",
+     "evidencia": [
+      "E-2863",
+      "E-2864"
+     ],
+     "limite": "Simulacion y banco de reductores con aceite; comparabilidad baja con soporte de bomba; sin comparativo con aislador sin contacto."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "Condensacion por enfriamiento externo excesivo de la carcasa como via de humedad, citada en revista tecnica; 0,1 % de agua en aceite como causa de rotura de lubricacion (afirmacion sin ensayo declarado)",
+     "evidencia": [
+      "E-2840"
+     ],
+     "limite": "Revista tecnica de operadores; sin metodo; aceite, no grasa."
+    },
+    {
+     "tipo": "afirmacion",
+     "titulo": "La contaminación del lubricante y el sellado ineficaz figuran entre las causas generales de falla de rodamientos, con una cifra de más del 50 % citada de segunda mano para cojinetes",
+     "evidencia": [
+      "E-2889",
+      "E-2890",
+      "E-2891"
+     ],
+     "limite": "Afirmaciones generales de introducción; la cifra es de cojinetes y partículas, no de agua en rodamientos de bomba."
     },
     {
      "tipo": "afirmacion",
@@ -81,6 +236,14 @@
     },
     {
      "tipo": "afirmacion",
+     "titulo": "Weibull con pocos eventos desde registros de mantenimiento, segun el resumen de un autor",
+     "evidencia": [
+      "E-2829"
+     ],
+     "limite": "Solo resumen de 1989."
+    },
+    {
+     "tipo": "afirmacion",
      "titulo": "Vida de rodamientos en banco como analogo del rodamiento de la bomba (Paderborn, 17 unidades)",
      "evidencia": [
       "E-9604",
@@ -100,6 +263,15 @@
   },
   "vida_util": {
    "elementos": [
+    {
+     "tipo": "afirmacion",
+     "titulo": "Comparacion sello mecanico y empaquetadura: solo cualitativa (sellos modernos con menos fuga y mas vida segun una opinion tecnica); no se hallo comparacion cuantitativa de vida ni de costo con estas vias",
+     "evidencia": [
+      "E-2847",
+      "E-2848"
+     ],
+     "limite": "Sin cifras de vida o costo; laguna abierta."
+    },
     {
      "tipo": "afirmacion",
      "titulo": "Definicion de L10 y ejemplo de L10h segun carga y velocidad",
@@ -271,6 +443,39 @@
       "E-2355",
       "E-2356",
       "E-2700",
+      "E-2800",
+      "E-2801",
+      "E-2802",
+      "E-2803",
+      "E-2804",
+      "E-2805",
+      "E-2807",
+      "E-2808",
+      "E-2820",
+      "E-2823",
+      "E-2824",
+      "E-2826",
+      "E-2827",
+      "E-2829",
+      "E-2830",
+      "E-2840",
+      "E-2845",
+      "E-2846",
+      "E-2847",
+      "E-2848",
+      "E-2860",
+      "E-2863",
+      "E-2864",
+      "E-2880",
+      "E-2884",
+      "E-2885",
+      "E-2886",
+      "E-2887",
+      "E-2888",
+      "E-2889",
+      "E-2890",
+      "E-2891",
+      "E-2892",
       "E-6002",
       "E-6003",
       "E-6004",

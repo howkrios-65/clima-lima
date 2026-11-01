@@ -2,34 +2,26 @@
  {
   "agente": "reliability-engineer",
   "rol": "Líder del equipo",
-  "hizo": "Recibió la falla, lanzó dos oleadas de agentes, registró el texto aportado por la persona (E-2700), reconstruyó el registro de 483 entradas e integró la versión 2 con las compuertas.",
+  "hizo": "Recibió la falla, repartió cinco frentes con el conector académico renovado, fusionó los pasajes duplicados del mismo artículo, integró la versión 3 y la pasó por las compuertas.",
   "entrada": "Falla del paquete de rodamientos de bombas con prensaestopa",
-  "salida": "Dossier v2 y entregables",
-  "aprendio": "El eslabón entre prensaestopa y rodamiento no tiene fuente leída; queda como hipótesis en dos rutas."
+  "salida": "Dossier v3 y entregables",
+  "aprendio": "El mecanismo fuga a soporte tiene respaldo cualitativo; el ajuste insuficiente como origen de la fuga sigue sin fuente."
  },
  {
   "agente": "reliability-literature-researcher",
-  "rol": "Frentes del caso previo (mecanismos, empaquetadura, monitoreo, ML y datos, normas y costos)",
-  "hizo": "Cinco frentes en paralelo: 80 entradas nuevas (E-2000 a E-2410, E-2430 a E-2445), 4 con lectura, todas de bancos de rodamientos; ninguna pista de prensaestopa leída.",
-  "entrada": "Frentes de búsqueda del primer dossier",
-  "salida": "registros y pistas",
-  "aprendio": "Las cifras de agua y de fuga de las pistas se contradicen y no se usan."
+  "rol": "Frentes con el conector académico (agua y fatiga; agua en soportes de bombas; empaquetadura; protecciones; detección)",
+  "hizo": "Cinco investigadores en paralelo; 24 consultas; 33 fuentes únicas leídas como pasajes (revistas técnicas del sector agua e introducciones de artículos).",
+  "entrada": "Frente de búsqueda y rango de ids",
+  "salida": "Registros, elementos y cifras",
+  "aprendio": "El conector devuelve sobre todo revistas divulgativas; no hay ensayo de protecciones ni umbral de detección."
  },
  {
   "agente": "reliability-literature-researcher",
-  "rol": "Cadena prensaestopa a rodamiento",
-  "hizo": "23 pistas de buscador (E-2500 a E-2522), ninguna leída.",
-  "entrada": "Frente cadena",
-  "salida": "cadena_registro",
-  "aprendio": "Las cifras de peso de la contaminación se contradicen y no se usan."
- },
- {
-  "agente": "reliability-literature-researcher",
-  "rol": "Protección y detección",
-  "hizo": "28 pistas (E-2600 a E-2627), ninguna leída; sin umbrales usables.",
-  "entrada": "Frente protección y detección",
-  "salida": "proteccion_registro",
-  "aprendio": "La eficacia de deflectores, laberintos y aisladores no tiene ensayo leído."
+  "rol": "Frentes de las versiones anteriores (mecanismos, empaquetadura, monitoreo, ML y datos, normas, cadena y protección)",
+  "hizo": "Ochenta y una entradas, casi todas pistas de buscador; solo cuatro lecturas de bancos de rodamientos.",
+  "entrada": "Frentes de búsqueda",
+  "salida": "Registros y pistas",
+  "aprendio": "Las cifras de agua y fuga de las pistas se contradicen y no se usan."
  },
  {
   "agente": "reliability-case-historian",
@@ -42,7 +34,7 @@
  {
   "agente": "reliability-data-auditor",
   "rol": "Plantilla de datos",
-  "hizo": "Definió falla, censura y la tabla mínima que la persona debe aportar, con reglas de limpieza.",
+  "hizo": "Definió falla, censura y la tabla mínima que la persona debe aportar.",
   "entrada": "Caso sin datos",
   "salida": "Diseño de recolección",
   "aprendio": "El ajuste del prensaestopa se registra a menudo como respuesta a la fuga: sesgo de registro."
@@ -50,26 +42,26 @@
  {
   "agente": "reliability-rca-investigator",
   "rol": "Causa raíz",
-  "hizo": "Hipótesis, árbol, Ishikawa, 5 porqués y qué observar con las rutas A (agua) y B (calor).",
-  "entrada": "Registro combinado",
+  "hizo": "Hipótesis, árbol, Ishikawa, 5 porqués y qué observar con las rutas A (agua) y B (calor), con los eslabones respaldados por la literatura nueva.",
+  "entrada": "Registro de 516 entradas",
   "salida": "acr, arbol, ishikawa, porques, observar",
-  "aprendio": "Solo el mecanismo de la empaquetadura (E-2700) tiene lectura; los eslabones puente son síntesis."
+  "aprendio": "Sube a evidencia solo lo que un extracto dice literal; el origen en el ajuste insuficiente sigue siendo síntesis."
  },
  {
   "agente": "reliability-fmeca-rcm",
   "rol": "FMECA y RCM",
-  "hizo": "14 modos: 7 de rodamiento heredados y 7 de la cadena; S, O y D sin datos.",
-  "entrada": "Registro combinado",
+  "hizo": "14 modos con los de agua al soporte, camisa y protección respaldados parcialmente; S, O y D sin datos.",
+  "entrada": "Registro de 516 entradas",
   "salida": "fmeca.json",
-  "aprendio": "Dos PM a cuestionar con datos: apriete calendario y relubricación sin análisis."
+  "aprendio": "Hay una vía no considerada: los cortes de los anillos alineados (E-2820)."
  },
  {
   "agente": "reliability-predictive-analyst",
   "rol": "Predictivo",
-  "hizo": "Estrategia en 8 etapas de medición y riesgos de validación propios del caso.",
-  "entrada": "Registro combinado",
+  "hizo": "Estrategia en 10 etapas con revisión del drenaje y del protector, y sin cifras de simulación en la guía.",
+  "entrada": "Registro de 516 entradas",
   "salida": "predictivo.json",
-  "aprendio": "Hoy no se justifica ningún modelo entrenado."
+  "aprendio": "La envolvente de vibración es la señal principal; la temperatura sola casi no cambia con fallas tempranas."
  },
  {
   "agente": "reliability-economics-kpi",

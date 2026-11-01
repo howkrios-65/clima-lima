@@ -1,5 +1,5 @@
 {
- "funcion": "Sistema: paquete de rodamientos (rodamientos, lubricante y soporte) de una bomba centrífuga con prensaestopa. Función 1: soportar y ubicar el eje rotante de la bomba (E-1201, E-1205 ubican a los rodamientos en bombas), con la película de lubricante que separa los elementos rodantes (E-1203). Función 2 (síntesis): mantener el lubricante del soporte libre de agua de la fuga del prensaestopa mediante protección del soporte (deflector, laberinto, drenaje); es una función de protección posiblemente oculta, sin fuente leída. Estándar de desempeño cuantificado (vida requerida, temperatura y holgura admisibles, contenido de agua admisible en el lubricante, goteo aceptable): VACÍO, sin datos del activo ni fuente leída. Falla funcional total: el paquete de rodamientos no soporta el eje (agarrotamiento o destrucción). Falla funcional parcial: el paquete opera con ruido, vibración, juego, temperatura o lubricante fuera de lo aceptable (límites: VACÍO). Evento de falla bajo análisis: falla del paquete de rodamientos de la bomba con prensaestopa. Causa señalada por la persona (hipótesis, no confirmada): ajuste insuficiente del prensaestopa con fuga de agua hacia el soporte. Alcance: los modos de rodamiento heredados (FM1 a FM7) y los modos de la cadena prensaestopa a soporte (FM8 a el modo de protección del soporte (sin fuente; ver vacíos)). De la cadena, solo FM8 y FM9 tienen una fuente leída (E-2700, texto comercial aportado por la persona, no arbitrado, que no menciona el rodamiento); FM10 a el modo de protección del soporte (sin fuente; ver vacíos) son SINTESIS con pistas de buscador sin respaldo. Los modos propios de la bomba (sellos mecánicos, cavitación, recirculación, anillos de desgaste, golpe de ariete) no tienen fuente leída y están en vacios.",
+ "funcion": "Sistema: paquete de rodamientos (rodamientos, lubricante y soporte) de una bomba centrífuga con prensaestopa. Función 1: soportar y ubicar el eje rotante de la bomba (E-1201, E-1205 ubican a los rodamientos en bombas), con la película de lubricante que separa los elementos rodantes (E-1203). Función 2: mantener el lubricante del soporte libre del líquido de fuga del prensaestopa mediante la protección del soporte (drenaje del soporte, protector de agua; FM14). Es una función de protección posiblemente oculta; el pasaje E-2820 describe el drenaje y el protector pero no dice si su falla es evidente. Estándar de desempeño cuantificado (vida requerida, temperatura y holgura admisibles, contenido de agua admisible en el lubricante, goteo aceptable): VACÍO, sin datos del activo; las cifras de revistas técnicas (gotas por minuto, 0,1 % de agua) son reglas contradictorias y no se adoptan. Falla funcional total: el paquete de rodamientos no soporta el eje (agarrotamiento o destrucción). Falla funcional parcial: opera con ruido, vibración, juego, temperatura o lubricante fuera de lo aceptable (límites: VACÍO). Evento de falla bajo análisis: falla del paquete de rodamientos de la bomba con prensaestopa. Causa señalada por la persona (hipótesis, no confirmada): ajuste insuficiente del prensaestopa con fuga de agua hacia el soporte. Alcance: modos de rodamiento heredados (FM1 a FM7) y cadena prensaestopa a soporte (FM8 a FM14). Estado de la cadena en v4: FM8 y FM9 (mecanismo de la empaquetadura: E-2700, texto comercial no arbitrado, y pasajes de revistas técnicas E-2840, E-2845, E-2823, E-2824, E-2848); FM10 y FM14 (líquido de fuga que se acumula en el soporte con el drenaje tapado o el protector de agua retirado: E-2820, un pasaje de divulgación sin datos); FM11 y FM12 (agua en el aceite, película y corrosión: E-2827, E-2800, E-2801, E-2826, de otros equipos, comparabilidad baja); FM13 (sobreapriete que quema o raya la camisa: E-2840, E-2847). Siguen sin fuente leída: que el ajuste insuficiente sea el origen de la fuga que llega al soporte, la ruta de la fuga a lo largo del eje, el deflector y el laberinto del soporte de la bomba, la cantidad de agua dañina y el tiempo a la falla. Todo proviene de pasajes (no artículos completos) leídos por el conector. Los modos propios de la bomba (sellos mecánicos, cavitación, recirculación, anillos de desgaste, golpe de ariete) no tienen fuente leída y están en vacios.",
  "items": [
   {
    "id": "FM1",
@@ -9,7 +9,7 @@
    "efecto_sistema": "Fallas inesperadas del equipo con paradas y mantenimiento costoso según la introducción de E-1205; el efecto real en el sistema de bombeo depende del activo (VACÍO).",
    "causa": "Fin de vida por fatiga bajo carga y velocidad; L10 es la referencia estadística de población, no un tiempo de falla individual (E-6003, E-1202). Sin horas ni carga reales de la bomba (VACÍO).",
    "estado_causa": "posible",
-   "deteccion": "Análisis de envolvente (alta sensibilidad, inmunidad al ruido, identifica tipo y ubicación del defecto) y frecuencias BPFO, BPFI, BSF, FTF (E-8001, E-8008); kurtosis solo para defecto incipiente porque vuelve a valores normales al extenderse el defecto (E-8003); los umbrales 3 y 5 no tienen sustento hallado (E-8001). La confianza mejora combinando vibración con aceite o grasa y termografía (E-8003). Los ensayos de banco no cubren degradación continua de servicio prolongado (E-1305).",
+   "deteccion": "Análisis de envolvente (alta sensibilidad, inmunidad al ruido, identifica tipo y ubicación del defecto) y frecuencias BPFO, BPFI, BSF, FTF (E-8001, E-8008); kurtosis solo para defecto incipiente porque vuelve a valores normales al extenderse el defecto (E-8003); los umbrales 3 y 5 no tienen sustento hallado (E-8001). La confianza mejora combinando vibración con aceite o grasa y termografía (E-8003). Los ensayos de banco no cubren degradación continua de servicio prolongado (E-1305). Limitación de la temperatura: \"its internal temperature will hardly change, and it is impossible to accurately detect the early faults of bearings\" (E-2880) (afirmación general de introducción, sin dato propio); la vibración es la técnica más usada según \"vibration signalbased method has been extensively used for bearing condition monitoring\" (E-2892). Selección de técnica para la bomba: SINTESIS.",
    "control_sugerido": "Monitoreo por condición del rodamiento con envolvente y tendencia, tras definir línea base propia en la bomba; no usar umbrales de kurtosis como norma.",
    "severidad": null,
    "ocurrencia": null,
@@ -23,7 +23,9 @@
     "E-8001",
     "E-8003",
     "E-8008",
-    "E-1305"
+    "E-1305",
+    "E-2880",
+    "E-2892"
    ],
    "nota": "SINTESIS: E-1205 dice literalmente que los rodamientos usados en bombas son susceptibles a desgaste y fatiga; el mecanismo de fatiga y la detección vienen de rodamientos generales y de banco (E-6002, E-8001, E-8003, E-8008), no de bombas. Razonamiento del equipo; debe ser validado por un experto del activo. Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto. Que la fatiga de contacto sea la causa en condiciones convencionales (E-6002, ISO 281) no consta en el extracto. Corrección v2: se retiró la atribución a E-6002 de que la fatiga sea la causa en condiciones convencionales; E-6002 solo lista causas de daño.",
    "tarea_rcm": "En condición (on-condition) (consecuencia: A confirmar; si la falla es evidente y detiene el bombeo, operacional; seguridad o ambiente según el fluido (sin datos)). La literatura asocia la envolvente a detección temprana y describe etapas de degradación, por lo que una tarea en condición podría ser técnicamente factible; depende de accesibilidad del rodamiento y del tiempo de aviso, no disponible. No se propone reemplazo por edad: no hay Weibull ni β > 1 demostrado para este activo (E-6003 y E-1202 solo definen L10 de población). No se asigna intervalo: el P-F no tiene fuente leída (ver vacios).",
@@ -74,7 +76,7 @@
     "E-1201",
     "E-8003"
    ],
-   "nota": "EVIDENCIA solo para la causa: el extracto de E-6004 dice literalmente que la falla prematura de rodamientos de bolas de bombas se atribuye a corrosión causada por contaminación (solo resumen leído). Efectos, detección y tarea son SINTESIS del equipo; validar con experto del activo. Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto. Cadena con prensaestopa: el agua como contaminante concreto se trata en FM10 a FM12; E-6004 dice contaminación, no nombra agua.",
+   "nota": "EVIDENCIA solo para la causa: el extracto de E-6004 dice literalmente que la falla prematura de rodamientos de bolas de bombas se atribuye a corrosión causada por contaminación (solo resumen leído). Efectos, detección y tarea son SINTESIS del equipo; validar con experto del activo. Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto. Cadena con prensaestopa: el agua como contaminante concreto se trata en FM10 a FM12 y FM14 (ahora con extractos literales, ver cada modo); E-6004 dice contaminación, no nombra agua.",
    "tarea_rcm": "Rediseño (protección del soporte) y en condición (consecuencia: A confirmar). Si la contaminación domina, atacar la causa suele ser más eficaz que detectar el daño; no hay datos del activo que digan si domina. Se complementa con inspección del lubricante. No se asigna intervalo: el P-F no tiene fuente leída (ver vacios).",
    "funcion": "Soportar y ubicar el eje de la bomba con la película de lubricante intacta (E-1203); estándar cuantificado: VACÍO.",
    "falla_funcional": "Total: el rodamiento no soporta el eje. Parcial: opera con ruido, vibración, juego o temperatura fuera de lo aceptable (límites: VACÍO)."
@@ -82,7 +84,7 @@
   {
    "id": "FM4",
    "modo": "Falla de lubricación del rodamiento (lubricante inadecuado, insuficiente o degradado)",
-   "mecanismo": "La falla de lubricante se cita como causa de falla prematura de rodamientos de bolas de bombas (E-6004) y como causa de daño de rodamientos (E-6002); mala lubricación aparece también en E-1201. La película lubricante separa los elementos rodantes y evita el contacto de asperezas (E-1203).",
+   "mecanismo": "La falla de lubricante se cita como causa de falla prematura de rodamientos de bolas de bombas (E-6004) y como causa de daño de rodamientos (E-6002); mala lubricación aparece también en E-1201. La película lubricante separa los elementos rodantes y evita el contacto de asperezas (E-1203). Causa alterna dentro de la lubricación: \"A common mistake is excessive lubrication of bearings.\" (E-2830) y \"a technician can overlubricate bearings, causing them to overheat\" (E-2830); opinión experta sin datos que no trata agua ni prensaestopa; sirve para descartar la sobrelubricación con evidencia del caso.",
    "efecto_local": "Pérdida de la película lubricante con contacto entre asperezas (E-1203); consecuencias térmicas y de daño en pistas: síntesis.",
    "efecto_sistema": "Progresión a agarrotamiento posible; efecto en el sistema no documentado (VACÍO).",
    "causa": "Lubricación impropia, ausente o contaminada; método de lubricación de la bomba desconocido (VACÍO).",
@@ -99,9 +101,10 @@
     "E-1201",
     "E-1203",
     "E-8003",
-    "E-8008"
+    "E-8008",
+    "E-2830"
    ],
-   "nota": "EVIDENCIA solo para la causa: el extracto de E-6004 dice literalmente que la falla prematura de rodamientos de bolas de bombas se atribuye a falla de lubricante (solo resumen). Efectos, detección y tarea son SINTESIS del equipo; validar con experto del activo. Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto. Cadena con prensaestopa: la contaminación del lubricante por agua se trata en FM11.",
+   "nota": "EVIDENCIA solo para la causa: el extracto de E-6004 dice literalmente que la falla prematura de rodamientos de bolas de bombas se atribuye a falla de lubricante (solo resumen). Efectos, detección y tarea son SINTESIS del equipo; validar con experto del activo. Nota: la combinación con aceite, grasa y termografía consta en el resumen de E-8003, no en su extracto. Cadena con prensaestopa: la contaminación del lubricante por agua se trata en FM11. Causa alterna (sobrelubricación, E-2830) a descartar con el historial; el mecanismo del exceso de grasa o aceite en la bomba del caso no está demostrado.",
    "tarea_rcm": "En condición y, si se identifica el mecanismo, tarea programada de lubricación (consecuencia: A confirmar). La relubricación previene un mecanismo identificable, pero su contenido (cantidad, método) y periodicidad requieren fuente y datos del activo que no existen en la evidencia leída. Se complementa con inspección del estado del lubricante. No se asigna intervalo: el P-F no tiene fuente leída (ver vacios).",
    "funcion": "Soportar y ubicar el eje de la bomba con la película de lubricante intacta (E-1203); estándar cuantificado: VACÍO.",
    "falla_funcional": "Total: el rodamiento no soporta el eje. Parcial: opera con ruido, vibración, juego o temperatura fuera de lo aceptable (límites: VACÍO)."
@@ -182,83 +185,89 @@
   {
    "id": "FM8",
    "modo": "Empaquetadura con ajuste insuficiente (fuga)",
-   "funcion": "Sellar el eje en la caja de empaquetadura con una fuga controlada (cifra de goteo aceptable: VACÍO, sin diámetro, presión ni producto; la cifra de E-2700 no se usa como umbral).",
+   "funcion": "Sellar el eje en la caja de empaquetadura con una fuga controlada (cifra de goteo aceptable: VACÍO; las cifras de gotas por minuto de E-2700, E-2840 y E-2824 son reglas de texto comercial o de revistas técnicas, se contradicen entre sí, no traen diámetro, presión ni producto y no se adoptan). Cualitativo con respaldo: \"A pump with packing is designed to leak, and must have a steady drip after it has been adjusted.\" (E-2823).",
    "falla_funcional": "Parcial: la empaquetadura sella con fuga superior a la aceptable (límite: VACÍO).",
-   "mecanismo": "EVIDENCIA (E-2700, texto comercial): \"Si falta ajuste, el fluido 'lava' los lubricantes internos de la trenza, acelerando la falla.\" La fuente describe que el prensaestopa transfiere una fuerza axial que se convierte en expansión radial contra el eje. Que esa fuga llegue al soporte no consta en E-2700.",
-   "efecto_local": "Fuga por la caja de empaquetadura y pérdida de lubricantes internos de la trenza, con falla acelerada de la empaquetadura (E-2700).",
-   "efecto_sistema": "Agua o producto sobre el área del soporte posible (síntesis, ver FM10); efecto en el sistema de bombeo: VACÍO.",
-   "causa": "Falta de ajuste del prensaestopa (E-2700); cuándo y por qué se perdió el ajuste en el activo: VACÍO.",
+   "mecanismo": "EVIDENCIA (E-2700, texto comercial): \"Si falta ajuste, el fluido 'lava' los lubricantes internos de la trenza, acelerando la falla.\" La fuente describe que el prensaestopa transfiere una fuerza axial que se convierte en expansión radial contra el eje. Corroboración de revistas técnicas del sector (sin ensayo ni datos): \"As the lubricant is squeezed out, the packing will be worn down by the shaft. Leakage control is maintained by tightening the packing gland.\" (E-2845) y \"When leakage becomes excessive, it's time to readjust the packing.\" (E-2840). Que esa fuga llegue al soporte no consta en E-2700, E-2845 ni E-2840; ver FM10 y FM14.",
+   "efecto_local": "Fuga por la caja de empaquetadura y pérdida de lubricantes internos de la trenza, con falla acelerada de la empaquetadura (E-2700); desgaste de la empaquetadura por el eje cuando se pierde el lubricante (E-2845).",
+   "efecto_sistema": "El líquido de fuga puede acumularse en el soporte solo si falla la protección (drenaje tapado, protector retirado; E-2820, ver FM10 y FM14); que el ajuste insuficiente sea el origen de esa fuga en el activo es hipótesis. Efecto en el sistema de bombeo: VACÍO.",
+   "causa": "Falta de ajuste del prensaestopa (E-2700); pérdida del lubricante de la trenza y desgaste de la empaquetadura que obliga a reapretar (E-2845, texto de revista). Cuándo y por qué se perdió el ajuste en el activo: VACÍO. E-2820 describe otra vía de fuga excesiva por montaje (cortes de los anillos alineados), que no es falta de ajuste del prensaestopa; el equipo no la tiene como modo aparte (ver vacíos).",
    "estado_causa": "posible",
-   "deteccion": "Inspección visual del goteo y de su tendencia: consta en pista, sin respaldo (E-2104, E-2000 SOLO-SNIPPET). E-2700 no entrega técnica de detección.",
+   "deteccion": "Inspección de la fuga del prensaestopa: práctica recomendada por la literatura técnica, sin medición de su eficacia: \"Inspect stuffing box and note the amount of leakage and adjust or lubricate packing gland as necessary.\" (E-2824) y \"inadequate or excessive leakage are signs of trouble\" (E-2824); también \"A periodic check of packing adjustment should be made.\" (E-2823). Esto respalda que la práctica se recomienda, no que avise a tiempo ni que prevenga el daño del soporte (P-F: VACÍO). Umbral numérico de goteo: no se adopta.",
    "control_sugerido": "Criterio de ajuste escrito (cómo y cuánto apretar, qué goteo es aceptable) definido con el fabricante de la empaquetadura y la bomba; no copiar la cifra de E-2700.",
    "severidad": "SIN DATOS PARA ARMARLO",
    "ocurrencia": "SIN DATOS PARA ARMARLO",
    "deteccion_puntaje": "SIN DATOS PARA ARMARLO",
    "nivel": "EVIDENCIA",
    "evidencia": [
-    "E-2700"
+    "E-2700",
+    "E-2845",
+    "E-2840",
+    "E-2823",
+    "E-2824"
    ],
    "pistas_sin_respaldo": [
     "E-2000",
-    "E-2104",
     "E-2105",
     "E-2106",
     "E-2215"
    ],
-   "nota": "EVIDENCIA solo para el mecanismo de la empaquetadura, con fuente comercial no arbitrada aportada por la persona. Efecto en el soporte, detección y tarea son SINTESIS; validar con experto del activo.",
-   "tarea_rcm": "En condición (inspección de goteo) y tarea de ajuste con criterio escrito (consecuencia: A confirmar; fuga visible, por tanto evidente (operacional o ambiental según el fluido, sin datos)). La fuga de la empaquetadura es visible y su tendencia puede inspeccionarse; el criterio de ajuste actúa sobre la causa. Factibilidad técnica y costo-efectividad: VACÍO (sin costos ni historial). No se asigna intervalo."
+   "nota": "EVIDENCIA solo para el mecanismo de la empaquetadura (E-2700, texto comercial no arbitrado, corroborado cualitativamente por tres pasajes de revistas técnicas del sector, E-2845, E-2840, E-2823/E-2824, sin ensayo ni muestra) y para la práctica recomendada de inspeccionar la fuga. Efecto en el soporte, eficacia de la detección y tarea son SINTESIS; validar con experto del activo. Pasajes, no artículos completos. v4: E-2104 deja de ser pista para la inspección de goteo (queda cubierta por E-2824).",
+   "tarea_rcm": "En condición (inspección de goteo) y tarea de ajuste gradual con criterio escrito (consecuencia: A confirmar; fuga visible, por tanto evidente (operacional o ambiental según el fluido, sin datos)). La fuga de la empaquetadura es visible y su tendencia puede inspeccionarse; el criterio de ajuste actúa sobre la causa. Prácticas con respaldo literal de revista técnica (recomendación, no prueba de eficacia): \"Then, gradually over a period of several days, evenly snug the gland down.\" (E-2823) y el reajuste cuando la fuga es excesiva (E-2840). Factibilidad técnica y costo-efectividad: VACÍO (sin costos ni historial). No se asigna intervalo."
   },
   {
    "id": "FM9",
    "modo": "Empaquetadura con apriete excesivo (recalentamiento y cristalización)",
-   "funcion": "Sellar el eje en la caja de empaquetadura con una fuga controlada (cifra de goteo aceptable: VACÍO, sin diámetro, presión ni producto; la cifra de E-2700 no se usa como umbral).",
+   "funcion": "Sellar el eje en la caja de empaquetadura con una fuga controlada (cifra de goteo aceptable: VACÍO; las cifras de gotas por minuto de E-2700, E-2840 y E-2824 son reglas de texto comercial o de revistas técnicas, se contradicen entre sí, no traen diámetro, presión ni producto y no se adoptan). Cualitativo con respaldo: \"A pump with packing is designed to leak, and must have a steady drip after it has been adjusted.\" (E-2823).",
    "falla_funcional": "Parcial o total: la empaquetadura deja de lubricarse, se recalienta y se endurece; el sellado ya no se controla (límites: VACÍO).",
-   "mecanismo": "EVIDENCIA (E-2700, texto comercial): \"Si se excede el ajuste, se elimina el goteo necesario (la cifra de goteo del texto comercial (no se adopta)), lo que destruye la película térmica, genera recalentamiento y termina por cristalizar el empaque.\" La cifra no trae diámetro de eje, presión ni producto y no se usa como umbral.",
-   "efecto_local": "Ausencia de goteo, recalentamiento de la empaquetadura y del área del eje, cristalización de la empaquetadura (E-2700). Daño al eje o a la camisa por fricción: síntesis, ver el modo de desgaste de camisa (sin fuente; ver vacíos).",
-   "efecto_sistema": "Una empaquetadura cristalizada y con fuga severa podría dejar entrar agua al soporte (pista E-2000, SOLO-SNIPPET, sin respaldo); efecto en el sistema: VACÍO.",
-   "causa": "Sobreajuste del prensaestopa para frenar la fuga (síntesis: reacción a FM8; el activo no tiene historial que lo confirme).",
+   "mecanismo": "EVIDENCIA (E-2700, texto comercial): \"Si se excede el ajuste, se elimina el goteo necesario (la cifra de goteo del texto comercial (no se adopta)), lo que destruye la película térmica, genera recalentamiento y termina por cristalizar el empaque.\" La cifra no trae diámetro de eje, presión ni producto y no se usa como umbral. Corroboración de revista técnica del sector: \"If the packing is too tight, it will heat up, expand, get tighter, and eventually burn or score the sleeve.\" (E-2840); \"Do not overtighten packing gland bolts.\" (E-2824). Realimentación apriete-calor en otro equipo (compresores alternativos, citando a otros autores, comparabilidad baja con bomba): \"packing expansion due to temperature variations can greatly increase the internal stresses in a stuffing box, leading to high shaft torque and the eventual scorching of the packing\" (E-2846).",
+   "efecto_local": "Ausencia de goteo, recalentamiento de la empaquetadura y del área del eje, cristalización de la empaquetadura (E-2700); quemado o rayado de la camisa (E-2840, ver FM13).",
+   "efecto_sistema": "La camisa rayada aumenta la fuga y el desgaste de la empaquetadura (E-2847, ver FM13); que esa fuga alcance el soporte depende de la protección (FM14, E-2820). Efecto en el sistema: VACÍO. Pista sin respaldo: E-2000 (fuga severa y agua al soporte).",
+   "causa": "Sobreajuste del prensaestopa. Respaldo literal de que apretar es el medio de controlar la fuga: \"Leakage control is maintained by tightening the packing gland.\" (E-2845); que en el activo el sobreajuste sea reacción a la fuga de FM8 (ciclo de ajuste y reajuste) es SINTESIS sin historial.",
    "estado_causa": "posible",
-   "deteccion": "Ausencia de goteo y temperatura de la caja de empaquetadura: consta en pista, sin respaldo (E-2000, E-2001 SOLO-SNIPPET). E-2700 no entrega técnica de detección.",
+   "deteccion": "Ausencia de goteo y calentamiento del prensaestopa, con respaldo literal de revista técnica: \"If they are not dripping, the packing gland has been pulled too tight or there are other problems that should be investigated.\" (E-2848) y \"Leakage water should be cool to the touch; the gland shouldn't become hot.\" (E-2840). Es criterio de buena práctica sin medición de eficacia ni P-F.",
    "control_sugerido": "Ajuste gradual con goteo medido y registro del ajuste; revisar si las correcciones de FM8 generan FM9 (ciclo de ajuste y reajuste).",
    "severidad": "SIN DATOS PARA ARMARLO",
    "ocurrencia": "SIN DATOS PARA ARMARLO",
    "deteccion_puntaje": "SIN DATOS PARA ARMARLO",
    "nivel": "EVIDENCIA",
    "evidencia": [
-    "E-2700"
+    "E-2700",
+    "E-2840",
+    "E-2824",
+    "E-2846",
+    "E-2848",
+    "E-2845"
    ],
    "pistas_sin_respaldo": [
-    "E-2001",
     "E-2000",
-    "E-2104",
     "E-2105"
    ],
-   "nota": "EVIDENCIA solo para el mecanismo de la empaquetadura (fuente comercial). Que el sobreajuste sea una reacción a la fuga y los efectos sobre eje y soporte son SINTESIS; validar con experto del activo.",
-   "tarea_rcm": "Rediseño del procedimiento de ajuste (criterio) y en condición (temperatura y goteo) (consecuencia: A confirmar). La causa está en el método de ajuste; el criterio escrito reduce la ocurrencia y la inspección solo detecta el efecto. Sin intervalo: sin P-F. Costo-efectividad: VACÍO."
+   "nota": "EVIDENCIA solo para el mecanismo (fuente comercial E-2700 más pasajes de revistas técnicas E-2840, E-2824, E-2848; E-2846 es de compresores, comparabilidad baja). Que el sobreajuste sea una reacción a la fuga y los efectos sobre el soporte son SINTESIS; validar con experto del activo.",
+   "tarea_rcm": "Rediseño del procedimiento de ajuste (criterio) y en condición (temperatura y goteo) (consecuencia: A confirmar). La causa está en el método de ajuste; el criterio escrito reduce la ocurrencia y la inspección (goteo presente, prensaestopa sin calor) solo detecta el efecto. Respaldo literal de la práctica: no sobreapretar (E-2824) y ajustar gradualmente (E-2823, ver FM8). Sin intervalo: sin P-F. Costo-efectividad: VACÍO."
   },
   {
    "id": "FM10",
    "modo": "Ingreso de agua al soporte de rodamientos",
-   "funcion": "Impedir que el agua de fuga entre al soporte (protección del soporte; función oculta posible, estándar: VACÍO).",
-   "falla_funcional": "El agua llega al lubricante o al rodamiento (cantidad admisible: VACÍO).",
-   "mecanismo": "SIN RESPALDO LITERAL. Hipótesis del equipo: la fuga de la empaquetadura escurre a lo largo del eje hacia el soporte y entra por el sello del soporte. Consta en pista, sin respaldo: E-2000 (fuga severa, agua al soporte), E-2001 (drenaje bloqueado), E-2437, E-2603, E-2625.",
-   "efecto_local": "Agua en el soporte; presencia y vía de ingreso no verificadas en el activo.",
+   "funcion": "Impedir que el líquido de fuga del prensaestopa entre al soporte de rodamientos (la protección concreta es FM14; función posiblemente oculta, estándar: VACÍO).",
+   "falla_funcional": "El líquido de fuga llega al soporte y contamina el lubricante o el rodamiento (cantidad admisible: VACÍO).",
+   "mecanismo": "EVIDENCIA (E-2820, revista técnica del sector agua, divulgación en tono de lista de consejos, sin datos): \"You have a packed stuffing box and a drain in the bearing bracket for gland leakage. Now plug the drain. The liquid leaking from the stuffing box will collect in the bearing brackets, contaminating the oil, eventually corroding the bearings.\" (E-2820) Segunda vía descrita en el mismo pasaje: \"Or, remove the water shield or line up all the splits in the packing rings so the liquid can flow through the box and drown the bearings.\" (E-2820). Límites: el pasaje habla de aceite en el soporte (no grasa), no cuantifica agua ni tiempo a la falla, no prueba que ocurriera en el caso y no nombra el ajuste insuficiente como origen de la fuga. SINTESIS (sin respaldo literal): que la fuga escurra a lo largo del eje y entre por el sello del soporte. Pistas sin respaldo: E-2000, E-2437, E-2603, E-2625.",
+   "efecto_local": "EVIDENCIA (E-2820): el líquido se acumula en el soporte, contamina el aceite y con el tiempo corroe los rodamientos. Cantidad de agua y vía de ingreso en el activo no verificadas.",
    "efecto_sistema": "Falla prematura del paquete de rodamientos (ver FM11 y FM12); efecto en el sistema: VACÍO.",
-   "causa": "Fuga de FM8 o FM9 más protección insuficiente (el modo de protección del soporte (sin fuente; ver vacíos)); la persona señala ajuste insuficiente con fuga hacia el soporte, no confirmado.",
+   "causa": "EVIDENCIA (E-2820): drenaje del soporte tapado, protector de agua retirado o cortes de los anillos de empaquetadura alineados, con líquido de fuga disponible (ver FM14). Hipótesis de la persona, no confirmada y sin respaldo literal: que la fuga provenga de ajuste insuficiente del prensaestopa (FM8); E-2820 no la menciona.",
    "estado_causa": "posible",
-   "deteccion": "Inspección del soporte por agua (mirilla, aceite lechoso, humedad, oxidación): consta en pista, sin respaldo (E-2211, E-2616 SOLO-SNIPPET); ninguna técnica tiene respaldo literal.",
+   "deteccion": "SINTESIS: inspección del soporte por agua (mirilla, aceite lechoso, humedad, oxidación): consta en pista, sin respaldo (E-2211, E-2616 SOLO-SNIPPET); ningún pasaje leído describe cómo detectar el agua acumulada en el soporte. Métodos de laboratorio para agua en aceite: ver FM11.",
    "control_sugerido": "Verificar en el activo si hay agua en el soporte y por dónde entra antes de decidir tareas.",
    "severidad": "SIN DATOS PARA ARMARLO",
    "ocurrencia": "SIN DATOS PARA ARMARLO",
    "deteccion_puntaje": "SIN DATOS PARA ARMARLO",
-   "nivel": "SINTESIS",
+   "nivel": "EVIDENCIA",
    "evidencia": [
+    "E-2820",
     "E-2700",
     "E-1201"
    ],
    "pistas_sin_respaldo": [
     "E-2000",
-    "E-2001",
     "E-2437",
     "E-2603",
     "E-2625",
@@ -267,28 +276,35 @@
     "E-2515",
     "E-2622"
    ],
-   "nota": "SINTESIS: el eslabón entre la fuga del prensaestopa y el soporte no tiene fuente leída; E-6004 y E-1201 hablan de contaminación sin nombrar agua. Razonamiento del equipo; debe ser validado por un experto del activo. Respaldo parcial: E-2700 trata la empaquetadura (con falta de ajuste el fluido pasa lavando la trenza) y E-1201 lista la contaminación como causa de falla de rodamientos; que el agua llegue al soporte y dañe el rodamiento es razonamiento del equipo (SINTESIS), sin fuente leída.",
-   "tarea_rcm": "En condición (inspección de goteo hacia el soporte y del estado del lubricante) y búsqueda de fallas de la protección (consecuencia: A confirmar; si la protección es una función oculta, la consecuencia de su falla es oculta). Antes de atacar la fuga conviene confirmar la presencia de agua. La inspección del goteo y del lubricante es factible a priori; su valor depende de que haya aviso (P-F desconocido). Sin intervalo."
+   "nota": "EVIDENCIA solo para la vía de acumulación (drenaje tapado, protector retirado, cortes alineados) y su efecto, con un pasaje de divulgación sin datos (E-2820); un pasaje, no el artículo completo. Siguen siendo SINTESIS: que el origen de la fuga sea el ajuste insuficiente, la ruta a lo largo del eje, la detección y la tarea. E-2700 trata la empaquetadura y E-1201 lista la contaminación como causa de falla de rodamientos, sin nombrar agua. Validar con experto del activo. v4: E-2001 se retira de las pistas porque E-2820 cubre el drenaje bloqueado.",
+   "tarea_rcm": "En condición (inspección de goteo hacia el soporte y del estado del lubricante) y búsqueda de fallas de la protección (consecuencia: A confirmar; si la protección es una función oculta, la consecuencia de su falla es oculta). Antes de atacar la fuga conviene confirmar la presencia de líquido en el soporte y el estado del drenaje y del protector, que son las vías que describe E-2820 (la tarea derivada es SINTESIS). La inspección del goteo y del lubricante es factible a priori; su valor depende de que haya aviso (P-F desconocido). Sin intervalo."
   },
   {
    "id": "FM11",
    "modo": "Pérdida de película de lubricante por contaminación con agua",
-   "funcion": "Mantener la película de lubricante que separa los elementos rodantes (E-1203).",
+   "funcion": "Mantener la película de lubricante que separa los elementos rodantes (E-1203) y el lubricante libre de agua en la medida admisible (VACÍO).",
    "falla_funcional": "La película no separa las superficies; hay contacto entre asperezas.",
-   "mecanismo": "Parte con respaldo: la película separa los elementos rodantes y evita el contacto de asperezas (E-1203); la falla de lubricante y la contaminación se citan como causas de falla prematura de rodamientos de bombas (E-6004, solo resumen). Sin respaldo: que el agua degrade la película o el lubricante; consta en pista (E-2002, E-2003, E-2100, E-2101, E-2102, E-2440 SOLO-SNIPPET; E-2005, E-2438, E-2439 NO-VERIFICADO). Las cifras de las pistas no se usan.",
-   "efecto_local": "Contacto entre asperezas por película degradada (E-1203, fuera del caso del agua); calentamiento y daño de pistas: síntesis.",
+   "mecanismo": "EVIDENCIA, con comparabilidad baja (no son bombas ni el lubricante del activo): \"emulsification occurs which impairs elastohydrodynamic (EHD) filmforming ability since water does not increase in viscosity with pressure as do oils\" (E-2827) (rodamientos de bolas de turbinas dentales, aceite); \"dispersed water present in lubricating oil may interact with the additives contained in the oil and may result in additive degradation and affect the functionality of AW additives, thus increasing the wear\" (E-2800) (introducción de un ensayo de laboratorio en máquina de cuatro bolas); \"There is a consensus that low amounts or even no water in lubricating oil is desirable for optimal bearing performance to be achieved\" (E-2800); secundario: \"Water contamination in lubricants, on the other hand, was reported to significantly reduce bearings life.\" (E-2801) (cita de literatura previa, sin cifra). La película separa los elementos rodantes (E-1203); falla de lubricante y contaminación son causas de falla prematura de rodamientos de bombas (E-6004, solo resumen). Sin respaldo: cuánta agua degrada la película en el soporte de la bomba. Las cifras de la regla de revista técnica (E-2840, 0,1 % de agua) y del ensayo (E-2800, 0,5 a 2 % m/m) no se adoptan como límite; las cifras de pistas (E-2002, E-2003, E-2100, E-2101, E-2102, E-2440 SOLO-SNIPPET; E-2005, E-2438, E-2439 NO-VERIFICADO) tampoco.",
+   "efecto_local": "Con película degradada, mayor contacto entre asperezas y desgaste (E-2800, E-2827); calentamiento y daño de pistas en la bomba: síntesis.",
    "efecto_sistema": "Progresión a FM1, FM2, FM4 o FM12; efecto en el sistema: VACÍO.",
-   "causa": "Agua en el lubricante (FM10); contenido de agua del activo: VACÍO.",
+   "causa": "Agua en el lubricante (FM10, vía FM14); contenido de agua del activo y tipo de lubricante (aceite o grasa): VACÍO.",
    "estado_causa": "posible",
-   "deteccion": "Análisis de lubricante por agua (por ejemplo Karl Fischer, apariencia): consta en pista, sin respaldo (E-2211, E-2607, E-2611, E-2612, E-2624 SOLO-SNIPPET). Termografía y vibración: complemento según resumen de E-8003, no su extracto.",
+   "deteccion": "SINTESIS: análisis de lubricante por agua. Respaldo literal solo de que existen métodos de laboratorio o de sensor con potencial, sin umbral ni validación en soporte de bomba: \"certain sensing methods exhibited promise in characterising fluctuations in oil viscosity and acid/water content in oil\" (E-2884); \"the influence of any solid and liquid contaminants present in the lubricant\" (E-2885); \"dissolved and emulsified water\" (E-2888) frente a agua libre (los métodos de un solo parámetro tienen límites, E-2888). Limitaciones literales del análisis de aceite en general: \"the oil sample analysis method is not widely used because of its high cost, poor timeliness, and ease to be affected by the particles that fall off from other parts\" (E-2880) (la crítica se refiere a partículas de desgaste, no al agua). Temperatura: \"its internal temperature will hardly change\" (E-2880) ante fallas tempranas, por lo que la termografía no es detector temprano. Pistas de método para agua (E-2211, E-2607, E-2611, E-2612, E-2624 SOLO-SNIPPET) sin respaldo.",
    "control_sugerido": "Muestreo del lubricante con criterio de contenido de agua definido por el proveedor del lubricante o el fabricante del rodamiento; no existe límite respaldado en la evidencia leída.",
    "severidad": "SIN DATOS PARA ARMARLO",
    "ocurrencia": "SIN DATOS PARA ARMARLO",
    "deteccion_puntaje": "SIN DATOS PARA ARMARLO",
-   "nivel": "SINTESIS",
+   "nivel": "EVIDENCIA",
    "evidencia": [
     "E-1203",
-    "E-6004"
+    "E-6004",
+    "E-2827",
+    "E-2800",
+    "E-2801",
+    "E-2884",
+    "E-2885",
+    "E-2888",
+    "E-2880"
    ],
    "pistas_sin_respaldo": [
     "E-2002",
@@ -306,28 +322,37 @@
     "E-2438",
     "E-2439"
    ],
-   "nota": "SINTESIS: E-1203 y E-6004 respaldan la película y la falla de lubricante en general; el agua como agente no consta en ningún extracto leído. Validar con experto del activo.",
-   "tarea_rcm": "En condición (análisis de lubricante) y, si el agua se confirma, protección (el modo de protección del soporte (sin fuente; ver vacíos)) (consecuencia: A confirmar). El análisis de lubricante puede dar aviso antes del daño, pero P-F y límite de agua no tienen fuente leída. Si el agua es persistente, atacar el ingreso es preferible a drenar y reponer. Sin intervalo."
+   "nota": "EVIDENCIA solo para el mecanismo cualitativo (el agua en el aceite deteriora la película y los aditivos y se asocia a menor vida), tomado de rodamientos de turbinas dentales y de un ensayo de laboratorio: comparabilidad baja con bombas, pasajes y no artículos completos. Efecto en la bomba, cantidad de agua dañina, detección y tarea son SINTESIS. Validar con experto del activo.",
+   "tarea_rcm": "En condición (análisis de lubricante) y, si el agua se confirma, protección (FM14) (consecuencia: A confirmar). El análisis de lubricante puede dar aviso antes del daño, pero P-F y límite de agua no tienen fuente leída; los métodos citados (E-2884, E-2885) son de laboratorio. Si el agua es persistente, atacar el ingreso (FM14) es preferible a drenar y reponer. Sin intervalo."
   },
   {
    "id": "FM12",
    "modo": "Corrosión y fatiga del rodamiento por agua",
    "funcion": "Soportar el eje durante la vida requerida (VACÍO) sin picaduras ni oxidación.",
    "falla_funcional": "Falla prematura por superficie corroída o descascarado antes de la vida esperada.",
-   "mecanismo": "Parte con respaldo: corrosión causada por contaminación figura como causa de falla prematura de rodamientos de bolas de bombas (E-6004, solo resumen); corrosión figura entre las causas de daño (E-6002); fatiga de contacto como mecanismo de fin de vida (FM1). Sin respaldo: que el agua en el lubricante acorte la vida a fatiga; consta en pista (E-2002, E-2003, E-2210, E-2440 SOLO-SNIPPET; E-2438 NO-VERIFICADO). Las cifras de reducción de vida no se usan.",
-   "efecto_local": "Oxidación y picaduras en pistas o bolas, aumento de ruido y vibración (síntesis).",
+   "mecanismo": "EVIDENCIA, con comparabilidad muy baja (rodamientos de bolas de turbinas dentales con aceite): \"water retained in the oil is highly corrosive when the bearing is at rest and it lies at the contacts between components, causing contact corrosion\" (E-2827) y \"Cyclic stress can cause a corroded surface to crack more readily, changing the roughness, especially without the protection of an oil film, and this causes further surface damage which progresses to spalling\" (E-2827). Resumen de un estudio de análisis de falla de rodamientos: \"Here, scanning electron microscopy observations and electron microprobe analyses point to corrosion fatigue as acting surface failure mechanism.\" (E-2826) (el pasaje no liga ese caso al agua). En el caso de la bomba: \"The liquid leaking from the stuffing box will collect in the bearing brackets, contaminating the oil, eventually corroding the bearings.\" (E-2820) (revista técnica, sin datos). Corrosión por contaminación como causa de falla prematura de rodamientos de bolas de bombas: E-6004 (solo resumen, sin nombrar agua); corrosión entre las causas de daño: E-6002. Camino no establecido: grietas blancas e hidrógeno. \"Chemical reactions of lubricant additives and contaminants (eg, water) with the nascent bearing steel surface were linked to the formation of WEC.\" (E-2801); pero \"Theories about the root causes of WECs include corrosion, hydrogeninduced embrittlement from lubricant decomposition or water contamination\" (E-2802) (varias teorías, sin causa única aceptada) y \"to the authors' knowledge, there are rather limited studies concerning the hydrogen effect on the VHCF performance of bearing steels\" (E-2807); las fuentes de hidrógeno que cita E-2807 no incluyen el agua del lubricante. No se usan las cifras de vida ni de fatiga de esos pasajes. Indirecto, otro régimen (fluido de base agua como lubricante, no agua como contaminante): \"waterbased hydraulic fluids generally show significantly poorer wear and rollingcontact fatigue performance than mineral or synthetic oilbased fluids of similar viscosity\" (E-2804). Sin respaldo: cuánta agua y cuánto tiempo acortan la vida a fatiga de un rodamiento de bomba; cifras de pistas (E-2002, E-2003, E-2210, E-2440 SOLO-SNIPPET; E-2438 NO-VERIFICADO) no se usan.",
+   "efecto_local": "EVIDENCIA (E-2827, otro equipo): corrosión de contacto, agrietamiento de la superficie corroída y progresión a descascarado. En la bomba: aumento de ruido y vibración (síntesis).",
    "efecto_sistema": "Falla del paquete de rodamientos y parada de la bomba posible; efecto en el sistema: VACÍO.",
-   "causa": "Agua en el soporte (FM10) y lubricante degradado (FM11); sin análisis de falla del activo.",
+   "causa": "Agua en el soporte (FM10, vía FM14) y lubricante degradado (FM11); sin análisis de falla del activo.",
    "estado_causa": "posible",
-   "deteccion": "Envolvente y tendencia de vibración (E-8001, E-8008) para el defecto ya formado; análisis de lubricante por agua y partículas: consta en pista, sin respaldo (E-2211). La corrosión sin defecto geométrico podría no verse en la vibración (síntesis).",
+   "deteccion": "SINTESIS. Envolvente y tendencia de vibración (E-8001, E-8008) para el defecto ya formado; respaldo literal: \"When the bearing fails, the vibration signal will be abnormal.\" (E-2880) (no dice con cuánta anticipación). La temperatura no sirve de detector temprano (E-2880, ver FM11). Emisión acústica: \"AE sensor was more sensitive than vibration sensor in monitoring low speed bearings\" (E-2886) (resultado publicado citado por los autores) frente a su baja relación señal-ruido (E-2880); las dos afirmaciones se contradicen en parte y ninguna es de bombas. Análisis de lubricante por agua y partículas: ver FM11. La corrosión sin defecto geométrico podría no verse en la vibración (síntesis).",
    "control_sugerido": "Análisis de falla de los rodamientos retirados para distinguir corrosión por agua de fatiga normal (FM1); sin eso la causa no se confirma.",
    "severidad": "SIN DATOS PARA ARMARLO",
    "ocurrencia": "SIN DATOS PARA ARMARLO",
    "deteccion_puntaje": "SIN DATOS PARA ARMARLO",
-   "nivel": "SINTESIS",
+   "nivel": "EVIDENCIA",
    "evidencia": [
+    "E-2827",
+    "E-2826",
+    "E-2820",
     "E-6004",
     "E-6002",
+    "E-2801",
+    "E-2802",
+    "E-2807",
+    "E-2804",
+    "E-2880",
+    "E-2886",
     "E-8001",
     "E-8008"
    ],
@@ -339,63 +364,71 @@
     "E-2610",
     "E-2211"
    ],
-   "nota": "SINTESIS: la corrosión por contaminación tiene respaldo en E-6004 (solo resumen) sin nombrar agua; el efecto del agua en la fatiga solo está en pistas. Validar con experto del activo.",
-   "tarea_rcm": "En condición (vibración con envolvente, análisis de lubricante) y rediseño de la protección (consecuencia: A confirmar; operacional si detiene el bombeo (sin datos)). No se propone reemplazo por edad: no hay Weibull ni β > 1 (ver vacios). La detección en condición solo avisa del daño; la causa se ataca en FM10 y el modo de protección del soporte (sin fuente; ver vacíos). Sin intervalo."
+   "nota": "EVIDENCIA solo para el mecanismo cualitativo agua-corrosión-descascarado (E-2827, E-2826, E-2820), con comparabilidad muy baja y sin cantidad de agua ni tiempo; la vía por hidrógeno y grietas blancas queda abierta (E-2801, E-2802, E-2807) y no se afirma. Efecto en la bomba, detección y tarea son SINTESIS. Validar con experto del activo.",
+   "tarea_rcm": "En condición (vibración con envolvente, análisis de lubricante) y rediseño de la protección (consecuencia: A confirmar; operacional si detiene el bombeo (sin datos)). No se propone reemplazo por edad: no hay Weibull ni β > 1 (ver vacios). La detección en condición solo avisa del daño; la causa se ataca en FM10 y FM14. Sin intervalo."
   },
   {
-   "id": "el modo de desgaste de camisa (sin fuente; ver vacíos)",
+   "id": "FM13",
    "modo": "Desgaste de la camisa del eje",
    "funcion": "Proteger el eje en la zona de la empaquetadura con una superficie de desgaste reemplazable (estándar: VACÍO).",
-   "falla_funcional": "La camisa o el eje se desgastan o rayan y la empaquetadura ya no sella con el ajuste normal.",
-   "mecanismo": "SIN RESPALDO LITERAL. Hipótesis: la empaquetadura aprieta el eje o la camisa y el rozamiento la desgasta; E-2700 solo habla de expansión radial contra el eje y no menciona la camisa. Consta en pista, sin respaldo: E-2004 (manguito reemplazable que absorbe el desgaste, agua de sello limpia), E-2110, E-2441, E-2443.",
-   "efecto_local": "Mayor fuga por la caja de empaquetadura y mayor frecuencia de ajuste (síntesis).",
-   "efecto_sistema": "Más agua hacia el soporte (FM10); efecto en el sistema: VACÍO.",
-   "causa": "Apriete excesivo (FM9), partículas en el agua de sello o empaquetadura abrasiva; sin datos del activo.",
+   "falla_funcional": "La camisa o el eje se desgastan o rayan y la fuga por la caja de empaquetadura aumenta o ya no se controla con el ajuste normal.",
+   "mecanismo": "EVIDENCIA (E-2840, revista técnica de mantenimiento de bombas, sin ensayo): \"If the packing is too tight, it will heat up, expand, get tighter, and eventually burn or score the sleeve.\" (E-2840) Otros pasajes: \"the packing will be worn down by the shaft\" (E-2845) (desgaste de la empaquetadura, no de la camisa); realimentación apriete-calor en compresores (E-2846, comparabilidad baja). E-2700 solo habla de expansión radial contra el eje y no menciona la camisa. Sin respaldo: desgaste de la camisa por partículas en el agua de sello o por empaquetadura abrasiva; pistas sin respaldo: E-2004 (manguito reemplazable que absorbe el desgaste, agua de sello limpia), E-2110, E-2441, E-2443.",
+   "efecto_local": "EVIDENCIA: \"Worn shaft sleeves should be replaced to reduce leakage and wear on the mechanical seals and packing.\" (E-2847) (opinión técnica cualitativa, sin cifras): la camisa desgastada se asocia a más fuga y a más desgaste del sello o la empaquetadura. Mayor frecuencia de ajuste: síntesis.",
+   "efecto_sistema": "Más fuga por la caja de empaquetadura; que llegue al soporte depende de la protección (FM14, E-2820); efecto en el sistema: VACÍO.",
+   "causa": "Apriete excesivo (FM9; respaldo literal en E-2840). Partículas en el agua de sello o empaquetadura abrasiva: sin respaldo (pistas); sin datos del activo.",
    "estado_causa": "posible",
-   "deteccion": "Inspección de la camisa (rayado, diámetro) en cada reemplazo de empaquetadura: consta en pista, sin respaldo (E-2004, E-2110).",
+   "deteccion": "SINTESIS: inspección de la camisa (rayado, diámetro) en cada reemplazo de empaquetadura; E-2847 recomienda reemplazar las camisas desgastadas pero no dice cómo ni cuándo inspeccionarlas. Pistas sin respaldo: E-2004, E-2110.",
    "control_sugerido": "Registrar el estado de la camisa en cada cambio de empaquetadura para generar el historial que hoy falta.",
    "severidad": "SIN DATOS PARA ARMARLO",
    "ocurrencia": "SIN DATOS PARA ARMARLO",
    "deteccion_puntaje": "SIN DATOS PARA ARMARLO",
-   "nivel": "SINTESIS",
-   "evidencia": [],
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2840",
+    "E-2847",
+    "E-2845",
+    "E-2846"
+   ],
    "pistas_sin_respaldo": [
     "E-2004",
     "E-2110",
     "E-2441",
-    "E-2443",
-    "E-2001"
+    "E-2443"
    ],
-   "nota": "SINTESIS: ninguna fuente leída trata la camisa. Razonamiento del equipo; debe ser validado por un experto del activo.",
-   "tarea_rcm": "En condición (inspección de la camisa) y restauración o reemplazo solo con edad de desgaste identificable (consecuencia: A confirmar). El desgaste es candidato a restauración o reemplazo programado solo con edad identificable (β > 1), no demostrada. Mientras tanto, inspección en condición al cambiar la empaquetadura. Sin intervalo."
+   "nota": "EVIDENCIA solo para el mecanismo de sobreapriete que quema o raya la camisa y para su asociación con más fuga (revistas técnicas, un pasaje cada una, sin ensayo ni datos). Detección, tarea y causas abrasivas son SINTESIS o pista. v4: E-2001 se retira de las pistas de este modo (trataba drenaje, no camisa).",
+   "tarea_rcm": "En condición (inspección de la camisa al cambiar la empaquetadura) y reemplazo por estado; restauración o reemplazo programado por edad solo con β > 1 demostrado (consecuencia: A confirmar). La literatura leída recomienda reemplazar camisas desgastadas (E-2847), es decir por estado, no por edad; no hay Weibull ni β > 1 para fijar una edad. Mientras tanto, inspección en condición al cambiar la empaquetadura y evitar el sobreapriete (FM9). Sin intervalo."
   },
   {
-   "id": "el modo de protección del soporte (sin fuente; ver vacíos)",
+   "id": "FM14",
    "modo": "Protección del soporte inexistente o ineficaz (deflector, laberinto, drenaje)",
-   "funcion": "Desviar y drenar el agua de fuga lejos del soporte de rodamientos (función de protección; estándar: VACÍO).",
-   "falla_funcional": "La protección no desvía o no drena y el agua alcanza el sello del soporte (falla posiblemente oculta).",
-   "mecanismo": "SIN RESPALDO LITERAL. Hipótesis: sin deflector, con laberinto desgastado o con drenaje bloqueado, el agua de fuga llega al soporte. Consta en pista, sin respaldo: E-2001 (drenaje bloqueado acumula agua), E-2108 (laberinto y aisladores), E-2603 (patente de sellado contra ingreso de agua), E-2619, E-2625.",
-   "efecto_local": "Agua alcanza el sello o la entrada del soporte; sin señal propia mientras no haya otro daño (síntesis).",
+   "funcion": "Desviar y drenar el líquido de fuga lejos del soporte de rodamientos mediante el drenaje del soporte y el protector de agua (estándar: VACÍO); el deflector y el laberinto de la bomba del caso no tienen fuente leída.",
+   "falla_funcional": "La protección no desvía o no drena y el líquido de fuga se acumula en el soporte (falla posiblemente oculta).",
+   "mecanismo": "EVIDENCIA (E-2820, revista técnica, sin datos): \"You have a packed stuffing box and a drain in the bearing bracket for gland leakage. Now plug the drain.\" (E-2820) \"Or, remove the water shield or line up all the splits in the packing rings so the liquid can flow through the box and drown the bearings.\" (E-2820) Es decir, el soporte tiene un drenaje para la fuga del prensaestopa y un protector de agua, y el pasaje describe que, tapado el drenaje o retirado el protector, el líquido se acumula (FM10). Apoyo indirecto, otro equipo y comparabilidad baja: sobre un retén de labio, \"Leaking water would destroy a subsequent bearing easily resulting in a total failure of the washing machine.\" (E-2860) y \"grease can significantly enhance the lubrication of the sealing lip and serve as additional barrier to withhold the water\" (E-2860) (introducción, ejemplo de lavadoras, no medido); \"Unexpected overloading conditions, inadequate lubrication, or ineffective sealing\" (E-2889) figuran entre lo que induce comportamiento dinámico erróneo y paros. Laberinto de un reductor (banco y simulación): \"an excessively low clearance leads to collision, structural abrasion, and even sealing failure\" (E-2863); no transferible a un soporte de bomba sin lectura específica. Sin respaldo: deflector y laberinto del soporte de la bomba y su desgaste; pistas E-2108, E-2603, E-2619, E-2625, E-2437.",
+   "efecto_local": "EVIDENCIA (E-2820): el líquido de fuga se acumula en el soporte. Que no haya señal propia mientras no exista otro daño es síntesis.",
    "efecto_sistema": "Habilita FM10 a FM12; efecto en el sistema: VACÍO.",
-   "causa": "Diseño sin protección, desgaste o drenaje obstruido; configuración del activo: VACÍO.",
+   "causa": "EVIDENCIA (E-2820): drenaje del soporte tapado, protector de agua retirado. Diseño sin protección, desgaste del laberinto o del sello: sin respaldo; configuración del activo: VACÍO.",
    "estado_causa": "posible",
-   "deteccion": "Inspección de deflector, estado del laberinto y limpieza del drenaje: consta en pista, sin respaldo (E-2001).",
+   "deteccion": "SINTESIS: inspección del drenaje (limpieza, paso libre), presencia del protector de agua y estado del sello del soporte; E-2820 nombra los elementos pero no describe cómo verificarlos. Pistas sin respaldo para laberinto y aisladores: E-2108.",
    "control_sugerido": "Levantar la configuración de protección del soporte en las bombas con prensaestopa; definir si es función oculta.",
    "severidad": "SIN DATOS PARA ARMARLO",
    "ocurrencia": "SIN DATOS PARA ARMARLO",
    "deteccion_puntaje": "SIN DATOS PARA ARMARLO",
-   "nivel": "SINTESIS",
-   "evidencia": [],
+   "nivel": "EVIDENCIA",
+   "evidencia": [
+    "E-2820",
+    "E-2860",
+    "E-2889",
+    "E-2863"
+   ],
    "pistas_sin_respaldo": [
-    "E-2001",
     "E-2108",
     "E-2603",
     "E-2619",
     "E-2625",
     "E-2437"
    ],
-   "nota": "SINTESIS: sin fuente leída; E-6004 respalda solo que la contaminación daña rodamientos de bombas. Debe ser validado por un experto del activo.",
-   "tarea_rcm": "Rediseño (instalar o mejorar protección y drenaje) y búsqueda de fallas (verificación funcional de drenaje y protección) (consecuencia: A confirmar; oculta si la falla de la protección no es evidente por sí sola). La protección actúa sobre la causa común de FM10 a FM12. Si es función oculta, corresponde búsqueda de fallas con intervalo basado en el riesgo aceptado, que no puede fijarse sin datos. Costo-efectividad: VACÍO."
+   "nota": "EVIDENCIA solo para el mecanismo drenaje tapado o protector de agua retirado (un pasaje de divulgación sin datos, aceite y no grasa); E-2860, E-2889 y E-2863 son apoyo indirecto de otros equipos. Si la protección es función oculta, deflector y laberinto del activo, detección y tarea son SINTESIS o VACÍO. Validar con experto del activo. v4: E-2001 se retira de las pistas porque E-2820 cubre el drenaje bloqueado.",
+   "tarea_rcm": "Rediseño (instalar o mejorar protección y drenaje) y búsqueda de fallas (verificación funcional de drenaje y protector) (consecuencia: A confirmar; oculta si la falla de la protección no es evidente por sí sola (E-2820 no lo establece)). La protección actúa sobre la causa común de FM10 a FM12. Los elementos a verificar (drenaje, protector de agua) salen de E-2820; la tarea es SINTESIS. Si es función oculta, corresponde búsqueda de fallas con intervalo basado en el riesgo aceptado, que no puede fijarse sin datos. Costo-efectividad: VACÍO."
   }
  ],
  "vacios": [
@@ -407,20 +440,25 @@
   "Desbalance del impulsor y desalineación del eje de la bomba (firma de vibración): SIN DATOS PARA ARMARLO. Pista por leer: E-1110 (SOLO-SNIPPET).",
   "Porcentajes de modos de falla de bombas (distribución por componente): SIN DATOS PARA ARMARLO; E-1100 y E-1102 son SOLO-SNIPPET y no se citan cifras. El 90 % de E-6004 es una atribución del autor en un resumen de 1988, sin base de datos ni muestra; no es estadística de la población de bombas.",
   "Severidad, ocurrencia y detección: sin puntaje (null); requieren un experto del activo, escalas calibradas y el historial de órdenes de trabajo.",
-  "Intervalo P-F: ninguna fuente leída lo entrega para rodamientos de bombas; la evidencia da etapas cualitativas sin duración (E-8008) y no cuantifica tiempos de aviso (E-8003). Las tareas en condición no llevan intervalo; cualquier intervalo debe rotularse conceptual hasta tener datos. Lectura que lo cierra: curvas de degradación de rodamientos de bomba en campo con tiempos entre detección y falla.",
-  "Edad de desgaste y β > 1: sin Weibull ni datos de campo; por eso no se propone restauración ni reemplazo programado. Lectura que lo cierra: análisis de vida del historial de reemplazos de la bomba (lo hace el analista de vida).",
+  "Intervalo P-F: ninguna fuente leída lo entrega para rodamientos de bomba; la evidencia da etapas cualitativas sin duración (E-8008), no cuantifica tiempos de aviso (E-8003) y los pasajes nuevos de detección (E-2880, E-2886, E-2892) comparan sensibilidad de técnicas en general, sin tiempos. Las tareas en condición no llevan intervalo; cualquier intervalo debe rotularse conceptual hasta tener datos. Lectura que lo cierra: curvas de degradación de rodamientos de bomba en campo con tiempos entre detección y falla.",
+  "Edad de desgaste y β > 1: sin Weibull ni datos de campo; por eso no se propone restauración ni reemplazo programado por edad (la camisa se reemplaza por estado, E-2847). E-2829 (resumen) dice que el análisis de Weibull de registros de mantenimiento \"requires a minimum of only five incidents\" (E-2829): el número de eventos del activo y la validez del ajuste los decide el analista de vida. Lectura que lo cierra: análisis de vida del historial de reemplazos de la bomba.",
   "Estándar de desempeño de la función (capacidad, altura, vida requerida) y consecuencia real de cada modo (oculta, seguridad o ambiente, operacional, no operacional): sin datos del activo.",
   "Funciones ocultas y búsqueda de fallas: no se sabe si la bomba tiene dispositivos de protección ocultos; no se propone ninguna tarea de búsqueda de falla.",
   "PM calendarias actuales: no se aportó plan ni historial; no se pudo contrastar ninguna PM con fallas (lista de PM cuestionadas: VACÍO).",
   "Costos de falla, de tarea e indisponibilidad: VACÍO; la costo-efectividad de cada tarea queda sin evaluar.",
   "Transferencia de la detección: los estudios de vibración leídos son de banco o revisiones (E-8001, E-8003, E-8008); los ensayos de banco no cubren fallas progresivas de servicio prolongado (E-1305). Los datos de motor (E-1301, E-1304, E-1305) y de monitoreo del motor impulsor (E-1302) o acústico (E-1303) no son de bombas y no se usan como modos de la bomba.",
   "Estándar exigido (FMEA clásico, Action Priority o proceso RCM) sin definir por la persona. Registro knowledge/registro_normas.yaml consultado: IEC 60812 (ed. 2018, SOLO-SNIPPET), AIAG-VDA FMEA Handbook (2019, fuentes en conflicto, SOLO-SNIPPET, tablas no abiertas), ISO 281 (2007, enmienda en elaboración, SOLO-SNIPPET), ISO 4406 (2021, SOLO-SNIPPET): todos con edición no verificada. ISO 3069 y EN 16752 (empaquetaduras) aparecen solo como pistas E-2400 y E-2402 (SOLO-SNIPPET) y no están en el registro. Ninguna norma respalda este FMECA.",
-  "Cadena prensaestopa a soporte: solo FM8 y FM9 tienen fuente leída (E-2700), texto comercial no arbitrado aportado por la persona, que no menciona el rodamiento y cuya cifra de goteo no se usa. Eslabones sin fuente leída: fuga a soporte (FM10), agua que degrada película (FM11), agua que corroe o fatiga (FM12), desgaste de camisa (el modo de desgaste de camisa (sin fuente; ver vacíos)), protección (el modo de protección del soporte (sin fuente; ver vacíos)). Lectura que lo cierra: texto o abstract de E-2000, E-2001, E-2002, E-2003, E-2004, E-2108 (pistas) o de estudios arbitrados equivalentes.",
-  "Cifras de pérdida de vida por agua (E-2002, E-2003, E-2438, E-2439) y límites de agua en lubricante (E-2607, E-2608, E-2627): SOLO-SNIPPET o NO-VERIFICADO; no se citan como dato ni como umbral.",
-  "Criterio de ajuste y goteo aceptable de la empaquetadura: sin fuente arbitrada ni del fabricante del activo; la cifra de E-2700 carece de diámetro, presión y producto.",
-  "Severidad, ocurrencia y detección de FM8 a el modo de protección del soporte (sin fuente; ver vacíos): SIN DATOS PARA ARMARLO. Faltan escalas calibradas, historial de órdenes de trabajo y un experto del activo. No se calcula RPN. Los modos heredados FM1 a FM7 mantienen null.",
-  "PM actuales cuestionables: no se aportó plan. Candidata a cuestionar cuando haya datos: el apriete periódico calendario del prensaestopa (¿previene la fuga o provoca FM9 por sobreajuste?) y la relubricación o cambio de lubricante sin análisis (¿introduce contaminación?). Sin historial no hay evidencia; lista de PM cuestionadas con evidencia: VACÍO.",
+  "Cadena prensaestopa a soporte (v4): respaldo literal parcial. Eslabón fuga acumulada en el soporte con drenaje tapado o protector retirado (FM10, FM14): E-2820, un pasaje de divulgación sin datos, aceite y no grasa. Empaquetadura y ajuste (FM8, FM9): E-2700 (comercial) y pasajes E-2840, E-2845, E-2823, E-2824, E-2848. Sobreapriete y camisa (FM13): E-2840, E-2847. Agua, película y corrosión (FM11, FM12): E-2827, E-2800, E-2801, E-2826 (otros equipos). Sin fuente leída: que la falta de ajuste del prensaestopa produzca la fuga que llega al soporte, la ruta a lo largo del eje, el deflector y el laberinto del soporte de la bomba (E-2108 y otras pistas), el desgaste de camisa por partículas del agua de sello (E-2004 pista). Lectura que lo cierra: artículo completo de E-2820 y un estudio de análisis de falla de soportes de bomba con agua, o el historial del activo.",
+  "Cifras no adoptadas: pérdida de vida por agua (E-2002, E-2003, E-2438, E-2439 SOLO-SNIPPET o NO-VERIFICADO); límites de agua en lubricante (E-2607, E-2608, E-2627); 0,1 % de agua en aceite (E-2840, regla de revista sin método ni fuente primaria); agua inicial de 0,5 a 2 % m/m (E-2800, condición de un ensayo de laboratorio); más de 50 % de fallas por impurezas (E-2890, cifra citada por los autores, no medida por ellos); vidas de grietas blancas y fatiga del hidrógeno (E-2802, E-2807, otros equipos).",
+  "Criterio de ajuste y goteo aceptable de la empaquetadura: sin fuente arbitrada ni del fabricante del activo. Las cifras de gotas por minuto de E-2700 (10-60), E-2840 (unas 60) y E-2824 (20 a 60) se contradicen entre sí, ninguna trae base experimental, diámetro, presión ni producto, y no se adoptan; solo se usan los criterios cualitativos (fuga continua, no sobreapretar, calor del prensaestopa: E-2823, E-2824, E-2848, E-2840).",
+  "Severidad, ocurrencia y detección de FM8 a FM14: SIN DATOS PARA ARMARLO. Faltan escalas calibradas, historial de órdenes de trabajo y un experto del activo. No se calcula RPN. Los modos heredados FM1 a FM7 mantienen null. Calibraría S-O-D: el historial de órdenes de la bomba (fallas del soporte, hallazgos de agua) y las escalas vigentes de la persona.",
+  "PM actuales cuestionables: no se aportó plan. Candidatas a cuestionar cuando haya datos, ahora con mecanismo descrito en revistas técnicas pero sin evidencia del activo: (1) el apriete periódico calendario del prensaestopa (¿previene la fuga o provoca FM9 y FM13?; mecanismo del sobreapriete: E-2840, E-2824, E-2848); (2) la relubricación o cambio de lubricante (¿sobrelubricación que sobrecalienta, E-2830, o introducción de contaminación?). Lista de PM cuestionadas con evidencia del activo: VACÍO.",
   "Historial del activo: fallas del paquete de rodamientos, hallazgos de agua en el soporte, análisis de falla de rodamientos retirados, estado de la camisa y configuración de protección (deflector, laberinto, drenaje): VACÍO. Sin ellos la causa señalada por la persona queda como hipótesis posible.",
-  "Este FMECA es de escritorio basado en literatura de rodamientos en general, un resumen de 1988 sobre rodamientos de bombas (E-6004) y un texto comercial sobre empaquetadura (E-2700); no es evidencia de campo."
+  "Este FMECA es de escritorio basado en literatura de rodamientos en general, un resumen de 1988 sobre rodamientos de bombas (E-6004), un texto comercial sobre empaquetadura (E-2700) y pasajes (no artículos completos) de revistas técnicas del sector agua y de revistas científicas leídos con el conector; los de revistas técnicas son divulgación sin datos ni muestra. No es evidencia de campo.",
+  "Tipo de lubricante del soporte (aceite o grasa) y configuración del soporte (drenaje, protector de agua, deflector, laberinto, retén): VACÍO. E-2820 habla de aceite en el soporte; E-2860 trata la grasa en un retén de otra máquina. Sin eso no se sabe qué mecanismo de agua aplica.",
+  "Modo no incluido como ítem: montaje de la empaquetadura con los cortes de los anillos alineados, que deja pasar el líquido por la caja (E-2820); es una vía de fuga distinta del ajuste insuficiente y habría que decidir con la persona si se agrega.",
+  "Detección de agua en el lubricante: solo hay respaldo literal de métodos de laboratorio o de sensor con potencial, sin umbral (E-2884, E-2885, E-2888, E-2887); el análisis de aceite tiene límites declarados por sus autores (E-2880) y la temperatura casi no cambia con fallas tempranas (E-2880). Sin técnica validada para el soporte de bomba.",
+  "Causa alterna: sobrelubricación de rodamientos de bomba como error común de mantenimiento (E-2830, opinión experta sin datos); a descartar con el historial.",
+  "Hidrógeno y grietas blancas como vía del agua al daño: no establecida (E-2801, E-2802, E-2803, E-2807, E-2808 apuntan a varias causas o a otra fuente de hidrógeno); no se afirma en FM12."
  ]
 }
