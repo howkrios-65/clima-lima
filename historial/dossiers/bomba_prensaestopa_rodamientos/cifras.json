@@ -1,56 +1,5 @@
 [
  {
-  "id": "pdat-CF-01",
-  "valor": "5447931446",
-  "unidad": "bytes",
-  "mide": "Tamano del zip de XJTU-SY en el repo de Hugging Face",
-  "condiciones": "Listado del repo; no se descargo Que sean 15 rodamientos con corrida hasta la falla consta en E-2301 y E-1204, no en el extracto de E-2350.",
-  "evidencia": [
-   "E-2350",
-   "E-2301"
-  ]
- },
- {
-  "id": "pdat-CF-02",
-  "valor": "1305035588",
-  "unidad": "bytes",
-  "mide": "Tamano de FEMTO.csv y de PdM.csv en dos repos distintos",
-  "condiciones": "Listados; igualdad sugiere duplicado, contenido no comparado",
-  "evidencia": [
-   "E-2351"
-  ]
- },
- {
-  "id": "pdat-CF-03",
-  "valor": "9487",
-  "unidad": "segmentos",
-  "mide": "Segmentos de CWRU en el repo de resultados",
-  "condiciones": "Dato declarado por el usuario del repo",
-  "evidencia": [
-   "E-2355"
-  ]
- },
- {
-  "id": "pdat-CF-04",
-  "valor": "23118",
-  "unidad": "lecturas horarias",
-  "mide": "Lecturas del conjunto sintetico de 100 maquinas",
-  "condiciones": "Sintetico",
-  "evidencia": [
-   "E-2356"
-  ]
- },
- {
-  "id": "pml-CF-01",
-  "valor": "40 a 50",
-  "unidad": "%",
-  "mide": "Proporcion de fallas de maquinaria que los autores atribuyen a rodamientos",
-  "condiciones": "Afirmacion de introduccion con referencia [1] no leida; no es de bombas",
-  "evidencia": [
-   "E-2300"
-  ]
- },
- {
   "id": "pml-CF-02",
   "valor": "15",
   "unidad": "rodamientos",
@@ -92,36 +41,6 @@
   ]
  },
  {
-  "id": "wwa-CF-W1",
-  "valor": "0,5 a 2",
-  "unidad": "% m/m de agua inicial",
-  "mide": "Rango de agua anadida en los ensayos de contacto rodante de los autores (no es resultado de vida)",
-  "condiciones": "VERIFICADO-TEXTO (pasaje); maquina rodante de cuatro bolas, 2 % ZDDP en PAO; laboratorio",
-  "evidencia": [
-   "E-2800"
-  ]
- },
- {
-  "id": "wwa-CF-W2",
-  "valor": "1,69 frente a 0,29 y 0,38",
-  "unidad": "ppm de hidrogeno",
-  "mide": "Cerca de 20 % menos de resistencia a fatiga a 10^9 ciclos con 1,69 ppm (carga electroquimica) frente a 0,29 y 0,38 ppm, acero GCr15",
-  "condiciones": "VERIFICADO-ABSTRACT; fatiga ultrasonica de muy alto ciclo en probetas; hidrogeno por carga electroquimica, no por agua del lubricante",
-  "evidencia": [
-   "E-2807"
-  ]
- },
- {
-  "id": "wwa-CF-W3",
-  "valor": "5 a 20",
-  "unidad": "% de la vida de diseno",
-  "mide": "Vida a la que pueden aparecer grietas blancas axiales en rodamientos de caja de engranajes de aerogenerador (causa no atribuida al agua)",
-  "condiciones": "VERIFICADO-TEXTO (pasaje); contexto, otro equipo; no es efecto del agua",
-  "evidencia": [
-   "E-2802"
-  ]
- },
- {
   "id": "wwa-CF-W4",
   "valor": "0,1",
   "unidad": "% de agua en aceite",
@@ -142,27 +61,6 @@
   ]
  },
  {
-  "id": "wwb-CF-W2",
-  "valor": "aprox. 60 / 20 a 60",
-  "unidad": "gotas/min",
-  "mide": "Fuga normal de un prensaestopa bien ajustado segun dos guias de mantenimiento",
-  "condiciones": "Fragmentos de revistas tecnicas; sin base experimental; las dos difieren",
-  "evidencia": [
-   "E-2840",
-   "E-2824"
-  ]
- },
- {
-  "id": "wwb-CF-W3",
-  "valor": "5",
-  "unidad": "incidentes (minimo)",
-  "mide": "Minimo de eventos para un analisis de Weibull de registros de mantenimiento segun el resumen del autor",
-  "condiciones": "Solo resumen, 1989",
-  "evidencia": [
-   "E-2829"
-  ]
- },
- {
   "id": "wwc-CF-W1",
   "valor": "60",
   "unidad": "gotas/min",
@@ -170,16 +68,6 @@
   "condiciones": "FRAGMENTO de articulo de revista profesional; bombas de agua; sin diametro ni presion",
   "evidencia": [
    "E-2840"
-  ]
- },
- {
-  "id": "wwc-CF-W2",
-  "valor": "20 a 60",
-  "unidad": "gotas/min de agua de sello",
-  "mide": "Fuga normal con prensaestopa bien ajustado",
-  "condiciones": "FRAGMENTO de lista de mantenimiento preventivo; sin diametro ni presion",
-  "evidencia": [
-   "E-2824"
   ]
  },
  {
@@ -193,16 +81,6 @@
   ]
  },
  {
-  "id": "wwc-CF-W4",
-  "valor": "15",
-  "unidad": "min",
-  "mide": "Intervalo sugerido para apretar el prensaestopa poco a poco durante las primeras horas de marcha tras reempaquetar",
-  "condiciones": "FRAGMENTO; procedimiento de reempaquetado de bombas de agua",
-  "evidencia": [
-   "E-2840"
-  ]
- },
- {
   "id": "wwd-CF-WD1",
   "valor": "0,1",
   "unidad": "% de agua respecto al aceite",
@@ -210,26 +88,6 @@
   "condiciones": "FRAGMENTO de revista tecnica; sin ensayo, aceite y rodamiento no especificados; no es limite de norma",
   "evidencia": [
    "E-2840"
-  ]
- },
- {
-  "id": "wwd-CF-WD2",
-  "valor": "0,3",
-  "unidad": "mm",
-  "mide": "Holgura de laberinto elegida en un banco de reductor para rotor de 340 mm de diametro (expresion empirica C = 0,2 + (0,3 a 0,6) d/1000 del articulo)",
-  "condiciones": "FRAGMENTO; reductor de rueda con aceite, fuga hacia afuera; no es ingreso de agua ni soporte de bomba",
-  "evidencia": [
-   "E-2863"
-  ]
- },
- {
-  "id": "wwe-CF-WE1",
-  "valor": ">50",
-  "unidad": "% de fallas",
-  "mide": "Proporción de fallas de cojinetes atribuida a impurezas del suministro de lubricante, citada por los autores (no medida)",
-  "condiciones": "Fragmento de introducción; cojinetes de deslizamiento y partículas sólidas; referencia de origen no leída",
-  "evidencia": [
-   "E-2890"
   ]
  },
  {
@@ -270,16 +128,6 @@
   "condiciones": "RULSurv Seccion 3.1, referencia [56] no leida; poblacion, pais y anio desconocidos; no especifico de bombas",
   "evidencia": [
    "E-1202"
-  ]
- },
- {
-  "id": "hsel-C3",
-  "valor": "9.6 / 11.7 / 14.6",
-  "unidad": "h",
-  "mide": "L10h nominal de las condiciones C1, C2, C3 del banco XJTU-SY",
-  "condiciones": "Rodamiento de bolas LDK UER204; 12.0, 11.0 y 10.0 kN radial; 2100, 2250 y 2400 rpm; banco acelerado (RULSurv, Tabla 2)",
-  "evidencia": [
-   "E-1204"
   ]
  }
 ]

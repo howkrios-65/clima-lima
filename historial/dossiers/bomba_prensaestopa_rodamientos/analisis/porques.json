@@ -133,7 +133,7 @@
      "rotulo_eslabon": "EVIDENCIA para efectos opuestos sobre la empaquetadura; SINTESIS para lo demás"
     },
     {
-     "porque": "¿Por qué no se detectaban? Si se cumpliera, porque no había rutina de inspección de fuga ni medición de temperatura del soporte con tendencia. La referencia de revistas es revisión periódica del ajuste (E-2823) e inspección semanal de la fuga (E-2824); la temperatura sola no detecta fallas tempranas (E-2880).",
+     "porque": "¿Por qué no se detectaban? Si se cumpliera, porque no había rutina de inspección de fuga ni medición de temperatura del soporte con tendencia. La referencia de revistas es revisión periódica del ajuste (E-2823) e inspección de la fuga (E-2824); la temperatura sola no detecta fallas tempranas (E-2880).",
      "evidencia": [
       "E-1302",
       "E-2823",

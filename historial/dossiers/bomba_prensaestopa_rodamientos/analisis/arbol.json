@@ -380,7 +380,7 @@
     "E-6004",
     "E-2820"
    ],
-   "nota": "Cadena secuencial; AND como forma lógica de eslabones que deben cumplirse todos y que se verifican uno a uno. Respaldo cualitativo por eslabón: N30, N52, N31 y N32 tienen fuente leída (revistas técnicas e introducciones, sin datos). E-2820 muestra además que la fuga llega al soporte solo si fallan el drenaje, el protector o las juntas, lo que apoya (sin probarla) la lectura AND. Sin fuente: que el ajuste insuficiente produzca la fuga que llega al soporte, frecuencia, cantidad de agua y tiempo a la falla. Si no se acepta el AND, se lista como OR de eslabones sueltos.",
+   "nota": "Cadena secuencial; AND como forma lógica de eslabones que deben cumplirse todos y que se verifican uno a uno. Respaldo cualitativo por eslabón: N30, N52, N31 y N32 tienen fuente leída (revistas técnicas e introducciones, sin datos). E-2820 describe que, si se tapa el drenaje, se retira el protector o se alinean las juntas, el líquido se acumula en el soporte, lo que apoya (sin probarla) la lectura AND. Sin fuente: que el ajuste insuficiente produzca la fuga que llega al soporte, frecuencia, cantidad de agua y tiempo a la falla. Si no se acepta el AND, se lista como OR de eslabones sueltos.",
    "clase": "fisica"
   },
   {
@@ -657,7 +657,7 @@
     "E-2823",
     "E-2824"
    ],
-   "nota": "Hay práctica de referencia en revistas técnicas: 'A periodic check of packing adjustment should be made.' (E-2823) y revisión semanal de la fuga con ajuste (E-2824). Eso fija el patrón de comparación, no prueba que la rutina falte en este activo (hipótesis sin registros). E-2700 describe consecuencias opuestas de ajustar de menos y de más.",
+   "nota": "Hay práctica de referencia en revistas técnicas: 'A periodic check of packing adjustment should be made.' (E-2823) y revisión de la fuga con ajuste (E-2824). Eso fija el patrón de comparación, no prueba que la rutina falte en este activo (hipótesis sin registros). E-2700 describe consecuencias opuestas de ajustar de menos y de más.",
    "clase": "latente"
   },
   {
@@ -708,12 +708,12 @@
  ],
  "vacios": [
   "No existe caso real ni datos de planta: todas las probabilidades son null y ninguna rama puede darse por confirmada.",
-  "Puertas: N0, N2, N4, N12, N15, los modos propios de la bomba, N31, N32 y N38 son OR. Las puertas AND de N1, N27 y N28 son lectura del equipo; E-2820 apoya cualitativamente que la fuga llega al soporte solo si fallan las barreras, pero no prueba el AND. Si el líder o el experto no la acepta, el árbol se limita a OR.",
+  "Puertas: N0, N2, N4, N12, N15, los modos propios de la bomba, N31, N32 y N38 son OR. Las puertas AND de N1, N27 y N28 son lectura del equipo; E-2820 describe una vía por la que la fuga llega al soporte (drenaje tapado, protector retirado, juntas alineadas); no prueba el AND. Si el líder o el experto no la acepta, el árbol se limita a OR.",
   "Ruta A: respaldada por eslabón (N30, N52, N31 a N35) con fuentes de revista profesional e introducciones, sin datos. SIN FUENTE: que el ajuste insuficiente produzca la fuga que llega al soporte, frecuencia, cantidad de agua, tiempo a la falla, efecto sobre grasa, y comparación entre retén, laberinto y aislador. Pistas no leídas: E-2500, E-2503, E-2504, E-2000, E-2002, E-2003.",
   "Ruta B: respaldada hasta la camisa y la empaquetadura (N36, N37, N50). El puente al rodamiento (N38, N39 en su origen, N40) SIN FUENTE LEIDA. Pistas no leídas: E-2001, E-2502, E-2004.",
   "Cifras de goteo (E-2840, E-2824) y de 0,1 % de agua en aceite (E-2840) se contradicen y no tienen ensayo: no se adoptan como umbral.",
   "Modos propios de la bomba (sello mecánico, cavitación, recirculación, anillos de desgaste, golpe de ariete, eje y acople): SIN DATOS PARA ARMARLO.",
-  "Fuentes de causas de rodamientos: bolas en fatiga de ciclos muy altos, aerogeneradores, turbinas dentales, un resumen sobre bombas, bancos de laboratorio y revistas técnicas del sector agua; comparabilidad baja. Todo pasaje de la ronda de Wiley es un fragmento.",
+  "Fuentes de causas de rodamientos: bolas en fatiga de ciclos muy altos, aerogeneradores, turbinas dentales, un resumen sobre bombas, bancos de laboratorio y revistas técnicas del sector agua; comparabilidad baja. Todo pasaje de la ronda de conector académico es un fragmento.",
   "Los nodos latentes N12 a N18, N42 a N45 y N53 son SINTESIS o EVIDENCIA general pendientes de validación con un experto del activo.",
   "Nivel VACIO (valor propio de este árbol): nodo sin contenido respaldado.",
   "SIN DATOS PARA ARMARLO (modo propio de la bomba sin fuente leída): Modos propios de la bomba con prensaestopa (hidráulicos y de sellado).",

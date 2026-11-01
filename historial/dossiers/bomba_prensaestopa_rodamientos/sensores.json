@@ -44,7 +44,7 @@
  },
  {
   "tecnica_o_sensor": "Vibración y corrientes de fase del motor (banco de motor)",
-  "que_mide": "Ocho canales sincronizados según el extracto de E-1302; detalle del eje y de la ubicación no consta en el extracto.",
+  "que_mide": "Ocho canales sincronizados según el extracto de E-1301; detalle del eje y de la ubicación no consta en el extracto.",
   "resultado_publicado": "Los autores afirman que vibracion y corriente son indicadores efectivos de la salud del motor",
   "condiciones": "Motor de induccion 2.2 kW, banco, 12.8 kHz, velocidad y carga variables",
   "limites": "Sin bomba ni prensaestopa; sin umbrales",
@@ -107,7 +107,7 @@
  {
   "tecnica_o_sensor": "Vibración",
   "que_mide": "Aceleración del soporte del rodamiento",
-  "resultado_publicado": "Técnica más usada; sensor barato y resultados confiables según los autores",
+  "resultado_publicado": "Técnica más usada según los autores de la introducción",
   "condiciones": "Afirmación de introducción",
   "limites": "Sin anticipación cuantificada ni causa (agua)",
   "evidencia": [

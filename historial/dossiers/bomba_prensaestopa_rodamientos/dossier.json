@@ -28,7 +28,7 @@
       "E-2886",
       "E-2892"
      ],
-     "limite": "Pasajes del conector de Wiley (no artículos completos); afirmaciones de los autores citando a terceros; rodamientos en general, sin agua en el lubricante ni prensaestopa; no se halló dato de anticipación (P-F)."
+     "limite": "Pasajes del conector academico (no artículos completos); afirmaciones de los autores citando a terceros; rodamientos en general, sin agua en el lubricante ni prensaestopa; no se halló dato de anticipación (P-F)."
     },
     {
      "tipo": "afirmacion",
@@ -71,7 +71,7 @@
     },
     {
      "tipo": "afirmacion",
-     "titulo": "Literatura de Wiley leida: el agua en el lubricante degrada aditivos y pelicula y se asocia con menor vida, pero los pasajes son contexto o fluidos acuosos; ninguno cuantifica la perdida de vida por pocos por ciento de agua en aceite o grasa de rodamientos",
+     "titulo": "Literatura leida con el conector academico: el agua en el lubricante degrada aditivos y pelicula y se asocia con menor vida, pero los pasajes son contexto o fluidos acuosos; ninguno cuantifica la perdida de vida por pocos por ciento de agua en aceite o grasa de rodamientos",
      "evidencia": [
       "E-2800",
       "E-2801",
@@ -95,14 +95,6 @@
     },
     {
      "tipo": "afirmacion",
-     "titulo": "Una revista tecnica para servicios de agua cita 0,1 % de agua en aceite como suficiente para romper la lubricacion y la condensacion por enfriamiento externo como via de oxido, sin fuente primaria",
-     "evidencia": [
-      "E-2840"
-     ],
-     "limite": "Divulgacion sin metodo; no es umbral ni evidencia de vida."
-    },
-    {
-     "tipo": "afirmacion",
      "titulo": "Un articulo de revista tecnica describe la via prensaestopa a soporte (drenaje del soporte tapado, protector de agua retirado, juntas del empaque alineadas) con contaminacion del aceite y corrosion del rodamiento; sin datos ni muestra",
      "evidencia": [
       "E-2820"
@@ -121,18 +113,19 @@
     },
     {
      "tipo": "afirmacion",
-     "titulo": "Una revista tecnica da 0,1 % de agua en aceite como suficiente para romper la lubricacion y senala la condensacion por enfriamiento externo del soporte; otros textos leidos confirman solo cualitativamente que el agua reduce la vida",
+     "titulo": "Una revista tecnica da 0,1 % de agua en aceite como suficiente para romper la lubricacion, sin metodo ni fuente primaria; otros textos leidos confirman solo cualitativamente que el agua reduce la vida",
      "evidencia": [
       "E-2840",
       "E-2801",
       "E-2827"
      ],
-     "limite": "Cifra sin fuente, en aceite; E-2828 es de segunda mano; E-2827 es de rodamientos dentales."
+     "limite": "Cifra sin fuente, en aceite, no es umbral; E-2801 es una cita secundaria; E-2827 es de rodamientos de turbinas dentales."
     },
     {
      "tipo": "afirmacion",
-     "titulo": "Causas genericas de falla de rodamientos (lubricacion inadecuada, sellado ineficaz, contaminante) en una revision y un analisis de falla; sin reparto de causas con base leida",
+     "titulo": "Causas genericas de falla de rodamientos: lubricacion inadecuada y sellado ineficaz (E-2889), lubricante contaminado (E-2826) y sobrelubricacion (E-2830); sin frecuencias ni muestra",
      "evidencia": [
+      "E-2889",
       "E-2826",
       "E-2830"
      ],
@@ -161,12 +154,11 @@
     },
     {
      "tipo": "afirmacion",
-     "titulo": "Fuga del prensaestopa hacia el soporte: acumulacion, contaminacion del aceite y corrosion de rodamientos si se tapa el drenaje, falta el protector o las juntas estan alineadas; 0,1 % de agua en aceite como regla practica de ruptura de lubricacion",
+     "titulo": "Fuga del prensaestopa hacia el soporte: acumulacion, contaminacion del aceite y corrosion de rodamientos si se tapa el drenaje, falta el protector o las juntas estan alineadas",
      "evidencia": [
-      "E-2820",
-      "E-2840"
+      "E-2820"
      ],
-     "limite": "Experiencia de revista profesional, sin caso medido; la cifra de 0,1 % no se atribuye a una fuente primaria en el pasaje."
+     "limite": "Experiencia de revista profesional, sin caso medido."
     },
     {
      "tipo": "afirmacion",
@@ -184,14 +176,6 @@
       "E-2864"
      ],
      "limite": "Simulacion y banco de reductores con aceite; comparabilidad baja con soporte de bomba; sin comparativo con aislador sin contacto."
-    },
-    {
-     "tipo": "afirmacion",
-     "titulo": "Condensacion por enfriamiento externo excesivo de la carcasa como via de humedad, citada en revista tecnica; 0,1 % de agua en aceite como causa de rotura de lubricacion (afirmacion sin ensayo declarado)",
-     "evidencia": [
-      "E-2840"
-     ],
-     "limite": "Revista tecnica de operadores; sin metodo; aceite, no grasa."
     },
     {
      "tipo": "afirmacion",

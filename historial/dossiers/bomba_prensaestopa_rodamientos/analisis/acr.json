@@ -248,7 +248,7 @@
       "E-2820"
      ],
      "cita": "Now plug the drain. The liquid leaking from the stuffing box will collect in the bearing brackets, contaminating the oil, eventually corroding the bearings. Or, remove the water shield or line up all the splits in the packing rings so the liquid can flow through the box and drown the bearings.",
-     "nota": "Experiencia de revista técnica del sector agua en una lista de consejos tipo 'cómo matar una bomba', sin datos, ensayo ni muestra; no cuantifica agua ni tiempo a la falla; habla de aceite, no de grasa; no prueba que ocurriera en el caso. Muestra además que la fuga sola no llega al soporte: depende de que fallen las barreras (lo que respalda cualitativamente que el eslabón puente sea condición necesaria)."
+     "nota": "Experiencia de revista técnica del sector agua en una lista de consejos tipo 'cómo matar una bomba', sin datos, ensayo ni muestra; no cuantifica agua ni tiempo a la falla; habla de aceite, no de grasa; no prueba que ocurriera en el caso. Muestra además que la fuga sola no llega al soporte: depende de que fallen las barreras (lo que respalda cualitativamente una vía por la que la fuga llega al soporte, sin probar que sea condición necesaria)."
     },
     {
      "n": "A3b",
@@ -290,7 +290,7 @@
       "E-2827"
      ],
      "cita": "emulsification occurs which impairs elastohydrodynamic (EHD) film-forming ability since water does not increase in viscosity with pressure as do oils.",
-     "nota": "Análisis de falla de rodamientos miniatura de turbinas dentales con vapor de autoclave: comparabilidad muy baja con una bomba. Respalda el mecanismo, no que el agua del prensaestopa lo produzca."
+     "nota": "Análisis de falla de rodamientos miniatura de turbinas dentales: comparabilidad muy baja con una bomba. Respalda el mecanismo, no que el agua del prensaestopa lo produzca."
     },
     {
      "n": "A5",
@@ -463,7 +463,7 @@
     "E-2889"
    ],
    "nivel": "SINTESIS",
-   "nota": "La ausencia de rutina, criterio, revisión del drenaje y protección en el activo es razonamiento del equipo. Hay práctica de referencia en revistas técnicas: revisar periódicamente el ajuste (E-2823), inspeccionar semanalmente la fuga y ajustar (E-2824), esperar goteo continuo y tratar su ausencia como señal de sobreapriete (E-2823, E-2848). Eso fija contra qué comparar el activo, no prueba que falte. E-2820 muestra que el estado del drenaje y del protector de agua decide si el líquido llega al soporte. E-2700 muestra que ajustar de menos y de más tienen consecuencias opuestas. Nota: la contramedida de apretar para frenar la fuga (ruta A) es la causa de la ruta B. Pistas por abrir: E-2001, E-2500. Validar con un experto del activo.",
+   "nota": "La ausencia de rutina, criterio, revisión del drenaje y protección en el activo es razonamiento del equipo. Hay práctica de referencia en revistas técnicas: revisar periódicamente el ajuste (E-2823), inspeccionar la fuga y ajustar (E-2824), esperar goteo continuo y tratar su ausencia como señal de sobreapriete (E-2823, E-2848). Eso fija contra qué comparar el activo, no prueba que falte. E-2820 muestra que el estado del drenaje y del protector de agua decide si el líquido llega al soporte. E-2700 muestra que ajustar de menos y de más tienen consecuencias opuestas. Nota: la contramedida de apretar para frenar la fuga (ruta A) es la causa de la ruta B. Pistas por abrir: E-2001, E-2500. Validar con un experto del activo.",
    "clase": "latente"
   }
  ],
@@ -668,11 +668,11 @@
   "Cavitación, recirculación, sellos mecánicos, anillos de desgaste, golpe de ariete, eje, acople y cargas hidráulicas: SIN DATOS PARA ARMARLO. Pistas no leídas: E-1104 a E-1113, E-1115, E-1212, E-1213, E-1315.",
   "Reparto porcentual de modos de falla de bombas: SIN DATOS PARA ARMARLO; las pistas E-1100 a E-1103, E-1116, E-1210 y E-1211 no se leyeron y se contradicen. La atribución de E-6004 es afirmación del autor en un resumen, sin base de datos, y se usa solo como causa cualitativa. E-2890 trae una cifra de segunda mano sobre cojinetes de deslizamiento y partículas que no se adopta.",
   "Ensayos post mortem, normas de ensayo y valores de referencia de temperatura o vibración para bombas con prensaestopa: sin fuente leída; se fijan con el fabricante o con datos del activo.",
-  "Las fuentes de rodamientos son de bolas en fatiga de ciclos muy altos (E-6002), aerogeneradores (E-6003), bancos de laboratorio (E-1201 a E-1204, E-8008), un resumen sobre bombas (E-6004), bancos de motor (E-1301 a E-1305), turbinas dentales (E-2827) y revistas técnicas del sector agua (E-2820, E-2823, E-2824, E-2840, E-2845, E-2847, E-2848): comparabilidad baja con una bomba con prensaestopa de planta, y las de revista son experiencia profesional sin datos. Todos los pasajes de la ronda de Wiley son fragmentos, no artículos completos.",
+  "Las fuentes de rodamientos son de bolas en fatiga de ciclos muy altos (E-6002), aerogeneradores (E-6003), bancos de laboratorio (E-1201 a E-1204, E-8008), un resumen sobre bombas (E-6004), bancos de motor (E-1301 a E-1305), turbinas dentales (E-2827) y revistas técnicas del sector agua (E-2820, E-2823, E-2824, E-2840, E-2845, E-2847, E-2848): comparabilidad baja con una bomba con prensaestopa de planta, y las de revista son experiencia profesional sin datos. Todos los pasajes de la ronda de conector académico son fragmentos, no artículos completos.",
   "La puerta AND de N1 y las de las rutas A y B (N27, N28) son lectura del equipo de cadenas secuenciales, no hechos de la literatura. Convergencia no es confirmación: las fuentes nuevas de H12 son pocas e independientes entre sí solo en parte (E-2820, E-2840 y E-2823 son de la misma revista técnica del sector agua). La literatura revisada no mide si combinar técnicas mejora la validez."
  ],
  "candidatos_a_leccion": [
-  "Un texto comercial sobre la empaquetadura no prueba la consecuencia sobre el rodamiento: separar el mecanismo de cada componente del eslabón puente. En la ruta A el puente lo da E-2820 solo cuando el drenaje está tapado, el protector retirado o las juntas alineadas: la fuga sola no basta.",
+  "Una nota de revista técnica describe una vía de la fuga hacia el soporte; su frecuencia no está medida",
   "La contramedida de la ruta A (apretar para frenar la fuga) es la causa de la ruta B; cualquier acción correctiva debe fijar un criterio de goteo y verificar la temperatura y la camisa después de apretar.",
   "Las cifras de goteo y de agua de revistas técnicas se contradicen y no tienen ensayo: no entran como umbral; pedir la guía del fabricante del activo.",
   "Pedir al líder la lectura de las pistas E-2500, E-2502, E-2503 y E-2504 (agente literatura) y los registros de ajuste, drenaje y protector de agua del activo (agente de datos del activo)."
@@ -722,8 +722,8 @@
      "E-2889",
      "E-2820"
     ],
-    "nivel": "EVIDENCIA",
-    "nota": "El mecanismo consta (revista técnica e introducciones, sin datos). Que la barrera de este soporte sea la débil, y que el agua venga del prensaestopa, es hipótesis del equipo (ruta A). Validar con un experto del activo."
+    "nivel": "SINTESIS",
+    "nota": "El mecanismo consta (revista técnica e introducciones, sin datos). Que la barrera de este soporte sea la débil, y que el agua venga del prensaestopa, es hipótesis del equipo (ruta A). Validar con un experto del activo. Parte de la conexión con el prensaestopa o con el activo es razonamiento del equipo."
    },
    {
     "texto": "Drenaje del soporte (o de la caja o bandeja del prensaestopa) tapado, con líquido de fuga acumulado en el soporte. CONDICION A VERIFICAR.",
@@ -755,8 +755,8 @@
      "E-2845",
      "E-2848"
     ],
-    "nivel": "EVIDENCIA",
-    "nota": "Respalda el mecanismo en la empaquetadura (texto comercial más revistas técnicas), sin cifras. Las cifras de goteo de revistas se contradicen y no se usan. El vínculo con el rodamiento es el de los ítems de drenaje y barrera."
+    "nivel": "SINTESIS",
+    "nota": "Respalda el mecanismo en la empaquetadura (texto comercial más revistas técnicas), sin cifras. Las cifras de goteo de revistas se contradicen y no se usan. El vínculo con el rodamiento es el de los ítems de drenaje y barrera. Parte de la conexión con el prensaestopa o con el activo es razonamiento del equipo."
    },
    {
     "texto": "Fricción y calor del prensaestopa que dañan la camisa del eje. CONDICION A VERIFICAR.",
@@ -766,8 +766,8 @@
      "E-2840",
      "E-2846"
     ],
-    "nivel": "EVIDENCIA",
-    "nota": "Revista profesional, sin medición; E-2846 de comparabilidad baja. Pista por abrir: E-2004."
+    "nivel": "SINTESIS",
+    "nota": "Revista profesional, sin medición; E-2846 de comparabilidad baja. Pista por abrir: E-2004. Parte de la conexión con el prensaestopa o con el activo es razonamiento del equipo."
    },
    {
     "texto": "Fricción y calor del prensaestopa transmitidos al soporte y al rodamiento. CONDICION A VERIFICAR.",
@@ -788,8 +788,8 @@
      "E-2847",
      "E-2840"
     ],
-    "nivel": "EVIDENCIA",
-    "nota": "Opinión técnica cualitativa de revista. La secuencia sobreapriete, camisa dañada, más fuga es lectura del equipo."
+    "nivel": "SINTESIS",
+    "nota": "Opinión técnica cualitativa de revista. La secuencia sobreapriete, camisa dañada, más fuga es lectura del equipo. Parte de la conexión con el prensaestopa o con el activo es razonamiento del equipo."
    },
    {
     "texto": "Daño secundario de asientos y superficies: fretting, corrosión (incluida la de contacto con el rodamiento detenido) y desgaste.",
@@ -862,7 +862,7 @@
    },
    {
     "texto": "Práctica de referencia del prensaestopa (comparación): revisar periódicamente el ajuste, mantener goteo continuo, apretar de forma gradual y no sobreapretar.",
-    "mecanismo": "Debe hacerse una revisión periódica del ajuste y el prensaestopa debe tener un goteo continuo tras ajustarse (E-2823); se inspecciona la fuga cada semana y se ajusta o lubrica según haga falta; no se deben sobreapretar los pernos (E-2824); sin goteo indica que está demasiado apretado u otro problema (E-2848).",
+    "mecanismo": "Debe hacerse una revisión periódica del ajuste y el prensaestopa debe tener un goteo continuo tras ajustarse (E-2823); se inspecciona la fuga y se ajusta o lubrica según haga falta; no se deben sobreapretar los pernos (E-2824); sin goteo indica que está demasiado apretado u otro problema (E-2848).",
     "verificar": "Si el activo tiene estas rutinas escritas, ejecutadas y registradas.",
     "evidencia": [
      "E-2823",
@@ -919,8 +919,8 @@
      "E-2801",
      "E-2827"
     ],
-    "nivel": "EVIDENCIA",
-    "nota": "El mecanismo consta cualitativamente (revista técnica e introducciones; E-2827 de turbinas dentales, comparabilidad muy baja). Sin cantidad de agua, frecuencia ni tiempo; aceite y no grasa. Que el lubricante de este activo tenga agua del prensaestopa es hipótesis."
+    "nivel": "SINTESIS",
+    "nota": "El mecanismo consta cualitativamente (revista técnica e introducciones; E-2827 de turbinas dentales, comparabilidad muy baja). Sin cantidad de agua, frecuencia ni tiempo; aceite y no grasa. Que el lubricante de este activo tenga agua del prensaestopa es hipótesis. Parte de la conexión con el prensaestopa o con el activo es razonamiento del equipo."
    },
    {
     "texto": "Corrosión y desgaste de las superficies del rodamiento.",
