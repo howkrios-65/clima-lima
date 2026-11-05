@@ -1,0 +1,237 @@
+{
+ "tablas": [
+  {
+   "titulo": "Contraste de la tabla de estrellas aportada contra las pistas halladas (ninguna fila queda confirmada)",
+   "evidencia": [
+    "E-0001",
+    "E-1007",
+    "E-1008",
+    "E-1009",
+    "E-1011"
+   ],
+   "columnas": [
+    "Fila de la tabla aportada",
+    "Valores aportados (NR / NBR / EPDM / SBR)",
+    "Qué dicen las pistas SOLO-SNIPPET",
+    "Estado del contraste"
+   ],
+   "filas": [
+    [
+     "Resistencia mecánica",
+     "5 / 4 / 3 / 3",
+     "Ninguna pista halló una comparación de resistencia mecánica entre los cuatro; el único dato cercano compara poliuretano con caucho natural en abrasión, y es un dicho de proveedor",
+     "SIN RESPALDO (falta fuente)"
+    ],
+    [
+     "Resistencia química",
+     "2 / 3 / 4 / 1",
+     "Solo hay una pista (E-1007) según la cual EPDM y NBR toleran limpiezas cáusticas y ácidas habituales; ninguna pista compara la resistencia química de los cuatro materiales. Depende del fluido, que no se conoce",
+     "SIN RESPALDO (ninguna pista ordena los cuatro materiales; depende del fluido)"
+    ],
+    [
+     "Resistencia a aceites",
+     "X / 5 / X / X",
+     "NBR es la mejor de las cuatro frente a aceites minerales; EPDM es pobre en petróleo; NR y SBR al fondo en una tabla de proveedor cuya escala no se vio",
+     "Coincide con una pista no leída (resumen de buscador; no es contraste)"
+    ],
+    [
+     "Ozono e intemperie",
+     "1 / 1 / 5 / 1",
+     "EPDM mucho más resistente que NR y SBR; NBR baja en ozono",
+     "Coincide con una pista no leída (resumen de buscador; no es contraste)"
+    ],
+    [
+     "Resistencia al calor",
+     "2 / 3 / 4 / 2",
+     "EPDM mejor que NR y SBR y mejor que NBR en envejecimiento termo-oxidativo (trabajo de grado en intercambiadores de placas); una fuente dice que SBR es similar a EPDM",
+     "Pistas en conflicto para SBR; la ordenación EPDM sobre NBR viene de un trabajo en intercambiadores de placas, de otro alcance, no un contraste"
+    ],
+    [
+     "Costo",
+     "medio / medio / medio-alto / bajo",
+     "Ninguna pista halló costos de estos cuatro materiales",
+     "SIN RESPALDO (y el costo real lo aporta la persona)"
+    ]
+   ],
+   "nota": "Las estrellas son un dato aportado sin fuente: no cuentan como evidencia. Ninguna fila se marca como confirmada porque ninguna fuente se abrió; ninguna se marca como contradicha por la misma razón. La fila de calor es la única con conflicto entre pistas."
+  },
+  {
+   "titulo": "Otros materiales mencionados por la literatura de la búsqueda (solo pistas cualitativas; propiedades numéricas SIN DATOS PARA ARMARLO)",
+   "evidencia": [
+    "E-1014",
+    "E-1010"
+   ],
+   "columnas": [
+    "Material",
+    "Pista cualitativa (SOLO-SNIPPET)",
+    "Qué cerraría el vacío numérico"
+   ],
+   "filas": [
+    [
+     "FKM",
+     "Mejor resistencia química y térmica; abrasión moderada (dicho de proveedores); incluido en el programa de envejecimiento de juntas tóricas",
+     "Ficha técnica leída o ASTM D2000 verificada con rangos de temperatura y fluidos"
+    ],
+    [
+     "Silicona (VMQ)",
+     "Amplio rango de temperatura pero abrasión pobre: mal ajuste para lodo abrasivo (dicho de proveedores)",
+     "Ficha técnica leída o texto completo de una guía de selección"
+    ],
+    [
+     "Poliuretano",
+     "Muy superior al caucho natural en abrasión según proveedores; menos adecuado a químicos agresivos; ningún ensayo en lodo",
+     "Ensayo de abrasión DIN o Taber con la mezcla real, o estudio arbitrado leído"
+    ],
+    [
+     "HNBR",
+     "Solo aparece en el programa de envejecimiento de juntas tóricas; sin pista sobre filtros prensa",
+     "Fuente leída que lo compare con NBR en el fluido de la persona"
+    ]
+   ],
+   "nota": "No se publica ningún rango de temperatura ni dureza por material: ninguna ficha ni norma se leyó. La dureza del sello aportado (62 +/- tolerancia cortada) no se completa."
+  },
+  {
+   "titulo": "Candidatos de modo de falla del sello de marco (estado: posible; pistas, sin puntuación S-O-D)",
+   "evidencia": [
+    "E-1001",
+    "E-1002",
+    "E-1003",
+    "E-1004",
+    "E-1006",
+    "E-1007"
+   ],
+   "columnas": [
+    "Candidato",
+    "Mecanismo sugerido por la pista",
+    "Síntoma observable",
+    "Qué confirmaría el caso"
+   ],
+   "filas": [
+    [
+     "Desgaste por abrasión del lodo",
+     "Ciclos repetidos de compresión y partículas finas abrasivas (E-1001, E-1002)",
+     "Pérdida de perfil y fuga por el borde",
+     "Medición del perfil contra el plano (cotas 36, 25, 13, 11, 9, 6, 2 mm aportadas) y análisis granulométrico del lodo"
+    ],
+    [
+     "Deformación permanente (compression set)",
+     "Pérdida de recuperación elástica bajo compresión sostenida y calor (E-1006, E-1010 a E-1012)",
+     "Fuga a presión normal de cierre; perfil aplastado",
+     "Dureza y altura del sello usado frente a uno nuevo; ensayo ASTM D395 con edición verificada"
+    ],
+    [
+     "Ataque químico: hinchamiento o endurecimiento",
+     "Incompatibilidad con el lodo o el lavado, o temperatura excesiva (E-1007)",
+     "Ablandamiento, hinchamiento, endurecimiento o decoloración",
+     "Composición del fluido, pH, temperatura y prueba de inmersión (ASTM D471)"
+    ],
+    [
+     "Instalación y carga de cierre",
+     "Junta estirada, carga desigual o excesiva, alabeo de placa (E-1003, E-1004)",
+     "Unión abierta, holgura entre placas, paso por un lado",
+     "Registro de instalación y presión de cierre; planitud de placa"
+    ],
+    [
+     "Ozono e intemperie",
+     "Agrietamiento superficial de gomas insaturadas (E-1008)",
+     "Grietas en piezas almacenadas o expuestas",
+     "Almacenamiento y exposición; ASTM D1149 con edición verificada"
+    ],
+    [
+     "Extrusión y fatiga por ciclos de presión",
+     "Sin pista hallada",
+     "SIN DATOS",
+     "Fuente leída o inspección del sello usado"
+    ]
+   ],
+   "nota": "Hipótesis por encima de 'posible' exigen un caso real. Esto es síntesis del equipo a partir de pistas de buscador y de patentes, no una estadística de fallas."
+  },
+  {
+   "titulo": "Geometría aportada del perfil del sello de marco (pista, sin tolerancias)",
+   "evidencia": [
+    "E-0002"
+   ],
+   "columnas": [
+    "Cota legible en el plano (mm)",
+    "Nota"
+   ],
+   "filas": [
+    [
+     "36",
+     "Cota total superior"
+    ],
+    [
+     "25",
+     "Cota intermedia superior"
+    ],
+    [
+     "13, 11, 9, 6",
+     "Alturas de la zona de elastómero (lectura de la imagen; su correspondencia exacta no está confirmada)"
+    ],
+    [
+     "2",
+     "Probable espesor de la base metálica (lectura de la imagen, no confirmada)"
+    ],
+    [
+     "19, 19 y 44",
+     "Dos tramos de 19 mm a cada lado de un hueco central y, aparte, la cota total de 44 mm. 19 + 19 = 38, no 44: el hueco central no tiene cota legible (SIN DATOS)"
+    ]
+   ],
+   "nota": "Sin tolerancias, sin norma del plano y sin material indicado. La dureza del texto cortado de la diapositiva es '62 +/ ...': valor y tolerancia SIN DATOS."
+  },
+  {
+   "titulo": "Estructura del cálculo económico (sin cifras)",
+   "evidencia": [
+    "E-0001"
+   ],
+   "columnas": [
+    "Término",
+    "Definición",
+    "Valor"
+   ],
+   "filas": [
+    [
+     "Cp",
+     "Costo de reemplazo preventivo del sello de marco (pieza, mano de obra, tiempo de parada)",
+     "VACÍO: lo aporta la persona"
+    ],
+    [
+     "Cf",
+     "Costo de una falla (fuga, limpieza, parada no planificada, daño a placas o telas)",
+     "VACÍO: lo aporta la persona"
+    ],
+    [
+     "F(T), R(T)",
+     "Distribución de vida del sello (Weibull solo con datos citables o propios, con censura)",
+     "VACÍO: sin datos de vida"
+    ],
+    [
+     "Material",
+     "Costo relativo por material: la tabla aportada dice bajo/medio/medio-alto, sin cifras",
+     "VACÍO"
+    ]
+   ],
+   "nota": "Ningún cálculo se ejecutó: el kit exige costos y vida observada."
+  }
+ ],
+ "vacios": [
+  "Conector de artículos: no se pudo consultar la cuota (getUsageLimit no está disponible para este agente) ni usar search_wiley_fulltext; no se gastó cuota. La cuota debe comprobarse desde la sesión del LÍDER.",
+  "Red: los dominios de revistas, repositorios, fabricantes, ASTM y ISO no resuelven en este entorno (ENOTFOUND o 403); ninguna página se abrió; toda fuente externa es SOLO-SNIPPET.",
+  "Dureza de sellos nuevos de la diapositiva: valor y tolerancia cortados en la imagen; escala y norma de ensayo no indicadas.",
+  "Propiedades numéricas por material (rangos de temperatura, dureza típica, deformación permanente, hinchamiento): SIN DATOS PARA ARMARLO.",
+  "Datos de operación (fluido, pH, temperatura, presión de cierre y de filtración, abrasividad, ciclos) y de fallas (OT): ninguno aportado.",
+  "Cuartiles y citas de las fuentes: no obtenibles en este entorno."
+ ],
+ "supuestos": [
+  "Sin caso real: ningún dato de planta se usó. La tabla de estrellas, el plano y la diapositiva de dureza son datos aportados sin fuente primaria (DATO-USUARIO): son pistas y no respaldan cifras.",
+  "El activo se llama filtro de prensa de placas y el sello, sello de marco (sello entre placa y marco), según la lectura de las imágenes aportadas.",
+  "No se recomienda ningún material definitivo: faltan fluido, pH, temperatura, presión, abrasividad y ciclos."
+ ],
+ "preguntas": [
+  "1. Condiciones de operación: ¿qué fluido o pulpa filtra (pH, temperatura, % sólidos y su abrasividad), qué presión de cierre y de filtración usa, y cuántos ciclos por día? Por defecto asumimos que no se conocen y el material queda sin recomendar.",
+  "2. Sello actual: ¿cuál es el material y la dureza de los sellos instalados, el valor completo y la tolerancia de la diapositiva de dureza (62 +/ ...), la escala y la norma del ensayo, y la norma del plano?",
+  "3. Historial: ¿tiene fechas de instalación y retiro de sellos de marco y el modo de falla observado (fuga, desgaste, aplastamiento, hinchamiento, agrietado), incluidos los que siguen en servicio? Con eso se puede estimar la vida con censura.",
+  "4. Costos: ¿cuánto cuesta cada material de sello, la hora de parada, la mano de obra y una fuga o daño asociado? Sin eso el LCC y el punto óptimo quedan VACÍO.",
+  "5. Acceso a fuentes: ¿puede habilitar en la red los dominios de revistas, ASTM, ISO y tesis (lista en el mapa de fuentes), o adjuntar los PDF de fichas técnicas y normas, y confirmar la cuota del conector de artículos (renovada el 2026-11-01 según las notas)?"
+ ]
+}

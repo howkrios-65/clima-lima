@@ -1,0 +1,24 @@
+{
+ "modo_falla": "sello de marco de un filtro de prensa de placas: falla del elastómero (NR, NBR, EPDM, SBR y alternativas)",
+ "fecha": "2026-11-05",
+ "version": 1,
+ "secciones_con_evidencia": 0,
+ "secciones_vacias": [
+  "mediciones",
+  "fenomenos",
+  "top_fallas",
+  "fmeca",
+  "confiabilidad",
+  "punto_optimo",
+  "lcc",
+  "vida_util",
+  "ibr",
+  "ml",
+  "acr",
+  "troubleshooting",
+  "mpd_normas",
+  "referencias"
+ ],
+ "entradas_registro": 21,
+ "nota": "Pistas SOLO-SNIPPET no respaldan afirmaciones; ver evidencia.json"
+}

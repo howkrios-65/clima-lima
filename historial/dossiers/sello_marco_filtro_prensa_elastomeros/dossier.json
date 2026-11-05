@@ -1,0 +1,64 @@
+{
+ "modo_falla": "sello de marco de un filtro de prensa de placas: falla del elastómero (NR, NBR, EPDM, SBR y alternativas)",
+ "secciones": {
+  "mediciones": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. Ninguna fuente leída da variables medibles ni sus curvas para el sello de marco. Lo que lo cerraría: texto completo de una guía de inspección de sellos de filtros prensa o de ASTM D2240 y D395.",
+   "nota": "Pistas SOLO-SNIPPET: holgura visible entre placas (E-1003) y fuga (E-1004), dureza y deformación permanente como indicadores (E-1006, E-1010). La dureza máxima de sellos nuevos del material aportado está cortada (E-0003)."
+  },
+  "fenomenos": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. Compression set, abrasión por lodos, ataque químico e hinchamiento, ozono y calor, extrusión y fatiga por ciclos de presión: solo hay resúmenes de buscador; ninguna fuente se abrió. Lo que lo cerraría: lectura de texto completo de las patentes y de un estudio de envejecimiento de elastómeros (dominios de red a habilitar).",
+   "nota": "Pistas SOLO-SNIPPET: desgaste por ciclos y lodo abrasivo (E-1001, E-1002); capilaridad del lodo bajo la interfaz (E-1002); deformación permanente (E-1006, E-1010 a E-1012); hinchamiento y endurecimiento (E-1007). Extrusión del sello y fatiga por ciclos de presión: ninguna pista hallada."
+  },
+  "top_fallas": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. No se halló estadística publicada de modos de falla de sellos de marco con base de datos, tamaño y año. Lo que lo cerraría: órdenes de trabajo propias o un estudio de campo de filtros prensa."
+  },
+  "fmeca": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. Las escalas S-O-D no se inventan y no hay datos de operación ni de falla. Se lista una tabla de candidatos de modo de falla (pista, estado posible) en el informe, sin puntuación. Lo que lo cerraría: sesión de expertos con el fluido, la presión, el ciclo y el historial de cambios."
+  },
+  "confiabilidad": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. No hay datos propios de vida de sellos ni conjuntos abiertos citables; ningún parámetro de Weibull se calcula. Lo que lo cerraría: fechas de instalación y retiro de sellos (con los que siguen en servicio como censurados) o un conjunto abierto de vida de sellos."
+  },
+  "punto_optimo": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. Sin costos aportados ni vida observada. Estructura del cálculo: costo por unidad de tiempo C(T) = [Cp + Cf x F(T)] / (integral de la confiabilidad de 0 a T), con Cp costo de reemplazo preventivo y Cf costo de la falla; el modelo no se evalúa y su fuente no se leyó."
+  },
+  "lcc": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. Sin costo de sello, mano de obra, parada ni fuga aportados. Estructura: LCC por opción de material = costo de adquisición + reemplazos esperados x costo de reemplazo + paradas y fugas esperadas x su costo, a valor presente; todos los términos son VACÍO hasta recibir costos."
+  },
+  "vida_util": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. No se leyó vida de diseño ni experiencia publicada de sellos de marco. Pista: la vida depende de la duración del ciclo, la temperatura y la fuerza de cierre (E-1004, SOLO-SNIPPET)."
+  },
+  "ibr": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. No se encontró un marco de inspección basada en riesgo aplicable a sellos de filtros prensa en fuentes leídas. Pista: inspección anual del paquete de placas y registro de fugas (E-1003, E-1004; contenido de proveedor)."
+  },
+  "ml": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. No hay datos de condición ni de falla del sello ni estudios leídos de aprendizaje automático sobre sellos de filtros prensa; no se justifica un modelo sin datos."
+  },
+  "acr": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. Sin caso real no hay causa raíz por encima de posible. Candidatos posibles (pistas): sobrecompresión o carga desigual de cierre (E-1003, E-1004), incompatibilidad química con el lodo o el lavado (E-1007), lodo abrasivo (E-1001, E-1002), instalación con estirado de la junta (E-1004)."
+  },
+  "troubleshooting": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. Ningún procedimiento de diagnóstico se leyó. Pistas SOLO-SNIPPET: fuga persistente a presión normal de cierre, filtrado turbio, holgura visible entre placas, delaminado o deshilachado (E-1003, E-1004)."
+  },
+  "mpd_normas": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. Ninguna norma se leyó en la página oficial. Candidatas con edición vista solo en listados de terceros: ASTM D2240 (dureza), D395 (deformación permanente), D471 (efecto de líquidos), D1149 (ozono); ASTM D6284 mencionada en E-1007; ASTM D2000 (clasificación de cauchos) y ISO 815, ISO 1817, ISO 868 no verificadas.",
+   "nota": "Estado: NO-VERIFICADO en las cuatro candidatas (E-1015 a E-1018: solo vistas en listados de proveedor, SOLO-SNIPPET). Ninguna está en el registro de normas del equipo y no se cita edición ni año; ISO 815, ISO 1817, ISO 868, ASTM D2000 y D6284 se mencionan sin ninguna entrada de evidencia y quedan NO-VERIFICADO."
+  },
+  "referencias": {
+   "elementos": [],
+   "vacio": "SIN DATOS PARA ARMARLO. Ninguna fuente externa alcanzó VERIFICADO-ABSTRACT: no hay referencias respaldadas. Las pistas se listan en la pestaña Evidencia con su nivel SOLO-SNIPPET y su enlace."
+  }
+ }
+}

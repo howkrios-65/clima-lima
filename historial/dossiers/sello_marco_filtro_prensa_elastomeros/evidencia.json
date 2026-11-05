@@ -1,0 +1,326 @@
+[
+ {
+  "id": "E-0001",
+  "tipo": "dato_usuario",
+  "fecha_acceso": "2026-11-05",
+  "via": "imagen_aportada",
+  "referencia": {
+   "titulo": "Material aportado por la persona (captura de una presentación interna)"
+  },
+  "afirma": "Tabla 3 aportada: comparación de NR, NBR, EPDM y SBR con estrellas de 1 a 5 o X en resistencia mecánica, química, a aceites, al ozono/intemperie y al calor, y costo relativo.",
+  "limites": "Sin fuente primaria declarada; es una pista de la persona, no evidencia. Las estrellas no tienen escala, norma ni condición de ensayo declaradas.",
+  "nivel_evidencia": "DATO-USUARIO"
+ },
+ {
+  "id": "E-0002",
+  "tipo": "dato_usuario",
+  "fecha_acceso": "2026-11-05",
+  "via": "imagen_aportada",
+  "referencia": {
+   "titulo": "Material aportado por la persona (captura de una presentación interna)"
+  },
+  "afirma": "Plano de la sección del perfil del sello de marco (pieza 2): elastómero sobre base metálica; cotas legibles en mm, transcritas una por una: 36, 25, 13, 11, 9, 6, 2, 19, 19 y 44 (cota total aparte; el hueco central entre los dos tramos de 19 no tiene cota legible).",
+  "limites": "Sin tolerancias, sin norma del plano y sin material indicado en la imagen; las cotas son pista de geometría.",
+  "nivel_evidencia": "DATO-USUARIO"
+ },
+ {
+  "id": "E-0003",
+  "tipo": "dato_usuario",
+  "fecha_acceso": "2026-11-05",
+  "via": "imagen_aportada",
+  "referencia": {
+   "titulo": "Material aportado por la persona (captura de una presentación interna)"
+  },
+  "afirma": "Diapositiva 'Validación de prueba de dureza': el texto visible dice que se verifica que la dureza de los sellos nuevos no exceda los 62 +/- (texto cortado).",
+  "limites": "El valor completo, la tolerancia, la escala (Shore) y la norma del ensayo no se ven: SIN DATOS; no se completan.",
+  "nivel_evidencia": "DATO-USUARIO"
+ },
+ {
+  "id": "E-1001",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Patente: tira de sellado entre ensambles de placas adyacentes de un filtro prensa",
+   "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/12616923",
+   "fuente": "Oficina de patentes de EE. UU.",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el resumen: por los ciclos repetidos de compresión y la naturaleza a menudo abrasiva del lodo, la tira de sellado es una pieza de desgaste que debe reemplazarse periódicamente; menciona una carga lineal de diseño del orden de 30 a 300 N/mm.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Es una patente de un diseño concreto, no un estudio de campo ni una estadística de fallas.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1002",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Patente: pieza de salida para filtro horizontal de placas y marcos (filtro de torre)",
+   "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/12496538",
+   "fuente": "Oficina de patentes de EE. UU.",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el resumen: el desgaste se atribuye a la abrasividad de las partículas finas del lodo, y el lodo que llega a la interfaz placa-cuba puede viajar por debajo por capilaridad, agravado por los ciclos de compresión.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Patente de una pieza distinta del sello de marco; sirve solo como plausibilidad del mecanismo.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1003",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Guía de mantenimiento de placas de filtro prensa: calendario de inspección, señales de falla y cuándo reemplazar",
+   "url": "https://getchemready.com/?p=16469",
+   "fuente": "Sitio de proveedor de insumos químicos",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el resumen: el alabeo de placa por ciclos térmicos desiguales, carga parcial del paquete o sobrepresión causa paso por la superficie de sello, filtrado turbio y torta más húmeda; recomienda inspección anual del paquete completo y señala la holgura visible entre placas como indicador.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Contenido de proveedor/marketing; el intervalo anual no es de un estudio.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1004",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Preguntas frecuentes sobre filtros prensa (empaquetaduras)",
+   "url": "https://www.filtersource.com/blog/faqs-about-filter-presses",
+   "fuente": "Blog de proveedor de filtros prensa",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el resumen: la fuga persistente a presión normal de cierre puede indicar que hay que reemplazar empaquetaduras; la vida depende de la duración del ciclo, la temperatura y la fuerza de cierre excesiva; reemplazar al delaminar o deshilacharse; estirar la junta para ajustarla abre la unión a tope; las nuevas pueden pegarse y salirse de la ranura.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Texto de proveedor, sin datos de fallas ni muestra; no distingue material.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1005",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Documento de solución de problemas de filtros (fuga por anillo cuádruple del alimentador central)",
+   "url": "https://www.scribd.com/document/445403229/Filter-troubleshooting",
+   "fuente": "Documento de terceros",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el resumen: la fuga por el sello de anillo cuádruple del alimentador central suele deberse a un contratuerca flojo; recomienda verificar fugas durante el llenado y la circulación.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Sitio de documentos de terceros bloqueado en este entorno; es otro sello (alimentación), no el de marco.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1006",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Guía sobre prevención de fallas de empaquetaduras, parte 1",
+   "url": "https://blog.marianinc.com/blog/preventing-gasket-failure-part-1",
+   "fuente": "Blog de proveedor de materiales",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el resumen: lista la deformación permanente por compresión (compression set) entre las propiedades clave al elegir material, junto con abrasión y degradación UV.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Guía general de sellado de gabinetes, no de filtros prensa.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1007",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Empaquetaduras de intercambiadores de placas (artículo de revista técnica)",
+   "url": "https://www.pumpsandsystems.com/gaskets-plate-heat-exchangers?page=1",
+   "fuente": "Revista técnica de bombas y sistemas",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el resumen: hinchamiento o ablandamiento indica incompatibilidad química; endurecimiento o decoloración indica degradación química o por temperatura; EPDM y NBR toleran limpiezas cáusticas y ácidas habituales a concentración y temperatura adecuadas; el exceso de concentración o temperatura daña rápido; menciona ASTM D6284.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Intercambiadores de placas: es una analogía, no un filtro prensa; el resumen no da fecha ni autoría.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1008",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Comparación de compuestos de caucho: SBR, EPDM, nitrilo, neopreno y caucho natural",
+   "url": "https://rubberco.co.uk/pages/rubber-compound-comparison-guide-uk",
+   "fuente": "Sitio de proveedor de cauchos",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el resumen de la búsqueda (varias páginas de proveedores): EPDM es mucho más resistente al calor, la luz y el ozono que NR y SBR por su cadena saturada; NBR es la mejor de las cuatro frente a aceites minerales y EPDM es pobre en petróleo; NBR tiene resistencia comparativamente baja al ozono; una fuente dice que la temperatura de SBR es similar a la de EPDM, lo que contradice a otras.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Atribución exacta a esta página no confirmada: el resumen mezcla varias páginas de proveedores generales; sin escala ni método de ensayo.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1009",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Tabla de resistencia química de cauchos (proveedor)",
+   "url": "https://esrubber.com/products/chemical-resistance-table/",
+   "fuente": "Sitio de proveedor de cauchos",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el resumen: tabla de resistencia química que califica NR y SBR al fondo en combustible y aceite mineral y NBR cerca del tope; la escala de calificación no se ve en el resumen.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Escala no confirmada; no se abrió la tabla.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1010",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Aspectos de predicción de vida de juntas tóricas a partir de ensayos de envejecimiento de cinco años",
+   "url": "https://opus4.kobv.de/opus4-bam/frontdoor/index/index/docId/51060",
+   "fuente": "Instituto federal alemán de materiales (repositorio)",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el resumen: juntas de HNBR, EPDM y FKM envejecidas comprimidas y sin comprimir hasta cinco años; la deformación permanente de equilibrio empeoró más rápido y más fuerte que la dureza y se usó para predecir vida por superposición tiempo-temperatura; la predicción precisa exigió más de tres años de datos.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Juntas tóricas a temperaturas de 23 a 150 °C: no es un sello de marco ni lodo; no incluye NR, NBR ni SBR en el resumen.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1011",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Trabajo de fin de carrera: envejecimiento de empaquetaduras de intercambiadores de placas (EPDM y NBR)",
+   "url": "https://repositorio.ufsc.br/bitstream/123456789/262271/1/TCC_-_Fernando_Bernardes_Silva_Salvador.pdf",
+   "fuente": "Universidad Federal de Santa Catarina (repositorio)",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el resumen: empaquetaduras ensayadas a temperatura elevada con superposición tiempo-temperatura y Arrhenius sobre la deformación permanente; concluye que las de EPDM resisten más el envejecimiento termo-oxidativo y tienen mayor vida que las de NBR.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Trabajo de grado de universidad brasileña en intercambiadores de placas; no es un filtro prensa ni lodo; no evaluó NR ni SBR en el resumen.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1012",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Predicción de vida de materiales de sellado de EPDM con envejecimiento térmico bajo compresión constante",
+   "url": "https://ouci.dntb.gov.ua/works/42rdAzj4",
+   "fuente": "Índice de citas de terceros",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el resumen: modelo cinético con Arrhenius a partir de la deformación permanente a 80, 100 y 120 °C; la vida extrapolada a 25 °C depende mucho del criterio de fin de vida elegido para la deformación permanente.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Solo EPDM, en aire y en laboratorio; la extrapolación a baja temperatura es discutida (ver E-1013).",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1013",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Evidencia de que el comportamiento Arrhenius de una junta tórica de EPDM a alta temperatura no se extrapola a baja temperatura",
+   "url": "https://www.osti.gov/biblio/917488",
+   "fuente": "OSTI (repositorio del Departamento de Energía de EE. UU.)",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el título y el resumen: la extrapolación Arrhenius desde altas temperaturas puede fallar en EPDM a baja temperatura.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Solo título y resumen; actas de congreso de 1997 según el resumen.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1014",
+  "tipo": "otro",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "Resumen de búsqueda sobre poliuretano frente a caucho, FKM y silicona (varias páginas de proveedores)",
+   "url": "https://mearthane.com/polyurethane-versus-rubber/",
+   "fuente": "Sitio de proveedor de poliuretano",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según los resúmenes: proveedores afirman que el poliuretano resiste mucho más la abrasión que el caucho natural, que FKM tiene mejor resistencia química y térmica y abrasión moderada, y que la silicona es pobre a la abrasión; ninguna fuente probó sellos en lodo.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Afirmaciones de proveedores de poliuretano y selladores, sin método ni valores verificables; la atribución a esta página concreta no se confirmó.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1015",
+  "tipo": "norma",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "ASTM D2240, Rubber Property - Durometer Hardness (listado)",
+   "url": "https://webdesk.jsa.or.jp/link/annualbook/astm24_0901.pdf",
+   "fuente": "Listado de un proveedor (no es el emisor de la norma)",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el listado: el título es 'Rubber Property - Durometer Hardness'; designación vista en el listado, edición NO-VERIFICADO.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Edición no verificada en la página oficial; alcance y procedimiento no leídos.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1016",
+  "tipo": "norma",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "ASTM D395, Rubber Property - Compression Set (listado)",
+   "url": "https://coirubber.com/?p=64158",
+   "fuente": "Listado de un proveedor (no es el emisor de la norma)",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el listado: título 'Standard Test Methods for Rubber Property - Compression Set'; designaciones vistas en el listado, edición NO-VERIFICADO; el método A comprime la muestra entre placas rígidas.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Edición vigente no verificada en la página oficial; condiciones de ensayo no leídas.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1017",
+  "tipo": "norma",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "ASTM D471, Rubber Property - Effect of Liquids (listado)",
+   "url": "https://coirubber.com/rubber-property-effects-of-liquids-d471/",
+   "fuente": "Listado de un proveedor (no es el emisor de la norma)",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el listado: título 'Rubber Property - Effect of Liquids'; evalúa la capacidad comparativa de cauchos de resistir el efecto de líquidos; designación vista en el listado, edición NO-VERIFICADO.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Edición vigente no verificada en la página oficial.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ },
+ {
+  "id": "E-1018",
+  "tipo": "norma",
+  "acceso": "snippet",
+  "via": "websearch",
+  "fecha_acceso": "2026-11-05",
+  "referencia": {
+   "titulo": "ASTM D1149, Rubber Deterioration - Cracking in an Ozone Controlled Environment (listado)",
+   "url": "https://webdesk.jsa.or.jp/link/annualbook/astm24_0901.pdf",
+   "fuente": "Listado de un proveedor (no es el emisor de la norma)",
+   "autores": "Autor no identificado"
+  },
+  "afirma": "Según el listado: título 'Rubber Deterioration - Cracking in an Ozone Controlled Environment'; designación vista en el listado, edición NO-VERIFICADO.",
+  "limites": "Solo resumen de buscador (SOLO-SNIPPET): la página no se abrió; no respalda cifras ni valores. Edición vigente no verificada en la página oficial.",
+  "nivel_evidencia": "SOLO-SNIPPET"
+ }
+]

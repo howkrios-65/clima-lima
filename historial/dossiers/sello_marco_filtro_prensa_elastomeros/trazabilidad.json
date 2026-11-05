@@ -1,0 +1,26 @@
+[
+ {
+  "agente": "reliability-engineer",
+  "rol": "LÍDER del equipo (ESTRATEGA)",
+  "hizo": "Leyó las imágenes, comprobó el acceso de red, ejecutó seis búsquedas de frentes distintos, armó el registro, el dossier, las tablas y las preguntas. No pudo lanzar investigadores en paralelo porque un subagente no crea otros: hizo él mismo cada frente.",
+  "entrada": "Solicitud, dos imágenes y notas de pendientes",
+  "salida": "Dossier validado, informe HTML y preguntas finales",
+  "aprendio": "Con la red bloqueada todo queda SOLO-SNIPPET y el dossier se entrega con VACÍO declarado en lugar de rellenar."
+ },
+ {
+  "agente": "reliability-case-historian",
+  "rol": "Recurrencia (hecho por el LÍDER por búsqueda de texto)",
+  "hizo": "Buscó en el historial: no hay caso previo de sellos de filtros prensa; los dossiers de bombas y de chumacera solo sirvieron como molde de estructura.",
+  "entrada": "Carpeta historial",
+  "salida": "Sin recurrencia",
+  "aprendio": "Los sellos mecánicos de bombas figuran como VACÍO en dossiers previos, no como evidencia."
+ },
+ {
+  "agente": "reliability-evidence-verifier",
+  "rol": "Verificador independiente",
+  "hizo": "PENDIENTE: no estaba disponible como subagente desde esta ejecución; el LÍDER hizo solo autochequeos automáticos.",
+  "entrada": "Dossier e informe",
+  "salida": "Verificación posterior lanzada desde la sesión principal: NO APTO (1 bloqueante, 4 altos); corregidos en el script y reensamblado",
+  "aprendio": "La verificación independiente debe lanzarla quien pueda crear subagentes."
+ }
+]

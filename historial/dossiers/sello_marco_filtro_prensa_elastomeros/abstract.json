@@ -1,0 +1,20 @@
+{
+ "titulo": "Falla del sello de marco de un filtro de prensa de placas y comparación de elastómeros (NR, NBR, EPDM, SBR): qué se pudo leer y qué falta",
+ "autor": "HOWK RIOS - CONFIABILIDAD",
+ "parrafos": [
+  "Problema. El sello de marco sella el paquete de placas de un filtro de prensa; su falla produce fuga, filtrado turbio y parada. La persona aportó una tabla de estrellas que compara NR, NBR, EPDM y SBR, el plano de la sección del perfil y una diapositiva de dureza cortada; son datos sin fuente primaria y no cuentan como evidencia {E-0001} {E-0002} {E-0003}.",
+  "Lo hallado. En este entorno ninguna página científica, de norma o de fabricante pudo abrirse; todo lo externo es resumen de buscador (SOLO-SNIPPET) y no respalda cifras. Las pistas apuntan a desgaste por ciclos de compresión y lodo abrasivo {E-1001} {E-1002}, deformación permanente {E-1006} {E-1010}, ataque químico con hinchamiento o endurecimiento {E-1007} y errores de instalación y de carga de cierre {E-1003} {E-1004}.",
+  "Comparación de materiales. Frente a esas pistas, las filas de aceites y de ozono de la tabla aportada coinciden con pistas no leídas {E-1008} {E-1009}, lo que no es contraste; la de calor tiene pistas en conflicto para SBR {E-1008} {E-1011}; la química, la resistencia mecánica y el costo no tienen respaldo. Ninguna fila queda confirmada. FKM, silicona y poliuretano aparecen solo como pistas cualitativas de proveedores {E-1014}.",
+  "Vacíos y decisión. Las 14 secciones del dossier quedan VACÍO declarado: sin datos de operación, de fallas ni de costos no se calcula vida, punto óptimo ni LCC, y no se recomienda un material. La dureza máxima de sellos nuevos está cortada en la imagen. Para decidir material, dureza, inspección y reemplazo se necesitan el fluido y las condiciones, el historial de cambios con censura, los costos y acceso a las fuentes; las preguntas están al final."
+ ],
+ "palabras_clave": [
+  "sello de marco",
+  "filtro de prensa de placas",
+  "elastómeros",
+  "deformación permanente",
+  "EPDM",
+  "NBR",
+  "desgaste abrasivo"
+ ],
+ "criterio": "Ninguna fuente se leyó más allá del resumen de buscador; no hay citas ni cuartiles obtenibles."
+}
